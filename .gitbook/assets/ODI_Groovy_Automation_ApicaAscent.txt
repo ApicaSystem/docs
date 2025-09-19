@@ -1,0 +1,112 @@
+//Created by DI Studio
+import java.sql.Connection
+import java.sql.DriverManager
+import java.sql.Statement
+import java.sql.ResultSet
+import java.net.URL
+import java.net.HttpURLConnection
+import java.io.OutputStream
+import java.io.InputStreamReader
+import java.io.BufferedReader
+import java.io.FileWriter
+import java.io.PrintWriter
+
+// Logging function to capture failed rows in a file
+def logFailureToFile(int employeeId, String payload, String reason) {
+    try {
+        FileWriter fw = new FileWriter("failed_rows.log", true) // append mode
+        PrintWriter pw = new PrintWriter(fw)
+        pw.println("EMPLOYEE_ID=${employeeId} | Reason=${reason}")
+        pw.println("Payload: ${payload}")
+        pw.println("------------------------------------------------")
+        pw.close()
+    } catch (Exception e) {
+        println "⚠️ Failed to write to log file: ${e.getMessage()}"
+    }
+}
+
+def sendRowWithRetry(String jsonPayload, String bearerToken, int employeeId, int maxRetries = 3) {
+    int attempts = 0
+    boolean success = false
+    String lastError = ""
+
+    while (attempts < maxRetries && !success) {
+        try {
+            URL url = new URL("https://APICA-ASCENT-HOSTNAME.apica.io/v1/json_batch")
+            HttpURLConnection connOut = (HttpURLConnection) url.openConnection()
+            connOut.setDoOutput(true)
+            connOut.setRequestMethod("POST")
+            connOut.setRequestProperty("Content-Type", "application/json")
+            connOut.setRequestProperty("Authorization", "Bearer " + bearerToken)
+
+            OutputStream os = connOut.getOutputStream()
+            os.write(jsonPayload.getBytes("UTF-8"))
+            os.flush()
+
+            int responseCode = connOut.getResponseCode()
+            if (responseCode == 200 || responseCode == 201) {
+                BufferedReader br = new BufferedReader(new InputStreamReader((connOut.getInputStream())))
+                String output
+                while ((output = br.readLine()) != null) {
+                    println "✅ Success for EMPLOYEE_ID=${employeeId}: $output"
+                }
+                success = true
+            } else {
+                lastError = "HTTP ${responseCode}"
+                println "❌ Attempt ${attempts + 1} failed for EMPLOYEE_ID=${employeeId}: ${lastError}"
+            }
+            connOut.disconnect()
+        } catch (Exception e) {
+            lastError = e.getMessage()
+            println "❌ Exception on attempt ${attempts + 1} for EMPLOYEE_ID=${employeeId}: ${lastError}"
+        }
+        attempts++
+        if (!success && attempts < maxRetries) {
+            Thread.sleep(1000) // wait before retry
+        }
+    }
+
+    if (!success) {
+        logFailureToFile(employeeId, jsonPayload, lastError)
+    }
+}
+
+try {
+    Class.forName("oracle.jdbc.OracleDriver")
+    Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/freepdb1", "HR", "oracle")
+    Statement stmt = conn.createStatement()
+    ResultSet rs = stmt.executeQuery("SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEES")
+
+    String bearerToken = "BEARER_TOKEN"  // Replace with valid token
+
+    while (rs.next()) {
+        int employeeId = rs.getInt("EMPLOYEE_ID")
+        String firstName = rs.getString("FIRST_NAME")
+        String lastName = rs.getString("LAST_NAME")
+        double salary = rs.getDouble("SALARY")
+
+        // Build per-row JSON payload
+        StringBuilder json = new StringBuilder()
+        json.append("{")
+        json.append("\"namespace\":\"Oracle-Database\",") //Custom Namespace that appears in Apica Ascent 
+        json.append("\"application\":\"ODI-Ingest\",") //Custom Application name for Apica Ascent
+        json.append("\"data\":[")
+        json.append("{")
+        json.append("\"id\":").append(employeeId).append(",")
+        json.append("\"name\":\"").append(firstName).append(" ").append(lastName).append("\",")
+        json.append("\"salary\":").append(salary)
+        json.append("}")
+        json.append("]")
+        json.append("}")
+
+        // Send with retry and log failures
+        sendRowWithRetry(json.toString(), bearerToken, employeeId)
+    }
+
+    rs.close()
+    stmt.close()
+    conn.close()
+
+} catch (Exception e) {
+    println "🚨 Error during DB connection or processing: ${e.getMessage()}"
+}

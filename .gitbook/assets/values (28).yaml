@@ -1,0 +1,360 @@
+logiq-flash:
+  replicaCount: 2
+  replicaCountMl: 2
+  replicaCountSync: 2
+  service:
+    type: NodePort
+  image:
+    tag: v3.6.3
+    pullPolicy: IfNotPresent
+  persistence:
+    enabled: true
+    size: 25Gi
+    ml_size: 25Gi
+  metrics:
+    serviceMonitor:
+      enabled: true
+    selector:
+      release: prometheus
+  resources:
+    ingest:
+      limits:
+        cpu: "1250m"
+      requests:
+        cpu: "250m"
+        memory: "2750Mi"
+    ml:
+      limits:
+        cpu: "1000m"
+      requests:
+        cpu: "250m"
+    sync:
+      limits:
+        cpu: "250m"
+      requests:
+        cpu: "50m"
+
+flash-discovery:
+  fullnameOverride: flash-discovery
+  image:
+    tag: v2.0.3
+    pullPolicy: IfNotPresent
+  replicaCountDiscovery: 2
+  persistence:
+    enabled: true
+    size: 2Gi
+
+redis:
+  enabled: true
+  fullnameOverride: redis
+  usePassword: false
+  cluster:
+    slaveCount: 0
+  master:
+    disableCommands: []
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                    - redis
+            topologyKey: "kubernetes.io/hostname"
+    persistence:
+      enabled: false
+  slave:
+    disableCommands: []
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                    - redis
+            topologyKey: "kubernetes.io/hostname"
+    persistence:
+      enabled: false
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+    selector:
+      release: prometheus
+  podSecurityPolicy:
+    create: true
+    rbac:
+      create: true
+      role:
+        rules:
+          - apiGroups:
+              - policy
+            resources:
+              - podsecuritypolicies
+            verbs:
+              - use
+            resourceNames:
+              - redis
+  securityContext:
+    enable: true
+    fsGroup: 1001
+    runAsUser: 1001
+  serviceAccount:
+    create: true
+    name: redis
+
+postgres:
+  enabled: false
+  fullnameOverride: postgres
+  postgresqlPostgresPassword: postgres
+  postgresqlUsername: postgres
+  postgresqlDatabase: postgres
+  postgresqlPassword: postgres
+  postgresqlExtendedConf:
+    maxConnections: "400"
+    sharedBuffers: "1024MB"
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+    additionalLabels:
+      release: prometheus
+  persistence:
+    size: 10Gi
+  resources:
+    requests:
+      memory: "4Gi"
+      cpu: "1000m"
+  securityContext:
+    enabled: true
+    fsGroup: 1001
+    runAsUser: 1001
+  serviceAccount:
+    enabled: true
+    name: postgres
+
+flash-coffee:
+  service:
+    type: ClusterIP
+  coffee:
+    replicaCount: 1
+    image:
+      tag: brew.v3.7.1-rc1
+      pullPolicy: IfNotPresent
+    resources:
+      requests:
+        memory: "4Gi"
+        cpu: "1000m"
+  coffee_worker:
+    replicaCount: 1
+    image:
+      tag: brew.v3.1.5.1
+      pullPolicy: IfNotPresent
+    resources:
+      requests:
+        memory: "1Gi"
+        cpu: "1000m"
+
+s3gateway:
+  s3gateway:
+    enabled: false
+  mode: distributed
+  image:
+    repository: minio/minio
+    tag: RELEASE.2020-09-17T04-49-20Z
+  defaultBucket:
+    enabled: true
+  fullnameOverride: s3-gateway
+  accessKey: logiq_access
+  secretKey: logiq_secret
+  metrics:
+    serviceMonitor:
+      enabled: false
+  buckets:
+    - name: logiq
+      policy: none
+      purge: false
+  persistence:
+    enabled: true
+    size: 25Gi
+  securityContext:
+    enabled: true
+    runAsUser: 1000
+    runAsGroup: 1000
+    fsGroup: 1000
+  serviceAccount:
+    create: true
+    name: s3-gateway
+
+ingress:
+  enabled: true
+  name: logiq-ingress
+  tlsEnabled: false
+  tlsSecretName: null
+
+kubernetes-ingress:
+  controller:
+    image:
+      repository: k8s.gcr.io/ingress-nginx/controller
+      tag: "v1.2.0"
+    replicaCount: 2
+    ingressClass: logiq-ingress
+    service:
+      type: LoadBalancer
+    defaultTLSSecret:
+      enabled: false
+      secret: null
+  defaultBackend:
+    replicaCount: 2
+  podSecurityPolicy:
+    enabled: true
+  serviceAccount:
+    create: true
+    name: ingress-nginx
+
+prometheus:
+  fullnameOverride: prometheus
+  persistence:
+    enabled: true
+    size: 5Gi
+  alertmanager:
+    replicaCount: 1
+    persistence:
+      enabled: true
+      size: 5Gi
+  prometheus:
+    replicaCount: 2
+    persistence:
+      enabled: true
+      size: 5Gi
+    thanos:
+      create: true
+      objectStorageConfig:
+        secretName: thanos-objectstorage-config
+        secretKey: thanos.yaml
+  operator:
+    replicaCount: 1
+  kube-state-metrics:
+    replicaCount: 1
+  node-exporter:
+    replicaCount: 1
+
+thanos:
+  receive:
+    logLevel: debug 
+    service:
+    ## @param receive.service.type Kubernetes service type
+    ##
+       type: ClusterIP 
+    enabled: true
+  query:
+    enabled: true
+    dnsDiscovery:
+      enabled: true
+  bucketweb:
+    enabled: true
+  compactor:
+    enabled: true
+  storegateway:
+    enabled: true
+  ruler:
+    enabled: true
+    alertmanagers:
+      - prometheus-alertmanager
+    config: |-
+      groups:
+        - name: "metamonitoring"
+          rules:
+            - alert: "PrometheusDown"
+              expr: absent(up{prometheus="logiq/logiq-prometheus-prometheus"})
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+
+
+grafana:
+  fullnameOverride: grafana
+
+logiqctl:
+  image:
+    repository: logiqai/logiqctl
+    tag: 2.0.4
+    pullPolicy: IfNotPresent
+
+global:
+  domain: test.logiq.ai
+  kubeDistributor:
+         enabled: false
+  cloudProvider: aws
+  enableAwsAlb:
+      enabled: false
+      albType: "internet-facing"
+  createStorageClass: false
+  enableMetricsServer: false
+  sharedSecretName: logiq-shared-secret
+  nodeSelectors:
+    enabled: false
+    ingest: flash
+    infra: infra
+    other: coffee
+    db: db
+    cache: cache
+    ingest_sync: sync
+  taints:
+    enabled: false
+    ingest: flash
+    infra: infra
+    other: coffee
+    db: db
+    cache: cache
+    ingest_sync: sync
+  job:
+    ttlSecondsAfterFinished: 100
+  toolbox:
+    image:
+      repository: docker.io/logiqai/toolbox
+      tag: 2.0.1
+  environment:
+    logiq_flash_host: logiq-flash
+    logiq_flash_port: 9999
+    redis_opts: true
+    redis_host: "<>"
+    redis_port: "6379"
+    postgres_host: "<>"
+    postgres_port: "5432"
+    postgres_user: "<>"
+    postgres_password: "<>"
+    postgres_coffee_db: "coffee"
+    s3_url: "https://s3.<region>.amazonaws.com"
+    s3_access: "<AWS_ACCESS_KEY_ID>"
+    s3_secret: "<AWS_SECRET_ACCESS_KE>"
+    AWS_ACCESS_KEY_ID: "<>"
+    AWS_SECRET_ACCESS_KEY: "<>"
+    s3_bucket: "<>"
+    s3_region: "<>"
+    admin_name: "flash-admin@foo.com"
+    admin_password: "flash-password"
+    admin_org: "flash-org"
+    admin_email: "flash-admin@foo.com"
+    license: "license/license.jws"
+    upload_dashboard: true
+    cluster_id: LOGIQ
+    awsServiceEndpoint: https://s3.<region>.amazonaws.com
+  persistence:
+    createStorageClass:
+      enabled: false
+    storageClass: gp3
+
+  chart:
+    prometheus: true
+    thanos: true
+    postgres: false
+    redis: false
+    s3gateway: false
+    grafana: false
+
+

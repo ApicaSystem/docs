@@ -1,0 +1,2819 @@
+openapi: 3.0.2
+info:
+  title: IRONdb Administrator APIs
+  version: "0.1"
+  description: >
+    The IRONdb API provides an interface to programmatically access the
+    functionality of the timeseries database. These endpoints are targeted towards 
+    administration of the database.
+paths:
+  /:
+    get:
+      tags:
+        - Admin UI
+      summary: Visiting / in your webbrowser returns the web UI html.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/html:
+              schema:
+                type: string
+                example: '<html>'
+  /raw/list_metrics:
+    get:
+      tags:
+        - Internal Observability
+      summary: >
+        Return a list of raw metrics on the system.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  metrics:
+                    type: array
+                    description: >
+                      An array containing all of the raw metrics on the system.
+                    items:
+                      type: string
+                      description: >
+                        A canonical metric name, in the format <UUID>-<Name>
+                      example: "d76e405b-4e68-4436-9c1d-82452f0e159c-some_metric_name"
+  /raw/list_shards:
+    get:
+      tags:
+        - Internal Observability
+      summary: >
+        Returns a list of raw numeric data shards on the node.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShardStartEndJSONResponse'
+            application/X-Circonus-RawShardList-Flatbuffer:
+              schema:
+                type: object
+                description: Flatbuffer version of the application/json response. Used during the reconstitute process.
+  /histogram_raw/list_shards:
+    get:
+      tags:
+        - Internal Observability
+      summary: >
+        Returns a list of raw histogram data shards on the node.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShardStartEndJSONResponse'
+            application/X-Circonus-RawShardList-Flatbuffer:
+              schema:
+                type: object
+                description: Flatbuffer version of the application/json response. Used during the reconstitute process.
+  /histogram/{period}/list_shards:
+    parameters:
+      - name: period
+        in: path
+        required: true
+        schema:
+          type: integer
+          example: 60
+    get:
+      tags:
+        - Internal Observability
+      summary: >
+        Returns a list of rolled-up histogram data shards on the node that match the provided period.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShardStartEndJSONResponse'
+            application/X-Circonus-RawShardList-Flatbuffer:
+              schema:
+                type: object
+                description: Flatbuffer version of the application/json response. Used during the reconstitute process.
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /list_nntbs_shards:
+    get:
+      tags:
+        - Internal Observability
+      summary: >
+        Return a list of the NNTBS shards on the system.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                    shard:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          block_floor:
+                            type: integer
+                          block:ceiling:
+                            type: integer
+                          mode:
+                            type: string
+                            enum:
+                              - online
+                              - offline
+            application/snowth-nnt:
+              schema:
+                type: string
+                description: Flatbuffer version of the application/json response.
+  /nntbs_shard_reconstitute_live:
+    post:
+      tags:
+        - Reconstituting
+      summary: Start live reconstitute of a single NNTBS shard.  This will also  automatically offline the shard until the operation is complete (e.g. /nntbs_shard_maintenance).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RollupShardReconstituteLivePostBody'
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FourPointResponse"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LiveReconstituteError'
+  /raw/shard_reconstitute_live:
+    post:
+      tags:
+        - Reconstituting
+      summary: Start live reconstitute of a single raw numeric shard.  This will also  automatically offline the shard until the operation is complete (e.g. /raw/shard_maintenance).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RawShardReconstituteLivePostBody'
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FourPointResponse"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LiveReconstituteError'
+  /histogram_raw/shard_reconstitute_live:
+    post:
+      tags:
+        - Reconstituting
+      summary: Start live reconstitute of a single raw histogram shard.  This will also  automatically offline the shard until the operation is complete (e.g. /histogram_raw/shard_maintenance).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RawShardReconstituteLivePostBody'
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FourPointResponse"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LiveReconstituteError'
+  /histogram/shard_reconstitute_live:
+    post:
+      tags:
+        - Reconstituting
+      summary: Start live reconstitute of a single rollup histogram shard.  This will also  automatically offline the shard until the operation is complete (e.g. /histogram/shard_maintenance).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RollupShardReconstituteLivePostBody'
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FourPointResponse"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LiveReconstituteError'
+  /raw/text/{check_uuid}/{base_64_encoded_metric_name}:
+    parameters:
+      - $ref: '#/components/parameters/CheckUUID'
+      - $ref: '#/components/parameters/PathB64MetricName'
+      - $ref: '#/components/parameters/X-Snowth-Timeout'
+    get:
+      tags:
+        - Data Migration
+      summary: >
+        Returns all the text data on the node for the given check uuid/metric name combination. This endpoint is typically used to fetch data for data migration.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/snowth-text:
+              schema:
+                description: >
+                  A binary stream of data representing the portion of the text database requested. This binary data can be directly imported by snowth.
+                type: string
+                example: <binary>
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /nntbs/{rollup}/{check_uuid}/{base_64_encoded_metric_name}:
+    parameters:
+      - $ref: '#/components/parameters/PathRollup'
+      - $ref: '#/components/parameters/CheckUUID'
+      - $ref: '#/components/parameters/PathB64MetricName'
+      - $ref: '#/components/parameters/X-Snowth-Timeout'
+    get:
+      tags:
+        - Data Migration
+      summary: >
+        Returns all the NNTBS data on the node for the given rollup/check uuid/metric name combination. This endpoint is typically used to fetch data for data migration.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/snowth-nntbs:
+              schema:
+                description: >
+                  A binary stream of data representing the NNTBS data requested. This binary data can be directly imported by snowth.
+                type: string
+                example: <binary>
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /rename:
+    post:
+      tags:
+        - Data Migration
+      summary: Renames a metric from the old name to the new name. It will insert the data for the new name across the cluster and then delete all instances of the old name. Currently only supports numeric data.
+      parameters:
+        - $ref: '#/components/parameters/X-Snowth-Activity-Data-Mode'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - old_metric
+                - new_metric
+                - account_id
+              properties:
+                old_metric:
+                  type: object
+                  required:
+                    - canonical_metric_name
+                    - check_uuid
+                  description: The metric you are renaming
+                  properties:
+                    canonical_metric_name:
+                      type: string
+                      example: old_metric_name|ST[metric_type:old]
+                      description: The full canonical name of the metric you are renaming
+                    check_uuid:
+                      type: string
+                      format: uuid
+                      description: The check uuid of the metric you are renaming
+                new_metric:
+                  type: object
+                  required:
+                    - canonical_metric_name
+                    - check_uuid
+                  description: The new full canonical name of the metric.
+                  properties:
+                    canonical_metric_name:
+                      type: string
+                      example: old_metric_name|ST[metric_type:new]
+                      description: The new name of the metric
+                    check_uuid:
+                      type: string
+                      format: uuid
+                      description: The new check uuid of the metric
+                account_id:
+                  type: integer
+                  description: The account id of the metric.
+                  example: 1
+                topology:
+                  type: string
+                  example: 17ee28b5f0efdc8844c30b1249db90f6d5f8cb86b02135c897471d461976729d
+                  description: >
+                    Defaults to current active topology.  If a cluster has multiple topologies (for example: during a rebalance), this allows the caller to select which one to use for the rename.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: An indication of success.
+                    example: succeeded
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /nntbs_shard_maintenance:
+    post:
+      tags:
+        - Rollups/Shards
+      summary: Offline a single NNTBS shard so any fetches from it are proxied to another node.  This allows the shard to be compacted, or otherwise modified safely while IRONdb is running.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NNTBSShardMaintenancePostBody'
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FourPointResponse"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /raw/shard_maintenance:
+    post:
+      tags:
+        - Rollups/Shards
+      summary: Offline a single raw numeric shard so any fetches from it are proxied to another node.  This allows the shard to be repaired or otherwise modified safely while IRONdb is running.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RawNumericShardMaintenancePostBody'
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FourPointResponse"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /histogram_raw/shard_maintenance:
+    post:
+      tags:
+        - Rollups/Shards
+      summary: Offline a single raw histogram shard so any fetches from it are proxied to another node.  This allows the shard to be repaired or otherwise modified safely while IRONdb is running.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HistRawShardMaintenancePostBody'
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FourPointResponse"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /histogram/shard_maintenance:
+    post:
+      tags:
+        - Rollups/Shards
+      summary: Offline a single rollup histogram shard of the given period so any fetches from it are proxied to another node.  This allows the shard to be repaired or otherwise modified safely while IRONdb is running.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HistRollupShardMaintenancePostBody'
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FourPointResponse"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /histogram_raw/rollup:
+    get:
+      parameters:
+        - $ref: "#/components/parameters/StartingBlockFloor"
+      tags:
+        - Rollups/Shards
+      summary: Trigger a rollup of a histogram_raw shard.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForceRollupResponse"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /raw/rollup:
+    get:
+      parameters:
+        - $ref: "#/components/parameters/StartingBlockFloor"
+      tags:
+        - Rollups/Shards
+      summary: Trigger a rollup of a raw numeric shard.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForceRollupResponse"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /rebalance/state:
+    get:
+      tags:
+        - Rebalance
+      summary: Retrieves the current topology rebalance state.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  current:
+                    type: string
+                    format: md5
+                    description: The current topology in which this node resides.
+                  next:
+                    type: string
+                    format: md5
+                    description: The topology be rebalanced towards, or hyphen `-` meaning no next topology.
+                  state:
+                    type: string
+                    enum:
+                      - TOPO_REBALANCE_IDLE
+                      - TOPO_REBALANCE_VOTE
+                      - TOPO_REBALANCE_REHASH
+                      - TOPO_REBALANCE_REHASH_VOTE
+                      - TOPO_REBALANCE_CLEANUP
+                      - TOPO_REBALANCE_COMPLETE
+                      - TOPO_REBALANCE_COMPLETE_VOTE
+                    default: TOPO_REBALANCE_IDLE
+                    description: Current rebalance state of this node.  During a rebalance operation, each node will proceed through the above states in order, returning to `TOPO_REBALANCE_IDLE` when finished.
+  /rebalance/deactivate/{topohash}:
+    parameters:
+      - $ref: '#/components/parameters/TopoHash'
+    post:
+      tags:
+        - Rebalance
+      summary: >
+        Abort any current rebalance towards the specified topology.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: TODO
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /state:
+    get:
+      tags:
+        - Internal Observability
+      summary: Viewing the system state of the current node.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StateResponse'
+  /capa.json:
+    get:
+      tags:
+        - Internal Observability
+      summary: Viewing the system configuration of the current node.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CapaResponse'
+  /capa:
+    get:
+      tags:
+        - Internal Observability
+      summary: Viewing the system configuration of the current node in XML.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CapaResponse'
+  /stats.json:
+    get:
+      parameters:
+      - name: format
+        in: query
+        schema:
+          type: string
+          enum:
+            - tagged
+            - simple
+            - default
+          default: default
+        description: >
+          The format in which to return stats.  Invalid options will use `default`.  The `tagged` format is recommended.
+      - name: reset
+        in: query
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 0
+        description: If set to `1` this call will reset the stats.  This `should not be done` outside of debugging or it will cause downstream monitoring to get incorrect values.
+      tags:
+        - Internal Observability
+      summary: Viewing statistics of the current node.  The stats response contains a large number of items, with formats changing depending on the requested type.  
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/StatsResponse'
+                  - $ref: '#/components/schemas/StatsSimpleResponse'
+                  - $ref: '#/components/schemas/StatsTaggedResponse'
+  /gossip/json:
+    get:
+      tags:
+        - Internal Observability
+      summary: >
+        Retrieves the current gossip state for the cluster.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GossipJSONResponse"
+  /gossip/xml:
+    get:
+      tags:
+        - Internal Observability
+      summary: >
+        Retrieves the current gossip state for the cluster.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/GossipXMLResponse"
+  /eventer/jobq.json:
+    get:
+      tags:
+        - Internal Observability
+      summary: Internal job queue statistics for the eventer.
+      responses:
+        "200":
+          description: Success.
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {"default_back_queue/1": {"concurrency": 0,"desired_concurrency": 0,"min_concurrency": 0,"max_concurrency": 0,"total_jobs": 3,"backlog": 0,"inflight": 0,"timeouts": 0,"avg_wait_ms": 0,"avg_run_ms": 0}}
+  /eventer/timers.json:
+    get:
+      tags:
+        - Internal Observability
+      summary: Internal timer statistics for the eventer.
+      responses:
+        "200":
+          description: Success.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example: [{"callback": "maintenance(default_back_queue/1)","whence": 1625697274110,"eventer_pool": "default"}]
+  /eventer/sockets.json:
+    get:
+      tags:
+        - Internal Observability
+      summary: Internal socket statistics for the eventer.
+      responses:
+        "200":
+          description: Success.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example: [{"callback": "eventer_epoll_awaken","fd": 11,"impl": "POSIX","mask": 1,"eventer_pool": "default"}]
+  /eventer/memory.json:
+    get:
+      tags:
+        - Internal Observability
+      summary: Internal memory statistics for the eventer.
+      responses:
+        "200":
+          description: Success.
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {"eventer_t": {"current": 798,"total": 105339}}
+  /module/lua/state.json:
+    get:
+      tags:
+        - Internal Observability
+      summary: Internal lua state.  Mostly unused.
+      responses:
+        "200":
+          description: Success.
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {"metadata": {},"states": {}}
+  /module/lua/xcall.json:
+    get:
+      tags:
+        - Internal Observability
+      summary: Internal lua call status.  Mostly unused.
+      responses:
+        "200":
+          description: Success.
+          content:
+            application/json:
+              schema:
+                type: object
+  /module/http_observer/requests.json:
+    get:
+      tags:
+        - Internal Observability
+      summary: >
+        Returns information on http requests that have been made to the snowth host. The http_observer module must be enabled and installed; otherwise, this will not work and will return a 404.
+      responses:
+        "200":
+          description: Success.
+          content:
+            application/json:
+              schema:
+                type: array
+                description: >
+                  An array of objects that contain information on all available http requests
+                items:
+                  type: object
+                  required: [ "request_id", "request_start_ms", "received_bytes", "sent_bytes", "uri", "method", "protocol"]
+                  description: >
+                    Data on an http request. Other values not enumerated here can be present as well - data from output headers with variable names can also be present here.
+                  properties:
+                    request_id:
+                      type: integer
+                      description: >
+                        The id of the http request
+                      example: 12345
+                    request_start_ms:
+                      type: integer
+                      description: >
+                        Time in epoch milliseconds that the request started
+                      example: 1632428716000
+                    request_complete_offset_ns:
+                      type: integer
+                      description: >
+                        Time to finish reading the request, in nanoseconds
+                      example: 44000
+                    read_start_offset_ns:
+                      type: integer
+                      description: >
+                        Time after request received to start reading data, in nanoseconds
+                      example: 292000
+                    read_complete_offset_ns:
+                      type: integer
+                      description: >
+                        Time after request received to complete reading data, in nanoseconds
+                      example: 292000
+                    response_start_offset_ns:
+                      type: integer
+                      description: >
+                        Time after request reseived to start sending response, in nanoseconds
+                      example: 22481000
+                    response_complete_offset_ns:
+                      type: integer
+                      description: >
+                        Time after request reseived to complete sending response, in nanoseconds
+                      example: 22534000
+                    received_bytes:
+                      type: integer
+                      description: >
+                        Number of bytes received
+                      example: 10620
+                    sent_bytes:
+                      type: integer
+                      description: >
+                        Number of bytes sent
+                      example: 267
+                    remote_tls_common_name:
+                      type: string
+                      description: >
+                        The remote tls common name
+                      example: "snowth1.dev.circonus.net"
+                    remote_address:
+                      type: string
+                      description: >
+                        The remote ip address
+                      example: "10.8.40.26"
+                    remote_port:
+                      type: string
+                      description: >
+                        The remote port
+                      example: "23456"
+                    uri:
+                      type: string
+                      description: >
+                        The uri that was accessed
+                      example: "/example"
+                    querystring:
+                      type: string
+                      description: >
+                        The querystring provided
+                      example: "example=true&real=false"
+                    method:
+                      type: string
+                      description: >
+                        The HTTP method requested
+                      example: "GET"
+                    protocol:
+                      type: string
+                      description: >
+                        The HTTP protocol used
+                      example: "HTTP/1.1"
+                    host:
+                      type: string
+                      format: uuid
+                      description: >
+                        The UUID of the host
+                    status:
+                      type: string
+                      description: >
+                        The HTTP return code
+                      example: "200"
+        "404":
+          description: >
+            Module was not found
+  /surrogate/activity_rebuild:
+    post:
+      tags:
+        - Surrogates
+      summary: Rebuilds the activity data of a set of metrics on all available nodes in the cluster.  
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    check_uuid:
+                      type: string
+                      format: uuid
+                      description: Check UUID of the metric to rebuild activity on.
+                    metric_name: 
+                      type: string
+                      example: foo|ST[a:b]
+                      description: Canonical metric name of the metric to rebuild activity on.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FourPointResponse'  
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'  
+  /surrogate/put:
+    post:
+      deprecated: true
+      tags:
+        - Deprecated
+      summary: Manually add a surrogate entry into the system, or update activity windows for an existing one.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                $ref: '#/components/schemas/SurrogateRequestBody'
+      responses:
+        "200":
+          description: >
+            Success.
+          headers:
+            X-Snowth-Local-Surrogate-Id:
+              schema:
+                type: integer
+              description: >
+                Returned local surrogate_id.
+              example: 1
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FourPointResponse'
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /surrogate/:
+    post:
+      tags:
+        - Surrogates
+      summary: Manually add a surrogate entry into the system, or update activity windows for an existing one.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SurrogateRequestBody'
+      responses:
+        "200":
+          description: >
+            Success.
+          headers:
+            X-Snowth-Local-Surrogate-Id:
+              schema:
+                type: integer
+              description: >
+                Returned local surrogate_id.
+              example: 1
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FourPointResponse'
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /surrogate/{surrogate_id}:
+    get:
+      tags:
+        - Surrogates
+      summary: Returns a surrogate record.
+      parameters:
+      - name: "surrogate_id"
+        in: "path"
+        description: "ID of surrogate record"
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      responses:
+        "200" :
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uuid:
+                    type: string
+                    format: uuid
+                    description: Check uuid of the metric.
+                  metric_name:
+                    type: string
+                    description: Canonical metric name.
+                    example: foo|ST[a:b,c:d]
+                  type:
+                    type: string
+                    enum:
+                      - numeric
+                      - histogram
+                      - text
+                  activity:
+                    type: array
+                    description: Activity window to use for the metric.  If the metric already exists, this will be merged in.  Array of window range tuples.
+                    items:
+                      type: array
+                      minItems: 0
+                      items:
+                        type: integer
+                        minItems: 2
+                        maxItems: 2
+                    example: [[10000,100010],[200000,200020]]
+                  stream_tags:
+                    type: string
+                    description: List of stream tags on this metric.
+                    example: a:b;c:d
+                  account_id:
+                    type: integer
+                    minimum: 0
+  /surrogate/all.smap:
+    get:
+      tags:
+        - Surrogates
+      summary: Returns a surrogate database dump as a bitmap.  Used by the shard compactor.
+      responses:
+        "200":
+          description: Success.
+  /text/compact:
+    post:
+      tags:
+        - Text
+      summary: >
+        Triggers a rocksdb compaction on the text database. This will run asynchronously in the background.
+      responses:
+        "200" :
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                    example: "compact successfully set... data will compact in background"
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /topology/{topohash}:
+    parameters:
+      - $ref: '#/components/parameters/TopoHash'
+    post:
+      tags:
+        - Topology
+      summary: >
+        Load a new topology onto an IRONdb node. It will not activate the topology; it will simply store and load it.
+      requestBody:
+        required: true
+        description: Data should be added for the smallest rollup period that exists on the IRONdb node. 
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/TopoXML'
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: TODO
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /topology/json/{topohash}:
+    parameters:
+      - $ref: '#/components/parameters/TopoHash'
+    get:
+      tags:
+        - Topology
+      summary: >
+        Retrieves data for a given topology.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TopoDataResponse'
+        "404":
+          description: Requested topohash was not found.
+  /topology/xml/{topohash}:
+    parameters:
+      - $ref: '#/components/parameters/TopoHash'
+    get:
+      tags:
+        - Topology
+      summary: >
+        Retrieves data for a given topology.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TopoDataResponse'
+        "404":
+          description: Requested topohash was not found.
+  /toporing/json/{topohash}:
+    parameters:
+      - $ref: '#/components/parameters/TopoHash'
+    get:
+      tags:
+        - Topology
+      summary: >
+        Retrieves topology ring data for a given topology.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TopoRingDataResponse'
+        "404":
+          description: Requested topohash was not found.
+  /toporing/xml/{topohash}:
+    parameters:
+      - $ref: '#/components/parameters/TopoHash'
+    get:
+      tags:
+        - Topology
+      summary: >
+        Retrieves topology ring data for a given topology.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TopoRingDataResponse'
+        "404":
+          description: Requested topohash was not found.
+  /meta/{handle}:
+    parameters:
+      - $ref: '#/components/parameters/MetaHandle'
+    get:
+      parameters:
+        - $ref: '#/components/parameters/MetaRequire'
+      tags:
+        - Metadata
+      summary: >
+        Returns data about all data found in the {handle} metadata database on the node.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/setcrdt-binary:
+              schema:
+                type: object
+                description: Binary setcrdt data
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    patch:
+      tags:
+        - Metadata
+      summary: >
+        Merges setcrdt data in for the handle provided. NOTE:  This actually uses the HTTP verb `MERGE` but OpenAPI 3 doesn't allow that as an HTTP verb.
+      requestBody:
+        required: true
+        description: The data to merge in.
+        content:
+          application/setcrdt-binary:
+            schema:
+              type: object
+              description: Binary setcrdt data
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/setcrdt-binary:
+              schema:
+                type: object
+            application/json:
+              schema:
+                type: object
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /meta/{handle}/{table}:
+    parameters:
+      - $ref: '#/components/parameters/MetaHandle'
+      - $ref: '#/components/parameters/MetaTable'
+      - $ref: '#/components/parameters/MetaRequire'
+    get:
+      tags:
+        - Metadata
+      summary: >
+        Returns data about all data found in the {table} set of the {handle} metadata database on the node.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/setcrdt-binary:
+              schema:
+                type: object
+                description: Binary setcrdt data
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /meta/{handle}/{table}/{set}:
+    parameters:
+      - $ref: '#/components/parameters/MetaHandle'
+      - $ref: '#/components/parameters/MetaTable'
+      - $ref: '#/components/parameters/MetaSet'
+    get:
+      parameters:
+        - $ref: '#/components/parameters/MetaDetails'
+      tags:
+        - Metadata
+      summary: >
+        Returns data about all data found for the {set} within the {table} set of the {handle} metadata database on the node. Currently, this only works for pulling data for a specific check UUID.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetadataSetJSONResponse'
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Metadata
+      summary: >
+        Adds and removes tags from the set provided
+      requestBody:
+        required: true
+        description: An array of tags to add and remove from the set provided.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MetadataSetUpdatePostFormat'
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetadataSetUpdateJSONResponse'
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Metadata
+      summary: >
+        Removes all data from the provided set.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetadataSetDeleteResponse'
+        default:
+          description: Some sort of error occurred during the request.  The response will include information about the cause of the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /metafeed/{handle}/{table}:
+    parameters:
+      - $ref: '#/components/parameters/MetaHandle'
+      - $ref: '#/components/parameters/MetaTable'
+      - $ref: '#/components/parameters/MetaSubscriber'
+    get:
+      parameters:
+        - $ref: '#/components/parameters/MetaCheckpoint'
+      tags:
+        - Metadata
+      summary: >
+        Fetches setcrdt-binary data for the provided handle, table, and subscriber from the provided checkpoint.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/setcrdt-binary:
+              schema:
+                type: object
+                description: Binary setcrdt data
+        "404":
+          description: >
+            The provided handle or table could not be found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "409":
+          description: >
+            Failed to open JLOG or set checkpoint
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: >
+            Failed to get data to return
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Metadata
+      summary: >
+        Creates a subscriber for the provided metadata table.
+      responses:
+        "200":
+          description: >
+            Success.
+          headers:
+            X-Snowth-Feed-Checkpoint:
+              schema:
+                type: string
+              description: >
+                The checkpoint at the subscriber that was created.
+              example: "00000001:00000001"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  checkpoint:
+                    type: string
+                    description: >
+                      The checkpoint at the subscriber that was created.
+                    example: "00000001:00000001"
+        "404":
+          description: >
+            The provided handle or table could not be found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "409":
+          description: >
+            The provided subscriber already exists.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: >
+            The systewm was unable to add the subscriber.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Metadata
+      summary: >
+        Removes the provided subscriber from the metadata table provided.
+      responses:
+        "201":
+          description: >
+            Success.
+        "404":
+          description: >
+            One or more of the provided components could not be found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: >
+            There was an error removing the subscriber from the table.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /compact_indexes:
+    parameters:
+      - name: account_id
+        in: query
+        required: true
+        schema:
+          type: integer
+          example: 1
+        description: >
+          The account to compact the indexes for.
+    get:
+      tags:
+        - Indexes
+      summary: >
+        Forces index compaction for a specific account.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexResponse'
+        default:
+          description: Some sort of error occurred during the request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexResponse'
+  /invalidate_index_cache:
+    parameters:
+      - name: account_id
+        in: query
+        required: true
+        schema:
+          type: integer
+          example: 1
+        description: >
+          The account to invalidate the cache for.
+    get:
+      tags:
+        - Indexes
+      summary: >
+        Forces cache invalidation for a specific account.
+      responses:
+        "200":
+          description: >
+            Success.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexResponse'
+        default:
+          description: Some sort of error occurred during the request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexResponse'
+
+components:
+  parameters:
+    AccountId:
+      name: accountid
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+      example: 1
+      description: >
+        All data in IRONdb is partitioned under an account id.
+    PathCanonicalMetricName:
+      name: metric_name
+      in: path
+      required: true
+      schema:
+        type: string
+      example: latency|ST[host:alpha4.internal]
+      description: >
+        The full [canonical metric name](https://docs.circonus.com/irondb/metric-names-tags-queries/#canonical-metric-names). 
+    CheckUUID:
+      name: check_uuid
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+      description: >
+        All metrics in IRONdb are partitioned under check uuid.
+    FindTagsActivityData:
+      in: query
+      name: activity
+      required: false
+      schema:
+        type: integer
+        default: 1
+        minimum: 0
+        maximum: 1
+      description: >
+        Specify if the return set should include activity window data.  0 : Do not return activity window data. This is useful for reducing payload size if the data is not needed.  1 : Include activity window in the return set.
+    FindTagsLatestData:
+      in: query
+      name: latest
+      required: false
+      schema:
+        type: integer
+        default: 0
+        minimum: 0
+        maximum: 2
+      description: > 
+        Specify if the two most recent values for the metric should be returned. Parameters: 0 : Do not return latest values. 1 : Return latest values if it is a no-work operation 2 : Return latest values even if work must be performed, and turn on tracking for this metric so it will be “free” for later calls.
+    FindTagsCountOnly:
+      in: query
+      name: count_only
+      required: false
+      schema:
+        type: integer
+        default: 0
+        minimum: 0
+        maximum: 1
+      description: If set to 1, the query will only return the total count, not individual metrics.  The result value will include  an "estimate" boolean field. This field will be true if a node in the cluster was down making a complete count impossible.    
+    PathStart:
+      in: path
+      name: start
+      required: true
+      schema:
+        type: integer
+      description: The start time (lower bound) from which to pull data, represented in seconds since the unix epoch.
+    PathEnd:
+      in: path
+      name: end
+      required: true
+      schema:
+        type: integer
+      description: The end time (upper bound) from which to pull data, represented in seconds since the unix epoch.
+    PathPeriod:
+      in: path
+      name: period
+      required: true
+      schema:
+        type: integer
+      description: The period, in seconds.
+    PathRollup:
+      in: path
+      name: rollup
+      required: true
+      schema:
+        type: integer
+      description: The requested rollup, in seconds.
+    PathB64MetricName:
+      in: path
+      name: base_64_encoded_metric_name
+      required: true
+      schema:
+        type: string
+        format: base64
+        example: dGV4dF9tZXRyaWNfODU2MDBkMDMtZjJlYS00MWM3LWEwZDktM2I5MDNkYmMwYzAyXzAwMDAwMDAx
+        description: The metric name, base64 encoded.
+    StartingBlockFloor:
+      in: query
+      name: starting_block_floor
+      required: true
+      schema:
+        type: integer
+        minimum: 0
+      description: Floor epoch timestamp of the shard to be rolled up.
+    X-Circonus-Account:
+      name: X-Circonus-Account
+      in: header
+      schema:
+        type: integer
+        minimum: 0
+      example: 1
+      description: >
+        This header value specifies which account the metrics being fetched must be under.
+    X-Snowth-Account-Id:
+      name: X-Snowth-Account-Id
+      in: header
+      required: true
+      schema:
+        type: integer
+        minimum: 0
+      example: 1
+      description: >
+        This header value specifies which account the metrics being fetched must be under.
+    X-Snowth-Advisory-Limit:
+      name: X-Snowth-Advisory-Limit
+      in: header
+      schema:
+        type: integer
+        minimum: 0
+        default: 10000
+      description: >
+        This header value specifies the maximum number of results to be returned by the API call.  If set to -1, it will be interpreted as "unlimited."
+    X-Snowth-Confirm-Delete:
+      name: X-Snowth-Confirm-Delete
+      in: header
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1
+      example: 0
+      description: >
+        This header must be present, and equal to 1 for a deletion to actually occur.  Otherwise it will execute as a "dry-run."
+    X-Snowth-Delete-Rollups:
+      name: X-Snowth-Delete-Rollups
+      in: header
+      schema:
+        type: string
+      description: >
+        By default, all rollups will be deleted.  The delete can be limited to certain rollups, by specifying the rollups to be deleted, separated by commas.
+      example: 60,300
+    X-Snowth-Full-Delete:
+      name: X-Snowth-Full-Delete
+      in: header
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1
+        default: 0
+      example: 0
+      description: >
+        This setting header to 1 will perform the delete across all nodes.  By default, the delete operation is local to the receiving node.  Not to be confused with the full delete API.
+    X-Snowth-Delete-Time:
+      name: X-Snowth-Delete-Time
+      in: header
+      required: true
+      schema:
+        type: integer
+        minimum: 0
+      example: 1621899980
+      description: >
+        Epoch end timestamp for the delete operation.  All data older than this time will be deleted.  This header must be present.
+    X-Snowth-Datapoints:
+      name: X-Snowth-Datapoints
+      in: header
+      schema:
+        type: integer
+        minimum: 1
+      example: 1
+      required: false
+      description: >
+        Number of datapoints within the Flatbuffers submission.  This header should not be sent for TSV/text submission.
+    X-Snowth-Proxied:
+      name: X-Snowth-Proxied
+      in: header
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 1
+        default: 0
+      description: >
+        This header is used internally by IRONdb to tell a node that this request is a proxied request from a different node.  As such results should be limited only to the local answer and not proxied further.   This can be useful to operators for querying against a single node only by specifying it as 1.  
+    X-Snowth-Verify-Owner:
+      name: X-Snowth-Verify-Owner
+      in: header
+      schema:
+        type: boolean
+        default: false
+      description: >
+        This HTTP Header can be set to true on a request forcing validation of a node’s locality of data. This extra validation step is expensive and should not be used typically outside of debugging.  While normally defaulting to false, during a cluster rebalance the system will default this to true to ensure accurate results.
+    X-Snowth-Timeout:
+      name: X-Snowth-Timeout
+      in: header
+      required: false
+      schema:
+        type: string
+        format: "[0-9]+(s|ms)"
+      description: >
+        A timeout, provided in second or milliseconds (s or ms), for how long to allow the operation to run for before timing out with an error. In not specified, there will be no timeout.
+    X-Snowth-Activity-Data-Mode:
+      name: X-Snowth-Activity-Data-Mode
+      in: header
+      required: false
+      schema:
+        type: string
+        enum:
+          - "use_existing"
+          - "create_new"
+        default: "use_existing"
+      description: >
+        When running a rename, determines how activity data will be update.  The default behavior of `use_existing` will send over the existing activity data. `create_new` will not send activity data but instead use the metric data being sent to recalculate activity windows.
+    CAQLQuery:
+      name: query
+      in: query
+      required: true
+      schema:
+        type: string
+        format: CAQL query
+      description: > 
+        A well-formed [CAQL query](https://docs.circonus.com/caql/reference/)
+      example: find('my_counter','and(dc:east)') | stats:sum()
+    TagQuery:
+      name: query
+      in: query
+      required: true
+      schema:
+        type: string
+        format: tag query
+      description: > 
+        A Circonus [tag query](https://docs.circonus.com/irondb/metric-names-tags-queries/#tag-queries)
+      example: and(__name:my_metric_name,tagcat:tagval)
+    TagValsCategory:
+      name: category
+      in: query
+      required: true
+      schema:
+        type: string
+      description: > 
+        The category to return values for.  Only metrics filtered by the tag query will be considered for values.
+      example: host
+    ActivityStartSecs:
+      in: query
+      name: activity_start_secs
+      required: false
+      schema:
+        type: integer
+      description: The start time (lower bound) from which to pull data, represented in seconds since the unix epoch.
+    ActivityEndSecs:
+      in: query
+      name: activity_end_secs
+      required: false
+      schema:
+        type: integer
+      description: The end time (upper bound) from which to pull data, represented in seconds since the unix epoch.
+    StartTS:
+      in: query
+      name: start_ts
+      required: true
+      schema:
+        type: string
+        format: "%lu.%03lu"
+      description: >
+        The start time from which to pull data, represented in seconds.milliseconds since the unix epoch.  Milliseconds must always be specified to 3 digits.
+      example: 1529509020.000
+    EndTS:
+      in: query
+      name: end_ts
+      required: true
+      schema:
+        type: string
+        format: "%lu.%03lu"
+      description: >
+        The end time up to which data is pulled, represented in seconds.milliseconds since the unix epoch.  Milliseconds must always be specified to 3 digits.
+      example: 1529509200.000      
+    TopoHash:
+      name: topohash
+      in: path
+      required: true
+      schema:
+        type: string
+        format: md5
+      description: >
+        The hash for the topology.
+    MetaHandle:
+      name: handle
+      in: path
+      required: true
+      schema:
+        type: string
+        example: check
+      description: >
+        The metadata handle name to fetch data for. Currently, "check" is the only supported value.
+    MetaTable:
+      name: table
+      in: path
+      required: true
+      schema:
+        type: string
+        example: tag
+      description: >
+        The metadata table to fetch data for for the provided handle name. Currently, "tag" is the only supported value.
+    MetaSet:
+      name: set
+      in: path
+      required: true
+      schema:
+        type: string
+        example: "00f6e99e-56cc-44cf-8926-f2149c903141"
+      description: >
+        The metadata set to fetch data for for the associated handle and table. Currently, the only supported format is a check UUID.
+    MetaDetails:
+      name: details
+      in: query
+      required: false
+      schema:
+        type: boolean
+        enum: 
+           - true
+           - false
+        default: false
+      description: >
+        Whether or not to return additional details about the provided set.
+    MetaRequire:
+      name: require
+      in: query
+      required: false
+      schema:
+        type: string
+        example: "__account:1"
+      description: >
+        A check tag/value combination that must be found in every value returned. If this field is omitted, all values will be returned. If the field is included, only values that match the tag/value combination provided will be returned.
+    MetaSubscriber:
+      name: subscriber
+      in: query
+      required: true
+      schema:
+        type: string
+        example: "some_subscriber"
+      description: >
+        The subscriber on which to act
+    MetaCheckpoint:
+      name: checkpoint
+      in: query
+      required: true
+      schema:
+        type: string
+        example: "00000001:00000001"
+      description: >
+        The checkpoint to return data from
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: A human readable description of the error.
+          example: Cannot parse tag query
+    LiveReconstituteError:
+      type: object
+      properties:
+        records:
+          type: integer
+        updated:
+          type: integer
+        misdirected: 
+          type: integer
+        errors:
+          type: integer
+          default: 1
+    RawShardReconstituteLivePostBody:
+      type: object
+      required:
+        - block_ceiling
+        - block_floor
+      properties:
+        block_ceiling:
+          type: integer
+          description: End timestamp of the raw shard to reconstitute.
+        block_floor:
+          type: integer
+          description: Start timestamp of the raw shard to reconstitute.
+        merge:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 0
+          description: If set to 0, the existing shard to will deleted before reconstituting.  If set to 1, the new data will be "merged" on top of the existing shard data, overwriting any duplicates.  This field must be set to 1 to resume an existing reconstitute that was interrupted, or when a metric is specified.
+        backup:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 1
+          description: By default, a backup is made of the shard before initial reconstitution.  Set to 0 to avoid creating this backup.
+        force_cleanup:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 0
+          description: If a reconstitute is interrupted in the middle, the normal action would be to resume and complete the reconstitute.  Set this to 1 to force the abandonment of a previous reconstitute.
+        allow_partial:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 0
+          description: Normally, live shard reconstitute will require all nodes in the cluster to respond that they have data for this shard (or those which have data for the specified metric) before proceeding, to avoid ending up with a shard which has incomplete data.  Set this to 1 to override this and proceed with incomplete reconstitution of the shard.  When a metric is specified, allow_partial is only meaningful when w > 2.
+        merge_all_nodes:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 0
+          description: By default, a reconstitute will only take metric data from the "most-primary" available write copy. If this is set to 1, all available copies are sent/merged.  This is useful if data is no longer consistent between nodes for some reason.   For high W-values, this significantly increases cost of the operation.
+        node_blacklist:
+          type: array
+          items:
+            type: string
+            format: uuid
+            description: The UUID of a node that the reconstitute should not pull data from.  When a metric is specified, at least one node must be available to provide reconstitute data.
+        check_uuid:
+          type: string
+          format: uuid
+          example: d76e405b-4e68-4436-9c1d-82452f0e159c
+          description: If provided with metric_name, specifies the metric that should be reconstituted.  Merge must be set to 1.
+        metric_name:
+          type: string
+          example: foo|ST[a:b,c:d]
+          description: If provided with check_uuid, specifies the metric that should be reconstituted.  Merge must be set to 1.
+    RollupShardReconstituteLivePostBody:
+      type: object
+      required:
+        - block_ceiling
+        - block_floor
+        - period
+      properties:
+        block_ceiling:
+          type: integer
+          description: End timestamp of the NNTBS shard to reconstitute.  
+        block_floor:
+          type: integer
+          description: Start timestamp of the NNTBS shard to reconstitute.
+        period:
+          type: integer
+          description: Rollup granularity period of the shard to reconstitute. 
+        merge:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 0
+          description: If set to 0, the existing shard to will deleted before reconstituting.  If set to 1, the new data will be "merged" on top of the existing shard data, overwriting any duplicates.  This field must be set to 1 to resume an existing reconstitute that was interrupted, or when a metric is specified.
+        backup:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 1
+          description: By default, a backup is made of the shard before initial reconstitution.  Set to 0 to avoid creating this backup.
+        force_cleanup:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 0
+          description: If a reconstitute is interrupted in the middle, the normal action would be to resume and complete the reconstitute.  Set this to 1 to force the abandonment of a previous reconstitute.
+        allow_partial:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 0
+          description: Normally, live shard reconstitute will require all nodes in the cluster to respond that they have data for this shard (or those which have data for the specified metric) before proceeding, to avoid ending up with a shard which has incomplete data.  Set this to 1 to override this and proceed with incomplete reconstitution of the shard.  When a metric is specified, allow_partial is only meaningful when w > 2.
+        merge_all_nodes:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 0
+          description: By default, a reconstitute will only take metric data from the "most-primary" available write copy. If this is set to 1, all available copies are sent/merged.  This is useful if data is no longer consistent between nodes for some reason.   For high W-values, this significantly increases cost of the operation.
+        node_blacklist:
+          type: array
+          items:
+            type: string
+            format: uuid
+            description: The UUID of a node that the reconstitute should not pull data from.
+        check_uuid:
+          type: string
+          format: uuid
+          example: d76e405b-4e68-4436-9c1d-82452f0e159c
+          description: If provided with metric_name, specifies the metric that should be reconstituted.  Merge must be set to 1.
+        metric_name:
+          type: string
+          example: foo|ST[a:b,c:d]
+          description: If provided with check_uuid, specifies the metric that should be reconstituted.  Merge must be set to 1.
+    NNTBSShardMaintenancePostBody:
+      type: object
+      required:
+        - block_ceiling
+        - block_floor
+        - period
+        - mode
+      properties:
+        block_ceiling:
+          type: integer
+          description: End timestamp of the NNTBS shard to offline.  
+        block_floor:
+          type: integer
+          description: Start timestamp of the NNTBS shard to offline.
+        period:
+          type: integer
+          description: Rollup period of the NNTBS shard to offline. 
+          example: 60
+        mode:
+          type: string
+          enum:
+            - online
+            - offline
+    RawNumericShardMaintenancePostBody:
+      type: object
+      required:
+        - block_ceiling
+        - block_floor
+        - mode
+      properties:
+        block_ceiling:
+          type: integer
+          description: End timestamp of the raw numeric shard to offline.  
+        block_floor:
+          type: integer
+          description: Start timestamp of the raw numeric shard to offline.
+        mode:
+          type: string
+          enum:
+            - online
+            - offline
+    HistRawShardMaintenancePostBody:
+      type: object
+      required:
+        - block_ceiling
+        - block_floor
+        - mode
+      properties:
+        block_ceiling:
+          type: integer
+          description: End timestamp of the raw histogram shard to offline.  
+        block_floor:
+          type: integer
+          description: Start timestamp of the raw histogram shard to offline.
+        mode:
+          type: string
+          enum:
+            - online
+            - offline
+    HistRollupShardMaintenancePostBody:
+      type: object
+      required:
+        - block_ceiling
+        - block_floor
+        - period
+        - mode
+      properties:
+        block_ceiling:
+          type: integer
+          description: End timestamp of the rollup histogram shard to offline.  
+        block_floor:
+          type: integer
+          description: Start timestamp of the rollup histogram shard to offline.
+        period:
+          type: integer
+          description: Rollup period of the rollup histogram shard to offline. 
+          example: 60
+        mode:
+          type: string
+          enum:
+            - online
+            - offline
+    ForceRollupResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: rollup_submitted
+    FourPointResponse:
+      type: object
+      properties:
+        records:
+          type: integer
+        updated:
+          type: integer
+          default: 1
+        misdirected: 
+          type: integer
+        errors:
+          type: integer
+    CapaResponse:
+      type: object
+      xml:
+        name: mtev_capabilities
+      properties:
+        mtev_version:
+          type: string
+          description: The libmtev version IRONdb is built on.
+          example: 2.0.3.e43ca3a51da7d2e3e8076b50fa6ff9d14731623e.1622816502
+        features:
+          type: object
+          description: Object with features as keys, and information about those features, such as version.
+        current_time:
+          type: integer
+          description: Current epoch time in milliseconds.
+          example: 1624580857439
+        modules:
+          type: object
+          description: Object with modules as keys, and information about those modules.
+    StatsResponse:
+      type: object
+      description: Numerous stats about IRONdb served in the original json-object format.
+      properties:
+        license:
+          type: object
+        extension:
+          type: object
+          properties:
+            lua:
+              type: object
+              description: Exported stats from the lua extensions present on the node.
+        be:
+          type: object
+          properties:
+            raw:
+              description: Stats regarding the /raw ingestion endpoint.
+              type: object
+              properties:
+                gates:
+                  type: object
+        metrics_db_cache:
+          description: Stats regarding the graphite query cache.
+          type: object
+        metric_index_facade_c:
+          type: object
+          description: A count of all metrics in the indexes both total, and by account.
+        db:
+          type: object
+          description: Different internal database stats.
+          properties:
+            hist-raw: 
+              type: object
+              description: Counts of offline, online, and corrupt shards.
+            text:
+              type: object
+            raw:
+              type: object
+            hist:
+              type: object
+            hist_shard:
+              type: object
+            nntbs:
+              type: object
+            graphite:
+              type: object
+              description: If an external whisper database is mounted for reading, stats about reads.
+        executors:
+          type: object
+          description: Wait time, runtime, and size of the different executors
+        topology:
+          type: object
+          description: Current topohash, and if a rebalance is occurring, the next one.
+        semver:
+          type: object
+        application:
+          type: object
+        features:
+          type: object
+          description: Feature flag status.
+        rusage:
+          type: object
+        identity:
+          type: object
+        version:
+          type: object
+        replication:
+          type: object
+          description: Replication journal delay, and sent count to other nodes from this node's perspective.
+        surrogate3:
+          type: object
+          description: Stats around the surrogate db.
+    StatsSimpleResponse:
+      type: object
+      description: Numerous stats about IRONdb.  See the standard response schema for descriptions.
+      example: {"uptime": 1083.34,"identity": "97df761e-7c56-40dd-9344-ec064a4ed68d"}
+    StatsTaggedResponse:
+      type: object
+      description: Numerous stats about IRONdb served in a flat stream-tagged format where json objects names are moved into tags.  See the standard response schema for descriptions.  
+      example: {"latency|ST[app:snowth,operation:replication-read,snowth-node-id:5c32c076-ffeb-cfdd-a541-97e25c028dd6,units:seconds]": {"_type": "H","_value": ["H[0.0002]=1","H[0.00022]=1","H[0.00028]=2"],"histograms|ST[app:snowth,snowth-node-id:5c32c076-ffeb-cfdd-a541-97e25c028dd6]": {"_type": "l","_value": 0}}}
+    ShardStartEndJSONResponse:
+      type: array
+      items:
+        type: object
+        properties:
+          start:
+            type: integer
+            description: >
+              The start time of a shard, represented in epoch seconds
+            example: 1625097600
+          end:
+            type: integer
+            description: >
+              The end time of a shard, represented in epoch seconds
+            example: 1625702400
+    StateResponse:
+      type: object
+      properties:
+        identity:
+          type: string
+          format: uuid
+          description: The UUID that identifies this node.
+        current:
+          type: string
+          format: md5
+          description: The current topology hash in which this node resides.
+        next:
+          type: string
+          format: md5
+          description: The next topology hash for this node.
+        base_rollup:
+          type: integer
+          description: The smallest period that is used for rolling up numeric data.
+        rollups:
+          deprecated: true
+          type: array
+          items:
+            type: integer
+          description: An array containing a list of all data periods stored on this node.  Deprecated.  Use nntbs.rollups
+        nnt:
+          type: object 
+          deprecated: true
+          description: A container with information about NNT data storage.  Deprecated.  Use nntbs.
+        nntbs:
+          type: object 
+          description: A container with information about NNTBS data storage.
+          properties:
+            latest_rollup_timestamp:
+              type: integer
+            rollups:
+              type: array
+              items:
+                type: integer
+              description: An array containing a list of all histogram rollup periods stored on this node.
+            rollup_<period>:
+              type: object
+              description: This describes data for each particular rollup. There will be one of these entries per rollup period.
+              properties:
+                fs:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The ID for this file system.
+                    totalMB: 
+                      type: number
+                      description: Megabytes of data used for this file system.
+                    freeMB: 
+                      type: number
+                      description: Megabytes of data available for this file system.
+            aggregate:     
+              type: object
+              description: The aggregated data from all histogram calls.
+              properties:
+                put.calls:
+                  type: integer
+                  description: Count of PUT calls in period.
+                get.calls:
+                  type: integer
+                  description: Count of GET calls in period.
+        text:
+          type: object
+          description: A container with information about text data storage.
+          properties:
+            fs:
+              type: object
+              description: Information about file system storage for text data.
+              properties:
+                id:
+                  type: integer
+                  description: The ID for this file system.
+                totalMB: 
+                  type: number
+                  description: Megabytes of data used for this file system.
+                freeMB: 
+                  type: number
+                  description: Megabytes of data available for this file system.
+            get:
+              type: object
+              description: A container with information about text GET calls.
+              properties:
+                proxy_calls:
+                  type: integer
+                  description: Count of GET calls proxied.
+                err:
+                  type: integer
+                  description: Error count.
+                calls:
+                  type: integer
+                  description: Request count.
+                tuples:
+                  type: integer
+                  description: Count of tuples returned.
+                elapsed_us: 
+                  type: integer
+                  description: The number of microseconds spent getting text data.
+            put:
+              type: object
+              description: A container with information about text PUT calls.
+              properties:
+                proxy_calls:
+                  type: integer
+                  description: Count of PUT calls proxied.
+                err:
+                  type: integer
+                  description: Error count.
+                calls:
+                  type: integer
+                  description: Request count.
+                tuples:
+                  type: integer
+                  description: Count of tuples returned.
+                elapsed_us: 
+                  type: integer
+                  description: The number of microseconds spent putting text data.
+        histogram:
+          type: object
+          description: A container with information about histogram data storage.
+          properties:
+            latest_rollup_timestamp:
+              type: integer
+            rollups:
+              type: array
+              items:
+                type: integer
+              description: An array containing a list of all histogram rollup periods stored on this node.
+            rollup_<period>:
+              type: object
+              description: This describes data for each particular rollup. There will be one of these entries per rollup period.
+              properties:
+                fs:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The ID for this file system.
+                    totalMB: 
+                      type: number
+                      description: Megabytes of data used for this file system.
+                    freeMB: 
+                      type: number
+                      description: Megabytes of data available for this file system.
+                put.calls:
+                  type: integer
+                  description: Count of PUT calls in period.
+                put.elapsed_us:
+                  type: integer
+                  description: The number of microseconds spent putting data for this histogram period.
+                get.calls:
+                  type: integer
+                  description: Count of GET calls in period.
+                get.count:
+                  type: integer
+                  description: Number of metrics retrieved in period.
+                get.elapsed_us:
+                  type: integer
+                  description: The number of microseconds spent getting data for this histogram period.
+                get.proxy_calls:
+                  type: integer
+                  description: Count of GET calls proxied.
+            aggregate:     
+              type: object
+              description: The aggregated data from all histogram calls.
+              properties:
+                put.calls:
+                  type: integer
+                  description: Count of PUT calls in period.
+                put.elapsed_us:
+                  type: integer
+                  description: The number of microseconds spent putting data for this histogram period.
+                get.calls:
+                  type: integer
+                  description: Count of GET calls in period.
+                get.count:
+                  type: integer
+                  description: Number of metrics retrieved in period.                  
+                get.elapsed_us:
+                  type: integer
+                  description: The number of microseconds spent getting data for this histogram period.
+                get.proxy_calls:
+                  type: integer
+                  description: Count of GET calls proxied.
+        rusage.utime:
+          type: number
+          description: User CPU time used
+        rusage.stime: 
+          type: number
+          description: System CPU time used
+        rusage.maxrss:
+          type: integer
+          description: Maximum resident set size
+        rusage.idrss:
+          type: integer
+          description: Integral shared memory size
+        rusage.minflt:
+          type: integer
+          description: Page reclaims (soft page faults)
+        rusage.majflt:
+          type: integer
+          description: Page faults (hard page faults)
+        rusage.nswap:
+          type: integer
+          description: Swaps
+        rusage.inblock:
+          type: integer
+          description: Block input operations
+        rusage.oublock:
+          type: integer
+          description: Block output operations
+        rusage.msgsnd:
+          type: integer
+          description: IPC messages sent
+        rusage.msgrcv:
+          type: integer
+          description: IPC messages received
+        rusage.nsignals:
+          type: integer
+          description: Signals received
+        rusage.nvcsw:
+          type: integer
+          description: Voluntary context switches
+        rusage.nivcsw:
+          type: integer
+          description: Involuntary context switches
+        max_peer_lag:
+          type: integer
+          description: The maximum amount, in seconds, by which the data on this node is behind any of the other IRONdb nodes.
+        avg_peer_lag:
+          type: integer
+          description: The average amount, in seconds, by which the data on this node is behind any of the other IRONdb nodes.
+        features:
+          type: object
+          description: A map of feature keys that are enabled on this node.
+          example: {"raw:store": "1","nnt:store": "1","histogram:store": "1","nnt:second_order": "1","hist_shard:store": "1","tags:check": "1","histogram:dynamic_rollups": "1","text:store": "1","features": "1"}
+        version:
+          type: string
+          description: The version of the IRONdb software running on this node.
+        application:
+          type: string
+          description: The name of this application.
+    TopoXML:
+      type: array
+      xml: 
+        name: nodes
+        wrapped: true
+      items:
+        type: object
+        xml:
+          name: node
+        properties:
+          id:
+            type: string
+            format: uuid
+            xml:
+              attribute: true
+    TopoDataResponse:
+      type: array
+      xml:
+        name: nodes
+        wrapped: true
+      items:
+        type: object
+        xml:
+          name: node
+        properties:
+          id:
+            type: string
+            format: uuid
+            description: The UUID of the node
+            xml:
+              attribute: true
+          address:
+            type: string
+            format: ipaddress
+            description: The IP address of the node
+            example: "192.168.1.100"
+            xml:
+              attribute: true
+          port:
+            type: integer
+            description: The port the node is listening on.
+            default: 8112
+            xml:
+              attribute: true
+          apiport:
+            type: integer
+            description: The port the API is listening on.
+            default: 8112
+            xml:
+              attribute: true
+          weight:
+            type: integer
+            description: A value representing how heavily the data to be stored on this node is weighted.
+            example: 32
+            xml:
+              attribute: true
+          n:
+            type: integer
+            description: >
+              The number of nodes on this ring on which data is stored.  Note:  In the XML format, this value is an attribute on the <nodes> level.
+            example: 2
+            xml:
+              attribute: true
+          side:
+            type: string
+            description: What side of a sided cluster the metric lives.
+            example: "both"
+            xml:
+              attribute: true    
+    TopoRingDataResponse:
+      type: array
+      xml:
+        name: vnodes
+        wrapped: true
+      description: In the XML representation, `<vnodes>` will have an `n` attribute, which is the number of nodes on which the data will be stored.
+      items:
+        type: object
+        xml:
+          name: vnode
+        properties:
+          id:
+            type: string
+            format: uuid
+            description: The UUID of the node.
+            xml:
+              attribute: true
+          idx:
+            type: integer
+            description: The index of an entry in the toporing. This is a number between 1 and n, where “n” is the weight of the node.
+            xml:
+              attribute: true
+          location:
+            type: number
+            description: The given location of the node.
+            example: 0.338229
+            xml:
+              attribute: true
+    MetadataSetJSONResponse:
+      oneOf:
+        - type: object
+          properties:
+            "{set}":
+              type: array
+              description: The {set} value provided. It won't be the literal string "SET".
+              items:
+                type: string
+                description: "The values that are found in the provided {set}. Provided if the {details} query parameter is set to false or not provided."
+                example: "__account:1"
+                minItems: 0
+        - type: object
+          properties:
+            "{set}":
+              type: array
+              description: The {set} value provided. It won't be the literal string "SET".
+              items:
+                type: object
+                description: "A more detailed set of data about the values in the {set}. Provided if the {details} query parameter is set to true"
+                properties:
+                  value:
+                    type: string
+                    description: "The values that are found in the provided {set}"
+                    example: "__account:1"
+                  seq:
+                    type: integer
+                    description: "The sequence number of the value in the surrogate database"
+                    example: 12345
+                  tombstone:
+                    type: boolean
+                    description: "Whether or not the provided value contains a tombstone"
+                    example: false
+                minItems: 0
+    MetadataSetUpdateJSONResponse:
+      type: object
+      properties:
+        "added":
+          type: integer
+          description: >
+            Count of tags successfully added to the set
+          example: 5
+        "removed":
+          type: integer
+          description: >
+            Count of tags successfully removed from the set
+          example: 10
+    MetadataSetUpdatePostFormat:
+      type: object
+      properties:
+        add:
+          type: array
+          description: >
+            Tags to insert into the set
+          minItems: 0
+          items:
+            type: string
+            description: >
+              Tags to add to the set
+            example: "sometag:somevalue"
+        "remove":
+          type: array
+          description: >
+            Tags to remove from the set
+          minItems: 0
+          items:
+            type: string
+            description: >
+              Tags to remove from the set
+            example: "someothertag:someothervalue"
+    MetadataSetDeleteResponse:
+      type: object
+      properties:
+        "removed":
+          type: integer
+          description: >
+            Number of entries removed from the set
+          example: 10
+    SurrogateRequestBody:
+      type: object
+      properties:
+        uuid:
+          type: string
+          format: uuid
+          description: Check uuid of the metric.
+        metric_name:
+          type: string
+          description: Canonical metric name.
+          example: foo|ST[a:b,c:d]
+        account_id:
+          type: integer
+          minimum: 0
+        type:
+          type: string
+          enum:
+            - numeric
+            - histogram
+            - text
+        egress_function:
+          type: string
+          example: average
+        activity:
+          type: array
+          description: Activity window to use for the metric.  If the metric already exists, this will be merged in.  Array of window range tuples.
+          items:
+            type: array
+            minItems: 0
+            items:
+              type: integer
+              minItems: 2
+              maxItems: 2
+          example: [[10000,100010],[200000,200020]]
+        include_local_surrogate_id:
+          type: integer
+          minimum: 0
+          maximum: 1
+          default: 0
+          description:  >
+            Surrogate ids are local to a node and cannot be used anywhere else in the cluster.  They are not returned
+            by default in order to help reduce the opportunity for mis-use.  For debug purposes this flag will allow
+            the id to be returned in the header.
+    GossipId:
+      type: string
+      format: uuid
+      xml:
+        attribute: true
+      description: >
+        The node that this data refers to.
+    GossipTime:
+      type: string
+      format: epoch
+      example: 1600000000.123456
+      xml:
+        attribute: true
+      description: >
+        The last time a gossip message was received for this node, in seconds.
+    GossipAge:
+      type: string
+      example: 0.12345
+      xml:
+        attribute: true
+      description: >
+        How long ago the last gossip message was received, in seconds.
+    GossipTopoCurrent:
+      type: string
+      format: <topo hash>
+      xml:
+        attribute: true
+      example: c479d3a8b1e04539f6a95f43e60e62986601735f63ed1a08316846d7ea3b2e35
+      description: >
+        The hash of the current topology.
+    GossipTopoNext:
+      type: string
+      format: <topo hash>
+      example: "-"
+      xml:
+        attribute: true
+      description: >
+        The hash of the next topology.  This will be `-` if there is no current topology migration.
+    GossipTopoState:
+      type: string
+      format: <topo hash>
+      example: unknown
+      xml:
+        attribute: true
+      description: >
+        The state of the topology.
+    GossipJSONResponse:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            $ref: '#/components/schemas/GossipId'
+          gossip_time:
+            $ref: '#/components/schemas/GossipTime'
+          gossip_age:
+            $ref: '#/components/schemas/GossipAge'
+          topo_current:
+            $ref: '#/components/schemas/GossipTopoCurrent'
+          topo_next:
+            $ref: '#/components/schemas/GossipTopoNext'
+          topo_state:
+            $ref: '#/components/schemas/GossipTopoState'
+          latency:
+            type: object
+            properties:
+              <node_uuid>:
+                type: string
+                example: 2
+                description: >
+                  The latency between the node specified earlier and the node specified, in seconds. There will be an entry for each node_uuid in the cluster.
+    GossipInnerNodeXML:
+      type: object
+      xml:
+        name: node
+      properties:
+        id:
+          type: string
+          format: uuid
+          xml:
+            attribute: true
+          description: >
+            The node to compare to the previously specified node.
+        diff:
+          type: number
+          xml:
+            attribute: true
+          description: >
+            The latency between the node specified earlier and the node specified here, in seconds.
+    GossipOuterNodeXML:
+      type: object
+      xml:
+        name: node
+      properties:
+        id:
+          $ref: '#/components/schemas/GossipId'
+        gossip_time:
+          $ref: '#/components/schemas/GossipTime'
+        gossip_age:
+          $ref: '#/components/schemas/GossipAge'
+        topo_current:
+          $ref: '#/components/schemas/GossipTopoCurrent'
+        topo_next:
+          $ref: '#/components/schemas/GossipTopoNext'
+        topo_state:
+          $ref: '#/components/schemas/GossipTopoState'
+        latency:
+          type: object
+          xml:
+            name: latency
+          properties:
+            node:
+              type: array
+              minItems: 1
+              items:
+                $ref: '#/components/schemas/GossipInnerNodeXML'
+    GossipXMLResponse:
+      type: object
+      xml:
+        name: nodes
+      properties:
+        node:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/GossipOuterNodeXML'
+    IndexResponse:
+      type: object
+      properties:
+        account:
+          type: integer
+          example: 1
+        status:
+          type: string
+          enum:
+            - success
+            - failure
+
+tags:
+  - name: Admin UI
+  - name: Rebalance
+  - name: Reconstituting 
+  - name: Data Migration
+  - name: Rollups/Shards
+  - name: Topology
+  - name: Internal Observability
+  - name: Indexes
+  - name: Surrogates
+  - name: Text
+  - name: Metadata
+  - name: Deprecated
+    description: >
+      Supported, but discouraged endpoints.
