@@ -4,11 +4,11 @@ Apica's plugins include creating one or more Splunk Output configurations that c
 
 ## Architecture
 
-<figure><img src="../../../../.gitbook/assets/Frame 1 1 (1).svg" alt=""><figcaption><p>Splunk S2S Forwarding architecture</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Frame 1 1 (1).svg" alt=""><figcaption><p>Splunk S2F Forwarding architecture</p></figcaption></figure>
 
 ### Required components <a href="#required-components" id="required-components"></a>
 
-Follow the steps below to create an S2S forwarder to a Splunk indexer:
+Follow the steps below to create an S2F forwarder to a Splunk indexer:
 
 1. Create a `Splunk Forwarding Proxy` `Source Extension`.
 2. Create a `forwarder` to use the Splunk Forwarding Proxy `source extension` created in step 1 above:
