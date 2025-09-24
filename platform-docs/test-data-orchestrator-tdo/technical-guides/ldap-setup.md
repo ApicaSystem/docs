@@ -4,7 +4,7 @@
 
 ### LDAP Configuration
 
-TDO supports SAML and SSO authentication when the LDAP option for user authentication is used.
+TDO supports SAML and SSO authentication when the LDAP option for user authentication is used.  Kurberos is also supported.  In the instructions below, 'LDAP' is used as the generic term for all of these methods.
 
 &#x20;
 
@@ -30,7 +30,7 @@ You will need to work with your organization’s Active Directory team to set th
 
 ### LDAP Setup
 
-LDAP is set up from the LDAP Configuration option under the ‘User Maintenance + LDAP’ menu section.&#x20;
+LDAP is set up from the LDAP Configuration option under the ‘User Maintenance + LDAP’ menu section.   The screen shot below shows LDAP; Kurberos will be slightly different.
 
 &#x20;
 

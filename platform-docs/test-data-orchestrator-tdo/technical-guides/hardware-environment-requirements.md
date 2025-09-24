@@ -82,7 +82,12 @@ Interactions
 
 #### JDK Java
 
-Both the IBM and Oracle version of Java are compatible with TDO. Java 1.8.x JDK must be installed on the server (not JRE). Both JAVA\_HOME and PATH must be set correctly.
+TDO is compatible with  IBM, Oracle and Amazon Corretto Java.Java JDK must be installed on the server (not JRE). Both JAVA\_HOME and PATH must be set correctly.
+
+Versions supported are:
+
+* IBM/Oracle:  1.8 and 17
+* Corretto:  11
 
 #### &#x20;MongoDB
 
@@ -128,6 +133,6 @@ It is recommended that you use Chrome to run TDO.  If your organization does not
 
 If you are installing TDO using the built-in authentication, you will need to create a self-signed certificate using the tool distributed with JDK.
 
-If you are installing TDO using LDAP/SAML single sign-on, your organization will need to provide a certificate.
+If you are installing TDO using LDAP/SAML/Kurberos single sign-on, your organization will need to provide a certificate.
 
 &#x20;The certificate must be stored in tdo/api/keystore.jks  (ie, in the api subdirectory under the tdo directory/subdirectory on the server).
