@@ -299,6 +299,7 @@
       * [Standalone Instance](flow/forwarding-to-monitoring-tools/splunk-forwarding/apica-uf-proxy-app-extension/standalone-instance.md)
       * [List of Indexer Instances](flow/forwarding-to-monitoring-tools/splunk-forwarding/apica-uf-proxy-app-extension/list-of-indexer-instances.md)
       * [Indexer Cluster (Discovery)](flow/forwarding-to-monitoring-tools/splunk-forwarding/apica-uf-proxy-app-extension/indexer-discovery.md)
+      * [Upload Confs](flow/forwarding-to-monitoring-tools/splunk-forwarding/apica-uf-proxy-app-extension/upload-confs.md)
     * [Splunk HTTP Event Collector (HEC) Forwarder](flow/forwarding-to-monitoring-tools/splunk-forwarding/splunk-http-event-collector-hec-forwarder/README.md)
       * [Metric Indexes](flow/forwarding-to-monitoring-tools/splunk-forwarding/splunk-http-event-collector-hec-forwarder/metric-indexes.md)
       * [Non Metric Indexes](flow/forwarding-to-monitoring-tools/splunk-forwarding/splunk-http-event-collector-hec-forwarder/non-metric-indexes.md)
