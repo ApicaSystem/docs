@@ -1,6 +1,6 @@
 # Pull Mechanism via Push-Gateway
 
-You can use the [LOGIQ-IO Connector](https://github.com/logiqai/logiq-io) provided by Apica Ascent via GitHub to push Apache Beam metrics to Push-Gateway.
+You can use the [Connector](https://github.com/ApicaSystem/hauler-apache-beam-io-connector) provided by Apica Ascent via GitHub to push Apache Beam metrics to Push-Gateway.
 
 ## Setting up Push-Gateway via Docker (recommended)
 
@@ -35,7 +35,7 @@ Great, now you will have Prometheus scraping the metrics from the given PushGate
 
 Now that you have configured the push-gateway and Prometheus, it's time that we start configuring the Apache Beam Pipeline to export the metrics to the Push-Gateway instance.
 
-For this, we will refer to the tests written in the LOGIQ-IO Connector here.
+For this, we will refer to the tests written in the [Connector](https://github.com/ApicaSystem/hauler-apache-beam-io-connector) here.
 
 ```
 package logiqio
