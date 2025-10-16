@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Deploying Apica Ascent PaaS in Azure Kubernetes Service
 
 The following guide takes you through deploying Apica Ascent PaaS in an Azure Kubernetes Service cluster. The deployment involves the following steps:

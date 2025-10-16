@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Deploying Apica Ascent EKS on AWS using CloudFormation
 
 ## 1. Overview

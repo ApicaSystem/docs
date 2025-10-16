@@ -2,6 +2,7 @@
 description: >-
   This document provides a comprehensive guide on setting up, configuring, and
   managing Ascent in OpenSh
+hidden: true
 ---
 
 # Deploying Apica Ascent with OpenShift
