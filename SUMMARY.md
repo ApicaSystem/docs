@@ -123,7 +123,7 @@
   * [AWS](integrations/list-of-integrations/aws/README.md)
     * [AWS CloudWatch](integrations/list-of-integrations/aws/aws-cloudwatch-exporter.md)
     * [AWS ECS](integrations/list-of-integrations/aws/aws-ecs/README.md)
-      * [Forwarding AWS ECS Logs to Apica Ascent using AWS FireLens](integrations/list-of-integrations/aws/aws-ecs/forwarding-aws-ecs-logs-to-logiq-using-aws-firelens.md)
+      * [Forwarding AWS ECS Logs to Apica Ascent using AWS FireLens](integrations/list-of-integrations/aws/aws-ecs/forwarding-aws-ecs-logs-to-ascent-using-aws-firelens.md)
       * [ECS prometheus metrics to Apica Ascent](integrations/list-of-integrations/aws/aws-ecs/ecs-prometheus-metrics-to-logiq.md)
     * [AWS S3](integrations/list-of-integrations/aws/aws-s3.md)
   * [Azure](integrations/list-of-integrations/azure/README.md)
