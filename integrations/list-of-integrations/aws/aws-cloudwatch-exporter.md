@@ -142,7 +142,7 @@ filter {
 
 output {
  http {
-       url => "http://<logiq-endpoint>/v1/json_batch"
+       url => "http://<ascent-endpoint>/v1/json_batch"
        headers => { "Authorization" => "Bearer <SECURE_INGEST_TOKEN>" }
        http_method => "post"
        format => "json_batch"
