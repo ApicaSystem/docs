@@ -1,6 +1,6 @@
 # Apica Ascent-OSSEC Agent for Windows
 
-We have [discussed earlier](https://docs.logiq.ai/integrations/ossec-variants-ossec-wazuh-atomic) how to make a ossec`-hids` App Extension.
+We have [discussed earlier](./) how to make a ossec`-hids` App Extension.
 
 After creating a App Extension you can copy the **LoadBalancer-IP** and **authtoken** from the `Explore > App Extension` page.\\
 
