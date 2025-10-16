@@ -30,7 +30,7 @@ docker-compose based deployment should not be used for production envornments.
 You can spin-up Apica Ascent using `docker-compose`. Install guide for `docker-compose` can be found here - [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
 
 {% hint style="info" %}
-_**NOTE:** the docker-compose quick-start YAML files are intended for demo and trial use only. If you want to run a production deployment, Apica Ascent uses Kubernetes with HELM to deploy the stack. Please contact us at : sales@logiq.ai_
+_**NOTE:** the docker-compose quick-start YAML files are intended for demo and trial use only. If you want to run a production deployment, Apica Ascent uses Kubernetes with HELM to deploy the stack. Please contact us at : sales@apica.io_
 {% endhint %}
 
 ## Running Apica Ascent
