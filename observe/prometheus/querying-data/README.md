@@ -5,7 +5,7 @@ The Apica Ascent infra and application monitoring stack is compatible with Prome
 <figure><img src="../../../.gitbook/assets/image (563).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Head over to the [Time Series Insights](../../../logiq-events/time-series-ai-ml/) section to learn how to apply various anomaly and forecasting capabilities.
+Head over to the [Time Series Insights](../../../autonomous-insights/time-series-ai-ml/) section to learn how to apply various anomaly and forecasting capabilities.
 {% endhint %}
 
 ### Query language
