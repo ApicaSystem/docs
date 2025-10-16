@@ -1,11 +1,11 @@
 logiq-flash:
-  replicaCount: 1
+  replicaCount: 2
   replicaCountMl: 1
   replicaCountSync: 1
   service:
     type: NodePort
   image:
-    tag: 2.2.20.rc1
+    tag: v3.17.1
     pullPolicy: IfNotPresent
   persistence:
     enabled: true
@@ -31,11 +31,12 @@ logiq-flash:
     sync:
       requests:
         cpu: "100m"
+  secrets_name: "my-ascent-ingest"
 
 flash-discovery:
   fullnameOverride: flash-discovery
   image:
-    tag: 2.0.1
+    tag: 2.0.3
     pullPolicy: IfNotPresent
   replicaCountDiscovery: 2
   persistence:
@@ -105,12 +106,12 @@ redis:
     name: redis
 
 postgres:
-  enabled: false
+  enabled: true
   fullnameOverride: postgres
-  postgresqlPostgresPassword: postgres
+  postgresqlPostgresPassword: "{{YOUR_POSTGRES_PASSWORD}}"
   postgresqlUsername: postgres
   postgresqlDatabase: postgres
-  postgresqlPassword: postgres
+  postgresqlPassword: "{{YOUR_POSTGRES_PASSWORD}}"
   postgresqlExtendedConf:
     maxConnections: "400"
     sharedBuffers: "1024MB"
@@ -140,7 +141,7 @@ flash-coffee:
   coffee:
     replicaCount: 1
     image:
-      tag: brew.2.1.56
+      tag: brew.v3.18.2
       pullPolicy: IfNotPresent
     resources:
       requests:
@@ -151,7 +152,7 @@ flash-coffee:
   coffee_worker:
     replicaCount: 1
     image:
-      tag: brew.2.1.56
+      tag: brew.v3.18.2
       pullPolicy: IfNotPresent
     resources:
       requests:
@@ -170,8 +171,8 @@ s3gateway:
   defaultBucket:
     enabled: true
   fullnameOverride: s3-gateway
-  accessKey: logiq_access
-  secretKey: logiq_secret
+  accessKey: "not-needed"
+  secretKey: "not-needed"
   metrics:
     serviceMonitor:
       enabled: false
@@ -194,18 +195,18 @@ s3gateway:
 ingress:
   enabled: true
   name: logiq-ingress
-  tlsEnabled: false
-  tlsSecretName: null
+  tlsEnabled: true
+  tlsSecretName: "my-ascent-ingress"
 
 kubernetes-ingress:
   controller:
-    replicaCount: 1
+    replicaCount: 3
     ingressClass: logiq-ingress
     service:
       type: LoadBalancer
     defaultTLSSecret:
-      enabled: false
-      secret: null
+      enabled: true
+      secret: "my-ascent-ingress"
   defaultBackend:
     replicaCount: 2
   podSecurityPolicy:
@@ -229,6 +230,11 @@ prometheus:
     persistence:
       enabled: true
       size: 20Gi
+    thanos:
+      create: true
+      objectStorageConfig:
+        secretName: thanos-objectstorage-config
+        secretKey: thanos.yaml
   operator:
     replicaCount: 1
   kube-state-metrics:
@@ -246,14 +252,15 @@ logiqctl:
     pullPolicy: IfNotPresent
 
 global:
-  domain: null
+  domain: "your.domain.com"
   kubeDistributor:
-         enabled: false
+    enabled: false
   cloudProvider: aws
+  createStorageClass: false
   enableMetricsServer: false
   sharedSecretName: logiq-shared-secret
   nodeSelectors:
-    enabled: false 
+    enabled: false
     ingest: flash
     infra: infra
     other: coffee
@@ -283,27 +290,29 @@ global:
     postgres_host: "postgres"
     postgres_port: "5432"
     postgres_user: "postgres"
-    postgres_password: "postgres"
+    postgres_password: "{{YOUR_POSTGRES_PASSWORD}}"
     postgres_db: "postgres"
     postgres_coffee_db: "coffee"
-    s3_url: "http://s3-gateway:9000"
-    s3_access: "logiq_access"
-    s3_secret: "logiq_secret"
-    s3_bucket: "logiq"
-    s3_region: "us-east-1"
-    admin_name: "flash-admin@foo.com"
-    admin_password: "flash-password"
-    admin_org: "flash-org"
-    admin_email: "flash-admin@foo.com"
+    s3_url: "{{YOUR_S3_URL}}"
+    s3_access: "{{YOUR_S3_ACCESS_KEY}}"
+    s3_secret: "{{YOUR_S3_ACCESS_SECRET}}"
+    s3_bucket: "{{YOUR_S3_BUCKET}}"
+    s3_region: "{{YOUR_S3_REGION}}"
+    AWS_ACCESS_KEY_ID: "{{YOUR_S3_ACCESS_KEY}}"
+    AWS_SECRET_ACCESS_KEY: "{{YOUR_S3_ACCESS_SECRET}}"
+    admin_name: "{{ADMIN_ACCOUNT_NAME}}"
+    admin_password: "{{ADMIN_PASSWORD}}"
+    admin_org: "{{ADMIN_ORGANIZATION}}"
+    admin_email: "{{ADMIN_EMAIL}}"
     license: "license/license.jws"
-    upload_dashboard: true
+    upload_dashboard: false
     cluster_id: LOGIQ
-    awsServiceEndpoint: https://s3.us-east-1.amazonaws.com
+    awsServiceEndpoint: "{{YOUR_S3_URL}}"
   persistence:
-    storageClass: standard
+    storageClass: openebs-hostpath
   chart:
     prometheus: true
     postgres: true
     redis: true
-    s3gateway: true
+    s3gateway: false
     grafana: false
