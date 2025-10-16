@@ -186,9 +186,9 @@ The goal is to detect anomalies and automate response actions.
 
 **Links to related docs include:**
 
-* [Alerts overview](https://docs.apica.io/logiq-events/alerts)
-* [Alerting on queries](https://docs.apica.io/logiq-events/alerts-simple-anomaly)
-* [Alerting on logs](https://docs.apica.io/logiq-events/alerts-1)
+* [Alerts overview](../../autonomous-insights/alerts.md)
+* [Alerting on queries](../../autonomous-insights/alerts-simple-anomaly.md)
+* [Alerting on logs](../../autonomous-insights/alerts-1.md)
 
 ## Additional Resources
 
