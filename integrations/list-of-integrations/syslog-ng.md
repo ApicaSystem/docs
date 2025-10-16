@@ -129,7 +129,7 @@ A ascen&#x74;_.conf_ is required that provides details of the Ascent instance an
 
 {% code title="ascent.conf" overflow="wrap" lineNumbers="true" %}
 ```systemd
-[ascent]
+[logiq]
 # Host or IP for Ascent
 host = my-ascent.example.com
 # Protocol https
