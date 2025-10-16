@@ -31,7 +31,7 @@
   * [Data Fabric](product-overview/release-notes/release-notes.md)
   * [Synthetic Monitoring](product-overview/release-notes/synthetic-monitoring.md)
   * [Advanced Scripting Engine](product-overview/release-notes/advanced-scripting-engine.md)
-  * [IRONdb](product-overview/release-notes/irondb.md)
+  * [IRONdb](platform-docs/irondb/release-notes.md)
 
 ## TECHNOLOGIES
 
