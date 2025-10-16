@@ -45,4 +45,4 @@ When you forward your logs to BigQuery, the fields in the log will be mapped to 
 
 <figure><img src="../../.gitbook/assets/image (511).png" alt=""><figcaption><p>Columns in bigquery table</p></figcaption></figure>
 
-To change the default mapping behavior, [create a forward rule](https://docs.logiq.ai/data-management/forward) for the namespace and application by renaming the facet with the column name. This will help you to manage the mappings between your log and the BigQuery table schema.
+To change the default mapping behavior, [create a forward rule](../rules/forward/) for the namespace and application by renaming the facet with the column name. This will help you to manage the mappings between your log and the BigQuery table schema.
