@@ -1,0 +1,83 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: k0s-onprem
+  user: admin
+spec:
+  hosts:
+  - ssh:
+      address: host1
+      user: myuser
+    role: controller
+  - ssh:
+      address: host2
+      user: myuser
+    role: controller
+  - ssh:
+      address: host3
+      user: myuser
+    role: controller
+  - ssh:
+      address: host4
+      user: myuser
+    role: worker
+  - ssh:
+      address: host5
+      user: myuser
+    role: worker
+  - ssh:
+      address: host6
+      user: myuser
+    role: worker
+  options:
+    wait:
+      enabled: true
+    drain:
+      enabled: true
+      gracePeriod: 2m0s
+      timeout: 5m0s
+      force: true
+      ignoreDaemonSets: true
+      deleteEmptyDirData: true
+      podSelector: ""
+      skipWaitForDeleteTimeout: 0s
+    concurrency:
+      limit: 30
+      workerDisruptionPercent: 10
+      uploads: 5
+    evictTaint:
+      enabled: false
+      taint: k0sctl.k0sproject.io/evict=true
+      effect: NoExecute
+      controllerWorkers: false
+  k0s:
+    config:
+      spec:
+        api:
+          externalAddress: internal-ip # the IP address facing the controllers
+          sans:
+          - internal-ip
+          - public-or-external-ip # optional, for admin access to K8s API
+        network:
+          provider: calico
+        extensions:
+          helm:
+            repositories:
+            - name: openebs-internal
+              url: https://openebs.github.io/charts
+            - name: metallb
+              url: https://metallb.github.io/metallb
+            charts:
+            - name: openebs
+              chartname: openebs-internal/openebs
+              version: "3.9.0"
+              namespace: openebs
+              order: 1
+              values: |
+                localprovisioner:
+                  hostpathClass:
+                    enabled: true
+                    isDefaultClass: true
+            - name: metallb
+              chartname: metallb/metallb
+              namespace: metallb
