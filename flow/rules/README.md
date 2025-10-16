@@ -6,13 +6,13 @@ It is easy to write custom rules in the system to accomplish a variety of data t
 
 Here are some of the Data Management Rules that Apica Ascent supports:
 
-* [Filter Rules](https://docs.logiq.ai/data-management/filter)
-* [Extract Rules](https://docs.logiq.ai/data-management/extract)
-* [SIEM Rules](https://docs.logiq.ai/data-management/siem-and-tag)
-* [TAG Rules](https://docs.logiq.ai/data-management/siem-and-tag)
-* [Rewrite Rules](https://docs.logiq.ai/data-management/rewrite)
-* [Code Rules](https://docs.apica.io/data-management/code)
-* [Forward Rules](https://docs.logiq.ai/data-management/forward)
+* [Filter Rules](filter.md)
+* [Extract Rules](extract.md)
+* [SIEM Rules](siem-and-tag.md)
+* [TAG Rules](siem-and-tag.md)
+* [Rewrite Rules](rewrite.md)
+* [Code Rules](code.md)
+* [Forward Rules](forward/)
 
 To view the rules within a specific Rule Pack, simply click on the corresponding Rule Pack.&#x20;
 
