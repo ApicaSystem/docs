@@ -806,7 +806,7 @@
 * [E-Mail Configuration](admin/email-configuration-setup.md)
 * [Single Sign-On with SAML](admin/single-sign-on-configuration.md)
 * [Port Management](admin/port-management.md)
-* [Audit Trail](admin/audit-trail/README.md)
+* [Audit Trail / Journals](admin/audit-trail/README.md)
   * [Events Trail](admin/audit-trail/events-trail.md)
   * [Alerts Trail](admin/audit-trail/alerts-trail.md)
 * [Access Management](admin/access-management/README.md)
