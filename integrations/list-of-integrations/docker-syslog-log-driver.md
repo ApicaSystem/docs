@@ -21,11 +21,11 @@ Following fields are required options to be passed to the logdriver
 
 ### Using TCP and non TLS port
 
-Sending data from docker to Apica Ascent using TCP and non TLS port can be done as below. In the example below, we are going to run a mysql container and have all logs go to Apica Ascent server hosted at `logiqserver-devtest.example.com`
+Sending data from docker to Apica Ascent using TCP and non TLS port can be done as below. In the example below, we are going to run a mysql container and have all logs go to Apica Ascent server hosted at `ascentserver-devtest.example.com`
 
 ```
 docker run --log-driver syslog \
---log-opt syslog-address=tcp://logiqserver-devtest.example.com:514 \
+--log-opt syslog-address=tcp://ascentserver-devtest.example.com:514 \
 --log-opt syslog-format=rfc3164 --log-opt tag=mysql --name mysql3 -d mysql
 ```
 
@@ -35,7 +35,7 @@ When using to connect to Apica Ascent TLS port in a secured setup, pass the clie
 
 ```
 docker run --log-driver syslog \
---log-opt syslog-address=tcp://logiqserver-devtest.example.com:514 \
+--log-opt syslog-address=tcp://ascentserver-devtest.example.com:514 \
 --log-opt syslog-tls-cert=client.pem --log-opt syslog-tls-key=key.pem \
 --log-opt syslog-tls-ca-cert=ca.pem --log-opt syslog-format=rfc3164 \
 --log-opt tag=mysql --name mysql3 -d mysql
