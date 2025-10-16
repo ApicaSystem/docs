@@ -25,7 +25,7 @@ This is the plugin for IRONdb 0.17.1 and newer. It is evolving and we continue t
 
 ### URL
 
-* Standalone: If this datasource will access a standalone IRONdb cluster, then this is the URL where IRONdb can be accessed. Example: `http://nodename:8112`, or if [TLS](https://github.com/logiqai/docs/blob/master/irondb/getting-started/configuration/README.md#tls-configuration) is in use, `https://nodename:8443`.
+* Standalone: If this datasource will access a standalone IRONdb cluster, then this is the URL where IRONdb can be accessed. Example: `http://nodename:8112`, or if [TLS](../getting-started/configuration.md#tls-configuration) is in use, `https://nodename:8443`.
 * Hosted: If this datasource will access data through Circonus, then the URL
 * should be set as: `https://api.circonus.com`
 
