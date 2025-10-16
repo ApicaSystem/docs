@@ -117,7 +117,7 @@
   * [Apache Beam](integrations/list-of-integrations/apache-beam/README.md)
     * [Export Metrics to Prometheus](integrations/list-of-integrations/apache-beam/export-metrics-to-prometheus/README.md)
       * [Pull Mechanism via Push-Gateway](integrations/list-of-integrations/apache-beam/export-metrics-to-prometheus/pull-mechanism-via-push-gateway.md)
-    * [Export Events to Apica Ascent](integrations/list-of-integrations/apache-beam/export-events-to-logiq.md)
+    * [Export Events to Apica Ascent](integrations/list-of-integrations/apache-beam/export-events-to-ascent.md)
   * [Apica ASM](integrations/list-of-integrations/apica-asm.md)
   * [Apica Ascent Observability Data Collector Agent](integrations/list-of-integrations/logiq.ai-observability-data-collector-agent.md)
   * [AWS](integrations/list-of-integrations/aws/README.md)
