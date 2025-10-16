@@ -123,15 +123,15 @@ Run syslog-ng with the above dummy config, and you should see the version of pyt
 [GCC 7.5.0]
 ```
 
-#### Creating a logiq.conf for the driver
+#### Creating a ascent.conf for the driver
 
-A _logiq.conf_ is required that provides details of the LOGIA.AI instance and how to connect to it. Please note down the path where you save the config as we will need it to configure the destination in syslog-ng.conf. We recommend you store it in _/etc/syslog-ng/logiq.conf_ along with rest of the syslog-ng configruation files.
+A ascen&#x74;_.conf_ is required that provides details of the Ascent instance and how to connect to it. Please note down the path where you save the config as we will need it to configure the destination in syslog-ng.conf. We recommend you store it in _/etc/syslog-ng/_&#x61;scen&#x74;_.conf_ along with rest of the syslog-ng configruation files.
 
-{% code title="logiq.conf" overflow="wrap" lineNumbers="true" %}
+{% code title="ascent.conf" overflow="wrap" lineNumbers="true" %}
 ```systemd
-[logiq]
-# Host or IP for LOGIQ.AI
-host = my-logiq-cluster.example.com
+[ascent]
+# Host or IP for Ascent
+host = my-ascent.example.com
 # Protocol https
 protocol = https
 # API Ingest token
@@ -148,7 +148,7 @@ You are now ready to update your syslog-ng conf to add a Apica Ascent python des
 {% code title="syslog-ng.conf" overflow="wrap" lineNumbers="true" %}
 ```
 
-destination d_logiq {
+destination d_ascent {
     python(
         batch-timeout(500)
         batch-lines(400)
@@ -157,15 +157,15 @@ destination d_logiq {
           key(ISODATE)
           scope(rfc5424 nv-pairs)
         )
-        options(config "/etc/syslog-ng/logiq.conf")
+        options(config "/etc/syslog-ng/ascent.conf")
         options(workers-batch 8)
         options(worker-batch-lines 25)
         options(loglevel WARN)
     );
 };
 
-# Connect the source to the logiq destination
-log { source(s_local); destination(d_logiq); };
+# Connect the source to the ascent destination
+log { source(s_local); destination(d_ascent); };
 ```
 {% endcode %}
 
