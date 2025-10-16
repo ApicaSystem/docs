@@ -306,7 +306,7 @@ Here are helpful links to other "Getting Started" technical guides:
 
 * [Getting Started with Metrics](getting-started-with-metrics.md)
 * [Getting Started with Logs](getting-started-with-logs/)
-* [Get acquainted with the Apica Ascent UI](../../product-overview/the-logiq-ui.md)
+* [Get acquainted with the Apica Ascent UI](../../product-overview/the-ascent-ui.md)
 * [Configure your data sources](../../integrations/overview/)
 * [Configure Apica Ascent to send alerts to your email server](../../admin/email-configuration-setup.md)
 * [Add and configure alert destinations like email, Slack, and PagerDuty](../../integrations/list-of-integrations/alert-destinations/)
