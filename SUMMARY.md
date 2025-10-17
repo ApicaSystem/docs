@@ -119,7 +119,6 @@
       * [Pull Mechanism via Push-Gateway](integrations/list-of-integrations/apache-beam/export-metrics-to-prometheus/pull-mechanism-via-push-gateway.md)
     * [Export Events to Apica Ascent](integrations/list-of-integrations/apache-beam/export-events-to-ascent.md)
   * [Apica ASM](integrations/list-of-integrations/apica-asm.md)
-  * [Apica Ascent Observability Data Collector Agent](integrations/list-of-integrations/logiq.ai-observability-data-collector-agent.md)
   * [AWS](integrations/list-of-integrations/aws/README.md)
     * [AWS CloudWatch](integrations/list-of-integrations/aws/aws-cloudwatch-exporter.md)
     * [AWS ECS](integrations/list-of-integrations/aws/aws-ecs/README.md)
@@ -798,7 +797,7 @@
     * [IRONdb Relay](platform-docs/irondb/tools/irondb-relay.md)
     * [IRONdb Relay Release Notes](platform-docs/irondb/tools/irondb-relay-release-notes.md)
   * [Metric Names and Tags](platform-docs/irondb/metric-names-and-tags.md)
-  * [Release Notes](platform-docs/irondb/release-notes.md)
+  *
   * [Archived Release Notes](platform-docs/irondb/archived-release-notes.md)
 
 ## Administration <a href="#admin" id="admin"></a>
