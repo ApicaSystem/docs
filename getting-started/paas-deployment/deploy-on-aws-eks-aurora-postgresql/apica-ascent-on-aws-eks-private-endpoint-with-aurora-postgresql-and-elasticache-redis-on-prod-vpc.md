@@ -2,6 +2,7 @@
 description: >-
   Deploying Apica Ascent on AWS EKS (Private End poi with Aurora PostgreSQL and
   ElastiCache Redis on production VPC using Cloudformation
+hidden: true
 ---
 
 # Apica Ascent on AWS EKS (Private Endpoint) with Aurora PostgreSQL and ElastiCache Redis on prod VPC

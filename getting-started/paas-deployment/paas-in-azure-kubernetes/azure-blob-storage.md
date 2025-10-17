@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Azure Blob Storage Lifecycle Management
 
 Azure Blob Storage lifecycle management lets you move your data to the best access tier and expire data at the end of its lifecycle with a set of rule-based policies. When using Azure Blob Storage with the Apica Ascent platform, you can leverage Azure Blob Storage lifecycle management policies to build and employ rules that manage the lifecycle and cost of the data ingested by your Apica Ascent instance and stored on Azure Blobs.

@@ -1,5 +1,6 @@
 ---
 description: This creates its own VPC,Subnets and NAT gateways.
+hidden: true
 ---
 
 # Deploying Apica Ascent on AWS EKS with Aurora PostgreSQL and ElastiCache Redis using CloudFormation
