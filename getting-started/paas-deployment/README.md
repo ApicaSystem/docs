@@ -132,15 +132,15 @@ To give you a head start with configuring your Apica Ascent deployment, we've pr
 {% tab title="values.small.yaml" %}
 
 
-{% file src="../../.gitbook/assets/values.small (37).yaml" %}
+{% file src="../../.gitbook/assets/values.small.yaml" %}
 {% endtab %}
 
 {% tab title="values.medium.yaml" %}
-{% file src="../../.gitbook/assets/values.medium (36).yaml" %}
+{% file src="../../.gitbook/assets/values.medium.yaml" %}
 {% endtab %}
 
 {% tab title="values.large.yaml" %}
-{% file src="../../.gitbook/assets/values.large (33).yaml" %}
+{% file src="../../.gitbook/assets/values.large.yaml" %}
 {% endtab %}
 {% endtabs %}
 
