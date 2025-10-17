@@ -21,6 +21,3 @@ description: Azure Eventhub is the Azure managed service for real-time stream pr
 <figure><img src="../../.gitbook/assets/image (524).png" alt=""><figcaption><p>creating azure eventhub</p></figcaption></figure>
 
 After ingesting logs with attributes which are mapped to eventhub forwarder, those log messages will be forwarded to eventhub.
-
-[\
-](https://logflow-docs.logiq.ai/real-time-stream-forwarding/aws-kinesis)

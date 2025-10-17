@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Deploying Apica Ascent PaaS on MicroK8s
 
 [**MicroK8s**](https://microk8s.io) is a lightweight, pure-upstream Kubernetes aiming to reduce entry barriers for K8s and cloud-native application development. It comes in a single package that installs a single-node (standalone) K8s cluster in under 60 seconds. The lightweight nature of Apica Ascent PaaS enables you to deploy Apica Ascent on lightweight, single-node clusters like MicroK8s. The following guide takes you through deploying Apica Ascent PaaS on MicroK8s.

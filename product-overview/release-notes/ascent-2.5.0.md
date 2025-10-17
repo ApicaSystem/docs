@@ -34,11 +34,11 @@
    * Added native support for OTEL trace using the OTLP HTTP exporter.
 3. [**STREAMS Rule Type**](https://docs.apica.io/flow/rules/stream)
    * Introduced a new rule type for STREAMS.
-4. [**Moving Average**](https://docs.apica.io/logiq-events/time-series-ai-ml/averaging) **Improved**
+4. [**Moving Average**](../../data-management/overview-1/time-series-ai-ml/averaging.md) **Improved**
    * Enhanced moving average calculation using SMV (Simple Moving Average) and CMV (Cumulative Moving Average).
-5. [**Pattern-Log Compare**](https://docs.apica.io/logiq-events/autonomous-log-interactive-visual-explorer-alive/pattern-compare)**.**
+5. [**Pattern-Log Compare**](../../autonomous-insights/autonomous-log-interactive-visual-explorer-alive/pattern-compare.md)**.**
    * Feature to compare the logs and patterns side by side to different time ranges.
-6. Improved [**ALIVE summary** **graph** **highlighting**](https://docs.apica.io/logiq-events/autonomous-log-interactive-visual-explorer-alive/alive-pattern-signature-summary#highlighting-data-in-pattern-bar-graphs) depending on table content to provide better data visualisation.
+6. Improved [**ALIVE summary** **graph** **highlighting**](../../autonomous-insights/autonomous-log-interactive-visual-explorer-alive/alive-pattern-signature-summary.md) depending on table content to provide better data visualisation.
 7. **Data Explorer: Tabs Scrolling and Improvement**
    * Added scrolling functionality and various improvements to the Data Explorer tabs for better navigation.
 8. **GPT-4o-mini and Limited Model Support**

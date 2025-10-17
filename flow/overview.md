@@ -4,8 +4,6 @@ description: Ingest, Store, Data Transformation and Connect data on-demand
 
 # Flow Overview
 
-[FLOW Documentation](https://logflow-docs.logiq.ai/)
-
 <figure><img src="../.gitbook/assets/image (154).png" alt=""><figcaption><p>Regulating data flows is very similar to regulating water flows!</p></figcaption></figure>
 
 ## <mark style="color:red;">Data loss</mark> in data pipelines

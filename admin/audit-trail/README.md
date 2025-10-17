@@ -1,5 +1,3 @@
-# Audit Trail
+# Audit Trail / Journals
 
-Audit logging is automatically enabled in Logiq. You can go to the events page and look for `logiq-audit` group to find the available logiq events.
-
-![](<../../.gitbook/assets/Screenshot from 2022-06-30 14-40-40.png>)
+Audit logging is automatically enabled in Ascent and is known as `Journals`.  This is available from the main navigation bar for Administrators.   By default, recent Journal Events are shown, and can be searched through the retention history for all auditable events.

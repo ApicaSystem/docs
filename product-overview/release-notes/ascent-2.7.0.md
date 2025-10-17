@@ -66,7 +66,7 @@
    * **Dark Mode Icons & Design Adjustments:** Optimized icon sets and UI components for a more consistent experience in dark mode.
    * **New Toggle & Theme Options:** Added a toggle for switching between Dark and Light modes in the navbar, giving users more control over their viewing experience.
 4. **Integration & API Updates:**
-   * [**Gitbook AI Powered Search**](https://docs.apica.io/logiq-events/ai-powered-search)**:** Users can now ask questions directly in the search bar using Gitbook AI and receive answers instantly, enhancing accessibility to documentation and support. :brain:
+   * [**Gitbook AI Powered Search**](../../autonomous-insights/ai-powered-search.md)**:** Users can now ask questions directly in the search bar using Gitbook AI and receive answers instantly, enhancing accessibility to documentation and support. :brain:
    * **Grafana Integration:** Implemented a converter to transform Grafana JSON into Data Explorer JSON format, simplifying the migration of dashboards.&#x20;
 5. **User Onboarding:**
    * **Improved Onboarding Experience:** A dedicated onboarding screen for new users has been added to streamline the setup process and introduce key features.

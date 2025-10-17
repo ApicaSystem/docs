@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Deploying Apica Ascent EKS with AWS ALB
 
 ### Prerequisites

@@ -14,6 +14,6 @@ Apica Ascent provides integrations to let you integrate Apica Ascent with Apache
 [export-metrics-to-prometheus](export-metrics-to-prometheus/)
 {% endcontent-ref %}
 
-{% content-ref url="export-events-to-logiq.md" %}
-[export-events-to-logiq.md](export-events-to-logiq.md)
+{% content-ref url="export-events-to-ascent.md" %}
+[export-events-to-ascent.md](export-events-to-ascent.md)
 {% endcontent-ref %}

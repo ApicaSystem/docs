@@ -2,6 +2,7 @@
 description: >-
   This page describes the Apica Ascent deployment on Kubernetes cluster using
   HELM 3 charts.
+hidden: true
 ---
 
 # Deploying Apica Ascent PaaS on Kubernetes

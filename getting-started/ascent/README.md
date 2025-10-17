@@ -4,7 +4,7 @@ icon: cloud
 
 # Getting Started with Ascent
 
-The Ascent platform enables you to converge all of your IT data from disparate sources, manage your telemetry data, and monitor and troubleshoot your operational data in real-time. The following guide assumes that you have signed up for Apica Ascent in the cloud. **If you are not yet a registered user, please** [**follow this link and the defined steps**](https://app.gitbook.com/o/-LmzGjHypGkPBzYc0fF0/s/-LmzGprckLqwd5v6bs6m/~/changes/1642/getting-started/ascent/register-and-gain-access). Once registered, use this guide to get started.
+The Ascent platform enables you to converge all of your IT data from disparate sources, manage your telemetry data, and monitor and troubleshoot your operational data in real-time. The following guide assumes that you have signed up for Apica Ascent in the cloud. **If you are not yet a registered user, please** [**follow this link and the defined steps**](register-and-gain-access.md). Once registered, use this guide to get started.
 
 <figure><img src="../../.gitbook/assets/image (927).png" alt=""><figcaption><p>Ascent Quick Start Process</p></figcaption></figure>
 
@@ -28,7 +28,7 @@ For a quick video on step 1 for data ingestion, click on the link below:
 
 The goal is to ingest telemetry data (logs, metrics, traces) from relevant systems.
 
-**Key actions include:**&#x20;
+**Key actions include:**
 
 * Identify all sources
 * Choose agents appropriate for each data type
@@ -101,8 +101,6 @@ Once the script completes, you'll see the agent in the Fleet screen as 'Active':
 You can then confirm that data is flowing into the system (Go to 'Explore -> Logs & Insights):
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-23 at 4.49.42 PM.png" alt=""><figcaption><p>Log Data Flow</p></figcaption></figure>
-
-
 
 **Additional Links to helpful docs include:**
 
@@ -186,9 +184,9 @@ The goal is to detect anomalies and automate response actions.
 
 **Links to related docs include:**
 
-* [Alerts overview](https://docs.apica.io/logiq-events/alerts)
-* [Alerting on queries](https://docs.apica.io/logiq-events/alerts-simple-anomaly)
-* [Alerting on logs](https://docs.apica.io/logiq-events/alerts-1)
+* [Alerts overview](../../autonomous-insights/alerts.md)
+* [Alerting on queries](../../autonomous-insights/alerts-simple-anomaly.md)
+* [Alerting on logs](../../autonomous-insights/alerts-1.md)
 
 ## Additional Resources
 
@@ -196,7 +194,7 @@ Here are helpful links to other "Getting Started" technical guides:
 
 * [Getting Started with Metrics](getting-started-with-metrics.md)
 * [Getting Started with Logs](getting-started-with-logs/)
-* [Get acquainted with the Apica Ascent UI](../../product-overview/the-logiq-ui.md)
+* [Get acquainted with the Apica Ascent UI](../../product-overview/the-ascent-ui.md)
 * [Configure your data sources](../../integrations/overview/)
 * [Configure Apica Ascent to send alerts to your email server](../../admin/email-configuration-setup.md)
 * [Add and configure alert destinations like email, Slack, and PagerDuty](../../integrations/list-of-integrations/alert-destinations/)

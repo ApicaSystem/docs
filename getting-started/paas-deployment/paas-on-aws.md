@@ -2,6 +2,7 @@
 description: >-
   This page describes the AWS CloudFormation based deployment for the Apica
   Ascent stack
+hidden: true
 ---
 
 # Deploying Apica Ascent PaaS on AWS
