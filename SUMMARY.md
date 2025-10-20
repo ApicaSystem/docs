@@ -797,7 +797,6 @@
     * [IRONdb Relay](platform-docs/irondb/tools/irondb-relay.md)
     * [IRONdb Relay Release Notes](platform-docs/irondb/tools/irondb-relay-release-notes.md)
   * [Metric Names and Tags](platform-docs/irondb/metric-names-and-tags.md)
-  *
   * [Archived Release Notes](platform-docs/irondb/archived-release-notes.md)
 
 ## Administration <a href="#admin" id="admin"></a>

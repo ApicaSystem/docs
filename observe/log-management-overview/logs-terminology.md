@@ -12,7 +12,7 @@ Logs are organized by cluster\_id, namespaces, applications, and their processes
 
 CLUSTER\_ID is an optional label that can be applied to incoming data streams. E.g. it is a good practice to apply CLUSTER\_ID to a K8S cluster. All namespaces from the K8S cluster will get prefixed with CLUSTER\_ID so the user can distinguish between namespace name collisions across different clusters.
 
-For Kubernetes clusters, CLUSTER\_ID is an attribute added to the JSON payload by the sending agent for e.g. Fluentd or Fluent-bit. [See here for on how to manage multiple clusters](../../integrations/list-of-integrations/fluent-bit/#managing-multiple-k8s-clusters-in-a-single-logiq-instance).
+For Kubernetes clusters, CLUSTER\_ID is an attribute added to the JSON payload by the sending agent for e.g. Fluentd or Fluent-bit. [See here for on how to manage multiple clusters](../../integrations/list-of-integrations/fluent-bit/).
 
 ### Namespace
 
