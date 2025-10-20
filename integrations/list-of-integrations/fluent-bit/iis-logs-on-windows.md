@@ -16,13 +16,13 @@ Also, make sure to edit the _parsers.conf_ path to the folder where you installe
     Parser            iis
     Path              C:\\inetpub\logs\\LogFiles\\W3SVC1\\u_ex*.log
     Path_Key          On
-    Tag               logiq
+    Tag               ascent
     Buffer_Max_Size   1024k
     Read_from_Head    On
 
 [FILTER]
     Name          record_modifier
-    Match         logiq
+    Match         ascent
     Record cluster_id iiscluster
     Record namespace iisnamespace
     Record app_name  iisappname
@@ -69,7 +69,7 @@ Fluent-bit service can gather data sources from multiple locations such as log f
     Parser            iis
     Path              C:\\inetpub\logs\\LogFiles\\W3SVC1\\u_ex1311.log
     Path_Key          On
-    Tag               logiq1
+    Tag               ascent1
     Buffer_Max_Size   1024k
     Read_from_Head    On
 
@@ -78,13 +78,13 @@ Fluent-bit service can gather data sources from multiple locations such as log f
     Parser            iis
     Path              C:\\inetpub\logs\\LogFiles\\W3SVC1\\u_ex1312.log
     Path_Key          On
-    Tag               logiq2
+    Tag               ascent2
     Buffer_Max_Size   1024k
     Read_from_Head    On
 
 [FILTER]
     Name          record_modifier
-    Match         logiq1
+    Match         ascent1
     Record cluster_id iiscluster1
     Record namespace iisnamespace1
     Record app_name  iisappname1
@@ -92,7 +92,7 @@ Fluent-bit service can gather data sources from multiple locations such as log f
 
 [FILTER]
     Name          record_modifier
-    Match         logiq2
+    Match         ascent2
     Record cluster_id iiscluster2
     Record namespace iisnamespace2
     Record app_name  iisappname2
