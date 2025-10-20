@@ -14,7 +14,7 @@
 
 ### Making a JSON Schema&#x20;
 
-* A JSON schema serves as a structured template for creating monitoring dashboards. Please Refer to this for Example: [Json Schema Template](https://raw.githubusercontent.com/logiqai/logiq-installation/main/schemas/boomi-linux.json) &#x20;
+* A JSON schema serves as a structured template for creating monitoring dashboards. Please Refer to this for Example: [Json Schema Template](https://raw.githubusercontent.com/ApicaSystem/apica-installation/main/schemas/boomi-linux.json) &#x20;
 * Here are its components:&#x20;
   * Tabs: Organize widgets into tabs for easy navigation and categorization of metrics and queries.&#x20;
   * Header: Includes options for date-time range selection and dropdown menus for selecting specific atoms (monitored systems or nodes), allowing global control over all widget time ranges (Relative and Absolute).&#x20;

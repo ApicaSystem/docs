@@ -69,7 +69,7 @@ The below code block defines the minimal changes to be added to the fluent-bit c
 
 You can use Fluent Bit to ship Windows logs to Apica Ascent by leveraging the following Fluent Bit configuration.
 
-The instruction to install fluent-bit for windows is available at the following git repository - [<mark style="color:blue;">https://github.com/logiqai/logiq-installation/tree/main/fluent-bit/windows</mark>](https://github.com/logiqai/logiq-installation/tree/main/fluent-bit/windows)
+The instruction to install fluent-bit for windows is available at the following git repository - [<mark style="color:blue;">https://github.com/ApicaSystem/apica-installation/tree/main/fluent-bit/windows</mark>](https://github.com/ApicaSystem/apica-installation/tree/main/fluent-bit/windows)
 
 The folder in the git repository includes a PowerShell script to set up the windows fluent-bit agent. The PowerShell script downloads the fluent-bit agent and installs the agent as a service. Continue below to see how to set up an example fluent conf and start service on windows.
 
@@ -144,7 +144,7 @@ To forward Windows logs to Apica Ascent using Fluent Bit, do the following.
 You'll now see a Fluent Bit service running on your Windows machine.
 
 OR\
-You can also run the `.\status.ps1` helper scripts present at [https://github.com/logiqai/logiq-installation/tree/main/fluent-bit/windows/helper-scripts](https://github.com/logiqai/logiq-installation/tree/main/fluent-bit/windows/helper-scripts)
+You can also run the `.\status.ps1` helper scripts present at [https://github.com/ApicaSystem/apica-installation/tree/main/fluent-bit/windows/helper-scripts](https://github.com/ApicaSystem/apica-installation/tree/main/fluent-bit/windows/helper-scripts)
 
 We have scripts to:
 

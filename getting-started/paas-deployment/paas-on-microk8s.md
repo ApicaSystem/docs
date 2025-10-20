@@ -332,7 +332,7 @@ scp -i /path/to/private_key.pem /path/to/local/file username@remote_host:/path/t
 
 Make sure you have the necessary permissions to copy a file to the specified folder on the Linux machine.
 
-> Optionally, if you are provisioning public IP using Metallb, use the [values.yaml](https://raw.githubusercontent.com/logiqai/logiq-installation/refs/heads/main/values/values.yaml) instead. run the following command.
+> Optionally, if you are provisioning public IP using Metallb, use the [values.yaml](https://raw.githubusercontent.com/ApicaSystem/apica-installation/refs/heads/main/values/values.yaml) instead. run the following command.
 >
 > {% code overflow="wrap" %}
 > ```

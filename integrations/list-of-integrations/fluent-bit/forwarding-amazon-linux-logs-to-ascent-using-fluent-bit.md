@@ -4,7 +4,7 @@ This guide takes you through how you can set up log forwarding from Linux system
 
 Before you proceed with this setup, be sure to download the `install.sh` and `td-agent-bit.sh` scripts located here:
 
-{% embed url="https://github.com/logiqai/logiq-installation/tree/main/fluent-bit/linux/amazon-linux" %}
+{% embed url="https://github.com/ApicaSystem/apica-installation/tree/main/fluent-bit/linux/amazon-linux" %}
 
 The `install.sh` script carries out the following functions:
 

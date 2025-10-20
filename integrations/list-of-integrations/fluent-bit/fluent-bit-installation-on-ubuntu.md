@@ -2,7 +2,7 @@
 
 In order to forward Ubuntu logs to Apica Ascent by leveraging Fluent Bit, do the following.
 
-1. Download the `td-agent-bit.sh` script from this [folder](https://github.com/logiqai/logiq-installation/tree/main/fluent-bit/linux/ubuntu).
+1. Download the `td-agent-bit.sh` script from this [folder](https://github.com/ApicaSystem/apica-installation/tree/main/fluent-bit/linux/ubuntu).
 2. Make the script executable by running the following command.
 
 ```
