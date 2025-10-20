@@ -22,7 +22,7 @@ The below code block defines the minimal changes to be added to the fluent-bit c
     Name              tail
     Path              /var/log/*.log
     Path_Key          filename
-    Tag               logiq
+    Tag               ascent
     Buffer_Max_Size   1024k
     Read_from_Head    On
     Mem_Buf_Limit     1MB
@@ -31,17 +31,17 @@ The below code block defines the minimal changes to be added to the fluent-bit c
 
 [FILTER]
     Name               record_modifier
-    Match              logiq
+    Match              ascent
     Record cluster_id  flash
 
 [FILTER]
     Name             record_modifier
-    Match            logiq
+    Match            ascent
     Record namespace  xyz
 
 [FILTER]
     Name            record_modifier
-    Match           logiq
+    Match           ascent
     Record app_name system_logs
 
 [FILTER}
@@ -54,7 +54,7 @@ The below code block defines the minimal changes to be added to the fluent-bit c
 [OUTPUT]
     Name          http
     Match         *
-    Host          lq5955.logiq.ai
+    Host          <ASCENT_HOST>
     Port          80
     URI           /v1/json_batch
     Format        json
@@ -62,7 +62,7 @@ The below code block defines the minimal changes to be added to the fluent-bit c
     tls.verify    off
     net.keepalive off
     compress      gzip
-    Header Authorization Bearer ${LOGIQ_TOKEN}
+    Header Authorization Bearer <ASCENT_TOKEN>
 ```
 
 ## Fluent Bit for Windows
@@ -107,7 +107,7 @@ NOTE: You will need to finalize the fluent configuration and then restart the se
 [OUTPUT]
     name                   http
     match                  *
-    host                   Logiq-Hostname
+    host                   <ASCENT_HOSTNAME>
     port                   443
     URI                    /v1/json_batch
     Format                 json
@@ -115,7 +115,7 @@ NOTE: You will need to finalize the fluent configuration and then restart the se
     tls.verify             off
     net.keepalive          off
     compress               gzip
-    Header Authorization Bearer <token>
+    Header Authorization Bearer <ASCENT_TOKEN>
 ```
 
 To forward Windows logs to Apica Ascent using Fluent Bit, do the following.
