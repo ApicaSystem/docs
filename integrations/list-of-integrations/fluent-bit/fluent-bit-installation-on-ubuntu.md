@@ -16,7 +16,7 @@ chmod +x td-agent-bit-aws.sh
 1. Set the cluster details
 
 ```
-export LOGIQ="example.logiq.ai"
+export ASCENT_HOST="example.apica.i"
 export MY_TOKEN=<Your Token>
 ```
 
@@ -88,7 +88,7 @@ The script execution carries out the following:
         tls.verify    off
         net.keepalive off
         compress      gzip
-        Header Authorization Bearer ${LOGIQ_TOKEN}
+        Header Authorization Bearer ${ASCENT_TOKEN}
      
 
      For HTTPS endpoint
@@ -96,7 +96,7 @@ The script execution carries out the following:
        [OUTPUT]
         name     http
         match    *
-        host     <logiq endpoint>
+        host     <ascent endpoint>
         port     443 
         URI      /v1/json_batch
         Format   json

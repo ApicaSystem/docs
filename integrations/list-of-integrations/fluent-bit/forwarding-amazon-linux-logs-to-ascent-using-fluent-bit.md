@@ -28,7 +28,7 @@ chmod +x td-agent-bit.sh
 1. Set the cluster details
 
 ```
-export LOGIQ="example.logiq.ai"
+export ASCENT_HOST="example.apica.io"
 export MY_TOKEN=<Your Token>
 ```
 
@@ -65,7 +65,7 @@ The script executes and carries out the following:
              )
     ```
 
-The script also places the `td-agent-bit.conf` file under the default Fluent Bit installation folder `/etc/td-agent-bit`. The script will configure `[OUTPUT]` section of the `td-agent-bit.conf` file based on your LOGIQ cluster, as shown below.
+The script also places the `td-agent-bit.conf` file under the default Fluent Bit installation folder `/etc/td-agent-bit`. The script will configure `[OUTPUT]` section of the `td-agent-bit.conf` file based on your Ascent cluster, as shown below.
 
 ```
 [OUTPUT]
@@ -79,7 +79,7 @@ The script also places the `td-agent-bit.conf` file under the default Fluent Bit
     tls.verify    off
     net.keepalive off
     compress      gzip
-    Header Authorization Bearer ${LOGIQ_TOKEN}
+    Header Authorization Bearer ${ASCENT_TOKEN}
 ```
 
 ### Installing Node Exporter
@@ -95,7 +95,7 @@ To install Node Exporter, do the following.
 3.  Set the cluster details as shown below.
 
     ```
-    export LOGIQ="example.logiq.ai"
+    export ASCENT_HOST="example.apica.io"
     export MY_TOKEN=<Your Token>
     ```
 4.  Execute the script by running any of the following commands.
@@ -144,7 +144,7 @@ chmod +x td-agent-bit.sh
 1. Set the cluster details
 
 ```
-export LOGIQ="example.logiq.ai"
+export ASCENT_HOST="example.apica.io"
 export MY_TOKEN=<Your Token>
 ```
 
@@ -196,7 +196,7 @@ The script also places the `td-agent-bit.conf` file under the default Fluent Bit
     tls.verify    off
     net.keepalive off
     compress      gzip
-    Header Authorization Bearer ${LOGIQ_TOKEN}
+    Header Authorization Bearer ${ASCENT_TOKEN}
 ```
 
 You should now see your Amazon-Linux logs being ingested into the `Linux:Linux1` namespace on your Apica Ascent UI.
