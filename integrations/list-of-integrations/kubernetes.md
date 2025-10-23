@@ -81,7 +81,7 @@ Be sure to also configure the following:
 * name: CLUSTER\_ID value: "YOUR\_CLUSTER\_ID"
 * name: ASCENT\_TOKEN value: "YOUR\_INGEST\_TOKEN"
 
-Fluent Bit DaemonSet is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deamonset `fluent-bit-daemonset-apica-output.yml`. If you do not have your ingest token, You can generate them using [`apicactl`](https://docs.logiq.ai/logiq-server/agentless/generating-secure-ingest-token)
+Fluent Bit DaemonSet is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deamonset `fluent-bit-daemonset-apica-output.yml`.  If you do not have your ingest token, you can generate them using [`apicactl`](../overview/generating-a-secure-ingest-token.md) .
 
 *   name: ASCENT\_HOST
 
