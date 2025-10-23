@@ -144,7 +144,7 @@ services:
                     counter=$$(($$counter + 1))
                 done'
         environment:
-            Namespace: logiq-namespace
+            Namespace: ascent-namespace
             AppName: log-generator
         logging:
             driver: fluentd
