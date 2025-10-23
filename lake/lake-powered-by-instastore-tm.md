@@ -22,8 +22,6 @@ Apica's approach to solving this fundamental problem was to make any object stor
 
 InstaStore was the culmination of over 2 years of research and development done on Zoom and Google Meet sessions due to COVID-19.
 
-<figure><img src="https://logflow-docs.logiq.ai/~gitbook/image?url=https%3A%2F%2F3717450363-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F8WGNQCWSTnL2NgouIRTq%252Fuploads%252F9O4y1mOyYbKqPYP6Z4W4%252Finstastore-replay.png%3Falt%3Dmedia%26token%3D2642f13e-a2d6-4b7f-bbcf-0f475ff580ff&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=32af2edc&#x26;sv=1" alt=""><figcaption></figcaption></figure>
-
 <figure><img src="../.gitbook/assets/image (529).png" alt=""><figcaption></figcaption></figure>
 
 ## Benefits of Instastore
