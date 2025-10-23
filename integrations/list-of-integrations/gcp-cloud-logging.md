@@ -136,7 +136,7 @@ input
 {
    google_pubsub {
        project_id => "gcp-customer-1"
-       topic => "logiq-topic"
+       topic => "ascent-topic"
        subscription => "logstash-sub"
        include_metadata => true
        codec => "json"
@@ -155,7 +155,7 @@ filter {
 }
 output {
  http {
-       url => "http://<apica-ascent-endpoint>.logiq.ai/v1/json_batch"
+       url => "http://<apica-ascent-endpoint>.apica.io/v1/json_batch"
        headers => { "Authorization" => "Bearer <SECURE_INGEST_TOKEN>" }
        http_method => "post"
        format => "json_batch"
@@ -177,7 +177,7 @@ input
 {
    google_pubsub {
        project_id => "gcp-customer-1"
-       topic => "logiq-topic"
+       topic => "ascent-topic"
        subscription => "logstash-sub"
        include_metadata => true
        codec => "json"
@@ -242,7 +242,7 @@ filter {
 }
 output {
  http {
-       url => "http://<logiq-endpoint>.logiq.ai/v1/json_batch"
+       url => "http://<ascent-endpoint>.apica.io/v1/json_batch"
        headers => { "Authorization" => "Bearer <SECURE_INGEST_TOKEN>" }
        http_method => "post"
        format => "json_batch"
