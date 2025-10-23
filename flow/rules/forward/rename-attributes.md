@@ -61,4 +61,4 @@ To edit the renamed labels you should go to "Active Rules" page.
 > * delete a renamed label mapping
 > * add new labels to rename
 
-After [mapping forwarder to namespace](https://logflow-docs.logiq.ai/flow-management/mapping-applications), this rule will start working and all the logs which are being forwarded will have the renamed attributes instead of the default attributes.
+After [mapping forwarder to namespace](../../pipeline-management/mapping-applications.md), this rule will start working and all the logs which are being forwarded will have the renamed attributes instead of the default attributes.
