@@ -10,7 +10,7 @@ The first step is to create a PostgreSQL data source and provide all details suc
 
 ![Choosing a new data source](../../.gitbook/assets/postgres-1.png)
 
-![Adding data source to LOGIQ](../../.gitbook/assets/postgres-2.png)
+<figure><img src="../../.gitbook/assets/postgres-2.png" alt="Adding datasource to Ascent"><figcaption><p>Adding data source to Ascent</p></figcaption></figure>
 
 ### Querying your data
 
