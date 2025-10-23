@@ -23,6 +23,3 @@ description: E.g. AWS S3, GCP Cloud Storage, OCI Buckets, DigitalOcean Spaces et
 <figure><img src="../../.gitbook/assets/image (512).png" alt=""><figcaption></figcaption></figure>
 
 The S3 Compatible Forwarder can now be mapped to any data flow. The S3 Compatible forwarder breaks the data into smaller objects based on the object size configuration. The default object size is set to 4MB and can be changed while creating the forwarder.
-
-[\
-](https://logflow-docs.logiq.ai/object-store-forwarding/overview)
