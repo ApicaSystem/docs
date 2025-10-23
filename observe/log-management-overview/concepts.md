@@ -39,7 +39,7 @@ Below are examples across different ingestion agents and technologies:
 ```ini
 [FILTER]
     Name          record_modifier
-    Match         logiq
+    Match         ascent
     Record cluster_id mycluster
     Record namespace mynamespace
     Record app_name  myapp
@@ -58,7 +58,7 @@ filebeat:
         - /var/log/*.log
       processors:
         - add_fields:
-            target: logiq
+            target: ascent
             fields:
               cluster_id: mycluster
               namespace: mynamespace
@@ -141,8 +141,8 @@ Below is a snapshot of the **Table View**, where each flow corresponds to a uniq
 
 * `default_namespace` with `default_application` indicates data that lacked proper metadata
 * Well-tagged data like:
-  * `oci-mumbai-logiqai-dev-kube-system : kube-state-metrics`&#x20;
-  * `oci-mumbai-logiqai-dev1q5955 : lq5955-kubernetes-ingress`&#x20;
+  * `oci-mumbai-apica-dev-kube-system : kube-state-metrics`&#x20;
+  * `oci-mumbai-apica-dev1q5955 : lq5955-kubernetes-ingress`&#x20;
 * You can **filter**, **search**, and **inspect** event statistics per flow here.
 
 > Use this view to validate if your telemetry is landing in the expected flows.
