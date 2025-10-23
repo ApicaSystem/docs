@@ -106,7 +106,7 @@ Fluent-bit service can gather data sources from multiple locations such as log f
 
 ## Install and Enable Windows Fluent-bit Service
 
-Follow the steps in Installing[ <mark style="color:blue;">fluent-bit for windows</mark>](https://docs.logiq.ai/integrations/fluent-bit#fluent-bit-for-windows) to setup your fluent-bit agent and service. Use the modified config file above to match your environment during the setup process.
+Follow the steps in Installing[ <mark style="color:blue;">fluent-bit for windows</mark>](./#fluent-bit-for-windows) to setup your fluent-bit agent and service. Use the modified config file above to match your environment during the setup process.
 
 Fluent-bit service will automatically be started upon the end of the script installation. However, one can use Windows service management tool to control its state. Below show how to start the Windows service tool GUI.
 
