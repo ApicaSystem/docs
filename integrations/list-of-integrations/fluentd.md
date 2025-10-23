@@ -99,8 +99,8 @@ total 32
 drwxr-xr-x  6 user  staff   192 Oct 30 14:47 .
 drwxr-xr-x  7 user  staff   224 Oct 30 14:47 ..
 -rw-r--r--  1 user  staff   645 Oct 30 14:47 README.md
--rw-r--r--  1 user  staff  1373 Oct 30 14:47 fluentd-logiq.yaml
--rw-r--r--  1 user  staff  1373 Oct 30 14:47 fluentd-logiq_non_tls.yaml
+-rw-r--r--  1 user  staff  1373 Oct 30 14:47 fluentd-ascent.yaml
+-rw-r--r--  1 user  staff  1373 Oct 30 14:47 fluentd-ascent_non_tls.yaml
 -rw-r--r--  1 user  staff   590 Oct 30 14:47 fluentd_rbac.yaml
 -rw-r--r--  1 user  staff   210 Oct 30 14:47 secret.yaml
 ```
@@ -109,13 +109,13 @@ drwxr-xr-x  7 user  staff   224 Oct 30 14:47 ..
 
 Edit the **`fluentd/secret.yaml`** to include your CA and Client pub/private keys in base64 encoded format
 
-Edit the **`fluentd/fluentd-logiq.yaml`** and add your Apica Ascent cluster IP/DNS. Also configure your `CLUSTER_ID` (e.g. RC, Prod, Dev-Test, QA).
+Edit the **`fluentd/fluentd-ascent.yaml`** and add your Apica Ascent cluster IP/DNS. Also configure your `CLUSTER_ID` (e.g. RC, Prod, Dev-Test, QA).
 
 ```
 ....
   - env:
         - name: SYSLOG_HOST
-          value: "YOUR_LOGIQ_SERVER_IP"
+          value: "YOUR_ASCENT_SERVER_IP"
         - name: CLUSTER_ID
           value: "YOUR_CLUSTER_ID"          
 ....
@@ -127,18 +127,18 @@ Run the **`kubectl`** commands to create the **`kube-logging`** namespace. You c
 kubectl create namespace kube-logging
 kubectl apply -f fluentd_rbac.yaml
 kubectl apply -f secret.yaml
-kubectl apply -f fluentd-logiq.yaml
+kubectl apply -f fluentd-ascent.yaml
 ```
 
 ### Non-TLS Mode
 
-Edit the\*\*`fluentd/fluentd-logiq_non_tls.yaml`\*\*and add your Apica Ascent cluster IP/DNS. Also configure your `CLUSTER_ID` (e.g. RC, Prod, Dev-Test, QA)
+Edit the\*\*`fluentd/fluentd-ascent_non_tls.yaml`\*\*and add your Apica Ascent cluster IP/DNS. Also configure your `CLUSTER_ID` (e.g. RC, Prod, Dev-Test, QA)
 
 ```
 ....
   - env:
         - name: SYSLOG_HOST
-          value: "YOUR_LOGIQ_SERVER_IP"
+          value: "YOUR_ASCENT_SERVER_IP"
         - name: CLUSTER_ID
           value: "YOUR_CLUSTER_ID"          
 ....
@@ -149,5 +149,5 @@ Run the **`kubectl`** commands to create the **`kube-logging`** namespace. You c
 ```
 kubectl create namespace kube-logging
 kubectl apply -f fluentd_rbac.yaml
-kubectl apply -f fluentd-logiq_non_tls.yaml
+kubectl apply -f fluentd-ascent_non_tls.yaml
 ```
