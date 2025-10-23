@@ -132,12 +132,12 @@ Thank you for choosing our product! We hope you enjoy these new features and imp
     * Create Rule
 * Moved **Source Extensions, Forwarders, Rule Packs and Import dashboards** to new **Integrations** page.
 * New **Source Extensions**
-  * [SNMP Source Extension](https://docs.logiq.ai/integrations/snmp)
-  * [Apica Source Extension](https://docs.logiq.ai/integrations/apica-synthetic-monitoring): The Apica Source Extension is a component designed to integrate with the Apica Synthetics and Load test platform. Its main purpose is to retrieve check results from the Apica platform and make them available for further processing or analysis within another system or tool.
+  * [SNMP Source Extension](https://docs.apica.io/integrations/snmp)
+  * [Apica Source Extension](https://docs.apica.io/integrations/apica-synthetic-monitoring): The Apica Source Extension is a component designed to integrate with the Apica Synthetics and Load test platform. Its main purpose is to retrieve check results from the Apica platform and make them available for further processing or analysis within another system or tool.
 * New **Forwarders** which can help users selectively send specific log data to downward destinations based on their filtering criteria, thereby reducing the amount of data stored and analyzed. This can lead to cost optimization as it allows users to focus their resources on the most relevant and important log data, rather than storing and processing unnecessary or redundant information.
-  * [Coralogix](https://logflow-docs.logiq.ai/forwarding-to-monitoring-tools/coralogix-forwarding)
-  * [GCP BigQuery](https://logflow-docs.logiq.ai/forwarding-to-data-warehouse/gcp-bigquery)
-  * [Azure Log Analytics](https://logflow-docs.logiq.ai/forwarding-to-monitoring-tools/azure-log-analytics-forwarding)
+  * [Coralogix](https://logflow-docs.apica.io/forwarding-to-monitoring-tools/coralogix-forwarding)
+  * [GCP BigQuery](https://logflow-docs.apica.io/forwarding-to-data-warehouse/gcp-bigquery)
+  * [Azure Log Analytics](https://logflow-docs.apica.io/forwarding-to-monitoring-tools/azure-log-analytics-forwarding)
 * **Topology view Enhancements** ✨ Recent enhancements in the topology view is the inclusion of the total events information. This improvement provides users with a clearer understanding of the overall event activity within the system or network.
 * **Pipeline Changes:**
   * **Pipeline Application Filtering Support**
@@ -204,7 +204,7 @@ If you have any questions, encounter issues, or want to share your thoughts, ple
 *   **OSSEC HIDS Mappings**
 
     Automatically map OSSEC HIDS event severity and log messages for Linux and Windows environments.
-* **Added support for exporting events and metrics from** [**Apache Beam**](https://docs.logiq.ai/integrations/apache-beam) **to Apica Ascent**.
+* **Added support for exporting events and metrics from** [**Apache Beam**](https://docs.apica.io/integrations/apache-beam) **to Apica Ascent**.
 *   **OpenTelemetry `otel.status_code` Mapping**
 
     Detect OpenTelemetry severity and level embeddings and map them into severity levels.
