@@ -182,7 +182,7 @@ The python destination provides some useful options as described below
 
 The Apica Ascent driver provides various options as described below
 
-<table data-full-width="true"><thead><tr><th>Option Name</th><th>Values</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>config</td><td>e.g. /etc/syslog-ng/logiq.conf</td><td>None</td><td>Location of logiq.conf file</td></tr><tr><td>workers-batch</td><td>e.g. 8/16</td><td>1</td><td>Number of workers, more workers allow more parallelism when pushing to a loadbalanced LOGIQ.AI endpoint</td></tr><tr><td>worker-batch-lines</td><td>e.g. 25</td><td>25</td><td>How many maximum log events are batched per worker</td></tr><tr><td>loglevel</td><td>e.g. INFO/WARN/ERROR/DEBUG</td><td>INFO</td><td>Debug level. Logs are sent to /var/log/logiqaidstsyslogns</td></tr><tr><td>debug</td><td>true/false</td><td>false</td><td>Prints additional debug including log event to the log file</td></tr><tr><td>namespace-key</td><td>e.g. HOST</td><td>Not set</td><td>Which key from log event maps to namespace</td></tr><tr><td>application-key</td><td>e.g. PROGRAM</td><td>Not set</td><td>Which key from log event maps to application</td></tr><tr><td>cluster-key</td><td>e.g. HOST</td><td>Not set</td><td>Which key from log event maps to cluster/group identifier</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Option Name</th><th>Values</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td>config</td><td>e.g. /etc/syslog-ng/ascent.conf</td><td>None</td><td>Location of ascent.conf file</td></tr><tr><td>workers-batch</td><td>e.g. 8/16</td><td>1</td><td>Number of workers, more workers allow more parallelism when pushing to a loadbalanced Ascent endpoint</td></tr><tr><td>worker-batch-lines</td><td>e.g. 25</td><td>25</td><td>How many maximum log events are batched per worker</td></tr><tr><td>loglevel</td><td>e.g. INFO/WARN/ERROR/DEBUG</td><td>INFO</td><td>Debug level. Logs are sent to /var/log/logiqaidstsyslogns</td></tr><tr><td>debug</td><td>true/false</td><td>false</td><td>Prints additional debug including log event to the log file</td></tr><tr><td>namespace-key</td><td>e.g. HOST</td><td>Not set</td><td>Which key from log event maps to namespace</td></tr><tr><td>application-key</td><td>e.g. PROGRAM</td><td>Not set</td><td>Which key from log event maps to application</td></tr><tr><td>cluster-key</td><td>e.g. HOST</td><td>Not set</td><td>Which key from log event maps to cluster/group identifier</td></tr></tbody></table>
 
 ### Organizing data in Apica Ascent
 
@@ -204,7 +204,7 @@ The below configuration describes how logs are sent to Apica Ascent over non-TLS
 
 ```
 destination d_network {
-    syslog("<logiq-endpoint>" 
+    syslog("<ascent-endpoint>" 
     transport("tcp") 
     port(514));
 };
@@ -222,7 +222,7 @@ The below configuration forwards logs over TLS to Apica Ascent over non-TLS prot
 
 ```
 destination d_syslog_tls {
-    syslog("<logiq-endpoint>"
+    syslog("<ascent-endpoint>"
         transport("tls")
         port(7514)
         tls(peer-verify(required-trusted)
@@ -255,7 +255,7 @@ source s_local {
 };
 
 destination d_network {
-    syslog("<logiq-endpoint>" 
+    syslog("<ascent-endpoint>" 
     transport("tcp") 
     port(514));
 };
@@ -290,8 +290,8 @@ In addition to the fields above, arbitrary json attributes can be provided. Nest
 Example config below. Please modify relevant fields such as cluster\__id, namespace, application\_name before sending data_
 
 ```javascript
-destination d_logiq {
-    http(url("https://<logiq dns or ip>/v1/json")
+destination d_ascent {
+    http(url("https://<ascent dns or ip>/v1/json")
         method("POST")
         peer-verify(no)
         headers("Content-Type: application/json")
@@ -302,7 +302,7 @@ destination d_logiq {
                 \"message\": \"${MSG}\",
                 \"application_name\": \"${PROGRAM}\",
                 \"proc_id\": \"${PID}\",
-                \"cluster_id\": \"logiq-cluster-1\",
+                \"cluster_id\": \"ascent-cluster-1\",
                 \"severity\": \"${LEVEL}\",
                 \"sourcetype\": \"mysourcetype2\"
               }")
