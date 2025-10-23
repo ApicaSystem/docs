@@ -18,7 +18,7 @@ disabled = false
 defaultGroup = logiq
 
 [tcpout:logiq]
-server = <logiq_instance>:<logiq raw port>
+server = <ascent_instance>:<ascent_raw_port>
 sendCookedData=false
 negotiateProtocolLevel = 0
 
@@ -30,10 +30,10 @@ negotiateProtocolLevel = 0
 
 ```
 [syslog]
-defaultGroup = forwarders_logiq_syslog
+defaultGroup = forwarders_ascent_syslog
 
-[syslog:forwarders_logiq_syslog]
-server = <logiq_instance>:<logiq syslog_port>
+[syslog:forwarders_ascent_syslog]
+server = <ascent_instance>:<ascent_syslog_port>
 ```
 
 ### RFS:S3
@@ -50,7 +50,7 @@ compression = none
 path = s3://lq/lq
 remote.s3.access_key = <access key>
 remote.s3.encryption = none
-remote.s3.endpoint = <logiq s3 endpoint>
+remote.s3.endpoint = <ascent s3 endpoint>
 remote.s3.secret_key = <secret key>
 remote.s3.signature_version = v2
 remote.s3.supports_versioning = false
