@@ -40,7 +40,7 @@ The output section describes how to send data to Apica Ascent. The Apica Ascent 
 output:
   logstash:
     hosts:
-    - "<Logiq-endpoint>:25224"
+    - "<ascen-endpoint>:25224"
     worker: 12
     bulk_max_size: 25
     ttl: 5s
@@ -60,7 +60,7 @@ We strongly recommend partitioning your data for better organization as well as 
     type: filestream
     processors:
       - add_fields:
-          target: logiq
+          target: ascent
           fields:
             namespace: myproject
             application: test
@@ -93,7 +93,7 @@ filebeat:
     type: filestream
     processors:
       - add_fields:
-          target: logiq
+          target: ascent
           fields:
             namespace: myproject
             application: test
@@ -104,7 +104,7 @@ output:
 #   pretty: true
   logstash:
     hosts:
-    - "<Logiq-endpoint>:25224"
+    - "<ascent-endpoint>:25224"
 processors:
 - add_host_metadata:
     when:
