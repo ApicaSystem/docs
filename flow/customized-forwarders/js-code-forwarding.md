@@ -42,7 +42,7 @@ Copy
     "event": {
       "group_by": "grp2",
       "facet": "45",
-      "host_uuid": "Logiq_a0e45f01c76e92",
+      "host_uuid": "Apica_a0e45f01c76e92",
       "sequence": "1",
       "_size": "620",
       "path": "./flash-test-framework",
