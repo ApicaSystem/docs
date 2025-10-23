@@ -44,7 +44,7 @@ The first step is to get the `docker-compose` YAML file from the URL below.
 ### Download Apica Ascent compose file
 
 {% hint style="info" %}
-⬇ Download the YAML at the URL - [https://logiqcf.s3.amazonaws.com/releases/docker-compose.quickstart.yml](https://logiqcf.s3.amazonaws.com/releases/docker-compose.quickstart.yml)
+⬇ Download the YAML - [docker-compose.quickstart.yml](https://logiqcf.s3.amazonaws.com/releases/docker-compose.quickstart.yml)
 {% endhint %}
 
 You are now ready to bring up the Apica Ascent stack.
