@@ -1,6 +1,6 @@
 # Export Events to Apica Ascent
 
-Using the[Apica Ascent IO Connector](https://github.com/logiqai/logiq-io), We can easily stream our data to Apica Ascent for further processing.
+Using the [Apica Ascent IO Connector](https://github.com/logiqai/logiq-io) we can easily stream our data to Apica Ascent for further processing.
 
 Let's look at this by going over the sample starter repository provided [here](https://github.com/logiqai/logiqio-apache-beam-starter).
 
@@ -103,7 +103,7 @@ public class TransformEvent extends DoFn<String, LogiqEvent> {
 }
 ```
 
-Once, we have successfully transformed the log lines to LogiqEvent(s), we can now use the LOGIQ-IO Connector to export these LogiqEvent(s) to our Apica Ascent Instance.
+Once, we have successfully transformed the log lines to LogiqEvent(s), we can now use the Apica Ascent IO Connector to export these LogiqEvent(s) to our Apica Ascent Instance.
 
 ### Writing to Apica Ascent
 
