@@ -18,7 +18,7 @@ cd fluentd-bit-mqtt/
 ls -la
 total 20
 -rw-rw-r-- 1 sandesh docker  2030 Mar 29 15:51 fluent-bit-deployment.yaml
--rw-rw-r-- 1 sandesh sandesh 8773 Mar 29 15:55 fluent-bit-config-logiq-forward.yml
+-rw-rw-r-- 1 sandesh sandesh 8773 Mar 29 15:55 fluent-bit-config-apica-forward.yml
 -rw-rw-r-- 1 sandesh sandesh 2469 Mar 29 15:59 README.md
 ```
 
@@ -27,7 +27,7 @@ total 20
 The below steps outline on how to create a ConfigMap that will be used by the Fluent Bit Deployment:
 
 ```
-kubectl create -f fluent-bit-config-logiq-forward.yml
+kubectl create -f fluent-bit-config-apica-forward.yml
 ```
 
 Fluent Bit deployment is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deployment `fluent-bit-ddeployment.yml`. If you do not have your ingest token, You can generate them using [`apicactl`](https://docs.logiq.ai/logiq-server/agentless/generating-secure-ingest-token)
@@ -35,7 +35,7 @@ Fluent Bit deployment is ready to be used with Apica Ascent on a regular Kuberne
 *   name: CLUSTER\_ID
 
     value: "YOUR\_CLUSTER\_ID"
-*   name: LOGIQ\_TOKEN
+*   name: ASCENT\_TOKEN
 
     value: "YOUR\_INGEST\_TOKEN"
 
