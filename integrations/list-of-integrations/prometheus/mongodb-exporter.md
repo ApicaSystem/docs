@@ -70,8 +70,8 @@ scrape_configs:
     static_configs:
     - targets: ['localhost:9090']
       labels:
-        group: 'logiq_engr'
-        cluster_id: 'logiq'
+        group: 'ascent_engr'
+        cluster_id: 'ascent'
         namespace: 'engr'
 
   - job_name: 'mongodb'               # <------- Added configuration for scraping localhost:9094/metrics --------
