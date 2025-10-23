@@ -19,12 +19,12 @@ filter {
 
 output {
   syslog { appname => "my-awesome-app"
-           host => "logiq-server-dns.my-domain.com"
+           host => "ascent-server-dns.my-domain.com"
            protocol => "ssl-tcp"
            msgid => "%{uuid}"
            ssl_cert => "client.crt"
            ssl_key => "client.key"
-           ssl_cacert => "logiq.crt"
+           ssl_cacert => "ca.crt"
            ssl_verify => true
            port => "7514"
            rfc => "rfc5424"
