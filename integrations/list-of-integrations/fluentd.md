@@ -54,8 +54,8 @@ The below code block defines the minimal changes to be added to fluentd configur
 
 
   <server>
-    name logiq
-    host development.logiq.ai
+    name ascent
+    host development.apica.io
     port 24224
     weight 100
   </server>
