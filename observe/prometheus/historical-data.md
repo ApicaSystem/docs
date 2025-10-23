@@ -13,7 +13,7 @@ Getting data is a two step process
 POST /v1/query will respond with a QueryId. Use that to access data
 
 ```
-$ curl --location --request POST 'http://cluster-1.logiq.ai/v1/query' \
+$ curl --location --request POST 'http://cluster-1.apica.io/v1/query' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -42,9 +42,9 @@ $ curl --location --request POST 'http://cluster-1.logiq.ai/v1/query' \
 Use GET /v1/data/{queryId}/next and GET /v1/data/{queryId}/previous to retrieve data.
 
 ```
-$ curl 'https://cluster-1.logiq.ai/v1/data/4c977d08-4acf-52b5-a99d-d8c0eb41fe4b-lgq/next'
+$ curl 'https://cluster-1.apica.io/v1/data/4c977d08-4acf-52b5-a99d-d8c0eb41fe4b-lgq/next'
 [...data]
-$ curl 'https://cluster-1.logiq.ai/v1/data/4c977d08-4acf-52b5-a99d-d8c0eb41fe4b-lgq/previous'
+$ curl 'https://cluster-1.apica.io/v1/data/4c977d08-4acf-52b5-a99d-d8c0eb41fe4b-lgq/previous'
 [...data]
 
 ```
