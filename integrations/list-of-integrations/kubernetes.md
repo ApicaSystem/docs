@@ -30,8 +30,8 @@ total 64
 drwxr-xr-x  8 user  staff   256 Aug  9 05:47 .
 drwxr-xr-x  9 user  staff   288 Aug  9 05:20 ..
 -rw-r--r--  1 user  staff  2446 Aug  9 05:47 README.md
--rw-r--r--  1 user  staff  8688 Aug  9 05:32 fluent-bit-config-logiq-forward.yml
--rw-r--r--  1 user  staff  1670 Aug  9 05:29 fluent-bit-daemonset-logiq-output.yml
+-rw-r--r--  1 user  staff  8688 Aug  9 05:32 fluent-bit-config-apica-forward.yml
+-rw-r--r--  1 user  staff  1670 Aug  9 05:29 fluent-bit-daemonset-apica-output.yml
 -rw-r--r--  1 user  staff   269 Aug  9 05:26 fluent-bit-role-binding.yaml
 -rw-r--r--  1 user  staff   194 Aug  9 04:49 fluent-bit-role.yaml
 -rw-r--r--  1 user  staff    86 Aug  9 05:25 fluent-bit-service-account.yaml
@@ -40,7 +40,7 @@ drwxr-xr-x  9 user  staff   288 Aug  9 05:20 ..
 To get started run the following commands to create the namespace, service account and role setup:
 
 ```bash
-$ kubectl create namespace logiq-logging
+$ kubectl create namespace ascent-logging
 $ kubectl create -f fluent-bit-service-account.yaml
 $ kubectl create -f fluent-bit-role-binding.yaml
 $ kubectl create -f fluent-bit-role.yaml
@@ -51,52 +51,50 @@ $ kubectl create -f fluent-bit-role.yaml
 The next step is to create a ConfigMap that will be used by the Fluent Bit DaemonSet:
 
 ```
-$ kubectl create -f fluent-bit-config-logiq-forward.yml
+$ kubectl create -f fluent-bit-config-apica-forward.yml
 ```
 
 #### Enabling TLS
 
-You can enable TLS for Fluent Bit if you'd like to secure the data transferred through Fluent Bit to Apica Ascent. To do so, edit the \`fluent-bit-config-logiq-forward.yaml\` file as shown below.
+You can enable TLS for Fluent Bit if you'd like to secure the data transferred through Fluent Bit to Apica Ascent. To do so, edit the `fluent-bit-config-apica-forward.yaml` file as shown below.
 
 ```
-output-logiq.conf: |
+output-ascent.conf: |
     [OUTPUT]
         Name          http
         Match         *
-        Host          ${LOGIQ_HOST}
-        Port          ${LOGIQ_PORT}
+        Host          ${ASCENT_HOST}
+        Port          ${ASCENT_PORT}
         URI           /v1/json_batch
         Format        json
         tls           on
         tls.verify    off
         net.keepalive off
         compress      gzip
-        Header Authorization Bearer ${LOGIQ_TOKEN}
+        Header Authorization Bearer ${ASCENT_TOKEN}
 ```
 
 Be sure to also configure the following:
 
-* name: LOGIQ\_HOST value: "YOUR\_LOGIQ\_SERVER\_IP"
-* name: LOGIQ\_PORT value: "443"
+* name: ASCENT\_HOST value: "YOUR\_ASCENT\_SERVER\_IP"
+* name: ASCENT\_PORT value: "443"
 * name: CLUSTER\_ID value: "YOUR\_CLUSTER\_ID"
-* name: LOGIQ\_TOKEN value: "YOUR\_INGEST\_TOKEN"
+* name: ASCENT\_TOKEN value: "YOUR\_INGEST\_TOKEN"
 
-Fluent Bit DaemonSet is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deamonset `fluent-bit-daemonset-logiq-output.yml`. If you do not have your ingest token, You can generate them using [`apicactl`](https://docs.logiq.ai/logiq-server/agentless/generating-secure-ingest-token)
+Fluent Bit DaemonSet is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deamonset `fluent-bit-daemonset-apica-output.yml`. If you do not have your ingest token, You can generate them using [`apicactl`](https://docs.logiq.ai/logiq-server/agentless/generating-secure-ingest-token)
 
-*   name: LOGIQ\_HOST
+*   name: ASCENT\_HOST
 
-    value: "YOUR\_LOGIQ\_SERVER\_IP"
+    value: "YOUR\_ASCENT\_SERVER\_IP"
 *   name: CLUSTER\_ID
 
     value: "YOUR\_CLUSTER\_ID"
-*   name: LOGIQ\_TOKEN
+*   name: ASCENT\_TOKEN
 
     value: "YOUR\_INGEST\_TOKEN"
 
 For Kubernetes version < 1.17, please change the apiVersion: "extensions/v1beta1" from "apps/v1" and remove selector attached to DaemonSet spec selector: matchLabels: k8s-app: fluent-bit-logging
 
 ```
-kubectl create -f fluent-bit-daemonset-logiq-output.yml
+kubectl create -f fluent-bit-daemonset-apica-output.yml
 ```
-
-####
