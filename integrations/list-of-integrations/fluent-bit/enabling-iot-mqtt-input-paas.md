@@ -30,7 +30,7 @@ The below steps outline on how to create a ConfigMap that will be used by the Fl
 kubectl create -f fluent-bit-config-apica-forward.yml
 ```
 
-Fluent Bit deployment is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deployment `fluent-bit-ddeployment.yml`. If you do not have your ingest token, You can generate them using [`apicactl`](https://docs.logiq.ai/logiq-server/agentless/generating-secure-ingest-token)
+Fluent Bit deployment is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deployment `fluent-bit-ddeployment.yml`. If you do not have your ingest token, you can generate them using [`apicactl`](../../overview/generating-a-secure-ingest-token.md)
 
 *   name: CLUSTER\_ID
 
