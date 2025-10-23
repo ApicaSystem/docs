@@ -18,7 +18,7 @@ disabled = false
 defaultGroup = logiq
 
 [tcpout:logiq]
-server = <logiq_instance>:<raw port>
+server = <ascent_instance>:<raw port>
 sendCookedData=false
 negotiateProtocolLevel = 0
 
