@@ -1,6 +1,6 @@
 # ECS prometheus metrics to Apica Ascent
 
-**AWS ECS** is an orchestration service for Docker containers, allowing you to easily manage and scale your applications with easy access to other AWS services, the below instructions outline how we can forward ECS container metrics to Logiq endpoint with help of Prometheus service discovery with the following steps.
+**AWS ECS** is an orchestration service for Docker containers, allowing simple manage and scaling of applications with easy access to other AWS services.  The below instructions outline how we can forward ECS container metrics to Ascent with the help of Prometheus service discovery using the following steps.
 
 * Create IAM policy to enable Prometheus container to scan the cluster with container having Dockerlabels.
 * Deploy a Prometheus service that would auto-discover any ECS tasks it finds in the same VPC using AWS API (_prometheus-ecs-discovery_ [GitHub repository](https://github.com/teralytics/prometheus-ecs-discovery.git).)
@@ -57,10 +57,10 @@ Create the below policy and attach it to the IAM role that the Prometheus ECS ta
 
 ### **Prometheus containers**
 
-ECS task definition will have one task with 2 containers and common volume. Primary container will scan the ECS-cluster and find containers with labels  **PROMETHEUS\_EXPORTER\_PORT** docker label and write to /output/ecsfilesd.yml which will be accessed by second container, second prometheus container will load its configuration data from an S3 bucket upon startup and it also  scrapes any ECS containers container within the _/output/ecs\_file\_sd.yml_ and will use remote write feature to forward metrics to Logiq remote-write endpoint.
+ECS task definition will have one task with 2 containers and common volume. Primary container will scan the ECS-cluster and find containers with labels  **PROMETHEUS\_EXPORTER\_PORT** docker label and write to /output/ecsfilesd.yml which will be accessed by second container, second prometheus container will load its configuration data from an S3 bucket upon startup and it also  scrapes any ECS containers container within the _/output/ecs\_file\_sd.yml_ and will use remote write feature to forward metrics to the Ascent remote-write endpoint.
 
 {% hint style="info" %}
-The configuration also includes firelens integration(Log\_router container) to forward logs to Logiq.
+The configuration also includes firelens integration(Log\_router container) to forward logs to Ascent.
 {% endhint %}
 
 ```
@@ -82,7 +82,7 @@ The configuration also includes firelens integration(Log\_router container) to f
                     "Port": "443",
                     "match": "*",
                     "Header Authorization Bearer": "<Bearer-token>",
-                    "Host": "<Logiq-endpoint>",
+                    "Host": "<ascent-endpoint>",
                     "tls": "on",
                     "URI": "/v1/json_batch",
                     "Name": "http"
@@ -116,7 +116,7 @@ The configuration also includes firelens integration(Log\_router container) to f
                     "Port": "443",
                     "match": "*",
                     "Header Authorization Bearer": "<Auth-token>",
-                    "Host": "<logiq-endpoint",
+                    "Host": "<ascent-endpoint",
                     "tls": "on",
                     "URI": "/v1/json_batch",
                     "Name": "http"
@@ -177,7 +177,7 @@ The configuration also includes firelens integration(Log\_router container) to f
 
 
 
-Upload the below configuration file below named as prometheus.yml to S3 bucket and provide the Logiq-remote-write-endpoint  below.
+Upload the below configuration file below named as prometheus.yml to S3 bucket and provide the `ascent-remote-write-endpoint` below.
 
 ```
 global:
@@ -185,7 +185,7 @@ global:
   scrape_interval: 30s
   scrape_timeout: 10s
 remote_write:
-  - url: http://<logiq-remote-write-endpoint>:19291/v1/receive/prometheus 
+  - url: http://<ascent-remote-write-endpoint>:19291/v1/receive/prometheus 
 scrape_configs:
   - job_name: ecs
     file_sd_configs:
