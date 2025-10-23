@@ -16,7 +16,7 @@ Update the syslog config in `/etc/rsyslog.conf` or `/etc/rsyslog.d/50-default.co
            action.resumeRetryCount="-1"
            queue.size="10000"
            queue.saveonshutdown="on"
-           target="logiq-server-syslog-host" Port="514" Protocol="tcp"
+           target="ascent-server-syslog-host" Port="514" Protocol="tcp"
            )
 ```
 
@@ -47,12 +47,12 @@ Update the syslog config in `/etc/rsyslog.conf` or `/etc/rsyslog.d/50-default.co
 ```
 module(load="omrelp")
 action(type="omrelp" 
-        target="logiq-server-relp-host" 
+        target="ascent-server-relp-host" 
         port="2514" 
         tls="on" 
-        tls.caCert="/etc/ssl/LOGIQ/certs/LOGIQ.crt" 
-        tls.myCert="/etc/ssl/LOGIQ/certs/client.crt" 
-        tls.myPrivKey="/etc/ssl/LOGIQ/certs/client.key" 
+        tls.caCert="/etc/ssl/certs/ca.crt" 
+        tls.myCert="/etc/ssl/certs/client.crt" 
+        tls.myPrivKey="/etc/ssl/certs/client.key" 
         tls.authMode="fingerprint"
         tls.PermittedPeer=["SHA1:BF:46:AB:9F:A3:77:46:AF:6B:D2:EC:A4:30:72:F1:CC:0E:17:C9:42"]
         action.reportSuspensionContinuation="on"
@@ -67,7 +67,7 @@ action(type="omrelp"
 )
 ```
 
-**NOTE**: Change _"target", "port", tls.caCert" , "tls.myCert", "tls.myPrivKey", "tls.PermitterPeer"_ above to suit your configuration. For non TLS config, set _"tls"_ parameter as _"off"_ and remove all tls.\* parameters from above config file. E.g. of target=ec2-34-213-110-235.us-west-2.compute.amazonaws.com
+**NOTE**: Change `target`_, `port`, `tls.caCert` , `tls.myCert`, `tls.myPrivKey`, `tls.PermitterPeer`_ above to suit environment. For non TLS config, set _"tls"_ parameter as _"off"_ and remove all tls.\* parameters from above config file. E.g. of target=ec2-34-213-110-235.us-west-2.compute.amazonaws.com
 
 #### **Configuring rsyslog (non-TLS)**
 
@@ -80,7 +80,7 @@ Rsyslog non-TLS uses port 20514 vs TLS which uses port 2514
 ```
 module(load="omrelp")
 action(type="omrelp" 
-        target="logiq-server-relp-host" 
+        target="ascent-server-relp-host" 
         port="20514" 
         tls="off" 
         action.reportSuspensionContinuation="on"
