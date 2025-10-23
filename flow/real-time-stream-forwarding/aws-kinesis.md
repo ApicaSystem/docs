@@ -21,6 +21,3 @@ description: AWS Kinesis is the AWS managed service for doing real time stream p
 <figure><img src="../../.gitbook/assets/image (523).png" alt=""><figcaption></figcaption></figure>
 
 Whenever the data is getting ingested and its attributes are mapped to AWS kinesis, then that data will be forwarded to the kinesis stream. All types of machine data are supported: logs, metrics, events, alerts, and traces.
-
-[\
-](https://logflow-docs.logiq.ai/real-time-stream-forwarding/overview)
