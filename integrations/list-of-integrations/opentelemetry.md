@@ -12,7 +12,7 @@ We recommend using the OpenTelemetry HTTP exporter to send logs, metrics and tra
 
 ```yaml
 otlphttp:
-    endpoint: https://<your apica endpoint>
+    endpoint: https://<your ascent endpoint>
     encoding: json
     compression: gzip
     headers:
