@@ -152,7 +152,7 @@ ssh ubuntu@machine-ip -p 2200 -i <private_key_file_path>
 [OUTPUT]
     name     http
     match    *
-    host      <Logiq endpoint>
+    host      <ascent endpoint>
     port     443
     URI      /v1/json_batch
     Format   json
@@ -164,7 +164,7 @@ ssh ubuntu@machine-ip -p 2200 -i <private_key_file_path>
 ```
 
 * In the Fluent Bit configuration file above, substitute the following details based on your implementation.
-  * `logiq-endpoint`
+  * `ascent-endpoint`
   * `TOKEN`
   * `Databricks-worker`
 * Next, replace the existing configuration at `/etc/td-agent-bit/td-agent-bit.conf` with the modified file.
