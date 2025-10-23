@@ -92,8 +92,8 @@ filter {
 }
 output {
   http {
-    url => "http://<LOGIQ_endpoint>/v1/json_batch"
-    headers => { "Authorization" => "Bearer <LOGIQ_ingest_token> " }
+    url => "http://<ascent_endpoint>/v1/json_batch"
+    headers => { "Authorization" => "Bearer <ascent_ingest_token> " }
     http_method => "post"
     format => "json_batch"
     content_type => "json_batch"
