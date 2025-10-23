@@ -10,9 +10,9 @@ The **`awsfirelens`** log driver allows you to specify Fluentd or Fluent Bit out
 
 To set up log forwarding on AWS ECS, do the following.
 
-* Navigate to the task definition that you need logs to be sent to LOGIQ from. &#x20;
+* Navigate to the task definition that logs will be sent from
 * Click on **Edit container**
-* Navigate to the **STORAGE AND LOGGING** section.
+* Navigate to the **STORAGE AND LOGGING** section
 
 ![](<../../../../.gitbook/assets/image (261).png>)
 
@@ -65,8 +65,8 @@ To set up log forwarding on AWS ECS, do the following.
                     "compress": "gzip",
                     "Port": "443",
                     "match": "*",
-                    "Header Authorization Bearer": "<LOGIQ-TOKEN>",
-                    "Host": "<LOGIQ-ENDPOINT>",
+                    "Header Authorization Bearer": "<ASCENT-TOKEN>",
+                    "Host": "<ASCENT-ENDPOINT>",
                     "tls": "on",
                     "URI": "/v1/json_batch",
                     "Name": "http"
