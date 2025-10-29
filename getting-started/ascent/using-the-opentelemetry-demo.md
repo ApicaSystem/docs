@@ -80,7 +80,7 @@ By default, the demo application will start a proxy for all browser traffic boun
 
 ### Step 6: Update the OTel config file:
 
-* /src/otel-collector/otelcol-config-extras.yml
+* opentelemetry-demo/src/otel-collector/otelcol-config-extras.yml
 
 Paste the following into the config file, overwriting it completely:
 
