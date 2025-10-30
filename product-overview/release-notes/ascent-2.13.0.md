@@ -10,8 +10,8 @@
 
 ### Backend Improvements
 
-* Improved backend data routing with per-tenant message isolation for greater reliability and scalability in CRS..
-* Refactored Kafka client to enhance performance and reliability..
+* Improved backend data routing with per-tenant message isolation for greater reliability and scalability in CRS.
+* Refactored Kafka client to enhance performance and reliability.
 * Enhanced partitioning logic to improve data isolation and reliability in single-tenant deployments.
 * Improved integration authentication for Kafka brokers.
 
