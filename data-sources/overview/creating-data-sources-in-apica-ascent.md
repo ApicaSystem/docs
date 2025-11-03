@@ -1,7 +1,5 @@
 # Creating Data Sources in Apica Ascent
 
-## Creating Data Sources in Apica Ascent
-
 Apica Ascent allows you to connect multiple data sources for unified observability across logs, metrics, checks, and reports.\
 Follow the steps below to configure basic data sources to interact with metrics, logs, checks and reports.
 

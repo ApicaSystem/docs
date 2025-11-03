@@ -81,7 +81,7 @@
 
 ## DATA SOURCES
 
-* [Data Source Overview](data-sources/overview/README.md)
+* [Data Source Overview](data-sources/overview.md)
   * [Creating Data Sources in Apica Ascent](data-sources/overview/creating-data-sources-in-apica-ascent.md)
 * [API](data-sources/api/README.md)
   * [JSON Data source](data-sources/api/json-data-source.md)
