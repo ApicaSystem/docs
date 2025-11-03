@@ -390,6 +390,8 @@
 * [Alerts (Simple/Anomaly)](autonomous-insights/alerts-simple-anomaly.md)
 * [Alerts On Logs](autonomous-insights/alerts-1.md)
 * [Alert Destinations](autonomous-insights/alert-destinations/README.md)
+  * [Webhook](autonomous-insights/alert-destinations/webhook/README.md)
+    * [Webhook Destination Field and Payload Mappers](autonomous-insights/alert-destinations/webhook/webhook-destination-field-and-payload-mappers.md)
   * [Email](autonomous-insights/alert-destinations/email.md)
 * [Rule Packs](autonomous-insights/rule-packs.md)
 * [AI-powered Search](autonomous-insights/ai-powered-search.md)
