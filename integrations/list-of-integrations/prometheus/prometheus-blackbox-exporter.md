@@ -24,8 +24,6 @@ If you are new to Prometheus and Blackbox Exporter, here are some quick deployme
 {% code overflow="wrap" %}
 ```
 ./blackbox_exporter --config.file=blackbox.yml --web.listen-address=":<port-number>" > blackbox.log 2>&1 &
-
-
 ```
 {% endcode %}
 
