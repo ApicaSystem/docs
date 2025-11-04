@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Alerting on RTO Metrics
 
 Out of the box, we provide 15 pre-configured alerts:

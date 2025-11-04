@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # RTO Dashboarding
 
 With our RTO solution we want everything to be simple, straight-forward, and easy to use. With this in mind, we created this pre-built dashboard, which has everything you'll need to monitor your Boomi Infrastructure in one spot.&#x20;

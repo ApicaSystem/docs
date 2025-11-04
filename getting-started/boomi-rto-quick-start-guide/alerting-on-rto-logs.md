@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Alerting on RTO Logs
 
 Some crucial indicators in the Boomi logs that should be used to stay ahead of potential issues within your infrastructure. Two key ones already baked into the RTO solution are "Multiple Head Nodes" and "Container Version Mismatch". We'll use "Multiple Head Nodes" as an example to create a similar alert on Boomi logs.\
