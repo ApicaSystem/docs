@@ -276,6 +276,7 @@
   * [Variables](flow/vault/variables.md)
   * [Lookups](flow/vault/lookups.md)
 * [Rules](flow/rules/README.md)
+  * [AGGREGATE](flow/rules/aggregate.md)
   * [FILTER](flow/rules/filter.md)
   * [EXTRACT](flow/rules/extract.md)
   * [SIEM](flow/rules/siem-and-tag.md)
