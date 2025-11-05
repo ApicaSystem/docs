@@ -173,6 +173,7 @@
     * [Prometheus on Windows](integrations/list-of-integrations/prometheus/prometheus-on-windows.md)
     * [Prometheus Remote Write](integrations/list-of-integrations/prometheus/prometheus-remote-write.md)
     * [Spring Boot](integrations/list-of-integrations/prometheus/spring-boot.md)
+    * [Prometheus HAProxy Exporter](integrations/list-of-integrations/prometheus/prometheus-haproxy-exporter.md)
   * [Rsyslogd](integrations/list-of-integrations/rsyslogd.md)
   * [Syslog](integrations/list-of-integrations/syslog.md)
   * [Syslog-ng](integrations/list-of-integrations/syslog-ng.md)
