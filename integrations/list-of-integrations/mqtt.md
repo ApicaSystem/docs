@@ -14,7 +14,7 @@ Follow this link to set up the Fluent Bit integration:&#x20;
 
 ### Sending MQTT messages to Apica Ascent
 
-One the pre-requisite is in place, Apica Ascent uses the 1883 port to receive MQTT messages. Connectivity can be tested using the following mosquitto\_pub command:
+Once the pre-requisite is in place, Apica Ascent uses the 1883 port to receive MQTT messages. Connectivity can be tested using the following mosquitto\_pub command:
 
 ```
 mosquitto_pub -h endpoint.ascenthost.com -p 1883 -t temperature -m '{"device_version": "v11", "temp": 92}'
