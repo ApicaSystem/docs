@@ -1,10 +1,10 @@
 ---
-description: Setup JMX Exporter and send metrics to Apica Ascent endpoint
+description: Setup Prometheus JMX Exporter and send metrics to Apica Ascent endpoint
 ---
 
-# JMX Exporter
+# Prometheus JMX Exporter
 
-We will be using [JMX exporter](https://github.com/prometheus/jmx_exporter) which will help us expose JMX Beans via. HTTP for Prometheus consumption.
+How to use [JMX exporter](https://github.com/prometheus/jmx_exporter) to expose JMX Beans via HTTP for Prometheus consumption.
 
 > JMX to Prometheus exporter: a collector that can configurably scrape and expose mBeans of a JMX target.
 >
