@@ -2,7 +2,19 @@
 
 MQTT is an OASIS standard messaging protocol for the Internet of Things (IoT). It is designed as an extremely lightweight publish/subscribe messaging transport that is ideal for connecting remote devices with a small code footprint and minimal network bandwidth. MQTT today is used in a wide variety of industries, such as automotive, manufacturing, telecommunications, oil and gas, etc.
 
-Apica Ascent can act as an MQTT broker to receive MQTT messages from IoT clients. This page describes how to send MQTT messages to Apica Ascent. Apica Ascent uses the 1883 port to receive MQTT messages. Connectivity can be tested using mosquitto\_pub command
+Apica Ascent can act as an MQTT broker to receive MQTT messages from IoT clients.&#x20;
+
+### **PRE-REQUISITE**
+
+**In order to enable this integration, Fluent Bit to MQTT must first be in place.**&#x20;
+
+Follow this link to set up the Fluent Bit integration:&#x20;
+
+* [https://docs.apica.io/integrations/list-of-integrations/fluent-bit/enabling-iot-mqtt-input-paas](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/enabling-iot-mqtt-input-paas)
+
+### Sending MQTT messages to Apica Ascent
+
+One the pre-requisite is in place, Apica Ascent uses the 1883 port to receive MQTT messages. Connectivity can be tested using the following mosquitto\_pub command:
 
 ```
 mosquitto_pub -h endpoint.ascenthost.com -p 1883 -t temperature -m '{"device_version": "v11", "temp": 92}'
