@@ -44,7 +44,7 @@ The below code block defines the minimal changes to be added to the fluent-bit c
     Match           ascent
     Record app_name system_logs
 
-[FILTER}
+[FILTER]
     Name            throttle
     Match           *
     Rate            700
