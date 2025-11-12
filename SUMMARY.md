@@ -631,7 +631,7 @@
     * [Windows Server Install](platform-docs/test-data-orchestrator-tdo/technical-guides/windows-server-install.md)
     * [Linux Server Install](platform-docs/test-data-orchestrator-tdo/technical-guides/linux-server-install.md)
     * [User Maintenance](platform-docs/test-data-orchestrator-tdo/technical-guides/user-maintenance.md)
-    * [LDAP Setup](platform-docs/test-data-orchestrator-tdo/technical-guides/ldap-setup.md)
+    * [LDAP and SAML Setup](platform-docs/test-data-orchestrator-tdo/technical-guides/ldap-setup.md)
     * [MongoDB Community Server Setup](platform-docs/test-data-orchestrator-tdo/technical-guides/mongodb-community-server-setup.md)
     * [TDX Installation Guide](platform-docs/test-data-orchestrator-tdo/technical-guides/tdx-installation-guide.md)
   * [User Documentation](platform-docs/test-data-orchestrator-tdo/user-documentation/README.md)

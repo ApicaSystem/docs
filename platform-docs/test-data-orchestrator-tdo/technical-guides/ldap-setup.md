@@ -1,12 +1,12 @@
-# LDAP Setup
+# LDAP and SAML Setup
 
 ## ORSON - Test Data Orchestrator
 
-### LDAP Configuration
+### SSO Configuration
 
-TDO supports SAML and SSO authentication when the LDAP option for user authentication is used.  Kurberos is also supported.  In the instructions below, 'LDAP' is used as the generic term for all of these methods.
+TDO supports SAML, LDAP, and Kurberos authentication. LDAP and SAML integration are discussed below; Kurberos instructions are pending.
 
-&#x20;
+### &#x20;LDAP Setup
 
 To set TDO up using LDAP, you will need to coordinate with the team(s) in your organization that support LDAP services to obtain the correct inputs for the LDAP screen.  In addition, you may need to provide a document showing how TDO is configured.  If this is required, contact the Apica Orson TDO support team for assistance in preparing the document.
 
@@ -14,7 +14,7 @@ To set TDO up using LDAP, you will need to coordinate with the team(s) in your o
 
 Before setting up LDAP on TDO you should become familiar with your organization’s policies and procedures for managing Active Directory and SAML/SSO.
 
-### &#x20;Active Directory groups
+#### &#x20;Active Directory groups
 
 All users who will be using TDO must be set up in an Active Directory group. You should have two groups – TDO\_Admin and TDO\_User (follow your organization’s rules for group naming conventions).
 
@@ -28,9 +28,9 @@ You will need to work with your organization’s Active Directory team to set th
 
 &#x20;&#x20;
 
-### LDAP Setup
+#### LDAP Setup
 
-LDAP is set up from the LDAP Configuration option under the ‘User Maintenance + LDAP’ menu section.   The screen shot below shows LDAP; Kurberos will be slightly different.
+LDAP is set up from the LDAP Configuration option under the ‘User Maintenance - LDAP’ menu section.  &#x20;
 
 &#x20;
 
@@ -64,8 +64,43 @@ o   This will reduce the amount of work on the part of your admin team in creati
 
 o   All users created in this way will have USER rights; if the individual should be an ADMIN then those rights will have to be manually granted.
 
-&#x20;
-
-### Deleting users
+#### &#x20;Deleting users
 
 When a user should no longer have access to TDO, in addition to removing their access via the User Maintenance screen, a request to remove them from the appropriate AD group should also be submitted.  Note that removing them from the AD group will stop their ability to log in, but they should also be removed from TDO.
+
+### SAML Setup
+
+SAML setup is done using the settings in the server.json file in the TDO/api/conf/common directory on the TDO server, and creating an AD group (security group) with the authorized TDO users.  SAML will use the TDO security group to only allow users who are allowed access to the application to log in.
+
+In order to set up SAML, you will need to set up the AD group and create an entry in your organization's Identity Provider application.  The steps for this are:
+
+1\) Register TDO application in your Identity Provider and provide following SAML settings:
+
+•        Single sign-on URL: \<tdo\_application\_url>/callback  (tdo\_application\_url is the server IP address, name, or alias that users will be provided to access the application, for instance 99.99.99.99 or 'server.org.net')
+
+•        Recipient URL: same as Single sign-on URL
+
+•        Destination URL: same as Single sign-on URL
+
+•        Audience URI (SP Entity ID): orson:tdo  \[orson:tdo is a constant value that TDO uses to identify itself]
+
+2\) Add attribute statement to the SAML assertion with following properties:
+
+•        Name: tdoUserName  \[tdoUserName is the internal name TDO uses to reference the 'user name' variable that is used in the User Profile]
+
+•        Value: provide an expression that will give user name in lower case, without spaces and special characters
+
+3\) Save configuration and download Identity Provider Metadata in XML format (it must contain endpoints and certificate data)
+
+Once the Identity Provider Metadata XML file is available, it must be copied to the TDO/api folder on the TDO server and renamed to idp-metadata.xml.  If the file sp-metadata.xml exists in this folder, it must be deleted.
+
+Open the the TDO/api/conf/common/server.json file in a text editor, navigate to the authClient  and change it to SAML2Client.  Save the file changes and restart TDO for this to take effect.
+
+#### Adding/Deleting Users with SAML
+
+You do not need to enroll users in TDO once SAML has been activated.  If an individual is in the AD group for TDO, then the first time they try to log into the application TDO will create their login profile.  This will reduce the amount of administrative work required to manage users.
+
+All users created using the automated process will be created with USER level privileges.  If they need ADMIN level rights, or Workflow access, that will have to be manually granted in the TDO User Maintenance screen by an Admin.
+
+To delete a user's access from TDO, they must be removed from the AD group that the SAML Identity Provider uses for validation.  Once they are removed from that group, their ID can be removed from TDO by and Admin level user.  Remember that even though their ability to access TDO has been deleted by removing them from the AD group, their login profile will continue to count against the license limit until removed from TDO.
+
