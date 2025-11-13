@@ -30,9 +30,7 @@ As this can be a long-running procedure, a terminal multiplexer such as `tmux` o
    2.  Destroy the existing data using the following commands:
 
        ```
-       zfs destroy -r $BASE_DATASET/data
        zfs destroy -r $BASE_DATASET/text
-       zfs destroy -r $BASE_DATASET/hist
        zfs destroy -r $BASE_DATASET/hist_ingest
        zfs destroy -r $BASE_DATASET/hist_rollup
        zfs destroy -r $BASE_DATASET/localstate
@@ -50,8 +48,6 @@ As this can be a long-running procedure, a terminal multiplexer such as `tmux` o
    4.  Recreate the dataset structure by running the following commands:
 
        ```
-       zfs create $BASE_DATASET/data
-       zfs create $BASE_DATASET/hist
        zfs create $BASE_DATASET/hist_ingest
        zfs create $BASE_DATASET/hist_rollup
        zfs create $BASE_DATASET/text
@@ -65,11 +61,9 @@ As this can be a long-running procedure, a terminal multiplexer such as `tmux` o
    5.  Run the following commands to make the node-id subdirectories:
 
        ```
-       mkdir /irondb/hist/<node_id>
        mkdir /irondb/hist_ingest/<node_id>
        mkdir /ironeb/hist_rollup/<node_id>
        mkdir /irondb/text/<node_id>
-       mkdir /irondb/data/<node_id>
        mkdir /irondb/raw_db/<node_id>
        mkdir /irondb/surrogate_db/<node_id>
        mkdir /irondb/metadata/<node_id>
