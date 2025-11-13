@@ -92,7 +92,7 @@ sudo yum install -y docker-ce docker-ce-cli containerd.io
 4. Install the required software on the server where the private agent is supposed to be installed.
 5. Download the packages from Apica S3 bucket:
 
-* Find actual version[ here (CES download links)](https://app.gitbook.com/o/-LmzGjHypGkPBzYc0fF0/s/-LmzGprckLqwd5v6bs6m/~/changes/1598/platform-docs/synthetic-monitoring-overview/how-to-articles/ces-private-agent-download-links)
+* Find actual version [here (CES download links)](https://docs.apica.io/platform-docs/synthetic-monitoring-overview/how-to-articles/ces-private-agent-download-links)
 
 6. Upload the RPM or deb package on the server and install it with the following command:
 
