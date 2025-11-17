@@ -35,6 +35,7 @@
   * [Synthetic Monitoring](product-overview/release-notes/synthetic-monitoring.md)
   * [Advanced Scripting Engine](product-overview/release-notes/advanced-scripting-engine.md)
   * [IRONdb](platform-docs/irondb/release-notes.md)
+  * [Ascent 2.14.2](product-overview/release-notes/ascent-2.14.2.md)
 
 ## TECHNOLOGIES
 
