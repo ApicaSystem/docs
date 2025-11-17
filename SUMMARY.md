@@ -7,7 +7,8 @@
 * [Ascent Overview](product-overview/ascent-overview.md)
 * [Ascent User Interface](product-overview/the-ascent-ui.md)
 * [Release Notes](product-overview/release-notes/README.md)
-  * [Release 2.14.1](product-overview/release-notes/release-2.14.1.md)
+  * [Ascent 2.14.2](product-overview/release-notes/ascent-2.14.2.md)
+  * [Ascent 2.14.1](product-overview/release-notes/ascent-2.14.1.md)
   * [Ascent 2.14.0](product-overview/release-notes/ascent-2.14.0.md)
   * [Ascent 2.13.0](product-overview/release-notes/ascent-2.13.0.md)
   * [Ascent 2.12.1](product-overview/release-notes/ascent-2.12.1.md)
@@ -35,7 +36,6 @@
   * [Synthetic Monitoring](product-overview/release-notes/synthetic-monitoring.md)
   * [Advanced Scripting Engine](product-overview/release-notes/advanced-scripting-engine.md)
   * [IRONdb](platform-docs/irondb/release-notes.md)
-  * [Ascent 2.14.2](product-overview/release-notes/ascent-2.14.2.md)
 
 ## TECHNOLOGIES
 
