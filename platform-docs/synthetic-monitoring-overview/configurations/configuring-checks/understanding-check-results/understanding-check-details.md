@@ -6,7 +6,7 @@ The Check Details view provides detailed information about a single check in a n
 
 ## Bookmarks <a href="#understandingcheckdetails-bookmarks" id="understandingcheckdetails-bookmarks"></a>
 
-When you open a certain Check Result from within the Check Details page, the [Check Result](broken-reference) will open in a new tab within the ASM GUI called a “Bookmark”:
+When you open a certain Check Result from within the Check Details page, the [Check Result](/broken/pages/cNSuqoPuWRtehDS6WENx) will open in a new tab within the ASM GUI called a “Bookmark”:
 
 
 
@@ -14,7 +14,7 @@ When you access another Check Details page and then open a Check Result from tha
 
 
 
-The bookmarks can be re-ordered by clicking and dragging them. This allows you to keep a number of checks in the bookmarks bar and move between them by clicking the respective bookmark. Clicking a bookmark will take you to the corresponding Check Details or [Result Details](broken-reference) view.
+The bookmarks can be re-ordered by clicking and dragging them. This allows you to keep a number of checks in the bookmarks bar and move between them by clicking the respective bookmark. Clicking a bookmark will take you to the corresponding Check Details or [Result Details](/broken/pages/cNSuqoPuWRtehDS6WENx) view.
 
 ## Response Graph <a href="#understandingcheckdetails-responsegraph" id="understandingcheckdetails-responsegraph"></a>
 
@@ -26,7 +26,7 @@ By mousing over your Check Details graphs, you'll notice a popup at various poin
 
 
 
-Clicking on a check run will open the [Result Details](broken-reference) page.
+Clicking on a check run will open the [Result Details](/broken/pages/cNSuqoPuWRtehDS6WENx) page.
 
 It is possible to zoom further into certain sections of the response graph by clicking and dragging a small portion of the response graph:
 
@@ -195,12 +195,12 @@ The **values** section shows aggregated values for the check.
 
 The **action buttons** provide shortcuts to common features for the check.
 
-| Button Action   | Description                                        |
-| --------------- | -------------------------------------------------- |
-| Run Check       | Run the check immediately                          |
-| Settings        | [Edit the check](broken-reference)                 |
-| Analyze Metrics | Go to the Analyze Metrics view for the check       |
-| Manage Alerts   | [Configure Alerts](broken-reference) for the check |
+| Button Action   | Description                                                          |
+| --------------- | -------------------------------------------------------------------- |
+| Run Check       | Run the check immediately                                            |
+| Settings        | [Edit the check](/broken/pages/P6RWuVEugNXi3r142iYs)                 |
+| Analyze Metrics | Go to the Analyze Metrics view for the check                         |
+| Manage Alerts   | [Configure Alerts](/broken/pages/36NJyNgd9xDrdVc49HIl) for the check |
 
 ### Recent Issues <a href="#understandingcheckdetails-recentissues" id="understandingcheckdetails-recentissues"></a>
 

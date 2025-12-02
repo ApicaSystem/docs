@@ -6,7 +6,7 @@ Checks can contain a Selenium browser automation scenario. Using scenarios in a 
 
 It is possible to mask sensitive information when creating the ASM scenario so that sensitive information (e.g. a password) is not exposed unnecessarily. The sensitive information will be hidden from both the Check Results page and the Edit/Debug scenario page. See How to Mask Sensitive Information Within an ASM Scenario for more details. For example, the text \[ENCRYPTED BY APICA] can be seen in the above screenshot. Here, a value was hidden so that it cannot be seen by users who have [Scenario Admin permissions](https://apica-kb.atlassian.net/wiki/spaces/ASMDOCS/pages/2150498307/Configuring+Users#Understanding-Basic-User-Roles).
 
-Note that it may be necessary for a user to change certain scenario commands when uploading a Selenium IDE file, as certain commands are not supported by ASM Scenarios. See [Comparing Selenium IDE Scripts to ASM Scenarios](broken-reference) for more details surrounding Selenium IDE to ASM conversion, including a chart listing the commands which are supported by ASM Scenarios. If a scenario is uploaded which contains an unsupported command, a user will see a warning dialog and the unsupported command will be highlighted:
+Note that it may be necessary for a user to change certain scenario commands when uploading a Selenium IDE file, as certain commands are not supported by ASM Scenarios. See [Comparing Selenium IDE Scripts to ASM Scenarios](/broken/pages/IQy9EKP3TdZuMmdRdCIj) for more details surrounding Selenium IDE to ASM conversion, including a chart listing the commands which are supported by ASM Scenarios. If a scenario is uploaded which contains an unsupported command, a user will see a warning dialog and the unsupported command will be highlighted:
 
 
 
@@ -89,8 +89,7 @@ Commands can be **added** to a new or existing scenario file with the “Add Ste
 2.  Select a command from the dropdown list
 
 
-3.  Double-click the blank rows in the Target and Value columns and add the desired values:\
-
+3.  Double-click the blank rows in the Target and Value columns and add the desired values:<br>
 
 
 4. Click “Save Scenario”

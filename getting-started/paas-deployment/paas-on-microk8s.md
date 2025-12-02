@@ -15,7 +15,7 @@ hidden: true
 
 ## Installing MicroK8s
 
-The first step in this deployment is to install MicroK8s on your machine.&#x20;
+The first step in this deployment is to install MicroK8s on your machine.
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -75,7 +75,8 @@ The following instructions pertain to RHEL-based Linux systems.
     sudo yum -y update
     ```
 
-    {% code overflow="wrap" %}
+    \{% code overflow="wrap" %\}
+
     ```bash
     # Follow the article for installation of [microk8s] (https://snapcraft.io/install/microk8s/rhel)
 
@@ -89,11 +90,13 @@ The following instructions pertain to RHEL-based Linux systems.
     sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
     sudo dnf upgrade
     ```
-    {% endcode %}
+
+    \{% endcode %\}
 
     Once you added these repl repos to server we need to run the below commands - Note: If you are running RHEL On-Premises with Red Hat CDN (Connected Environment) where subscription management is handled automatically:
 
-    {% code overflow="wrap" %}
+    \{% code overflow="wrap" %\}
+
     ```bash
     sudo subscription-manager repos --enable "rhel-*-optional-rpms" --enable "rhel-*-extras-rpms"
     sudo yum -y update
@@ -111,7 +114,8 @@ The following instructions pertain to RHEL-based Linux systems.
     sudo systemctl enable --now snapd.socket
     sudo ln -s /var/lib/snapd/snap /snap
     ```
-    {% endcode %}
+
+    \{% endcode %\}
 2.  Install `core` using Snap by running the following command.
 
     ```bash
@@ -333,15 +337,12 @@ scp -i /path/to/private_key.pem /path/to/local/file username@remote_host:/path/t
 Make sure you have the necessary permissions to copy a file to the specified folder on the Linux machine.
 
 > Optionally, if you are provisioning public IP using Metallb, use the [values.yaml](https://raw.githubusercontent.com/ApicaSystem/apica-installation/refs/heads/main/values/values.yaml) instead. run the following command.
->
-> {% code overflow="wrap" %}
-> ```
-> microk8s enable metallb
-> Enabling MetalLB
-> Enter each IP address range delimited by comma (e.g.  '10.64.140.43-10.64.140.49,192.168.0.105-192.168.0.111'): 192.168.1.27-192.168.1.27
-> ```
-> {% endcode %}
->
+
+{% code overflow="wrap" %}
+```
+```
+{% endcode %}
+
 > In the values file, add the below fields global-> environment section with your own values.
 >
 > ```
@@ -611,13 +612,15 @@ Copy the below paths and paste them and save.
 
 If you see an error message indicating the Kubernetes cluser is unreachable, the Microk8s service has stopped - simply restart it. Error text:
 
-{% code overflow="wrap" %}
+\{% code overflow="wrap" %\}
+
 ```
 Error: INSTALLATION FAILED: Kubernetes cluster unreachable: Get "https://127.0.0.1:16443/version": dial tcp 127.0.0.1:16443: connect: connection refused
 helm.go:84: [debug] Get "https://127.0.0.1:16443/version": dial tcp 127.0.0.1:16443: connect: connection refused
 ...
 ```
-{% endcode %}
+
+\{% endcode %\}
 
 Solution:
 
@@ -640,10 +643,11 @@ helm.sh/helm/v3/pkg/action.(*Install).availableName
 
 Solution:
 
-{% code overflow="wrap" %}
+\{% code overflow="wrap" %\}
+
 ```
+
 $ microk8s helm3 uninstall apica-ascent -n apica-ascent
 release "apica-asent" uninstalled
 $ microk8s helm3 install apica-ascent -n apica-ascent --set global.persistence.storageClass=microk8s-hostpath apica-repo/apica-ascent -f values.microk8s.yaml --debug --timeout 10m
 ```
-{% endcode %}

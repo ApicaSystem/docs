@@ -24,4 +24,4 @@ The averaging feature adds a moving average of the target value column to the da
 
 <figure><img src="../../../.gitbook/assets/image (536).png" alt=""><figcaption></figcaption></figure>
 
-\
+<br>

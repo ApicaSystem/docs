@@ -39,8 +39,7 @@ The following ports are supported out of the box with their standard purposes:
 | 25224 | Logstash                       | TCP      | logiq-flash    |
 | 25225 | Logstash TLS                   | TCP      | logiq-flash    |
 
-\
-
+<br>
 
 ### How to Enable a New Port
 

@@ -77,8 +77,7 @@ scenarios: # we can define multiple scenarios in 1 yml file if we want to
                 string1: "My Test String"
 ```
 
-\
-
+<br>
 
 **Example Script:**
 

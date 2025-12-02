@@ -11,4 +11,4 @@ Version 5.5-F is the most recent version of ZebraTester.
 * &#x20;[Handling of Dynamically Exchanged Session Parameters](https://apica-packages.s3.eu-central-1.amazonaws.com/current/zebratester/docs/HandlingDynamicSessionParameterEN.pdf)
 * &#x20;[Application Reference Manual](https://apica-packages.s3.eu-central-1.amazonaws.com/current/zebratester/docs/55F/ZebraTesterApplicationReferenceManual_V55F.pdf)
 * &#x20;[Recording Extension Toolbar (Firefox and Chrome)](https://apica-kb.atlassian.net/wiki/spaces/DAZT/pages/4620878/Download+the+ZebraTester+Extension)
-* &#x20;[Release Notes (V5.5F)](https://apica-packages.s3.eu-central-1.amazonaws.com/current/zebratester/docs/55F/ZebraTesterReleaseNotesV55F.pdf) \
+* &#x20;[Release Notes (V5.5F)](https://apica-packages.s3.eu-central-1.amazonaws.com/current/zebratester/docs/55F/ZebraTesterReleaseNotesV55F.pdf) <br>

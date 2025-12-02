@@ -20,8 +20,7 @@
 3. Click on Members next to the group name.
 4. Click the Add Member button.
 5. In the modal, select the member(s) you wish to add.
-6. Click OK to confirm and assign the members to the group.\
-
+6. Click OK to confirm and assign the members to the group.<br>
 
 ***
 
@@ -45,8 +44,7 @@
 3. Click on Roles next to the group name.
 4. Click the Add Roles button.
 5. In the modal, select the role(s) you wish to add.
-6. Click OK to confirm and assign the roles to the group.\
-
+6. Click OK to confirm and assign the roles to the group.<br>
 
 ***
 

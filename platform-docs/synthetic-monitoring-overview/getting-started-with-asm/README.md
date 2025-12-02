@@ -360,7 +360,7 @@ The login dialog is displayed:
 * Enter your **username** and **password**
 * Click **Log In**
 
-When you have been logged in, the [Overview Dashboard](broken-reference) will be displayed.
+When you have been logged in, the [Overview Dashboard](/broken/pages/mvHB2tRMeSiA0v0tVI1g) will be displayed.
 
 The first time you log in (before creating checks), this view may be mostly empty.
 

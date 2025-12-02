@@ -19,4 +19,4 @@ The following measured values are shown in the “Performance Overview” Table:
 | `Average Network Throughput`             | average network traffic, released by the test run.                                  |
 | `Total Transmitted Bytes`                | total data volume which was transferred during the test run.                        |
 
-\
+<br>

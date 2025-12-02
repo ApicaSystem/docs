@@ -55,8 +55,7 @@
    * **Y-Axis Multi-Column Plotting:** Enhanced Y-axis plotting, allowing for the selection and visualization of multiple columns, making complex data analysis simpler.
    * **Time Range in Headers:** Added time range indicators in the header, improving context and navigation during data exploration.
    * **Custom Chart Integration:** New customizable charts, such as Counters, are available for Data Explorer, providing enhanced visualization options.
-   *   **Color Selection for Widgets:** Users can now customize the colors of rendered data inside each widget on the Data Explorer page, making it easier to personalize and distinguish visual components.\
-
+   *   **Color Selection for Widgets:** Users can now customize the colors of rendered data inside each widget on the Data Explorer page, making it easier to personalize and distinguish visual components.<br>
 
        **Performance & Optimization:**
 

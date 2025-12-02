@@ -55,7 +55,7 @@ The HTML reports category contains check report types in HTML format.
 
 ***
 
-### [Create a Report](broken-reference) Overview <a href="#reports-createareportoverview" id="reports-createareportoverview"></a>
+### [Create a Report](/broken/pages/l4RYqBrqKXjr1IdP3gx4) Overview <a href="#reports-createareportoverview" id="reports-createareportoverview"></a>
 
 Step 1: Select (1) General PDF Reports or (2) General HTML Reports
 

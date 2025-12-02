@@ -53,8 +53,7 @@ for a complete list of supported Selenium IDE commands. Now, all of the commands
 * Disabled deprecated browser version from /AnalyzeUrl
 * Replaced Firefox with Chrome when creating an iPhone, iPad, or Android Check in New Check Guide
 * Removed deprecated check versions as options from the Edit Scenario page
-* Disabled AppDynamics check types from the integration wizard\
-
+* Disabled AppDynamics check types from the integration wizard<br>
 
 Read previous Release Notes, go to:\
 [Knowledge Base](https://apica-kb.atlassian.net/wiki/spaces/ASMDOCS/pages/2140241932/Release+Notes)
@@ -70,8 +69,7 @@ Read previous Release Notes, go to:\
 
 ## Bug Fixes <a href="#bug-fixes" id="bug-fixes"></a>
 
-* Fixed an issue which prevented Power Users with limited check editing permissions from saving checks after performing edits.\
-
+* Fixed an issue which prevented Power Users with limited check editing permissions from saving checks after performing edits.<br>
 
 Read previous Release Notes, go to:\
 [Knowledge Base](https://apica-kb.atlassian.net/wiki/spaces/ASMDOCS/pages/2140241932/Release+Notes)

@@ -1,18 +1,18 @@
 # Installing and Using the ApicaYAML CLI Tool
 
-* [Installing the ApicaYAML CLI Tool Locally](broken-reference)
-  * [Prerequisites](broken-reference)
-  * [Installation](broken-reference)
-* [Running the ApicaYAML CLI Tool Locally](broken-reference)
-  * [A Note on Project Structure](broken-reference)
-  * [Step 1: Create a solution to host the .yaml conversion](broken-reference)
-    * [Method 1: use the ApicaYAML tool to create your solution](broken-reference)
-    * [Method 2: create your solution manually](broken-reference)
-  * [Step 2: Place YAML file(s) and/or input file(s) within your solution](broken-reference)
-  * [Step 3: Run the ApicaYAML CLI tool](broken-reference)
-    * [3a. Run using the CLI with Visual Studio Code](broken-reference)
-    * [3b. Run using the CLI as a standalone application](broken-reference)
-  * [Additional Parameters](broken-reference)
+* [Installing the ApicaYAML CLI Tool Locally](/broken/pages/bLFZOfqpZR31ia821Cwb)
+  * [Prerequisites](/broken/pages/bLFZOfqpZR31ia821Cwb)
+  * [Installation](/broken/pages/bLFZOfqpZR31ia821Cwb)
+* [Running the ApicaYAML CLI Tool Locally](/broken/pages/bLFZOfqpZR31ia821Cwb)
+  * [A Note on Project Structure](/broken/pages/bLFZOfqpZR31ia821Cwb)
+  * [Step 1: Create a solution to host the .yaml conversion](/broken/pages/bLFZOfqpZR31ia821Cwb)
+    * [Method 1: use the ApicaYAML tool to create your solution](/broken/pages/bLFZOfqpZR31ia821Cwb)
+    * [Method 2: create your solution manually](/broken/pages/bLFZOfqpZR31ia821Cwb)
+  * [Step 2: Place YAML file(s) and/or input file(s) within your solution](/broken/pages/bLFZOfqpZR31ia821Cwb)
+  * [Step 3: Run the ApicaYAML CLI tool](/broken/pages/bLFZOfqpZR31ia821Cwb)
+    * [3a. Run using the CLI with Visual Studio Code](/broken/pages/bLFZOfqpZR31ia821Cwb)
+    * [3b. Run using the CLI as a standalone application](/broken/pages/bLFZOfqpZR31ia821Cwb)
+  * [Additional Parameters](/broken/pages/bLFZOfqpZR31ia821Cwb)
 
 Users can download a tool which serves to bootstrap an environment suitable for Apica YAML scripting and compile YAML scripts to ZebraTester format.
 

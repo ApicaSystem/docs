@@ -12,16 +12,16 @@ Every check result contains a Title Section which allows the user to see the mos
 
 
 
-Note that the sections above look essentially the same despite pertaining to two different check types. The only difference is the Check Description in the first screenshot; the second check does not have a description. Many of the elements present in the Title Section are self-explanatory (e.g. the inclusion of [Tags](broken-reference) and the number of Pages/URLs loaded in the check result).
+Note that the sections above look essentially the same despite pertaining to two different check types. The only difference is the Check Description in the first screenshot; the second check does not have a description. Many of the elements present in the Title Section are self-explanatory (e.g. the inclusion of [Tags](/broken/pages/3i56BT0Y5VxEL6PSAHth) and the number of Pages/URLs loaded in the check result).
 
 The Test started and Test ended timestamps correlate to the configured timezone of the account.
 
 The following icons contain links to various tools which can aid in result interpretation. Not every icon will appear for every check result.
 
-|   | link to the [Check Details](broken-reference) page |
-| - | -------------------------------------------------- |
-|   | link to the Analyze Metrics page                   |
-|   | download the check result in .CSV format           |
+|   | link to the [Check Details](/broken/pages/SInI2w5LvHfsswciTiMc) page |
+| - | -------------------------------------------------------------------- |
+|   | link to the Analyze Metrics page                                     |
+|   | download the check result in .CSV format                             |
 
 ### Access & Bookmarks <a href="#understandingcheckresults-access-and-bookmarks" id="understandingcheckresults-access-and-bookmarks"></a>
 

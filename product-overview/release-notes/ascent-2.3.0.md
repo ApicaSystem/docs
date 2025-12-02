@@ -33,8 +33,7 @@ Discover the latest advancements and improvements of the Apica Ascent platform. 
 * **JS Code Forwarder** is a robust batch processing tool designed to efficiently handle and forward batches of events. It supports forwarding arrays of event objects to a specified endpoint, and includes built-in functions for recording metrics, making HTTP requests, and logging.\
   [https://logflow-docs.logiq.ai/forwarding-to-monitoring-tools/js-code-forwarding](https://logflow-docs.logiq.ai/forwarding-to-monitoring-tools/js-code-forwarding)
 * **AWS XRay Forwarder**. This allows users to send trace data to AWS XRay.
-* Alert page search. Ability to search across all existing Alerts by use of central search bar within Alert list view.\
-
+* Alert page search. Ability to search across all existing Alerts by use of central search bar within Alert list view.<br>
 
 **Improvements**
 

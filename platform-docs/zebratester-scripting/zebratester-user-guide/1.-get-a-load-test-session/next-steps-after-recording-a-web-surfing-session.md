@@ -1,15 +1,15 @@
 # Next Steps after Recording a Web Surfing Session
 
-* [Saving the Recorded Web Surfing Session](broken-reference)
-* [Reviewing the Recorded Web Surfing Session](broken-reference)
-  * [Reviewing the Stressed Web Servers](broken-reference)
-  * [Reviewing the Automatically-Applied Content Test](broken-reference)
-    * [Search Text Examples](broken-reference)
-    * [Max. Stored Content Size](broken-reference)
-    * [Failure Action](broken-reference)
-    * [Reset Settings](broken-reference)
-  * [Configuring Parallel or Serial URL Execution within Web Pages](broken-reference)
-* [Executing a First Load Test](broken-reference)
+* [Saving the Recorded Web Surfing Session](/broken/pages/6Bpl49CV7ZXPkZz6BEJc)
+* [Reviewing the Recorded Web Surfing Session](/broken/pages/6Bpl49CV7ZXPkZz6BEJc)
+  * [Reviewing the Stressed Web Servers](/broken/pages/6Bpl49CV7ZXPkZz6BEJc)
+  * [Reviewing the Automatically-Applied Content Test](/broken/pages/6Bpl49CV7ZXPkZz6BEJc)
+    * [Search Text Examples](/broken/pages/6Bpl49CV7ZXPkZz6BEJc)
+    * [Max. Stored Content Size](/broken/pages/6Bpl49CV7ZXPkZz6BEJc)
+    * [Failure Action](/broken/pages/6Bpl49CV7ZXPkZz6BEJc)
+    * [Reset Settings](/broken/pages/6Bpl49CV7ZXPkZz6BEJc)
+  * [Configuring Parallel or Serial URL Execution within Web Pages](/broken/pages/6Bpl49CV7ZXPkZz6BEJc)
+* [Executing a First Load Test](/broken/pages/6Bpl49CV7ZXPkZz6BEJc)
 
 After recording a web session, a number of further steps should be performed.
 

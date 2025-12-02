@@ -134,8 +134,7 @@ Go to your Datadog dashboard and verify data coming in as expected:
 
 <figure><img src="../../.gitbook/assets/image (1076).png" alt=""><figcaption></figcaption></figure>
 
-As you can see, data ingestion has decreased after the FILTER rule was applied:\
-
+As you can see, data ingestion has decreased after the FILTER rule was applied:<br>
 
 <figure><img src="../../.gitbook/assets/image (1078).png" alt=""><figcaption></figcaption></figure>
 

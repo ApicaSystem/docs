@@ -16,8 +16,7 @@ The **Edit Configuration** view allows you to modify all available settings for 
 
 1. In the **Verify Connection** section, you find configurations for verification of the site or check result.
 
-\
-
+<br>
 
 
 
@@ -79,4 +78,4 @@ The **Information** section contains general information about the check.
 | Description | A longer description of the check.      |
 | Enabled     | Turn check on or off.                   |
 
-\
+<br>

@@ -16,4 +16,4 @@ The simplest way to install ZebraTester on Mac OS X is to run the guide and foll
 
 #### [Linux / Solaris](https://apica-kb.atlassian.net/wiki/spaces/DAZT/pages/4620828/Linux+Solaris) <a href="#installzebratester-linux-solaris" id="installzebratester-linux-solaris"></a>
 
-Installation on Linux requires that JAVA SDK is installed with the appropriate environment variables set.\
+Installation on Linux requires that JAVA SDK is installed with the appropriate environment variables set.<br>

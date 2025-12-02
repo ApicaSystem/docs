@@ -13,8 +13,7 @@ This allows you to detect developing variations in response times.
 
 ### Data Points <a href="#trends-datapoints" id="trends-datapoints"></a>
 
-Pointing at a data point in the graph provides the check run date, name and response time.\
-
+Pointing at a data point in the graph provides the check run date, name and response time.<br>
 
 ### Table <a href="#trends-table" id="trends-table"></a>
 
@@ -41,4 +40,4 @@ On the right-hand side of the table, two columns show a comparison between avera
 | Average    | The average value for the period.                  |
 | Diff       | Difference between the last value and the average. |
 
-\
+<br>

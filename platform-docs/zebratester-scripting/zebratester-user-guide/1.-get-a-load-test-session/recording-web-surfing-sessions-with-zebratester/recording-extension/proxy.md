@@ -13,4 +13,4 @@ A proxy server works as an intermediary between the client and other servers, fo
 | <p>When you start a recording with the browser extension, the proxy is automatically enabled:</p><p></p> | <p>After you stop the recording, the proxy settings are automatically reset to the original settings:</p><p></p> |
 | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 
-\
+<br>

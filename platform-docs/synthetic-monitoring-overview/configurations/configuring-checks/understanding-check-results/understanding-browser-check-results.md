@@ -112,7 +112,7 @@ If a URL in your scenario does not return a response within X seconds after the 
 
 
 
-The number of seconds which the check will wait for request resolutions after DOM complete can be configured in the [Edit Check](broken-reference) settings:
+The number of seconds which the check will wait for request resolutions after DOM complete can be configured in the [Edit Check](/broken/pages/P6RWuVEugNXi3r142iYs) settings:
 
 
 

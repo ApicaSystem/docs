@@ -58,7 +58,7 @@ For each check a number of data points are shown.
 
 
 
-Click on the name of the check or the response time to view details about a check. This will add Details Bookmarks Access & Bookmarks at the top of the window and take you to the [Understanding the "Result Details" View](broken-reference) view.
+Click on the name of the check or the response time to view details about a check. This will add Details Bookmarks Access & Bookmarks at the top of the window and take you to the [Understanding the "Result Details" View](/broken/pages/ZkaffsvTU3qqb1ora1o7) view.
 
 * Latest response time and when the check was run:
 
@@ -84,14 +84,14 @@ At the group level is a summary for the contained subgroups.
 
 The top bar for the group contains a number of buttons to change the view frame.
 
-| Icon | Name              | Description                                                                |
-| ---- | ----------------- | -------------------------------------------------------------------------- |
-|  /   | Expand / Collapse | Shows or hides more details for the group/subgroup.                        |
-|      | List View         | Switches the frame to Views.                                               |
-|      | Split View        | Switches the frame to Views.                                               |
-|      | Grid View         | Switches the frame to Views.                                               |
-|      | Check Status      | Displays a summary of statuses for checks in the group.                    |
-|      | Move Frame        | Button to [Move Group Frame](broken-reference) the frame in the dashboard. |
+| Icon | Name              | Description                                                                                  |
+| ---- | ----------------- | -------------------------------------------------------------------------------------------- |
+|  /   | Expand / Collapse | Shows or hides more details for the group/subgroup.                                          |
+|      | List View         | Switches the frame to Views.                                                                 |
+|      | Split View        | Switches the frame to Views.                                                                 |
+|      | Grid View         | Switches the frame to Views.                                                                 |
+|      | Check Status      | Displays a summary of statuses for checks in the group.                                      |
+|      | Move Frame        | Button to [Move Group Frame](/broken/pages/ZkaffsvTU3qqb1ora1o7) the frame in the dashboard. |
 
 **Subgroups**
 
@@ -174,11 +174,11 @@ The view buttons in the top hand right corner of each frame lets you define the 
 
 **Actions**
 
-| Button | Name       | Description                                                      |
-| ------ | ---------- | ---------------------------------------------------------------- |
-|        | List View  | Switches the frame to [Frame Modes And Views](broken-reference). |
-|        | Split View | Switches the frame to [Frame Modes And Views](broken-reference). |
-|        | Grid View  | Switches the frame to [Frame Modes And Views](broken-reference). |
+| Button | Name       | Description                                                                        |
+| ------ | ---------- | ---------------------------------------------------------------------------------- |
+|        | List View  | Switches the frame to [Frame Modes And Views](/broken/pages/ZkaffsvTU3qqb1ora1o7). |
+|        | Split View | Switches the frame to [Frame Modes And Views](/broken/pages/ZkaffsvTU3qqb1ora1o7). |
+|        | Grid View  | Switches the frame to [Frame Modes And Views](/broken/pages/ZkaffsvTU3qqb1ora1o7). |
 
 **List View**
 

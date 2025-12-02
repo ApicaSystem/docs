@@ -166,7 +166,7 @@ The Target is created, containing the selected user/targets.
 
 ### Other Alert Types <a href="#configuringalerts-otheralerttypes" id="configuringalerts-otheralerttypes"></a>
 
-For instructions on how to configure other alert types, refer to the article [Configuring Webhook Alerts](broken-reference).
+For instructions on how to configure other alert types, refer to the article [Configuring Webhook Alerts](/broken/pages/lIhukaNxTNb4hpXu9dTJ).
 
 ## Understanding and Configuring Placeholders <a href="#configuringalerts-understandingandconfiguringplaceholders" id="configuringalerts-understandingandconfiguringplaceholders"></a>
 

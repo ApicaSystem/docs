@@ -142,16 +142,16 @@ Press **Process Selected Records** to remove the results.
 
 The **selectors** allow you to pick which checks to include in the task.
 
-| Item            | Description                                                |
-| --------------- | ---------------------------------------------------------- |
-| Type            | List of check types.                                       |
-| Checks          | List of checks of the selected type.                       |
-|                 | Check result [Colors](broken-reference) to include.        |
-| From            | Start date and time for the period.                        |
-| To              | End date and time for the period.                          |
-| Refresh         | Reload and update the table display according to settings. |
-| Display records | The number of rows to display per page.                    |
-| Search          | Search for checks by message text.                         |
+| Item            | Description                                                           |
+| --------------- | --------------------------------------------------------------------- |
+| Type            | List of check types.                                                  |
+| Checks          | List of checks of the selected type.                                  |
+|                 | Check result [Colors](/broken/pages/yEJ7dxl4H53hcCGiulvI) to include. |
+| From            | Start date and time for the period.                                   |
+| To              | End date and time for the period.                                     |
+| Refresh         | Reload and update the table display according to settings.            |
+| Display records | The number of rows to display per page.                               |
+| Search          | Search for checks by message text.                                    |
 
 ### Create A Maintenance Task <a href="#navigation-createamaintenancetask" id="navigation-createamaintenancetask"></a>
 
@@ -173,7 +173,7 @@ To create a maintenance task:
 
 A database task is placed in a queue for execution. It will run as soon as possible.
 
-When queued, the maintenance task is visible in the [Task](broken-reference) table.
+When queued, the maintenance task is visible in the [Task](/broken/pages/yEJ7dxl4H53hcCGiulvI) table.
 
 ### Table <a href="#navigation-table" id="navigation-table"></a>
 
@@ -203,19 +203,19 @@ The journal can be filtered by a number of parameters.
 
 
 
-| **Item**     | **Description**                                            |
-| ------------ | ---------------------------------------------------------- |
-| Severity     | Event [Severity](broken-reference) to include.             |
-| From         | Start date and time for the period.                        |
-| To           | End date and time for the period.                          |
-|  Message     | Event description.                                         |
-|  Customer    | Customer account.                                          |
-|  User        | Involved user, if any.                                     |
-|  IP-Address  | The associated IP address for the event, if any.           |
-|  Source      | Originating location.                                      |
-|  Category    | [Event Categories](broken-reference).                      |
-|  Check       | Involved check, if any.                                    |
-| Apply Filter | Reload and update the table display according to settings. |
+| **Item**     | **Description**                                                  |
+| ------------ | ---------------------------------------------------------------- |
+| Severity     | Event [Severity](/broken/pages/yEJ7dxl4H53hcCGiulvI) to include. |
+| From         | Start date and time for the period.                              |
+| To           | End date and time for the period.                                |
+|  Message     | Event description.                                               |
+|  Customer    | Customer account.                                                |
+|  User        | Involved user, if any.                                           |
+|  IP-Address  | The associated IP address for the event, if any.                 |
+|  Source      | Originating location.                                            |
+|  Category    | [Event Categories](/broken/pages/yEJ7dxl4H53hcCGiulvI).          |
+|  Check       | Involved check, if any.                                          |
+| Apply Filter | Reload and update the table display according to settings.       |
 
 ### Entries <a href="#navigation-entries" id="navigation-entries"></a>
 
@@ -223,27 +223,27 @@ The **Entries** table shows the result of applying the selectors.
 
 
 
-| **Column**  | **Description**                                  |
-| ----------- | ------------------------------------------------ |
-| Severity    | Event [Severity](broken-reference).              |
-|  Timestamp  | Date and time when the event occurred.           |
-|  Message    | Event description.                               |
-|  Customer   | Customer account.                                |
-|  User       | Involved user, if any.                           |
-|  IP-Address | The associated IP address for the event, if any. |
-|  Source     | Originating location.                            |
-|  Category   | [Event Categories](broken-reference).            |
-|  Check      | Involved check, if any.                          |
+| **Column**  | **Description**                                         |
+| ----------- | ------------------------------------------------------- |
+| Severity    | Event [Severity](/broken/pages/yEJ7dxl4H53hcCGiulvI).   |
+|  Timestamp  | Date and time when the event occurred.                  |
+|  Message    | Event description.                                      |
+|  Customer   | Customer account.                                       |
+|  User       | Involved user, if any.                                  |
+|  IP-Address | The associated IP address for the event, if any.        |
+|  Source     | Originating location.                                   |
+|  Category   | [Event Categories](/broken/pages/yEJ7dxl4H53hcCGiulvI). |
+|  Check      | Involved check, if any.                                 |
 
 ## Traceroute <a href="#navigation-traceroute" id="navigation-traceroute"></a>
 
-The Traceroute tool allows you to easily run a [Traceroute](broken-reference) from any of our Apica [Locations](https://apica-kb.atlassian.net/wiki/pages/createpage.action?spaceKey=ASMDOCS\&title=Locations%20Locations\&linkCreation=true\&fromPageId=2134049566) to any URL or IP address you choose.
+The Traceroute tool allows you to easily run a [Traceroute](/broken/pages/yEJ7dxl4H53hcCGiulvI) from any of our Apica [Locations](https://apica-kb.atlassian.net/wiki/pages/createpage.action?spaceKey=ASMDOCS\&title=Locations%20Locations\&linkCreation=true\&fromPageId=2134049566) to any URL or IP address you choose.
 
 
 
 ### Introduction <a href="#navigation-introduction" id="navigation-introduction"></a>
 
-The purpose of running a traceroute is to get an indication of which way traffic takes between a source and a destination. Traceroute sends test [Packet](broken-reference) with [TTL](broken-reference) values starting at 1. The resulting [ICMP](https://apica-kb.atlassian.net/wiki/spaces/GLOS/pages/4632057/Icmp) `Time Exceeded` messages are used to discover any devices (called "hops") forwarding the packets to the destination. For each hop, the response time is recorded to indicate transmission speed. Any detected failures or packet losses on the way are also the recorder and displayed to give an idea of the transmission quality.
+The purpose of running a traceroute is to get an indication of which way traffic takes between a source and a destination. Traceroute sends test [Packet](/broken/pages/yEJ7dxl4H53hcCGiulvI) with [TTL](/broken/pages/yEJ7dxl4H53hcCGiulvI) values starting at 1. The resulting [ICMP](https://apica-kb.atlassian.net/wiki/spaces/GLOS/pages/4632057/Icmp) `Time Exceeded` messages are used to discover any devices (called "hops") forwarding the packets to the destination. For each hop, the response time is recorded to indicate transmission speed. Any detected failures or packet losses on the way are also the recorder and displayed to give an idea of the transmission quality.
 
 ### Configuration <a href="#navigation-configuration" id="navigation-configuration"></a>
 
@@ -317,12 +317,12 @@ The **Messages** view lets you configure system messages to display to Synthetic
 
 The message can contain some formatting. You format the text by putting the text within .
 
-| Formatting       | Tag                                | Preview                       |
-| ---------------- | ---------------------------------- | ----------------------------- |
-| Link:            | `[link="linkurl"]Link Text[/link]` | [Link Text](broken-reference) |
-| Bold:            | \[`b]Bold Text[/b]`                | **Bold Text**                 |
-| Italic:          | `[i]Italic Text[/i]`               | **Italic Text**               |
-| Bold and Italic: | `[ib]Italic and Bold Text[/ib]`    | \***Italic and Bold Text**\*  |
+| Formatting       | Tag                                | Preview                                         |
+| ---------------- | ---------------------------------- | ----------------------------------------------- |
+| Link:            | `[link="linkurl"]Link Text[/link]` | [Link Text](/broken/pages/yEJ7dxl4H53hcCGiulvI) |
+| Bold:            | \[`b]Bold Text[/b]`                | **Bold Text**                                   |
+| Italic:          | `[i]Italic Text[/i]`               | **Italic Text**                                 |
+| Bold and Italic: | `[ib]Italic and Bold Text[/ib]`    | \***Italic and Bold Text**\*                    |
 
 ### Create Message <a href="#navigation-createmessage" id="navigation-createmessage"></a>
 
@@ -400,7 +400,7 @@ The login dialog is displayed:
 * Enter your **username** and **password**
 * Click **Log In**
 
-When you have been logged in, the [Overview Dashboard](broken-reference) will be displayed.
+When you have been logged in, the [Overview Dashboard](/broken/pages/yEJ7dxl4H53hcCGiulvI) will be displayed.
 
 The first time you log in (before creating checks), this view may be mostly empty.
 
@@ -515,7 +515,7 @@ In the second step, you provide
 
 * integration information,
 * metric settings,
-* [Locations - Introduction](broken-reference), and
+* [Locations - Introduction](/broken/pages/yEJ7dxl4H53hcCGiulvI), and
 * other integration-specific settings.
 
 \##

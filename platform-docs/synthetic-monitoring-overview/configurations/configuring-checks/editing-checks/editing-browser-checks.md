@@ -46,7 +46,7 @@ To edit a scenario, click on the “pad and paper” icon to show the “Edit Sc
 
 
 
-Individual files can be deleted from the scenario with the “delete file” button. The scenario can be replaced by a different scenario, or a newer version of the same scenario by uploading a locally stored scenario file. Refer to the article [Understanding the Debug Scenarios Page](broken-reference) for information on the Debug Scenarios functionality.
+Individual files can be deleted from the scenario with the “delete file” button. The scenario can be replaced by a different scenario, or a newer version of the same scenario by uploading a locally stored scenario file. Refer to the article [Understanding the Debug Scenarios Page](/broken/pages/beaUi3581MGlea7x2gFr) for information on the Debug Scenarios functionality.
 
 ### Browser Behavior <a href="#editingbrowserchecks-browserbehavior" id="editingbrowserchecks-browserbehavior"></a>
 
@@ -161,7 +161,7 @@ Severity Mapping allows a user to manually change the default severity that woul
 
 * Some specific background error that needs investigation but doesn't need to throw alerts
 * Monitor 3rd party URLs without check failures
-* Integrating Severity Mappings with [Alerts](broken-reference)
+* Integrating Severity Mappings with [Alerts](/broken/pages/36NJyNgd9xDrdVc49HIl)
 
 **Examples of Severity Mapping**
 

@@ -45,4 +45,4 @@ At the time of writing, the latest version of the Java agent is [2.11.0](https:/
 
 <mark style="background-color:green;">In this case, the service name “your-java-app” would show up as a Service.</mark>
 
-\
+<br>

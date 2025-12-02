@@ -6,8 +6,7 @@ The Web tools menu can be invoked from the main menu and contains **four small u
 
 
 
-**Web Tools:** Contains four small utilities which are helpful during the examination of the exchanged data between the Web browser and the Web server.\
-
+**Web Tools:** Contains four small utilities which are helpful during the examination of the exchanged data between the Web browser and the Web server.<br>
 
 * **Base64 Text Transformation**: Performs a base64 transformation, or its reverse operation, as appropriate. The base64 algorithm is often used to obfuscate values of CGI parameters. The reverse operation allows you to decode such obfuscated values.\
   &#x20;
@@ -17,4 +16,4 @@ The Web tools menu can be invoked from the main menu and contains **four small u
   &#x20;
 * **Examine SSL Configuration of HTTPS Server - Encryption Protocols and Algorithms**: Examines the SSL configuration of an HTTPS Web server "from outside" and displays hints about SSL misconfigurations.
 
-\
+<br>

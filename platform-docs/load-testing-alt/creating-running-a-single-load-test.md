@@ -103,8 +103,7 @@ The **Additional Options** field passes command line options to the load testing
 `-sslcmode` Apply SSL/HTTPS compatibility workarounds for deficient SSL servers. You may try this option if you get constantly the error type 'Network Connection aborted by Server' for all URL calls.\
 \
 `-tz <timezone>` Sets an alternative time zone which is used by the load test program. The default time zone is equal to the selection which has been made when installing ZebraTester, or - if modified subsequently - which has been set in the Personal Settings menu. Possible time zone values are described in chapter 6 of the Application Reference Manual.\
-\
-
+<br>
 
 `-ssl <parameter>`
 

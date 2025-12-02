@@ -54,4 +54,4 @@ Generic Placeholders that can be used in every type of alert notification are:
   * **{$sessionFailureRateLimit}**: The configured threshold for the session failure rate in percent.
 * **During the Execution of a Job and at the End of a Job: if the Average Response Time per Page is greater than seconds**
   * {$avResponseTimePerPage}: The measured average response time per page in seconds.
-  * {$avResponseTimePerPageLimit}: The configured threshold for the average response time per page in seconds.\
+  * {$avResponseTimePerPageLimit}: The configured threshold for the average response time per page in seconds.<br>

@@ -138,8 +138,7 @@ Restart the OpenTelemetry collector by running the following command:
 
 <figure><img src="../../.gitbook/assets/image (975).png" alt=""><figcaption><p>Logs &#x26; Insights</p></figcaption></figure>
 
-3.  You should see namespace "OtelDemo" and Application "DemoLogs":\
-
+3.  You should see namespace "OtelDemo" and Application "DemoLogs":<br>
 
     <figure><img src="../../.gitbook/assets/image (976).png" alt=""><figcaption></figcaption></figure>
 
@@ -284,8 +283,7 @@ Dropping a few labels might not seem like a big deal at first, but if you exrapo
 
 <figure><img src="../../.gitbook/assets/image (1004).png" alt=""><figcaption><p>Pipelines</p></figcaption></figure>
 
-15. View all your pipeline data along with savings:\
-
+15. View all your pipeline data along with savings:<br>
 
     <figure><img src="../../.gitbook/assets/image (1005).png" alt=""><figcaption><p>Pipeline Dashboard</p></figcaption></figure>
 

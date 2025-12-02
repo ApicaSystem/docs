@@ -2,8 +2,7 @@
 
 New _Agent Types_ can be added to the Apica Fleet through a Git Repository. For Apica Fleet Management to work, it is necessary that the agent's process can be controlled by the Apica Fleet's Agent Manager. The agent manager is a sidecar process, which allows the Fleet Control Plane to control the runtime of different agents. Agents Manager can also relay health and configuration changes to the Fleet Control Plane.
 
-The _Agent Type_ configurations are placed within the _agent\_types_ director&#x79;_. A_ YAML file is used for each agent type to specify its configuration.\
-
+The _Agent Type_ configurations are placed within the _agent\_types_ director&#x79;_. A_ YAML file is used for each agent type to specify its configuration.<br>
 
 <figure><img src="../../.gitbook/assets/image (1032).png" alt=""><figcaption></figcaption></figure>
 

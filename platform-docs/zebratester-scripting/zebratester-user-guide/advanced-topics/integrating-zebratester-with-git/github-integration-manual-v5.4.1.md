@@ -4,22 +4,22 @@
 
 
 
-* [1. Overview, Installation, and Configuration](broken-reference)
-  * [1.1. GitHub Server Configuration](broken-reference)
-  * [1.2. GitHub Initialization](broken-reference)
-    * [Scenario 1:](broken-reference)
-    * [Scenario 2:](broken-reference)
-* [2. Git Operations](broken-reference)
-  * [1.1. Git Status](broken-reference)
-  * [1.2. Commit](broken-reference)
-  * [1.3. Push](broken-reference)
-  * [1.4. Pull](broken-reference)
-  * [1.5. Fetch](broken-reference)
-  * [1.6. Merge](broken-reference)
-  * [1.7. Copy](broken-reference)
-  * [1.8. Clone](broken-reference)
-  * [1.9. Delete](broken-reference)
-  * [1.10. History](broken-reference)
+* [1. Overview, Installation, and Configuration](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.1. GitHub Server Configuration](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.2. GitHub Initialization](/broken/pages/4rvufPLh10O7NYDvW6cy)
+    * [Scenario 1:](/broken/pages/4rvufPLh10O7NYDvW6cy)
+    * [Scenario 2:](/broken/pages/4rvufPLh10O7NYDvW6cy)
+* [2. Git Operations](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.1. Git Status](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.2. Commit](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.3. Push](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.4. Pull](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.5. Fetch](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.6. Merge](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.7. Copy](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.8. Clone](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.9. Delete](/broken/pages/4rvufPLh10O7NYDvW6cy)
+  * [1.10. History](/broken/pages/4rvufPLh10O7NYDvW6cy)
 
 ## **1. Overview, Installation, and Configuration** <a href="#githubintegrationmanualv5.4.1-1.overview-installation-andconfiguration" id="githubintegrationmanualv5.4.1-1.overview-installation-andconfiguration"></a>
 

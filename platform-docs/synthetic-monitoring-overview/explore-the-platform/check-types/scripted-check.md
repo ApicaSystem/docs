@@ -172,8 +172,7 @@ After creating our new check, using a Python script that we uploaded into GitHub
 Adding a custom python or node.js module to your private Browser agent is very simple and should take less than 5 minutes. This guide assumes you have administrator access to your agent or have an operations team that will perform these steps for you.
 
 1. Determine the modules you need to install and log in to the private Browser agent.
-2.  The worker runs apicanet in a chroot shell. This means you cannot simply run the following commands but must enter a chroot shell. To do this, run the following command:\
-
+2.  The worker runs apicanet in a chroot shell. This means you cannot simply run the following commands but must enter a chroot shell. To do this, run the following command:<br>
 
     ```
     /opt/asm-browser-agent/chroot_shell.sh
@@ -181,8 +180,7 @@ Adding a custom python or node.js module to your private Browser agent is very s
 
     &#x20;
 3. You should now be in a chroot shell. From here, you may interact with pip3 and npm (package managers for python 3.5 and nodejs).
-4.  Install the necessary packages by running the following commands:\
-
+4.  Install the necessary packages by running the following commands:<br>
 
     ```
     # Node modules should be installed to the global scope.

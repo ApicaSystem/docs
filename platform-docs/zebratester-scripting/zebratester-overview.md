@@ -189,7 +189,6 @@ Click the **help** button for contextual help from any page and a related page (
 &#x20;
 
 \
-\
-
+<br>
 
 &#x20;

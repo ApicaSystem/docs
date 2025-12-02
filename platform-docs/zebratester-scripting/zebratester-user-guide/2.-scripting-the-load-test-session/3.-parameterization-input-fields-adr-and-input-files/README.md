@@ -64,4 +64,4 @@ Click the **Add Input File…** button inside the Var Handler to define a new In
 
 [Apica Data Repository (ADR) aka The Apica Table Server](https://apica-kb.atlassian.net/wiki/spaces/DAZT/pages/953876489/Apica+Data+Repository+ADR+aka+Apica+Table+Server)
 
-\
+<br>

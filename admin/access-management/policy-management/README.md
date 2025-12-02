@@ -6,4 +6,4 @@ Policies define the rules and permissions that govern access to resources within
 
 In Apica Ascent, policies enable administrators to enforce consistent, secure, and role-based access control (RBAC) across the platform. Each policy consists of a set of permissions that determine access to specific functionalities or data.
 
-By managing policies effectively, organizations can ensure compliance, minimize risk, and maintain operational efficiency.\
+By managing policies effectively, organizations can ensure compliance, minimize risk, and maintain operational efficiency.<br>

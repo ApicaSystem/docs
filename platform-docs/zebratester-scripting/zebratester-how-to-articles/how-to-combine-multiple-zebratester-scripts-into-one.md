@@ -32,8 +32,7 @@ URL definitions must contain at least 3 arguments:
 3. expected HTTP response status code of the URL call (200, 302 …)
 4. Argument 4 of a URL definition is optional and contains the requested content
 
-All further arguments are optional and contain URL options that begin with a hyphen (-)\
-
+All further arguments are optional and contain URL options that begin with a hyphen (-)<br>
 
 ```
 <-command> [<argument 1>..<argument n>]

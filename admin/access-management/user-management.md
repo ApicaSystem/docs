@@ -28,8 +28,7 @@ These users have been invited to the platform but have not yet completed the reg
 
 To view Invited Users
 
-* Navigate to Settings > IAM > Pending Inviation.\
-
+* Navigate to Settings > IAM > Pending Inviation.<br>
 
 ***
 
@@ -60,8 +59,7 @@ Disabled users will no longer have access to the platform until re-enabled.
 To view a user’s assigned roles:
 
 1. Navigate to the user’s profile page by clicking on their name in the Active Users list.
-2. Assigned roles and access levels will be displayed on the profile.\
-
+2. Assigned roles and access levels will be displayed on the profile.<br>
 
 ***
 

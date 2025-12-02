@@ -22,7 +22,6 @@ The alerts we provide cover most, if not all of your bases, but if you wanted to
 
 Fill out the fields below with your criteria. \
 \
-**Best Practice:** Apica recommends clicking the "+" so you can set two values: a lower threshold that throws a warning and a higher threshold that throws critical or emergency. This sets your team up for a proactive monitoring approach.\
-
+**Best Practice:** Apica recommends clicking the "+" so you can set two values: a lower threshold that throws a warning and a higher threshold that throws critical or emergency. This sets your team up for a proactive monitoring approach.<br>
 
 <figure><img src="../../.gitbook/assets/image (144).png" alt="" width="323"><figcaption></figcaption></figure>

@@ -4,7 +4,7 @@ You can edit a check after creating it by navigating to the “Edit Check” pag
 
 
 
-This article will review some of the more technical features of the Edit Check page. If a field is self-explanatory (for example, the “Name” field), it will not be included in the article. If a section is specific to only a certain check type, refer to this article’s child pages for that section! For example, you can only attach a Selenium scenario to a Browser check, so refer to [Editing Browser Checks](broken-reference) for instructions on how to upload and edit a Selenium script within ASM.
+This article will review some of the more technical features of the Edit Check page. If a field is self-explanatory (for example, the “Name” field), it will not be included in the article. If a section is specific to only a certain check type, refer to this article’s child pages for that section! For example, you can only attach a Selenium scenario to a Browser check, so refer to [Editing Browser Checks](/broken/pages/xTTPhjq9ohvfSA5n9rmj) for instructions on how to upload and edit a Selenium script within ASM.
 
 Almost every feature in the Edit Check section contains a tooltip which will give you more information pertaining to that feature!
 
@@ -20,7 +20,7 @@ When you clone a check, all of the settings of the parent check are duplicated i
 
 ### Tags <a href="#editingchecks-tags" id="editingchecks-tags"></a>
 
-Categorization and identification of checks can be done by adding tags. [Tags](broken-reference) are keys that can have multiple values, allowing for better context in results and management. For example, the key “Environment” could have values such as “Prod”, “Dev”, “Alpha”, “Beta”, letting you quickly identify checks running on different environments.
+Categorization and identification of checks can be done by adding tags. [Tags](/broken/pages/3i56BT0Y5VxEL6PSAHth) are keys that can have multiple values, allowing for better context in results and management. For example, the key “Environment” could have values such as “Prod”, “Dev”, “Alpha”, “Beta”, letting you quickly identify checks running on different environments.
 
 Tags can also be accessed through the API, which lets you perform more intelligent categorization in automated tasks and integrations.
 

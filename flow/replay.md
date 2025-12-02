@@ -6,13 +6,11 @@ description: Resends previously ingested unmapped logs to a chosen destination.
 
 Apica's **Replay** feature allows you to send previously ingested logs to a configured destination (e.g., S3 bucket, Splunk HEC endpoint) even if those logs were not mapped to a destination at the time of their ingestion. Replay allows selective resending of logs to the desired destination by user-defined criteria such as time range and attribute match.
 
-&#x20;Replay especially comes in handy when there is an investigation of a historical incident, where a subset of logs can be sent to a destination.\
-
+&#x20;Replay especially comes in handy when there is an investigation of a historical incident, where a subset of logs can be sent to a destination.<br>
 
 ### How it works:
 
-1. A [forwarder](list-of-forwarders.md) must be configured that sends the logs to the desired destination.\
-
+1. A [forwarder](list-of-forwarders.md) must be configured that sends the logs to the desired destination.<br>
 
 <figure><img src="../.gitbook/assets/Screenshot from 2025-06-11 11-37-16.png" alt=""><figcaption></figcaption></figure>
 

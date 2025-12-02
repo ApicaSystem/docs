@@ -52,7 +52,7 @@ With this string you can specify it to only look for errors on your site and ign
 
 ## Examples of Regex Within Severity Mapping <a href="#usingregularexpressionswithintheasmplatform-examplesofregexwithinseveritymapping" id="usingregularexpressionswithintheasmplatform-examplesofregexwithinseveritymapping"></a>
 
-Regular Expressions can be used to customize [Severity Mapping](broken-reference) within a check configuration.
+Regular Expressions can be used to customize [Severity Mapping](/broken/pages/SInI2w5LvHfsswciTiMc) within a check configuration.
 
 ### Skip and Keep <a href="#usingregularexpressionswithintheasmplatform-skipandkeep" id="usingregularexpressionswithintheasmplatform-skipandkeep"></a>
 

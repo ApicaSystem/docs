@@ -13,4 +13,4 @@ Roles define user access levels using policies. They control what actions users 
 
 <figure><img src="../../../.gitbook/assets/image (1093).png" alt=""><figcaption></figcaption></figure>
 
-\
+<br>

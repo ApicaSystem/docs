@@ -38,8 +38,7 @@
 1. Navigate to Settings > IAM > Roles.
 2. Locate the desired role and click on Policies tab next to it.
 3. Find the policy you want to remove.
-4. Click the Remove button next to that policy to remove the policy.\
-
+4. Click the Remove button next to that policy to remove the policy.<br>
 
 ***
 
@@ -48,8 +47,7 @@
 1. Go to Settings > IAM > Roles.
 2. Find the role you want to assign members to and click on Members tab next to the name.
 3. Click the Add Member button in the left menu.
-4. Select the members to add and click OK.\
-
+4. Select the members to add and click OK.<br>
 
 ***
 
@@ -58,8 +56,7 @@
 1. Navigate to Settings > IAM > Roles.
 2. Click on Members tab next to the desired role.
 3. Locate the member you want to remove.
-4. Click the Remove button next to their name.\
-
+4. Click the Remove button next to their name.<br>
 
 ***
 
@@ -68,8 +65,7 @@
 1. Go to Settings > IAM > Roles.
 2. Find the role and click on Groups tab.
 3. Click the Add Group button in the left menu.
-4. Select the groups to add and click OK.\
-
+4. Select the groups to add and click OK.<br>
 
 ***
 
@@ -78,8 +74,7 @@
 1. Navigate to Settings > IAM > Roles.
 2. Click on Groups tab next to the role.
 3. Find the group you want to remove.
-4. Click the Remove button next to it.\
-
+4. Click the Remove button next to it.<br>
 
 ***
 

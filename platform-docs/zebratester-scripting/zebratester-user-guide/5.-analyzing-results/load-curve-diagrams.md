@@ -1,9 +1,9 @@
 # Load Curve Diagrams
 
-* [Overall Load Curves](broken-reference)
-* [Response Time per Page](broken-reference)
-* [Response Time per URL](broken-reference)
-* [Errors (formerly Session Failures)](broken-reference)
+* [Overall Load Curves](/broken/pages/eVJ1qCE9VzNNEl4w2h7n)
+* [Response Time per Page](/broken/pages/eVJ1qCE9VzNNEl4w2h7n)
+* [Response Time per URL](/broken/pages/eVJ1qCE9VzNNEl4w2h7n)
+* [Errors (formerly Session Failures)](/broken/pages/eVJ1qCE9VzNNEl4w2h7n)
 
 To discover the web application’s maximum possible capability, you must run the same load test program several times, each time with a different number of users.
 
@@ -71,4 +71,4 @@ This menu option displays a summary of all errors which did occur in the test ru
 
 
 
-\
+<br>

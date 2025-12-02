@@ -22,8 +22,7 @@ To create a policy:
 3. Add the name of the policy. It should be unique.
 4. Click on Add permission button.
 5. Add permissions to the policy. Navigate [here](permissions.md) to learn how to create a permission.
-6. Click on Add policy to create a new policy.\
-
+6. Click on Add policy to create a new policy.<br>
 
 ***
 
@@ -37,8 +36,7 @@ To update a policy:
 2. Locate the customer-managed policy you want to modify.
 3. Click the Edit button next to the policy.
 4. Update the desired fields (e.g., name, permissions, resources, actions).
-5. Click Save Policy to apply the changes.\
-
+5. Click Save Policy to apply the changes.<br>
 
 ***
 

@@ -1,8 +1,8 @@
 # Integrating ZebraTester with GIT
 
-* [GIT Integration with ZebraTester](broken-reference)
-  * [Introduction](broken-reference)
-  * [Connecting to a GitHub Repo](broken-reference)
+* [GIT Integration with ZebraTester](/broken/pages/dLD47IPhaL2Vz19U0gdf)
+  * [Introduction](/broken/pages/dLD47IPhaL2Vz19U0gdf)
+  * [Connecting to a GitHub Repo](/broken/pages/dLD47IPhaL2Vz19U0gdf)
 
 ## GIT Integration with ZebraTester <a href="#integratingzebratesterwithgit-gitintegrationwithzebratester" id="integratingzebratesterwithgit-gitintegrationwithzebratester"></a>
 

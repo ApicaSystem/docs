@@ -74,11 +74,11 @@ It is possible to disable automatic insertion of page breaks via the [Edit Check
 
 ### takeScreenshot <a href="#comparingseleniumidescriptstoasmscenarios-takescreenshot" id="comparingseleniumidescriptstoasmscenarios-takescreenshot"></a>
 
-The command `takeScreenshot` takes a screenshot that will be visible in the [Check Details](broken-reference). The command will insert an additional screenshot onto the page in addition to whatever screenshots have been added in the [Edit Check settings](https://apica-kb.atlassian.net/wiki/spaces/ASMDOCS/pages/2167570435/Editing+Browser+Checks#Screenshots). This command is helpful when troubleshooting scripts as it gives a snapshot of what exactly happens at a particular step.
+The command `takeScreenshot` takes a screenshot that will be visible in the [Check Details](/broken/pages/SInI2w5LvHfsswciTiMc). The command will insert an additional screenshot onto the page in addition to whatever screenshots have been added in the [Edit Check settings](https://apica-kb.atlassian.net/wiki/spaces/ASMDOCS/pages/2167570435/Editing+Browser+Checks#Screenshots). This command is helpful when troubleshooting scripts as it gives a snapshot of what exactly happens at a particular step.
 
 ### getDictionary <a href="#comparingseleniumidescriptstoasmscenarios-getdictionary" id="comparingseleniumidescriptstoasmscenarios-getdictionary"></a>
 
-See [Storing and Retrieving Information Using the ASM Dictionary](broken-reference).
+See [Storing and Retrieving Information Using the ASM Dictionary](/broken/pages/JZMxYmytcyUxCQCV1htl).
 
 ## Limitations of Selenium IDE within ASM Scenarios <a href="#comparingseleniumidescriptstoasmscenarios-limitationsofseleniumidewithinasmscenarios" id="comparingseleniumidescriptstoasmscenarios-limitationsofseleniumidewithinasmscenarios"></a>
 

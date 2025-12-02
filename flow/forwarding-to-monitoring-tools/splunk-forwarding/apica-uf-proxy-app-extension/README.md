@@ -23,13 +23,11 @@ The Splunk plugin for output configurations can be launched from the `Source Ext
 
 <figure><img src="../../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-Selecting the `Forwarding Proxy` source extension gives you the configured proxies as well as the ability to create a new one.\
-
+Selecting the `Forwarding Proxy` source extension gives you the configured proxies as well as the ability to create a new one.<br>
 
 <figure><img src="../../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>List of configured Splunk Forwarding Proxies</p></figcaption></figure>
 
-You can expand on the proxy to see its settings. The `hec_token` can be used to setup the `forwarder`.\
-
+You can expand on the proxy to see its settings. The `hec_token` can be used to setup the `forwarder`.<br>
 
 <figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Proxy Settings upon expanding</p></figcaption></figure>
 

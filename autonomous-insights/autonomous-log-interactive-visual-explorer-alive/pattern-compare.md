@@ -76,8 +76,7 @@ Additionally, a **Full-Screen Mode** is available for the bar chart, enabling a 
 
 <figure><img src="../../.gitbook/assets/image (656).png" alt=""><figcaption><p>Selection for absolute, percentage and threshold%</p></figcaption></figure>
 
-7. Now you can analyze the data between the two time ranges to gain deeper insights and identify patterns or anomalies.\
-
+7. Now you can analyze the data between the two time ranges to gain deeper insights and identify patterns or anomalies.<br>
 
 <figure><img src="../../.gitbook/assets/image (658).png" alt=""><figcaption><p>Insights for the Comparing two different time range.</p></figcaption></figure>
 

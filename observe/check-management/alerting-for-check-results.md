@@ -41,7 +41,6 @@ C[lick **“Create”** to save your Alert Destination](#user-content-fn-1)[^1].
 
 <mark style="color:purple;">**NOTE: Based on your Refresh Interval, whenever this check reports as Critical, an Email will be sent to your Alert Destination.**</mark>
 
-\
-
+<br>
 
 [^1]: 
