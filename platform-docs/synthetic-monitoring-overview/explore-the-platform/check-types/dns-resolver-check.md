@@ -6,15 +6,15 @@ A DNS Resolver is part of a **DNS Server**. It navigates the **DNS** tree to fin
 
 #### Check Info <a href="#dnsresolvercheck-checkinfo" id="dnsresolvercheck-checkinfo"></a>
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 #### Check Configuration <a href="#dnsresolvercheck-checkconfiguration" id="dnsresolvercheck-checkconfiguration"></a>
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 #### Check Result <a href="#dnsresolvercheck-checkresult" id="dnsresolvercheck-checkresult"></a>
 
-<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### Usage <a href="#dnsresolvercheck-usage" id="dnsresolvercheck-usage"></a>
 
