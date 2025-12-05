@@ -253,6 +253,8 @@ logiqctl:
 
 global:
   domain: "your.domain.com"
+  # Uncomment the next line and populate the value with the hostname if using a private registry
+  #imageRegistry: "{{registry.example.com}}"
   kubeDistributor:
     enabled: false
   cloudProvider: aws
