@@ -150,6 +150,12 @@ If you changed the names of the Kubernetes secrets above, use the name of the `t
 
 **NOTE: the `admin_password` value must meet the following minimum requirements: at least 12 characters, including one uppercase letter, one lowercase letter, and one digit.**
 
+### Install Envoy Gateway Resources
+
+```
+helm install eg oci://docker.io/envoyproxy/gateway-helm   --version v1.6.0   -n envoy-gateway-system   --create-namespace
+```
+
 ### **Install Apica Ascent**
 
 Install Apica Ascent by running Helm:
