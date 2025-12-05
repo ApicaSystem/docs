@@ -178,6 +178,7 @@
     * [Prometheus MySQL Exporter](integrations/list-of-integrations/prometheus/prometheus-mysql-exporter.md)
     * [Prometheus Node Exporter](integrations/list-of-integrations/prometheus/prometheus-node-exporter.md)
     * [Prometheus Remote Write](integrations/list-of-integrations/prometheus/prometheus-remote-write.md)
+    * [Prometheus SNMP Exporter](integrations/list-of-integrations/prometheus/prometheus-snmp-exporter.md)
     * [Prometheus Statsd Exporter](integrations/list-of-integrations/prometheus/prometheus-statsd-exporter.md)
     * [Prometheus on Windows](integrations/list-of-integrations/prometheus/prometheus-on-windows.md)
     * [Spring Boot](integrations/list-of-integrations/prometheus/spring-boot.md)
