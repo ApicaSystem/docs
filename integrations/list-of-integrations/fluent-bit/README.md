@@ -1,8 +1,8 @@
 # Fluent Bit
 
-## Fluent Bit configuration
+## Fluent Bit configuration for Apica Ascent
 
-_HTTP_ output plugin allows flushing your records into an HTTP endpoint. The **HTTP** output plugin allows to provide interoperability between compatible systems, Apica Ascent being one.
+For Apica Ascent, the Fluent Bit _HTTP_ output plugin allows flushing your records into an HTTP endpoint. The **HTTP** output plugin allows to provide interoperability between compatible systems.
 
 The below code block defines the minimal changes to be added to the fluent-bit configuration using the HTTP plugin to start sending log events to flash.The below config supports storage persistence.
 
