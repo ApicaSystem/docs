@@ -170,6 +170,7 @@
   * [Prometheus](integrations/list-of-integrations/prometheus/README.md)
     * [MongoDB Exporter](integrations/list-of-integrations/prometheus/mongodb-exporter.md)
     * [Prometheus Blackbox Exporter](integrations/list-of-integrations/prometheus/prometheus-blackbox-exporter.md)
+    * [Prometheus CloudWatch Exporter](integrations/list-of-integrations/prometheus/prometheus-cloudwatch-exporter.md)
     * [Prometheus Collectd Exporter](integrations/list-of-integrations/prometheus/prometheus-collectd-exporter.md)
     * [Prometheus Graphite Exporter](integrations/list-of-integrations/prometheus/prometheus-graphite-exporter.md)
     * [Prometheus HAProxy Exporter](integrations/list-of-integrations/prometheus/prometheus-haproxy-exporter.md)
