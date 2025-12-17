@@ -12,5 +12,5 @@ These two values can be configured when creating any object store forwarder.
 
 ### Supported Object Store <a href="#supported-object-store" id="supported-object-store"></a>
 
-* Any S3 Compatible Object store
-* Azure Blob Storage
+* [Azure Blob Storage](https://docs.apica.io/~/revisions/umz18Ah0JHgRc4vRJUd1/flow/list-of-forwarders/azure-blob-storage)
+* [Any S3 Compatible Object store](https://docs.apica.io/~/revisions/1DJle1Jex8V6QcP0VemS/flow/list-of-forwarders/s3-compatible)

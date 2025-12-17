@@ -8,5 +8,5 @@ These forwarders can be associated with a namespace and application or with any 
 
 ### Supported Security Monitoring Tools <a href="#supported-security-monitoring-tools" id="supported-security-monitoring-tools"></a>
 
-* Arc Sight
-* RSA NewWitness
+* [Arc Sight](https://docs.apica.io/~/revisions/g9hjYlouXJ3yS4AuZAE8/flow/list-of-forwarders/arc-sight)
+* [RSA NewWitness](https://docs.apica.io/~/revisions/g9hjYlouXJ3yS4AuZAE8/flow/list-of-forwarders/rsa-new-witness)

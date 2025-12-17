@@ -6,6 +6,6 @@ Apica simplifies real-time streaming services through the establishment of "forw
 
 ### Supported Streaming Services <a href="#supported-streaming-services" id="supported-streaming-services"></a>
 
-* AWS Kinesis
-* Google Pub/Sub
-* Azure EventHub
+* [AWS Kinesis](https://docs.apica.io/~/revisions/iBqtD6vFwTjCeuXOvwAa/flow/list-of-forwarders/aws-kinesis)
+* [Azure EventHub](https://docs.apica.io/~/revisions/g9hjYlouXJ3yS4AuZAE8/flow/list-of-forwarders/azure-eventhub)
+* [Google Pub/Sub](https://docs.apica.io/~/revisions/g9hjYlouXJ3yS4AuZAE8/flow/list-of-forwarders/google-pub-sub)
