@@ -38,8 +38,7 @@ Apica Flow supports forwarding metrics in OpenTelemetry metric format to Prometh
 
 To configure Apica Flow to forward metrics in OpenTelemetry format to Prometheus, follow the official Apica documentation:
 
-* Apica Flow – OpenTelemetry Metrics Forwarding: \
-  https://docs.apica.io/flow/opentelemetry-forwarding/metrics&#x20;
+* [Apica Flow – OpenTelemetry Metrics Forwarding](https://docs.apica.io/flow/opentelemetry-forwarding/metrics)
 
 **This guide covers:**
 
@@ -58,8 +57,7 @@ Turbonomic integrates with Prometheus using Prometurbo, which is responsible for
 
 Follow IBM’s official documentation to deploy Prometurbo using the Kubernetes operator:
 
-* Deploying Prometurbo Through the Operator: \
-  https://www.ibm.com/docs/en/tarm/8.18.x?topic=prometheus-deploying-prometurbo-through-operator&#x20;
+* [Deploying Prometurbo Through the Operator](https://www.ibm.com/docs/en/tarm/8.18.x?topic=prometheus-deploying-prometurbo-through-operator)
 
 **This step includes:**
 
@@ -71,8 +69,7 @@ Follow IBM’s official documentation to deploy Prometurbo using the Kubernetes 
 
 Once Prometurbo is deployed, metrics collection from Prometheus must be enabled and configured.
 
-* Enabling Metrics Collection for Prometurbo: \
-  https://www.ibm.com/docs/en/tarm/8.18.x?topic=prometheus-enabling-metrics-collection-prometurbo&#x20;
+* [Enabling Metrics Collection for Prometurbo](https://www.ibm.com/docs/en/tarm/8.18.x?topic=prometheus-enabling-metrics-collection-prometurbo)
 
 **This configuration defines:**
 
@@ -111,6 +108,6 @@ Once Prometurbo is deployed, metrics collection from Prometheus must be enabled 
 
 ### Additional Resources
 
-* Apica Flow Documentation: https://docs.apica.io/flow/&#x20;
-* OpenTelemetry Metrics Specification: https://opentelemetry.io/docs/specs/otel/metrics/&#x20;
-* IBM Turbonomic Documentation: https://www.ibm.com/docs/en/tarm&#x20;
+* [Apica Flow Documentation](https://docs.apica.io/flow/)
+* [OpenTelemetry Metrics Specification](https://opentelemetry.io/docs/specs/otel/metrics/)
+* [IBM Turbonomic Documentation](https://www.ibm.com/docs/en/tarm)
