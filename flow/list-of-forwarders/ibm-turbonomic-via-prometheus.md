@@ -32,14 +32,14 @@ IBM Turbonomic
 
 ### Step 1: Forward Metrics from Apica Flow to Prometheus
 
-Apica Flow supports forwarding metrics in OpenTelemetry metrics format, which Prometheus can scrape or receive depending on your deployment model.
+Apica Flow supports forwarding metrics in OpenTelemetry metric format to Prometheus.
 
 #### Configure OTel Metrics Forwarding in Apica Flow
 
 To configure Apica Flow to forward metrics in OpenTelemetry format to Prometheus, follow the official Apica documentation:
 
-* Apica Flow – OpenTelemetry Metrics Forwarding\
-  https://docs.apica.io/flow/opentelemetry-forwarding/metrics
+* Apica Flow – OpenTelemetry Metrics Forwarding: \
+  https://docs.apica.io/flow/opentelemetry-forwarding/metrics&#x20;
 
 **This guide covers:**
 
@@ -59,7 +59,7 @@ Turbonomic integrates with Prometheus using Prometurbo, which is responsible for
 Follow IBM’s official documentation to deploy Prometurbo using the Kubernetes operator:
 
 * Deploying Prometurbo Through the Operator: \
-  https://www.ibm.com/docs/en/tarm/8.18.x?topic=prometheus-deploying-prometurbo-through-operator
+  https://www.ibm.com/docs/en/tarm/8.18.x?topic=prometheus-deploying-prometurbo-through-operator&#x20;
 
 **This step includes:**
 
@@ -72,7 +72,7 @@ Follow IBM’s official documentation to deploy Prometurbo using the Kubernetes 
 Once Prometurbo is deployed, metrics collection from Prometheus must be enabled and configured.
 
 * Enabling Metrics Collection for Prometurbo: \
-  https://www.ibm.com/docs/en/tarm/8.18.x?topic=prometheus-enabling-metrics-collection-prometurbo
+  https://www.ibm.com/docs/en/tarm/8.18.x?topic=prometheus-enabling-metrics-collection-prometurbo&#x20;
 
 **This configuration defines:**
 
