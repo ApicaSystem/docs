@@ -10,7 +10,7 @@ Apica's **Replay** feature allows you to send previously ingested logs to a conf
 
 ### How it works:
 
-1. A [forwarder](list-of-forwarders.md) must be configured that sends the logs to the desired destination.<br>
+1. A [forwarder](list-of-forwarders/) must be configured that sends the logs to the desired destination.<br>
 
 <figure><img src="../.gitbook/assets/Screenshot from 2025-06-11 11-37-16.png" alt=""><figcaption></figcaption></figure>
 

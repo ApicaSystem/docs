@@ -23,4 +23,4 @@ Follow these links to the Ascent integration details:
 
 Once data is ingested, Ascent allows any data to be forwarded to specific source destinations. Follow the link below for more details on available forwarders:
 
-* [List of Forwarders](../../flow/list-of-forwarders.md)
+* [List of Forwarders](../../flow/list-of-forwarders/)
