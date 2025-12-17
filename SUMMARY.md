@@ -141,7 +141,7 @@
   * [Docker Syslog log driver](integrations/list-of-integrations/docker-syslog-log-driver.md)
   * [F5 Big-Ip System](integrations/list-of-integrations/f5-big-ip-system.md)
   * [Filebeat](integrations/list-of-integrations/filebeat.md)
-  * [Fluent Bit](integrations/list-of-integrations/fluent-bit/README.md)
+  * [Fluent-bit](integrations/list-of-integrations/fluent-bit/README.md)
     * [Fluent-bit Troubleshooting](integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting.md)
     * [Fluent-bit AWS-Linux Logs Plugin](integrations/list-of-integrations/fluent-bit/forwarding-amazon-linux-logs-to-ascent-using-fluent-bit.md)
     * [Fluent-bit Collectd Plugin](integrations/list-of-integrations/fluent-bit/fluent-bit-collectd-plugin.md)
