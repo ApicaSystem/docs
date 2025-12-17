@@ -8,7 +8,7 @@ This guide explains how to send Dummy logs to Apica Ascent with Fluent-bit, and 
 
 #### 2. Configure the Dummy Plugin in Fluent-bit
 
-Update your Fluent-bit.conf with an input and filter for Dummy Plugin:
+Update your Fluent-bit.conf with an input and filter for the Dummy Plugin:
 
 ```
 [INPUT]
@@ -48,7 +48,7 @@ Example:
 
 #### 4. Example logs
 
-message :
+Message:
 
 ```
 custom dummy
@@ -63,4 +63,4 @@ date: 1764688718.599576
 
 #### 5. Troubleshooting
 
-&#x20;
+&#x20; [**Fluent-bit Troubleshooting**](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting)

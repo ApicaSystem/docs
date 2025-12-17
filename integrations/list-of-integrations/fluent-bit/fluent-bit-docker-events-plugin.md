@@ -8,7 +8,7 @@ This guide explains how to send Docker events to Apica Ascent with Fluent-bit, a
 
 #### 2. Configure the Docker Event Plugin in Fluent-bit
 
-Update your Fluent-bit.conf with an input and filter for Docker Event Plugin:
+Update your Fluent-bit.conf with an input and filter for the Docker Event Plugin:
 
 ```
 [INPUT]
@@ -46,7 +46,7 @@ Example:
 
 #### &#x20;4. Example logs
 
-message :
+Message:
 
 {% code overflow="wrap" %}
 ```
@@ -69,6 +69,8 @@ date: 1764598483.494424
 ```
 
 #### 5. Troubleshooting
+
+&#x20;[**Fluent-bit Troubleshooting**](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting)
 
 If you don’t see any docker event logs in Apica Ascent you can verify if your docker generates any events with the following command on your server:&#x20;
 

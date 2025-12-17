@@ -8,7 +8,7 @@ This guide explains how to send CPU metrics to Apica Ascent with Fluent-bit, and
 
 #### 2. Configure the CPU Plugin in Fluent-bit
 
-Update your Fluent-bit.conf with an input and filter for CPU Plugin:
+Update your Fluent-bit.conf with an input and filter for the CPU Plugin:
 
 ```
 [INPUT]
@@ -46,7 +46,7 @@ Example:
 
 #### 4. Example logs
 
-message :
+Message:
 
 {% code overflow="wrap" %}
 ```
@@ -72,4 +72,4 @@ user_p: 270.5
 
 #### 5. Troubleshooting
 
-&#x20;
+&#x20; [**Fluent-bit Troubleshooting**](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting)

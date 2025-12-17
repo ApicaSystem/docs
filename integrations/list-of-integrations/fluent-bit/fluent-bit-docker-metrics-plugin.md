@@ -8,7 +8,7 @@ This guide explains how to send Docker Metrics to Apica Ascent with Fluent-bit, 
 
 #### 2. Configure the Docker Metric Plugin in Fluent-bit
 
-Update your Fluent-bit.conf with an input and filter for Docker Metric Plugin:
+Update your Fluent-bit.conf with an input and filter for the Docker Metric Plugin:
 
 ```
 [INPUT]
@@ -49,7 +49,7 @@ Example:
 
 #### 4. Example logs
 
-message :
+Message:
 
 {% code overflow="wrap" %}
 ```
@@ -70,6 +70,8 @@ name: test-container
 ```
 
 #### 5. Troubleshooting
+
+&#x20;[**Fluent-bit Troubleshooting**](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting)
 
 * Find running containers: docker ps
 * Find all containers: docker ps -a
