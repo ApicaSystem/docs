@@ -25,15 +25,12 @@ Update your Fluent-bit.conf with an input and filter for the Network I/O Metrics
     Add app_name  Network_I/O_Metrics
 ```
 
-Restart Fluent-bit with systemctl restart fluent-bit and check the status with systemctl status fluent-bit to verify that it’s running correctly.
+Restart Fluent-bit with `systemctl restart fluent-bit` and check the status with `systemctl status fluent-bit` to verify that it’s running correctly.
 
 Helpful links:
 
-[Official Plugin documentation.](https://docs.fluentbit.io/manual/data-pipeline/inputs/network-io-metrics)
-
-[Set up Fluent-bit for Apica Ascent.](https://docs.apica.io/integrations/list-of-integrations/fluent-bit#fluent-bit-configuration)
-
-&#x20;
+* [Official Plugin documentation.](https://docs.fluentbit.io/manual/data-pipeline/inputs/network-io-metrics)
+* [Set up Fluent-bit for Apica Ascent.](https://docs.apica.io/integrations/list-of-integrations/fluent-bit#fluent-bit-configuration)
 
 #### 3. Verify Logs in Apica Ascent
 

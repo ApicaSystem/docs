@@ -26,7 +26,7 @@ Update your Fluent-bit.conf with an input and filter for the Docker Metric Plugi
  
 ```
 
-Restart Fluent-bit with systemctl restart fluent-bit and check the status with systemctl status fluent-bit to verify that it’s running correctly.
+Restart Fluent-bit with `systemctl restart fluent-bit` and check the status with `systemctl status fluent-bit` to verify that it’s running correctly.
 
 If you want to monitor multiple docker containers it needs to be in the following format (a space in between them): \<DockerID> \<DockerID>
 
@@ -45,7 +45,7 @@ Helpful links:
 
 Example:
 
-<figure><img src="../../../.gitbook/assets/image (1) (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Example logs
 

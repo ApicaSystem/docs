@@ -25,13 +25,12 @@ Update your Fluent-bit.conf with an input and filter for the Head Plugin:
     Add    app_name Head
 ```
 
-Restart Fluent-bit with systemctl restart fluent-bit and check the status with systemctl status fluent-bit to verify that it’s running correctly.
+Restart Fluent-bit with `systemctl restart fluent-bit` and check the status with `systemctl status fluent-bit` to verify that it’s running correctly.
 
 Helpful links:
 
-[Official Plugin documentation.](https://docs.fluentbit.io/manual/pipeline/inputs/forward)
-
-[Set up Fluent-bit for Apica Ascent.](https://docs.apica.io/integrations/list-of-integrations/fluent-bit#fluent-bit-configuration)
+* [Official Plugin documentation.](https://docs.fluentbit.io/manual/pipeline/inputs/forward)
+* [Set up Fluent-bit for Apica Ascent.](https://docs.apica.io/integrations/list-of-integrations/fluent-bit#fluent-bit-configuration)
 
 #### 3. Verify Logs in Apica Ascent
 

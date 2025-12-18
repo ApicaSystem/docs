@@ -25,7 +25,7 @@ Update your Fluent-bit.conf with an input and filter for the CPU Plugin:
  
 ```
 
-Restart Fluent-bit with systemctl restart fluent-bit and check the status with systemctl status fluent-bit to verify that it’s running correctly.
+Restart Fluent-bit with `systemctl restart fluent-bit` and check the status with `systemctl status fluent-bit` to verify that it’s running correctly.
 
 Helpful links:
 
