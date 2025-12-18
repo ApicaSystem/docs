@@ -42,7 +42,7 @@ Helpful links:
 3\.     Look for the namespace and application name specified in the config file\
 Example:
 
-<figure><img src="../../../.gitbook/assets/image (1141).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1146).png" alt=""><figcaption></figcaption></figure>
 
 #### 4.Example logs
 
@@ -50,13 +50,15 @@ Message:
 
 {% code overflow="wrap" %}
 ```
-{"AppName":"Forward","Facility":"1","FacilityString":"user","Hostname":"localhost","Message":"hello from forward","MsgID":"36fViDrNemb2RYcbHoWaAnFpkah","Priority":"14","ProcID":"-","Sender":"127.0.0.1","Severity":"6","SeverityString":"info","Tag":"","Timestamp":"2025-12-10T20:15:37.203111099Z","Namespace":"Fluent-bit","Event":"","EventId":"","MsTimestamp":"1765397737","STimestamp":"1765397737203","StructuredData":[{"key":"_size","values":["103"]},{"key":"date","values":["1765397735.187755"]}]}
+hello from forward
 ```
 {% endcode %}
 
 &#x20;StructuredData:
 
 ```
+_size: 103
+date: 1765893329.187519
 ```
 
 #### 5. Troubleshooting
