@@ -330,7 +330,7 @@
   * [Ascent.lookups](flow/functions/ascent.lookups.md)
 * [Forwarding to Target Destinations](flow/forwarding-to-monitoring-tools.md)
 * [List of Forwarders](flow/list-of-forwarders.md)
-  * [Arc Sight](flow/list-of-forwarders/arc-sight.md)
+  * [ArcSight](flow/list-of-forwarders/arc-sight.md)
   * [AWS Kinesis](flow/list-of-forwarders/aws-kinesis.md)
   * [Azure Blob Storage](flow/list-of-forwarders/azure-blob-storage.md)
   * [Azure Log Analytics Forwarding](flow/list-of-forwarders/azure-log-analytics-forwarding.md)
