@@ -21,7 +21,7 @@ Update your Fluent-bit.conf with an output for the Prometheus Remote Write Plugi
     TLS       On
 ```
 
-This output should be combined with inputs such as the Prometheus Scrape Metrics plugin.
+This output should be combined with inputs such as the [Prometheus Scrape Metrics plugin](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-prometheus-scrape-metrics-plugin).
 
 Restart Fluent-bit with `systemctl restart fluent-bit` and check the status with `systemctl status fluent-bit` to verify that it’s running correctly.
 

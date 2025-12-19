@@ -22,9 +22,9 @@ Update your Fluent-bit.conf with an input and filter for the Prometheus Scrape M
 
 If you have not added one of the required output plugins you can find them in the links below:
 
-Prometheus Remote Write
+[Prometheus Remote Write](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-prometheus-remote-write-output-plugin)
 
-Prometheus Exporter
+[Prometheus Exporter](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-prometheus-exporter-plugin)
 
 Restart Fluent-bit with `systemctl restart fluent-bit` and check the status with `systemctl status fluent-bit` to verify that it’s running correctly.
 
