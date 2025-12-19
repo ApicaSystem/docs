@@ -49,9 +49,7 @@ To send metrics to Apica Ascent, add the following remote\_write configuration t
 
 ```
 remote_write:
-  - url: "
-https://ascent-pre.apica.io/v1/receive/prometheus
-"
+  - url: "https://<your-ascent-env>/v1/receive/prometheus"
     tls_config:
       insecure_skip_verify: true
     authorization:
@@ -97,7 +95,6 @@ You can build dashboards for common system metrics:
   * CPU usage > 90%
   * Disk usage > 80%
   * Memory usage > 90%
-* **Dashboard templates**: [GitHub repository](https://github.com/)
 
 #### 7. Troubleshooting
 

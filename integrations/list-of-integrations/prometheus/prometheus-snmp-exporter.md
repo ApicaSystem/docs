@@ -45,7 +45,7 @@ To send metrics to Apica Ascent, add the following remote\_write configuration t
 
 ```
 remote_write:
-  - url: "https://<ascentEvironment>.apica.io/v1/receive/prometheus"
+  - url: "https://<your-ascent-env>/v1/receive/prometheus"
     tls_config:
       insecure_skip_verify: true
     authorization:

@@ -53,7 +53,7 @@ Add remote\_write configuration to prometheus.yml:
 
 ```
 remote_write:
-  - url: "https://ascent-pre.apica.io/v1/receive/prometheus"
+  - url: "https://<your-ascent-env>/v1/receive/prometheus"
     tls_config:
       insecure_skip_verify: true
     authorization:

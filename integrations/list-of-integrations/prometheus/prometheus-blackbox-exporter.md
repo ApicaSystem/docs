@@ -76,9 +76,7 @@ To send Blackbox metrics to Apica Ascent, configure remote\_write in prometheus.
 
 ```
 remote_write:
-  - url: "
-https://ascent-pre.apica.io/v1/receive/prometheus
-"
+  - url: "https://<your-ascent-env>/v1/receive/prometheus"
     tls_config:
       insecure_skip_verify: true
     authorization:
