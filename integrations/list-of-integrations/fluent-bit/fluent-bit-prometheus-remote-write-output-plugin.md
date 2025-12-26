@@ -45,7 +45,7 @@ Helpful links:
 6\.     Click on Execute and verify if you get any metrics\
 Example:
 
-<figure><img src="../../../.gitbook/assets/image (1145).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1145) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Troubleshooting
 
