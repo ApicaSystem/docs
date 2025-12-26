@@ -44,7 +44,7 @@ Example:
 
 <figure><img src="../../../.gitbook/assets/image (1146).png" alt=""><figcaption></figcaption></figure>
 
-#### 4.Example logs
+#### 4. Example Logs
 
 Message:
 
