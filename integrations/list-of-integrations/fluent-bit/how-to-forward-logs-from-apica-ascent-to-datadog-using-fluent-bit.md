@@ -1,4 +1,4 @@
-# How to Forward logs from Apica Ascent to Datadog using Fluent-bit
+# Fluent-bit Datadog Forwarder
 
 ### How to Forward logs from Apica Ascent to Datadog using Fluent-bit
 
@@ -121,4 +121,4 @@ If logs are not being sent verify that the port is open and that the server can 
 
 Verify that the logs are in a format that the HTTP plugin can read such as json.
 
-If logs are not arriving in Datadog verify that the region your account is in is correct in the URL and that the api key is correct
+If logs are not arriving in Datadog verify that the region your account is in is correct in the URL and that the api key is correct.

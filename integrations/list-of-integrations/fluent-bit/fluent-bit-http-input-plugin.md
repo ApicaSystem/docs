@@ -1,6 +1,6 @@
-# Fluent-bit HTTP input Plugin
+# Fluent-bit HTTP Input Plugin
 
-### How to Integrate Fluent-bit HTTP input Plugin with Apica Ascent
+### How to integrate Fluent-bit HTTP input plugin with Apica Ascent
 
 #### 1. Introduction
 
