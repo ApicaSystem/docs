@@ -2,11 +2,11 @@
 
 From Ascent, data can be filtered and forwarded to many different monitoring tools, resource management tools, and custom endpoints.&#x20;
 
-Here is a [list of available forwarders](list-of-forwarders.md).
+Here is our [complete list of available forwarders](list-of-forwarders.md).
 
-#### Configuring a Forwarder <a href="#configuring-a-forwarder" id="configuring-a-forwarder"></a>
+The process of configuring a forwarder is simple. To configure a Forwarder, **navigate to the Forwarder page** [**link**](list-of-forwarders.md) first and select your preferred forwarder.
 
-The process of configuring a forwarder is simple. To configure a Forwarder, navigate to the Forwarder page first and select your preferred forwarder.
+#### Configuring a Forwarder (Example)
 
 Below, an example of configuring a Splunk HTTP Event Collector:
 
