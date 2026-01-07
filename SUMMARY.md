@@ -343,6 +343,7 @@
   * [Elasticsearch Forwarding](flow/list-of-forwarders/elasticsearch-forwarding.md)
   * [Fluent-bit Forwarding](flow/list-of-forwarders/fluent-bit-forwarding/README.md)
     * [Fluent-bit Datadog Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-datadog-forwarder.md)
+    * [Fluent-bit CloudWatch Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-cloudwatch-forwarder.md)
   * [GCP Bigquery](flow/list-of-forwarders/gcp-bigquery.md)
   * [Google Pub/Sub](flow/list-of-forwarders/google-pub-sub.md)
   * [IBM Turbonomic (via Prometheus)](flow/list-of-forwarders/ibm-turbonomic-via-prometheus.md)
