@@ -71,7 +71,7 @@ A small cluster used for Ascent consists of the following nodes:
 * 3 control-plane nodes, each 1 vCPU, 2G RAM
 * 3 worker nodes, each 6 vCPU, 16G RAM, 500G disk
 
-Adjust the number of worker nodes for larger-scale deployments. Three control plane nodes are sufficient for almost all situations, but should be an odd number per the [etcd documentation](https://etcd.io/docs/v3.6/faq/#why-an-odd-number-of-cluster-members).&#x20;
+Adjust the number of worker nodes for larger-scale deployments. Three control plane nodes are sufficient for almost all situations, but should be an odd number per the [etcd documentation](https://etcd.io/docs/v3.6/faq/#why-an-odd-number-of-cluster-members).
 
 The control plane load balancer needs to be a TCP load balancer that routes traffic for the following ports to all controller nodes:
 
@@ -124,36 +124,38 @@ Just as any other package deployed via Helm charts, you can configure your Ascen
 
 To give you a head start with configuring your Apica Ascent deployment, we've provided sample `values.yaml` files for single-node, small, medium, and large clusters. You can use these files as a base for configuring your Apica Ascent deployment. You can download these files from the following links.
 
-{% tabs %}
-{% tab title="values.single.yaml" %}
-{% file src="../../.gitbook/assets/values.single.yaml" %}
-{% endtab %}
+* [values.single.yaml](https://raw.githubusercontent.com/ApicaSystem/apica-ascent-helm/refs/heads/master/apica-ascent/values.single.yaml)
+* [values.small.yaml](https://raw.githubusercontent.com/ApicaSystem/apica-ascent-helm/refs/heads/master/apica-ascent/values.small.yaml)
+* [values.medium.yaml](https://raw.githubusercontent.com/ApicaSystem/apica-ascent-helm/refs/heads/master/apica-ascent/values.medium.yaml)
+* [values.large.yaml](https://raw.githubusercontent.com/ApicaSystem/apica-ascent-helm/refs/heads/master/apica-ascent/values.large.yaml)
 
-{% tab title="values.small.yaml" %}
+The following keys require setting site-specific values:
 
+* `global.domain` - The hostname that will be used to access the Ascent UI. This must match the CN of the TLS certificate used to create the secrets above.
+* `global.imageRegistry` - **If using a private registry**, set this to the hostname of the registry server. If not, leave the default value in place to get images from `docker.io`.
+* `global.environment.postgres_password` - password for the `postgres` database user
+* `global.environment.s3_url` - base URL for your S3 or compatible service
+* `global.environment.s3_access` - S3 access key
+* `global.environment.s3_secret` - S3 secret key
+* `global.environment.s3_bucket` - S3 bucket name
+* `global.environment.s3_region` - S3 region name
+* `global.environment.AWS_ACCESS_KEY_ID` - S3 access key
+* `global.environment.AWS_SECRET_ACCESS_KEY` - S3 secret key
+* `global.environment.awsServiceEndpoint` - base URL for your S3 or compatible service
+* `global.environment.admin_name` - admin account name
+* `global.environment.admin_password` - admin account password **(must meet the following minimum requirements: at least 12 characters, including one uppercase letter, one lowercase letter, and one digit.)**
+* `global.environment.admin_org` - admin account organization name
+* `global.environment.admin_email` - admin account email address
+* `global.postgres.postgresqlPostgresPassword` - password for the PostgreSQL root user
+* `global.postgres.postgresqlPassword` - password for the `postgres` database user
 
-{% file src="../../.gitbook/assets/values.small.yaml" %}
-{% endtab %}
-
-{% tab title="values.medium.yaml" %}
-{% file src="../../.gitbook/assets/values.medium.yaml" %}
-{% endtab %}
-
-{% tab title="values.large.yaml" %}
-{% file src="../../.gitbook/assets/values.large.yaml" %}
-{% endtab %}
-{% endtabs %}
-
-You will need to fill in values for `global.domain` (the hostname/domain that will be used to access the Ascent UI, which should match the CN of the TLS certificate used to create the secrets above), as well as various site-specific values such as passwords and S3 object storage credentials.
-
-If you changed the names of the Kubernetes secrets above, use the name of the `tls` secret for `ingress.tlsSecretName` and `kubernetes-ingress.controller.defaultTLSSecret.secret`. Use the name of the `generic` secret for `logiq-flash.secrets_name`.
-
-**NOTE: the `admin_password` value must meet the following minimum requirements: at least 12 characters, including one uppercase letter, one lowercase letter, and one digit.**
+If you changed the names of the Kubernetes secrets above, use the name of the `tls` secret for  `gateway.tls.secretName`. Use the name of the `generic` secret for `logiq-flash.secrets_name`.
 
 ### Install Envoy Gateway Resources
 
 ```
-helm install eg oci://docker.io/envoyproxy/gateway-helm   --version v1.6.0   -n envoy-gateway-system   --create-namespace
+helm install eg oci://docker.io/envoyproxy/gateway-helm \
+  --version v1.6.0 -n envoy-gateway-system --create-namespace
 ```
 
 ### **Install Apica Ascent**
