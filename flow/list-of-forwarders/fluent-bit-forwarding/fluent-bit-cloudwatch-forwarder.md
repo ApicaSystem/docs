@@ -8,15 +8,15 @@ This guide explains how to forward logs from Apica Ascent to Amazon Cloudwatch u
 
 It’s possible to test the forwarder locally using LocalStack before you start sending your logs to CloudWatch
 
-#### 2. Do any required port forwarding
+#### 2. Perform required port forwarding
 
 The process will be different for each company, provider and OS.
 
-If you manage your firewall at your provider level you will need to allow traffic on the desired port there and possibly on the server itself.
+If you manage your firewall at your provider level, you will need to allow traffic on the desired firewall port, and possibly on the server itself.
 
-If you manage the firewall on the server level you should make the changes there, the methods will be different depending on your OS.
+If you manage the firewall on the server level you should make the changes there, but note that the methods will be different depending on your OS.
 
-In our example we used port 4318.
+In this example, we use port 4318.
 
 Add a new inbound rule:
 
@@ -71,7 +71,7 @@ If you’re testing this locally with LocalStack you should add the following to
     Port                             4566
 ```
 
-#### 4. Add your AWS credentials
+#### 4. Add your AWS Credentials
 
 If you’re testing locally you can use anything such as:
 
@@ -111,7 +111,7 @@ Aws_sec_key       <your-secret-access-key>
 3\.        AWS shared credentials / IAM role:\
 Fluent Bit can also pick up credentials from `~/.aws/credentials` or from EC2/ECS IAM role if running in AWS.
 
-#### 5. (Optional) Test the forwarder locally
+#### 5. (Optional) Test the Forwarder Locally
 
 You can test the forwarder locally by running LocalStack with docker: `docker run -d --network host --name localstack localstack/localstack`
 
@@ -137,7 +137,7 @@ aws --endpoint-url=http://localhost:4566 --region us-east-1 logs get-log-events 
 ```
 {% endcode %}
 
-Example of when it’s failing to forward the logs:
+Example of when it fails to forward logs:
 
 ```
 {
@@ -145,7 +145,7 @@ Example of when it’s failing to forward the logs:
 }
 ```
 
-Example of when it’s successfully forwarding the logs:
+Example of when it successfully forwards logs:
 
 ```
 {
@@ -161,9 +161,9 @@ Example of when it’s successfully forwarding the logs:
 }
 ```
 
-#### 6. Add the required CloudWatch settings
+#### 6. Add the Required CloudWatch Settings
 
-You will need to add the following AWS IAM policy, you can change the resource if you want to restrict it to a specific log group:
+You will need to add the following AWS IAM policy. You can change the resource if you want to restrict it to a specific log group:
 
 ```
 {
@@ -184,7 +184,7 @@ You will need to add the following AWS IAM policy, you can change the resource i
 }
 ```
 
-#### 7. Set up a JavaScript code Forwarder
+#### 7. Setup a JavaScript Code Forwarder
 
 1\.     Log in to Apica Ascent
 
@@ -211,7 +211,7 @@ console.log("Response from the endpoint:", ret);
 
 <figure><img src="../../../.gitbook/assets/image (1149).png" alt=""><figcaption></figcaption></figure>
 
-#### 8. Set up pipelines in Apica Ascent to your needs
+#### 8. Set up pipelines in Apica Ascent to meet your needs
 
 1\.     Log in to Apica Ascent
 
