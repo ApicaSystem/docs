@@ -6,7 +6,11 @@ A Coverage Set is a fixed collection of Determining Attributes that are used to 
 Coverage set object names must end in ‘\_coverage’.
 {% endhint %}
 
-To create a coverage set, select ‘Coverage Sets’ from the ‘Coverage Engine’ section of the menu.  You can select an existing coverage set by clicking on the blue check mark to the right of the coverage set name.
+There are two ways to create a coverage set - manually and from the Determining Attributes page.
+
+### Manual Creation
+
+To manually create a coverage set, select ‘Coverage Sets’ from the ‘Coverage Engine’ section of the menu.  You can select an existing coverage set by clicking on the blue check mark to the right of the coverage set name.
 
 To create a new coverage set, click on the blue plus (+) sign in the lower right-hand corner of the screen.  The ‘Create Coverage Set’ window will open.
 
@@ -24,6 +28,8 @@ Note that in the business rules page (next section) the determining attributes w
 
 To save the coverage set, click ‘Save’ in the top pane. Select the coverage set to work with by clicking the blue check mark to the right of the coverage set.
 
+### Editing a Coverage Set
+
 Coverage sets can be edited to add or delete determining attributes.  When you edit the coverage set (for example, to add a new determining attribute) TDO will apply version control and you will see both your existing coverage set and new coverage set in the list.  Also note that any business rules associated with the original coverage set will be added to the new coverage set.  If a determining attribute was added, the new determining attribute will be blank and will need to be selected by editing the business rule.  If a determining attribute was deleted it will not appear on the business rule screen.
 
 <figure><img src="../../../../.gitbook/assets/image (903).png" alt=""><figcaption><p>Original coverage set selected</p></figcaption></figure>
@@ -33,5 +39,21 @@ Coverage sets can be edited to add or delete determining attributes.  When you e
 <figure><img src="../../../../.gitbook/assets/image (905).png" alt=""><figcaption><p>New version of edited coverage set at bottom of list</p></figcaption></figure>
 
 <figure><img src="../../../../.gitbook/assets/image (906).png" alt=""><figcaption><p>Business rules for new version with determining attribute added</p></figcaption></figure>
+
+### Creating from Determining Attributes Page
+
+Navigate to your determining attributes page.  Check the attributes you want to add and then click on the right hand icon in the upper right corner (there are 3 icons - the trash can to delete selected attributes, the reload circle to reload page data, and the 'create coverage set' icon on the far right).
+
+<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption><p>Selecting determining attributes for a coverage set</p></figcaption></figure>
+
+When you click the icon, a window will pop up where you name your coverage set.
+
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Naming a coverage set</p></figcaption></figure>
+
+After naming the coverage set, click 'generate' and your coverage set will be created.  It is immediately available for use on the 'Coverage Sets' main page.
+
+<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Created coverage set available</p></figcaption></figure>
+
+### Deleting a Coverage Set
 
 Coverage sets can only be deleted by users with Admin rights.  Non-admin users will not see the delete icon.  Deleting a coverage set will delete objects that are part of the coverage set (business rules).

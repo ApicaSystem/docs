@@ -21,15 +21,15 @@ Follow the steps below to create an S2F forwarder to a Splunk indexer:
 
 The Splunk plugin for output configurations can be launched from the `Source Extensions` section under `Integrations`.
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Selecting the `Forwarding Proxy` source extension gives you the configured proxies as well as the ability to create a new one.<br>
 
-<figure><img src="../../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>List of configured Splunk Forwarding Proxies</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>List of configured Splunk Forwarding Proxies</p></figcaption></figure>
 
 You can expand on the proxy to see its settings. The `hec_token` can be used to setup the `forwarder`.<br>
 
-<figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Proxy Settings upon expanding</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Proxy Settings upon expanding</p></figcaption></figure>
 
 Note that a HEC forwarder is automatically created alongside the source extension. This forwarder is set up to send logs to the source extension. To use this source extension for forwarding, users need to manually map this forwarder to the required data flow.
 

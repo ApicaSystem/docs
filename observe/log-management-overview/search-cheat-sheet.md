@@ -10,7 +10,7 @@ description: >-
 
 To carry out a simple search, type any word or series of words into the **Search** bar and click **Search** or hit Enter on your keyboard.
 
-![Search Bar](<../../.gitbook/assets/image (6) (1).png>)
+![Search Bar](<../../.gitbook/assets/image (6) (1) (1).png>)
 
 By default, Apica Ascent scans for your search term(s) using the `and` operator. If your search query contains more than one word, the search engine looks for occurrences that contain both words. For example, searching for the term `Read Error` returns records that contain both `read` and `error` and not necessarily in the same sequence. Searches are also not case-sensitive. For example, searching for `ReadError` returns records that contain both `read` and `error`.
 

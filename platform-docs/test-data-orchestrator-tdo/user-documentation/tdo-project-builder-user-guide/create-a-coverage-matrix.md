@@ -2,6 +2,10 @@
 
 A Coverage Matrix is the generated output of your Business Rules. Each row in the Coverage Matrix is a unique set of values as defined in your Business Rules. The Coverage Matrix is what drives your tests and your test data selection criteria.
 
+You can also create a coverage matrix with auto-generated business rules, covered at the bottom of this document, for when you want full coverage.
+
+### Generating a Coverage Matrix from Business Rules
+
 Once your business rules are created, you can generate your Coverage Matrix.  In the upper right corner of the business rules page there is a small blue box with a white grid in it.  Click on this box to generate the Coverage Matrix.
 
 <figure><img src="../../../../.gitbook/assets/image (857).png" alt=""><figcaption><p>Business rules page with Coverage Matrix button</p></figcaption></figure>
@@ -27,3 +31,23 @@ If you set the 'Occurrences' to a value higher than '1', you will see the impact
 <figure><img src="../../../../.gitbook/assets/image (862).png" alt=""><figcaption><p>Coverage matrix with additional tests added by setting multiple occurrences</p></figcaption></figure>
 
 A Coverage Matrix must be created before you can build Data Views and Work Sets.
+
+### Generating a Full Coverage Matrix
+
+There may be times (performance testing, etc) where you need to create a large volume of tests.  There are 3 icons in the most upper right section of the business rules page.  The first icon will generate coverage from your existing set of business rules.  The middle icon (a bolded grid) will generatev all possible rules, using your determining attribute filters to avoid invalid data combinations.  The right icon will use both the filters you have set as well as the priorities you have set to only generate rules for the priorities you define.
+
+<figure><img src="../../../../.gitbook/assets/image (7).png" alt=""><figcaption><p>Coverage matrix options</p></figcaption></figure>
+
+When you click the middle icon, you will see this message.  If you click 'Yes', your existing rules will remain and the new rules will be added.  If you click 'No', your existing rules will be replaced by the auto generated rules.  Clicking 'Cancel' will cancel the process.
+
+<figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Auto generation message</p></figcaption></figure>
+
+When you click the right icon, you will see this message first, asking you to set which priorities you want to test.  You must enter the priority(s) you want to test.  Below, both 1 and 2 are selected (separate the priority numbers with a comma).
+
+<figure><img src="../../../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Selecting auto generation priority</p></figcaption></figure>
+
+After you click 'Generate', you will see the same message as above for full rules.  Select your option to proceed.
+
+In the screen below, 'No' was selected (do not keep existing rules) and prioritized coverage for priorities 1 and 2 were chosen.  TDO displays a message showing how many rows will be in the coverage matrix.  The new auto generated rules are now shown on the business rules page.  Click 'Yes' to generate the coverage matrix or 'No' to skip that process.
+
+<figure><img src="../../../../.gitbook/assets/image (10).png" alt=""><figcaption><p>Auto generated rules with message</p></figcaption></figure>

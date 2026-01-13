@@ -4,6 +4,28 @@ Scenarios are where you define data requirements for specific use cases. They of
 
 Steps are aligned under a Scenario. Each step represents a user ‘Action’ for which data needs to be assigned by TDO. e.g., ‘Apply for loan’ or ‘book flight’ or ‘validate outcomes'. The TDO data output format for each ‘step’ is ingested to TDO and linked to each Step as a reusable ‘Action’.
 
+Scenarios can be created two ways - from the Data Blocks page or manually.  If you create from the data blocks page, the actions are created automatially for you.
+
+### Creating from Data Blocks page
+
+To create a scenario from the data blocks page, check the box to the left of the file(s) that will be the output format for your actions.  In the example below, 'payment\_request' and 'payment\_response' are selected.  In the upper right of the page there are four blue icons; the second from the right will create a scenario and action(s) from the selected data block(s).
+
+<figure><img src="../../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Creating a scenario and actions from data blocks</p></figcaption></figure>
+
+Click the 'generate scenario' icon.  A window will pop up for naming the scenario and generating it.  Name the scenario and click 'Generate' to create the scenario and actions.
+
+<figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Naming and generating a scenario</p></figcaption></figure>
+
+After generating the scenario, it is available on the scenario page.  The screen below shows the contents of the scenario that were auto-generated.
+
+<figure><img src="../../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Auto-generated scenario</p></figcaption></figure>
+
+The actions created as part of this process are also shown on the 'Actions' page.  They can be re-used in any manually created scenario.
+
+<figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Auto-created actions</p></figcaption></figure>
+
+### Manual Creation
+
 To create a Scenario, in the 'Projects' section of the menu, select 'Scenarios'.  Click the plus (+) sign in the bottom right corner to open the 'Create Scenario' window.  In the top section, type in a name for your scenaro.  (Note that you do not have to end a scenario with \_scenario.)
 
 In the second section of the window, type in the name of the step you want to create and then click the blue plus sign to the left to add it to the 'Steps' section in the bottom of the window.  For this case, we have two steps - one for the request and one for the response.

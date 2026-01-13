@@ -43,7 +43,7 @@ Restart Fluent-bit with `systemctl restart fluent-bit` and check the status with
 3\.     Look for the namespace and application name specified in the config file\
 Example:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Example logs
 

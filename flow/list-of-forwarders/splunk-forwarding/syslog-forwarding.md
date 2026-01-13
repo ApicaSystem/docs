@@ -5,7 +5,7 @@ Apica provides a unified **Syslog Forwarding** integration with two variants, bo
 * **Raw Syslog** (`syslog_tcp`)
 * **CEF-formatted Syslog** (`syslog_tcp_cef`)
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Splunk Raw Syslog forwarder and Splunk Syslog CEF forwarder</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Splunk Raw Syslog forwarder and Splunk Syslog CEF forwarder</p></figcaption></figure>
 
 ### Supported Formats
 

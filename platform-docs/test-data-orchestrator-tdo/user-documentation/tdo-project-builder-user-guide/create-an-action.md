@@ -2,6 +2,8 @@
 
 Actions are reusable data blocks (list of attributes for which data needs to be assigned). Specific data blocks (output file formats) are attached to an ‘Action’ which can be assigned to any Step. This makes replacing file formats, without impacting output generation, much easier to do.
 
+Actions can be created manually, or will be created automatically if you create a scenario from the Data Blocks page (see 'Creating a Scenario' page for this).
+
 To create an action, you must first have your data block for the output format uploaded via the 'Ingest Data' step, and the data block must be validated.  On the menu, select 'Actions' from the 'Projects' section of the menu.  In the bottom right corner, click the plus (+) sign to open the 'Create Action' window.  Enter a name for the action on the top line.  Remember that this name must end in 'action'.  (If you forget to do that, TDO will pop up an error message and ask if you want to add \_action to the end of the name you have provided.)
 
 <figure><img src="../../../../.gitbook/assets/image (863).png" alt=""><figcaption><p>Create Action window</p></figcaption></figure>
