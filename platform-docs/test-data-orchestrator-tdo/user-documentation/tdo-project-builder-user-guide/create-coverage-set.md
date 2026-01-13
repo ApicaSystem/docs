@@ -44,15 +44,15 @@ Coverage sets can be edited to add or delete determining attributes.  When you e
 
 Navigate to your determining attributes page.  Check the attributes you want to add and then click on the right hand icon in the upper right corner (there are 3 icons - the trash can to delete selected attributes, the reload circle to reload page data, and the 'create coverage set' icon on the far right).
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption><p>Selecting determining attributes for a coverage set</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Selecting determining attributes for a coverage set</p></figcaption></figure>
 
 When you click the icon, a window will pop up where you name your coverage set.
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Naming a coverage set</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Naming a coverage set</p></figcaption></figure>
 
 After naming the coverage set, click 'generate' and your coverage set will be created.  It is immediately available for use on the 'Coverage Sets' main page.
 
-<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Created coverage set available</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Created coverage set available</p></figcaption></figure>
 
 ### Deleting a Coverage Set
 

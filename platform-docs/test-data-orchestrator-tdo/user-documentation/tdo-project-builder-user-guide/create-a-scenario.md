@@ -10,11 +10,11 @@ Scenarios can be created two ways - from the Data Blocks page or manually.  If y
 
 To create a scenario from the data blocks page, check the box to the left of the file(s) that will be the output format for your actions.  In the example below, 'payment\_request' and 'payment\_response' are selected.  In the upper right of the page there are four blue icons; the second from the right will create a scenario and action(s) from the selected data block(s).
 
-<figure><img src="../../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Creating a scenario and actions from data blocks</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Creating a scenario and actions from data blocks</p></figcaption></figure>
 
 Click the 'generate scenario' icon.  A window will pop up for naming the scenario and generating it.  Name the scenario and click 'Generate' to create the scenario and actions.
 
-<figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Naming and generating a scenario</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Naming and generating a scenario</p></figcaption></figure>
 
 After generating the scenario, it is available on the scenario page.  The screen below shows the contents of the scenario that were auto-generated.
 
