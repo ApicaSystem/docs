@@ -143,7 +143,7 @@ The following keys require setting site-specific values:
 * `global.environment.AWS_SECRET_ACCESS_KEY` - S3 secret key
 * `global.environment.awsServiceEndpoint` - base URL for your S3 or compatible service
 * `global.environment.admin_name` - admin account name
-* `global.environment.admin_password` - admin account password **(must meet the following minimum requirements: at least 12 characters, including one uppercase letter, one lowercase letter, and one digit.)**
+* `global.environment.admin_password` - admin account password **(must meet the following minimum requirements: at least 12 characters, including at least one uppercase letter, one lowercase letter, one digit, and one special character.)**
 * `global.environment.admin_org` - admin account organization name
 * `global.environment.admin_email` - admin account email address
 * `global.postgres.postgresqlPostgresPassword` - password for the PostgreSQL root user
