@@ -4,6 +4,10 @@ A Coverage Matrix is the generated output of your Business Rules. Each row in th
 
 You can also create a coverage matrix with auto-generated business rules, covered at the bottom of this document, for when you want full coverage.
 
+{% hint style="info" %}
+When you generate a coverage matrix for the first time, the coverage data view and other file data views will be generated for you.  The other file data views will be linked via common field names between the coverage set determining attributes and source files.
+{% endhint %}
+
 ### Generating a Coverage Matrix from Business Rules
 
 Once your business rules are created, you can generate your Coverage Matrix.  In the upper right corner of the business rules page there is a small blue box with a white grid in it.  Click on this box to generate the Coverage Matrix.

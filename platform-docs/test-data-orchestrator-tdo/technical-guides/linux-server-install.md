@@ -4,7 +4,9 @@
 
 ### Linux Install & configuration guide&#x20;
 
-&#x20;Before installing TDO, ensure MongoDB is running (follow the instructions in the online manual to start MongoDB).
+&#x20;Download links for the software will be provided after initial evaluation Document of Understanding or purchase contracts are signed.
+
+Before installing TDO, ensure MongoDB is running (follow the instructions in the online manual to start MongoDB).
 
 Ensure that you are logged in with the TDO admin ID or have run sudo to get admin privileges.
 

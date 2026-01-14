@@ -129,6 +129,10 @@ It is recommended that you use Chrome to run TDO.  If your organization does not
 
 ·       Set environmental variables – ensure that JAVA\_HOME/bin is added to PATH
 
+#### Docker/Kubernetes
+
+TDO is also available as a Docker/Kubernetes deployable package.
+
 #### &#x20;HTTPS certificate
 
 If you are installing TDO using the built-in authentication, you will need to create a self-signed certificate using the tool distributed with JDK.
