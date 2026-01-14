@@ -724,6 +724,7 @@
         * [Deleting a Work Set](platform-docs/test-data-orchestrator-tdo/user-documentation/tdo-project-builder-user-guide/work-sets/deleting-a-work-set.md)
         * [Unlocking a Work Set](platform-docs/test-data-orchestrator-tdo/user-documentation/tdo-project-builder-user-guide/work-sets/unlocking-a-work-set.md)
         * [Data Assembly from the Work Set Page](platform-docs/test-data-orchestrator-tdo/user-documentation/tdo-project-builder-user-guide/work-sets/data-assembly-from-the-work-set-page.md)
+        * [Automatically Creating / Deleting Assignment Rules](platform-docs/test-data-orchestrator-tdo/user-documentation/tdo-project-builder-user-guide/work-sets/automatically-creating-deleting-assignment-rules.md)
       * [Data Assignment](platform-docs/test-data-orchestrator-tdo/user-documentation/tdo-project-builder-user-guide/data-assignment/README.md)
         * [Assign a Value from the Coverage Matrix](platform-docs/test-data-orchestrator-tdo/user-documentation/tdo-project-builder-user-guide/data-assignment/assign-a-value-from-the-coverage-matrix.md)
         * [Assign a Value from a Data View](platform-docs/test-data-orchestrator-tdo/user-documentation/tdo-project-builder-user-guide/data-assignment/assign-a-value-from-a-data-view.md)
