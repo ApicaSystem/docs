@@ -46,7 +46,7 @@ sudo cp k0s-<version>-amd64 /usr/local/bin/k0s
 ```
 
 Configuration of a single-node setup can be accomplished by downloading the
-following sample file and replacing occurrences of `##HOST_IP##` with the
+following sample file and replacing occurrences of `##IPADDR##` with the
 host's default interface IP address.
 
 {% file src="../../.gitbook/assets/k0s-sample.yaml" %}
