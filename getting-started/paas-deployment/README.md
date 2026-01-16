@@ -26,7 +26,7 @@ helm upgrade --install <deployment_name> apica-repo/<chart_name>
 
 ### Create a Kubernetes cluster
 
-If you already have a Kubernetes cluster, you can skip down to **"Create a namespace to deploy Apica Ascent"**.
+If you already have a Kubernetes cluster, you can skip down to [Create a namespace to deploy Apica Ascent](#create-namespace).
 
 If you do not have a Kubernetes cluster, use [k0s](https://k0sproject.io/) to assemble one or more physical machines or VMs into a Kubernetes cluster, onto which you can deploy Apica Ascent. For the host operating system we assume some distribution of Linux, but it does not matter which one.
 
@@ -45,6 +45,19 @@ chmod +x k0s-<version>-amd64
 sudo cp k0s-<version>-amd64 /usr/local/bin/k0s
 ```
 
+Configuration of a single-node setup can be accomplished by downloading the
+following sample file and replacing occurrences of `##IPADDR##` with the
+host's default interface IP address.
+
+{% file src="../../.gitbook/assets/k0s-sample.yaml" %}
+
+Install the file as `/etc/k0s/k0s.yaml`. Run the following command to install
+k0s:
+
+```
+sudo k0s install controller --single -c /etc/k0s/k0s.yaml
+```
+
 Next, download and install [kubectl](https://kubernetes.io/docs/reference/kubectl/), which is the tool used to interact with Kubernetes.
 
 ```
@@ -52,11 +65,20 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 chmod +x kubectl && sudo cp kubectl /usr/local/bin/
 ```
 
+Generate a kubectl config using the `k0s kubeconfig` command:
+
+```
+mkdir ~/.kube
+sudo k0s kubeconfig admin > ~/.kube/config
+```
+
 Finally, download the current version of [Helm](https://helm.sh/), the package manager for Kubernetes, from the [releases page](https://github.com/helm/helm/releases). Install it alongside k0s and kubectl:
 
 ```
 tar zxf helm-<version>-linux-amd64.tar.gz && sudo cp linux-amd64/helm /usr/local/bin/
 ```
+
+Continue with [Configure Kubernetes Load Balancer](#k8s-lb) below.
 
 #### Multi-Node
 
@@ -95,7 +117,21 @@ If something goes wrong and you want to start over, `k0sctl reset` will uninstal
 
 Once the cluster is running, you can `k0sctl kubeconfig` to output a configuration file suitable for use with `kubectl` to work with the cluster. If you do not already have any kubectl configuration, you can redirect it to `~/.kube/config`, otherwise you will need to merge the values for this cluster into your existing kubectl config.
 
-### Create a namespace to deploy Apica Ascent
+Continue with [Configure Kubernetes Load Balancer](#k8s-lb) below.
+
+#### Configure Kubernetes Load Balancer {#k8s-lb}
+
+Starting with the following sample configuration file, add the IP addresses of all cluster nodes as a list under `addresses`. These are the addresses that MetalLB can make available to access the Apica Ascent deployment.
+
+{% file src="../../.gitbook/assets/metallb-sample.yaml" %}
+
+Install the final file as `/etc/k0s/metallb.yaml` and apply it:
+
+```
+kubectl apply -f /etc/k0s/metallb.yaml
+```
+
+### Create a namespace to deploy Apica Ascent {#create-namespace}
 
 Create a namespace where we'll deploy Apica Ascent PaaS by running the following command.
 

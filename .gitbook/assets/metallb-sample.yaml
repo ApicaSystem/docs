@@ -1,0 +1,15 @@
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: ascent-pool
+  namespace: metallb
+spec:
+  addresses:
+  - ##IPADDR##/32
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: ascent-l2
+  namespace: metallb
