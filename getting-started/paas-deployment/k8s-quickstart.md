@@ -71,15 +71,15 @@ Sample YAML files for small, medium, large cluster configurations can be downloa
 
 {% tabs %}
 {% tab title="values.small.yaml" %}
-{% file src="../../.gitbook/assets/values.small (23).yaml" %}
+{% file src="/broken/files/UgZeFZrZFPWMQGaBJkp0" %}
 {% endtab %}
 
 {% tab title="values.medium.yaml" %}
-{% file src="../../.gitbook/assets/values.medium (17).yaml" %}
+{% file src="/broken/files/kLvxZSEWAP29st9QDAKF" %}
 {% endtab %}
 
 {% tab title="values.large.yaml" %}
-{% file src="../../.gitbook/assets/values.large (17).yaml" %}
+{% file src="/broken/files/r0XDJ8ltY8DrPZKRpPRj" %}
 {% endtab %}
 {% endtabs %}
 

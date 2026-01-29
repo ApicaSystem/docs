@@ -136,7 +136,7 @@ ebs-csi-node-ksv8z 3/3 Running 0 3h53m
 
 {% tabs %}
 {% tab title="Values File For Helm" %}
-{% file src="../../.gitbook/assets/values (24).yaml" %}
+{% file src="/broken/files/JGU6jOBPxT2fsWiu9fFF" %}
 {% endtab %}
 {% endtabs %}
 

@@ -48,7 +48,7 @@ Navigate to your determining attributes page.  Check the attributes you want to 
 
 When you click the icon, a window will pop up where you name your coverage set.
 
-<figure><img src="../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Naming a coverage set</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Naming a coverage set</p></figcaption></figure>
 
 After naming the coverage set, click 'generate' and your coverage set will be created.  It is immediately available for use on the 'Coverage Sets' main page.
 

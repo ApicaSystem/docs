@@ -45,7 +45,7 @@ Restart Fluent-bit with `systemctl restart fluent-bit` and check the status with
 3\.     If you don’t see your logs you can search for them\
 Example:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Example logs
 

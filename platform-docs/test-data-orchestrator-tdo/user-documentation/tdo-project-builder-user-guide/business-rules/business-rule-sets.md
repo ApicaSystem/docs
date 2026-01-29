@@ -4,7 +4,7 @@ Business rules can be saved to Business Rule Sets. This lets you save rules that
 
 To save a set of business rules as a business rule set, go to the business rules page. In the upper right corner of the rules section, there are two icons - the 'reload' icon on the left and a 'save' disc icon on the right. To save the rules currently displayed, click the 'save' icon.
 
-<figure><img src="../../../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Biusiness Rules page</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Biusiness Rules page</p></figcaption></figure>
 
 Once you click the icon, you'll be asked to give the rule set a name. You can also enter a free-form text description of the rule set. Click 'Save' to save the rule set.
 

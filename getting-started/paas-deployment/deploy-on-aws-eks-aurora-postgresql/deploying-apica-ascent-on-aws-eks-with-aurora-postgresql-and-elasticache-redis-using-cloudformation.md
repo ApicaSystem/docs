@@ -142,8 +142,6 @@ kubectl create namespace apica-ascent
 
 **Step 2**: Download the values file below and customise it per the instructions below.
 
-{% file src="../../../.gitbook/assets/values.yaml" %}
-
 **Step 2**: Replace the following variables in the **values.yaml** and proceed to install the Apica Ascent stack on your EKS cluster.
 
 1. `awsServiceEndpoint`: https://s3.\\.amazonaws.com
