@@ -362,6 +362,8 @@
   * [OpenTelemetry Traces](flow/list-of-forwarders/traces.md)
   * [RSA New Witness](flow/list-of-forwarders/rsa-new-witness.md)
   * [S3 Compatible](flow/list-of-forwarders/s3-compatible.md)
+  * [ScienceLogic Forwarder (via OTel)](flow/list-of-forwarders/sciencelogic-forwarder-via-otel.md)
+  * [SolarWinds Forwarder (via OTel)](flow/list-of-forwarders/solarwinds-forwarder-via-otel.md)
   * [Splunk Forwarding](flow/list-of-forwarders/splunk-forwarding/README.md)
     * [Apica Forwarder Proxy Source Extension](flow/list-of-forwarders/splunk-forwarding/apica-uf-proxy-app-extension/README.md)
       * [Standalone Instance](flow/list-of-forwarders/splunk-forwarding/apica-uf-proxy-app-extension/standalone-instance.md)
