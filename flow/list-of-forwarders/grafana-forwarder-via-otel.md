@@ -10,8 +10,7 @@ Before configuring Apica, you must obtain your OTLP connection details from your
 2. Navigate to **OpenTelemetry** or look for the OTLP Endpoint tile.
 3. Note the following values:
 4. OTLP Endpoint: (e.g., https://otlp-gateway-prod-us-central-0.grafana.net/otlp)
-5. Instance ID/Username: (Usually a 5-6 digit number)
-6. API Token/Password: Your generated Cloud Access Policy token with metrics:write, logs:write, and traces:write permissions.
+5. API Token/Password: Your generated Cloud Access Policy token with metrics:write, logs:write, and traces:write permissions.
 
 ### 2. Apica Configuration Strategy: The OTLP Forwarder
 
