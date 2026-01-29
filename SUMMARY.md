@@ -338,6 +338,7 @@
   * [Azure Blob Storage](flow/list-of-forwarders/azure-blob-storage.md)
   * [Azure Log Analytics Forwarding](flow/list-of-forwarders/azure-log-analytics-forwarding.md)
   * [Azure Eventhub](flow/list-of-forwarders/azure-eventhub.md)
+  * [BMC Helix (via OTel)](flow/list-of-forwarders/bmc-helix-via-otel.md)
   * [Coralogix Forwarding](flow/list-of-forwarders/coralogix-forwarding.md)
   * [Datadog Forwarding](flow/list-of-forwarders/datadog-forwarding.md)
   * [Dynatrace Forwarding](flow/list-of-forwarders/dynatrace-forwarding.md)
