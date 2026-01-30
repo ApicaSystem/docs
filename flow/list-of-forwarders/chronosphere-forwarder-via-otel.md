@@ -1,76 +1,87 @@
 # Chronosphere Forwarder (via OTel)
 
-Configuring a forwarder from Apica Ascent to Chronosphere follows the OpenTelemetry (OTLP) standard but requires specific attention to Chronosphere's authentication headers and sub-path endpoint structure.
+This guide explains how to forward logs from **Apica Ascent / Flow** to **Chronosphere** using the **OpenTelemetry (OTLP) Logs Forwarder** over HTTPS.
 
-#### 1. Prerequisites from Chronosphere
+The OpenTelemetry Logs Forwarder converts logs ingested into Apica into OTLP-compliant log data and forwards them to a remote OTLP/HTTP endpoint.
 
-Before configuring Apica, ensure you have the following from your Chronosphere instance:
+***
 
-* Service Account API Token: Generate an API token with `Upload` or `Write` permissions.
-* Tenant Hostname: Your tenant URL (e.g., `company.chronosphere.io`).
+### Prerequisites
 
-#### 2. Configuration Strategy: The OTLP/HTTP Forwarder
+Before configuring the forwarder, ensure the following:
 
-In the Apica Flow interface, you will define Chronosphere as a target. Chronosphere uses a specific path for each telemetry type under its OTLP gateway.
+* Logs are already being ingested into **Apica Ascent**
+* You have access to the **Ascent UI** with permissions to create forwarders
+* You have a **Chronosphere tenant** with OTLP logs ingestion enabled
+* You have a valid **Chronosphere API token** with write permissions
 
-| **Field**        | **Value**                                             |
-| ---------------- | ----------------------------------------------------- |
-| Destination Name | `Chronosphere_Forwarder`                              |
-| Endpoint Base    | `https://<TENANT>.chronosphere.io/data/opentelemetry` |
-| Protocol         | `http/protobuf`                                       |
-| Compression      | `zstd` (Preferred) or `gzip`                          |
+***
 
-**Mandatory Authentication Header**
+### Chronosphere OTLP Logs Endpoint
 
-Chronosphere does not use standard Basic Auth; it requires a custom header:
+Chronosphere accepts OpenTelemetry logs over HTTPS using the OTLP/HTTP protocol.
 
-* Header Key: `API-Token`
-* Header Value: `<Your-Chronosphere-API-Token>`
-
-#### 3. Detailed Reference: Pipeline Exporter Logic
-
-If you are using the Apica configuration editor or a sidecar collector, use the following `exporters` block. Note that Chronosphere expects metrics, logs, and traces at distinct sub-endpoints.
-
-YAML:
+**Endpoint format:**
 
 ```
-exporters:
-  otlphttp/chronosphere:
-    # Use the base path; OTel SDKs append /v1/metrics, /v1/logs, etc.
-    endpoint: "https://<TENANT>.chronosphere.io/data/opentelemetry"
-    compression: zstd
-    headers:
-      API-Token: "your_api_token_here"
-      # Optional: Controls verbosity of rejected metric errors
-      Chronosphere-Metrics-Validation-Response: "SHORT" 
-
-service:
-  pipelines:
-    metrics:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlphttp/chronosphere]
-    logs:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlphttp/chronosphere]
+https://<TENANT>.chronosphere.io/data/opentelemetry/v1/logs
 ```
 
-#### 4. Key Implementation Notes for Chronosphere
+Authentication is performed using an HTTP header containing an API token.
 
-* Attribute Flattening: Chronosphere supports "Resource Attribute Merging." By default, it merges resource-level attributes (like `host.name`) into your metric labels. You can adjust this in the Chronosphere UI under Ingest > OTLP Settings if you encounter label collisions.
-* Batching: Chronosphere highly recommends the `batch` processor. For high-volume data, set your `send_batch_size` to `1000` and `timeout` to `1s` in Apica to optimize network overhead.
-* Validation: Chronosphere provides a specific header `Chronosphere-Metrics-Validation-Response`. Setting this to `DETAILED` during your initial setup in Apica will help you debug if any metrics are being dropped due to naming schema violations.
+***
 
-#### Summary Table: Forwarder Comparison
+### Create an OpenTelemetry Logs Forwarder
 
-| **Feature**   | **BMC Helix**                   | **Chronosphere**           |
-| ------------- | ------------------------------- | -------------------------- |
-| Auth Header   | `X-Api-Key`                     | `API-Token`                |
-| Endpoint Path | `/api/v1/otel`                  | `/data/opentelemetry`      |
-| Compression   | Gzip                            | Zstd / Gzip                |
-| Requirement   | Entity Mapping (`entityTypeId`) | Resource Attribute Merging |
+1. In the **Ascent UI**, navigate to **Forwarders**
+2. Select **Create Forwarder**
+3. Choose **OpenTelemetry Logs** as the forwarder type
 
-Video: [Forwarding logs to Chronosphere](https://www.youtube.com/watch?v=YSKSVURiu7A)
+#### Configuration Fields
 
-This video provides a practical walkthrough of setting up a telemetry pipeline to forward log data into the Chronosphere platform, which complements the configuration steps outlined above.
+| Field             | Description                                                                  |
+| ----------------- | ---------------------------------------------------------------------------- |
+| **Name**          | A descriptive name for the forwarder (for example, `chronosphere-otlp-logs`) |
+| **Endpoint**      | The Chronosphere OTLP logs endpoint                                          |
+| **Headers**       | HTTP headers to include with each request                                    |
+| **Output Format** | Proto/JSON                                                                   |
+
+#### Example Configuration
+
+**Endpoint**
+
+```
+https://<TENANT>.chronosphere.io/data/opentelemetry/v1/logs
+```
+
+**Headers**
+
+```
+API-Token=<CHRONOSPHERE_API_TOKEN>
+```
+
+**Output Format**
+
+```
+proto
+```
+
+> **Note:**\
+> The OpenTelemetry Logs Forwarder uses **HTTP only**. Chronosphere OTLP log ingestion supports OTLP over HTTP and requires TLS.
+
+***
+
+### Map the Forwarder to Log Sources
+
+Creating a forwarder does not automatically forward all logs. You must map the forwarder to the applications or namespaces whose logs you want to forward.
+
+#### Map via Explore
+
+1. Navigate to **Explore**
+2. Select the application or namespace receiving logs
+3. Open the **Actions (⋯)** menu
+4. Select **Map Forwarder**
+5. Choose the Chronosphere OTLP logs forwarder
+6. Save the mapping
+
+Once mapped, all logs for the selected application or namespace will be forwarded to Chronosphere.
