@@ -1,80 +1,98 @@
 # LogicMonitor Forwarder (using OTel)
 
-Building a forwarder from Apica Ascent to LogicMonitor using OpenTelemetry (OTel) leverages LogicMonitor’s OTLP ingestion capabilities. LogicMonitor typically ingests traces and metrics through its own "LogicMonitor OTel Collector," but you can point the Apica forwarder directly to LogicMonitor’s cloud ingestion endpoints by using the correct authentication headers and resource attributes.
+This guide explains how to forward logs from **Apica Ascent / Flow** to **LogicMonitor** using the **OpenTelemetry (OTLP) Logs Forwarder** over HTTPS.
 
-### 1. Prerequisites from LogicMonitor
+The OpenTelemetry Logs Forwarder converts logs ingested into Apica into OTLP-compliant log data and forwards them to a remote OTLP/HTTP endpoint.
 
-You need your account-specific ingestion details, which differ depending on whether you are sending traces or metrics/logs.
+***
 
-1. Bearer Token: Log in to LogicMonitor and navigate to Settings > Users/Roles > API Tokens. Generate a Bearer Token (preferred for OTLP) or an LMv1 Token (Access ID/Key).
-2. Endpoint: LogicMonitor uses a centralized OTLP endpoint:
-   * OTLP/HTTP: `https://<accountname>.logicmonitor.com/rest/otlp`
-   * _Note: Replace `<accountname>` with your actual LogicMonitor portal name._
+### Prerequisites
 
-### 2. Configuration Strategy: The Forwarder
+Before configuring the forwarder, ensure the following:
 
-In the Apica Flow (Ascent) UI, create a Target Destination using the OTLP/HTTP protocol.
+* Logs are already being ingested into **Apica Ascent**
+* You have access to the **Ascent UI** with permissions to create forwarders
+* You have a **LogicMonitor account**
+* You have:
+  * A **LogicMonitor API token** with ingest permissions
+  * Your **LogicMonitor company name** (account identifier)
 
-| **Field**         | **Value**                                          |
-| ----------------- | -------------------------------------------------- |
-| Destination Name  | `LogicMonitor_Forwarder`                           |
-| Endpoint          | `https://<accountname>.logicmonitor.com/rest/otlp` |
-| Protocol          | `http/protobuf`                                    |
-| Auth Header Key   | `Authorization`                                    |
-| Auth Header Value | `Bearer <Your-Bearer-Token>`                       |
+***
 
-### 3. Detailed Reference: Metadata & Transformation (OTTL)
+### LogicMonitor OpenTelemetry Support
 
-LogicMonitor uses Resource Attributes to map telemetry to the correct device or service in your resources tree. If these attributes don't match an existing device, LogicMonitor may create a new "unmanaged" resource.
+LogicMonitor supports **OpenTelemetry ingestion** via **OTLP over HTTP** for logs. Authentication and tenant identification are handled using HTTP headers.
 
-#### Mandatory Mapping Logic
+***
 
-Use the Apica transformation layer to ensure your data is correctly "homed" in LogicMonitor.
+### LogicMonitor OTLP Logs Endpoint
 
-SQL
+**Endpoint**
 
 ```
-# 1. Map the service name (Visible in the LogicMonitor Traces UI)
-set(resource.attributes["service.name"], "Apica-Pipeline-Service")
-
-# 2. Link telemetry to a specific LogicMonitor device
-# LogicMonitor matches based on 'host.name' or 'system.displayname'
-set(resource.attributes["host.name"], attributes["instance.id"])
-
-# 3. Add custom tags for filtering in LogicMonitor dashboards
-set(resource.attributes["lmotel.library.version"], "1.0.0")
-set(resource.attributes["env"], "production")
+https://otlp.logicmonitor.com/otlp/v1/logs
 ```
 
-#### Exporter Configuration Example
+> **Note:**\
+> LogicMonitor requires both authentication and tenant identification headers for OTLP ingest.
 
-If you are manually configuring a collector bridge or using the Apica YAML editor:
+***
 
-YAML
+### Create an OpenTelemetry Logs Forwarder
+
+1. In the **Ascent UI**, navigate to **Forwarders**
+2. Select **Create Forwarder**
+3. Choose **OpenTelemetry Logs** as the forwarder type
+
+***
+
+### Configuration Fields
+
+| Field             | Description                                                                  |
+| ----------------- | ---------------------------------------------------------------------------- |
+| **Name**          | A descriptive name for the forwarder (for example, `logicmonitor-otlp-logs`) |
+| **Endpoint**      | The LogicMonitor OTLP logs endpoint                                          |
+| **Headers**       | HTTP headers required for authentication and tenant identification           |
+| **Output Format** | OTLP payload format                                                          |
+
+***
+
+### Example Configuration
+
+**Endpoint**
 
 ```
-exporters:
-  otlphttp/logicmonitor:
-    endpoint: "https://<accountname>.logicmonitor.com/rest/otlp"
-    headers:
-      Authorization: "Bearer <Your_Bearer_Token>"
-    # LogicMonitor expects standard OTLP paths (/v1/traces, etc.) 
-    # which otlphttp appends automatically.
-
-service:
-  pipelines:
-    traces:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlphttp/logicmonitor]
-    metrics:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlphttp/logicmonitor]
+https://otlp.logicmonitor.com/otlp/v1/logs
 ```
 
-### 4. Key Implementation Notes
+**Headers**
 
-* Resource Matching: LogicMonitor’s "Resource Mapping" is critical. If your traces are not showing up under the correct device, verify that the `host.name` or `ip` attribute sent by Apica matches the IP Address or DNS Name of the device already added to LogicMonitor.
-* Log Ingestion: For OTLP Logs, ensure your LogicMonitor account has LM Logs enabled. Logs are typically routed to the `https://<accountname>.logicmonitor.com/rest/log/ingest` endpoint if not using the unified OTLP path.
-* Batching: LogicMonitor highly recommends using the `batch` processor to avoid hitting rate limits on their REST API.
+```
+Authorization=Bearer <LOGICMONITOR_API_TOKEN>,X-LM-Company=<LOGICMONITOR_COMPANY_NAME>
+```
+
+**Output Format**
+
+```
+proto
+```
+
+> **Note:**\
+> The OpenTelemetry Logs Forwarder sends OTLP payloads over HTTP. LogicMonitor supports OTLP/HTTP and recommends using the `proto` format for optimal performance.
+
+***
+
+### Map the Forwarder to Log Sources
+
+Creating a forwarder does not automatically forward logs. You must map the forwarder to the applications or namespaces whose logs you want to forward.
+
+#### Map via Explore
+
+1. Navigate to **Explore**
+2. Select the application or namespace receiving logs
+3. Open the **Actions (⋯)** menu
+4. Select **Map Forwarder**
+5. Choose the LogicMonitor OTLP logs forwarder
+6. Save the mapping
+
+Once mapped, all logs for the selected application or namespace will be forwarded to LogicMonitor.
