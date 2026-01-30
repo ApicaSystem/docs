@@ -1,86 +1,98 @@
 # ITRS Geneos Forwarder (via OTel)
 
-Forwarding data from Apica Ascent to ITRS Geneos using OpenTelemetry (OTel) typically utilizes the ITRS Geneos OpenTelemetry Plugin. Unlike some cloud-native targets, Geneos ingests OTel data through its Gateway Hub or a Netprobe configured with the OTel collector plugin, which then maps the data into the classic Geneos "Entity-Sampler-Dataview" hierarchy.
+This guide explains how to forward logs from **Apica Ascent / Flow** to **Geneos** using the **OpenTelemetry (OTLP) Logs Forwarder** over HTTPS.
 
-### 1. Prerequisites from ITRS Geneos
+The OpenTelemetry Logs Forwarder converts logs ingested into Apica into OTLP-compliant log data and forwards them to a remote OTLP/HTTP endpoint.
 
-Before configuring Apica, you must ensure the ITRS side is ready to receive OTLP traffic:
+***
 
-1. Geneos Gateway Hub: Ensure your environment has the Gateway Hub and Ingestion Service running.
-2. OTLP Endpoint: Obtain the URL for the Ingestion Service.
-   * Standard: `https://<hub-host>:<port>/ingestion/v1/otel`
-3. Authentication: Geneos often uses Service Account Tokens or basic credentials (username/password) configured within the Gateway Hub’s IAM.
+### Prerequisites
 
-### 2. Configuration Strategy: The OTLP Forwarder
+Before configuring the forwarder, ensure the following:
 
-In the Apica Flow (Ascent) UI, you will set up a forwarder that targets the Geneos Ingestion Service.
+* Logs are already being ingested into **Apica Ascent**
+* You have access to the **Ascent UI** with permissions to create forwarders
+* You have a **Geneos deployment** with OpenTelemetry ingestion enabled
+* You have a valid **Geneos API token or credentials** for OTLP ingestion
 
-| **Field**        | **Value**                                     |
-| ---------------- | --------------------------------------------- |
-| Destination Name | `ITRS_Geneos_Forwarder`                       |
-| Endpoint         | `https://<hub-host>:<port>/ingestion/v1/otel` |
-| Protocol         | `http/protobuf`                               |
-| Authentication   | `Bearer <Token>` or `Basic <Credentials>`     |
+***
 
-#### Step A: Metadata Mapping (Mandatory)
+### Geneos OpenTelemetry Support
 
-ITRS Geneos requires specific resource attributes to correctly place the data in its Active Console tree. If these are missing, the data may be ingested but will not appear in any dataviews.
+Geneos supports **OpenTelemetry ingestion** via **OTLP over HTTP**. OTLP endpoints and authentication details are **deployment-specific** and may vary depending on whether Geneos is deployed on-premises, in the cloud, or as part of a managed service.
 
-Use the Apica transformation layer (OTTL) to inject these mandatory Geneos dimensions:
+> **Note:**\
+> Confirm the exact OTLP logs endpoint and authentication requirements with your Geneos administrator or Geneos documentation before proceeding.
 
-* `itrs.managed.entity`: The name of the entity in Geneos.
-* `itrs.sampler.name`: The name of the sampler (e.g., "Apica\_Metrics").
-* `itrs.type.name`: (Optional) The Geneos Type.
+***
 
-### 3. Detailed Reference: Pipeline Transformation (OTTL)
+### Geneos OTLP Logs Endpoint
 
-Because Geneos maps OTel data to its internal model, you must explicitly define where the metrics should "land."
-
-SQL
+**Endpoint format (example):**
 
 ```
-# Map Apica attributes to ITRS Geneos internal dimensions
-set(resource.attributes["itrs.managed.entity"], resource.attributes["host.name"])
-set(resource.attributes["itrs.sampler.name"], "Apica_Monitoring")
-
-# Ensure service name is set as a fallback
-set(resource.attributes["service.name"], "Apica_Forwarder")
-
-# (Optional) Map specific metrics to Geneos Dataview rows
-set(attributes["geneos.row.name"], attributes["metric.name"])
+https://<GENEOS_HOST>/otlp/v1/logs
 ```
 
-#### Exporter Configuration Example
+Authentication is typically performed using an API token or bearer token passed via HTTP headers.
 
-If you are defining the forwarder via a configuration bridge:
+***
 
-YAML
+### Create an OpenTelemetry Logs Forwarder
+
+1. In the **Ascent UI**, navigate to **Forwarders**
+2. Select **Create Forwarder**
+3. Choose **OpenTelemetry Logs** as the forwarder type
+
+***
+
+### Configuration Fields
+
+| Field             | Description                                                            |
+| ----------------- | ---------------------------------------------------------------------- |
+| **Name**          | A descriptive name for the forwarder (for example, `geneos-otlp-logs`) |
+| **Endpoint**      | The Geneos OTLP logs endpoint                                          |
+| **Headers**       | HTTP headers to include with each request                              |
+| **Output Format** | OTLP payload format                                                    |
+
+***
+
+### Example Configuration
+
+**Endpoint**
 
 ```
-exporters:
-  otlphttp/geneos:
-    endpoint: "https://geneos-hub.internal:443/ingestion/v1/otel"
-    headers:
-      # Geneos specific ingestion credentials
-      "Authorization": "Bearer ${env:GENEOS_TOKEN}"
-    # Geneos Hub requires specific TLS settings if using self-signed certs
-    tls:
-      insecure_skip_verify: true 
-
-service:
-  pipelines:
-    metrics:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlphttp/geneos]
-    logs:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlphttp/geneos]
+https://<GENEOS_HOST>/otlp/v1/logs
 ```
 
-### 4. Key Implementation Notes
+**Headers**
 
-* Dimensionality: ITRS Geneos is very sensitive to "Dimensional Ingestion." Ensure that you do not send high-cardinality tags (like unique session IDs) as primary dimensions, as this can cause the Gateway Hub to drop data to protect the Gateway's memory.
-* Dataview Creation: Once data arrives in the Hub, you must go into the Gateway Setup Editor (GSE) and ensure there is an "OpenTelemetry" sampler configured to pull those specific metrics from the Hub into your Active Console.
-* Log Ingestion: For logs, Geneos supports OTel LogRecords. These will typically appear in the ITRS Analytics view or can be routed to a specific log-viewing sampler in the Active Console.
+```
+Authorization=Bearer <GENEOS_API_TOKEN>
+```
+
+**Output Format**
+
+```
+proto
+```
+
+> **Note:**\
+> The OpenTelemetry Logs Forwarder sends OTLP payloads over HTTP. Geneos supports OTLP/HTTP and recommends using the `proto` format for efficient ingestion.
+
+***
+
+### Map the Forwarder to Log Sources
+
+Creating a forwarder does not automatically forward logs. You must map the forwarder to the applications or namespaces whose logs you want to forward.
+
+#### Map via Explore
+
+1. Navigate to **Explore**
+2. Select the application or namespace receiving logs
+3. Open the **Actions (⋯)** menu
+4. Select **Map Forwarder**
+5. Choose the Geneos OTLP logs forwarder
+6. Save the mapping
+
+Once mapped, all logs for the selected application or namespace will be forwarded to Geneos.
