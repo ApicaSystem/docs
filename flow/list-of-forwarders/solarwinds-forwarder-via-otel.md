@@ -1,83 +1,112 @@
 # SolarWinds Forwarder (via OTel)
 
-Building a forwarder from Apica Ascent to SolarWinds Observability using OpenTelemetry (OTel) is a standardized process that requires specific "Service Keys" and regional endpoint mapping. SolarWinds uses a unified OTLP ingestion point but differentiates traffic based on the API token and the protocol version.
+This guide explains how to forward logs from **Apica Ascent / Flow** to **SolarWinds Observability** using the **OpenTelemetry (OTLP) Logs Forwarder** over HTTPS.
 
-### 1. Prerequisites from SolarWinds
+SolarWinds Observability provides a **dedicated HTTPS Logs Collector endpoint** that supports **OTLP over HTTP** for log ingestion. Apica’s OpenTelemetry Logs Forwarder can send logs directly to this endpoint without deploying an intermediate OpenTelemetry Collector.
 
-SolarWinds Observability requires a Service Key, which is a combination of an API Ingestion Token and a Service Name.
+***
 
-1. Ingestion Token: Log in to SolarWinds Observability, go to Settings > API Tokens, and generate a token with "Ingestion" permissions.
-2. Service Name: Decide on a name for the service (e.g., `Apica-Forwarder`).
-3. Service Key Format: Your key must be formatted as `<Ingestion-Token>:<Service-Name>`.
-4. Regional Endpoint: Identify your data center (e.g., `na-01`, `eu-01`).
-   * OTLP/HTTP: `https://otel.collector.<region>.cloud.solarwinds.com/v1/traces` (or `/v1/metrics`, `/v1/logs`)
+### Prerequisites
 
-### 2. Configuration Strategy: The Forwarder
+Before configuring the forwarder, ensure the following:
 
-In the Apica Flow (Ascent) UI, create a Target Destination using the OTLP/HTTP protocol. SolarWinds is strict about path-based ingestion for HTTP.
+* Logs are already being ingested into **Apica Ascent**
+* You have access to the **Ascent UI** with permissions to create forwarders
+* You have a **SolarWinds Observability account**
+* You have a valid **SolarWinds Observability API token** with log ingestion permissions
+* You know your **SolarWinds data center** (for example, `na-01`, `eu-01`, `ap-01`)
 
-| **Field**         | **Value**                                              |
-| ----------------- | ------------------------------------------------------ |
-| Destination Name  | `SolarWinds_Forwarder`                                 |
-| Endpoint          | `https://otel.collector.<region>.cloud.solarwinds.com` |
-| Protocol          | `http/protobuf`                                        |
-| Auth Header Key   | `Authorization`                                        |
-| Auth Header Value | `Bearer <Your-Service-Key>`                            |
+***
 
-> Note: SolarWinds sometimes accepts the service key directly in the `sw.api.key` header if the `Authorization` bearer is already in use by a proxy.
+### SolarWinds OpenTelemetry Log Ingestion
 
-### 3. Detailed Reference: Metadata & Enrichment (OTTL)
+SolarWinds Observability supports **direct log ingestion over HTTPS** using **OpenTelemetry Protocol (OTLP) over HTTP**.
 
-SolarWinds relies on Resource Attributes to build its "Entity Explorer." Without the correct attributes, your data will appear as "Unassociated Telemetry."
+For logs, SolarWinds exposes a **signal-specific HTTPS Logs Collector endpoint**, which accepts OTLP log payloads at the standard `/v1/logs` path.
 
-#### Mandatory Mapping Logic
+> **Important**\
+> Apica’s OpenTelemetry Logs Forwarder supports **OTLP over HTTP only**.\
+> OTLP/gRPC endpoints and generic OTEL collector endpoints are **not supported** by this forwarder.
 
-Use the Apica transformation layer to ensure the following attributes are attached to every span or metric:
+***
 
-SQL
+### SolarWinds HTTPS Logs Collector Endpoint
 
-```
-# 1. Set the mandatory SolarWinds Service Key if not in header
-set(resource.attributes["sw.api.key"], "YOUR_INGESTION_TOKEN:YOUR_SERVICE_NAME")
+Use the HTTPS Logs Collector endpoint for your SolarWinds data center.
 
-# 2. Map Host information for Infrastructure correlation
-set(resource.attributes["host.name"], attributes["hostname"])
-
-# 3. Define the service name explicitly (High priority in SolarWinds)
-set(resource.attributes["service.name"], "Apica-Data-Stream")
-
-# 4. Map Environment (appears as a filter in SolarWinds UI)
-set(resource.attributes["deployment.environment"], "production")
-```
-
-### 4. Implementation Reference: Exporter Configuration
-
-If you are defining the forwarder via a configuration bridge or an OTel Collector instance managed by Apica:
-
-YAML
+#### Endpoint format
 
 ```
-exporters:
-  otlphttp/solarwinds:
-    # SolarWinds requires specific endpoints per signal type
-    endpoint: "https://otel.collector.na-01.cloud.solarwinds.com"
-    headers:
-      Authorization: "Bearer <YOUR_TOKEN>:<YOUR_SERVICE_NAME>"
-
-service:
-  pipelines:
-    traces:
-      receivers: [otlp]
-      processors: [batch, attributes/sw_mapping]
-      exporters: [otlphttp/solarwinds]
-    metrics:
-      receivers: [otlp]
-      processors: [batch, attributes/sw_mapping]
-      exporters: [otlphttp/solarwinds]
+https://logs.collector.<DC>.cloud.solarwinds.com/v1/logs
 ```
 
-### 5. Key Implementation Notes
+#### Examples
 
-* Endpoint Selection: Ensure you include the versioning in the endpoint if your collector doesn't append it automatically. For metrics, the path is `/v1/metrics`.
-* Entity Linking: SolarWinds automatically creates entities (Services, Hosts, etc.) based on the `service.name` and `host.name`. If you see multiple entities for the same host, verify that the case sensitivity of the `host.name` attribute matches across all Apica pipelines.
-* Trace Context: SolarWinds supports W3C Trace Context. If you are forwarding traces from Apica that originated in another instrumented system, SolarWinds will seamlessly stitch them together.
+```
+https://logs.collector.na-01.cloud.solarwinds.com/v1/logs
+https://logs.collector.eu-01.cloud.solarwinds.com/v1/logs
+```
+
+Replace `<DC>` with the data center assigned to your SolarWinds Observability account.
+
+***
+
+### Create an OpenTelemetry Logs Forwarder
+
+1. In the **Ascent UI**, navigate to **Forwarders**
+2. Select **Create Forwarder**
+3. Choose **OpenTelemetry Logs** as the forwarder type
+
+***
+
+### Configuration Fields
+
+| Field             | Description                                                                |
+| ----------------- | -------------------------------------------------------------------------- |
+| **Name**          | A descriptive name for the forwarder (for example, `solarwinds-otlp-logs`) |
+| **Endpoint**      | The SolarWinds HTTPS Logs Collector endpoint                               |
+| **Headers**       | HTTP headers required for authentication                                   |
+| **Output Format** | OTLP payload format                                                        |
+
+***
+
+### Example Configuration
+
+**Endpoint**
+
+```
+https://logs.collector.<DC>.cloud.solarwinds.com/v1/logs
+```
+
+**Headers**
+
+```
+authorization=Bearer <SOLARWINDS_API_TOKEN>
+```
+
+**Output Format**
+
+```
+proto
+```
+
+> **Notes**
+>
+> * Header keys are case-insensitive.
+> * Multiple headers can be specified using a comma-separated list.
+> * The `proto` output format is recommended for performance and compatibility.
+
+***
+
+### Map the Forwarder to Log Sources
+
+Creating a forwarder does not automatically forward logs. You must map it to the applications or namespaces whose logs you want to send to SolarWinds Observability.
+
+1. Navigate to **Explore**
+2. Select the application or namespace receiving logs
+3. Open the **Actions (⋯)** menu
+4. Select **Map Forwarder**
+5. Choose the SolarWinds OTLP logs forwarder
+6. Save the mapping
+
+Only mapped sources will forward logs to SolarWinds.
