@@ -53,4 +53,4 @@ Currently, **Ascent** supports the following target destinations (among others):
 | [Splunk Universal Forwarder / Heavy Forwarder](../integrations/list-of-integrations/splunk-heavy-forwarder.md) | S2S                | Forward data to Apica in Cooked mode                                    |
 | [Object Store](list-of-forwarders/s3-compatible.md) (S3)                                                       | S3 Compatible      | AWS S3, CEPH, Minio, GCP Cloud Storage, OCI Buckets                     |
 | [Object Store](object-store-forwarding.md) (Azure Blob)                                                        | Azure Blob Storage | Native support for Azure blob storage API's                             |
-| [OpenTelemetry](opentelemetry-forwarding.md)                                                                   | OpenTelemetry      | Forward Logs, Metrics, Traces to OpenTelemetry compatible destinations. |
+| [OpenTelemetry](/broken/pages/xN7Tt3w5cCJy3QJ3ZCx9)                                                            | OpenTelemetry      | Forward Logs, Metrics, Traces to OpenTelemetry compatible destinations. |

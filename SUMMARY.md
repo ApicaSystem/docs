@@ -384,7 +384,6 @@
 * [Custom Forwarders](flow/customized-forwarders.md)
 * [Data Warehouse Forwarding](flow/forwarding-to-data-warehouse.md)
 * [Object Store Forwarding](flow/object-store-forwarding.md)
-* [OpenTelemetry Forwarding](flow/opentelemetry-forwarding.md)
 * [Real-Time Stream Forwarding](flow/real-time-stream-forwarding.md)
 * [Security Monitor Forwarding](flow/security-monitor-forwarding.md)
 
