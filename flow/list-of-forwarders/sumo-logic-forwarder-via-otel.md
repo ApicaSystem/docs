@@ -1,81 +1,109 @@
 # Sumo Logic Forwarder (via OTel)
 
-Building a forwarder from Apica Ascent to Sumo Logic using OpenTelemetry (OTel) utilizes Sumo Logic's native OTLP/HTTP Source. Unlike some legacy integrations, Sumo Logic has fully embraced OTLP as a first-class ingestion method, providing a unique URL for each collector that acts as the entry point for logs, metrics, and traces.
+This guide explains how to forward logs from **Apica Ascent / Flow** to **Sumo Logic** using the **OpenTelemetry (OTLP) Logs Forwarder** over HTTPS.
 
-### 1. Prerequisites from Sumo Logic
+Sumo Logic supports **OTLP over HTTP ingestion** for logs through an **OTLP/HTTP Source** that you create in the Sumo Logic UI. Apica’s OpenTelemetry Logs Forwarder can send logs directly to this endpoint without deploying an intermediate OpenTelemetry Collector.
 
-To receive data, you must first create a "Hosted Collector" and an "OTLP/HTTP Source" in your Sumo Logic portal:
+***
 
-1. Create Hosted Collector: Go to Manage Data > Collection > Collection and click Add Collector > Hosted Collector.
-2. Add OTLP Source: Within that Collector, click Add Source and select OTLP/HTTP.
-3. Capture the URL: Once saved, Sumo Logic will provide a unique endpoint URL.
-   * _Example:_ `https://endpoint4.collection.us2.sumologic.com/receiver/v1/otlp/your-unique-token`
-4. Define Fields: Ensure any resource attributes you want to use as metadata in Sumo Logic (e.g., `service.name`, `deployment.environment`) are added to the Fields list in Sumo Logic settings.
+### Prerequisites
 
-### 2. Configuration Strategy: The Forwarder
+Before configuring the forwarder, ensure the following:
 
-In the Apica Flow (Ascent) UI, you will configure a target destination using the OTLP/HTTP protocol.
+* Logs are already being ingested into **Apica Ascent**
+* You have access to the **Ascent UI** with permissions to create forwarders
+* You have a **Sumo Logic account**
+* You can create or modify **Hosted Collectors and Sources** in Sumo Logic
 
-| **Field**        | **Value**                        |
-| ---------------- | -------------------------------- |
-| Destination Name | `SumoLogic_OTLP_Forwarder`       |
-| Endpoint         | `https://<your-sumo-unique-url>` |
-| Protocol         | `http/protobuf`                  |
-| Content-Type     | `application/x-protobuf`         |
+***
 
-> Note: Sumo Logic’s OTLP/HTTP source automatically handles the sub-paths for each signal (e.g., appending `/v1/logs`, `/v1/metrics`). You typically only need to provide the base URL in the Apica destination.
+### How Sumo Logic Ingests OpenTelemetry Logs
 
-### 3. Detailed Reference: Metadata & Mapping (OTTL)
+Sumo Logic ingests OpenTelemetry data using **OTLP/HTTP Sources** that are attached to a **Hosted Collector**.
 
-Sumo Logic maps OpenTelemetry Resource Attributes directly to its internal Fields. This is crucial for searching and categorizing logs in the Sumo Logic UI.
+Key points:
 
-#### Mandatory Mapping Logic
+* You must create an **OTLP/HTTP Source** in Sumo Logic
+* Sumo Logic generates a **unique source URL**
+* OpenTelemetry clients send data to this URL using signal-specific paths:
+  * `/v1/logs` for logs
+  * `/v1/metrics` for metrics
+  * `/v1/traces` for traces
+* Authentication is handled by the **source URL itself** (no API token header is required)
 
-Use the Apica transformation layer to ensure the data is "Sumo-ready."
+> **Important**\
+> You cannot use a generic or static Sumo Logic OTLP endpoint.\
+> The **generated OTLP/HTTP Source URL is required** to associate data with your account.
 
-SQL
+***
 
-```
-# 1. Map 'service.name' to Sumo Logic's _sourceName (optional but recommended)
-set(resource.attributes["_sourceName"], resource.attributes["service.name"])
+### Create an OTLP/HTTP Source in Sumo Logic
 
-# 2. Assign the Source Category for logical grouping in Sumo Logic
-# Format: <Environment>/<App>/<Service>
-set(resource.attributes["_sourceCategory"], "Production/Apica/Logs")
+1. Log in to **Sumo Logic**
+2. Navigate to **Manage Data → Collection**
+3. Select an existing **Hosted Collector** (or create one)
+4. Click **Add Source**
+5. Choose **OTLP/HTTP**
+6. Enter a **Name** (for example, `Apica OTLP Logs`)
+7. (Optional) Set metadata such as _Source Category_
+8. Click **Save**
 
-# 3. Add Custom Fields for indexing
-set(resource.attributes["deployment.environment"], "prod")
-set(resource.attributes["cluster.name"], "us-east-1-apica")
-```
+After saving, click **Show URL** to copy the **OTLP/HTTP Source base URL**.
 
-### 4. Implementation Reference: Exporter Configuration
-
-If you are manually configuring a collector bridge or utilizing Apica's YAML-based configuration:
-
-YAML
+This URL will look similar to:
 
 ```
-exporters:
-  otlphttp/sumologic:
-    # Use the unique URL generated in the Sumo Logic UI
-    endpoint: "https://endpoint4.collection.us2.sumologic.com/receiver/v1/otlp/xxxxxxxxxxxx"
-    # Sumo Logic highly recommends Gzip compression
-    compression: gzip
-
-service:
-  pipelines:
-    logs:
-      receivers: [otlp]
-      processors: [batch, transform/sumo_mapping]
-      exporters: [otlphttp/sumologic]
-    metrics:
-      receivers: [otlp]
-      processors: [batch, transform/sumo_mapping]
-      exporters: [otlphttp/sumologic]
+https://<unique-id>.collection.<region>.sumologic.com/otlp
 ```
 
-### 5. Key Implementation Notes
+***
 
-* Structured Logs: Sumo Logic treats OTLP logs as structured JSON. If your Apica data contains `log-level-attributes`, Sumo Logic will automatically parse them, making them immediately searchable via the `| json` operator.
-* Source Category vs. Fields: Use `_sourceCategory` for high-level organization and Fields (Resource Attributes) for granular filtering (e.g., `container_id`).
-* Batching: For production traffic, use a `send_batch_size` of `1024` and a `timeout` of `1s` in your Apica pipeline. This optimizes the number of HTTP POST requests sent to the Sumo Logic endpoint.
+### Configure the OpenTelemetry Logs Forwarder in Apica
+
+In the **Ascent UI**, create a new forwarder:
+
+1. Navigate to **Forwarders**
+2. Select **Create Forwarder**
+3. Choose **OpenTelemetry Logs**
+
+***
+
+### Forwarder Configuration
+
+#### Required Fields
+
+| Field             | Value                            |
+| ----------------- | -------------------------------- |
+| **Name**          | `sumologic-otlp-logs`            |
+| **Endpoint**      | `<OTLP_HTTP_SOURCE_URL>/v1/logs` |
+| **Headers**       | _(none required)_                |
+| **Output Format** | `proto`                          |
+
+#### Example Endpoint
+
+```
+https://abcd1234.collection.us2.sumologic.com/otlp/v1/logs
+```
+
+> **Notes**
+>
+> * Do **not** omit `/v1/logs`
+> * Do **not** add authentication headers
+> * Use `proto` for optimal compatibility and performance
+
+***
+
+### Map the Forwarder to Log Sources
+
+Creating the forwarder does not automatically forward logs.
+
+To enable forwarding:
+
+1. Go to **Explore**
+2. Select the application or namespace receiving logs
+3. Open the **Actions (⋯)** menu
+4. Select **Map Forwarder**
+5. Choose `sumologic-otlp-logs`
+6. Save
+
+Only mapped sources will send logs to Sumo Logic.
