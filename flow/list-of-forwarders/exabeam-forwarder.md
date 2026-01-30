@@ -9,7 +9,7 @@ To authenticate and route data to the correct "Log Stream" in Exabeam, you need:
 1. Ingestion API Key: Generated in the Exabeam Settings under Inbound Integrations.
 2. Product/Vendor Names: Exabeam uses these to apply the correct LIME (Log Ingestion & Messaging Engine) parsers.
    * Vendor: `Apica`
-   * Product: `Ascent` (or `Synthetic Monitoring`)
+   * Product: `Ascent`
 3. Endpoint URL: This is specific to your Exabeam region (e.g., `https://api.<region>.exabeam.com/ingest/v1/log-entries`).
 
 ### 2. Configuration Strategy: The Forwarder
