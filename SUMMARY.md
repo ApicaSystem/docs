@@ -342,6 +342,7 @@
   * [BMC Helix Forwarder (via OTel)](flow/list-of-forwarders/bmc-helix-forwarder-via-otel.md)
   * [Chronosphere Forwarder (via OTel)](flow/list-of-forwarders/chronosphere-forwarder-via-otel.md)
   * [Coralogix Forwarding](flow/list-of-forwarders/coralogix-forwarding.md)
+  * [CrowdStrike Falcon LogScale](flow/list-of-forwarders/crowdstrike-falcon-logscale.md)
   * [Datadog Forwarding](flow/list-of-forwarders/datadog-forwarding.md)
   * [Dynatrace Forwarding](flow/list-of-forwarders/dynatrace-forwarding.md)
   * [Elasticsearch Forwarding](flow/list-of-forwarders/elasticsearch-forwarding.md)
