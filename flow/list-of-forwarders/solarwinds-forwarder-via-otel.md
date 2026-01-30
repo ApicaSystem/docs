@@ -1,34 +1,31 @@
 # SolarWinds Forwarder (via OTel)
 
-This guide explains how to forward logs from **Apica Ascent / Flow** to **SolarWinds Observability** using the **OpenTelemetry (OTLP) Logs Forwarder** over HTTPS.
+This guide explains how to forward logs from Apica Ascent / Flow to SolarWinds Observability using the OpenTelemetry (OTLP) Logs Forwarder over HTTPS.
 
-SolarWinds Observability supports **OpenTelemetry Protocol (OTLP) over HTTP** for direct ingestion of logs, metrics, and traces. You can configure Apica’s OTLP Logs Forwarder to push logs to SolarWinds’s OTLP logs endpoint without an intermediate collector.
+The OpenTelemetry Logs Forwarder converts logs ingested into Apica into OTLP-compliant log data and forwards them to a remote OTLP/HTTP endpoint.
 
 ***
 
 ### Prerequisites
 
-Before configuring the forwarder:
+Before configuring the forwarder, ensure the following:
 
-* Logs must already be ingested into **Apica Ascent**
-* You have permissions in the **Ascent UI** to create forwarders
-* You are using a SolarWinds Observability SaaS account
-* You have the **SolarWinds data center name** used by your organization (e.g., `na-01`, `na-02`, `eu-01`, `ap-01`) — visible in your SolarWinds SaaS URL (e.g., `https://my.na-01.cloud.solarwinds.com`)
-* You have a valid **SolarWinds API token** capable of being used for direct OTLP ingestion (typically a bearer token)
+* Logs are already being ingested into Apica Ascent
+* You have access to the Ascent UI with permissions to create forwarders
+* You have a SolarWinds Observability account
+* You have a valid SolarWinds ingestion API token
 
 ***
 
-### SolarWinds OTLP Endpoints
+### SolarWinds OTLP Logs Endpoint
 
-SolarWinds publishes the following OTLP ingestion endpoints. Whether you use these directly or through agents/collectors, the **OTLP/HTTP logs path** is supported.
+SolarWinds supports OpenTelemetry log ingestion over HTTPS using the OTLP/HTTP protocol.
 
-#### OTLP/HTTP Logs Ingestion
+**Endpoint format**
 
 ```
-https://otel.collector.<DC>.cloud.solarwinds.com/v1/logs
+https://otel.collector.<DATA_CENTER>.cloud.solarwinds.com/v1/logs
 ```
-
-Where `<DC>` is your data center (for example, `na-01`, `na-02`, `eu-01`, `ap-01`).
 
 **Example**
 
@@ -36,55 +33,74 @@ Where `<DC>` is your data center (for example, `na-01`, `na-02`, `eu-01`, `ap-01
 https://otel.collector.na-01.cloud.solarwinds.com/v1/logs
 ```
 
-SolarWinds also publishes a separate “HTTPS logs collector” endpoint (`logs.collector.<DC>.cloud.solarwinds.com/v1/logs`), but the **OTLP/HTTP ingress documented for telemetry** includes the OTLP paths under `otel.collector`.
+Authentication is performed using an HTTP authorization header.
+
+**Required header**
+
+```
+Authorization: Bearer <SOLARWINDS_API_TOKEN>
+```
+
+**Note:**\
+SolarWinds also exposes a non-OTLP HTTPS logs endpoint, but Apica uses the OTLP-specific collector endpoint shown above.
 
 ***
 
-### How It Works with Apica
+### Create an OpenTelemetry Logs Forwarder
 
-Apica’s OpenTelemetry Logs Forwarder supports **OTLP over HTTP** endpoints and can send logs using the same OTLP/HTTP path that SolarWinds documents for OTLP ingestion. This means you can point the forwarder at SolarWinds’s OTLP logs endpoint (`v1/logs`) and pass your API token in the authorization header.
-
-> ✔ Apica’s forwarder **only** supports OTLP/HTTP — not OTLP gRPC.\
-> ✔ The SolarWinds OTLP/HTTP endpoint listed above **does** support OTLP over HTTPS.
-
-***
-
-### Configure the OTLP Logs Forwarder in Apica
-
-#### 1) Create a Forwarder
-
-In the Apica Ascent UI:
-
-1. Go to **Forwarders**
-2. Click **Create Forwarder**
-3. Select **OpenTelemetry Logs** as the type
-
-#### 2) Enter Forwarder Settings
-
-| Field             | Configuration                                              |
-| ----------------- | ---------------------------------------------------------- |
-| **Name**          | `solarwinds-otlp-logs`                                     |
-| **Endpoint**      | `https://otel.collector.<DC>.cloud.solarwinds.com/v1/logs` |
-| **Headers**       | `authorization=Bearer <SOLARWINDS_API_TOKEN>`              |
-| **Output Format** | `proto`                                                    |
-
-**Important**
-
-* Replace `<DC>` with your SolarWinds data center (e.g., `na-01`).
-* Use a valid **authorization token** for SolarWinds OTLP ingestion
-* Set `output_format` to `proto` for optimal compatibility
+1. In the Ascent UI, navigate to **Forwarders**
+2. Select **Create Forwarder**
+3. Choose **OpenTelemetry Logs** as the forwarder type
 
 ***
 
-### Map Forwarder to Log Sources
+### Configuration Fields
 
-After creating the forwarder:
+| Field         | Description                                                                |
+| ------------- | -------------------------------------------------------------------------- |
+| Name          | A descriptive name for the forwarder (for example, `solarwinds-otlp-logs`) |
+| Endpoint      | The SolarWinds OTLP logs endpoint                                          |
+| Headers       | HTTP headers to include with each request                                  |
+| Output Format | OTLP payload format                                                        |
+
+***
+
+### Example Configuration
+
+**Endpoint**
+
+```
+https://otel.collector.na-01.cloud.solarwinds.com/v1/logs
+```
+
+**Headers**
+
+```
+Authorization=Bearer <SOLARWINDS_API_TOKEN>
+```
+
+**Output Format**
+
+```
+proto
+```
+
+**Note:**\
+SolarWinds supports OTLP/HTTP and recommends using the `proto` format for best performance.
+
+***
+
+### Map the Forwarder to Log Sources
+
+Creating a forwarder does not automatically forward logs. You must map the forwarder to the applications or namespaces whose logs you want to forward.
+
+#### Map via Explore
 
 1. Navigate to **Explore**
-2. Choose the application or namespace whose logs you want to send
-3. Click the **Actions (⋯)** menu
+2. Select the application or namespace receiving logs
+3. Open the **Actions (⋯)** menu
 4. Select **Map Forwarder**
-5. Choose the newly created `solarwinds-otlp-logs`
-6. Click **Save**
+5. Choose the SolarWinds OTLP logs forwarder
+6. Save the mapping
 
-Logs from the mapped application will now be forwarded to SolarWinds using OTLP/HTTP.
+Once mapped, all logs for the selected scope will be forwarded to SolarWinds.
