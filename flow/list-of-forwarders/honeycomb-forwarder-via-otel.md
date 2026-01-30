@@ -1,83 +1,94 @@
 # Honeycomb Forwarder (via OTel)
 
-Building a forwarder from Apica Ascent to Honeycomb using OpenTelemetry (OTLP) is unique because Honeycomb organizes data into "Environments" and "Datasets" via headers. While many modern OTLP targets infer service names automatically, Honeycomb relies heavily on specific `x-honeycomb` headers to route your traffic correctly.
+This guide explains how to forward logs from **Apica Ascent / Flow** to **Honeycomb** using the **OpenTelemetry (OTLP) Logs Forwarder** over HTTPS.
 
-### 1. Prerequisites from Honeycomb
+The OpenTelemetry Logs Forwarder converts logs ingested into Apica into OTLP-compliant log data and forwards them to a remote OTLP/HTTP endpoint.
 
-Before configuring the Apica pipeline, collect these details from your Honeycomb Team settings:
+***
 
-* API Key: Found under Environment Settings.
-* API Endpoint: \* US: `https://api.honeycomb.io`
-  * EU: `https://api.eu1.honeycomb.io`
-* Dataset Name: (Required for Metrics and Logs) The name of the bucket where you want this data to land.
+### Prerequisites
 
-### 2. Configuration Strategy: The OTLP Forwarder
+Before configuring the forwarder, ensure the following:
 
-In the Apica Flow (Ascent) UI, you will create a target destination using the OTLP/HTTP protocol.
+* Logs are already being ingested into **Apica Ascent**
+* You have access to the **Ascent UI** with permissions to create forwarders
+* You have a **Honeycomb account**
+* You have a valid **Honeycomb API key** with permissions to ingest telemetry
 
-| **Field**        | **Value**                  |
-| ---------------- | -------------------------- |
-| Destination Name | `Honeycomb_Forwarder`      |
-| Endpoint         | `https://api.honeycomb.io` |
-| Protocol         | `http/protobuf`            |
-| Header 1 Key     | `x-honeycomb-team`         |
-| Header 1 Value   | `<Your-Honeycomb-API-Key>` |
-| Header 2 Key     | `x-honeycomb-dataset`      |
-| Header 2 Value   | `<Your-Dataset-Name>`      |
+***
 
-> Note: For Honeycomb, if you are using a "Modern" API key (shorter, mixed case), the `x-honeycomb-dataset` header is only strictly required for Metrics. For Traces, Honeycomb will automatically create datasets based on the `service.name` attribute.
+### Honeycomb OTLP Logs Endpoint
 
-### 3. Detailed Reference: Pipeline Transformation logic
+Honeycomb supports OpenTelemetry log ingestion over HTTPS using the OTLP/HTTP protocol.
 
-Using OTTL (OpenTelemetry Transformation Language) within Apica, you can ensure your data is "Honeycomb-ready." Honeycomb excels when data is "flat" and contains high-cardinality fields.
-
-#### Step A: Mapping Attributes
-
-Ensure the `service.name` is set, as this is how Honeycomb identifies distinct services in its UI.
-
-SQL
+**Endpoint format:**
 
 ```
-# Set service name if it's missing to avoid "unknown_service" in Honeycomb
-set(resource.attributes["service.name"], "Apica-Forwarder-Service") 
-    where resource.attributes["service.name"] == nil
-
-# Flatten nested attributes for better Honeycomb query performance
-set(attributes["http.client_ip"], attributes["net.peer.ip"])
+https://api.honeycomb.io/v1/logs
 ```
 
-#### Step B: The Exporter Configuration
+Authentication is performed using an HTTP header containing a Honeycomb API key.
 
-If you are manually editing the Apica collector YAML or using a sidecar:
+> **Note:**\
+> Honeycomb uses a single OTLP endpoint for logs and requires TLS for all ingest traffic.
 
-YAML:
+***
+
+### Create an OpenTelemetry Logs Forwarder
+
+1. In the **Ascent UI**, navigate to **Forwarders**
+2. Select **Create Forwarder**
+3. Choose **OpenTelemetry Logs** as the forwarder type
+
+***
+
+### Configuration Fields
+
+| Field             | Description                                                               |
+| ----------------- | ------------------------------------------------------------------------- |
+| **Name**          | A descriptive name for the forwarder (for example, `honeycomb-otlp-logs`) |
+| **Endpoint**      | The Honeycomb OTLP logs endpoint                                          |
+| **Headers**       | HTTP headers to include with each request                                 |
+| **Output Format** | OTLP payload format                                                       |
+
+***
+
+### Example Configuration
+
+**Endpoint**
 
 ```
-exporters:
-  otlphttp/honeycomb:
-    endpoint: "https://api.honeycomb.io"
-    headers:
-      "x-honeycomb-team": "YOUR_API_KEY"
-      "x-honeycomb-dataset": "apica-metrics-dataset"
-
-service:
-  pipelines:
-    traces:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlphttp/honeycomb]
-    metrics:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlphttp/honeycomb]
+https://api.honeycomb.io/v1/logs
 ```
 
-### 4. Key Implementation Notes
+**Headers**
 
-* Batching is Critical: Honeycomb’s API performance is significantly better with the `batch` processor enabled in your Apica pipeline. This reduces the number of HTTP calls and prevents rate-limiting.
-* Dataset Routing: If you want to route logs to one dataset and metrics to another, you must create two separate exporters in Apica, each with a different `x-honeycomb-dataset` header value.
-* Visualizing Traces: Once data flows, go to the New Query tab in Honeycomb and group by `service.name`. If you don't see data, check if your Apica forwarder is using `http/protobuf`—Honeycomb’s OTLP endpoint is strictly version-compliant.
+```
+x-honeycomb-team=<HONEYCOMB_API_KEY>
+```
 
-**Video**: [Using OpenTelemetry With Honeycomb](https://www.youtube.com/watch?v=owMtlMDLbzE)
+**Output Format**
 
-This video provides an excellent deep dive into how Honeycomb handles OpenTelemetry data, which will help you understand how to structure your Apica transformations for the best observability results.
+```
+proto
+```
+
+> **Note:**\
+> The OpenTelemetry Logs Forwarder sends OTLP payloads over HTTP. Honeycomb supports OTLP/HTTP and recommends using the `proto` format for optimal performance.
+
+***
+
+### Map the Forwarder to Log Sources
+
+Creating a forwarder does not automatically forward logs. You must map the forwarder to the applications or namespaces whose logs you want to forward.
+
+#### Map via Explore
+
+1. Navigate to **Explore**
+2. Select the application or namespace receiving logs
+3. Open the **Actions (⋯)** menu
+4. Select **Map Forwarder**
+5. Choose the Honeycomb OTLP logs forwarder
+6. Save the mapping
+
+Once mapped, all logs for the selected application or namespace will be forwarded to Honeycomb.
