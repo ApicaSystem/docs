@@ -356,6 +356,7 @@
   * [ITRS Geneos Forwarder (via OTel)](flow/list-of-forwarders/itrs-geneos-forwarder-via-otel.md)
   * [JS Code Forwarding](flow/list-of-forwarders/js-code-forwarding.md)
   * [LogicMonitor Forwarder (using OTel)](flow/list-of-forwarders/logicmonitor-forwarder-using-otel.md)
+  * [Microsoft Sentinel (via OTel)](flow/list-of-forwarders/microsoft-sentinel-via-otel.md)
   * [New Relic Forwarding](flow/list-of-forwarders/new-relic-forwarding.md)
   * [OpenTelemetry Logs](flow/list-of-forwarders/logs.md)
   * [OpenTelemetry Metrics](flow/list-of-forwarders/metrics.md)
