@@ -1,84 +1,94 @@
 # IBM Instana (via OTel)
 
-Building a forwarder from Apica Ascent to IBM Instana using OpenTelemetry (OTel) is highly effective because Instana provides a native OTLP Acceptor. You can choose between two main architectural paths: forwarding directly to the Instana SaaS Backend or routing through a local Instana Host Agent.
+This guide explains how to forward logs from **Apica Ascent / Flow** to **Instana** using the **OpenTelemetry (OTLP) Logs Forwarder** over HTTPS.
 
-### 1. Prerequisites from IBM Instana
+The OpenTelemetry Logs Forwarder converts logs ingested into Apica into OTLP-compliant log data and forwards them to a remote OTLP/HTTP endpoint.
 
-To connect, you need your specific regional endpoint and your Agent Key.
+***
 
-1. Agent Key: Log in to Instana, go to Settings > Agents > Configurations, and copy your `Your Agent Key`.
-2. SaaS Region Endpoint: Instana uses region-specific endpoints (e.g., `blue`, `red`, `orange`).
-   * OTLP/gRPC: `otlp-<region>-saas.instana.io:4317`
-   * OTLP/HTTP: `otlp-<region>-saas.instana.io:4318`
-   * _Example (Blue Region):_ `otlp-blue-saas.instana.io:4317`
+### Prerequisites
 
-### 2. Configuration Strategy: The Forwarder
+Before configuring the forwarder, ensure the following:
 
-In the Apica Flow (Ascent) UI, create a Target Destination using the OTLP/gRPC or OTLP/HTTP protocol. OTLP/gRPC is generally preferred for Instana due to its performance with high-volume trace data.
+* Logs are already being ingested into **Apica Ascent**
+* You have access to the **Ascent UI** with permissions to create forwarders
+* You have an **Instana tenant**
+* You have a valid **Instana API token** with permissions to ingest telemetry
 
-#### Step A: Destination Settings
+***
 
-| **Field**        | **Value**                                 |
-| ---------------- | ----------------------------------------- |
-| Destination Name | `Instana_SaaS_Forwarder`                  |
-| Endpoint         | `otlp-<region>-saas.instana.io:4317`      |
-| Protocol         | `grpc` (or `http/protobuf` for port 4318) |
-| Header Key       | `x-instana-key`                           |
-| Header Value     | `<Your-Instana-Agent-Key>`                |
+### Instana OTLP Logs Endpoint
 
-#### Step B: The Local Agent Alternative
+Instana supports OpenTelemetry log ingestion over HTTPS using the OTLP/HTTP protocol.
 
-If you have an Instana Agent running in your infrastructure, you can point the Apica forwarder to that agent instead of the SaaS backend. This is useful for automatic infrastructure correlation (linking metrics to a specific host).
-
-* Endpoint: `http://<instana-agent-ip>:4317`
-* Auth: No headers are typically required for the local agent if it is in a trusted network.
-
-### 3. Detailed Reference: Pipeline Transformation
-
-Instana relies on specific OpenTelemetry Semantic Conventions to map data to its "Dynamic Graph" (the infrastructure map). Use the Apica transformation layer to ensure these attributes are present.
-
-#### Mandatory Metadata (OTTL)
-
-If your source data lacks host or service identifiers, Instana may treat it as "unlinked." Add these via Apica:
-
-SQL
+**Endpoint format:**
 
 ```
-# Ensure service.name is set for proper APM grouping
-set(resource.attributes["service.name"], "Apica-Data-Forwarder") 
-    where resource.attributes["service.name"] == nil
-
-# (Optional) Link to a specific host in Instana's Infrastructure map
-set(resource.attributes["host.id"], attributes["instance.id"])
+https://<INSTANA_TENANT>/api/otlp/v1/logs
 ```
 
-#### Exporter Configuration Example
+> **Note:**\
+> The exact endpoint hostname and path may vary depending on your Instana region and deployment model. Refer to Instana documentation for the correct OTLP endpoint for your tenant.
 
-If manually configuring the Apica bridge or a standalone collector:
+Authentication is performed using an API token passed in an HTTP header.
 
-YAML
+***
+
+### Create an OpenTelemetry Logs Forwarder
+
+1. In the **Ascent UI**, navigate to **Forwarders**
+2. Select **Create Forwarder**
+3. Choose **OpenTelemetry Logs** as the forwarder type
+
+***
+
+### Configuration Fields
+
+| Field             | Description                                                             |
+| ----------------- | ----------------------------------------------------------------------- |
+| **Name**          | A descriptive name for the forwarder (for example, `instana-otlp-logs`) |
+| **Endpoint**      | The Instana OTLP logs endpoint                                          |
+| **Headers**       | HTTP headers to include with each request                               |
+| **Output Format** | OTLP payload format                                                     |
+
+***
+
+### Example Configuration
+
+**Endpoint**
 
 ```
-exporters:
-  otlp/instana:
-    endpoint: "otlp-blue-saas.instana.io:4317"
-    headers:
-      x-instana-key: "YOUR_INSTANA_AGENT_KEY"
-
-service:
-  pipelines:
-    traces:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlp/instana]
-    metrics:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [otlp/instana]
+https://<INSTANA_TENANT>/api/otlp/v1/logs
 ```
 
-### 4. Key Implementation Notes
+**Headers**
 
-* Logs Ingestion: To send logs via OTLP, ensure you have the Instana Logs Add-on active. Instana will automatically parse OTLP logs and link them to the services identified in your traces.
-* Infrastructure Correlation: One of Instana's unique features is the "Context Guide." To ensure Apica data appears correctly on the infrastructure map, verify that the `host.name` or `container.id` attributes match those already discovered by Instana.
-* Mixed Tracing: If you are using Instana AutoTrace alongside Apica, the forwarder will automatically support W3C Trace Context propagation, allowing you to see a single end-to-end trace even if it passes through multiple systems.
+```
+Authorization=apiToken <INSTANA_API_TOKEN>
+```
+
+**Output Format**
+
+```
+proto
+```
+
+> **Note:**\
+> The OpenTelemetry Logs Forwarder sends OTLP payloads over HTTP. Instana supports OTLP/HTTP and recommends using the `proto` format for optimal performance.
+
+***
+
+### Map the Forwarder to Log Sources
+
+Creating a forwarder does not automatically forward logs. You must map the forwarder to the applications or namespaces whose logs you want to forward.
+
+#### Map via Explore
+
+1. Navigate to **Explore**
+2. Select the application or namespace receiving logs
+3. Open the **Actions (⋯)** menu
+4. Select **Map Forwarder**
+5. Choose the Instana OTLP logs forwarder
+6. Save the mapping
+
+Once mapped, all logs for the selected application or namespace will be forwarded to Instana.
