@@ -1,59 +1,79 @@
 # Honeycomb Forwarder (via OTel)
 
-This guide explains how to forward logs from **Apica Ascent / Flow** to **Honeycomb** using the **OpenTelemetry (OTLP) Logs Forwarder** over HTTPS.
+This guide explains how to forward logs from Apica Ascent / Flow to Honeycomb using the OpenTelemetry (OTLP) Logs Forwarder over HTTPS.
 
 The OpenTelemetry Logs Forwarder converts logs ingested into Apica into OTLP-compliant log data and forwards them to a remote OTLP/HTTP endpoint.
 
 ***
 
-### Prerequisites
+#### Prerequisites
 
 Before configuring the forwarder, ensure the following:
 
-* Logs are already being ingested into **Apica Ascent**
-* You have access to the **Ascent UI** with permissions to create forwarders
-* You have a **Honeycomb account**
-* You have a valid **Honeycomb API key** with permissions to ingest telemetry
+* Logs are already being ingested into Apica Ascent
+* You have access to the Ascent UI with permissions to create forwarders
+* You have a Honeycomb account
+* You have a valid Honeycomb API key with permissions to ingest telemetry
 
 ***
 
-### Honeycomb OTLP Logs Endpoint
+#### Honeycomb OTLP Logs Endpoint
 
 Honeycomb supports OpenTelemetry log ingestion over HTTPS using the OTLP/HTTP protocol.
 
-**Endpoint format:**
+**Endpoint format**
 
 ```
 https://api.honeycomb.io/v1/logs
 ```
 
-Authentication is performed using an HTTP header containing a Honeycomb API key.
+**EU region**
 
-> **Note:**\
-> Honeycomb uses a single OTLP endpoint for logs and requires TLS for all ingest traffic.
+```
+https://api.eu1.honeycomb.io/v1/logs
+```
+
+Authentication is performed using a Honeycomb-specific HTTP header.
+
+**Required header**
+
+```
+x-honeycomb-team: <HONEYCOMB_API_KEY>
+```
+
+**Optional header**
+
+```
+x-honeycomb-dataset: <DATASET_NAME>
+```
+
+If the dataset header is omitted, Honeycomb uses the default dataset associated with the API key.
+
+**Note:**\
+Honeycomb requires TLS for all ingest traffic and recommends OTLP/HTTP using the `proto` format for best performance.
 
 ***
 
-### Create an OpenTelemetry Logs Forwarder
+#### Create an OpenTelemetry Logs Forwarder
 
-1. In the **Ascent UI**, navigate to **Forwarders**
+1. In the Ascent UI, navigate to **Forwarders**
 2. Select **Create Forwarder**
 3. Choose **OpenTelemetry Logs** as the forwarder type
 
 ***
 
-### Configuration Fields
+#### Configuration Fields
 
-| Field             | Description                                                               |
-| ----------------- | ------------------------------------------------------------------------- |
-| **Name**          | A descriptive name for the forwarder (for example, `honeycomb-otlp-logs`) |
-| **Endpoint**      | The Honeycomb OTLP logs endpoint                                          |
-| **Headers**       | HTTP headers to include with each request                                 |
-| **Output Format** | OTLP payload format                                                       |
+| Field         | Description                                                               |
+| ------------- | ------------------------------------------------------------------------- |
+| Name          | A descriptive name for the forwarder (for example, `honeycomb-otlp-logs`) |
+| Endpoint      | The Honeycomb OTLP logs endpoint                                          |
+| Headers       | HTTP headers required by Honeycomb                                        |
+| Output Format | OTLP payload format                                                       |
 
 ***
 
-### Example Configuration
+#### Example Configuration
 
 **Endpoint**
 
@@ -73,16 +93,13 @@ x-honeycomb-team=<HONEYCOMB_API_KEY>
 proto
 ```
 
-> **Note:**\
-> The OpenTelemetry Logs Forwarder sends OTLP payloads over HTTP. Honeycomb supports OTLP/HTTP and recommends using the `proto` format for optimal performance.
-
 ***
 
-### Map the Forwarder to Log Sources
+#### Map the Forwarder to Log Sources
 
 Creating a forwarder does not automatically forward logs. You must map the forwarder to the applications or namespaces whose logs you want to forward.
 
-#### Map via Explore
+**Map via Explore**
 
 1. Navigate to **Explore**
 2. Select the application or namespace receiving logs
