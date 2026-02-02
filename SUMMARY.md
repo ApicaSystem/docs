@@ -291,6 +291,7 @@
 * [AI Gateway Support](observe/ai-gateway-support/README.md)
   * [Bifrost AI Gateway](observe/ai-gateway-support/bifrost-ai-gateway.md)
   * [LiteLLM AI Gateway](observe/ai-gateway-support/litellm-ai-gateway.md)
+  * [OpenLLMetry Hub AI Gateway](observe/ai-gateway-support/openllmetry-hub-ai-gateway.md)
   * [Portkey AI Gateway](observe/ai-gateway-support/portkey-ai-gateway.md)
 * [Synthetic Check Monitoring](observe/check-management/README.md)
   * [Map View](observe/check-management/map-view.md)
