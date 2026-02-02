@@ -12,24 +12,19 @@ Apica Ascent has hundreds of inbuilt SIEM rules which can be accessed on the "Ex
 
 Follow these steps to create a SIEM or TAG rule in your pipeline:
 
-#### 1. Go to Your Pipeline
-
-* Open the desired pipeline.
-* Click **Configure Pipeline** from the pipeline’s action menu.
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-21 17-48-48.png" alt=""><figcaption><p>Pipelines List</p></figcaption></figure>
-
 #### 2. Add a New SIEM Rule
 
-#### 2. Add a New Rule
-
+* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](../pipeline-management/data-flow-pipelines-new.md).&#x20;
 * Hover over the `+ Add Rule` button.
 * Select `SIEM` from the rule type dropdown.
-* A modal will open with a form organized into tabs.
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 17-59-06 (1).png" alt=""><figcaption><p>Choose Rule</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1184).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 17-59-30.png" alt=""><figcaption><p>SIEM Rule</p></figcaption></figure>
+
+
+* A  form organized into tabs will be generated on the Pipeline Configuration Section.
+
+<figure><img src="../../.gitbook/assets/image (1183).png" alt=""><figcaption></figcaption></figure>
 
 #### Step-by-Step Rule Configuration
 
@@ -44,7 +39,7 @@ Configure the basic rule properties:
     Enter a unique and descriptive name for the SIEM rule (e.g., `404 Login Attempt - User Not Found`).
 *   **Level:**
 
-    hoose the severity (Low, Medium, High, Critical).
+    Choose the severity (Low, Medium, High, Critical).
 *   **Group:**
 
     Assign the rule to an existing group or create a new one (e.g., _Login Access_).
@@ -60,27 +55,27 @@ Sample SIEM rule dashboard
 
 **B. Metric Labels Tab**
 
-This tab allows you to tag logs with structured labels for visualization, analysis, and metric generation.
+This tab allows you to tag logs with structured labels for visualisation, analysis, and metric generation.
 
 > **Note:** Please choose the data flow, namespace and application to auto-populate the available field labels.
 
 *   **Labels:**
 
     Choose fields (e.g., event type, username, status code) to label logs under the `_event` structure. These labelled events can later be used to generate metrics or reports.
-*   **Default Label for Visualization:**
+*   **Default Label for Visualisation:**
 
-    Select the main label field to group results in visualizations and PromQL queries (e.g., group by `status_code`, `username`, etc.).
+    Select the main label field to group results in visualisations and PromQL queries (e.g., group by `status_code`, `username`, etc.).
 
 **C. Dashboard tab**
 
-This section is for visualizing rule outputs via dashboards.
+This section is for visualising rule outputs via dashboards.
 
-*   **Select dashboard for visualization:**
+*   **Select dashboard for visualisation:**
 
     Choose or create a dashboard to show data from this rule (e.g., _404 Login Attempts_).
 *   **Select Values below to plot:**
 
-    Choose which field(s) from the logs you want to visualize (status\_code, port).
+    Choose which field(s) from the logs you want to visualise (status\_code, port).
 * **Plot Types:**
   * **Occurrences:** View average occurrences over time.
   * **Distributions:** View percentile metrics (50th, 90th, 99th) and average duration over the last 5 minutes.
@@ -110,25 +105,21 @@ You can also fine-tune alert behaviour by configuring parameters such as:
 * **Description:** Detects login attempts with HTTP 404 status (user not found)
 * **Add Condition:** `event_type == login_attempt` && `status_code == 404`
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 18-06-16.png" alt=""><figcaption><p>Rule Details</p></figcaption></figure>
-
-
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 18-09-25.png" alt=""><figcaption><p>Add condition</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1185).png" alt=""><figcaption></figcaption></figure>
 
 **Metric Labels:**
 
 * **Labels:** username
-* **Default Label for Visualization:** username
+* **Default Label for Visualisation:** username
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 21-21-26.png" alt=""><figcaption><p>Select Metric Labels</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1186).png" alt="Select Metric Label"><figcaption><p>Select Metric Labels</p></figcaption></figure>
 
 **Dashboard Settings:**
 
 * Create or select: _login attempt 404_ dashboard
 * Plot Values: `status_code`
 * Plot Metrics: Choose the plot type based on the requirements.
-  * Plot occurances: **status\_code**, this will plot a time series graph of the occurrence of variable average over the time during ingest. It will not be a exact per event graph but will be an overview of what is happening.
+  * Plot occurrences: **status\_code**, this will plot a time series graph of the occurrence of the variable average over time during ingestion. It will not be an exact per-event graph, but will be an overview of what is happening.
   * Plot distribution: **status\_code**, this will plot the following graphs:
     * Average duration of each observation over the last 5 mins
     * Observation mapped into 50th, 90th and 99th percentile bucket
@@ -142,11 +133,7 @@ You can also fine-tune alert behaviour by configuring parameters such as:
 * Send to: Slack/email/webhook
 * Rearm & Refresh Interval: Configure based on alerting needs
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 21-40-51.png" alt=""><figcaption><p>Enable Alert Rule Metric</p></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 21-41-30.png" alt=""><figcaption><p>Enable Alert for the field metric</p></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 21-41-30 (1).png" alt=""><figcaption><p>Destination and Config Parameters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1187).png" alt=""><figcaption></figcaption></figure>
 
 After saving and applying the pipeline to the data flow, wait a few minutes and then verify that the rule-based dashboards and alerts are functioning correctly.
 

@@ -2,19 +2,7 @@
 
 If your incoming log data contains Personally Identifiable Information (PII) or other sensitive data, you may need to redact or replace that data to comply with data security regulations or meet your business needs. With Apica Ascent, you can create custom Rewrite Rules using regular expressions to match patterns in your incoming data stream and mask or replace these patterns.
 
-To create a Rewrite Rule, select a log line that contains the pattern you want to mask or replace. Click on the ellipsis available on the logline and click on "Create Rule".
-
-![](../../.gitbook/assets/search-create-rule-dropdown.png)
-
-In the modal that opens, select REWRITE and enter the details.
-
-![](../../.gitbook/assets/create-rule-rewrite.png)
-
-Like every other rule, Enter Name, Group, Parameters to filter (optional), and Pattern.
-
-![](../../.gitbook/assets/Rewrite-rule-demo.png)
-
-Apica Ascent uses [re2 Regular expressions](https://github.com/google/re2/wiki/Syntax) for creating pattern expression, A sample expression for extracting ingress logs are mentioned below.
+Apica Ascent uses [re2 Regular expressions](https://github.com/google/re2/wiki/Syntax) for creating pattern expressions. A sample expression for extracting ingress logs is mentioned below.
 
 Rewrite Rule also lets you give a piece of JavaScript code to access the log as an 'Event' object in its scope. Read Code Rule for more details.
 
@@ -67,26 +55,27 @@ It is crucial to be mindful of the context of the regular expression you create 
 
 ### Creating a PII masking rule via the UI
 
-You can create a custom rewrite rule to match and mask PII in your log data from the Rules section on your Apica Ascent UI. To access create a new rule, click **Rules** > **Rule Packs** > **+ New Rule**
+* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](../pipeline-management/data-flow-pipelines-new.md).&#x20;
+* Hover over the `+ Add Rule` button.
+* Select `REWRITE` from the rule type dropdown.
+* A form organized into tabs should be created in the `Pipeline Configuration` section of the page.
 
-![](../../.gitbook/assets/rules-pack-pii.png)
+<figure><img src="../../.gitbook/assets/image (1171).png" alt=""><figcaption></figcaption></figure>
 
 To configure your rewrite rule, do the following.
 
-1. Select **REWRITE** Option
-2. Provide a **Name** for your rule.
-3. Select a **Group**.
-4. Provide a **Description** of the rule.
-5. Specify the **Namespace** to apply the rule.
-6. Optionally, provide an **ApplicationMatch** to match the application where you'd like to use the rule.
-7. Provide your **Match** and **Rewrite** expressions.
-8. Optionally, Add more Parameters to filter data
-9. Click **Create Rule**.
+1. Provide a **Name** for your rule.
+2. Select a **Group**.
+3. Provide a **Description** of the rule.
+4. Provide your **Match** and **Rewrite** expressions to rewrite on the message field.
+5. To rewrite field value, Enter/Select the field to be masked under the `Choose fields to mask their values`. Optional replacement value can also be mentioned, but the default value that will be applied is `*****`.
+6. Optionally, add more Parameters as a filter on which this rule must be applied to in the selected data-flow.
+7. Click **SAVE**.
 
-![](../../.gitbook/assets/Rewrite-rule-demo.png)
+<figure><img src="../../.gitbook/assets/image (1161).png" alt=""><figcaption></figcaption></figure>
 
-Your new rewrite rule is now created. Your new rule will apply to all incoming log data for the specified namespace, look for patterns within the log data that match the match expression, and rewrite log data as per the rewrite expression.
+Your new rewrite rule has been created. Your new rule will apply to all incoming log data for the selected namespace, look for patterns within the log data that match the match expression, and rewrite log data as per the rewrite expression.
 
-Apica Ascent offers many inbuilt rules for obfuscating sensitive information like credit card numbers, SSN, phone numbers, etc...
+Apica Ascent offers many built-in rules for obfuscating sensitive information like credit card numbers, SSN, phone numbers, and many more.
 
-![](../../.gitbook/assets/rewrite-rule-obfuscation.png)
+<figure><img src="../../.gitbook/assets/image (1191).png" alt=""><figcaption></figcaption></figure>

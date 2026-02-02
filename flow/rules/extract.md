@@ -6,24 +6,16 @@ description: Creating and using EXTRACT Rules in Apica Ascent
 
 ### Creating an EXTRACT Rule in Apica Ascent
 
-To configure field extraction from log messages, follow the steps below to create an **EXTRACT** rule within a pipeline.
+EXTRACT rule uses regular expressions to parse and extract certain labels from log events. Extract rules help convert unstructured event data, such as logs, to more structured data with well-defined labels.
 
-EXTRACT rule can help you convert unstructured logs into structured logs by using regex with re2 syntax.
+#### To Add a New EXTRACT Rule
 
-#### 1. Navigate to the Configure Pipeline
-
-* Go to the pipeline where you want to apply the rule.
-* Click on `Configure Pipeline` from the pipeline’s action menu.
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-21 17-48-48.png" alt=""><figcaption><p>Pipeline List view</p></figcaption></figure>
-
-#### 2. Add a New EXTRACT Rule
-
+* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](../pipeline-management/data-flow-pipelines-new.md).&#x20;
 * Hover over the `+ Add Rule` button.
 * Select `EXTRACT` from the rule type dropdown.
-* A modal will open with a form organized into tabs.
+* A form organized into tabs should be created in the `Pipeline Configuration` section of the page.
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-21 17-57-39.png" alt=""><figcaption><p>Create Rule</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1171).png" alt=""><figcaption></figcaption></figure>
 
 From here, you can define the fields that you want to extract and configure the rule to match your specific use case.
 
@@ -44,7 +36,7 @@ Message =~ my-app
 
 This ensures the rule is applied only to logs containing specific patterns.
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-21 18-06-10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1175).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Define the Extraction Pattern
 
@@ -71,7 +63,7 @@ This pattern extracts the following fields:
 * `environment`
 * `message`
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-21 18-34-23.png" alt=""><figcaption><p>EXTRACT RULE PATTERN</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1176).png" alt=""><figcaption></figcaption></figure>
 
 #### 5. Validate the Pattern
 
@@ -90,29 +82,22 @@ Sample Raw logs:
         "message": "2025-05-13T14:29:00.123456789Z INFO [my-app] [pod=my-app-abcd-12345, namespace=default, environment=development] Request received for get rule"
     }
 ]
+
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-21 18-29-59.png" alt=""><figcaption><p>Preview Editor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1177).png" alt=""><figcaption></figcaption></figure>
 
-* Click **Preview** to confirm that fields are correctly extracted.
+* Switch to the `Diff` Tab in the Pipeline Preview section to view the changes applied by the rule on the sample logs.
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-22 12-24-42.png" alt=""><figcaption><p>Matching Expression</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1178).png" alt=""><figcaption></figcaption></figure>
 
-Verify the extracted fields from the raw message.
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-21 19-01-41.png" alt=""><figcaption><p>Logs Details</p></figcaption></figure>
-
-Change the expression not to match the logs, save pipeline and click preview
+Change the expression not to match the logs, save the pipeline, and click preview
 
 ```
 Message !~ my-app
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-22 12-24-42 (1).png" alt=""><figcaption><p>Non-Matching Expression</p></figcaption></figure>
-
-Select any log from the logs and observe the extracted fields. No fields were extracted due to a non-matching expression.
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-22 12-52-41.png" alt=""><figcaption><p>No Fields Extracted</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1179).png" alt=""><figcaption></figcaption></figure>
 
 #### 6. Use JavaScript for Advanced Transformations
 
@@ -124,11 +109,7 @@ if (Event.AppName == "appERP") {
 }
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-21 19-15-09.png" alt=""><figcaption><p>Code</p></figcaption></figure>
-
-Save pipeline and click preview to verify the new field added
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-21 19-18-07.png" alt=""><figcaption><p>New Field</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1180).png" alt=""><figcaption></figcaption></figure>
 
 #### 8. Save and Apply the Rule
 

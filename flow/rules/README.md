@@ -12,7 +12,7 @@ Here are some of the Data Management Rules that Apica Ascent supports:
 * [TAG Rules](siem-and-tag.md)
 * [Rewrite Rules](rewrite.md)
 * [Code Rules](code.md)
-* [Forward Rules](forward/)
+* [Forward Rules](forward.md)
 
 To view the rules within a specific Rule Pack, simply click on the corresponding Rule Pack.&#x20;
 

@@ -1,72 +1,91 @@
 # Configuring Pipelines
 
-The pipeline is a series of processes or stages through which data flow systematically and efficiently. It helps to visualize the flow between nodes, rules, and filters applied for the data flow.
-
-
+The pipeline is a series of processes through which telemetry data flows systematically. A pipeline can be understood as a grouping of rules that perform certain actions. For example, an extract pipeline can have rules that extract or normalize the data. Similarly, a filter pipeline can have rules that drop logs/fields and redact values from the incoming message. Pipelines can be arranged in a specific order to achieve efficient operation on the incoming data.
 
 ## Creating a Pipeline
 
-Click on the `Explore` Option from the top menu and click on `Pipelines`
+Click on the `Explore` option from the top menu and click on `Pipelines`
 
 <figure><img src="../../.gitbook/assets/image (691).png" alt=""><figcaption><p>Navigating to Pipeline Page</p></figcaption></figure>
 
-Hover on the `Actions` and click on `Create Pipeline`
+On the top right corner of the page, there is a `Actions`  button. Hover on the `Actions button` and click on `Create Pipeline` .
 
 <figure><img src="../../.gitbook/assets/image (672).png" alt=""><figcaption><p>Actions button to create Pipeline</p></figcaption></figure>
 
-Enter the `Pipeline name` to create your pipeline.
+After clicking on `Create Pipeline,` the Configure Pipeline page would open up. The Configure Pipeline page has 3 vertical sections (Pipeline Preview, Pipeline Rules Flow, Pipeline Configuration).&#x20;
 
-<figure><img src="../../.gitbook/assets/image (673).png" alt=""><figcaption><p>Creating a Pipeline</p></figcaption></figure>
+The Pipeline Preview section has an option for previewing the pipeline. Previewing the pipeline rules allows you to test them before they are applied to the incoming data without making a permanent change. There are several options to preview(discussed below).
+
+The middle section, called Pipeline Rules Flow, is where you can add rules and visualize the flow of data in this pipeline.
+
+The rightmost column, Pipeline Configuration, is for configuring the pipeline and its rules.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (1204).png" alt=""><figcaption></figcaption></figure>
+
+To add a rule, click on the `+` button on the tail end of the graph in the middle section, Pipelines Rules Flow.
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-01-12 20-51-07.png" alt=""><figcaption></figcaption></figure>
+
+After choosing the name, a rule entry must be created in the rightmost section, Pipeline Configuration.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (1162).png" alt=""><figcaption><p>A new drop rule was added</p></figcaption></figure>
+
+Configure the rule based on what needs to be achieved.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-02 215739.png" alt=""><figcaption><p>Created pipeline displayed in the pipeline list</p></figcaption></figure>
 
-## Configuring Pipeline
+### Editing a Pipeline
 
-Once the Pipeline is created we will configure the pipeline with Rules based on which the events in Data flow will be determined.
+To edit a pipeline, navigate to the pipelines page and select the pipelines tab. Hover on the ellipses placed on the right side of the desired pipeline. A dropdown of options should apprear next to the ellipses on hover. Click on `Configure Pipeline` and the Configure Pipeline page should open.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (675).png" alt=""><figcaption><p>Configure Pipeline</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1189).png" alt=""><figcaption></figcaption></figure>
 
-Hover on Add Rule and select the Rule you want to set (CODE, EXTRACT, FILTER, REWRITE, SIEM, STREAM, TAG) and once done clicking on `Save` button will save the configuration.
+## Pipeline Preview
 
-<figure><img src="../../.gitbook/assets/image (676).png" alt=""><figcaption><p>Pipeline Configuration View</p></figcaption></figure>
-
-You can also preview how the pipeline will be executed using the Preview option.&#x20;
-
-There are three ways to preview:
+Previewing a pipeline allows you to test it before it is used. There are several ways to preview a pipeline; each option displays the selected set of logs, and the changes can be visualized in the diff view within the Pipeline Preview Section. &#x20;
 
 #### Use Sample Logs:
 
-<figure><img src="../../.gitbook/assets/image (677).png" alt=""><figcaption><p>Sample Logs, Dropdown helps select the sample logs</p></figcaption></figure>
+Sample Logs allows you to provide custom logs to preview:
 
-<figure><img src="../../.gitbook/assets/image (679).png" alt=""><figcaption><p>Preview based on the Rules set</p></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/image (692).png" alt=""><figcaption><p>Dropped Alerts highlighted and displayed as Dropped</p></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/image (693).png" alt=""><figcaption><p>On clicking on the logs the expected changes are displayed</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1164).png" alt=""><figcaption><p>The dropdown helps select the sample logs for preview</p></figcaption></figure>
 
 #### Use Data Flows:
 
+Using Dataflows, you can select data that was previously ingested into the platform and run a preview.\
+**Note:** If the data from the selected namespace and application has already passed through the current pipeline, the preview may not fully reflect the intended changes.
 
-
-<figure><img src="../../.gitbook/assets/image (681).png" alt=""><figcaption><p>After selecting the Time Range, Namespace and Application Preview can be seen on clicking the Preview</p></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/image (696).png" alt=""><figcaption><p>Dropped Alerts highlighted and displayed as Dropped</p></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/image (694).png" alt=""><figcaption><p>On clicking on the logs the expected changes are displayed</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1165).png" alt=""><figcaption></figcaption></figure>
 
 #### Use GenAI:
 
-<figure><img src="../../.gitbook/assets/image (682).png" alt=""><figcaption><p>Click on Generate Logs </p></figcaption></figure>
+Using the GenAi option, you can interact with an AI Agent to curate the right set of logs for the pipeline preview.<br>
 
-<figure><img src="../../.gitbook/assets/image (683).png" alt=""><figcaption><p>Enter the prompt and click on the Arrow, Sample log will be generated</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1167).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (684).png" alt=""><figcaption><p>Click on the Use Logs to use the same logs</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (685).png" alt=""><figcaption><p>Sample logs are added and preview can be seen on clicking Preview Button</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (686).png" alt=""><figcaption><p>Preview based on the rules configured is displayed</p></figcaption></figure>
+#### Use Captured Data:
 
-<figure><img src="../../.gitbook/assets/image (697).png" alt=""><figcaption><p>On clicking on the logs the expected changes are displayed</p></figcaption></figure>
+With Captured Data, lookup files that contain logs can be used for running a pipeline preview.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (1168).png" alt=""><figcaption></figcaption></figure>
+
+#### Live Tail
+
+With Live tail, use the raw logs that are getting ingested in real time to run the pipeline preview.
+
+<figure><img src="../../.gitbook/assets/image (1169).png" alt=""><figcaption></figcaption></figure>
+
+#### View Preview Changes:
+
+To view the preview changes, click on the `Diff` tab in the Pipeline Preview Section:
+
+<figure><img src="../../.gitbook/assets/image (1170).png" alt=""><figcaption></figcaption></figure>
+
+
+
+After configuring the pipeline and its rules and testing them, click on the Save button in the bottom right section of the page.
 
 ### Apply Pipeline
 

@@ -9,7 +9,7 @@ description: >-
 
 Creating a Pipeline
 
-Click on the `Explore` Option from the top menu and click on `Pipelines`
+Click on the `Explore` Select from the top menu and click on `Pipelines`
 
 <figure><img src="../../.gitbook/assets/image (691).png" alt=""><figcaption><p>Navigating to Pipeline Page</p></figcaption></figure>
 
@@ -17,7 +17,7 @@ Hover on the `Actions` and click on `Visualize Pipeline`
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-02 220846.png" alt=""><figcaption><p>Hover over the Actions button on the top-right</p></figcaption></figure>
 
-On click of the Visualize Pipeline button, a new dialog opens, select the desired date-time range, select the desired namespace along with the linked applications, and click Create to create a new pipeline view.
+On clicking the Visualize Pipeline button, a new dialog opens. Select the desired date-time range, select the desired namespace along with the linked applications, and click Create to create a new pipeline view.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-02 221156.png" alt=""><figcaption></figcaption></figure>
 
@@ -62,17 +62,13 @@ Select the Pipelines that will be applied to the Dataflow and click on the Blue 
 
 <figure><img src="../../.gitbook/assets/image (698).png" alt=""><figcaption></figcaption></figure>
 
-Click on the Delete Icon on the right side will disassociate it from the Dataflow. Once done click on the Close button on the dialog to apply the changes.
+Click on the Delete Icon on the right side to disassociate it from the Dataflow. Once done, click on the Close button on the dialog to apply the changes.
 
-Select Create New Pipeline button to create new Pipeline for the namespace and application
+Select the Create New Pipeline button to create a new Pipeline for the namespace and application. Once the  Configure Pipeline Modal opens, follow the same steps as [#creating-a-pipeline](data-flow-pipelines-new.md#creating-a-pipeline "mention").
 
-Enter the Pipeline name and click on Next Button
+<figure><img src="../../.gitbook/assets/image (1160).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-05-02 222507.png" alt=""><figcaption><p>Create New Pipeline</p></figcaption></figure>
-
-Rules sections the user will be able to configure the Rules and click on the Save button
-
-<figure><img src="../../.gitbook/assets/image (699).png" alt=""><figcaption></figcaption></figure>
+After creating the pipeline, click on the reload button to visualise.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-02 223521.png" alt=""><figcaption></figcaption></figure>
 
