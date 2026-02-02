@@ -293,6 +293,8 @@
   * [LiteLLM AI Gateway](observe/ai-gateway-support/litellm-ai-gateway.md)
   * [OpenLLMetry Hub AI Gateway](observe/ai-gateway-support/openllmetry-hub-ai-gateway.md)
   * [Portkey AI Gateway](observe/ai-gateway-support/portkey-ai-gateway.md)
+* [AI Evaluation Forwarders](observe/ai-evaluation-forwarders/README.md)
+  * [Langfuse - AI Evaluation Engine](observe/ai-evaluation-forwarders/langfuse-ai-evaluation-engine.md)
 * [Synthetic Check Monitoring](observe/check-management/README.md)
   * [Map View](observe/check-management/map-view.md)
   * [List View](observe/check-management/list-view.md)
