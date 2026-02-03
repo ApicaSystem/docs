@@ -356,6 +356,7 @@
   * [Fluent-bit Forwarding](flow/list-of-forwarders/fluent-bit-forwarding/README.md)
     * [Fluent-bit Datadog Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-datadog-forwarder.md)
     * [Fluent-bit CloudWatch Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-cloudwatch-forwarder.md)
+    * [Fluent-bit Dynatrace Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-dynatrace-forwarder.md)
   * [GCP Bigquery](flow/list-of-forwarders/gcp-bigquery.md)
   * [Google Chronicle SIEM](flow/list-of-forwarders/google-chronicle-siem.md)
   * [Google Pub/Sub](flow/list-of-forwarders/google-pub-sub.md)
