@@ -40,7 +40,7 @@ drwxr-xr-x  9 user  staff   288 Aug  9 05:20 ..
 To get started run the following commands to create the namespace, service account and role setup:
 
 ```bash
-$ kubectl create namespace ascent-logging
+$ kubectl create namespace apica-logging
 $ kubectl create -f fluent-bit-service-account.yaml
 $ kubectl create -f fluent-bit-role-binding.yaml
 $ kubectl create -f fluent-bit-role.yaml
@@ -56,7 +56,7 @@ $ kubectl create -f fluent-bit-config-apica-forward.yml
 
 #### Enabling TLS
 
-You can enable TLS for Fluent Bit if you'd like to secure the data transferred through Fluent Bit to Apica Ascent. To do so, edit the `fluent-bit-config-apica-forward.yaml` file as shown below.
+You can enable TLS for Fluent Bit if you'd like to secure the data transferred through Fluent Bit to Apica Ascent. To do so, edit the `fluent-bit-config-apica-forward.yml` file as shown below.
 
 ```
 output-ascent.conf: |
@@ -76,16 +76,18 @@ output-ascent.conf: |
 
 Be sure to also configure the following:
 
-* name: ASCENT\_HOST value: "YOUR\_ASCENT\_SERVER\_IP"
+* name: ASCENT\_HOST value: "YOUR\_ASCENT\_ENV\_URL"&#x20;
+  * (NOTE: Only include the base URL. Example: presales.apica.io)
 * name: ASCENT\_PORT value: "443"
 * name: CLUSTER\_ID value: "YOUR\_CLUSTER\_ID"
-* name: ASCENT\_TOKEN value: "YOUR\_INGEST\_TOKEN"
+* name: ASCENT\_TOKEN value: "YOUR\_INGEST\_TOKEN"&#x20;
+  * (NOTE: You can find your ingest token [here](https://docs.apica.io/integrations/overview/generating-a-secure-ingest-token#obtaining-an-ingest-token-using-ui))
 
-Fluent Bit DaemonSet is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deamonset `fluent-bit-daemonset-apica-output.yml`.  If you do not have your ingest token, you can generate them using [`apicactl`](../overview/generating-a-secure-ingest-token.md) .
+Fluent Bit DaemonSet is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deamonset `fluent-bit-daemonset-apica-output.yml`.  If you do not have your ingest token, you can find yours using this [guide](https://docs.apica.io/integrations/overview/generating-a-secure-ingest-token#obtaining-an-ingest-token-using-ui)
 
 *   name: ASCENT\_HOST
 
-    value: "YOUR\_ASCENT\_SERVER\_IP"
+    value: "YOUR\_ASCENT\_ENV\_URL"
 *   name: CLUSTER\_ID
 
     value: "YOUR\_CLUSTER\_ID"
