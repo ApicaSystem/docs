@@ -39,4 +39,4 @@ In the Apica "Flow" or "Pipeline" section, you will create a rule to route speci
 
 #### Otel Forwarder:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1160).png" alt=""><figcaption></figcaption></figure>

@@ -66,7 +66,7 @@ Click on the Delete Icon on the right side to disassociate it from the Dataflow.
 
 Select the Create New Pipeline button to create a new Pipeline for the namespace and application. Once the  Configure Pipeline Modal opens, follow the same steps as [#creating-a-pipeline](data-flow-pipelines-new.md#creating-a-pipeline "mention").
 
-<figure><img src="../../.gitbook/assets/image (1160).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1160) (1).png" alt=""><figcaption></figcaption></figure>
 
 After creating the pipeline, click on the reload button to visualise.
 
