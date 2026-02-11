@@ -52,7 +52,7 @@ SQL
 
 ```
 # Map Apica attributes to Grafana-friendly labels
-set(resource.attributes["service.name"], "apica-synthetic-monitor")
+set(resource.attributes["service.name"], "apica-flow")
 set(resource.attributes["service.namespace"], "production")
 set(resource.attributes["deployment.environment"], "us-east-1")
 
