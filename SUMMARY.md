@@ -361,6 +361,7 @@
     * [Fluent-bit Dynatrace Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-dynatrace-forwarder.md)
     * [Fluent-bit Opentelemetry Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-opentelemetry-forwarder.md)
     * [Fluent-bit Elasticsearch Forwar](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-elasticsearch-forwar.md)
+    * [Fluent-bit New Relic Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-new-relic-forwarder.md)
   * [GCP Bigquery](flow/list-of-forwarders/gcp-bigquery.md)
   * [Google Chronicle SIEM](flow/list-of-forwarders/google-chronicle-siem.md)
   * [Google Pub/Sub](flow/list-of-forwarders/google-pub-sub.md)
