@@ -2,7 +2,7 @@
 description: Forwarding Logs from Apica Ascent to Microsoft Sentinel
 ---
 
-# Sentinel Forwarder
+# Microsoft Sentinel Forwarder
 
 This guide explains how to forward logs from **Apica Ascent** into **Microsoft Sentinel** using the **Azure Log Analytics HTTP Data Collector API**.
 
