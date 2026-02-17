@@ -366,6 +366,7 @@
   * [Google Chronicle SIEM](flow/list-of-forwarders/google-chronicle-siem.md)
   * [Google Pub/Sub](flow/list-of-forwarders/google-pub-sub.md)
   * [Grafana Forwarder (via OTel)](flow/list-of-forwarders/grafana-forwarder-via-otel.md)
+  * [Grafana Loki Forwarder – Log Push from Apica](flow/list-of-forwarders/grafana-loki-forwarder-log-push-from-apica.md)
   * [Honeycomb Forwarder (via OTel)](flow/list-of-forwarders/honeycomb-forwarder-via-otel.md)
   * [IBM Instana (via OTel)](flow/list-of-forwarders/ibm-instana-via-otel.md)
   * [IBM Turbonomic (via Prometheus)](flow/list-of-forwarders/ibm-turbonomic-via-prometheus.md)

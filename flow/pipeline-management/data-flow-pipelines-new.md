@@ -28,7 +28,7 @@ To add a rule, click on the `+` button on the tail end of the graph in the middl
 
 After choosing the name, a rule entry must be created in the rightmost section, Pipeline Configuration.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1162).png" alt=""><figcaption><p>A new drop rule was added</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1162) (1).png" alt=""><figcaption><p>A new drop rule was added</p></figcaption></figure>
 
 Configure the rule based on what needs to be achieved.
 
@@ -48,14 +48,14 @@ Previewing a pipeline allows you to test it before it is used. There are several
 
 Sample Logs allows you to provide custom logs to preview:
 
-<figure><img src="../../.gitbook/assets/image (1164).png" alt=""><figcaption><p>The dropdown helps select the sample logs for preview</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1164) (1).png" alt=""><figcaption><p>The dropdown helps select the sample logs for preview</p></figcaption></figure>
 
 #### Use Data Flows:
 
 Using Dataflows, you can select data that was previously ingested into the platform and run a preview.\
 **Note:** If the data from the selected namespace and application has already passed through the current pipeline, the preview may not fully reflect the intended changes.
 
-<figure><img src="../../.gitbook/assets/image (1165).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1165) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Use GenAI:
 

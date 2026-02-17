@@ -72,7 +72,7 @@ To configure your rewrite rule, do the following.
 6. Optionally, add more Parameters as a filter on which this rule must be applied to in the selected data-flow.
 7. Click **SAVE**.
 
-<figure><img src="../../.gitbook/assets/image (1161).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1161) (1).png" alt=""><figcaption></figcaption></figure>
 
 Your new rewrite rule has been created. Your new rule will apply to all incoming log data for the selected namespace, look for patterns within the log data that match the match expression, and rewrite log data as per the rewrite expression.
 
