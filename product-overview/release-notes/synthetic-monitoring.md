@@ -60,7 +60,7 @@ Read previous Release Notes, go to:\
 
 ***
 
-## On Premise ASM Patch 13H.4 Public Release Notes (2024-04-19) <a href="#title-text" id="title-text"></a>
+## On Premise ASM Patch 13H.4 (13.8.1.19316) Public Release Notes (2024-04-19) <a href="#title-text" id="title-text"></a>
 
 ## User Story Enhancements <a href="#user-story-enhancements" id="user-story-enhancements"></a>
 
