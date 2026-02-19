@@ -19,16 +19,11 @@
 
 ### Ascent Synthetics
 
-#### Ingest and checks
+#### Checks and Scenarios
 
-* The ASM+ ingest processor now keeps consuming traces reliably instead of occasionally stopping, which avoids silent gaps in synthetic trace data.
-* ASM checks no longer cancel their context right after the first successful request when more work is pending, so checks complete properly and results are more accurate.
-
-#### Locations and scenarios
-
-* Search and filtering for locations inside a check now returns the right results, which makes it easier to select and manage locations.
-* The location API for the Etrade environment now behaves as expected, so location data from that environment is returned correctly.
-* In the create browser flow, clicking the Scenario debug button now works in create mode instead of doing nothing.
+* Search and filter operations in Manage Checks now return correct results and apply filters reliably.
+* The scenario debug button now works as expected, allowing user to test scenarios while creating the browser check.
+* Legacy private locations are now displayed correctly during check management.
 
 ***
 
@@ -44,5 +39,4 @@
 #### Search and audit
 
 * Search has been adjusted so that it returns more accurate results, improving how you find data in Observe.
-* Long polling in the audit trail now works correctly across multiple pods, which makes audit log retrieval more reliable in larger clusters.
 
