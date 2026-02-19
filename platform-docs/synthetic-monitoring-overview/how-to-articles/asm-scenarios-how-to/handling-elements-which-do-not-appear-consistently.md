@@ -4,7 +4,7 @@ It is possible to handle an element within an ASM scenario only if it appears. T
 
 The following screenshot provides an example of the correct syntax and explains how the process works:
 
-
+<figure><img src="../../../../.gitbook/assets/image (1242).png" alt=""><figcaption></figcaption></figure>
 
 The keywords “popup” and “noPopup” refer to existing labels in the above screenshot. They are not values in the “value” field for steps 12 and 13!
 
