@@ -7,6 +7,7 @@
 * [Ascent Overview](product-overview/ascent-overview.md)
 * [Ascent User Interface](product-overview/the-ascent-ui.md)
 * [Release Notes](product-overview/release-notes/README.md)
+  * [Ascent 2.15.2](product-overview/release-notes/ascent-2.15.2.md)
   * [Ascent 2.15.1](product-overview/release-notes/ascent-2.15.1.md)
   * [Ascent 2.15.0](product-overview/release-notes/ascent-2.15.0.md)
   * [Ascent 2.14.4](product-overview/release-notes/ascent-2.14.4.md)
