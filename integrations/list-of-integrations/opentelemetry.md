@@ -146,7 +146,7 @@ You can use our freely available petclinc java application for opentelmetry inte
 
 {% code overflow="wrap" %}
 ```
-docker run --name petclinic -d -p 8080:8080 -e LOGIQ_SERVER=mylogiqip.example.com logiqai/petclinic_open_telemetry
+docker run -d -p 8080:8080 -e BACKEND_HOST={apica_host}.apica.io -e BACKEND_SCHEME=https -e API_TOKEN="{Apica_Ingest_Token}" apica/petclinic-open-telemetry:v1.0
 ```
 {% endcode %}
 
