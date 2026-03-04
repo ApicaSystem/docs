@@ -203,7 +203,7 @@
     * [Audit Vault Logs - AWS](integrations/list-of-integrations/vault/audit-vault-logs-aws.md)
     * [Audit Vault Logs - OCI](integrations/list-of-integrations/vault/audit-vault-logs-oci.md)
     * [Audit Vault Metrics](integrations/list-of-integrations/vault/audit-vault-metrics.md)
-* [Ascent API Documentation Portal](https://apidocs.apica.io/)
+* [Apica Product API Portal](https://apidocs.apica.io/)
 
 ## DATA MANAGEMENT
 
