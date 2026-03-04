@@ -75,7 +75,7 @@
 
 * [Data Source Overview](data-sources/overview.md)
   * [Creating Data Sources in Apica Ascent](data-sources/overview/creating-data-sources-in-apica-ascent.md)
-* [API](data-sources/api/README.md)
+* [API Overview](data-sources/api/README.md)
   * [JSON Data source](data-sources/api/json-data-source.md)
   * [RSS](data-sources/api/rss.md)
 * [AWS](data-sources/aws/README.md)
@@ -203,7 +203,7 @@
     * [Audit Vault Logs - AWS](integrations/list-of-integrations/vault/audit-vault-logs-aws.md)
     * [Audit Vault Logs - OCI](integrations/list-of-integrations/vault/audit-vault-logs-oci.md)
     * [Audit Vault Metrics](integrations/list-of-integrations/vault/audit-vault-metrics.md)
-* [Apica API Doc Portal](https://apidocs.apica.io/)
+* [Ascent API Documentation Portal](https://apidocs.apica.io/)
 
 ## DATA MANAGEMENT
 
