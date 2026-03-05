@@ -32,7 +32,7 @@ The following ports are supported out of the box with their standard purposes:
 | 7515  | CEF TLS                    | TCP      | logiq-flash |
 | 9999  | json\_batch and tenant API | TCP      | logiq-flash |
 | 14250 | Jaeger collector (gRPC)    | TCP      | logiq-flash |
-| 14268 | Jaeger collector (HTTP)    | UDP      | logiq-flash |
+| 14268 | Jaeger collector (HTTP)    | TCP      | logiq-flash |
 | 20514 | RELP                       | TCP      | logiq-flash |
 | 24224 | Fluentd forward            | TCP      | logiq-flash |
 | 24225 | Fluentd forward TLS        | TCP      | logiq-flash |
@@ -45,7 +45,7 @@ The following ports are supported out of the box with their standard purposes:
 2. Click **Enable New Port**.
 3. In the drawer:
    * **LB Port Number**: External port to expose (e.g., `514` for Syslog)
-   * **Protocol**: Select `TCP` and `UDP` depending on the type of traffic
+   * **Protocol**: Select `TCP` or `UDP` depending on the type of traffic
    * **Target Service**: Internal Kubernetes service
    * **Target Service Port**: Port on the selected service
 4. Click **Enable Port**
