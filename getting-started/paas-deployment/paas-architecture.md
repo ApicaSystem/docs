@@ -33,7 +33,7 @@ Ascent stores most customer data in the object store, which will scale with usag
 
 ## Packaging
 
-The deployment of the Apica Data Fabric is driven via a Helm chart.&#x20;
+The deployment of Ascent is driven via a Helm chart (labelled "apica-data-fabric").
 
 ```
 helm install apica --namespace apica-data-fabric apica-repo/apica 

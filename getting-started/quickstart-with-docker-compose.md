@@ -1,7 +1,7 @@
 ---
 description: >-
-  This document describes the steps needed to bring up the Apica Ascent
-  observability stack using docker-compose for trial and demo use
+  This document describes the steps needed to bring up the Apica Ascent product
+  suite using docker-compose for trial and demo use
 icon: docker
 ---
 

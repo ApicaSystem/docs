@@ -9,7 +9,7 @@ description: >-
 
 ## Quick Start Guide
 
-This Quick Start Guide for Fleet Management enables a user to quickly enable ingesting metrics and logs into Ascent, and provides step-by-step instructions for deploying monitoring agents using Apica Fleet. By completing this tutorial, you will be able to automatically collect and forward critical server metrics and application logs directly into the Ascent platform for complete visibility.
+This Quick Start Guide for Fleet Management enables a user to quickly enable ingesting metrics and logs into Ascent, and provides step-by-step instructions for deploying monitoring agents using Apica Fleet. By completing this tutorial, you will be able to automatically collect and forward critical server metrics and application logs directly into the Ascent product suite for complete visibility.
 
 For the purposes of this guide, we will install and deploy both an OTEL and Fluent Bit collector agent.&#x20;
 
@@ -282,4 +282,4 @@ Click into the "Source Application" and you can then drill down into a log entry
 
 ### Conclusion:
 
-You have now completed the setup for both metrics and log collection using Apica Fleet. With your agents actively reporting, you can fully leverage the Ascent platform to analyze performance, troubleshoot issues, and gain deeper insights into your system. To expand your coverage, simply repeat these steps for other hosts and applications in your infrastructure.
+You have now completed the setup for both metrics and log collection using Apica Fleet. With your agents actively reporting, you can fully leverage the Ascent product suite to analyze performance, troubleshoot issues, and gain deeper insights into your system. To expand your coverage, simply repeat these steps for other hosts and applications in your infrastructure.

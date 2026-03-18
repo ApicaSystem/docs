@@ -88,7 +88,7 @@
       ```
    3. You can also view live logs using journalctl -u otelcol-contrib -f. With the above config you would see entries every 10 seconds.
 
-### Verify metrics in the Ascent platform
+### Verify metrics in the Ascent product suite
 
 1. Click on the green “+ Create” button on the top navigation bar and select **Query**
 2. In the dropdown menu on the left hand side, select **Ascent Metrics**

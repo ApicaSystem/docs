@@ -4,7 +4,7 @@ icon: cloud
 
 # Getting Started with Ascent
 
-The Ascent platform enables you to converge all of your IT data from disparate sources, manage your telemetry data, and monitor and troubleshoot your operational data in real-time. The following guide assumes that you have signed up for Apica Ascent in the cloud. **If you are not yet a registered user, please** [**follow this link and the defined steps**](register-and-gain-access.md). Once registered, use this guide to get started.
+The Ascent product suite enables you to converge all of your IT data from disparate sources, manage your telemetry data, and monitor and troubleshoot your operational data in real-time. The following guide assumes that you have signed up for Apica Ascent in the cloud. **If you are not yet a registered user, please** [**follow this link and the defined steps**](register-and-gain-access.md). Once registered, use this guide to get started.
 
 <figure><img src="../../.gitbook/assets/image (927).png" alt=""><figcaption><p>Ascent Quick Start Process</p></figcaption></figure>
 

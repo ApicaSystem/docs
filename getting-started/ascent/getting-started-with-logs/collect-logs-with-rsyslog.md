@@ -64,7 +64,7 @@ On your server, use **logger** to log a custom message which you can track easil
     logger "This is a test message from $(hostname)"
     ```
 
-    _It might take a slight moment for this entry to appear in the Ascent platform, so if it doesn’t show up immediately, give it a moment and check again._
+    _It might take a slight moment for this entry to appear in the Ascent product suite, so if it doesn’t show up immediately, give it a moment and check again._
 2. In your Ascent platform, navigate to **Explore > Logs & Insights**
 3. In the filter view, search for namespace **default\_namespace**. Then look for your username which generated the custom log entry, and click on it.
 4. This view should only display the custom log entry generated earlier

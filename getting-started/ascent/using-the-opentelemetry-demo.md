@@ -125,7 +125,7 @@ Paste the following into the config file, overwriting it completely:
 
 * [https://docs.apica.io/integrations/overview/generating-a-secure-ingest-token](https://docs.apica.io/integrations/overview/generating-a-secure-ingest-token)
 
-### Step 8: Get Data Flowing into Ascent Platform:
+### Step 8: Get Data Flowing into Ascent:
 
 Restart the OpenTelemetry collector by running the following command:
 
