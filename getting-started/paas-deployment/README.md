@@ -2,17 +2,17 @@
 icon: server
 ---
 
-# On-Premise PaaS deployment
+# On-Premise PaaS Deployment
 
 ### Before you begin
 
-To get you up and running with the Apica Ascent PaaS, we've made Apica Ascent PaaS' Kubernetes components available as Helm Charts. To deploy Apica Ascent PaaS, you'll need access to a Kubernetes cluster and Helm 3. You will also need access to S3-compatible object storage for storing metric data.
+To get you up and running with the Apica Ascent PaaS, we've made Ascent PaaS's Kubernetes components available as Helm Charts. To deploy Ascent PaaS, you will need access to a Kubernetes cluster and Helm 3. You will also need access to S3-compatible object storage for storing metric data.
 
-Before you start deploying Apica Ascent PaaS, let's run through a few quick steps to set up your environment correctly.
+Before you start deploying Ascent PaaS, let's run through a few quick steps to set up your environment correctly.
 
 ### Add the Apica Ascent Helm repository
 
-Add Apica Ascent's Helm repository to your Helm repositories by running the following command.
+Add Ascent's Helm repository to your Helm repositories by running the following command.
 
 ```
 helm repo add apica-repo https://apicasystem.github.io/apica-ascent-helm
@@ -26,7 +26,7 @@ helm upgrade --install <deployment_name> apica-repo/<chart_name>
 
 ### Create a Kubernetes cluster
 
-If you already have a Kubernetes cluster, you can skip down to [Create a namespace to deploy Apica Ascent](#create-namespace).
+If you already have a Kubernetes cluster, you can skip down to [Create a namespace to deploy Apica Ascent](./#create-namespace).
 
 If you do not have a Kubernetes cluster, use [k0s](https://k0sproject.io/) to assemble one or more physical machines or VMs into a Kubernetes cluster, onto which you can deploy Apica Ascent. For the host operating system we assume some distribution of Linux, but it does not matter which one.
 
@@ -45,14 +45,11 @@ chmod +x k0s-<version>-amd64
 sudo cp k0s-<version>-amd64 /usr/local/bin/k0s
 ```
 
-Configuration of a single-node setup can be accomplished by downloading the
-following sample file and replacing occurrences of `##IPADDR##` with the
-host's default interface IP address.
+Configuration of a single-node setup can be accomplished by downloading the following sample file and replacing occurrences of `##IPADDR##` with the host's default interface IP address.
 
 {% file src="../../.gitbook/assets/k0s-sample.yaml" %}
 
-Install the file as `/etc/k0s/k0s.yaml`. Run the following command to install
-k0s:
+Install the file as `/etc/k0s/k0s.yaml`. Run the following command to install k0s:
 
 ```
 sudo k0s install controller --single -c /etc/k0s/k0s.yaml
@@ -78,7 +75,7 @@ Finally, download the current version of [Helm](https://helm.sh/), the package m
 tar zxf helm-<version>-linux-amd64.tar.gz && sudo cp linux-amd64/helm /usr/local/bin/
 ```
 
-Continue with [Configure Kubernetes Load Balancer](#k8s-lb) below.
+Continue with [Configure Kubernetes Load Balancer](./#k8s-lb) below.
 
 #### Multi-Node
 
@@ -117,9 +114,9 @@ If something goes wrong and you want to start over, `k0sctl reset` will uninstal
 
 Once the cluster is running, you can `k0sctl kubeconfig` to output a configuration file suitable for use with `kubectl` to work with the cluster. If you do not already have any kubectl configuration, you can redirect it to `~/.kube/config`, otherwise you will need to merge the values for this cluster into your existing kubectl config.
 
-Continue with [Configure Kubernetes Load Balancer](#k8s-lb) below.
+Continue with [Configure Kubernetes Load Balancer](./#k8s-lb) below.
 
-#### Configure Kubernetes Load Balancer {#k8s-lb}
+#### Configure Kubernetes Load Balancer <a href="#k8s-lb" id="k8s-lb"></a>
 
 Starting with the following sample configuration file, add the IP addresses of all cluster nodes as a list under `addresses`. These are the addresses that MetalLB can make available to access the Apica Ascent deployment.
 
@@ -131,7 +128,7 @@ Install the final file as `/etc/k0s/metallb.yaml` and apply it:
 kubectl apply -f /etc/k0s/metallb.yaml
 ```
 
-### Create a namespace to deploy Apica Ascent {#create-namespace}
+### Create a namespace to deploy Apica Ascent <a href="#create-namespace" id="create-namespace"></a>
 
 Create a namespace where we'll deploy Apica Ascent PaaS by running the following command.
 
@@ -185,7 +182,7 @@ The following keys require setting site-specific values:
 * `global.postgres.postgresqlPostgresPassword` - password for the PostgreSQL root user
 * `global.postgres.postgresqlPassword` - password for the `postgres` database user
 
-If you changed the names of the Kubernetes secrets above, use the name of the `tls` secret for  `gateway.tls.secretName`. Use the name of the `generic` secret for `logiq-flash.secrets_name`.
+If you changed the names of the Kubernetes secrets above, use the name of the `tls` secret for `gateway.tls.secretName`. Use the name of the `generic` secret for `logiq-flash.secrets_name`.
 
 ### Install Envoy Gateway Resources
 
