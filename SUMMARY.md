@@ -353,6 +353,7 @@
   * [Ascent.time](flow/functions/ascent.time.md)
   * [Ascent.lookups](flow/functions/ascent.lookups.md)
 * [Forwarding to Target Destinations](flow/forwarding-to-monitoring-tools.md)
+* [Persistence Queue for Forwarder Buffers](flow/persistence-queue-for-forwarder-buffers.md)
 * [List of Forwarders](flow/list-of-forwarders.md)
   * [Amazon Security Lake](flow/list-of-forwarders/amazon-security-lake.md)
   * [ArcSight](flow/list-of-forwarders/arc-sight.md)
