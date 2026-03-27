@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Sumo Logic Forwarder (via OTel)
 
 This guide explains how to forward logs from **Apica Ascent / Flow** to **Sumo Logic** using the **OpenTelemetry (OTLP) Logs Forwarder** over HTTPS.
