@@ -25,11 +25,7 @@ Key points:
 
 * You must create an **OTLP/HTTP Source** in Sumo Logic
 * Sumo Logic generates a **unique source URL**
-* OpenTelemetry clients send data to this URL using signal-specific paths:
-  * `/v1/logs` for logs
-  * `/v1/metrics` for metrics
-  * `/v1/traces` for traces
-* Authentication is handled by the **source URL itself** (no API token header is required)
+* OpenTelemetry clients send data to this URL using signal-specific paths
 
 > **Important**\
 > You cannot use a generic or static Sumo Logic OTLP endpoint.\
@@ -48,12 +44,12 @@ Key points:
 7. (Optional) Set metadata such as _Source Category_
 8. Click **Save**
 
-After saving, click **Show URL** to copy the **OTLP/HTTP Source base URL**.
+After saving, click **Show URL** to copy the **Presigned URL**.
 
 This URL will look similar to:
 
 ```
-https://<unique-id>.collection.<region>.sumologic.com/otlp
+https://endpoint4.collection.sumologic.com/receiver/v1/otlp/AUTH_TICKET
 ```
 
 ***
@@ -70,26 +66,19 @@ In the **Ascent UI**, create a new forwarder:
 
 ### Forwarder Configuration
 
+**NOTE: In order for Sumo Logic to correctly receive logs, in your endpoint URL, change "otlp" to "http".**&#x20;
+
 #### Required Fields
 
-| Field             | Value                            |
-| ----------------- | -------------------------------- |
-| **Name**          | `sumologic-otlp-logs`            |
-| **Endpoint**      | `<OTLP_HTTP_SOURCE_URL>/v1/logs` |
-| **Headers**       | _(none required)_                |
-| **Output Format** | `proto`                          |
+<table><thead><tr><th>Field</th><th width="386">Value</th></tr></thead><tbody><tr><td><strong>Name</strong></td><td><code>sumologic-otlp-logs</code></td></tr><tr><td><strong>Endpoint</strong></td><td><code>&#x3C;OTLP_HTTP_SOURCE_URL>/v1/http/AUTH_TOKEN</code></td></tr><tr><td><strong>Headers</strong></td><td>ApicaID=Sumo</td></tr><tr><td><strong>Output Format</strong></td><td><code>proto</code></td></tr></tbody></table>
 
-#### Example Endpoint
+#### Example Endpoint&#x20;
+
+Don't forget to change "otlp" to "http"!
 
 ```
-https://abcd1234.collection.us2.sumologic.com/otlp/v1/logs
+https://endpoint4.collection.sumologic.com/receiver/v1/http/AUTH_TICKET
 ```
-
-> **Notes**
->
-> * Do **not** omit `/v1/logs`
-> * Do **not** add authentication headers
-> * Use `proto` for optimal compatibility and performance
 
 ***
 
