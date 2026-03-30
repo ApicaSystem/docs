@@ -314,6 +314,7 @@
   * [Map View](observe/check-management/map-view.md)
   * [List View](observe/check-management/list-view.md)
   * [Alerting for Check Results](observe/check-management/alerting-for-check-results.md)
+* [SLO](observe/slo.md)
 
 ## Flow
 
