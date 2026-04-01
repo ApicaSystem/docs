@@ -1,55 +1,87 @@
 # Ascent 2.16.0
 
-### Flow
+### SLO <a href="#slo" id="slo"></a>
 
-#### New Features
-
-* Data Explore dashboards now support static text and counter widgets so teams can add explanations and highlight important KPIs alongside query‑based charts.
-
-#### Improvements
-
-**Forwarder persistence and safety**
-
-* Forwarder configuration and deletion flows have been strengthened so buffered data is flushed or explicitly dropped before removal, with clearer persistence options in the UI and better test coverage to lower the risk of silent data loss.
-
-#### Bug Fixes
-
-* Forwarder updates now handle changes in default buffer sizes correctly so editing a forwarder no longer fails with a buffer size error.
-* Cluster updates in the Settings section now save as expected, and edited clusters reflect their changes after reload.
+This release introduces a new SLO experience that makes it easier to see which services are meeting their targets. The SLO list view, backed by recorded SLO metrics and integrated with dashboards and tracing, gives teams a single place to track health, error budgets, and overall reliability.
 
 ***
 
-### Observe
+### Flow <a href="#flow" id="flow"></a>
 
-#### New Features
+### New Features <a href="#new-features" id="new-features"></a>
 
-**SLO experience (Preview Feature)**
+* Data Explore dashboards now support static text and counter widgets, making it easier to add explanations and highlight key KPIs alongside charts.
 
-* A complete SLO experience is available, including REST APIs, list view, creation and edit forms, detail dashboards, service and metric discovery endpoints, and automatic SLO dashboards, all powered by Thanos‑backed recorded metrics so teams can define and observe SLOs without managing PromQL by hand.
+### Improvements <a href="#improvements" id="improvements"></a>
 
-**RUM Dashboard**
+**Forwarder persistence and safety**
 
-* A new RUM (Real User Monitoring) dashboard has been introduced within Ascent, expanding visibility into real user performance. The instrumentation script collects key web performance and reliability metrics such as TTFB, LCP, INP, CLS and various error rates, using injected JavaScript and a polling model that avoids slowing down page loads while supporting alerting and downstream processing.
+* Forwarder configuration and delete behavior has been refined so buffer settings are clearer in the UI and the internal delete flow is more robust against data loss, with safer handling of persisted buffers.
+
+**Check‑aware Flash filtering**
+
+* Flash APIs can filter checks by namespace and application, helping narrow down data flows for specific checks when inspecting or managing log pipelines.
+
+### Bug Fixes <a href="#bug-fixes" id="bug-fixes"></a>
+
+**Random logout hardening**
+
+* A set of changes across Flow and shared authentication components addresses random logout issues, improving session stability when working in the UI.
+
+***
+
+### Observe <a href="#observe" id="observe"></a>
+
+### New Features <a href="#new-features" id="new-features"></a>
+
+**Out‑of‑the‑box LLM monitoring dashboard**
+
+* An LLM monitoring dashboard is available out of the box so teams can start tracking key signals for LLM workloads without building dashboards from scratch.
 
 **Dashboard sharing**
 
-* Dashboard sharing allows users to generate shareable links backed by API keys with configurable expiry, so dashboards can be opened via a link while respecting access controls.
+* Dashboards can be shared using generated links backed by API keys with configurable expiry, allowing access to dashboards through a URL while still enforcing permissions.
 
-#### Improvements
+### Improvements <a href="#improvements" id="improvements"></a>
 
-**Permissions and frontend security**
+**Forwarder configuration and persistence**
 
-* Permissions APIs are fully documented in Swagger with updated policy namespace coverage and a Postman collection, and frontend security has been improved by tightening HTTP Strict Transport Security and changing password handling so passwords are no longer sent via GET query strings.
+* Forwarder persistence queue fields are fully represented in the UI with the right layout and controls, making it easier to configure persistence behavior for Observe data flows.
 
-#### Bug Fixes
+**Value display controls**
 
-**Platform hardening**
+* Visualizations support switching between exponential and base value display, so charts can be viewed in the numeric format that is easiest to interpret for the situation.
 
-* Query result tables in Observe now support sorting after execution again, multiple access tokens are no longer created for the same user on new deployments, Ports Management no longer fails with server errors, and Redash Admin access is restricted to the intended paths.
+**Authentication and access management**
 
-**Admin and settings**
+* API key management includes an option to create keys without an expiration date for long‑lived integrations.
+* Flash APIs accept both ingest tokens and API keys, giving more flexibility when connecting external systems.
+* Policy management now explains how wildcard usage works for each resource, making it clearer how policy rules apply.
+* Idle session timeout is configurable in the UI so administrators can set session lifetime to match their security and usability needs.
+* Password reset behavior has been tightened so administrators can manage user passwords safely without needing the current password.
+* The invitation flow allows assigning roles when inviting a user, instead of having to update roles after the user is created.
 
-* Port Management in Admin Settings now loads enabled ports correctly and allows new ports to be enabled without 500 errors.
+**Security hygiene**
+
+* HTTP Strict Transport Security settings for Ascent Frontend endpoints have been strengthened to align with best practices for HTTPS‑only access.
+
+**New visualizations**
+
+* A pivot‑style visualization is available for dashboards, enabling more flexible breakdowns and summaries of metric data.
+
+### Bug Fixes <a href="#bug-fixes" id="bug-fixes"></a>
+
+**Random logouts and sessions**
+
+* Random logout issues affecting Observe users have been addressed as part of the shared session stability work, reducing unexpected sign‑outs during active use.
+
+**Password and account administration**
+
+* Admin‑initiated password resets no longer require knowledge of a user’s current password, so user accounts can be recovered or updated more smoothly.
+
+**Dashboard sharing polish**
+
+* The share dashboard experience reliably generates working links with correct permissions, so recipients can access dashboards as intended.
 
 ***
 
