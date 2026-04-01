@@ -1,7 +1,7 @@
 ---
 icon: binoculars
 layout:
-  width: wide
+  width: default
   title:
     visible: true
   description:
@@ -34,7 +34,7 @@ The **Apica Ascent product suite** consolidates observability data into a single
 
 This makes the **Ascent product suite** a reliable first-mile solution for consolidating **MELT** data within your enterprise environments. Experience a seamless, fully integrated observability solution that enhances performance and efficiency across your infrastructure.
 
-<figure><img src="../.gitbook/assets/image (566).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ascent.png" alt=""><figcaption></figcaption></figure>
 
 ### Capabilities
 
