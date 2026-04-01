@@ -1,8 +1,8 @@
 ---
-description: All the details to fully configure, enable and optimize the Ascent platform.
+description: All the details to fully configure, enable and optimize your Apica product(s).
 ---
 
-# Welcome to Apica Docs!
+# WELCOME TO APICA DOCS!
 
 ### Getting Started
 
