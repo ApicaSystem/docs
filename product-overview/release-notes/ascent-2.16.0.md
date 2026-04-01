@@ -6,13 +6,13 @@ This release introduces a new SLO experience that makes it easier to see which s
 
 ***
 
-### Flow <a href="#flow" id="flow"></a>
+### Flow
 
-### New Features <a href="#new-features" id="new-features"></a>
+#### New Features
 
 * Data Explore dashboards now support static text and counter widgets, making it easier to add explanations and highlight key KPIs alongside charts.
 
-### Improvements <a href="#improvements" id="improvements"></a>
+#### Improvements
 
 **Forwarder persistence and safety**
 
@@ -22,7 +22,7 @@ This release introduces a new SLO experience that makes it easier to see which s
 
 * Flash APIs can filter checks by namespace and application, helping narrow down data flows for specific checks when inspecting or managing log pipelines.
 
-### Bug Fixes <a href="#bug-fixes" id="bug-fixes"></a>
+#### Bug Fixes
 
 **Random logout hardening**
 
@@ -30,9 +30,9 @@ This release introduces a new SLO experience that makes it easier to see which s
 
 ***
 
-### Observe <a href="#observe" id="observe"></a>
+### Observe
 
-### New Features <a href="#new-features" id="new-features"></a>
+#### New Features
 
 **Out‑of‑the‑box LLM monitoring dashboard**
 
@@ -42,7 +42,7 @@ This release introduces a new SLO experience that makes it easier to see which s
 
 * Dashboards can be shared using generated links backed by API keys with configurable expiry, allowing access to dashboards through a URL while still enforcing permissions.
 
-### Improvements <a href="#improvements" id="improvements"></a>
+#### Improvements
 
 **Forwarder configuration and persistence**
 
@@ -69,7 +69,7 @@ This release introduces a new SLO experience that makes it easier to see which s
 
 * A pivot‑style visualization is available for dashboards, enabling more flexible breakdowns and summaries of metric data.
 
-### Bug Fixes <a href="#bug-fixes" id="bug-fixes"></a>
+#### Bug Fixes
 
 **Random logouts and sessions**
 
