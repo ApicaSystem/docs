@@ -899,6 +899,7 @@
 
 ## Administration <a href="#admin" id="admin"></a>
 
+* [API Key Management](admin/api-key-management.md)
 * [E-Mail Configuration](admin/email-configuration-setup.md)
 * [Single Sign-On with SAML](admin/single-sign-on-configuration.md)
 * [Port Management](admin/port-management.md)
