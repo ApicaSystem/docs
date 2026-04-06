@@ -1,9 +1,14 @@
-# Build 1.0.2.0-20250408-0906
+# 2025Q2 Release
 
 Items in this release:
 
-* API's for creating, updating, and deleting assignment rules have been added.
-* API's for getting assignment rule details have been added.
-* API for reducing business rules using priorities has been added.
+### API updates
 
-See API Guide / Assignment Rules API's for details on how to use these rules.
+* Added APIs to create, update, and delete assignment rules.
+* Added an API to get assignment rule details.
+* Added an API to reduce business rules using priorities.
+
+For usage details, see:
+
+* [Assignment Rule API’s](../user-documentation/api-guide/assignment-rule-apis/)
+* [Reduce Business Rules using Priorities](../user-documentation/api-guide/business-rule-apis/reduce-business-rules-using-priorities.md)
