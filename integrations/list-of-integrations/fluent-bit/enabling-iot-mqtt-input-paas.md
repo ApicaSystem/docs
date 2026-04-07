@@ -7,7 +7,7 @@ MQTT is an OASIS standard messaging protocol for the Internet of Things (IoT). I
 * Clone the repository to get the **`kubectl`** YAML files to start your deployment
 
 ```
-git clone https://bitbucket.org/logiqcloud/client-integrations.git
+git clone git@github.com:ApicaSystem/client-integrations.git
 ```
 
 * The files needed are under folder **`fluent-bit`**

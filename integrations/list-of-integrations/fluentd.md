@@ -86,7 +86,7 @@ It is also easier for the administrator to use human readable names vs Apica Asc
 * Clone the repository to get the **`kubectl`** YAML files to start your daemonset
 
 ```
-git clone https://bitbucket.org/logiqcloud/client-integrations.git
+git clone git@github.com:ApicaSystem/client-integrations.git
 ```
 
 * The files needed are under folder **`fluentd`**

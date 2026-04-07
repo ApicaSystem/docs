@@ -6,7 +6,7 @@ If you are running a K8S cluster, you can use fluent-bit to send data to Ascent.
 
 ### Managing multiple K8S clusters in a single Apica Ascent instance
 
-Ascent has provided its own fluent-bit daemon for deploying on K8S clusters. It is available at [https://bitbucket.org/logiqcloud/client-integrations/src/master/fluent-bit/](https://bitbucket.org/logiqcloud/client-integrations/src/master/fluent-bit/). It allows the administrator to pass a human-readable `CLUSTER_ID` or cluster identifier with all the log data.
+Ascent has provided its own fluent-bit daemon for deploying on K8S clusters. It is available at [https://github.com/ApicaSystem/client-integrations/tree/master/fluent-bit](https://github.com/ApicaSystem/client-integrations/tree/master/fluent-bit). It allows the administrator to pass a human-readable `CLUSTER_ID` or cluster identifier with all the log data.
 
 {% hint style="success" %}
 Providing a CLUSTER\_ID allows Apica Ascent to separate namespaces that may be conflicting in two separate K8S clusters.
@@ -17,7 +17,7 @@ Providing a CLUSTER\_ID allows Apica Ascent to separate namespaces that may be c
 * Clone the repository to get the **`kubectl`** YAML files to start your daemonset
 
 ```
-git clone https://bitbucket.org/logiqcloud/client-integrations.git
+git clone git@github.com:ApicaSystem/client-integrations.git
 ```
 
 * The files needed are under the folder **`fluent-bit`**

@@ -31,7 +31,7 @@ https://logiqcf.s3.amazonaws.com/s3-exporter/cf.yaml
 ```
 
 {% hint style="info" %}
-You can also download the CloudFormation template from our [client-integrations](https://bitbucket.org/logiqcloud/client-integrations/src/master/cloudwatch-exporter/) GitHub repository.
+You can also download the CloudFormation template from our [client-integrations](https://github.com/ApicaSystem/client-integrations/tree/master/cloudwatch-exporter) GitHub repository.
 {% endhint %}
 
 This CloudFormation stack creates a Lambda function and its necessary permissions. You must configure the following attributes.
