@@ -1,14 +1,16 @@
 # Linux Server Install
 
-## ORSON - Test Data Orchestrator
+{% hint style="info" %}
+Test Data Orchestrator (TDO) has been re-branded to Wayfinder as of Q1 2026.  These documents are currently being re-written to reflect that change.  Test Data Orchestrator / TDO / Wayfinder all refer to the same product throughout these documents.
+{% endhint %}
 
 ### Linux Install & configuration guide&#x20;
 
 &#x20;Download links for the software will be provided after initial evaluation Document of Understanding or purchase contracts are signed.
 
-Before installing TDO, ensure MongoDB is running (follow the instructions in the online manual to start MongoDB).
+Before installing Wayfinder (TDO), ensure MongoDB is running (follow the instructions in the online manual to start MongoDB).
 
-Ensure that you are logged in with the TDO admin ID or have run sudo to get admin privileges.
+Ensure that you are logged in with the Wayfinder (TDO) admin ID or have run sudo to get admin privileges.
 
 ### Setup
 
@@ -48,17 +50,17 @@ Next, you will need to edit files using the vi command (_vi_ _filename_ to enter
 
 o   java -server -Xms1024m -Xmx2048m
 
-o   the Xmx variable can be increased (in increments of 1024) to increase total memory in use by TDO.
+o   the Xmx variable can be increased (in increments of 1024) to increase total memory in use by Wayfinder (TDO).
 
-o   This value should never exceed total server memory allocated to TDO.
+o   This value should never exceed total server memory allocated to Wayfinder (TDO).
 
-o   Increasing this value (ex: 16384 for 16GB) will improve TDO’s performance for memory-intensive tasks.
+o   Increasing this value (ex: 16384 for 16GB) will improve Wayfinder (TDO)’s performance for memory-intensive tasks.
 
 o   If you edit this value, remember to save the file before proceeding.
 
 Ru&#x6E;_: cd .._  to return to appdir
 
-Run: _nohup ./start.sh all &_   to start TDO.  It will take about 30 seconds for the application to fully initialize.&#x20;
+Run: _nohup ./start.sh all &_   to start Wayfinder (TDO).  It will take about 30 seconds for the application to fully initialize.&#x20;
 
 To confirm that the application is ready, run _JPS_ at the command line.  When you see 2 jar processes, 1 jps process, and 1 CommandLineStartup process (a total of 4 processes) then the application is ready to use.
 
@@ -74,9 +76,9 @@ For example, you would enter: [http://35.214.52.73:8080/ui/public/signup](http:/
 
 If you have https enabled, then this would be forwarded to port 8443 instead of 8080, and it would look like this: :[https://35.214.52.73:443/ui/public/signup](https://35.214.52.73/ui/public/signup).
 
-&#x20;If you are running TDO on a remote desktop/virtual server and accessing it from that same server, your url would look like this:  [http://localhost:8080/ui/public/signup](http://localhost:8080/public/signup).
+&#x20;If you are running Wayfinder (TDO) on a remote desktop/virtual server and accessing it from that same server, your url would look like this:  [http://localhost:8080/ui/public/signup](http://localhost:8080/public/signup).
 
-&#x20;If you are running TDO on a remote desktop/virtual server and accessing it from your desktop, you would use the server name instead of the IP address and your url would look like this: [http://csc2cxn00004025.apica.com:8080/ui/public/signup](http://csc2cxn00004025.apica.com:8080/ui/public/signup) .
+&#x20;If you are running Wayfinder (TDO) on a remote desktop/virtual server and accessing it from your desktop, you would use the server name instead of the IP address and your url would look like this: [http://csc2cxn00004025.apica.com:8080/ui/public/signup](http://csc2cxn00004025.apica.com:8080/ui/public/signup) .
 
 ·       A new user screen will appear.  Fill in the username, password and email and hit the signup button. This will take you to the login screen.  \[Note that any user created using this initial signup screen will be an admin user.]
 
@@ -84,19 +86,19 @@ If you have https enabled, then this would be forwarded to port 8443 instead of 
 
 ·       Once you have logged in, you can create new users in the User Management section of the tool.  See the ‘User Maintenance’ section of this on-line manual for detailed instructions.
 
-·       While TDO can be set up with LDAP authentication, it cannot be done until at least one project is created.  We do not recommend LDAP setup during a Proof of Concept/Proof of Technology evaluation as this process requires coordination with your network, AD, and/or security teams and can take several weeks to complete.
+·       While Wayfinder (TDO) can be set up with LDAP authentication, it cannot be done until at least one project is created.  We do not recommend LDAP setup during a Proof of Concept/Proof of Technology evaluation as this process requires coordination with your network, AD, and/or security teams and can take several weeks to complete.
 
 &#x20;
 
 ### Stopping the application
 
-TDO runs in three layers – the application, Ignite, and MongoDB.
+Wayfinder (TDO) runs in three layers – the application, Ignite, and MongoDB.
 
 ·       Only stop MongoDB for a full server restart.  It can remain running for an upgrade.
 
 ·       Only stop Ingite to correct an Ignite error or for a full server restart. It can remain running during an upgrade.
 
-&#x20;To shut down the TDO application:
+&#x20;To shut down the Wayfinder (TDO) application:
 
 &#x20;Run: _./stop.sh all_   This will stop the api and engine processes but leave Ignite and MongoDB running.&#x20;
 
@@ -104,11 +106,11 @@ TDO runs in three layers – the application, Ignite, and MongoDB.
 
 &#x20;Run: _kill -9 \<process\_id>_  where \<process\_id> is the value you wrote down in the step above.
 
-### &#x20;Restarting TDO
+### &#x20;Restarting Wayfinder (TDO)
 
-Run: _nohup ./start.sh all &_   to start TDO.  It will take about 30 seconds for the application to fully initialize.&#x20;
+Run: _nohup ./start.sh all &_   to start Wayfinder (TDO).  It will take about 30 seconds for the application to fully initialize.&#x20;
 
-### &#x20;Upgrading TDO
+### &#x20;Upgrading Wayfinder (TDO)
 
 Download the new tdo-repo.zip file from the standard repository location as before.
 
@@ -138,16 +140,16 @@ Next, you will need to edit files using the vi command (_vi_ _filename_ to enter
 
 o   java -server -Xms1024m -Xmx2048m
 
-o   the Xmx variable can be increased (in increments of 1024) to increase total memory in use by TDO.
+o   the Xmx variable can be increased (in increments of 1024) to increase total memory in use by Wayfinder (TDO).
 
 o   This value should never exceed total server memory.
 
-o   Increasing this value (ex: 16384 for 16GB) will improve TDO’s performance for memory-intensive tasks.
+o   Increasing this value (ex: 16384 for 16GB) will improve Wayfinder (TDO)’s performance for memory-intensive tasks.
 
 o   If you edit this value, remember to save the file before proceeding.
 
 Ru&#x6E;_: cd .._  to return to appdir
 
-Run: _nohup ./start.sh all &_   to start TDO.  It will take about 30 seconds for the application to fully initialize.&#x20;
+Run: _nohup ./start.sh all &_   to start Wayfinder (TDO).  It will take about 30 seconds for the application to fully initialize.&#x20;
 
 To confirm that the application is ready, run _JPS_ at the command line.  When you see 2 jar processes, 1 jps process, and 1 CommandLineStartup process (a total of 4 processes) then the application is ready to use.

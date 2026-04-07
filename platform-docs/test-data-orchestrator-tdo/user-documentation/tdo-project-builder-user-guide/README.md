@@ -1,5 +1,9 @@
 # TDO Project Builder User Guide
 
+{% hint style="info" %}
+Test Data Orchestrator (TDO) has been re-branded to Wayfinder as of Q1 2026.  These documents are currently being re-written to reflect that change.  Test Data Orchestrator / TDO / Wayfinder all refer to the same product throughout these documents.
+{% endhint %}
+
 ### Builder Role - Project Creation User Guide
 
 This guide is designed for the person who will fulfill the ‘builder’ role and create projects for end users.&#x20;

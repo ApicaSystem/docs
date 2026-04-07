@@ -1,18 +1,22 @@
 # Hardware / Environment Requirements
 
+{% hint style="info" %}
+Test Data Orchestrator (TDO) has been re-branded to Wayfinder as of Q1 2026.  These documents are currently being re-written to reflect that change.  Test Data Orchestrator / TDO / Wayfinder all refer to the same product throughout these documents.
+{% endhint %}
+
 ## Overview
 
 These requirements are the minimum requirements for a Proof of Concept/Proof of Technology install. You should evaluate your estimated usage and license count and adjust as needed.
 
-&#x20;TDO can be installed on a fixed server or in the cloud; the requirements remain the same.
+&#x20;Wayfinder (TDO) can be installed on a fixed server or in the cloud; the requirements remain the same.
 
-### &#x20;TDO Platform Architecture
+### &#x20;Wayfinder (TDO) Platform Architecture
 
-TDO features a microservices event driven architecture.
+Wayfinder (TDO) features a microservices event driven architecture.
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (413).png" alt=""><figcaption><p>TDO Architecture</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (413).png" alt=""><figcaption><p>Wayfinder (TDO) Architecture</p></figcaption></figure>
 
 &#x20;
 
@@ -26,7 +30,7 @@ Interactions
 
 4\.     Interacts with Optim TDM & DP via REST API
 
-5\.     Consumers (Testers, Dev, Business, SMEs) get data from TDO via REST API
+5\.     Consumers (Testers, Dev, Business, SMEs) get data from Wayfinder (TDO) via REST API
 
 6\.     Manual Testers can access the data via REST API in their browser of choice
 
@@ -40,7 +44,7 @@ Interactions
 
 ·       32 GB of RAM
 
-·       200 GB of free disk space for the OS and TDO binaries&#x20;
+·       200 GB of free disk space for the OS and Wayfinder (TDO) binaries&#x20;
 
 ·       400 GB of free disk space for the database&#x20;
 
@@ -82,42 +86,43 @@ Interactions
 
 #### JDK Java
 
-TDO is compatible with  IBM, Oracle and Amazon Corretto Java.Java JDK must be installed on the server (not JRE). Both JAVA\_HOME and PATH must be set correctly.
+Wayfinder (TDO) is compatible with  IBM, Oracle and Amazon Corretto Java.Java JDK must be installed on the server (not JRE). Both JAVA\_HOME and PATH must be set correctly.
 
 Versions supported are:
 
 * IBM/Oracle:  1.8 and 17
 * Corretto:  11
+* JDK: 1.7 or 1.8
 
 #### &#x20;MongoDB
 
-&#x20;TDO uses MongoDB version 7 as its underlying database.
+&#x20;Wayfinder (TDO) uses MongoDB version 7 as its underlying database.  Mongo compatability has been tested and validated up through version 7.0.28.
 
-&#x20;MongoDB is available in both a Community Server (free) and Enterprise (paid) version. TDO is set up using the Community Server version. In addition, MongoDB is available using a fully cloud-based hosted version (Atlas) as well as a local installation. For now, the local installation must be used.&#x20;
+&#x20;MongoDB is available in both a Community Server (free) and Enterprise (paid) version. Wayfinder (TDO) is set up using the Community Server version. In addition, MongoDB is available using a fully cloud-based hosted version (Atlas) as well as a local installation. For now, the local installation must be used.&#x20;
 
-&#x20;If you have a MongoDB enterprise license, you do not need to install the Community version; you can simply set up a MongoDB instance on the TDO server.  Note that this still must be version 7.
+&#x20;If you have a MongoDB enterprise license, you do not need to install the Community version; you can simply set up a MongoDB instance on the Wayfinder (TDO) server.  Note that this still must be version 7.
 
 &#x20;If you do not have a MongoDB enterprise license, MongoDB Community Server version 7 must be installed on the server.  It can be downloaded from [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community).   For all installs, select version 7.0 in the version section. For a Windows install, select 'Windows x64' in the platform section and 'msi' in the package section.  For a Linux/Unix install, select your specific \*nix name and version in the platform section and 'server' in the package section.
 
 Read the installation instructions in the setup manual at [Install MongoDB Community Edition - MongoDB Manual](https://www.mongodb.com/docs/manual/administration/install-community/)  (make sure that you are accessing the instructions for MongoDB version 7 and your specific server operating system) and then follow the setup instructions in the "Mongo DB Setup" section of this guide. &#x20;
 
-&#x20;You do not require MongoDB skills within your organization in order to install and use TDO. MongoDB is the application database for TDO. As such it is supported by Apica as part of the application. Please also note that the MongoDB instance allocated to TDO should be dedicated to TDO only, as the configuration and set up of MongoDB is specific to TDO.
+&#x20;You do not require MongoDB skills within your organization in order to install and use Wayfinder (TDO). MongoDB is the application database for Wayfinder (TDO). As such it is supported by Apica as part of the application. Please also note that the MongoDB instance allocated to Wayfinder (TDO) should be dedicated to Wayfinder (TDO) only, as the configuration and set up of MongoDB is specific to Wayfinder (TDO).
 
 #### Browser Requirements
 
-It is recommended that you use Chrome to run TDO.  If your organization does not support Chrome or Chromium as browser options, we will work with you to ensure your choice of browser is supported.
+It is recommended that you use Chrome to run Wayfinder (TDO).  If your organization does not support Chrome or Chromium as browser options, we will work with you to ensure your choice of browser is supported.
 
 ### BEFORE YOU BEGIN THE INSTALLATION
 
 #### On Linux:
 
-·       Application User – create a user which will control all aspects of TDO (eg: tdo). This can be a domain user or a local user (referred to as ‘appuser’ in the installation instructions).
+·       Application User – create a user which will control all aspects of Wayfinder (TDO) (eg: tdo). This can be a domain user or a local user (referred to as ‘appuser’ in the installation instructions).
 
-·       Application Directory – create a directory for TDO (eg: /opt/tdo) and give full ownership to the application user (referred to as appdir in the installation instructions).
+·       Application Directory – create a directory for Wayfinder (TDO) (eg: /opt/tdo) and give full ownership to the application user (referred to as appdir in the installation instructions).
 
 ·       File System Partitioning – it is recommended that the data files for Mongo be on an xfs partitioned drive.
 
-·       Placement of Installation Packages – it is suggested that the TDO and Mongo packages be placed just below the application directory.
+·       Placement of Installation Packages – it is suggested that the Wayfinder (TDO) and Mongo packages be placed just below the application directory.
 
 ·       iptables – enable port forwarding from 80/443 to 8080/8443. Instructions are found at [https://docs.apica.io/product-overview/test-data-orchestrator-tdo/technical-guides/ip-forwarding-instructions-linux](https://docs.apica.io/product-overview/test-data-orchestrator-tdo/technical-guides/ip-forwarding-instructions-linux) .
 
@@ -125,18 +130,18 @@ It is recommended that you use Chrome to run TDO.  If your organization does not
 
 ·       JAVA\_HOME and PATH – make sure these variables are set correctly.
 
-·       File ownership and permissions – ensure that the user installing TDO is the owner of all files involved (the Mongo package and the TDO installer itself)&#x20;
+·       File ownership and permissions – ensure that the user installing Wayfinder (TDO) is the owner of all files involved (the Mongo package and the Wayfinder (TDO) installer itself)&#x20;
 
 ·       Set environmental variables – ensure that JAVA\_HOME/bin is added to PATH
 
 #### Docker/Kubernetes
 
-TDO is also available as a Docker/Kubernetes deployable package.
+Wayfinder (TDO) is also available as a Docker/Kubernetes deployable package.
 
 #### &#x20;HTTPS certificate
 
-If you are installing TDO using the built-in authentication, you will need to create a self-signed certificate using the tool distributed with JDK.
+If you are installing Wayfinder (TDO) using the built-in authentication, you will need to create a self-signed certificate using the tool distributed with JDK.
 
-If you are installing TDO using LDAP/SAML/Kurberos single sign-on, your organization will need to provide a certificate.
+If you are installing Wayfinder (TDO) using LDAP/SAML/Kurberos single sign-on, your organization will need to provide a certificate.
 
 &#x20;The certificate must be stored in tdo/api/keystore.jks  (ie, in the api subdirectory under the tdo directory/subdirectory on the server).

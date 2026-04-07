@@ -701,7 +701,7 @@
   * [Creating / Running a Single Load Test](platform-docs/load-testing-alt/creating-running-a-single-load-test.md)
   * [Running Multiple Tests Concurrently](platform-docs/load-testing-alt/running-multiple-tests-concurrently.md)
   * [Understanding Loadtest Results](platform-docs/load-testing-alt/understanding-loadtest-results.md)
-* [Test Data Orchestrator (TDO)](platform-docs/test-data-orchestrator-tdo/README.md)
+* [Wayfinder (formerly Test Data Orchestrator -TDO)](platform-docs/test-data-orchestrator-tdo/README.md)
   * [Technical Guides](platform-docs/test-data-orchestrator-tdo/technical-guides/README.md)
     * [Hardware / Environment Requirements](platform-docs/test-data-orchestrator-tdo/technical-guides/hardware-environment-requirements.md)
     * [IP Forwarding Instructions (Linux)](platform-docs/test-data-orchestrator-tdo/technical-guides/ip-forwarding-instructions-linux.md)

@@ -1,10 +1,12 @@
 # User Maintenance
 
-## ORSON - Test Data Orchestrator
+{% hint style="info" %}
+Test Data Orchestrator (TDO) has been re-branded to Wayfinder as of Q1 2026.  These documents are currently being re-written to reflect that change.  Test Data Orchestrator / TDO / Wayfinder all refer to the same product throughout these documents.
+{% endhint %}
 
 ### User maintenance guide&#x20;
 
-Follow the instructions in the installation guide to create an initial admin user if this is your first time using TDO.
+Follow the instructions in the installation guide to create an initial admin user if this is your first time using Wayfinder (TDO).
 
 &#x20;
 
@@ -14,12 +16,12 @@ To perform user maintenance, you will need to log in with an ID that has ‘admi
 
 ### User security levels
 
-TDO has two user levels and twp permissions controls:
+Wayfinder (TDO) has two user levels and twp permissions controls:
 
 * Admin - has rights to perform all user maintenance actions on all users.  Can create new users and delete existing users.  Admin users also have delete permission for all functions in the application and can remove all locks (coverage set, work set, etc.)
 * User - only has rights to reset their own password.  Cannot create or delete other users.  Users do not have delete permission for project objects and can only remove locks that are assigned to their user ID.
-* Read-only - a permission control on people with User level rights; they can view all screens in TDO for any project that is assigned to them, but they cannot make any changes.  This level is generally used for new users who have not yet completed training to prevent unauthorized actions on existing projects.
-* Work Flow Acccess - when this permission is granted, users (including admins) are able to access the Workflow module in the TDO menu.  If this is not enabled, the user will not see the Workflow module in their menu.
+* Read-only - a permission control on people with User level rights; they can view all screens in Wayfinder (TDO) for any project that is assigned to them, but they cannot make any changes.  This level is generally used for new users who have not yet completed training to prevent unauthorized actions on existing projects.
+* Work Flow Acccess - when this permission is granted, users (including admins) are able to access the Workflow module in the Wayfinder (TDO) menu.  If this is not enabled, the user will not see the Workflow module in their menu.
 
 ### &#x20;Creating new users
 
@@ -91,14 +93,14 @@ Click on the trash can icon to delete the user you have selected.  A warning box
 Click ‘OK’ to delete the user and ‘Cancel’ to keep the user.
 
 {% hint style="warning" %}
-If LDAP is enabled, you should not delete the user from TDO until they have been removed from the appropriate AD group(s).  Removing them from TDO before AD enrollment changes have been process may result in their ID being recreated (see hint under creating new users).
+If LDAP is enabled, you should not delete the user from Wayfinder (TDO) until they have been removed from the appropriate AD group(s).  Removing them from Wayfinder (TDO) before AD enrollment changes have been process may result in their ID being recreated (see hint under creating new users).
 {% endhint %}
 
 &#x20;
 
 ### Change a user password
 
-If you are using LDAP, passwords will be managed via your organization’s SSO software and not in TDO.  If you are not using LDAP, passwords are changed here.
+If you are using LDAP, passwords will be managed via your organization’s SSO software and not in Wayfinder (TDO).  If you are not using LDAP, passwords are changed here.
 
 &#x20;
 
@@ -126,7 +128,7 @@ You will only see your ID on this screen, and you will only see the pencil icon 
 
 ### Updating project access
 
-By default, any project created by a TDO user (USER or ADMIN rights) will be visible only to that user.  To make it visible to other users they must be assigned project access.
+By default, any project created by a Wayfinder (TDO) user (USER or ADMIN rights) will be visible only to that user.  To make it visible to other users they must be assigned project access.
 
 &#x20;
 

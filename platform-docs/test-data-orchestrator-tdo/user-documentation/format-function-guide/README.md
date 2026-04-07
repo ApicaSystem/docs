@@ -1,5 +1,9 @@
 # Format Function Guide
 
+{% hint style="info" %}
+Test Data Orchestrator (TDO) has been re-branded to Wayfinder as of Q1 2026.  These documents are currently being re-written to reflect that change.  Test Data Orchestrator / TDO / Wayfinder all refer to the same product throughout these documents.
+{% endhint %}
+
 #### Overview
 
 In the assignment rules process in TDO, you can use format functions to create data or format data in specific outputs.  These functions support numbers, strings, and dates.  You can also create randomly generated numbers or dates, in a specific format, within a specified range.

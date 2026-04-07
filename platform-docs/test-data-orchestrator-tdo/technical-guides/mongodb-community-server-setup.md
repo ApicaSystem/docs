@@ -1,6 +1,8 @@
 # MongoDB Community Server Setup
 
-## ORSON - Test Data Orchestrator
+{% hint style="info" %}
+Test Data Orchestrator (TDO) has been re-branded to Wayfinder as of Q1 2026.  These documents are currently being re-written to reflect that change.  Test Data Orchestrator / TDO / Wayfinder all refer to the same product throughout these documents.
+{% endhint %}
 
 Follow the instructions for downloading MongoDB version 7 found in the “Hardware / Environment Requirements” section of this guide before starting the installation.
 

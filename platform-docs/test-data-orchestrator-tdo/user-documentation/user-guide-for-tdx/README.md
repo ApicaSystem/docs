@@ -2,6 +2,10 @@
 
 ### About TDX
 
+{% hint style="info" %}
+Test Data Orchestrator (TDO) has been re-branded to Wayfinder as of Q1 2026.  These documents are currently being re-written to reflect that change.  Test Data Orchestrator / TDO / Wayfinder all refer to the same product throughout these documents.
+{% endhint %}
+
 Test Data Extractor (TDX) is the Data Mining component of Test Data Orchestrator (TDO). TDO is the Self-Service Test Data Portal where you can simply specify your criteria and then acquire the data you need to support your testing requirements.
 
 &#x20;It is like an ATM (automated teller machine) for Test Data.

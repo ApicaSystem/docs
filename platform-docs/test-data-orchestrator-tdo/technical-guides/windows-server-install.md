@@ -1,14 +1,16 @@
 # Windows Server Install
 
-## ORSON - Test Data Orchestrator
+{% hint style="info" %}
+Test Data Orchestrator (TDO) has been re-branded to Wayfinder as of Q1 2026.  These documents are currently being re-written to reflect that change.  Test Data Orchestrator / TDO / Wayfinder all refer to the same product throughout these documents.
+{% endhint %}
 
 ### Windows Install & Configuration Guide&#x20;
 
-You can install TDO on-premises on a fixed server, on your internal cloud, or on any cloud provider.&#x20;
+You can install Wayfinder (TDO) on-premises on a fixed server, on your internal cloud, or on any cloud provider.&#x20;
 
 Before beginning the installation, follow the hardware and software requirements guide to make sure that you have the right configuration and software needed for your selected operating system.
 
-### TDO Installation Packages&#x20;
+### Wayfinder (TDO) Installation Packages&#x20;
 
 **Download software**
 
@@ -18,7 +20,7 @@ Download links for the software will be provided after initial evaluation Docume
 
 Read the installation instructions before beginning installation.
 
-TDO is installed from the windows command line.
+Wayfinder (TDO) is installed from the windows command line.
 
 Open a cmd or shell window from the windows menu and perform the following actions:
 
@@ -76,7 +78,7 @@ Navigate back to appdir.  Right-click on start.cmd and select OPEN.  this will o
 
 In appdir, right click on stop.cmd and select OPEN.  This should cause the engine and api command windows to close.
 
-Once both windows are closed, run start.cmd again.  Once the engine and api windows are open and running, you are ready to begin working with TDO.
+Once both windows are closed, run start.cmd again.  Once the engine and api windows are open and running, you are ready to begin working with Wayfinder (TDO).
 
 &#x20;
 
@@ -90,9 +92,9 @@ For example, you would enter: [http://52.175.86.43:8080/ui/public/signup](http:/
 
 &#x20;If you have https enabled, then this would be forwarded to port 8443 instead of 8080, and it would look like this: :[https://](https://35.214.52.73/ui/public/signup)[52.175.86.43](http://35.214.52.73:8080/ui/public/signup)[:443/ui/public/signup](https://35.214.52.73/ui/public/signup).
 
-&#x20;If you are running TDO on a remote desktop/virtual server and accessing it from that same server, your url would look like this:  [http://localhost:8080/ui/public/signup](http://localhost:8080/public/signup).
+&#x20;If you are running Wayfinder (TDO) on a remote desktop/virtual server and accessing it from that same server, your url would look like this:  [http://localhost:8080/ui/public/signup](http://localhost:8080/public/signup).
 
-If you are running TDO on a remote desktop/virtual server and accessing it from your desktop, you would use the server name instead of the IP address and your url would look like this: [http://abc2xyz00004025.apica.com:8080/ui/public/signup](http://csc2cxn00004025.apica.com:8080/ui/public/signup) .
+If you are running Wayfinder (TDO) on a remote desktop/virtual server and accessing it from your desktop, you would use the server name instead of the IP address and your url would look like this: [http://abc2xyz00004025.apica.com:8080/ui/public/signup](http://csc2cxn00004025.apica.com:8080/ui/public/signup) .
 
 &#x20;
 
@@ -102,11 +104,11 @@ If you are running TDO on a remote desktop/virtual server and accessing it from 
 
 ·       Once you have logged in, you can create new users in the User Management section of the tool.  See the ‘User Maintenance’ section of this on-line manual for detailed instructions.
 
-·       While TDO can be set up with LDAP authentication, it cannot be done until at least one project is created.  We do not recommend LDAP setup during a Proof of Concept/Proof of Technology evaluation as this process requires coordination with your network, AD, and/or security teams and can take several weeks to complete.
+·       While Wayfinder (TDO) can be set up with LDAP authentication, it cannot be done until at least one project is created.  We do not recommend LDAP setup during a Proof of Concept/Proof of Technology evaluation as this process requires coordination with your network, AD, and/or security teams and can take several weeks to complete.
 
 ### Upgrade Instructions
 
-Before beginning the upgrade, stop TDO by running the stop.cmd script in the appdir.  Ignite and MongoDB can remain running during the upgrade process.
+Before beginning the upgrade, stop Wayfinder (TDO) by running the stop.cmd script in the appdir.  Ignite and MongoDB can remain running during the upgrade process.
 
 &#x20;
 
@@ -126,13 +128,13 @@ You will need to modify properties the same files as during the initial install.
 
 **Starting the application**
 
-You will not need to restart Ignite if you did not stop it as part of the uprade.  To restart Ignite,  go to the appdir/Ignite/bin folder and right-click on ‘ignite.cmd’.  Select OPEN to run the file.  This will open a new command window.  Wait for Ignite to start (about 15 seconds).
+You will not need to restart Ignite if you did not stop it as part of the uprade.  To restart Ignite, go to the appdir/Ignite/bin folder and right-click on ‘ignite.cmd’.  Select OPEN to run the file.  This will open a new command window.  Wait for Ignite to start (about 15 seconds).
 
 Navigate back to appdir.  Right-click on start.cmd and select OPEN.  this will open two command windows, for the engine and api.  Wait for both windows to open.
 
 In appdir, right click on stop.cmd and select OPEN.  This should cause the engine and api command windows to close.
 
-Once both windows are closed, run start.cmd again.  Once the engine and api windows are open and running, you are ready to begin working with TDO. &#x20;
+Once both windows are closed, run start.cmd again.  Once the engine and api windows are open and running, you are ready to begin working with Wayfinder (TDO). &#x20;
 
 ### Browser Information
 

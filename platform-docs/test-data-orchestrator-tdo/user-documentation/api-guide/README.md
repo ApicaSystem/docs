@@ -1,11 +1,10 @@
----
-description: >-
-  All functions that can be performed via the user interface (UI) in TDO can
-  also be performed via API from any Test or DevOps tool capable of using REST
-  API calls.
----
-
 # API Guide
+
+{% hint style="info" %}
+Test Data Orchestrator (TDO) has been re-branded to Wayfinder as of Q1 2026.  These documents are currently being re-written to reflect that change.  Test Data Orchestrator / TDO / Wayfinder all refer to the same product throughout these documents.
+{% endhint %}
+
+All functions that can be performed via the user interface (UI) in TDO can also be performed via API from any Test or DevOps tool capable of using REST API calls.
 
 Within each functional area, the API’s are capable of:
 

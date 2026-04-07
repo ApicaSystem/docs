@@ -1,24 +1,26 @@
 # IP Forwarding Instructions (Linux)
 
-ORSON - Test Data Orchestrator
+{% hint style="info" %}
+Test Data Orchestrator (TDO) has been re-branded to Wayfinder as of Q1 2026.  These documents are currently being re-written to reflect that change.  Test Data Orchestrator / TDO / Wayfinder all refer to the same product throughout these documents.
+{% endhint %}
 
 ## Linux/Unix Port Configuration Guide
 
-Test Data Orchestrator (TDO) runs on port 8080/8443. The typical http/https server configuration for Linux/Unix (\*nix) servers is port 80/443.
+Wayfinder (TDO) runs on port 8080/8443. The typical http/https server configuration for Linux/Unix (\*nix) servers is port 80/443.
 
 &#x20;These ports are considered privileged on Unix/Linux systems and processes using them must be owned by the root; i.e., they must have root privileges.
 
-&#x20;Running TDO as root is not recommended. It should be run as its own user on the Unix/Linux server.
+&#x20;Running Wayfinder (TDO) as root is not recommended. It should be run as its own user on the Unix/Linux server.
 
 There are two solutions that will allow for forwarding traffic from port 80/443 to 8080/8443:
 
 ·       Use iptables in Linux to forward traffic from port 80/443 to 8080/8443.
 
-·       Use a proxy server (such as Apache) to act as the front-end server for TDO and forward proxy requests.
+·       Use a proxy server (such as Apache) to act as the front-end server for Wayfinder (TDO) and forward proxy requests.
 
 &#x20;While we generally recommend the first option as being lower cost and requiring less maintenance overhead, the option you select should align with your organization’s security policy and enterprise architecture standards.
 
-## Running TDO on port 80 or 443 using iptables port forwarding (\*nix systems only)
+## Running Wayfinder (TDO) on port 80 or 443 using iptables port forwarding (\*nix systems only)
 
 ### Prerequisites to forwarding
 
@@ -79,8 +81,8 @@ On a Debian-based system (Debian, Ubuntu, Mint, etc), issue the following comman
 
 &#x20;<mark style="color:red;">sudo sh -c "iptables-save > /etc/iptables.rules"</mark>&#x20;
 
-The final action you will need to take will be to configure your server to automatically run the ‘iptables-restore’ command on system reboot. If you do not take this step, you will need to run the command manually after each reboot and TDO will not run until this is done. This command may vary depending on your specific Unix/Linux software; you should confirm against your system manuals to ensure that you configure this correctly.
+The final action you will need to take will be to configure your server to automatically run the ‘iptables-restore’ command on system reboot. If you do not take this step, you will need to run the command manually after each reboot and Wayfinder (TDO) will not run until this is done. This command may vary depending on your specific Unix/Linux software; you should confirm against your system manuals to ensure that you configure this correctly.
 
 ### Validating the forwarding changes
 
-Once TDO is installed, attempt to access your TDO instance on port 80. Your URL should stay on port 80, and forward in the background. The fact that the server is forwarding from 80 to 8080 (or 443 to 8443) should remain hidden from the end user.
+Once Wayfinder (TDO) is installed, attempt to access your instance on port 80. Your URL should stay on port 80, and forward in the background. The fact that the server is forwarding from 80 to 8080 (or 443 to 8443) should remain hidden from the end user.
