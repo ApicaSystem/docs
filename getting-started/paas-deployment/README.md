@@ -6,7 +6,7 @@ icon: server
 
 ### Before you begin
 
-To get you up and running with the Apica Ascent PaaS, we've made Ascent PaaS's Kubernetes components available as Helm Charts. To deploy Ascent PaaS, you will need access to a Kubernetes cluster and Helm 3. You will also need access to S3-compatible object storage for storing metric data.
+To get you up and running with the Apica Ascent PaaS, we've made Ascent PaaS's Kubernetes components available as Helm Charts. To deploy Ascent PaaS, you will need access to a Kubernetes cluster and Helm 3. You will also need access to S3-compatible object storage for storing metric data. If you do not have an existing S3-compatible storage solution, the [optional step below](./#deploy-s3) will create one within the same cluster as Ascent.
 
 Before you start deploying Ascent PaaS, let's run through a few quick steps to set up your environment correctly.
 
@@ -128,6 +128,75 @@ Install the final file as `/etc/k0s/metallb.yaml` and apply it:
 kubectl apply -f /etc/k0s/metallb.yaml
 ```
 
+### Deploy S3 Object Storage <a href="#deploy-s3" id="deploy-s3"></a>
+
+This is an optional step, in case you do not have access to an external S3-compatible object store. This will deploy an S3 service within the Kubernetes cluster where Ascent is being deployed.
+
+```
+helm repo add minio https://operator.min.io/
+helm repo update
+```
+
+Install the MinIO Operator first:
+
+```
+helm install -n minio-operator --create-namespace minio-operator minio/operator
+```
+
+Create the namespace for the tenant:
+
+```
+kubectl create ns minio-tenant
+```
+
+Create a secret that holds the admin/root login credentials for the MinIO web console. Be sure to set your own password for MINIO\_ROOT\_PASSWORD.
+
+```
+kubectl create secret generic myminio-env-secret \
+  -n minio-tenant \
+  --from-literal=config.env=$'export MINIO_ROOT_USER=minio\nexport MINIO_ROOT_PASSWORD=<password>'
+```
+
+Prepare values for the Tenant install. The pool values are reasonable for a small installation but should be modified for larger/more complex deployments. The `storageClassName` matches the default for Ascent. If using a different storage class, be sure to set it here as well as in the main Ascent values.
+
+values-minio.yaml:
+
+```yaml
+tenant:
+  pools:
+    # The number of MinIO Tenant Pods / Servers in this pool, minimum 4.
+    - servers: 4
+      name: pool-0
+      # The number of volumes attached per MinIO Tenant Pod / Server.
+      volumesPerServer: 4
+      # The capacity per volume requested per MinIO Tenant Pod.
+      size: 10Gi
+      storageClassName: openebs-hostpath
+  configSecret:
+    name: myminio-env-secret
+    existingSecret: true
+  configuration:
+    name: myminio-env-secret
+```
+
+Install the MinIO Tenant:
+
+```
+helm install -n minio-tenant -f values-minio.yaml myminio minio/tenant
+```
+
+Watch the output of `helm status -n minio-tenant myminio` for the state to become `Initialized`.
+
+To create a bucket and access key, use the web console via port forward:
+
+```
+kubectl port-forward service/myminio-console 9443:9443 -n minio-tenant
+```
+
+Log in with the username and password used in the configuration secret above. Set the region for the server (Configuration -> Region). This will require the server to restart. Log back in and create a bucket (Buckets -> Create Bucket +), then an access key (Access Keys -> Create access key +).
+
+Note the region, bucket name, and access key/secret, which you will fill in to the Ascent values below. The S3 URL will be `https://minio.minio-tenant.svc.cluster.local`.
+
 ### Create a namespace to deploy Apica Ascent <a href="#create-namespace" id="create-namespace"></a>
 
 Create a namespace where we'll deploy Apica Ascent PaaS by running the following command.
@@ -172,6 +241,12 @@ The following keys require setting site-specific values:
 * `global.environment.s3_secret` - S3 secret key
 * `global.environment.s3_bucket` - S3 bucket name
 * `global.environment.s3_region` - S3 region name
+* `global.environment.s3_custom_ca.enabled` - Set to `true` if using the internal S3 service documented above, or if your external S3 service uses a certificate from a private CA.
+* `global.environment.s3_custom_ca.map_name` - Name of the configMap holding the CA certificate for the S3 service. If using **k0s** and the internal S3 service, the default is the automatic configMap provided to all namespaces that holds the Kubernetes CA cert. For external S3 using a private CA, create a configMap in the `apica-ascent` namespace and set `map_name` to the name of this configMap. For example:
+  * ```
+    kubectl create configmap -n apica-ascent s3-ca --from-file=ca.crt=custom-ca.pem
+    ```
+  * Then set `map_name` to `s3-ca`
 * `global.environment.AWS_ACCESS_KEY_ID` - S3 access key
 * `global.environment.AWS_SECRET_ACCESS_KEY` - S3 secret key
 * `global.environment.awsServiceEndpoint` - base URL for your S3 or compatible service
@@ -183,6 +258,22 @@ The following keys require setting site-specific values:
 * `global.postgres.postgresqlPassword` - password for the `postgres` database user
 
 If you changed the names of the Kubernetes secrets above, use the name of the `tls` secret for `gateway.tls.secretName`. Use the name of the `generic` secret for `logiq-flash.secrets_name`.
+
+**If using a custom S3 CA cert, the following block must be added to each Thanos component (receive, query, bucketweb, compactor, storegateway, ruler).** Set the configMap name to match the value of `s3_custom_ca.map_name` above.
+
+```
+    extraVolumes:
+      - name: s3-custom-ca
+        configMap:
+          name: kube-root-ca.crt
+    extraVolumeMounts:
+      - name: s3-custom-ca
+        mountPath: /opt/bitnami/thanos/certs
+        readOnly: true
+    extraEnvVars:
+      - name: SSL_CERT_FILE
+        value: /opt/bitnami/thanos/certs/ca.crt
+```
 
 ### Install Envoy Gateway Resources
 
