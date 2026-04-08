@@ -128,9 +128,9 @@ Install the final file as `/etc/k0s/metallb.yaml` and apply it:
 kubectl apply -f /etc/k0s/metallb.yaml
 ```
 
-### Deploy S3 Object Storage <a href="#deploy-s3" id="deploy-s3"></a>
+### Deploy S3 Object Storage (optional) <a href="#deploy-s3" id="deploy-s3"></a>
 
-This is an optional step, in case you do not have access to an external S3-compatible object store. This will deploy an S3 service within the Kubernetes cluster where Ascent is being deployed.
+This is an optional step, in case you **do not have** access to an external S3-compatible object store. This will deploy an S3 service within the Kubernetes cluster where Ascent is being deployed.
 
 ```
 helm repo add minio https://operator.min.io/
