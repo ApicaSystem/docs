@@ -4,6 +4,10 @@
 
 This release introduces a new SLO experience that makes it easier to see which services are meeting their targets. The SLO list view, backed by recorded SLO metrics and integrated with dashboards and tracing, gives teams a single place to track health, error budgets, and overall reliability.
 
+### **RUM Dashboard**
+
+A new RUM (Real User Monitoring) dashboard has been introduced within Ascent, expanding visibility into real user performance. The instrumentation script collects key web performance and reliability metrics such as TTFB, LCP, INP, CLS and various error rates, using injected JavaScript and a polling model that avoids slowing down page loads while supporting alerting and downstream processing.
+
 ***
 
 ### Flow
