@@ -1,4 +1,4 @@
-# Kafka
+# Kafka Forwarding
 
 To instrument a Kafka destination within Apica Flow, you must configure the secure handshake between the Flow engine and the Kafka brokers, define the serialization format, and establish the pipeline logic. This setup is standard for cloud-hosted Kafka services like Confluent Cloud, Amazon MSK, or IBM Event Streams.
 
