@@ -392,7 +392,7 @@
   * [Grafana Forwarder (via OTel)](flow/list-of-forwarders/grafana-forwarder-via-otel.md)
   * [Grafana Loki Forwarder – Log Push from Apica](flow/list-of-forwarders/grafana-loki-forwarder-log-push-from-apica.md)
   * [Honeycomb Forwarder (via OTel)](flow/list-of-forwarders/honeycomb-forwarder-via-otel.md)
-  * [IBM Cloud Pak for AIOps](flow/list-of-forwarders/ibm-cloud-pak-for-aiops.md)
+  * [IBM Cloud Pak for AIOps (via OTel)](flow/list-of-forwarders/ibm-cloud-pak-for-aiops-via-otel.md)
   * [IBM Concert (via OTel)](flow/list-of-forwarders/ibm-concert-via-otel.md)
   * [IBM Instana (via OTel)](flow/list-of-forwarders/ibm-instana-via-otel.md)
   * [IBM Turbonomic (via Prometheus)](flow/list-of-forwarders/ibm-turbonomic-via-prometheus.md)
