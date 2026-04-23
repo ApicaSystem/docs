@@ -14,7 +14,7 @@ To manually create a coverage set, select ‘Coverage Sets’ from the ‘Covera
 
 To create a new coverage set, click on the blue plus (+) sign in the lower right-hand corner of the screen.  The ‘Create Coverage Set’ window will open.
 
-<figure><img src="../../../../.gitbook/assets/Picture1.png" alt=""><figcaption><p>Coverage Sets Page</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Picture1 (2).png" alt=""><figcaption><p>Coverage Sets Page</p></figcaption></figure>
 
 Start by giving your coverage set a name in the top pane. Then in the second pane, start to type the name of the determining attribute(s) you want to add to your coverage set. Once you have typed in a few letters, TDO will bring up a list of matching determining attributes. Click on the attribute you want to add to move it to the list in the third pane. Continue this for all attributes you want to add.
 

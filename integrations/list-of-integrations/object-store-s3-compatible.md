@@ -12,7 +12,7 @@ You can find **Source Extensions** under the Integrations menu.
 
 Once inside the Source Extension menu, select **New Source Extension** and then **AWS S3/Compatible Object store**:
 
-<figure><img src="../../.gitbook/assets/Picture1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Picture1 (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Create the extension and provide the settings for accessing your object store bucket. The settings menu provides options that allow customization that is specific to vendor object store implementations.
 
