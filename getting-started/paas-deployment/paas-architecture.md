@@ -8,14 +8,14 @@ description: >-
 
 ## Requirements
 
-A production deployment of  Apica Ascent requires the following key components:
+A production deployment of Apica Ascent requires the following key components:
 
 1. **A cloud-based or k0s Kubernetes cluster** to run the Apica Ascent software components.  Apica Ascent OnPrem's non-cloud offering is based on [k0s](https://k0sproject.io/).
 2. **An object store** is where the data fabric stores its data at rest. An S3-compatible object store is required.&#x20;
    1. Azure installs can take advantage of a native integration with the Azure Blob store.&#x20;
 3. **Access to a container registry** for docker images for the Apica Data Fabric.
 
-Optional External Items
+Optional External Items include:
 
 1. **Postgres -** Ascent's internal Postgres can be replaced with a RDS or other managed offerings.
 2. **Redis -** Ascent's internal Redis server can be replaced with like managed offerings.
@@ -26,7 +26,7 @@ Ascent can be configured to either (a) store indexed data within Lake (using Ins
 
 #### Storing Data in Apica Lake
 
-Ascent stores most customer data in the object store which will scale with usage.  All data will be indexed in the S3-compatible data store, and the k8s cluster has the following minimum requirements.
+Ascent stores most customer data in the object store which will scale with usage.  All data will be indexed in the S3-compatible data store, and the k8s cluster has these minimum requirements.
 
 | Service            | vCPUs | RAM   | Disk  |
 | ------------------ | ----- | ----- | ----- |
