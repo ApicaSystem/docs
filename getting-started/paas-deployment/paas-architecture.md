@@ -22,14 +22,29 @@ Optional External Items
 
 ## Sizing
 
-Ascent stores most customer data in the object store, which will scale with usage.  In addition, the Kubernetes cluster has the following minimum requirements.
+Ascent can be configured to either (a) store indexed data within Lake (using InstaStore technology) for a specific duration, or (b) use "Flow Only" mode and not store any data in Lake. Depending on which option is chosen, the sizing parameters will be quite different.
+
+#### Storing Data in Apica Lake
+
+Ascent stores most customer data in the object store which will scale with usage.  All data will be indexed in the S3-compatible data store, and the k8s cluster has the following minimum requirements.
 
 | Service            | vCPUs | RAM   | Disk  |
 | ------------------ | ----- | ----- | ----- |
 | Ingest per GB/hour | 1.25  | 3.5GB | 5GB\* |
 | Core Components    | 10    | 28GB  | 150GB |
 
-&#x20;\* 5GB/ingest pod is the minimum, but 50GB is recommended.
+&#x20;\*5GB/ingest pod is the minimum, but 50GB is recommended.
+
+#### Flow Only Mode (No Storing of Data in Apica Lake)
+
+If data will not be retained in Lake, indexing is turned off and the Kubernetes cluster has the following minimum requirements.
+
+| Service            | vCPUs | RAM   | Disk    |
+| ------------------ | ----- | ----- | ------- |
+| Ingest per GB/hour | 0.5   | 1.5GB | 5GB\*\* |
+| Core Components    | 4     | 12GB  | 20GB    |
+
+&#x20;\*\*5 GB/ingest pod is the minimum, but a small S3-compatible data store is still needed for alerts and journals from the platform.
 
 ## Packaging
 
