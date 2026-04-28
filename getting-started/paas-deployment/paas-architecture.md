@@ -41,8 +41,8 @@ If data will not be retained in Lake, indexing is turned off and the Kubernetes 
 
 | Service            | vCPUs | RAM   | Disk    |
 | ------------------ | ----- | ----- | ------- |
-| Ingest per GB/hour | 0.5   | 1.5GB | 5GB\*\* |
-| Core Components    | 4     | 12GB  | 20GB    |
+| Ingest per GB/hour | < 1   | < 2GB | 5GB\*\* |
+| Core Components    | 5     | 14GB  | 20GB    |
 
 &#x20;\*\*5 GB/ingest pod is the minimum, but a small S3-compatible data store is still needed for alerts and journals from the platform.
 
