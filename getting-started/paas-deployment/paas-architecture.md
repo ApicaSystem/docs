@@ -24,9 +24,9 @@ Optional External Items include:
 
 Ascent can be configured to either (a) store indexed data within Lake (using InstaStore technology) for a specific duration, or (b) use "Flow Only" mode and not store any data in Lake. Depending on which option is chosen, the sizing parameters will be quite different.
 
-#### Storing Data in Apica Lake
+#### Storing Data in Lake
 
-Ascent stores most customer data in the object store which will scale with usage.  All data will be indexed in the S3-compatible data store, and the k8s cluster has these minimum requirements.
+Ascent stores most customer data in the Lake object store which will scale with usage.  All data will be indexed in the S3-compatible data store, and the k8s cluster has these minimum requirements.
 
 | Service            | vCPUs | RAM   | Disk  |
 | ------------------ | ----- | ----- | ----- |
@@ -35,7 +35,7 @@ Ascent stores most customer data in the object store which will scale with usage
 
 &#x20;\*5GB/ingest pod is the minimum, but 50GB is recommended.
 
-#### Flow Only Mode (No Storing of Data in Apica Lake)
+#### Flow Only Mode (No Storing of Data in Lake)
 
 If data will not be retained in Lake, indexing is turned off and the Kubernetes cluster has the following minimum requirements.
 
