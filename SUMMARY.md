@@ -387,6 +387,7 @@
     * [Fluent-bit OCI Logging Analytics Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-oci-logging-analytics-forwarder.md)
     * [Fluent-bit Opentelemetry Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-opentelemetry-forwarder.md)
     * [Fluent-bit Slack Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-slack-forwarder.md)
+    * [Fluent-bit Splunk Forwarder](flow/list-of-forwarders/fluent-bit-forwarding/fluent-bit-splunk-forwarder.md)
   * [GCP Bigquery](flow/list-of-forwarders/gcp-bigquery.md)
   * [Google Chronicle SIEM](flow/list-of-forwarders/google-chronicle-siem.md)
   * [Google Pub/Sub](flow/list-of-forwarders/google-pub-sub.md)
