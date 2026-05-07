@@ -20,6 +20,7 @@
   * [Ascent 2.14.3](product-overview/release-notes/ascent-2.14.3.md)
   * [Ascent 2.14.2](product-overview/release-notes/ascent-2.14.2.md)
   * [Ascent 2.14.1](product-overview/release-notes/ascent-2.14.1.md)
+  * [Ascent 2.14.1](product-overview/release-notes/ascent-2.14.1-1.md)
   * [Ascent 2.14.0](product-overview/release-notes/ascent-2.14.0.md)
   * [Ascent 2.13.0](product-overview/release-notes/ascent-2.13.0.md)
   * [Ascent 2.12.1](product-overview/release-notes/ascent-2.12.1.md)
