@@ -28,10 +28,10 @@ Ascent can be configured to either (a) store indexed data within Lake (using Ins
 
 Ascent stores most customer data in the Lake object store which will scale with usage.  All data will be indexed in the S3-compatible data store, and the k8s cluster has these minimum requirements.
 
-| Service            | vCPUs | RAM   | Disk  |
-| ------------------ | ----- | ----- | ----- |
-| Ingest per GB/hour | 1.25  | 3.5GB | 5GB\* |
-| Core Components    | 10    | 28GB  | 150GB |
+| Service                      | vCPUs | RAM   | Disk  |
+| ---------------------------- | ----- | ----- | ----- |
+| Ingest per GB/hour           | 1.25  | 3.5GB | 5GB\* |
+| Core Components (non-ingest) | 10    | 28GB  | 150GB |
 
 &#x20;\*5GB/ingest pod is the minimum, but 50GB is recommended.
 
@@ -39,10 +39,10 @@ Ascent stores most customer data in the Lake object store which will scale with 
 
 If data will not be retained in Lake, indexing is turned off and the Kubernetes cluster has the following minimum requirements.
 
-| Service            | vCPUs | RAM   | Disk    |
-| ------------------ | ----- | ----- | ------- |
-| Ingest per GB/hour | < 1   | < 2GB | 5GB\*\* |
-| Core Components    | 5     | 14GB  | 20GB    |
+| Service                      | vCPUs | RAM   | Disk    |
+| ---------------------------- | ----- | ----- | ------- |
+| Ingest per GB/hour           | < 1   | < 2GB | 5GB\*\* |
+| Core Components (non-ingest) | 5     | 14GB  | 20GB    |
 
 &#x20;\*\*5 GB/ingest pod is the minimum, but a small S3-compatible data store is still needed for alerts and journals from the platform.
 
