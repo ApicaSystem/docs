@@ -404,6 +404,7 @@
   * [IBM Turbonomic (via Prometheus)](flow/list-of-forwarders/ibm-turbonomic-via-prometheus.md)
   * [ITRS Geneos Forwarder (via OTel)](flow/list-of-forwarders/itrs-geneos-forwarder-via-otel.md)
   * [JS Code Forwarding](flow/list-of-forwarders/js-code-forwarding.md)
+  * [Apache Kafka Forwarder](flow/list-of-forwarders/apache-kafka-forwarder.md)
   * [Kafka Forwarding (via OTel)](flow/list-of-forwarders/kafka-forwarding-via-otel.md)
   * [LogicMonitor Forwarder (via JS Forwarder)](flow/list-of-forwarders/logicmonitor-forwarder-via-js-forwarder.md)
   * [LogRhythm Forwarder](flow/list-of-forwarders/logrhythm-forwarder.md)
