@@ -429,6 +429,7 @@
       * [Non Metric Indexes](flow/list-of-forwarders/splunk-forwarding/splunk-http-event-collector-hec-forwarder/non-metric-indexes.md)
     * [Splunk Syslog Forwarding](flow/list-of-forwarders/splunk-forwarding/syslog-forwarding.md)
   * [Sumo Logic Forwarder (via OTel)](flow/list-of-forwarders/sumo-logic-forwarder-via-otel.md)
+  * [Fortinet FortiSIEM Forwarder](flow/list-of-forwarders/fortinet-fortisiem-forwarder.md)
 * [Custom Forwarders](flow/customized-forwarders.md)
 * [Data Warehouse Forwarding](flow/forwarding-to-data-warehouse.md)
 * [Object Store Forwarding](flow/object-store-forwarding.md)
