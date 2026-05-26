@@ -161,7 +161,7 @@
     * [Fluent-bit Prometheus Remote Write Output Plugin](integrations/list-of-integrations/fluent-bit/fluent-bit-prometheus-remote-write-output-plugin.md)
     * [Fluent-bit Ubuntu Plugin](integrations/list-of-integrations/fluent-bit/fluent-bit-installation-on-ubuntu.md)
   * [Fluentd](integrations/list-of-integrations/fluentd.md)
-  * [FortiNet Firewalls](integrations/list-of-integrations/fortinet-firewalls.md)
+  * [Fortinet FortiGate Firewall Logs](integrations/list-of-integrations/fortinet-firewalls.md)
   * [GCP PubSub](integrations/list-of-integrations/gcp-pubsub.md)
   * [GCP Cloud Logging](integrations/list-of-integrations/gcp-cloud-logging.md)
   * [IBM QRadar](integrations/list-of-integrations/ibm-qradar.md)
