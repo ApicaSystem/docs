@@ -185,6 +185,6 @@ Look for the `=== Linting config ===` block. A pass shows `Lint OK`. A fail prin
 ### Where to learn more
 
 * [Redpanda Connect documentation](https://docs.redpanda.com/redpanda-connect/) - the canonical reference for inputs, processors, outputs, and Bloblang.
-* [Example pipelines](https://github.com/ApicaSystem/hauler-redpanda-connect/tree/main/examples) - starter YAMLs for reference.
+* [Example pipelines](https://github.com/ApicaSystem/ApicaHub/tree/master/source-extensions/redpanda-connect) - starter YAMLs for reference.
 * [Bloblang reference](https://docs.redpanda.com/redpanda-connect/guides/bloblang/about/) - the mapping language used inside `mapping` processors.
 
