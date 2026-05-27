@@ -209,6 +209,7 @@
     * [Audit Vault Logs - AWS](integrations/list-of-integrations/vault/audit-vault-logs-aws.md)
     * [Audit Vault Logs - OCI](integrations/list-of-integrations/vault/audit-vault-logs-oci.md)
     * [Audit Vault Metrics](integrations/list-of-integrations/vault/audit-vault-metrics.md)
+  * [Redpanda Connect](integrations/list-of-integrations/redpanda-connect.md)
 * [Apica Product API Portal](https://apidocs.apica.io/)
 
 ## DATA MANAGEMENT
