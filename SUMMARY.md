@@ -73,7 +73,7 @@
     * [Collect Logs with Python](getting-started/ascent/getting-started-with-logs/collect-logs-with-python.md)
     * [Collect Logs with OpenTelemetry](getting-started/ascent/getting-started-with-logs/opentelemetry.md)
     * [Collect Logs with Rsyslog](getting-started/ascent/getting-started-with-logs/collect-logs-with-rsyslog.md)
-* [On-Premise PaaS Deployment](getting-started/paas-deployment/README.md)
+* [On-Premises PaaS Deployment](getting-started/paas-deployment/README.md)
   * [On-Premises Sizing Guide](getting-started/paas-deployment/paas-architecture.md)
 * [Dashboards & Visualizations](getting-started/overview.md)
 
