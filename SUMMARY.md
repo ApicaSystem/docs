@@ -74,7 +74,7 @@
     * [Collect Logs with OpenTelemetry](getting-started/ascent/getting-started-with-logs/opentelemetry.md)
     * [Collect Logs with Rsyslog](getting-started/ascent/getting-started-with-logs/collect-logs-with-rsyslog.md)
 * [On-Premise PaaS Deployment](getting-started/paas-deployment/README.md)
-  * [Sizing Guide](getting-started/paas-deployment/paas-architecture.md)
+  * [On-Premises Sizing Guide](getting-started/paas-deployment/paas-architecture.md)
 * [Dashboards & Visualizations](getting-started/overview.md)
 
 ## DATA SOURCES
