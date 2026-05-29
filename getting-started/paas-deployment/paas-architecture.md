@@ -1,83 +1,270 @@
 ---
 description: >-
-  This page describes the deployment architecture of a typical on-premises
-  production deployment of Apica Ascent.
+  This page describes the deployment sizing parameters of a typical on-premises
+  production deployment of Apica Flow.
 ---
 
-# Architecture and Sizing
+# Benchmark Sizing Guide
 
-## Requirements
+## 1. Purpose and Scope
 
-A production deployment of Apica Ascent requires the following key components:
+This document establishes a formal ingest rate benchmark and environment sizing guide for Apica Flow, derived from controlled benchmark testing on Intel x86 hardware. The benchmark provides procurement teams, solutions architects, and platform engineers with a reproducible, defensible sizing framework expressed in GB/day per vCPU — the industry-standard unit for telemetry pipeline capacity planning.
 
-1. **A cloud-based or k0s Kubernetes cluster** to run the Apica Ascent software components.  Apica Ascent OnPrem's non-cloud offering is based on [k0s](https://k0sproject.io/).
-2. **An object store** is where the data fabric stores its data at rest. An S3-compatible object store is required.&#x20;
-   1. Azure installs can take advantage of a native integration with the Azure Blob store.&#x20;
-3. **Access to a container registry** for docker images for the Apica Data Fabric.
+Two distinct benchmark baselines are defined, reflecting the two primary deployment modes of Apica Flow:
 
-Optional External Items include:
+•       **Benchmark 1 — Apica Flow Only (Non-Indexing):** Telemetry pipeline processing without data flowing into Apica Lake. Applicable to pass-through, filter, enrich, and route deployments where Apica Lake is not the primary destination.
 
-1. **Postgres -** Ascent's internal Postgres can be replaced with a RDS or other managed offerings.
-2. **Redis -** Ascent's internal Redis server can be replaced with like managed offerings.
+•       **Benchmark 2 — Apica Flow with Apica Lake (Indexing):** Full-stack deployment with all inbound telemetry indexed and stored in Apica Lake (powered by InstaStore™). Applicable to deployments requiring infinite retention, long-term forensic replay, and compliance data archival.
 
-## Sizing
+&#x20;All benchmark measurements were conducted on Intel x86 (hyperthreaded vCPU) hardware. ARM processor results are not included in this release.
 
-Ascent can be configured to either (a) store indexed data within Lake (using InstaStore technology) for a specific duration, or (b) use "Flow Only" mode and not store any data in Lake. Depending on which option is chosen, the sizing parameters will be quite different.
+## &#x20;2. Benchmark Test Conditions
 
-#### Storing Data in Lake
+### 2.1 Test Environment Specifications
 
-Ascent stores most customer data in the Lake object store which will scale with usage.  All data will be indexed in the S3-compatible data store, and the k8s cluster has these minimum requirements.
+Both benchmarks were executed under identical, controlled test environment conditions to ensure comparability. The specifications below represent the minimum validated hardware configuration.
 
-| Service                      | vCPUs | RAM   | Disk  |
-| ---------------------------- | ----- | ----- | ----- |
-| Ingest per GB/hour           | 1.25  | 3.5GB | 5GB\* |
-| Core Components (non-ingest) | 10    | 28GB  | 150GB |
+| **Parameter**                            | **Value**                                                    |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| Processor architecture                   | Intel x86 (hyperthreaded vCPU)                               |
+| vCPU count (test environment for ingest) | 1 vCPU                                                       |
+| RAM (test environment for ingest)        | 2 GB                                                         |
+| Benchmark measurement unit               | GB per day (GB/day) per vCPU                                 |
+| Data types tested                        | Mixed log telemetry (syslog, JSON, structured events)        |
+| Pipeline mode — Benchmark 1              | Apica Flow only, non-indexing (no Apica Lake write)          |
+| Pipeline mode — Benchmark 2              | Apica Flow with Apica Lake indexing (full InstaStore™ write) |
 
-&#x20;\*5GB/ingest pod is the minimum, but 50GB is recommended.
-
-#### Flow Only Mode (No Storing of Data in Lake)
-
-If data will not be retained in Lake, indexing is turned off and the Kubernetes cluster has the following minimum requirements.
-
-| Service                      | vCPUs | RAM   | Disk    |
-| ---------------------------- | ----- | ----- | ------- |
-| Ingest per GB/hour           | < 1   | < 2GB | 5GB\*\* |
-| Core Components (non-ingest) | 5     | 14GB  | 20GB    |
-
-&#x20;\*\*5 GB/ingest pod is the minimum, but a small S3-compatible data store is still needed for alerts and journals from the platform.
-
-## Packaging
-
-The deployment of Ascent is driven via a Helm chart (labelled "apica-data-fabric").
-
-```
-helm install apica --namespace apica-data-fabric apica-repo/apica 
-```
-
-The typical method of customizing the deployment is done with a `values.yaml` file as a parameter to the Helm software when installing the Apica Data Fabric Helm Chart.&#x20;
-
-```
-helm install apica --namespace apica-data-fabric apica-repo/apica -f values.yaml
-```
-
-***
-
-## Reference Kubernetes Deployment Architecture
-
-<div data-full-width="false"><figure><img src="../../.gitbook/assets/Architecture.drawio(1).png" alt="" width="443"><figcaption></figcaption></figure></div>
-
-***
-
-## Reference AWS Deployment Architecture
-
-<figure><img src="../../.gitbook/assets/Architecture-S3.drawio.png" alt="" width="443"><figcaption></figcaption></figure>
-
-***
-
-## Reference Hybrid Deployment Architecture
-
-The reference deployment architecture shows a hybrid deployment strategy where the Apica stack is deployed in an on-prem Kubernetes cluster but the storage is hosted in AWS S3. There could be additional variants of this where services such as Postgres, Redis, and Container registry could be in the cloud as well.
-
-<figure><img src="../../.gitbook/assets/ArchitectureHybrid.drawio.png" alt="" width="443"><figcaption></figcaption></figure>
+### &#x20;2.2 Measured Benchmark Results
 
 &#x20;
+
+| **Benchmark**                                                          | **Measured throughput (GB/day per vCPU)** | **Measured throughput (GB/hour per vCPU)** | **Test environment for Ingest Components (vCPU / RAM)** |
+| ---------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------ | ------------------------------------------------------- |
+| Benchmark 1: Apica Flow Only (Non-Indexing, no Apica Lake)             | 170 GB/day                                | \~7.1 GB/hr                                | 1 vCPU / 2 GB RAM                                       |
+| Benchmark 2: Apica Flow + Apica Lake (Indexing with InstaStore™ write) | 45 GB/day                                 | \~1.9 GB/hr                                | 1 vCPU / 2 GB RAM                                       |
+
+<table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><strong>Important</strong>: These measurements reflect a 1 vCPU / 2 GB RAM test environment for data ingest components. Production deployments benefit from linear throughput scaling with additional vCPUs. Apply the workload adjustment factors in Section 4 and the sizing formula in Section 7 to derive production environment requirements from these baselines.</td></tr></tbody></table>
+
+### 2.3 Data Ingest Sizing Assumptions
+
+The following assumptions apply to both benchmark measurements and all sizing calculations in this document. Deviations from these assumptions — particularly significantly larger average log sizes — will affect effective throughput and should be accounted for in production sizing.
+
+| **Assumption**                            | **Value / Description**                                                                                                                      |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Average log event size                    | 4 KB per log event (average across benchmark test runs)                                                                                      |
+| Log size range observed                   | 2 KB (minimum) to 6 KB (maximum) per log event during benchmark testing                                                                      |
+| Log format                                | Mixed telemetry: syslog (RFC5424), structured JSON, and raw event formats                                                                    |
+| Throughput measurement basis              | Compressed inbound data volume (GB/day), consistent with industry-standard telemetry pipeline capacity units                                 |
+| Pipeline fan-out                          | Single destination for Tier 1 baseline; Tier 2 (recommended) assumes 2 output destinations with −15% adjustment applied                      |
+| Processing complexity                     | Benchmark 1 Tier 1 (pass-through): filter rules only, no enrichment. Tier 2 includes PII redaction and attribute tagging.                    |
+| InstaStore™ write mode (Benchmark 2 only) | Full indexing: 100% of inbound data written to object storage before forwarding. Indexing overhead is included in the 45 GB/day base figure. |
+| Processor architecture                    | Intel x86 with hyperthreading (1 physical core = 2 vCPUs). Test environment: 1 vCPU / 2 GB RAM.                                              |
+
+<table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><strong>Log size sensitivity:</strong> The 4 KB average log size is the baseline for all sizing calculations in this document. If your environment’s average log size differs significantly — for example, verbose application logs averaging 12 KB, or compact network flow records averaging 512 bytes — effective throughput per vCPU will scale inversely with log size. A 2× increase in average log size (4 KB → 8 KB) reduces effective event throughput per vCPU by approximately 50%, though GB/day capacity remains constant. Contact Apica for log-size-adjusted sizing guidance.</td></tr></tbody></table>
+
+## 3. Throughput Tiers by Workload Complexity
+
+The benchmark baselines in Section 2 represent controlled, single-worker measurements. Real-world pipelines include transformation rules, enrichment functions, multiple output destinations, and stateful processing that reduce effective throughput. The following tiers apply to both benchmarks.
+
+### 3.1 Benchmark 1 Tiers — Apica Flow Only (Base: 170 GB/day per vCPU)
+
+| **Workload tier**             | **Pipeline characteristics**                                                                                                                   | **GB/day per vCPU** | **GB/hr per vCPU** | **RAM per vCPU** |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------ | ---------------- |
+| Tier 1 Pass-through           | Simple routing and filter rules only. 1 input → 1 output. No transformation.                                                                   | 170                 | \~7.1              | 2 GB             |
+| Tier 2 Standard (Recommended) | Typical production pipeline. Filter + tag + rewrite + PII redaction. 1 input → 2 outputs (e.g. SIEM + S3). Recommended planning baseline.      | 140                 | \~5.8              | 2–4 GB           |
+| Tier 3 Enriched               | Enrichment-heavy: lookup tables, attribute-based tagging, multi-destination SIEM routing with load balancing.                                  | 100                 | \~4.2              | 4–6 GB           |
+| Tier 4 Complex                | Heavy transformation: cryptographic hashing (SHA-256/AES), stateful aggregations, cross-event persistence, 3+ destinations, custom forwarders. | 70                  | \~2.9              | 6–8 GB           |
+| Tier 5 AI / LLM               | LLM/AI observability: token tracking, prompt/response telemetry, real-time secret redaction, multi-tenant routing, high-cardinality metadata.  | 50                  | \~2.1              | 8–12 GB          |
+
+### 3.2 Benchmark 2 Tiers — Apica Flow + Apica Lake (Base: 45 GB/day per vCPU)
+
+When Apica Lake (InstaStore™) indexing is active, all inbound data is written to object storage before forwarding. This I/O cost is reflected in the lower base throughput. The same workload multipliers apply.
+
+<table data-header-hidden><thead><tr><th></th><th width="251.0546875"></th><th width="130.3125"></th><th width="111.453125"></th><th></th></tr></thead><tbody><tr><td><strong>Workload tier</strong></td><td><strong>Pipeline characteristics</strong></td><td><strong>GB/day per vCPU</strong></td><td><strong>GB/hr per vCPU</strong></td><td><strong>RAM per vCPU</strong></td></tr><tr><td>Tier 1 Pass-through + Lake</td><td>Simple routing and filter only, with full InstaStore™ indexing. 1 input → Lake + 1 output.</td><td>45</td><td>~1.9</td><td>2–4 GB</td></tr><tr><td>Tier 2 Standard + Lake (Recommended)</td><td>Typical production: filter + tag + rewrite + PII redaction. InstaStore™ write + 1 downstream output. Recommended baseline for Lake deployments.</td><td>38</td><td>~1.6</td><td>4 GB</td></tr><tr><td>Tier 3 Enriched + Lake</td><td>Enrichment pipeline with Lake indexing: lookup tables, tagging, multi-destination routing plus InstaStore™.</td><td>28</td><td>~1.2</td><td>4–6 GB</td></tr><tr><td>Tier 4 Complex + Lake</td><td>Heavy transformation, crypto hashing, stateful aggregations, 3+ destinations, InstaStore™ indexing.</td><td>20</td><td>~0.8</td><td>6–8 GB</td></tr><tr><td>Tier 5 AI / LLM + Lake</td><td>Full AI/LLM observability stack with InstaStore™ indexing, prompt retention, and high-cardinality metadata.</td><td>14</td><td>~0.6</td><td>10–16 GB</td></tr></tbody></table>
+
+<table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><strong>Tier 2 (Standard)</strong> is the recommended default planning baseline for both benchmarks. Use Tier 1 only for pure pass-through deployments with no transformation rules. Use Tier 3–5 for enrichment-heavy, compliance, or AI-observability workloads.</td></tr></tbody></table>
+
+## 4. Workload Adjustment Factors
+
+The following factors reduce effective throughput from the Tier 2 baseline for each benchmark. Apply deductions multiplicatively for deployments that combine multiple factors.
+
+| **Factor**                                           | **Throughput impact**                           | **Notes**                                                                                                                                                                                                                          |
+| ---------------------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Each additional output destination beyond the first  | −15% per additional destination                 | Each Apica Flow forwarder adds outbound I/O load. Two destinations: ×0.85. Three destinations: ×0.70. Four or more: ×0.55.                                                                                                         |
+| Lookup table enrichment (tables > 1M rows)           | −10% to −20%                                    | Large lookup tables are loaded into heap memory per worker process. Provision +1–2 GB RAM per worker per large lookup table loaded.                                                                                                |
+| JavaScript CODE rule execution (ascent.\* functions) | −10% to −30%                                    | Simple field manipulation: −10%. Cryptographic functions (SHA-256, AES): −20%. Complex stateful logic with ascent.persist: −30%.                                                                                                   |
+| Stateful aggregations (cross-event state)            | −20% to −35%                                    | Deduplication counters, rate aggregations, and time-windowed metrics consume heap memory proportional to event cardinality.                                                                                                        |
+| PII / secret redaction (regex-based masking)         | −5% to −15%                                     | Simple field masking: −5%. Multi-field regex extraction and masking across large events: −15%.                                                                                                                                     |
+| Apica Lake InstaStore™ write (Benchmark 2 only)      | Already included in Benchmark 2 baselines       | The I/O cost of full InstaStore™ indexing is reflected in the Benchmark 2 baselines (Section 3.2). Do not apply an additional deduction for Lake writes when using Benchmark 2 figures.                                            |
+| Traffic spike buffer (recommended planning practice) | Plan for 2× average peak                        | Initial environment sizing should include a 2× buffer for incident-driven log volume spikes. Apica Flow’s Kubernetes HPA provides auto-scaling headroom, but initial node pool provisioning should not rely solely on autoscaling. |
+| Node redundancy (rolling restart / maintenance)      | +20% capacity above target (or +1 node minimum) | Standard HA model: maintain sufficient capacity to handle target throughput with 20% of nodes offline simultaneously. Apply as a ×1.2 multiplier to provisioned vCPU count.                                                        |
+
+## 5. Sizing Examples
+
+The following examples illustrate the full sizing calculation process for typical enterprise deployment scenarios. Both examples use a standard downstream observability tool environment — a common pattern in which Apica Flow routes telemetry to a SIEM or analytics platform and an object storage archive.
+
+### 5.1 Example A: 5 TB/day Standard Observability Pipeline (Benchmark 1 — Flow Only)
+
+&#x20;
+
+<table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><strong>Scenario:</strong> An enterprise forwards 5 TB/day of logs, metrics, and traces to Apica Flow, with routing to a downstream SIEM platform and long-term retention in S3 object storage. Pipeline includes routing rules, PII masking, and attribute tagging. Two output destinations. Apica Lake indexing is not required.</td></tr></tbody></table>
+
+| **Step** | **Calculation**                                                                                                           | **Result**                                                                                                    |
+| -------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| 1        | Select workload tier                                                                                                      | Tier 2 Standard: 140 GB/day per vCPU (PII masking, 2 destinations; adjusted from 170 GB/day Benchmark 1 base) |
+| 2        | Apply multi-destination adjustment: 2 outputs → ×0.85                                                                     | 140 × 0.85 = 119 GB/day per vCPU (effective)                                                                  |
+| 3        | Calculate raw vCPUs: 5,000 GB/day ÷ 119 GB/day per vCPU                                                                   | 42.0 → round up to 43 vCPUs                                                                                   |
+| 4        | Apply 2× peak spike buffer: 43 vCPUs × 2                                                                                  | 86 vCPUs for peak handling                                                                                    |
+| 5        | Apply +20% node redundancy: 86 vCPUs × 1.2                                                                                | 104 vCPUs total provisioned capacity                                                                          |
+| 6        | Node sizing: Intel c7i.4xlarge (16 vCPUs, 32 GB RAM). Reserve 1 vCPU per node for OS → 15 usable per node. 104 ÷ 15 = 6.9 | 7× c7i.4xlarge worker nodes (105 usable vCPUs, 224 GB RAM)                                                    |
+| 7        | RAM check: Tier 2 = 2–4 GB/vCPU. At 2 GB/vCPU: 15 vCPUs × 2 GB = 30 GB per node. c7i.4xlarge provides 32 GB.              | RAM check passed. c7i.4xlarge sufficient for Tier 2 standard workload.                                        |
+
+### 5.2 Example B: 5 TB/day with Apica Lake Indexing (Benchmark 2 — Flow + Lake)
+
+<table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><strong>Scenario:</strong> The same enterprise requires full InstaStore™ indexing into Apica Lake for forensic replay, long-term retention, and compliance archival, in addition to routing to a downstream SIEM platform. Same 5 TB/day volume, same two output destinations and PII masking. This example demonstrates the additional vCPU requirement when Lake indexing is active.</td></tr></tbody></table>
+
+| **Step** | **Calculation**                                                                                      | **Result**                                                                                                              |
+| -------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 1        | Select workload tier                                                                                 | Tier 2 Standard + Lake: 38 GB/day per vCPU (PII masking, 1 downstream output; adjusted from 45 GB/day Benchmark 2 base) |
+| 2        | Apply multi-destination adjustment: 1 downstream output beyond Lake → ×0.85                          | 38 × 0.85 = 32.3 GB/day per vCPU (effective)                                                                            |
+| 3        | Calculate raw vCPUs: 5,000 GB/day ÷ 32.3 GB/day per vCPU                                             | 154.8 → round up to 155 vCPUs                                                                                           |
+| 4        | Apply 2× peak spike buffer: 155 vCPUs × 2                                                            | 310 vCPUs for peak handling                                                                                             |
+| 5        | Apply +20% node redundancy: 310 vCPUs × 1.2                                                          | 372 vCPUs total provisioned capacity                                                                                    |
+| 6        | Node sizing: Intel c7i.4xlarge (16 vCPUs, 32 GB RAM). 1 vCPU OS reserve → 15 usable. 372 ÷ 15 = 24.8 | 25× c7i.4xlarge worker nodes (375 usable vCPUs, 800 GB RAM)                                                             |
+| 7        | RAM check: Tier 2 + Lake = 4 GB/vCPU. 15 vCPUs × 4 GB = 60 GB per node. c7i.4xlarge provides 32 GB.  | Upgrade to c7i.8xlarge (32 vCPUs, 64 GB RAM) for RAM headroom. 372 ÷ 31 = 12 nodes.                                     |
+| 8        | Revised node count with c7i.8xlarge (31 usable vCPUs): 372 ÷ 31 = 12.0                               | 12× c7i.8xlarge worker nodes (372 usable vCPUs, 768 GB RAM) — RAM verified.                                             |
+
+<table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><strong>Benchmark 1 vs. Benchmark 2 comparison:</strong> For the same 5 TB/day workload, Benchmark 1 (Flow only) requires 7× c7i.4xlarge nodes, while Benchmark 2 (Flow + Lake) requires 12× c7i.8xlarge nodes. The InstaStore™ write overhead reduces effective throughput by approximately 73% (170 vs. 45 GB/day base), which is expected given the full-indexing, infinite-retention architecture.</td></tr></tbody></table>
+
+### 5.3 Example C: 20 TB/day Enriched Observability Pipeline (Benchmark 1 — Flow Only)
+
+<table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><strong>Scenario:</strong> A large enterprise or government organisation forwards 20 TB/day of mixed telemetry (syslog, Windows events, cloud audit trails) to Apica Flow for enrichment, PII redaction, SHA-256 field hashing, and routing to a SIEM platform, an observability analytics tool, and S3 cold archive. Three output destinations.</td></tr></tbody></table>
+
+| **Step** | **Calculation**                                                                                      | **Result**                                                                                                                                              |
+| -------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1        | Select workload tier: enrichment + crypto hashing + 3 destinations                                   | Tier 3 Enriched: 100 GB/day per vCPU (Benchmark 1 base)                                                                                                 |
+| 2        | Multi-destination: 3 outputs → ×0.70 (2 × 15% deduction)                                             | 100 × 0.70 = 70 GB/day per vCPU effective                                                                                                               |
+| 3        | Raw vCPUs: 20,000 GB/day ÷ 70 GB/day per vCPU                                                        | 286 → round up to 288 vCPUs                                                                                                                             |
+| 4        | 2× peak buffer: 288 × 2                                                                              | 576 vCPUs peak                                                                                                                                          |
+| 5        | +20% redundancy: 576 × 1.2                                                                           | 692 vCPUs total provisioned                                                                                                                             |
+| 6        | Node sizing: Intel c7i.4xlarge (16 vCPUs, 32 GB RAM). 1 vCPU OS reserve → 15 usable. 692 ÷ 15 = 46.1 | 47× c7i.4xlarge nodes (705 usable vCPUs, 1.5 TB RAM pool)                                                                                               |
+| 7        | RAM check: Tier 3 = 4–6 GB/vCPU. At 4 GB/vCPU: 15 × 4 = 60 GB per node. c7i.4xlarge provides 32 GB.  | Upgrade to c7i.8xlarge (32 vCPUs, 64 GB RAM). 692 ÷ 31 = 22.3 → 23 nodes.                                                                               |
+| 8        | Final: 23× c7i.8xlarge (31 usable per node × 23 = 713 vCPUs, 64 GB RAM per node)                     | 23× c7i.8xlarge worker nodes. RAM check: 31 × 4 GB = 124 GB needed vs. 64 GB available — use c7i.16xlarge (64 vCPUs, 128 GB). 692 ÷ 63 = 11 nodes.      |
+| 9        | Final verified: 11× c7i.16xlarge (64 vCPUs, 128 GB RAM). 63 usable × 11 = 693 vCPUs.                 | 11× c7i.16xlarge worker nodes (693 usable vCPUs, 1.4 TB RAM). Throughput verified: 693 × 70 = 48,510 GB/day — covers 20 TB/day with peak + HA headroom. |
+
+## 6. Quick Reference Sizing Cards
+
+Use the cards below for initial sizing conversations, capacity planning, and RFP responses. All figures assume Intel x86 vCPUs with hyperthreading, Tier 2 Standard workload (recommended default), 2× peak spike buffer, and +20% node redundancy (+1.2× HA factor).
+
+Node sizing uses AWS c7i family (Intel Ice Lake) as the reference instance type. Equivalent instance types from other providers may be substituted using the same vCPU and RAM ratios.
+
+Each card shows two distinct resource pools that must be provisioned together for a complete deployment:
+
+* Ingest tier (variable): vCPUs, RAM, and disk that scale with daily ingest volume. Values vary per row.
+* Core components (static): A fixed overhead of 10 vCPU + 28 GB RAM + 150 GB disk for the Apica Flow UI and data processing services. This is identical across all ingest volumes and both benchmarks. Provision as a dedicated node or reserved capacity within the cluster.
+
+<table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top">* Ingest vCPUs include 2× peak spike buffer and ×1.2 HA redundancy (Tier 2 Standard baseline). † RAM: 2 GB/vCPU for Benchmark 1 (Flow only); 4 GB/vCPU for Benchmark 2 (Flow + Lake). ‡ Disk (Benchmark 2 only): 5 GB/ingest pod minimum; 50 GB/ingest pod recommended starting point (1 pod per 4 ingest vCPUs). For deployments exceeding 10 TB/day, contact Apica engineering for a formal architecture review.</td></tr></tbody></table>
+
+<table data-header-hidden><thead><tr><th valign="top"></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td valign="top"><strong>QUICK REFERENCE — Benchmark 1: Apica Flow Only (Non-Indexing)</strong></td><td></td><td></td><td></td><td></td></tr><tr><td valign="top">Daily ingest volume</td><td>Ingest vCPUs*</td><td>AWS Intel nodes (ingest tier)</td><td>Ingest RAM (2 GB/vCPU)</td><td>Core components (static, all volumes)†</td></tr><tr><td valign="top">50 GB/day</td><td>1 vCPU</td><td>2× c7i.2xlarge</td><td>~2 GB</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">100 GB/day</td><td>2 vCPUs</td><td>2× c7i.2xlarge</td><td>~4 GB</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">250 GB/day</td><td>5 vCPUs</td><td>2× c7i.2xlarge</td><td>~10 GB</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">500 GB/day</td><td>9 vCPUs</td><td>3× c7i.2xlarge</td><td>~18 GB</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">1 TB/day</td><td>17 vCPUs</td><td>4× c7i.2xlarge</td><td>~34 GB</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">2 TB/day</td><td>34 vCPUs</td><td>4× c7i.4xlarge</td><td>~68 GB</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">5 TB/day</td><td>84 vCPUs</td><td>8× c7i.4xlarge</td><td>~168 GB</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">10 TB/day</td><td>167 vCPUs</td><td>14× c7i.4xlarge</td><td>~334 GB</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr></tbody></table>
+
+**Benchmark 1 Notes:** \* Ingest vCPUs include 2× peak spike buffer + ×1.2 HA redundancy (Tier 2 Standard baseline).  † Core components (UI + data processing) are static and must be added to the ingest tier totals: +10 vCPU, +28 GB RAM, +150 GB disk. Provision as a dedicated node or reserved capacity within the cluster.
+
+<table data-header-hidden><thead><tr><th valign="top"></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td valign="top"><strong>QUICK REFERENCE — Benchmark 2: Apica Flow + Apica Lake (Indexing)</strong></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td valign="top">Daily ingest volume</td><td>Ingest vCPUs*</td><td>AWS Intel nodes (ingest tier)</td><td>Ingest RAM (4 GB/vCPU†)</td><td>Disk — ingest pods (B2 only)‡</td><td>Core components (static, all volumes)§</td></tr><tr><td valign="top">50 GB/day</td><td>4 vCPUs</td><td>2× c7i.2xlarge</td><td>~16 GB</td><td>5 GB min 50 GB rec</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">100 GB/day</td><td>7 vCPUs</td><td>2× c7i.2xlarge</td><td>~28 GB</td><td>10 GB min 100 GB rec</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">250 GB/day</td><td>16 vCPUs</td><td>4× c7i.2xlarge</td><td>~64 GB</td><td>20 GB min 200 GB rec</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">500 GB/day</td><td>32 vCPUs</td><td>4× c7i.4xlarge</td><td>~128 GB</td><td>40 GB min 400 GB rec</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">1 TB/day</td><td>63 vCPUs</td><td>7× c7i.4xlarge</td><td>~252 GB</td><td>80 GB min 800 GB rec</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">2 TB/day</td><td>126 vCPUs</td><td>11× c7i.4xlarge</td><td>~504 GB</td><td>160 GB min ~1.6 TB rec</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">5 TB/day</td><td>314 vCPUs</td><td>24× c7i.4xlarge</td><td>~1.3 TB</td><td>395 GB min ~4.0 TB rec</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr><tr><td valign="top">10 TB/day</td><td>628 vCPUs</td><td>46× c7i.4xlarge</td><td>~2.5 TB</td><td>785 GB min ~7.8 TB rec</td><td>10 vCPU + 28 GB RAM + 150 GB disk</td></tr></tbody></table>
+
+**Benchmark 2 Notes:**&#x20;
+
+* \*Ingest vCPUs include 2× peak spike buffer + ×1.2 HA redundancy (Tier 2 Standard baseline).  † 4 GB/vCPU RAM for Lake indexing write buffer and enrichment overhead.
+* ‡ Disk per ingest pod: 5 GB minimum, 50 GB recommended starting point. Calculated at 1 pod per 4 ingest vCPUs. Provision SSD-backed storage.  § Core components (UI + data processing) are static and must be added to ingest tier totals: +10 vCPU, +28 GB RAM, +150 GB disk. Provision as dedicated node or reserved cluster capacity.
+
+## 7. Memory (RAM) and Disk Sizing Guidelines
+
+Apica Flow deployments consist of two distinct resource pools: the variable ingest tier (which scales with throughput) and the static core component tier (UI and data processing services). Both must be provisioned independently. RAM and disk guidelines below apply to both Benchmark 1 and Benchmark 2 unless otherwise noted.
+
+### 7.1 RAM Sizing Guidelines
+
+| **Component**                                            | **RAM allocation**                    | **Notes**                                                                                                                                                                                                                                                            |
+| -------------------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Core components (UI + data processing) — static overhead | 28 GB RAM (fixed, all volumes)        | Fixed allocation for Apica Flow UI services and data processing components. This is independent of ingest volume and identical across both Benchmark 1 and Benchmark 2. Provision as a dedicated node or reserved capacity. Not scaled with additional ingest vCPUs. |
+| Base heap per ingest vCPU (worker process)               | 2 GB per vCPU (minimum)               | Benchmark 1 (Flow only). Starting point for Tier 1 and Tier 2 ingest workloads. Sufficient for standard filtering, routing, and PII redaction pipelines.                                                                                                             |
+| Ingest heap per vCPU (Benchmark 2 — Flow + Lake)         | 4 GB per vCPU                         | Benchmark 2 (Flow + Lake). Higher RAM per vCPU accounts for InstaStore™ write buffer, Lake indexing overhead, and enrichment pipeline memory requirements.                                                                                                           |
+| Lookup table enrichment (large tables > 100K rows)       | +1 GB per vCPU per large lookup table | GeoIP, CMDB lookups, user/asset databases. Large lookup tables are loaded entirely into heap per worker process.                                                                                                                                                     |
+| Stateful aggregations (cross-event state)                | +2–4 GB per vCPU                      | Deduplication windows, rolling counters, time-windowed metrics. Higher event cardinality requires proportionally more RAM.                                                                                                                                           |
+| InstaStore™ object storage buffer (Benchmark 2 only)     | External memory — governed by OS      | In-memory buffers for object storage writes are allocated outside the configurable heap limit. This is automatically managed by the Apica Flow process and the underlying OS.                                                                                        |
+| AI / LLM telemetry workloads (Tier 5)                    | 8–12 GB per vCPU                      | High-cardinality metadata (model IDs, tenant IDs, session contexts), prompt/response body buffering, and real-time cost correlation tables.                                                                                                                          |
+| Recommended minimum node RAM (any tier)                  | 16 GB per node (32–64 GB recommended) | Below 16 GB, OS overhead and heap fragmentation reduce effective throughput. Production nodes should have a minimum of 32 GB RAM.                                                                                                                                    |
+
+### 7.2 Disk Sizing Guidelines
+
+| **Component**                                                 | **Disk allocation**                        | **Notes**                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Core components (UI + data processing) — static overhead      | 150 GB disk (fixed, all volumes)           | Fixed disk allocation for Apica Flow UI services, configuration storage, and data processing components. Applies to both Benchmark 1 and Benchmark 2. This does not scale with ingest volume.                                                                                                                                                 |
+| Ingest pod disk (Benchmark 2 only — Flow + Lake)              | 5 GB min per pod 50 GB recommended per pod | Disk per ingest pod for the persistence queue and write buffer used during InstaStore™ indexing. Minimum: 5 GB per ingest pod. Recommended starting point: 50 GB per ingest pod. Provision SSD-backed storage. Disk scales with the number of ingest pods (1 pod per ∼4 ingest vCPUs). Not applicable to Benchmark 1 (Flow only) deployments. |
+| Persistent queue buffer (both benchmarks — disaster recovery) | 50–100 GB SSD per node                     | Apica Flow’s persistence queue for forwarder buffers during destination outages. SSD-backed storage required for low-latency queue drain on destination recovery. This is in addition to the ingest pod disk allocation for Benchmark 2.                                                                                                      |
+| InstaStore™ object storage (Benchmark 2 only)                 | External object storage (S3-compatible)    | Long-term telemetry retention in Apica Lake is written to external object storage (S3-compatible). Provision object storage capacity separately based on daily ingest volume, retention period, and compression ratio. This is not local disk on the Apica Flow nodes.                                                                        |
+
+## 8. Sizing Formula Summary
+
+Use the following formula for all Apica Flow environment sizing calculations. Apply it independently for Benchmark 1 (Flow only) and Benchmark 2 (Flow + Lake) using the appropriate tier baseline from Section 3. The formula produces the ingest tier vCPU requirement. Always add the static core component overhead separately.
+
+<table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><p>Ingest tier vCPUs =</p><p>( Daily_GB_IN ÷ Tier_Baseline_GB_per_vCPU )</p><p>× Destination_Adjustment_Factor</p><p>× Peak_Spike_Multiplier (default: 2.0×)</p><p>× HA_Redundancy_Factor (default: 1.2×)</p><p>Total deployment = Ingest tier vCPUs  +  10 vCPU (core components, static)</p></td></tr></tbody></table>
+
+### 8.1 Formula Variables
+
+| **Variable**                                      | **Values**                                                                                                                                                                                                                        |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tier\_Baseline\_GB\_per\_vCPU                     | Benchmark 1 (Flow only): 170 (Tier 1), 140 (Tier 2—recommended), 100 (Tier 3), 70 (Tier 4), 50 (Tier 5) Benchmark 2 (Flow + Lake): 45 (Tier 1), 38 (Tier 2—recommended), 28 (Tier 3), 20 (Tier 4), 14 (Tier 5)                    |
+| Destination\_Adjustment\_Factor                   | 1.00 (1 destination)  \|  0.85 (2 destinations)  \|  0.70 (3 destinations)  \|  0.55 (4+ destinations)                                                                                                                            |
+| Peak\_Spike\_Multiplier                           | 2.0× (standard)  \|  3.0× for bursty sources (e.g. Monday morning Windows Event log spikes or periodic batch pulls)                                                                                                               |
+| HA\_Redundancy\_Factor                            | 1.2× (standard: 1 node offline)  \|  1.5× (high availability: 2 nodes offline simultaneously)                                                                                                                                     |
+| Static core components (additive, not multiplied) | Add +10 vCPU, +28 GB RAM, +150 GB disk to the ingest tier total for all deployments (both Benchmark 1 and Benchmark 2). Provision as a dedicated node or reserved cluster capacity. These values do not scale with ingest volume. |
+| Disk — ingest pods (Benchmark 2 only)             | Ingest pods = ceil(Ingest\_vCPUs ÷ 4). Disk per pod: 5 GB minimum, 50 GB recommended. Total disk (recommended) = Ingest\_pods × 50 GB. SSD-backed storage required. Not applicable to Benchmark 1.                                |
+
+## 9. Additional Sizing Guidance
+
+### 9.1 Static Core Components
+
+Every Apica Flow deployment — regardless of ingest volume or benchmark — requires the following fixed resource allocation for the UI and data processing tier. These are not ingest workers; they are the platform services that support pipeline management, observability, and control-plane operations.
+
+•       vCPU: 10 vCPUs (fixed, all deployment sizes)
+
+•       RAM: 28 GB (fixed, all deployment sizes)
+
+•       Disk: 150 GB (fixed, all deployment sizes)
+
+Provision these on a dedicated node or as reserved capacity within the Kubernetes cluster. They should not compete with ingest pod scheduling.
+
+### 9.2 Minimum and Maximum Node Sizes
+
+* Recommended minimum node size: 8 vCPUs. Below this threshold, OS overhead claims an excessive percentage of available capacity.
+* Recommended maximum node size: 48 vCPUs. Above this threshold, persistent queue disk I/O becomes a constraint on Apica Flow’s forwarder buffer performance.
+* Recommended minimum node RAM: 16 GB. Production nodes should have a minimum of 32–64 GB RAM.
+
+### 9.3 Kubernetes Autoscaling
+
+Apica Flow runs natively on Kubernetes and supports Horizontal Pod Autoscaler (HPA) configuration. HPA provides elasticity for sustained traffic increases, but initial node pool provisioning should not rely solely on autoscaling. Size the base node pool to handle target throughput at the 2× peak level before HPA scale-out triggers.
+
+### 9.4 Persistent Queue and Ingest Pod Disk Sizing
+
+•       Persistent queue (both benchmarks): Provision 50–100 GB SSD-backed storage per node for Apica Flow’s forwarder persistence queue. The persistent queue is the recovery buffer used during destination outages. SSD-backed storage is required for low-latency queue drain when destinations recover.
+
+•       Ingest pod disk (Benchmark 2 only): Provision a minimum of 5 GB per ingest pod, with 50 GB per pod as the recommended starting point. Calculated at approximately 1 pod per 4 ingest vCPUs. Provision SSD-backed storage. Scale with the number of ingest pods, not the number of nodes.
+
+•       Core component disk (both benchmarks): 150 GB fixed. Not scaled with ingest volume.
+
+•       InstaStore™ object storage (Benchmark 2 only): Provision external S3-compatible object storage based on daily ingest volume × retention days × compression factor. This is not local disk on the Apica Flow nodes.
+
+### 9.5 Scaling Beyond 10 TB/day
+
+For any deployment exceeding 10 TB/day — whether using Benchmark 1 (Flow only) or Benchmark 2 (Flow + Lake) — Apica recommends a formal architecture review with Apica engineering to account for:
+
+•       Cluster topology and network bandwidth between worker nodes
+
+•       InstaStore™ object storage throughput and I/O parallelism requirements
+
+•       Regional distribution, multi-cluster federation, and disaster recovery architecture
+
+•       Downstream observability tool ingestion rate limits and back-pressure handling
+
+&#x20;
+
+**Contact Apica at support@apica.io or via your account team for architecture review support.**
