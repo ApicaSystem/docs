@@ -37,8 +37,6 @@ Both benchmarks were executed under identical, controlled test environment condi
 
 <table data-header-hidden><thead><tr><th width="191.93359375"></th><th width="172.99609375"></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Benchmark</strong></td><td><strong>Measured throughput (GB/day per vCPU)</strong></td><td><strong>Measured throughput (GB/hour per vCPU)</strong></td><td><strong>Test environment for Ingest Components (vCPU / RAM)</strong></td></tr><tr><td><mark style="color:purple;"><strong>APICA FLOW ONLY (Non-Indexing, no Apica Lake)</strong></mark></td><td><mark style="color:purple;"><strong>170 GB/day</strong></mark></td><td><mark style="color:purple;"><strong>~7.1 GB/hr</strong></mark></td><td><mark style="color:purple;"><strong>1 vCPU / 2 GB RAM</strong></mark></td></tr><tr><td><mark style="color:purple;"><strong>APICA FLOW + LAKE (Indexing with InstaStore™ write)</strong></mark></td><td><mark style="color:purple;"><strong>45 GB/day</strong></mark></td><td><mark style="color:purple;"><strong>~1.9 GB/hr</strong></mark></td><td><mark style="color:purple;"><strong>1 vCPU / 2 GB RAM</strong></mark></td></tr></tbody></table>
 
-
-
 <table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><strong>Important</strong>: These measurements reflect a 1 vCPU / 2 GB RAM test environment for data ingest components. Production deployments benefit from linear throughput scaling with additional vCPUs. Apply the workload adjustment factors in Section 4 and the sizing formula in Section 7 to derive production environment requirements from these baselines.</td></tr></tbody></table>
 
 ### 2.3 Data Ingest Sizing Assumptions
@@ -62,11 +60,11 @@ The following assumptions apply to both benchmark measurements and all sizing ca
 
 The benchmark baselines in Section 2 represent controlled, single-worker measurements. Real-world pipelines include transformation rules, enrichment functions, multiple output destinations, and stateful processing that reduce effective throughput. The following tiers apply to both benchmarks.
 
-### 3.1 Benchmark 1 Tiers — Apica Flow Only (Base: 170 GB/day per vCPU)
+### 3.1 Benchmark 1 Tiers — Apica Flow Only
 
 <table data-header-hidden><thead><tr><th width="157.203125"></th><th></th><th></th><th width="159.671875"></th><th></th></tr></thead><tbody><tr><td><strong>Workload tier</strong></td><td><strong>Pipeline characteristics</strong></td><td><strong>GB/day per vCPU</strong></td><td><strong>GB/hr per vCPU</strong></td><td><strong>RAM per vCPU</strong></td></tr><tr><td>Tier 1 Pass-through</td><td>Simple routing and filter rules only. 1 input → 1 output. No transformation.</td><td>170</td><td>~7.1</td><td>2 GB</td></tr><tr><td>Tier 2 Standard (Recommended)</td><td>Typical production pipeline. Filter + tag + rewrite + PII redaction. 1 input → 2 outputs (e.g. SIEM + S3). Recommended planning baseline.</td><td>140</td><td>~5.8</td><td>2–4 GB</td></tr><tr><td>Tier 3 Enriched</td><td>Enrichment-heavy: lookup tables, attribute-based tagging, multi-destination SIEM routing with load balancing.</td><td>100</td><td>~4.2</td><td>4–6 GB</td></tr><tr><td>Tier 4 Complex</td><td>Heavy transformation: cryptographic hashing (SHA-256/AES), stateful aggregations, cross-event persistence, 3+ destinations, custom forwarders.</td><td>70</td><td>~2.9</td><td>6–8 GB</td></tr><tr><td>Tier 5 AI / LLM</td><td>LLM/AI observability: token tracking, prompt/response telemetry, real-time secret redaction, multi-tenant routing, high-cardinality metadata.</td><td>50</td><td>~2.1</td><td>8–12 GB</td></tr></tbody></table>
 
-### 3.2 Benchmark 2 Tiers — Apica Flow + Apica Lake (Base: 45 GB/day per vCPU)
+### 3.2 Benchmark 2 Tiers — Apica Flow + Apica Lake
 
 When Apica Lake (InstaStore™) indexing is active, all inbound data is written to object storage before forwarding. This I/O cost is reflected in the lower base throughput. The same workload multipliers apply.
 
