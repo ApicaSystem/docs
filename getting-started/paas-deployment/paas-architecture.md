@@ -35,10 +35,9 @@ Both benchmarks were executed under identical, controlled test environment condi
 
 ### &#x20;2.2 Measured Benchmark Results
 
-| **Benchmark**                                                          | **Measured throughput (GB/day per vCPU)** | **Measured throughput (GB/hour per vCPU)** | **Test environment for Ingest Components (vCPU / RAM)** |
-| ---------------------------------------------------------------------- | ----------------------------------------- | ------------------------------------------ | ------------------------------------------------------- |
-| Benchmark 1: Apica Flow Only (Non-Indexing, no Apica Lake)             | 170 GB/day                                | \~7.1 GB/hr                                | 1 vCPU / 2 GB RAM                                       |
-| Benchmark 2: Apica Flow + Apica Lake (Indexing with InstaStore™ write) | 45 GB/day                                 | \~1.9 GB/hr                                | 1 vCPU / 2 GB RAM                                       |
+<table data-header-hidden><thead><tr><th width="191.93359375"></th><th width="172.99609375"></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Benchmark</strong></td><td><strong>Measured throughput (GB/day per vCPU)</strong></td><td><strong>Measured throughput (GB/hour per vCPU)</strong></td><td><strong>Test environment for Ingest Components (vCPU / RAM)</strong></td></tr><tr><td><mark style="color:purple;"><strong>APICA FLOW ONLY (Non-Indexing, no Apica Lake)</strong></mark></td><td><mark style="color:purple;"><strong>170 GB/day</strong></mark></td><td><mark style="color:purple;"><strong>~7.1 GB/hr</strong></mark></td><td><mark style="color:purple;"><strong>1 vCPU / 2 GB RAM</strong></mark></td></tr><tr><td><mark style="color:purple;"><strong>APICA FLOW + LAKE (Indexing with InstaStore™ write)</strong></mark></td><td><mark style="color:purple;"><strong>45 GB/day</strong></mark></td><td><mark style="color:purple;"><strong>~1.9 GB/hr</strong></mark></td><td><mark style="color:purple;"><strong>1 vCPU / 2 GB RAM</strong></mark></td></tr></tbody></table>
+
+
 
 <table data-header-hidden><thead><tr><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><strong>Important</strong>: These measurements reflect a 1 vCPU / 2 GB RAM test environment for data ingest components. Production deployments benefit from linear throughput scaling with additional vCPUs. Apply the workload adjustment factors in Section 4 and the sizing formula in Section 7 to derive production environment requirements from these baselines.</td></tr></tbody></table>
 
