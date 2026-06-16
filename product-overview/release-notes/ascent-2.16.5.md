@@ -6,13 +6,18 @@
 
 * **More control over integration visibility** — Integration access can now be limited to people who hold View permission, so only the right team members can see how integrations are set up.
 
+#### Improvements
+
+* **Stronger access control on forwarders** — Access policies are now enforced on forwarders, keeping forwarder access aligned with the same permission rules used across the platform.
+
 #### Bug Fixes
 
+* Access to one source extension no longer reveals all source extensions.
 * Fixed an issue where access permissions could occasionally behave differently across parts of a deployment. Permissions now stay consistent across the board.
 
 ***
 
-### Ascent Synthetics
+### Vanguard
 
 #### Improvements
 
@@ -20,6 +25,7 @@
 
 #### Bug Fixes
 
+* Some checks that previously failed to load screenshots now display them correctly.
 * The "Hide Empty Group" checkbox in check views now works as expected.
 
 ***
