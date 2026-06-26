@@ -298,7 +298,7 @@ Use these same command to apply updates whenever there is a new version of the H
 
 ### Post-Install Configuration
 
-**It is essential to configure outbound email for your Ascent deployment.
+**WARNING!<br>It is essential to configure outbound email for your Ascent deployment.
 Without this, password resets will not work.**
 
 To configure outbound email, navigate to the Settings menu via your username at
