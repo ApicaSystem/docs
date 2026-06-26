@@ -295,3 +295,30 @@ helm upgrade --install apica-ascent \
 ```
 
 Use these same command to apply updates whenever there is a new version of the Helm chart or a new version of Apica Ascent.
+
+### Post-Install Configuration
+
+**It is essential to configure outbound email for your Ascent deployment.
+Without this, password resets will not work.**
+
+To configure outbound email, navigate to the Settings menu via your username at
+the top right of the page. Within Settings, select the Mail tab and fill in the
+form fields with the appropriate details of your SMTP service:
+* Mail Server: The hostname or IP address of the outbound mail server.
+* Mail Port: The TCP port to which the Ascent client should connect. This is
+  typically 25 (SMTP), 587 (submission), or 465 (SMTPS).
+* Mail Username: If your mail server requires a username, enter it here.
+* Mail Password: If your mail server requires a password, enter it here.
+* Mail Default Sender: The email address that will be used as the sender/from
+  in outgoing mail.
+
+#### SSL/TLS Mail Options
+
+To configure transport security, select ONE of the following options.
+
+TLS Enabled: Select this option if your mail server uses implicit TLS
+negotiation, also known as `STARTTLS`.
+
+SSL Enabled: Select this option if your mail server expects TLS negotiation
+immediately upon connect. Typically this is used when the server is configured
+for SMTPS (port 465).
