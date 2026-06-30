@@ -200,6 +200,7 @@
     * [Prometheus Statsd Exporter](integrations/list-of-integrations/prometheus/prometheus-statsd-exporter.md)
     * [Prometheus on Windows](integrations/list-of-integrations/prometheus/prometheus-on-windows.md)
     * [Spring Boot](integrations/list-of-integrations/prometheus/spring-boot.md)
+  * [Redpanda Connect](integrations/list-of-integrations/redpanda-connect.md)
   * [Rsyslogd](integrations/list-of-integrations/rsyslogd.md)
   * [Syslog](integrations/list-of-integrations/syslog.md)
   * [Syslog-ng](integrations/list-of-integrations/syslog-ng.md)
@@ -211,7 +212,6 @@
     * [Audit Vault Logs - AWS](integrations/list-of-integrations/vault/audit-vault-logs-aws.md)
     * [Audit Vault Logs - OCI](integrations/list-of-integrations/vault/audit-vault-logs-oci.md)
     * [Audit Vault Metrics](integrations/list-of-integrations/vault/audit-vault-metrics.md)
-  * [Redpanda Connect](integrations/list-of-integrations/redpanda-connect.md)
 * [Apica Product API Portal](https://apidocs.apica.io/)
 
 ## DATA MANAGEMENT
