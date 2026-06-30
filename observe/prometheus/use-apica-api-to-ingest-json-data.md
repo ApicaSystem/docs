@@ -11,7 +11,7 @@ description: >-
 * Ingest Token ([Generating a secure ingest token](https://docs.apica.io/integrations/overview/generating-a-secure-ingest-token))
 * Domain name (mydomain.apica.io)
 
-**Request**&#x20;
+**Request**
 
 Endpoint
 
@@ -86,7 +86,7 @@ _Namespace & Application is generated automatically based on your request. If ei
 
 Using Json Example 1, this is how the results look like in your environment
 
-<figure><img src="../../.gitbook/assets/image (421).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (420).png" alt=""><figcaption></figcaption></figure>
 
 **Response**
 

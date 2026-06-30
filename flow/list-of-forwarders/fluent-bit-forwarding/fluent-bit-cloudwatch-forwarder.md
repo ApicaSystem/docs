@@ -83,9 +83,9 @@ Environment="AWS_REGION=us-east-1"
 
 This can be done in multiple ways:
 
-1\.        Environment variables:\
-&#x20;  a.  Run the following command on your server or run fluent-bit in shell: `sudo systemctl edit fluent-bit.service`\
-&#x20;  b.  Add the following to the file:
+1\. Environment variables:\
+a. Run the following command on your server or run fluent-bit in shell: `sudo systemctl edit fluent-bit.service`\
+b. Add the following to the file:
 
 ```
 Environment=”AWS_ACCESS_KEY_ID=<your-access-key-id>”
@@ -93,7 +93,7 @@ Environment=”AWS_SECRET_ACCESS_KEY=<your-secret-access-key>”
 Environment=”AWS_SESSION_TOKEN=<optional-if-using-temp-credentials>”
 ```
 
-&#x20;  c.  Then run the following commands:
+c. Then run the following commands:
 
 ```
 export AWS_ACCESS_KEY_ID=<your-access-key-id>
@@ -101,14 +101,14 @@ export AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
 export AWS_SESSION_TOKEN=<optional-if-using-temp-credentials>
 ```
 
-2\.        Add the following to your CloudWatch output plugin:
+2\. Add the following to your CloudWatch output plugin:
 
 ```
 Aws_key_id        <your-access-key-id>
 Aws_sec_key       <your-secret-access-key>
 ```
 
-3\.        AWS shared credentials / IAM role:\
+3\. AWS shared credentials / IAM role:\
 Fluent Bit can also pick up credentials from `~/.aws/credentials` or from EC2/ECS IAM role if running in AWS.
 
 #### 5. (Optional) Test the Forwarder Locally
@@ -186,15 +186,15 @@ You will need to add the following AWS IAM policy. You can change the resource i
 
 #### 7. Setup a JavaScript Code Forwarder
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to Integrations → Forwarders → Forwarders
+2\. Navigate to Integrations → Forwarders → Forwarders
 
-3\.     Click on Add Forwarder
+3\. Click on Add Forwarder
 
-4\.     Select the JavaScript code Forwarder
+4\. Select the JavaScript code Forwarder
 
-5\.     Edit the fields to your needs, in this example we use the following:
+5\. Edit the fields to your needs, in this example we use the following:
 
 ```
 let cfg = {
@@ -209,27 +209,27 @@ let ret = fetchSync("http://<serverIP>:4318/", cfg);
 console.log("Response from the endpoint:", ret);
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1149).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1147).png" alt=""><figcaption></figcaption></figure>
 
 #### 8. Set up pipelines in Apica Ascent to meet your needs
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to Explore → Pipelines → Pipelines
+2\. Navigate to Explore → Pipelines → Pipelines
 
-3\.     Create one or multiple pipelines (you should use the stream rule if you don’t want all logs in the namespace + application to be forwarded)
+3\. Create one or multiple pipelines (you should use the stream rule if you don’t want all logs in the namespace + application to be forwarded)
 
-4\.     Apply the pipelines to the logs that you want to forward
+4\. Apply the pipelines to the logs that you want to forward
 
 #### 9. Map the forwarder that you will use on your logs that you want to forward
 
 This can be done in two ways:
 
-1\.     This method requires pipelines.\
+1\. This method requires pipelines.\
 In the pipelines page hover over the three dots on the right on your pipeline and click on Map Forwarder.\
 Select your forwarder (deselect the default forwarder if you only want your new forwarder) and click on OK
 
-2\.     This method can be done with or without pipelines.\
+2\. This method can be done with or without pipelines.\
 Navigate to Explore → Logs & Insights
 
 Select the logs that you want to forward, hover over the three dots on the right at the top of the list and click on Map Forwarder.\

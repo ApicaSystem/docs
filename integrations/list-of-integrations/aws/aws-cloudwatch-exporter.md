@@ -106,7 +106,7 @@ Logstash comes with no default configuration. Create a new file `/etc/logstash/c
 You need to download and place the FlattenJSON.rb file in your local before you run the Logstash
 {% endhint %}
 
-{% file src="../../../.gitbook/assets/flattenJSON (1).rb" %}
+{% file src="../../../.gitbook/assets/flattenJSON.rb" %}
 
 ```
 input {

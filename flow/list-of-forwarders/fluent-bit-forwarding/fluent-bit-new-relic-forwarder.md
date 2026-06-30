@@ -58,15 +58,15 @@ If your New Relic environment is in the US the Base\_uri field is not required a
 
 #### 4. Set up a JavaScript code Forwarder
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to **Integrations → Forwarders → Forwarders**
+2\. Navigate to **Integrations → Forwarders → Forwarders**
 
-3\.     Click on Add Forwarder
+3\. Click on Add Forwarder
 
-4\.     Select the JavaScript code Forwarder
+4\. Select the JavaScript code Forwarder
 
-5\.     Edit the fields to your needs, in this example we use the following:
+5\. Edit the fields to your needs, in this example we use the following:
 
 ```
 let cfg = {
@@ -81,27 +81,27 @@ let ret = fetchSync("http://<serverIP>:4318/", cfg);
 console.log("Response from the endpoint:", ret);
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1214).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1147).png" alt=""><figcaption></figcaption></figure>
 
 #### 5. Set up pipelines in Apica Ascent to your needs
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to **Explore → Pipelines → Pipelines**
+2\. Navigate to **Explore → Pipelines → Pipelines**
 
-3\.     Create one or multiple pipelines (you should use the stream rule if you don’t want all logs in the namespace + application to be forwarded)
+3\. Create one or multiple pipelines (you should use the stream rule if you don’t want all logs in the namespace + application to be forwarded)
 
-4\.     Apply the pipelines to the logs that you want to forward
+4\. Apply the pipelines to the logs that you want to forward
 
 #### 6. Map the forwarder that you will use on your logs that you want to forward
 
 This can be done in two ways:
 
-1\.     This method requires pipelines.\
+1\. This method requires pipelines.\
 In the pipelines page hover over the three dots on the right on your pipeline and click on Map Forwarder.\
 Select your forwarder (deselect the default forwarder if you only want your new forwarder) and click on OK
 
-2\.     This method can be done with or without pipelines.\
+2\. This method can be done with or without pipelines.\
 Navigate to **Explore → Logs & Insights**
 
 Select the logs that you want to forward, hover over the three dots on the right at the top of the list and click on Map Forwarder.\
@@ -109,11 +109,11 @@ Select your forwarder (deselect the default forwarder if you only want your new 
 
 #### 7. Verify that your logs arrive at the end destination
 
-1\.        Navigate to your New Relic environment
+1\. Navigate to your New Relic environment
 
-2\.        Navigate to **Logs > Logs**
+2\. Navigate to **Logs > Logs**
 
-3\.        You should see your logs if everything is set up correctly and the agent is able to connect
+3\. You should see your logs if everything is set up correctly and the agent is able to connect
 
 <figure><img src="../../../.gitbook/assets/image (1215).png" alt=""><figcaption></figcaption></figure>
 

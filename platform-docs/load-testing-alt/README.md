@@ -34,7 +34,7 @@ The process of creating and uploading a script within ALT includes the following
 
 ALT is a solution consisting of two components, but even though both products are useful by themselves, they should be considered and used as an integrated whole in order to get the most out of load testing. With this integration, scripts and results can be uploaded and downloaded freely between ZebraTester and Apica Load Test:
 
-<img src="../../.gitbook/assets/image (603).png" alt="" data-size="original">&#x20;
+![](<../../.gitbook/assets/image (602).png>)
 
 ### 1. Performance Management with the Apica Load Test Portal <a href="#id-1.-performance-management-with-the-apica-load-test-portal" id="id-1.-performance-management-with-the-apica-load-test-portal"></a>
 
@@ -79,4 +79,4 @@ Apica ZebraTester is an enterprise-grade load and stress-testing product trusted
 
 Apica ZebraTester executes web load tests up to nearly unlimited levels at a depth unparalleled by other testing tools. A powerful GUI allows you to create sophisticated, custom load test scripts easily and intuitively.
 
-<figure><img src="../../.gitbook/assets/image (606).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (605).png" alt="" width="563"><figcaption></figcaption></figure>

@@ -22,7 +22,7 @@ Persistence queues can be configured while **creating or updating** a forwarder.
 * Navigate to the **Forwarders** tab.
 *   Click **Add Forwarder** (top-right) to open the _Create Forwarder_ modal.
 
-    <figure><img src="../.gitbook/assets/image (1244).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (1243).png" alt=""><figcaption></figcaption></figure>
 
 ### Persistence Queue Settings
 
@@ -35,7 +35,7 @@ You will find the following three settings related to the persistence queue:
        2. This is calculated as:
 
        **Total allowed space (1 GB) − Space used by all existing forwarders.**
-2. **Persist Buffer** :&#x20;
+2. **Persist Buffer** :
    1. A toggle to **enable or disable persistence**.
    2. **Important Notes:**
       1. When persistence is **disabled**:
@@ -58,8 +58,6 @@ You will find the following three settings related to the persistence queue:
     * Returns **HTTP 429 (Too Many Requests)** with a retry signal
     * Continues blocking until backpressure is relieved
 
-
-
 #### Finalizing Forwarder Creation
 
 *   Fill in the other details and click on create. On successful creating, forwarder will be shown on list.
@@ -78,5 +76,4 @@ You will find the following three settings related to the persistence queue:
 * From the list Select your Forwarder and click on OK.
 * Your Forwarder should show up in the list, and mapped to the flow you selected.
 
-<figure><img src="../.gitbook/assets/image (1249).png" alt=""><figcaption></figcaption></figure>
-
+<figure><img src="../.gitbook/assets/image (1248).png" alt=""><figcaption></figcaption></figure>

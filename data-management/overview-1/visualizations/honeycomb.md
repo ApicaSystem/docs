@@ -32,7 +32,7 @@ Common states:
 
 Set **Chart type** to **Honeycomb**. Pick the **Label column** and **Value column**. Enable **Custom config** to define status rules.
 
-<figure><img src="../../../.gitbook/assets/Screenshot from 2026-01-15 12-45-17 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot from 2026-01-15 12-45-17.png" alt=""><figcaption></figcaption></figure>
 
 ### Honeycomb configuration options
 

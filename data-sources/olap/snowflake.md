@@ -13,6 +13,6 @@ The first step is to create a Snowflake data source and provide all details ment
 * **Warehouse:** The Warehouse name
 * **Database name**: The name of the database of the Snowflake.
 
-![Configuration of Snowflakedata source](<../../.gitbook/assets/Screenshot from 2022-06-30 12-41-42.png>)
+![Configuration of Snowflakedata source](<../../.gitbook/assets/image (228).png>)
 
 That's it. Now navigate to the Query editor page to query your data

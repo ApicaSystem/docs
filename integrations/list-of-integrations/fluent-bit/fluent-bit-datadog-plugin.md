@@ -38,14 +38,14 @@ Restart Fluent-bit with `systemctl restart fluent-bit` and check the status with
 
 #### 3. Verify Logs in Datadog
 
-1\.     Log in to Datadog
+1\. Log in to Datadog
 
-2\.     Navigate to **Logs > Live Tail**
+2\. Navigate to **Logs > Live Tail**
 
-3\.     If you don’t see your logs you can search for them\
+3\. If you don’t see your logs you can search for them\
 Example:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1148).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Example logs
 

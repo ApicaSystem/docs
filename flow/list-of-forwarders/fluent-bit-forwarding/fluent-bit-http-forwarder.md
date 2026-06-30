@@ -69,15 +69,15 @@ If you’re forwarding to ascent the bearer token is the ingest token which can 
 
 #### 4. Set up a JavaScript code Forwarder
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to **Integrations → Forwarders → Forwarders**
+2\. Navigate to **Integrations → Forwarders → Forwarders**
 
-3\.     Click on Add Forwarder
+3\. Click on Add Forwarder
 
-4\.     Select the JavaScript code Forwarder
+4\. Select the JavaScript code Forwarder
 
-5\.     Edit the fields to your needs, in this example we use the following:
+5\. Edit the fields to your needs, in this example we use the following:
 
 ```
 let cfg = {
@@ -92,27 +92,27 @@ let ret = fetchSync("http://<serverIP>:4318/", cfg);
 console.log("Response from the endpoint:", ret);
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1257).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1147).png" alt=""><figcaption></figcaption></figure>
 
 #### 5. Set up pipelines in Apica Ascent to your needs
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to **Explore → Pipelines → Pipelines**
+2\. Navigate to **Explore → Pipelines → Pipelines**
 
-3\.     Create one or multiple pipelines (you should use the stream rule if you don’t want all logs in the namespace + application to be forwarded)
+3\. Create one or multiple pipelines (you should use the stream rule if you don’t want all logs in the namespace + application to be forwarded)
 
-4\.     Apply the pipelines to the logs that you want to forward
+4\. Apply the pipelines to the logs that you want to forward
 
 #### 6. Map the forwarder that you will use on your logs that you want to forward
 
 This can be done in two ways:
 
-1\.     This method requires pipelines.\
+1\. This method requires pipelines.\
 In the pipelines page hover over the three dots on the right on your pipeline and click on Map Forwarder.\
 Select your forwarder (deselect the default forwarder if you only want your new forwarder) and click on OK
 
-2\.     This method can be done with or without pipelines.\
+2\. This method can be done with or without pipelines.\
 Navigate to **Explore → Logs & Insights**
 
 Select the logs that you want to forward, hover over the three dots on the right at the top of the list and click on Map Forwarder.\
@@ -122,13 +122,13 @@ Select your forwarder (deselect the default forwarder if you only want your new 
 
 Navigate to your application and look or search for your logs, in the example below we show ascent:
 
-1\.        Navigate to your ascent environment
+1\. Navigate to your ascent environment
 
-2\.        Go to **Explore > Logs & Insights**
+2\. Go to **Explore > Logs & Insights**
 
-3\.        Click on the application name that you provided in the filter
+3\. Click on the application name that you provided in the filter
 
-4\.        Expand a log
+4\. Expand a log
 
 Example logs:
 
@@ -144,8 +144,8 @@ Verify that the logs are in a format that the HTTP plugin can read such as json.
 
 Verify that the following are correct:
 
-·      Host
+· Host
 
-·      Token
+· Token
 
-·      Your application accepts traffic over http or https
+· Your application accepts traffic over http or https

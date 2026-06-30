@@ -8,15 +8,15 @@ The Apica Ascent UI is your window to your IT data, logs, metrics, events and tr
 
 You can access the Apica Ascent UI by logging into your Apica Ascent instance URL using your account credentials.
 
-<figure><img src="../.gitbook/assets/screencapture-datafabric-demo-apica-io-onboarding-2025-07-26-12_58_08 (1).png" alt=""><figcaption><p>Onboarding page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/screencapture-datafabric-demo-apica-io-onboarding-2025-07-26-12_58_08.png" alt=""><figcaption><p>Onboarding page</p></figcaption></figure>
 
 The navigation bar at the right side of the UI allows you to access your:
 
 * Dashboards
 * Queries
 * Alerts
-* Explore - Logs, Topology, etc.&#x20;
-* Integrations - Forwarders, Source Extensions, Alert Destinations, Pre-created dashboards,&#x20;
+* Explore - Logs, Topology, etc.
+* Integrations - Forwarders, Source Extensions, Alert Destinations, Pre-created dashboards,
 * Settings
 
 The following sections in this article describe the various elements of the Apica Ascent UI and their purposes.
@@ -27,7 +27,7 @@ A dashboard is a collection of visualizations and queries that you've created ag
 
 The **Dashboards** page on the Apica Ascent UI lists all the dashboards you've created within Apica Ascent. Dashboards that you've favorited are marked with a yellow star icon and are also listed under the **Dashboards** dropdown menu for quick access in the navigation bar. The following images depict dashboards that you can create using Apica Ascent.
 
-<figure><img src="../.gitbook/assets/image (1052).png" alt=""><figcaption><p>Dashboards list page shows all the dashboards. Create new dashboards or Import pre created dashboards. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1052).png" alt=""><figcaption><p>Dashboards list page shows all the dashboards. Create new dashboards or Import pre created dashboards.</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/screencapture-datafabric-demo-apica-io-dashboard-ascent-monitoring-2025-07-26-12_02_24.png" alt=""><figcaption><p>A typical monitoring dashboard on Apica Ascent</p></figcaption></figure>
 
@@ -55,7 +55,7 @@ You can also click into a specific application or ProcID to view logs in more de
 
 The following image depicts a typical Explore page on the Apica Ascent UI.
 
-<figure><img src="../.gitbook/assets/screencapture-datafabric-demo-apica-io-explore-2025-07-26-12_46_13 (3).png" alt=""><figcaption><p>Explore page of Apica Ascent</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/screencapture-datafabric-demo-apica-io-explore-2025-07-26-12_46_13.png" alt=""><figcaption><p>Explore page of Apica Ascent</p></figcaption></figure>
 
 ## Journals
 

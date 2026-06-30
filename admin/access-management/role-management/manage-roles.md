@@ -1,6 +1,6 @@
 # Manage Roles
 
-<figure><img src="../../../.gitbook/assets/image (1095).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1094).png" alt=""><figcaption></figcaption></figure>
 
 **Create Role**
 
@@ -18,8 +18,6 @@
 3. This opens the Role Details page.
 4. Use the left-hand menu to view associated Policies, Members, or Groups.
 
-
-
 ***
 
 #### Assign Policy to a Role
@@ -28,8 +26,6 @@
 2. Find the role you want to assign a policy to and click on Policies tab next to its name.
 3. Click the Add Policy button in the left menu.
 4. Select the policies to add and click OK to confirm.
-
-
 
 ***
 
@@ -83,7 +79,5 @@
 1. Go to Settings > IAM > Roles.
 2. Find the role you want to delete.
 3. Click the Delete icon next to the role to delete.
-
-
 
 ***

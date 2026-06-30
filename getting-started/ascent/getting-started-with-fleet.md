@@ -11,7 +11,7 @@ description: >-
 
 This Quick Start Guide for Fleet Management enables a user to quickly enable ingesting metrics and logs into Ascent, and provides step-by-step instructions for deploying monitoring agents using Apica Fleet. By completing this tutorial, you will be able to automatically collect and forward critical server metrics and application logs directly into the Ascent product suite for complete visibility.
 
-For the purposes of this guide, we will install and deploy both an OTEL and Fluent Bit collector agent.&#x20;
+For the purposes of this guide, we will install and deploy both an OTEL and Fluent Bit collector agent.
 
 For a full video walkthrough, please refer to our video guide:
 
@@ -31,7 +31,7 @@ Click -> Install Manager
 
 Select Platform: Linux
 
-Select  Agent Type: OpenTelemetry Collector
+Select Agent Type: OpenTelemetry Collector
 
 Click 'Proceed'
 
@@ -53,9 +53,9 @@ NOTE: Transfer 'Fleet Installation File' to the Linux host that you will collect
 
 <figure><img src="../../.gitbook/assets/image (1009).png" alt=""><figcaption></figcaption></figure>
 
-Verify that the hostname is in the Fleet "Agents" UI tab:&#x20;
+Verify that the hostname is in the Fleet "Agents" UI tab:
 
-<figure><img src="../../.gitbook/assets/image (1011).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1010).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Update Your Configuration File:
 
@@ -205,9 +205,9 @@ Verify that logs/metrics are coming in and that it shows as "active":
 
 To verify Metrics are being ingested, go to Queries -> New Query and search for the host to verify data is there:
 
-<figure><img src="../../.gitbook/assets/image (744).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (743).png" alt=""><figcaption></figcaption></figure>
 
-## Part 2: Installing and Deploying a  Fluent Bit Agent.
+## Part 2: Installing and Deploying a Fluent Bit Agent.
 
 Similar to Part 1 (installing/deploying OTEL Agent), we will now install a Fluent Bit agent to collect logs.
 
@@ -221,7 +221,7 @@ Click -> Install Manager
 
 Select Platform: Linux
 
-Select  Agent Type: Fluent-bit
+Select Agent Type: Fluent-bit
 
 Click 'Proceed'
 
@@ -255,8 +255,6 @@ Verify that the hostname is in the Fleet "Agents" UI tab:
    * The file path to your application logs.
    * The hostname attribute.
    * Your ingest token.
-
-
 
 <figure><img src="../../.gitbook/assets/image (750).png" alt=""><figcaption></figcaption></figure>
 

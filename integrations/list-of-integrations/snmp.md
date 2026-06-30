@@ -8,13 +8,11 @@ The devices that are connecting to the internet are increasing drastically. The 
 
 Apica Ascent platform provides a source extension plugin for SNMP that will help you collect data from all your SNMP agents.
 
-
-
 ### Steps to Create SNMP Extension
 
 * Navigate to the Integrations page and click on the new Plugin button
 
-![](<../../.gitbook/assets/image (417).png>)
+![](<../../.gitbook/assets/image (415).png>)
 
 * Provide the Plugin Name and click next
 

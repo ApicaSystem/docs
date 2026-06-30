@@ -24,7 +24,7 @@ A Pie chart displays a single total (100%) broken into slices. Each slice repres
 * Full circle = 100%
 * Each slice = percent of total
 
-<figure><img src="../../../.gitbook/assets/Screenshot from 2026-01-15 13-54-30 (1).png" alt="Example Pie chart showing category slices as proportions of a total"><figcaption><p>Example Pie chart</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot from 2026-01-15 13-54-30.png" alt="Example Pie chart showing category slices as proportions of a total"><figcaption><p>Example Pie chart</p></figcaption></figure>
 
 ### Data it uses
 

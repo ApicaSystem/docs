@@ -8,17 +8,17 @@ Click on the `Explore` option from the top menu and click on `Pipelines`
 
 <figure><img src="../../.gitbook/assets/image (691).png" alt=""><figcaption><p>Navigating to Pipeline Page</p></figcaption></figure>
 
-On the top right corner of the page, there is a `Actions`  button. Hover on the `Actions button` and click on `Create Pipeline` .
+On the top right corner of the page, there is a `Actions` button. Hover on the `Actions button` and click on `Create Pipeline` .
 
 <figure><img src="../../.gitbook/assets/image (672).png" alt=""><figcaption><p>Actions button to create Pipeline</p></figcaption></figure>
 
-After clicking on `Create Pipeline,` the Configure Pipeline page would open up. The Configure Pipeline page has 3 vertical sections (Pipeline Preview, Pipeline Rules Flow, Pipeline Configuration).&#x20;
+After clicking on `Create Pipeline,` the Configure Pipeline page would open up. The Configure Pipeline page has 3 vertical sections (Pipeline Preview, Pipeline Rules Flow, Pipeline Configuration).
 
 The Pipeline Preview section has an option for previewing the pipeline. Previewing the pipeline rules allows you to test them before they are applied to the incoming data without making a permanent change. There are several options to preview(discussed below).
 
 The middle section, called Pipeline Rules Flow, is where you can add rules and visualize the flow of data in this pipeline.
 
-The rightmost column, Pipeline Configuration, is for configuring the pipeline and its rules.&#x20;
+The rightmost column, Pipeline Configuration, is for configuring the pipeline and its rules.
 
 <figure><img src="../../.gitbook/assets/image (1204).png" alt=""><figcaption></figcaption></figure>
 
@@ -26,7 +26,7 @@ To add a rule, click on the `+` button on the tail end of the graph in the middl
 
 <figure><img src="../../.gitbook/assets/Screenshot from 2026-01-12 20-51-07.png" alt=""><figcaption></figcaption></figure>
 
-After choosing the name, a rule entry must be created in the rightmost section, Pipeline Configuration.&#x20;
+After choosing the name, a rule entry must be created in the rightmost section, Pipeline Configuration.
 
 <figure><img src="../../.gitbook/assets/image (1162) (1).png" alt=""><figcaption><p>A new drop rule was added</p></figcaption></figure>
 
@@ -36,13 +36,13 @@ Configure the rule based on what needs to be achieved.
 
 ### Editing a Pipeline
 
-To edit a pipeline, navigate to the pipelines page and select the pipelines tab. Hover on the ellipses placed on the right side of the desired pipeline. A dropdown of options should apprear next to the ellipses on hover. Click on `Configure Pipeline` and the Configure Pipeline page should open.&#x20;
+To edit a pipeline, navigate to the pipelines page and select the pipelines tab. Hover on the ellipses placed on the right side of the desired pipeline. A dropdown of options should apprear next to the ellipses on hover. Click on `Configure Pipeline` and the Configure Pipeline page should open.
 
 <figure><img src="../../.gitbook/assets/image (1189).png" alt=""><figcaption></figcaption></figure>
 
 ## Pipeline Preview
 
-Previewing a pipeline allows you to test it before it is used. There are several ways to preview a pipeline; each option displays the selected set of logs, and the changes can be visualized in the diff view within the Pipeline Preview Section. &#x20;
+Previewing a pipeline allows you to test it before it is used. There are several ways to preview a pipeline; each option displays the selected set of logs, and the changes can be visualized in the diff view within the Pipeline Preview Section.
 
 #### Use Sample Logs:
 
@@ -61,13 +61,11 @@ Using Dataflows, you can select data that was previously ingested into the platf
 
 Using the GenAi option, you can interact with an AI Agent to curate the right set of logs for the pipeline preview.<br>
 
-<figure><img src="../../.gitbook/assets/image (1167).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image (1166).png" alt=""><figcaption></figcaption></figure>
 
 #### Use Captured Data:
 
-With Captured Data, lookup files that contain logs can be used for running a pipeline preview.&#x20;
+With Captured Data, lookup files that contain logs can be used for running a pipeline preview.
 
 <figure><img src="../../.gitbook/assets/image (1168).png" alt=""><figcaption></figcaption></figure>
 
@@ -82,8 +80,6 @@ With Live tail, use the raw logs that are getting ingested in real time to run t
 To view the preview changes, click on the `Diff` tab in the Pipeline Preview Section:
 
 <figure><img src="../../.gitbook/assets/image (1170).png" alt=""><figcaption></figcaption></figure>
-
-
 
 After configuring the pipeline and its rules and testing them, click on the Save button in the bottom right section of the page.
 

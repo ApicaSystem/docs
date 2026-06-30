@@ -1,4 +1,4 @@
-# Fluent-bit Elasticsearch Forwar
+# Fluent-bit Elasticsearch Forwarder
 
 ### How to Forward logs from Apica Ascent to Elasticsearch using Fluent-bit
 
@@ -96,7 +96,7 @@ The index field is what you want to name the entry, if there’s already an entr
 
 #### 4. (Optional) Test the setup loacally
 
-1\.     Set up Elasticsearch with docker using the following command:
+1\. Set up Elasticsearch with docker using the following command:
 
 ```
 docker run -d --name es-test -p 9200:9200 \
@@ -105,14 +105,14 @@ docker run -d --name es-test -p 9200:9200 \
   docker.elastic.co/elasticsearch/elasticsearch:8.11.1
 ```
 
-2\.     Set up your fluent-bit config with the first example in section 3, you can also use the [dummy](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-dummy-plugin) input plugin to send dummy logs if needed\
+2\. Set up your fluent-bit config with the first example in section 3, you can also use the [dummy](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-dummy-plugin) input plugin to send dummy logs if needed\
 The Logstash\_Format field will make the index name different depending on whether you have it on or off.\
 On = The logs will end up in an index with the current date in the name e.g. logstash-2026.02.10\
 Off = The logs will end up in the index that you specified
 
-3\.     Restart fluent-bit
+3\. Restart fluent-bit
 
-4\.     Verify that the logs are forwarded to Elasticsearch with the following commands:
+4\. Verify that the logs are forwarded to Elasticsearch with the following commands:
 
 ```
 curl http://127.0.0.1:9200/_cat/indices?v
@@ -163,15 +163,15 @@ Example response:
 
 #### 5. Set up a JavaScript code Forwarder
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to **Integrations → Forwarders → Forwarders**
+2\. Navigate to **Integrations → Forwarders → Forwarders**
 
-3\.     Click on Add Forwarder
+3\. Click on Add Forwarder
 
-4\.     Select the JavaScript code Forwarder
+4\. Select the JavaScript code Forwarder
 
-5\.     Edit the fields to your needs, in this example we use the following:
+5\. Edit the fields to your needs, in this example we use the following:
 
 ```
 let cfg = {
@@ -186,27 +186,27 @@ let ret = fetchSync("http://<serverIP>:4318/", cfg);
 console.log("Response from the endpoint:", ret);
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1213).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1147).png" alt=""><figcaption></figcaption></figure>
 
 #### 6. Set up pipelines in Apica Ascent to your needs
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to **Explore → Pipelines → Pipelines**
+2\. Navigate to **Explore → Pipelines → Pipelines**
 
-3\.     Create one or multiple pipelines (you should use the stream rule if you don’t want all logs in the namespace + application to be forwarded)
+3\. Create one or multiple pipelines (you should use the stream rule if you don’t want all logs in the namespace + application to be forwarded)
 
-4\.     Apply the pipelines to the logs that you want to forward
+4\. Apply the pipelines to the logs that you want to forward
 
 #### 7. Map the forwarder that you will use on your logs that you want to forward
 
 This can be done in two ways:
 
-1\.     This method requires pipelines.\
+1\. This method requires pipelines.\
 In the pipelines page hover over the three dots on the right on your pipeline and click on Map Forwarder.\
 Select your forwarder (deselect the default forwarder if you only want your new forwarder) and click on OK
 
-2\.     This method can be done with or without pipelines.\
+2\. This method can be done with or without pipelines.\
 Navigate to **Explore → Logs & Insights**
 
 Select the logs that you want to forward, hover over the three dots on the right at the top of the list and click on Map Forwarder.\
@@ -214,11 +214,11 @@ Select your forwarder (deselect the default forwarder if you only want your new 
 
 #### 8. Verify that your logs arrive at the end destination
 
-1\.        Navigate to your instance where you want to forward your logs
+1\. Navigate to your instance where you want to forward your logs
 
-2\.        Navigate to logs
+2\. Navigate to logs
 
-3\.        You should see your logs if everything is set up correctly and the agent is able to connect
+3\. You should see your logs if everything is set up correctly and the agent is able to connect
 
 #### 8. Troubleshooting
 

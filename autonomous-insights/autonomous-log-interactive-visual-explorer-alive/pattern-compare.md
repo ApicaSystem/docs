@@ -11,9 +11,9 @@ description: >-
 
 Log events are massive and difficult to comprehend due to their machine/human-like information nature. Yet they contain helpful information that needs to be harvested to get the process going. This process includes maintaining smooth operation flow, debugging complex modern distributed systems, security overlooks, tracking changes, etc. It is highly desirable to discern anomalies out of the log events.
 
-One simple heuristic technique for discerning anomalies is to compare the subject with a known golden sample, which yields outliers. Nevertheless, comparing event logs is not a trivial task. &#x20;
+One simple heuristic technique for discerning anomalies is to compare the subject with a known golden sample, which yields outliers. Nevertheless, comparing event logs is not a trivial task.
 
-The ALIVE Log Compare utilises Apica Ascent's log analysis underlying feature pattern-signature and compares log pattern signatures across different time ranges. This feature is powerful and handy for separating needles from haystacks. &#x20;
+The ALIVE Log Compare utilises Apica Ascent's log analysis underlying feature pattern-signature and compares log pattern signatures across different time ranges. This feature is powerful and handy for separating needles from haystacks.
 
 Some of the key features
 
@@ -44,8 +44,6 @@ The interface consists of three primary sections:
 
 <figure><img src="../../.gitbook/assets/image (658).png" alt=""><figcaption><p>Example showing 3 sections.</p></figcaption></figure>
 
-
-
 Additionally, a **Full-Screen Mode** is available for the bar chart, enabling a detailed investigation of log patterns and anomalies.
 
 ### Example Usage Steps
@@ -54,7 +52,7 @@ Additionally, a **Full-Screen Mode** is available for the bar chart, enabling a 
 
 1. Select a Namespace and an Application from the list.
 
-<figure><img src="../../.gitbook/assets/image (648).png" alt=""><figcaption><p>Select Namespace and Application</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (646).png" alt=""><figcaption><p>Select Namespace and Application</p></figcaption></figure>
 
 2. Select timerange and click on Apply.
 
@@ -68,7 +66,7 @@ Additionally, a **Full-Screen Mode** is available for the bar chart, enabling a 
 
 <figure><img src="../../.gitbook/assets/image (653).png" alt=""><figcaption><p>Select Compare from Alive Tab</p></figcaption></figure>
 
-5. Select a second Time Range (B) for comparison. You can choose a  the same duration in a different time frame and click Apply to load logs for Time Range B.
+5. Select a second Time Range (B) for comparison. You can choose a the same duration in a different time frame and click Apply to load logs for Time Range B.
 
 <figure><img src="../../.gitbook/assets/image (654).png" alt=""><figcaption><p>fetching logs for time range B</p></figcaption></figure>
 

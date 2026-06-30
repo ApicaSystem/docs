@@ -15,7 +15,7 @@ On clicking the left button -> Previous 30 minutes of the data is loaded.
 
 On clicking the right button -> Next 30 minutes of the data is loaded (if any fresh data is available)
 
-<figure><img src="../../.gitbook/assets/image (462).png" alt=""><figcaption><p>Load Previous 30 min Data</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (461).png" alt=""><figcaption><p>Load Previous 30 min Data</p></figcaption></figure>
 
 ## Query Builder
 
@@ -49,15 +49,12 @@ You can configure the widgets based on your needs:
 
 User also has other options in the widget:
 
-
-
 * `Download as image` -> Downloads the graph as an image.
 * `Add alert` -> Allows user to create an alert on top of the underlying query.
 * `Download as CSV file` -> Allows users to download the underlying data in CSV format.
 * `Download as TSV file` -> Allows users to download the underlying data in TSV format.
 * `Download as Excel file` -> Allows users to download the underlying data in Excel format.
 * `View Query` -> Opens underlying query in the query editor, for advanced visualisation and data analysis.
-*   View raw data -> Pops up a Modal  where user can see the data in the table view.&#x20;
+*   View raw data -> Pops up a Modal where user can see the data in the table view.
 
     <figure><img src="../../.gitbook/assets/image (538).png" alt=""><figcaption></figcaption></figure>
-

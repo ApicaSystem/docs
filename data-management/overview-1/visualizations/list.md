@@ -45,7 +45,7 @@ Item B  Y     85
 
 Set **Chart type** to **List**. Then choose which fields to show as columns.
 
-<figure><img src="../../../.gitbook/assets/Screenshot from 2026-01-15 14-08-59 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot from 2026-01-15 14-08-59.png" alt=""><figcaption></figcaption></figure>
 
 ### List configuration options
 

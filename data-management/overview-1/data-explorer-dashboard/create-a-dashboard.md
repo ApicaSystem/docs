@@ -7,7 +7,7 @@ After you have played around with the different metrics from the left panel, you
 After clicking on this button, the user will see a popup modal which will prompt the user to name the dashboard.\
 <br>
 
-<figure><img src="../../../.gitbook/assets/image (466).png" alt=""><figcaption><p>Modal prompting user to add name of the dashboard</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (465).png" alt=""><figcaption><p>Modal prompting user to add name of the dashboard</p></figcaption></figure>
 
 Now you can head over to the Dashboard List page to check out the dashboard.<br>
 

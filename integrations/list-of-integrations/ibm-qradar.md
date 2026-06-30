@@ -8,7 +8,7 @@ Have the following information ready to configure your IBM QRadar App Extension.
 2. Hostport
 3. Authentication Key
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2023-01-07 09-21-08 (2).png" alt=""><figcaption><p>Explore > App Extensions > New Plugin</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2023-01-07 09-21-08.png" alt=""><figcaption><p>Explore > App Extensions > New Plugin</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/Screenshot from 2023-01-07 09-21-17.png" alt=""><figcaption><p>Slect IBM QRadar App Extension</p></figcaption></figure>
 

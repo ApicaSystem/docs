@@ -10,4 +10,4 @@ Investigation Group #1, IG1. Notice that there are two tab groups; IG#1 and IG#2
 
 Investigation Group #2, IG2.
 
-![](../../../../.gitbook/assets/t8-t5-2022-06-18_04-02-55.jpg)
+![](../../../../.gitbook/assets/t5-2022-06-18_04-02-55.jpg)

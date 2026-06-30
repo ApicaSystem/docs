@@ -43,8 +43,8 @@ $ gcloud pubsub subscriptions pull my-gcp-topic-1-sub --auto-ack
 #### Enter forwarder configuration <a href="#enter-forwarder-configuration" id="enter-forwarder-configuration"></a>
 
 \
-![](<../../.gitbook/assets/image (527).png>)Forwarder configuration
+![](<../../.gitbook/assets/image (526).png>)Forwarder configuration
 
-#### &#x20;Testing the Google PubSub forwarding <a href="#testing-the-google-pubsub-forwarding" id="testing-the-google-pubsub-forwarding"></a>
+#### Testing the Google PubSub forwarding <a href="#testing-the-google-pubsub-forwarding" id="testing-the-google-pubsub-forwarding"></a>
 
 You can now test a data replay with a test stream to see if data went through

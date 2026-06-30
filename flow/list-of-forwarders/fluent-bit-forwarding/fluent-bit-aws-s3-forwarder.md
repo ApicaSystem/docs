@@ -1,4 +1,4 @@
-# Fluent-bit AWS S3
+# Fluent-bit AWS S3 Forwarder
 
 ### How to Forward logs from Apica Ascent to AWS S3 using Fluent-bit
 
@@ -86,11 +86,11 @@ export AWS_SECRET_ACCESS_KEY=<SECRET>
 
 AWS config file:
 
-1\.     Run `aws configure` in a terminal and provide the configs it’s asking for
+1\. Run `aws configure` in a terminal and provide the configs it’s asking for
 
-2\.     Run `nano .aws/credentials` in a terminal on the machine or a way other than nano to edit the file
+2\. Run `nano .aws/credentials` in a terminal on the machine or a way other than nano to edit the file
 
-3\.     Add or replace existing data if needed with:
+3\. Add or replace existing data if needed with:
 
 ```
 [default-long-term]
@@ -101,23 +101,23 @@ aws_mfa_device = arn:aws:iam::<MFA DEVICE>
 [default]
 ```
 
-4\.     Save the file
+4\. Save the file
 
-5\.     Run `aws-mfa` if you don’t use a role or `aws-mfa --assume-role=AssumedRoleArn  --device YourMFADeviceArn` if you use one
+5\. Run `aws-mfa` if you don’t use a role or `aws-mfa --assume-role=AssumedRoleArn --device YourMFADeviceArn` if you use one
 
-6\.     Enter the code from your authenticator app to verify
+6\. Enter the code from your authenticator app to verify
 
 #### 5. Set up a JavaScript code Forwarder
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to **Integrations → Forwarders → Forwarders**
+2\. Navigate to **Integrations → Forwarders → Forwarders**
 
-3\.     Click on Add Forwarder
+3\. Click on Add Forwarder
 
-4\.     Select the JavaScript code Forwarder
+4\. Select the JavaScript code Forwarder
 
-5\.     Edit the fields to your needs, in this example we use the following:
+5\. Edit the fields to your needs, in this example we use the following:
 
 ```
 let cfg = {
@@ -132,27 +132,27 @@ let ret = fetchSync("http://<serverIP>:4318/", cfg);
 console.log("Response from the endpoint:", ret);
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1250).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1147).png" alt=""><figcaption></figcaption></figure>
 
 #### 6. Set up pipelines in Apica Ascent to your needs
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to **Explore → Pipelines → Pipelines**
+2\. Navigate to **Explore → Pipelines → Pipelines**
 
-3\.     Create one or multiple pipelines (you should use the stream rule if you don’t want all logs in the namespace + application to be forwarded)
+3\. Create one or multiple pipelines (you should use the stream rule if you don’t want all logs in the namespace + application to be forwarded)
 
-4\.     Apply the pipelines to the logs that you want to forward
+4\. Apply the pipelines to the logs that you want to forward
 
 #### 7. Map the forwarder that you will use on your logs that you want to forward
 
 This can be done in two ways:
 
-1\.     This method requires pipelines.\
+1\. This method requires pipelines.\
 In the pipelines page hover over the three dots on the right on your pipeline and click on Map Forwarder.\
 Select your forwarder (deselect the default forwarder if you only want your new forwarder) and click on OK
 
-2\.     This method can be done with or without pipelines.\
+2\. This method can be done with or without pipelines.\
 Navigate to **Explore → Logs & Insights**
 
 Select the logs that you want to forward, hover over the three dots on the right at the top of the list and click on Map Forwarder.\
@@ -160,11 +160,11 @@ Select your forwarder (deselect the default forwarder if you only want your new 
 
 #### 8. Verify that your logs arrive at the end destination
 
-1\.        Navigate to your S3 bucket
+1\. Navigate to your S3 bucket
 
-2\.        If the fluent-bit-logs folder or the folder you specified is present the logs were successfully forwarded
+2\. If the fluent-bit-logs folder or the folder you specified is present the logs were successfully forwarded
 
-3\.        Open the folders to the last one to see your logs
+3\. Open the folders to the last one to see your logs
 
 <figure><img src="../../../.gitbook/assets/image (1251).png" alt=""><figcaption></figcaption></figure>
 
@@ -177,5 +177,3 @@ If logs are not being sent verify that the port is open and that the server can 
 Verify that the logs are in a format that the HTTP plugin can read such as json.
 
 You can set `total_file_size 1MB`, `upload_timeout 1s` and use the dummy input plugin to test if you’re able to send the logs
-
-&#x20;

@@ -47,10 +47,8 @@ Name:          DataDog Forwarder
 
 <figure><img src="../../.gitbook/assets/image (1115).png" alt=""><figcaption><p>Configure Forwarder</p></figcaption></figure>
 
-
-
 <figure><img src="../../.gitbook/assets/image (1116).png" alt=""><figcaption><p>Explore Page, Select Your Log Source</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1118).png" alt=""><figcaption><p>Map Forwarder</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1117).png" alt=""><figcaption><p>Map Forwarder</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (1119).png" alt=""><figcaption><p>Select Datadog Forwarder</p></figcaption></figure>

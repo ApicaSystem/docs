@@ -32,20 +32,20 @@ Helpful links:
 
 #### 3. Verify Logs in Apica Ascent
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to Queries
+2\. Navigate to Queries
 
-3\.     Click on New Query in the top right
+3\. Click on New Query in the top right
 
-4\.     Select Ascent Metrics in the dropdown on the left
+4\. Select Ascent Metrics in the dropdown on the left
 
-5\.     Search for a metrics that you have scraped and click on the two arrows next to it to add them to the query
+5\. Search for a metrics that you have scraped and click on the two arrows next to it to add them to the query
 
-6\.     Click on Execute and verify if you get any metrics\
+6\. Click on Execute and verify if you get any metrics\
 Example:
 
-<figure><img src="../../../.gitbook/assets/image (1145) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1145).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Troubleshooting
 

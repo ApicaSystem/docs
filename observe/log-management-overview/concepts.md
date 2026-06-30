@@ -5,7 +5,7 @@
 Apica Ascent uses three metadata fields to **organize, route, and partition** incoming telemetry data:
 
 * **`namespace`** (required)
-* **`app_name`**  (required)
+* **`app_name`** (required)
 * **`cluster_id`** (optional)
 
 > Correctly setting these values ensures that your logs, metrics, and traces appear in the expected dataflows within the UI and avoids silent routing into `default_namespace` and `default_app`.
@@ -135,14 +135,14 @@ Once your agents are configured correctly with `cluster_id`, `namespace`, and `a
 
 Below is a snapshot of the **Table View**, where each flow corresponds to a unique `(cluster_id:namespace, application)` combination.
 
-<figure><img src="../../.gitbook/assets/screencapture-datafabric-demo-apica-io-explore-2025-06-22-06_33_16 (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/screencapture-datafabric-demo-apica-io-explore-2025-06-22-06_33_16.png" alt=""><figcaption></figcaption></figure>
 
 **From the screenshot:**
 
 * `default_namespace` with `default_application` indicates data that lacked proper metadata
 * Well-tagged data like:
-  * `oci-mumbai-apica-dev-kube-system : kube-state-metrics`&#x20;
-  * `oci-mumbai-apica-dev1q5955 : lq5955-kubernetes-ingress`&#x20;
+  * `oci-mumbai-apica-dev-kube-system : kube-state-metrics`
+  * `oci-mumbai-apica-dev1q5955 : lq5955-kubernetes-ingress`
 * You can **filter**, **search**, and **inspect** event statistics per flow here.
 
 > Use this view to validate if your telemetry is landing in the expected flows.

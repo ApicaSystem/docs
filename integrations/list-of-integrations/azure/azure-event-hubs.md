@@ -47,7 +47,7 @@ An Event Hubs namespace provides a unique scoping container within which you can
 
 The final step is configuring Logstash to forward event logs from your Azure Event Hub to Apica Ascent. Download and store the following`flattenJSON.rb` file. We will use this file while configuring Logstash.
 
-{% file src="../../../.gitbook/assets/flattenJSON (1).rb" %}
+{% file src="../../../.gitbook/assets/flattenJSON.rb" %}
 
 Copy the following Logstash configuration and edit the fields listed in the table below the code.
 

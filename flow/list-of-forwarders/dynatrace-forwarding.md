@@ -35,7 +35,7 @@ Name:          Dynatrace
 
 > To help make the steps easier to understand, below are the screenshots illustrating each of the instructions given above.
 
-<figure><img src="../../.gitbook/assets/image (1087).png" alt=""><figcaption><p>Add Forwarder</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1086).png" alt=""><figcaption><p>Add Forwarder</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (1081).png" alt=""><figcaption><p>Configure Forwarder</p></figcaption></figure>
 

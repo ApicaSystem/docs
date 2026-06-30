@@ -2,7 +2,7 @@
 
 The Apica Ascent infra and application monitoring stack is compatible with Prometheus, Thanos, and Victoria Metrics and allows metrics to be pushed via the prometheus remote write protocol. This also allows user to query the metrics using standard PromQL style expressions. Using the query editor, type the PromQL query and see your data and create visualizations in an instant.
 
-<figure><img src="../../../.gitbook/assets/image (563).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (562).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Head over to the [Time Series Insights](../../../autonomous-insights/time-series-ai-ml/) section to learn how to apply various anomaly and forecasting capabilities.

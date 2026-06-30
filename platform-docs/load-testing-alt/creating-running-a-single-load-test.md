@@ -2,19 +2,17 @@
 
 A test script accesses the Load Test target and performs a number of actions that you will measure. There are several ways to add these to ALT. In this chapter, we take a look at creating LoadTests in LoadTest Portal. The following video provides a visual overview of the load test creation process.
 
-
-
 {% file src="../../.gitbook/assets/ALT demo.webm" %}
 
 ## Creating and Running a Load Test <a href="#creating-and-running-a-load-test" id="creating-and-running-a-load-test"></a>
 
 To begin the process of creating a load test, navigate to the “Loadtest > New Test” page from the top menu bar within the ALT portal:
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (596).png" alt="" width="206"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (593).png" alt="" width="206"><figcaption></figcaption></figure></div>
 
 When the “Create New Loadtest” page appears, a list of links will appear on the right side of the page. Click on any of the links to jump to that step in the scenario process.
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (595).png" alt="" width="197"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (594).png" alt="" width="197"><figcaption></figcaption></figure></div>
 
 ### Step 1: Select Subscription <a href="#step-1-select-subscription" id="step-1-select-subscription"></a>
 

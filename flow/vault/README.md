@@ -13,13 +13,11 @@ description: >-
 2. **Certificates**
 3. **Lookups**
 
-
-
 > **Integration with Code Rules:**
 >
 > A key benefit of using Vault is that the stored **Variables, Certificates, and Lookups can be directly referenced and utilized within 'code rules'**. This allows you to dynamically inject secrets, certificate data, or lookup values into your logic wherever code rules are supported.
 >
-> _For specific details on which functions, processes, or system areas support the execution of code rules and how to reference Vault items within them, please consult the relevant_ [_**code function documentation**_](https://app.gitbook.com/o/-LmzGjHypGkPBzYc0fF0/s/-LmzGprckLqwd5v6bs6m/~/changes/1496/flow/rules/code/functions)_._
+> _For specific details on which functions, processes, or system areas support the execution of code rules and how to reference Vault items within them, please consult the relevant_ [_**code function documentation**_](../functions/)_._
 
 ***
 
@@ -44,8 +42,6 @@ Use Variables for storing individual pieces of sensitive information or configur
 Variables are ideal when you need direct access to a specific, distinct value identified by its name.
 
 ***
-
-
 
 ## Certificates (for Data Encryption/Decryption)
 
