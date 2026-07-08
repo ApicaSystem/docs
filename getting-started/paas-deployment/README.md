@@ -316,8 +316,8 @@ form fields with the appropriate details of your SMTP service:
 
 To configure transport security, select ONE of the following options.
 
-TLS Enabled: Select this option if your mail server uses implicit TLS
-negotiation, also known as `STARTTLS`.
+TLS Enabled: Select this option if your mail server uses opportunistic TLS
+negotiation, also known as `STARTTLS`. This is often used on ports 25 and 587.
 
 SSL Enabled: Select this option if your mail server expects TLS negotiation
 immediately upon connect. Typically this is used when the server is configured
