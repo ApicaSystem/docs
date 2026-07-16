@@ -2,7 +2,7 @@
 description: This is an INTERNAL RELESAE ONLY
 ---
 
-# Ascent 3.0.0
+# Ascent 3.0.0 (Internal Release)
 
 ### Release Highlights
 
@@ -75,7 +75,6 @@ A new Kafka destination is available in Flow, with a dynamically generated confi
 
 * **Venn AI Assistant:** An AI assistant (Venn) is now integrated into the Observe interface with a persistent side panel, conversation history, and streaming responses. Drawing on the platform's MCP server, Venn can answer questions, run log queries, manage data sources, dashboards, queries, alerts, SLOs, and forwarders, and surface contextual information directly within the UI. Documentation and how-to questions are now handled through Venn — the standalone navbar AI search button has been removed.
 * **AI-Assisted Create:** Create forms for alerts, queries, data sources, and Data Explorer widgets can now be prefilled from AI context through Venn.
-* **RUM Documentation:** Customer-facing documentation for Real User Monitoring is now available.
 
 #### Improvements
 
@@ -118,39 +117,37 @@ A new Kafka destination is available in Flow, with a dynamically generated confi
 
 #### New Features
 
-* **Alert Destination Teams:** Alert destination teams can now be created, viewed, and edited directly in Vanguard. A team dashboard with filtering makes it easier to manage how alerts route to groups of destinations.
-* **Synthetic Monitoring for AI Workflows:** Pre-built check templates are now available for monitoring agentic AI workflows. This initial release includes use cases for financial analysis and landing page evaluation, with multi-agent orchestration supported. An agentic report view surfaces AI-generated analysis alongside check results.
-* **Subscription Reports — Phase 3:** Monthly graph reports are now available for browser scenario checks. The subscription report UI and report dashboard have been updated with UX improvements. Report scheduling and delivery now correctly handles timezones.
-* **Chrome Update for Browser Checks:** The Chrome version used for browser checks has been updated to address known CVEs. This also resolves a class of "page timeout waiting for DOM complete" errors that affected browser and Playwright checks in affected environments.
-* **Check Events in Audit Log:** Check create, update, and delete events are now recorded in the audit log event tab.
+* **Synthetic Monitoring for AI Workflows:** Synthetic monitoring check for Agentic AI workflows allows you to verify AI process outputs, detect drift, hallucinations, and performance regressions using existing Vanguard checks and advanced scripting engine. The diagnosis and key metrics are displayed in the Check result analysis page.
+* **Alert Destination Teams:** Alert destination teams can now be created, viewed, and edited directly in Vanguard. A new Teams tab has been added to the Alert Destinations dashboard with filtering to group multiple alert destinations (email, sms, webhook, etc.) under a single team for easier alert routing and management.
+* **Monthly Graph Reports for Browser Checks:** Monthly graph reports are now available for browser checks with scenarios including step level information. Report scheduling and delivery now correctly handles timezones.
+* **Check View Customization — Save View Layout:** Users can now save their preferred check view layout (Split View, Group View) along with Status Color and Auto-refresh settings.
+* **Tag Filtering Across Check Views:** A Tag filter has been added to the Group View, Split View, and Manage Check pages, allowing you to filter checks by tag across all major views.
+* **Check Description & Tags in Analysis Page:** The Check Details and Analysis pages now display the check description and tags in the Overview section when available, providing better context at a glance.
 
 #### Improvements
 
-* **Check Management:** The check management interface has received several quality-of-life improvements — a tag filter in group view, split view, and the manage checks page; the ability to save the current view layout; check descriptions and tags shown on the check details and analysis pages; and a fix for navigation state issues when using the browser back button from check details.
-* **Browser Check Settings:** A screen resolution dropdown is now available in browser behavior settings. Custom headers no longer allow saving multiple empty rows.
-* **Zebratester Checks:** The configured result unit is now shown in the check results table. Checks now correctly capture all advanced setting attributes. The specific URL that triggered an error in a ZT check is now identified in results rather than reporting generically.
-* **Check Analytics:** Group order is now persisted across list view and split view sessions when checks are reordered.
-* **Check Result Storage:** Raw span data is no longer stored unnecessarily as part of check results, reducing storage footprint over time.
+* **Check Management:** The check management interface has received several quality-of-life improvements —  a fix for navigation state issues when using the browser back button from check details; Check Location display now shows properly formatted location names instead of raw location codes; Confirmation popups added before assigning/unassigning checks and users; The Assign/Unassign button is now disabled when no checks are selected; Inclusion/Exclusion settings in check scheduling have been corrected to show accurate values without duplicates.
+* **Check Analytics:** Drag-and-rearrange of monitor groups now persists across page reloads after saving.
+* **Browser Check Settings:** A screen resolution dropdown is now available in browser behavior settings. Custom headers no longer allow saving multiple empty rows. Browser check creation now pre-populates the Ignore File Types field with default values. Custom Headers in browser settings now only allow one empty block at a time, consistent with Block URLs behaviour. Block URLs are now correctly displayed when editing browser checks in Ascent.
+* **Zebratester Checks:** The configured result unit is now shown in the check results table. Checks now correctly capture all advanced setting attributes (Collect Ticks, Additional URL Sampling Options, Verify DNS, and Result Unit). The specific URL that triggered an error in a ZT check is now identified in results rather than reporting generically.
+* **SSL Checks:** The SSL Verification Type dropdown is now disabled in edit mode to prevent accidental type changes.
+* **Mobile Checks:** The Monitoring Type selector is now disabled in edit mode to prevent incompatible type switches.
 * **Severity Thresholds:** Severity threshold percentage calculation now matches between the Ascent UI and the API, resolving a long-standing discrepancy.
-* **Private Locations:** Several issues with private location handling have been resolved, including how unavailable locations are displayed, how location identifiers appear in the UI, and the behavior of the agent refresh button.
-* **System Data Source Protection:** The system-critical "Checks" data source is now protected from accidental deletion. The delete button is hidden in the UI for this data source, and the API enforces the same guard.
-* **ASM Sync Controls:** The ASM sync process can now be toggled on or off directly from Admin settings. Guardrails have been added to prevent sync tasks from running when the required credentials or URL are missing or invalid.
-* **Browser Check Security Upgrade:** A browser check dependency has been updated to address a known vulnerability.
+* **Private Locations:** Several issues with private location handling have been resolved, including how unavailable locations are displayed, how location identifiers appear in the UI, and the behavior of the agent refresh button. Repository profiles no longer show deleted private locations.
+* **Subscription report:** Report format date picker no longer allows selection of current date, month, or year. A Group filter has been added to the Select Check step. Ad-hoc report date picker now properly resets when switching between Day/Week/Month frequencies.
 
 #### Bug Fixes
 
-* Several navigation and redirect issues in check management have been fixed: the check details page no longer redirects to unrelated views, tab navigation within check reports (Details, Aggregator) now works correctly, and the transition from check creation to the results graph is fixed. Report tabs no longer disappear on page reload.
-* Check edit forms: SSL and mobile check edit forms now correctly restrict the fields that cannot be changed after creation, and inclusion/exclusion settings now save and apply correctly.
+* Several navigation and redirect issues in check management have been fixed: the check details page no longer redirects to unrelated views, tab navigation within check reports (Details, Aggregator) now works correctly, and the transition from check creation to the results graph is fixed. Report tabs no longer disappear on page reload. Fixed tab name disappearing when navigating from check edit back to details via browser back button.
 * Check results: opening a result no longer opens a phantom second result alongside it, and response body content is now correctly visible.
 * Dark mode: check rows are now visible when status color coding is active, and the subscription report tags column is now readable.
-* Subscription reports: scheduling now correctly applies the configured timezone, and the ad-hoc date picker no longer auto-selects a stale date when frequency is changed.
-* Alert destination teams: changes now take effect immediately without requiring a page reload, and team dashboard filtering works correctly.
-* The invitation flow now loads user details correctly when completing account setup; a 400 error that prevented password creation from the invitation link has been fixed.
 * Private location repositories no longer show locations that have been deleted. Duplicate API requests on the Repository Settings page have been eliminated.
 * Several additional check management issues have been resolved: the Update button in the scenario editor is correctly disabled until a file is attached, cloning a check with an unavailable location no longer leaves a blank page, sorting in list view now works across all pages, and the assign users workflow has been fixed.
-* Threshold values changed through the API now sync correctly to the Ascent UI; deleted locations no longer appear in the private location selector; and checks can be saved at intervals below the previous minimum limit.
-* Split view works correctly for read-only users, and a check management API error caused by an undefined variable has been fixed.
+* Threshold values changed through the API now sync correctly to the Ascent UI.
+* Fixed severity threshold percentage calculation rounding errors when saving checks multiple times.
+* Split view works correctly for read-only users.
 * Tag creation was failing with an error; this has been fixed. Policies can now be edited and saved without error.
+* Fixed an issue where URL errors were not highlighted in the waterfall graph for ZebraTester checks with certain error types.
 
 ***
 
