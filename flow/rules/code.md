@@ -1,7 +1,7 @@
 ---
 description: >-
-  New rule type is introduced with the latest release, where user can add the
-  JavaScript code to enhance the logs.
+  The CODE rule type enables a user to add the JavaScript code to enhance the
+  logs.
 ---
 
 # CODE
