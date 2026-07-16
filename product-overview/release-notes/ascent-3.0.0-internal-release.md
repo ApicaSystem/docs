@@ -1,5 +1,5 @@
 ---
-description: This is an INTERNAL RELESAE ONLY
+description: This is an INTERNAL RELEASE ONLY
 ---
 
 # Ascent 3.0.0 (Internal Release)
