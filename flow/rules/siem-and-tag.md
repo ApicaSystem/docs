@@ -8,21 +8,19 @@ Apica Ascent has hundreds of inbuilt SIEM rules which can be accessed on the "Ex
 
 <figure><img src="../../.gitbook/assets/Screenshot from 2025-05-22 13-42-30.png" alt=""><figcaption><p>Rules List</p></figcaption></figure>
 
-### Creating an SIEM Rule in Apica Ascent
+### Creating a SIEM Rule in Apica Ascent
 
 Follow these steps to create a SIEM or TAG rule in your pipeline:
 
 #### 2. Add a New SIEM Rule
 
-* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](../pipeline-management/data-flow-pipelines-new.md).&#x20;
+* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](../pipeline-management/data-flow-pipelines-new.md).
 * Hover over the `+ Add Rule` button.
 * Select `SIEM` from the rule type dropdown.
 
 <figure><img src="../../.gitbook/assets/image (1184).png" alt=""><figcaption></figcaption></figure>
 
-
-
-* A  form organized into tabs will be generated on the Pipeline Configuration Section.
+* A form organized into tabs will be generated on the Pipeline Configuration Section.
 
 <figure><img src="../../.gitbook/assets/image (1183).png" alt=""><figcaption></figcaption></figure>
 
@@ -49,7 +47,7 @@ Configure the basic rule properties:
 *   **Add Conditions (`+ Add More Parameters`):**
 
     Set filters to define what this rule should detect.\
-    Example condition: `event_type == login_attempt && status_code == 404`  &#x20;
+    Example condition: `event_type == login_attempt && status_code == 404`
 
 Sample SIEM rule dashboard
 
