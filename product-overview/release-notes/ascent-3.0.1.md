@@ -246,13 +246,15 @@ Deleting a policy completes without error.
 
 We've tightened authorization checks around API token creation: Non-admin users can only create tokens for themselves, while admins retain the ability to create tokens on behalf of other users.
 
-## Component Versions 3.0
+***
+
+## Component Versions 3.0.1
 
 | Component                              | Version                                         |
 | -------------------------------------- | ----------------------------------------------- |
-| Flash                                  | v3.21.4                                         |
-| Coffee                                 | v3.22.6                                         |
-| ASM                                    | 13.40.0                                         |
+| Flash                                  | v4.0.1                                          |
+| Coffee                                 | v4.0.1                                          |
+| ASM                                    | 13.40.2                                         |
 | NG Private Agent                       | 1.0.9                                           |
 | Check Execution Container: Browser     | fpr-c-130n-10.2.1-716-r-2025.04.02-0-base-2.0.0 |
 | Check Execution Container: Zebratester | zt-7.5a-p0-r-2025.04.02-0-base-1.2.0            |
