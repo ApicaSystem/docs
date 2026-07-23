@@ -2,7 +2,7 @@
 icon: server
 ---
 
-# On-Premise PaaS Deployment
+# On-Premises PaaS Deployment
 
 ### Before you begin
 
@@ -275,6 +275,14 @@ If you changed the names of the Kubernetes secrets above, use the name of the `t
         value: /opt/bitnami/thanos/certs/ca.crt
 ```
 
+#### Configuring Flow-only Mode
+
+"Flow-only mode" is the mode in which Lake storage and indexing are disabled, reducing resource usage for cases where you just want filtering and forwarding.
+
+In values.yaml, set the following:
+
+`logiq-flash.logflow_only.enabled` - Set to `true` to disable Lake storage and indexing.
+
 ### Install Envoy Gateway Resources
 
 ```
@@ -298,27 +306,21 @@ Use these same command to apply updates whenever there is a new version of the H
 
 ### Post-Install Configuration
 
-**WARNING!<br>It is essential to configure outbound email for your Ascent deployment.
-Without this, password resets will not work.**
+**WARNING!**\
+**It is essential to configure outbound email for your Ascent deployment. Without this, password resets will not work.**
 
-To configure outbound email, navigate to the Settings menu via your username at
-the top right of the page. Within Settings, select the Mail tab and fill in the
-form fields with the appropriate details of your SMTP service:
+To configure outbound email, navigate to the Settings menu via your username at the top right of the page. Within Settings, select the Mail tab and fill in the form fields with the appropriate details of your SMTP service:
+
 * Mail Server: The hostname or IP address of the outbound mail server.
-* Mail Port: The TCP port to which the Ascent client should connect. This is
-  typically 25 (SMTP), 587 (submission), or 465 (SMTPS).
+* Mail Port: The TCP port to which the Ascent client should connect. This is typically 25 (SMTP), 587 (submission), or 465 (SMTPS).
 * Mail Username: If your mail server requires a username, enter it here.
 * Mail Password: If your mail server requires a password, enter it here.
-* Mail Default Sender: The email address that will be used as the sender/from
-  in outgoing mail.
+* Mail Default Sender: The email address that will be used as the sender/from in outgoing mail.
 
 #### SSL/TLS Mail Options
 
 To configure transport security, select ONE of the following options.
 
-TLS Enabled: Select this option if your mail server uses opportunistic TLS
-negotiation, also known as `STARTTLS`. This is often used on ports 25 and 587.
+TLS Enabled: Select this option if your mail server uses opportunistic TLS negotiation, also known as `STARTTLS`. This is often used on ports 25 and 587.
 
-SSL Enabled: Select this option if your mail server expects TLS negotiation
-immediately upon connect. Typically this is used when the server is configured
-for SMTPS (port 465).
+SSL Enabled: Select this option if your mail server expects TLS negotiation immediately upon connect. Typically this is used when the server is configured for SMTPS (port 465).
