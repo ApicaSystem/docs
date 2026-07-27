@@ -53,6 +53,7 @@ Install the file as `/etc/k0s/k0s.yaml`. Run the following command to install k0
 
 ```
 sudo k0s install controller --single -c /etc/k0s/k0s.yaml
+sudo k0s start
 ```
 
 Next, download and install [kubectl](https://kubernetes.io/docs/reference/kubectl/), which is the tool used to interact with Kubernetes.
@@ -69,11 +70,13 @@ mkdir ~/.kube
 sudo k0s kubeconfig admin > ~/.kube/config
 ```
 
-Finally, download the current version of [Helm](https://helm.sh/), the package manager for Kubernetes, from the [releases page](https://github.com/helm/helm/releases). Install it alongside k0s and kubectl:
+Finally, download the latest release of **version 3** of [Helm](https://helm.sh/), the package manager for Kubernetes, from the [releases page](https://github.com/helm/helm/releases). Install it alongside k0s and kubectl:
 
 ```
 tar zxf helm-<version>-linux-amd64.tar.gz && sudo cp linux-amd64/helm /usr/local/bin/
 ```
+
+**Note: Helm 4.x is not yet supported.**
 
 Continue with [Configure Kubernetes Load Balancer](./#k8s-lb) below.
 
