@@ -1,6 +1,6 @@
 # Ascent 3.0.1
 
-Live in production Wednesday, July 22. Here's what's new: A built-in AI assistant, an open door for your own AI tools via MCP, a new Kafka destination, and a long list of fixes and quality-of-life improvements across every part of the platform.
+Here's what's new: A built-in AI assistant, an open door for your own AI tools via MCP, a new Kafka destination, and a long list of fixes and quality-of-life improvements across every part of the platform.
 
 ## **Release Highlights**
 
