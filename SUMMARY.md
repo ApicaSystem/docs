@@ -880,6 +880,7 @@
       * [Boolean Formats](platform-docs/test-data-orchestrator-tdo/user-documentation/format-function-guide/boolean-formats.md)
       * [Hexadecimal Formats](platform-docs/test-data-orchestrator-tdo/user-documentation/format-function-guide/hexadecimal-formats.md)
   * [Release Notes](platform-docs/test-data-orchestrator-tdo/release-notes/README.md)
+    * [2026 Q2 Release](platform-docs/test-data-orchestrator-tdo/release-notes/2026-q2-release.md)
     * [2026 Q1 Release](platform-docs/test-data-orchestrator-tdo/release-notes/2026-q1-release.md)
     * [2025 Q4 Release](platform-docs/test-data-orchestrator-tdo/release-notes/2025-q4-release.md)
     * [2025 Q3 Release](platform-docs/test-data-orchestrator-tdo/release-notes/2025-q3-release.md)
