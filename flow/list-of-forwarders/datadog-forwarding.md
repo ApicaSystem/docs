@@ -29,7 +29,7 @@ Create Forwarder:
 ```
 Api_Key:       <DATADOG-API-KEY>
 Buffer_size:   16000
-Host:          app.datadog.com
+Host:          datadoghq.com
 Tags:          logs
 Type:          _json
 Name:          DataDog Forwarder
