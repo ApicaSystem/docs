@@ -1,28 +1,20 @@
-# Ascent 3.0.2
+# Ascent 3.0.3
 
-This release adds OneLogin as a supported single sign-on identity provider and fixes a SAML login failure affecting some identity provider certificate formats.
+This is a small patch release with a single fix for a performance issue in customer environments.
 
-This release applies to both cloud and on‑prem deployments where this version is available.
-
-### Flow
-
-#### New Features
-
-* **OneLogin single sign-on:** Added support for OneLogin as an identity provider for single sign-on, giving organizations another option for centralized authentication when signing in to Ascent.
-
-### Vanguard
+## Vanguard
 
 #### Bug Fixes
 
-* Fixed an issue where SAML-based single sign-on could fail for some identity providers due to how their signing certificates were formatted, which had been blocking login.
+* Resolved a performance issue that caused authorization checks to run slowly in some customer environments following an update to an underlying security component.
 
 ***
 
-### Component Version 3.0.2
+### Component Version 3.0.3
 
 | Component                              | Version                                         |
 | -------------------------------------- | ----------------------------------------------- |
-| Flash                                  | v4.0.2                                          |
+| Flash                                  | v4.0.3                                          |
 | Coffee                                 | v4.0.1                                          |
 | ASM                                    | 13.40.2                                         |
 | NG Private Agent                       | 1.0.9                                           |
