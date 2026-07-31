@@ -1,6 +1,6 @@
 # Table of contents
 
-* [WELCOME TO APICA DOCS!](README.md)
+* [Welcome To Apica Docs!](README.md)
 
 ## PRODUCT OVERVIEW
 
