@@ -425,6 +425,7 @@
   * [RSA New Witness](flow/list-of-forwarders/rsa-new-witness.md)
   * [S3 Compatible](flow/list-of-forwarders/s3-compatible.md)
   * [ScienceLogic Forwarder (via OTel)](flow/list-of-forwarders/sciencelogic-forwarder-via-otel.md)
+  * [SentinelOne](flow/list-of-forwarders/sentinelone.md)
   * [SolarWinds Forwarder (via OTel)](flow/list-of-forwarders/solarwinds-forwarder-via-otel.md)
   * [Sophos](flow/list-of-forwarders/sophos.md)
   * [Splunk Forwarding](flow/list-of-forwarders/splunk-forwarding/README.md)
