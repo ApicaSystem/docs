@@ -50,4 +50,8 @@ Send a test batch and confirm the events land in the SentinelOne Discovery view 
 
 <figure><img src="../../.gitbook/assets/SentinelOne.png" alt=""><figcaption></figcaption></figure>
 
+By clicking on the actual log from the records list, you will obtain the following details to confirm the data is flowing correctly:
+
+<figure><img src="../../.gitbook/assets/SentinelOne2.png" alt=""><figcaption></figcaption></figure>
+
 **Note:** this covers Flow → SentinelOne (getting Apica-processed telemetry into the system). Pulling SentinelOne's own EDR alerts _into_ Apica would be a separate, reverse-direction integration against SentinelOne's Management Console API — worth keeping distinct if that's ever needed.
