@@ -89,8 +89,8 @@ Edit to setup
 
 _GET url -_ [_http://127.0.0.1:8992?cmd=ats\_retrieve\_row_](http://127.0.0.1:8992/?cmd=ats_retrieve_row) _- **Suits performance testing use cases**_\
 \&#xNAN;_body JSON- {_\
-&#xNAN;_"TableName”: "table\_name",_\
-&#xNAN;_"ColumnNames”: \["column\_name1","column\_name2"]_\
+_"TableName”: "table\_name",_\
+_"ColumnNames”: \["column\_name1","column\_name2"]_\
 \&#xNAN;_}_
 
 _This API call will give different column values for each request ,that means once a value is retrieved, it had been marked as retrieved and cannot be retrieved again_
@@ -101,10 +101,10 @@ OpenPreview unavailable
 
 _POST url -_ [_http://127.0.0.1:8992?cmd=ats\_send\_row_](http://127.0.0.1:8992/?cmd=ats_send_row)\
 \&#xNAN;_body JSON - {_\
-&#xNAN;_"TableName”: "table\_name",_\
-&#xNAN;_"ColumnNames”: \["column\_name1","column\_name2"],_\
-&#xNAN;_"ColumnValues”: \["column\_value1","column\_value2"],_\
-&#xNAN;_"Type”: "ROW"_\
+_"TableName”: "table\_name",_\
+_"ColumnNames”: \["column\_name1","column\_name2"],_\
+_"ColumnValues”: \["column\_value1","column\_value2"],_\
+_"Type”: "ROW"_\
 \&#xNAN;_}_
 
 _**Type have three values ROW, STACKED and UNIQUE**_
@@ -115,8 +115,8 @@ OpenPreview unavailable
 
 _GET url -_ [_http://127.0.0.1:8992?cmd=ats\_retrieve\_column_](http://127.0.0.1:8992/?cmd=ats_retrieve_column)\
 \&#xNAN;_body JSON- {_\
-&#xNAN;_"TableName”: "table\_name",_\
-&#xNAN;_"ColumnName”: "column\_name"_\
+_"TableName”: "table\_name",_\
+_"ColumnName”: "column\_name"_\
 \&#xNAN;_}_
 
 _By default this API call will give different column values for each request ,that means once a value is retrieved, it had been marked as retrieved and cannot be retrieved again. But in some cases if you want to retrieve always the same value , you need to pass the third parameter RowIndex_
@@ -127,10 +127,10 @@ OpenPreview unavailable
 
 _POST url -_ [_http://127.0.0.1:8992?cmd=ats\_send\_column_](http://127.0.0.1:8992/?cmd=ats_send_column)\
 \&#xNAN;_body JSON- {_\
-&#xNAN;_"TableName”: "table\_name",_\
-&#xNAN;_"ColumnName”: "column\_name",_\
-&#xNAN;_"ColumnValue”: "column\_value",_\
-&#xNAN;_"Unique”: true_\
+_"TableName”: "table\_name",_\
+_"ColumnName”: "column\_name",_\
+_"ColumnValue”: "column\_value",_\
+_"Unique”: true_\
 \&#xNAN;_}_
 
 OpenPreview unavailable
@@ -138,12 +138,12 @@ OpenPreview unavailable
 **5. Update a column value by row index in a table**
 
 _POST url -_ [_http://127.0.0.1:8992?cmd=ats\_update\_column_](http://127.0.0.1:8992/?cmd=ats_update_column)\
-&#xNAN;_&#x62;ody JSON - {_\
-&#xNAN;_"TableName”: "table\_name",_\
-&#xNAN;_"ColumnName”: "column\_name",_\
-&#xNAN;_"ColumnValue”: "column\_value”,_\
-&#xNAN;_“Unique”: false,_\
-&#xNAN;_" RowIndex “: 1_\
+_&#x62;ody JSON - {_\
+_"TableName”: "table\_name",_\
+_"ColumnName”: "column\_name",_\
+_"ColumnValue”: "column\_value”,_\
+_“Unique”: false,_\
+_" RowIndex “: 1_\
 \&#xNAN;_}_
 
 OpenPreview unavailable
@@ -151,10 +151,10 @@ OpenPreview unavailable
 **6. Get the size of a table or column in a table**
 
 _POST url -_ [_http://127.0.0.1:8992?cmd=ats\_retrieve\_table\_size_](http://127.0.0.1:8992/?cmd=ats_retrieve_table_size)\
-&#xNAN;_&#x62;ody JSON - {_\
-&#xNAN;_"TableName”: "table\_name",_\
-&#xNAN;_"ColumnName”: "column\_name" **ColumnName is optional**_\
-&#xNAN;_}_
+_&#x62;ody JSON - {_\
+_"TableName”: "table\_name",_\
+_"ColumnName”: "column\_name" **ColumnName is optional**_\
+_}_
 
 **7. Retrieval of rows based on multiple column names and values. This API also supports an optional input OuputColumnNames, the column names in rows to be retrieved based on the matching column names and values**
 
@@ -170,13 +170,13 @@ OpenPreview unavailable
 **8. Save a table after you have called any of the above APIs**
 
 _POST url -_ [http://127.0.0.1:8992?cmd=ats\_save\_table](http://127.0.0.1:8992/?cmd=ats_save_table)\
-&#xNAN;_&#x62;ody JSON - {_\
-&#xNAN;_"TableName”: "table\_name"_\
-&#xNAN;_}_
+_&#x62;ody JSON - {_\
+_"TableName”: "table\_name"_\
+_}_
 
 **9. Retrieve all the records in a particular table**
 
 _GET url -_ [http://127.0.0.1:8992?cmd=ats\_retrieve\_all\_rows](http://127.0.0.1:8992/?cmd=ats_retrieve_all_rows)\
-&#xNAN;_&#x62;ody JSON - {_\
-&#xNAN;_"TableName”: "table\_name"_\
-&#xNAN;_}_
+_&#x62;ody JSON - {_\
+_"TableName”: "table\_name"_\
+_}_
