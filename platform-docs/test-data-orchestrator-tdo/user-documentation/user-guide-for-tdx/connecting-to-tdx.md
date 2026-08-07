@@ -22,4 +22,4 @@ java -jar orson-data-extractor.jar -gui \<Enter>
 
 This will open the TDX application.
 
-<figure><img src="../../../../.gitbook/assets/image (361).png" alt=""><figcaption><p>TDX screen</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (169).png" alt=""><figcaption><p>TDX Screen</p></figcaption></figure>

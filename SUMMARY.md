@@ -743,6 +743,7 @@
       * [Coverage Sets and Business Rules](platform-docs/test-data-orchestrator-tdo/user-documentation/end-user-guide-for-tdo/coverage-sets-and-business-rules.md)
       * [Data Assembly](platform-docs/test-data-orchestrator-tdo/user-documentation/end-user-guide-for-tdo/data-assembly.md)
       * [Downloading Data](platform-docs/test-data-orchestrator-tdo/user-documentation/end-user-guide-for-tdo/downloading-data.md)
+      * [Executing Workflows](platform-docs/test-data-orchestrator-tdo/user-documentation/end-user-guide-for-tdo/executing-workflows.md)
     * [User Guide for TDX](platform-docs/test-data-orchestrator-tdo/user-documentation/user-guide-for-tdx/README.md)
       * [Connecting to TDX](platform-docs/test-data-orchestrator-tdo/user-documentation/user-guide-for-tdx/connecting-to-tdx.md)
       * [Setting up a Data Profile](platform-docs/test-data-orchestrator-tdo/user-documentation/user-guide-for-tdx/setting-up-a-data-profile.md)
