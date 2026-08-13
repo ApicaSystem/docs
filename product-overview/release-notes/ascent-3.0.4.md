@@ -4,8 +4,6 @@
 
 This patch release delivers stability and reliability fixes across log forwarding, dashboarding, and monitoring, along with performance improvements to the pipeline processing engine.
 
-This release applies to both cloud and on‑prem deployments where this version is available.
-
 ### Flow
 
 #### Improvements
