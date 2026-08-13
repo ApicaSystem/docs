@@ -1,7 +1,5 @@
 # Ascent 3.0.4
 
-## Release Notes – Ascent 3.0.4
-
 **Release Date:** August 13, 2026
 
 This patch release delivers stability and reliability fixes across log forwarding, dashboarding, and monitoring, along with performance improvements to the pipeline processing engine.
