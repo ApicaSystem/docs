@@ -68,7 +68,7 @@ Logs/Events/Metrics can be ingested into Apica Ascent using cooked mode
 
 Go to _"Explore"_ -> _"App Extensions"_ and create your S2S Ingest app extension
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2023-01-02 at 1.20.49 PM.png" alt=""><figcaption><p>S2S Cooked mode plugin</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (244).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 Multiple S2s Ingest extensions can be running simultaneously
