@@ -46,7 +46,7 @@ The rewrite rule replaces `$name` and `$phone` among these groups while retainin
 It is crucial to be mindful of the context of the regular expression you create for your incoming log data. In the example above, the incoming log data and the created regular expression contain the string "phone number". If you used a non-contextual regex that only matches and replaces numerical patterns, like the following example, you might end up substituting numbers in your log data that are not necessarily phone numbers.
 
 ```
-(?p<phone>\D*\d{3}\D*\d{3}\D*d{4})
+(?P<phone>\D*\d{3}\D*\d{3}\D*\d{4})
 ```
 
 {% hint style="info" %}
@@ -55,12 +55,12 @@ It is crucial to be mindful of the context of the regular expression you create 
 
 ### Creating a PII masking rule via the UI
 
-* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](../pipeline-management/data-flow-pipelines-new.md).&#x20;
+* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](https://docs.apica.io/flow/pipeline-management/data-flow-pipelines-new).
 * Hover over the `+ Add Rule` button.
 * Select `REWRITE` from the rule type dropdown.
 * A form organized into tabs should be created in the `Pipeline Configuration` section of the page.
 
-<figure><img src="../../.gitbook/assets/image (1171).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2Fd7bkLYrLURwOGNVkvQMf%2Fimage.png?alt=media&#x26;token=ecae15b7-3b09-4a8a-9d02-85a89a93c3d2" alt=""><figcaption></figcaption></figure>
 
 To configure your rewrite rule, do the following.
 
@@ -72,10 +72,10 @@ To configure your rewrite rule, do the following.
 6. Optionally, add more Parameters as a filter on which this rule must be applied to in the selected data-flow.
 7. Click **SAVE**.
 
-<figure><img src="../../.gitbook/assets/image (1161) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2F4AwlHs34yTYy0ypr0UxB%2Fimage.png?alt=media&#x26;token=fa53f8e8-5b5d-4592-a8ca-7b490a5b0a33" alt=""><figcaption></figcaption></figure>
 
 Your new rewrite rule has been created. Your new rule will apply to all incoming log data for the selected namespace, look for patterns within the log data that match the match expression, and rewrite log data as per the rewrite expression.
 
 Apica Ascent offers many built-in rules for obfuscating sensitive information like credit card numbers, SSN, phone numbers, and many more.
 
-<figure><img src="../../.gitbook/assets/image (1191).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FE3hkEMbciHtKFhbLQ54a%2Fimage.png?alt=media&#x26;token=0142b69c-8fc0-41c8-9f03-0e6f77be31ff" alt=""><figcaption></figcaption></figure>

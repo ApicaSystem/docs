@@ -36,7 +36,7 @@ In the code environment, the following built-in variables and functions are avai
   * **Returns**: The response from the target endpoint.
 * `console.log(message)`: Logs messages to the console.
   * **Arguments**: `message` (string) - The message to log.
-* For other functions, please look over the [functions](../functions/).
+* For other functions, please look over the [functions](https://docs.apica.io/flow/functions).
 
 **Variables**
 
@@ -45,25 +45,25 @@ In the code environment, the following built-in variables and functions are avai
   * Push your message in this list, and the message will be sent to the setup
 
 {% hint style="info" %}
-While the CODE rule is a special rule type, you can also use JavaScript code as part of other rule types, such as REWRITE and EXTRACT Rules for more complex rewrite/data extraction workflows. The available Built-in variables and [functions](../functions/) are the same for these rule types as well.
+While the CODE rule is a special rule type, you can also use JavaScript code as part of other rule types, such as REWRITE and EXTRACT Rules for more complex rewrite/data extraction workflows. The available Built-in variables and [functions](https://docs.apica.io/flow/functions) are the same for these rule types as well.
 {% endhint %}
 
 ### To Add A Code Rule:
 
-* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](../pipeline-management/data-flow-pipelines-new.md).
+* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](https://docs.apica.io/flow/pipeline-management/data-flow-pipelines-new).
 * Hover over the `+ Add Rule` button.
 * Select `CODE` from the rule type dropdown.
 * A form organized into tabs should be created in the `Pipeline Configuration` section of the page.
 
-<figure><img src="../../.gitbook/assets/image (1171).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2Fd7bkLYrLURwOGNVkvQMf%2Fimage.png?alt=media&#x26;token=ecae15b7-3b09-4a8a-9d02-85a89a93c3d2" alt=""><figcaption></figcaption></figure>
 
 * Enter the name and select a group for the Code rule
 
-<figure><img src="../../.gitbook/assets/image (1197).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FbhmTtTbvvjBu0ILznoOB%2Fimage.png?alt=media&#x26;token=7a45a955-9ec6-428a-ae5f-81cccb21ec51" alt=""><figcaption></figcaption></figure>
 
 * Click on the `CODE` to switch to the code block
 
-<figure><img src="../../.gitbook/assets/image (1195).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FoY9CyP25QOf5dx4oXogs%2Fimage.png?alt=media&#x26;token=30f938d5-5db2-4a57-996e-e1acfdd8162a" alt=""><figcaption></figcaption></figure>
 
 ### Code block support for REWRITE and EXTRACT rules.
 
@@ -71,11 +71,11 @@ While the CODE rule is a special rule type, you can also use JavaScript code as 
 
 The Rewrite Rule is responsible for modifying log events by applying rules defined through regular expressions. These rules are used to mask or replace sensitive information within the logs, ensuring data privacy and security.
 
-For example, it can replace credit card numbers, social security numbers, or any other sensitive data with placeholder values, thus anonymizing the logs while retaining their informational value.
+For example, it can replace credit card numbers, Social Security numbers, or other sensitive data with placeholder values. This masks the data while keeping the logs useful.
 
 Rewrite rule has an optional code field. Clicking on the toggle Code field, you can add or remove your code from your rule. Clicking on the import button, you can import the code file whose contents are immediately hydrated in the Code Block.
 
-<figure><img src="../../.gitbook/assets/image (1192).png" alt=""><figcaption><p>Rewrite Rule with a Code Block</p></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FyGPkN5SX8wrLdMaSPQsh%2Fimage.png?alt=media&#x26;token=eb365fa6-9715-494e-a858-7d8d21ae6cef" alt=""><figcaption><p>Rewrite Rule with a Code Block</p></figcaption></figure>
 
 **EXTRACT RULE:**
 
@@ -85,7 +85,7 @@ For instance, it can extract timestamps, IP addresses, user agents, or any other
 
 Like REWRITE RULE, you can add an optional code field to your rule by clicking the toggle code button in the `CODE` tab in the EXTRACT rule form.
 
-<figure><img src="../../.gitbook/assets/image (1196).png" alt=""><figcaption><p>Extract Rule</p></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2F5fjluMfkinZCRiqWk2AH%2Fimage.png?alt=media&#x26;token=7a7372f9-c3f5-4b21-8ea0-c5f9fc925c03" alt=""><figcaption><p>Extract Rule</p></figcaption></figure>
 
 **View CODE:**
 
@@ -93,7 +93,7 @@ In the Rules section, an option is available for viewing your code. You can filt
 
 Please be informed that the code block is set to read-only mode. To modify the code, please proceed to the edit pipeline procedure.
 
-<figure><img src="../../.gitbook/assets/image (1193).png" alt=""><figcaption><p>View Code</p></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FetGlYENA4ONqhmmxuSoF%2Fimage.png?alt=media&#x26;token=8770ecf4-643b-4a5b-bb8e-7df003c478e2" alt=""><figcaption><p>View Code</p></figcaption></figure>
 
 ```
 // if(Event.AppName=="appERP") {
@@ -117,13 +117,13 @@ The built-in Preview functionality allows a user to test a code rule before maki
 
 You can test code updates directly within the app with the `Diff` view in the `Pipeline Preview` section of the `Configure Pipeline` page. Simply provide a code snippet to update the log object, and instantly visualize the differences with our intuitive JSON compare view. Highlighted lines indicate changes, making it easy to review modifications at a glance. This feature not only streamlines the testing process but also empowers you to confidently manage updates to your log object.
 
-<figure><img src="../../.gitbook/assets/image (1195).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FoY9CyP25QOf5dx4oXogs%2Fimage.png?alt=media&#x26;token=30f938d5-5db2-4a57-996e-e1acfdd8162a" alt=""><figcaption></figcaption></figure>
 
 ### Additional examples
 
 This is an example of how you can grab epoch date values and convert it into normal date time:
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2F21aqAoFPEoMpu4Kk5B0c%2Fimage.png?alt=media&#x26;token=c33e8f9c-f546-48af-888f-f738d400d4fc" alt=""><figcaption></figcaption></figure>
 
 ```
 if (Event.date) {
@@ -137,11 +137,9 @@ if (Event.date) {
 }
 ```
 
-
-
 This is an example of how you can extract parts of your log message:
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2F8QO2zZYMxsDVSI7OSnfR%2Fimage.png?alt=media&#x26;token=02698dbb-890f-4de0-98b3-7dd04e07328c" alt=""><figcaption></figcaption></figure>
 
 ```
 // CODE rule: extract productId + question from Message, add to StructuredData
