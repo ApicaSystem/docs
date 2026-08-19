@@ -84,6 +84,19 @@
   * [On-Premises Sizing Guide](getting-started/paas-deployment/paas-architecture.md)
 * [Dashboards & Visualizations](getting-started/overview.md)
 
+***
+
+* [VENN AI ASSISTANT](venn-ai-assistant/README.md)
+  * [Getting Started with Venn](venn-ai-assistant/getting-started-with-venn.md)
+  * [Ask Venn About Your Data](venn-ai-assistant/ask-venn-about-your-data.md)
+  * [Pipelines with Venn](venn-ai-assistant/pipelines-with-venn.md)
+  * [Dashboards and Queries with Venn](venn-ai-assistant/dashboards-and-queries-with-venn.md)
+  * [Alerts and SLOs with Venn](venn-ai-assistant/alerts-and-slos-with-venn.md)
+  * [Create Resources with Venn](venn-ai-assistant/create-resources-with-venn.md)
+  * [Connect Your Own AI Client (MCP)](venn-ai-assistant/connect-your-own-ai-client-mcp.md)
+  * [Safety and Control](venn-ai-assistant/safety-and-control.md)
+  * [Administer Venn](venn-ai-assistant/administer-venn.md)
+
 ## DATA SOURCES
 
 * [Data Source Overview](data-sources/overview.md)
