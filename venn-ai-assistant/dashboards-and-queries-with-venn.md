@@ -20,7 +20,7 @@ What makes the drafts trustworthy:
 * **Real identifiers only.** Before drafting, Venn discovers the source's actual inventory (metric names, check names, namespace and application pairs, tables). Drafts are verified against your live inventory, and the reviewed draft shows that verification.
 * **Mixed sources are fine.** A synthetic-checks panel and a Prometheus panel can sit side by side; each widget carries its own source and query language.
 
-<figure><img src="../.gitbook/assets/image (285).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (278).png" alt=""><figcaption></figcaption></figure>
 
 ### Edit the dashboard you are looking at
 

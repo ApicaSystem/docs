@@ -397,7 +397,7 @@
   * [Chronosphere Forwarder (via OTel)](flow/list-of-forwarders/chronosphere-forwarder-via-otel.md)
   * [Coralogix Forwarder (via OTel)](flow/list-of-forwarders/coralogix-forwarder-via-otel.md)
   * [CrowdStrike Falcon LogScale](flow/list-of-forwarders/crowdstrike-falcon-logscale.md)
-  * [Datadog Forwarding](flow/list-of-forwarders/datadog-forwarding.md)
+  * [Datadog Forwarder](flow/list-of-forwarders/datadog-forwarding.md)
   * [Dynatrace Forwarding](flow/list-of-forwarders/dynatrace-forwarding.md)
   * [Elasticsearch Forwarding](flow/list-of-forwarders/elasticsearch-forwarding.md)
   * [Exabeam Forwarder](flow/list-of-forwarders/exabeam-forwarder.md)
