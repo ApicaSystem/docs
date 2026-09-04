@@ -151,6 +151,7 @@
     * [Azure Databricks](integrations/list-of-integrations/azure/azure-databricks.md)
     * [Azure Eventhub](integrations/list-of-integrations/azure/azure-eventhub.md)
     * [Azure Event Hubs](integrations/list-of-integrations/azure/azure-event-hubs.md)
+  * [Check Point Log Exporter](integrations/list-of-integrations/check-point-log-exporter/README.md)
   * [Docker Compose](integrations/list-of-integrations/docker-compose.md)
   * [Docker Swarm logging](integrations/list-of-integrations/docker-swarm-logging.md)
   * [Docker Syslog log driver](integrations/list-of-integrations/docker-syslog-log-driver.md)
@@ -231,7 +232,6 @@
     * [Audit Vault Logs - AWS](integrations/list-of-integrations/vault/audit-vault-logs-aws.md)
     * [Audit Vault Logs - OCI](integrations/list-of-integrations/vault/audit-vault-logs-oci.md)
     * [Audit Vault Metrics](integrations/list-of-integrations/vault/audit-vault-metrics.md)
-  * [Check Point Log Exporter](integrations/list-of-integrations/check-point-log-exporter.md)
 * [Apica Product API Portal](https://apidocs.apica.io/)
 
 ## DATA MANAGEMENT
