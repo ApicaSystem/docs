@@ -231,6 +231,8 @@
     * [Audit Vault Logs - AWS](integrations/list-of-integrations/vault/audit-vault-logs-aws.md)
     * [Audit Vault Logs - OCI](integrations/list-of-integrations/vault/audit-vault-logs-oci.md)
     * [Audit Vault Metrics](integrations/list-of-integrations/vault/audit-vault-metrics.md)
+  * [Check Point](integrations/list-of-integrations/check-point/README.md)
+    * [Log Exporter](integrations/list-of-integrations/check-point/log-exporter.md)
 * [Apica Product API Portal](https://apidocs.apica.io/)
 
 ## DATA MANAGEMENT
