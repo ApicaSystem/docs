@@ -1,5 +1,29 @@
 # Release Notes
 
+## Changes in 1.5.2
+
+2026-09-04
+
+ * Fixed a bug where tombstones for deleted metrics were not always immediately recognized, causing new
+   writes for the deleted metric to go to the old surrogate instead of creating a new surrogate. The
+   deleted metric would remain visible until a surrogate compaction or node restart, at which point a new
+   surrogate would be created and any data written in the interim for that metric would be lost.
+ * Fixed bug where unlimited licenses were not displaying properly on the UI.
+ * Missing license fields now display `N/A` in the UI rather than being blank.
+ * Fixed issue with potential short file writes in histogram rebalance.
+ * Improved histogram rebalance performance.
+ * Fixed bug in histogram rebalance where it would get stuck trying to send cumulative histograms.
+ * Added API endpoint, `/surrogate/cleanup`, that iterates the surrogate database and removes
+   any entries that are not supposed to exist on the current active topology. This is typically
+   done after a rebalance to remove any surrogates that used to live on a node, but no longer should
+   because the node is now part of a different topology.
+ * The reconstitute UI now lists nodes in topology order and displays their addresses.
+ * The `/state`, `/locate`, `/topology`, and `/toporing` GET endpoint are now accessible during
+   reconstitute operations.
+ * Enhanced `snowthd` command-line argument parsing by adding support for more descriptive command line
+   options. These options are described in snowthd's help menu.
+ * Removed obsolete NNT-related data from `stats.json` output.
+
 ## Changes in 1.5.1
 
 2025-06-17
