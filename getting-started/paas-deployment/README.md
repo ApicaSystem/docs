@@ -214,6 +214,10 @@ If desired, make this namespace the default for `kubectl` to use, removing the n
 kubectl config set-context --current --namespace=apica-ascent
 ```
 
+### Create Secrets <a href="#create-secrets" id="create-secrets"></a>
+
+#### Required Secrets
+
 Create secrets to provide your HTTPS certificate to the ingress controller as well as to the log ingestion service. The CN of this certificate should be the hostname/domain that you wish to use to access the Ascent platform. The same key and certificate can be used for both, but the secrets are of different types for each usage.
 
 * `kubectl -n apica-ascent create secret tls my-ascent-ingress --cert=my-tls.crt --key=my-tls.key`
@@ -222,6 +226,26 @@ Create secrets to provide your HTTPS certificate to the ingress controller as we
   * **NOTE:** if your certificate requires an intermediate, provide that individually as `ca.crt`.
 
 You can choose different names for the secrets, but see the next section for where to set each secret's name in the `values.yaml` file.
+
+#### Optional Secrets
+
+**S3 credentials**
+
+You can opt to store the S3 access key, secret key, and bucket name in a secret rather than directly in the values file.
+
+```
+kubectl -n apica-ascent create secret generic ascent-s3-credential \
+  --from-literal=access_key=your-access-key \
+  --from-literal=secret_key=your-secret-key \
+  --from-literal=bucket=your-bucket
+```
+
+Set the name of the secret in `global.environment.s3_credentials_secret.name`, and remove the following keys from your values file:
+* `s3_access`
+* `s3_secret`
+* `s3_bucket`
+* `AWS_ACCESS_KEY_ID`
+* `AWS_SECRET_ACCESS_KEY`
 
 ### Prepare your Values file
 
