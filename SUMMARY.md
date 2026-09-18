@@ -84,6 +84,7 @@
     * [Collect Logs with Rsyslog](getting-started/ascent/getting-started-with-logs/collect-logs-with-rsyslog.md)
 * [On-Premises PaaS Deployment](getting-started/paas-deployment/README.md)
   * [On-Premises Sizing Guide](getting-started/paas-deployment/paas-architecture.md)
+  * [Deploying with external Postgres and Redis](getting-started/paas-deployment/deploying-with-external-postgres-and-redis.md)
 * [Dashboards & Visualizations](getting-started/overview.md)
 
 ***

@@ -241,6 +241,7 @@ kubectl -n apica-ascent create secret generic ascent-s3-credential \
 ```
 
 Set the name of the secret in `global.environment.s3_credentials_secret.name`, and remove the following keys from your values file:
+
 * `s3_access`
 * `s3_secret`
 * `s3_bucket`
@@ -262,7 +263,9 @@ The following keys require setting site-specific values:
 
 * `global.domain` - The hostname that will be used to access the Ascent UI. This must match the CN of the TLS certificate used to create the secrets above.
 * `global.imageRegistry` - **If using a private registry**, set this to the hostname of the registry server. If not, leave the default value in place to get images from `docker.io`.
+* `global.environment.postgres_host` - Either `apica-ascent-cnpg-rw` if using the internal service, or the hostname of an external service. See [Deploying with external Postgres and Redis](deploying-with-external-postgres-and-redis.md) for details.
 * `global.environment.postgres_password` - password for the `postgres` database user
+* `global.environment.redis_host` - Either `redis-master` if using the internal service, or the hostname of an external service. See [Deploying with external Postgres and Redis](deploying-with-external-postgres-and-redis.md) for details.
 * `global.environment.s3_url` - base URL for your S3 or compatible service
 * `global.environment.s3_access` - S3 access key
 * `global.environment.s3_secret` - S3 secret key
