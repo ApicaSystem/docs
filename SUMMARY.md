@@ -206,6 +206,7 @@
   * [OSSEC Variants (OSSEC/WAZUH/ATOMIC)](integrations/list-of-integrations/ossec-variants-ossec-wazuh-atomic/README.md)
     * [Apica Ascent-OSSEC Agent for Windows](integrations/list-of-integrations/ossec-variants-ossec-wazuh-atomic/ascent-ossec-agent-for-windows.md)
   * [Palo Alto Firewall](integrations/list-of-integrations/palo-alto-firewall.md)
+  * [PathSolutions TotalView](integrations/list-of-integrations/pathsolutions-totalview.md)
   * [Prometheus](integrations/list-of-integrations/prometheus/README.md)
     * [MongoDB Exporter](integrations/list-of-integrations/prometheus/mongodb-exporter.md)
     * [Prometheus Blackbox Exporter](integrations/list-of-integrations/prometheus/prometheus-blackbox-exporter.md)
