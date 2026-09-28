@@ -17,3 +17,22 @@ This patch release makes log ingestion in Flow more reliable, with fixes for sta
 * When oversized payload rejection is enabled, payloads larger than the ingest limit now get a "payload too large" (413) response instead of "try again later" (429), so senders stop resending data that will never be accepted.
 * Fixed an issue where searches could return partial results, reported as complete, while Redis was unreachable. A brief Redis outage also no longer causes Flash nodes to exit.
 * Fixed an issue that could cause duplicate logs when an HTTP ingestion request failed or was cancelled and the sender retried the same data.
+
+***
+
+### Component Version 3.0.7
+
+| Component                              | Version                                         |
+| -------------------------------------- | ----------------------------------------------- |
+| Flash                                  | v4.0.7                                          |
+| Coffee                                 | v4.0.4                                          |
+| ASM                                    | 13.40.3                                         |
+| NG Private Agent                       | 1.0.9                                           |
+| Check Execution Container: Browser     | fpr-c-130n-10.2.1-716-r-2025.04.02-0-base-2.0.0 |
+| Check Execution Container: Zebratester | zt-7.5a-p0-r-2025.04.02-0-base-1.2.0            |
+| Check Execution Container: Runbin      | runbin-2025.04.17-0-base-2.2.1                  |
+| Check Execution Container: Postman     | postman-2025.04.17-0-base-1.4.1                 |
+| Bnet (Chrome Version)                  | 10.2.2 (Chrome 130)                             |
+| Zebratester                            | 7.5A                                            |
+| ALT                                    | 6.13.3.240                                      |
+| IronDB                                 | 1.5.1                                           |
