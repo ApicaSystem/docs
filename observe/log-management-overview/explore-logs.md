@@ -10,7 +10,7 @@ The Explore page lists all the log streams generated across your IT environment 
 
 You can also click into a specific application or ProcID to view logs in more detail and to search through or identify patterns within your log data.
 
-![Explore Page](<../../.gitbook/assets/image (256).png>)
+<figure><img src="../../.gitbook/assets/image (244).png" alt=""><figcaption><p>Explore Page</p></figcaption></figure>
 
 ## Search Tab
 
@@ -27,11 +27,11 @@ On the Search Tab, you can:
 * Create a Report
 * Export data
 
-![Search Tab](<../../.gitbook/assets/image (332).png>)
+<figure><img src="../../.gitbook/assets/image (285).png" alt=""><figcaption><p>Search Logs</p></figcaption></figure>
 
 Clicking on the individual log line reveals a detailed log view with additional attributes.
 
-![](<../../.gitbook/assets/image (283).png>)
+<figure><img src="../../.gitbook/assets/image (287).png" alt=""><figcaption></figcaption></figure>
 
 The dots available on the individual log line and the detailed view will reveal additional options. These options are discussed in the detail in the **Data Management** section.
 
@@ -39,12 +39,12 @@ The dots available on the individual log line and the detailed view will reveal 
 
 The search happens at the namespace level, select the namespace and applications, and enter the search term to get started. Use the Advanced Search modal to create complex search expressions. Click on the lens<img src="../../.gitbook/assets/image (338).png" alt="" data-size="line">icon to open the Advanced Search modal.
 
-![Advanced Search](<../../.gitbook/assets/image (227).png>)
+<figure><img src="../../.gitbook/assets/image (317).png" alt=""><figcaption><p>Advanced Search</p></figcaption></figure>
 
 ### Filter data
 
 Use facets to narrow your search results. Apica Ascent's intelligent parsing engine extracts facets at the time of data ingestion. Facets are available on the left side of search results. Select a facet and click on the "apply" button to fetch more results. Filtered results will be displayed in a separate tab.
 
-![](<../../.gitbook/assets/image (253).png>)
+<figure><img src="../../.gitbook/assets/image (321).png" alt="" width="357"><figcaption></figcaption></figure>
 
 ###
