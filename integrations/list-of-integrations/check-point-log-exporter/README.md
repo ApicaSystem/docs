@@ -101,8 +101,8 @@ Check Apica Ascent for incoming log entries from the Check Point source. Each lo
 
 <summary>No logs appearing in Apica</summary>
 
-* Verify connectivity: `tcpdump -i any tcp port 515 -n` on the Ubuntu host and confirm packets flow from `192.168.122.10` through to the external interface
-* Check the exporter log: `tail -50 /opt/CPrt-R81/log_exporter/targets/apica/logs/apica.log`
+* Verify connectivity: `tcpdump -i any tcp port 515 -n` on the host running the Gaia VM and confirm packets flow from the VM's local IP through to the external interface
+* Check the exporter log: `tail -50 /opt/CPrt-R*/log_exporter/targets/apica/logs/apica.log`
 * Confirm the exporter is running: `cp_log_export show name apica`
 
 </details>
