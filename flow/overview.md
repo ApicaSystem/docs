@@ -40,17 +40,30 @@ An elastic design is needed to ensure that data sources sending more data can be
 
 ## <mark style="color:green;">"Never Block"</mark> and <mark style="color:green;">"Never Drop"</mark> with <mark style="color:green;">InstaStore</mark>
 
-&#x20;We built our InstaStore to handle the challenges faced by enterprises in high-volume environments. 100% of all data coming in LogFlow is written to InstaStore before being forwarded. InstaStore provides an infinite storage layer by abstracting storage as an API and building on top of any object-store.
+We built our InstaStore to handle the challenges faced by enterprises in high-volume environments. 100% of all data coming in LogFlow is written to InstaStore before being forwarded. InstaStore provides an infinite storage layer by abstracting storage as an API and building on top of any object-store.
 
 Build your data pipelines from day 0 with infinite storage that can act as an endless store for throughput mismatches on either the source or the target. Any data in the InstaStore can be instantly replayed to a target on demand. <mark style="color:green;">**Never block or never drop data with InstaStore**</mark>**.**
 
 <figure><img src="../.gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure>
 
-## Elastic architecture with Kubernetes
+## Elastic Architecture with Kubernetes
 
 Apica's LogFlow is built on Kubernetes and works with Cluster Autoscaling and Horizontal Pod Autoscaling providing instant throughput on-demand in high volume data environments.
 
 <figure><img src="../.gitbook/assets/image (156).png" alt=""><figcaption><p>Native Kubernetes design makes platform elastically scale on-demand</p></figcaption></figure>
+
+## Resilience
+
+For Apica cloud-based RPO and RTO targets, the table below covers the failure scenarios and target RPO/RTO system behavior:
+
+* Flow forwards data; it isn't the system of record. End-to-end RPO depends on the sources holding their own data: agent-side buffers, Kafka retention, and syslog senders that retry. Using protocols that require acknowledgement plus "Block" mode (HTTP 429 so senders retry) is what brings RPO close to zero.
+* Lake makes downstream recovery better. If data is landing in InstaStore, any tool that missed data during an outage can be replayed. That effectively gives a zero RPO for the destination even after the forwarder's buffer runs out.
+
+<table data-header-hidden><thead><tr><th valign="top"></th><th valign="top"></th><th valign="top"></th><th valign="top"></th></tr></thead><tbody><tr><td valign="top"><strong>Failure scenario</strong></td><td valign="top"><strong>Expected RPO</strong></td><td valign="top"><strong>Expected RTO</strong></td><td valign="top"><strong>What makes it possible</strong></td></tr><tr><td valign="top">A destination goes down (Splunk, SIEM, etc.)</td><td valign="top">0, as long as the outage is shorter than the buffer (about 1–2 hrs with 50–100 GB SSD per node)</td><td valign="top">Minutes after the destination comes back, while the queue empties</td><td valign="top">Each forwarder has its own persistent queue</td></tr><tr><td valign="top">A node or pod fails</td><td valign="top">0 to seconds (only data in memory on that node is at risk)</td><td valign="top">Under 5 min, with no loss of throughput</td><td valign="top">Sizing for 20% of nodes offline (1.5× capacity); Kubernetes restarts the pod; "Block" mode makes senders retry</td></tr><tr><td valign="top">A whole cluster or zone is lost (one cluster)</td><td valign="top">Minutes up to the depth of the local queues</td><td valign="top">2–4 hrs to rebuild or redeploy</td><td valign="top">Infrastructure-as-code / Helm redeploy; sources keep their own buffers</td></tr><tr><td valign="top">A region is lost (a second, standby cluster)</td><td valign="top">About 15 min</td><td valign="top">1–4 hrs</td><td valign="top">Requires the multi-cluster disaster-recovery design that Apica only scopes in an architecture review (needed above 10 TB/day)</td></tr><tr><td valign="top">Lake / InstaStore data</td><td valign="top">Follows the object store's replication (e.g., S3 cross-region, usually under 15 min)</td><td valign="top">Matches the cluster RTO; data can then be replayed to any tool</td><td valign="top">InstaStore sits on object storage; Replay backfills destinations</td></tr></tbody></table>
+
+**For Apica's SaaS cloud-hosted Flow, our target RPO ≈ 0 for destination outages within the buffer window. Our target RTO is under 5 minutes for node failures.**&#x20;
+
+For on-premises deployments, the customer's own infrastructure and the Apica architecture review set the targets. Also, regional DR targets are typically set during the architecture review.
 
 ## Deployment
 
