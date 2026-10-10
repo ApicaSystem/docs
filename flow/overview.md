@@ -46,8 +46,6 @@ Our approach provides instant elasticity in terms of storage requirements with Z
 
 An elastic design is needed to ensure that data sources sending more data can be handled by the data pipeline without any manual intervention. Not doing so will lead to data backlogs on the source and cause data loss in the event the backlog build-up for long durations.
 
-#### &#x20;<a href="#never-block-and-never-drop-with-instastore" id="never-block-and-never-drop-with-instastore"></a>
-
 ## <mark style="color:green;">"Never Block"</mark> and <mark style="color:green;">"Never Drop"</mark> with <mark style="color:green;">InstaStore</mark>
 
 We built our InstaStore to handle the challenges faced by enterprises in high-volume environments. 100% of all data coming in LogFlow is written to InstaStore before being forwarded. InstaStore provides an infinite storage layer by abstracting storage as an API and building on top of any object-store.
