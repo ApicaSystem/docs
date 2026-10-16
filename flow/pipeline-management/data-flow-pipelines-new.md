@@ -4,45 +4,42 @@ The pipeline is a series of processes through which telemetry data flows systema
 
 ## Creating a Pipeline
 
-Click on the `Explore` option from the top menu and click on `Pipelines`
+1. Select **Explore** → **Pipelines**.
+2. Select **Actions** → **Create Pipeline**.
 
 <figure><img src="../../.gitbook/assets/image (691).png" alt=""><figcaption><p>Navigating to Pipeline Page</p></figcaption></figure>
 
-On the top right corner of the page, there is a `Actions` button. Hover on the `Actions button` and click on `Create Pipeline` .
-
 <figure><img src="../../.gitbook/assets/image (672).png" alt=""><figcaption><p>Actions button to create Pipeline</p></figcaption></figure>
 
-After clicking on `Create Pipeline,` the Configure Pipeline page would open up. The Configure Pipeline page has 3 vertical sections (Pipeline Preview, Pipeline Rules Flow, Pipeline Configuration).
+The builder has two panels: **Pipeline Preview** and **Pipeline Configuration**.
 
-The Pipeline Preview section has an option for previewing the pipeline. Previewing the pipeline rules allows you to test them before they are applied to the incoming data without making a permanent change. There are several options to preview(discussed below).
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 15-00-05.png" alt=""><figcaption></figcaption></figure>
 
-The middle section, called Pipeline Rules Flow, is where you can add rules and visualize the flow of data in this pipeline.
+Select **EXISTING RULES** to attach saved rules inin **Configure Rules for - \<pipeline>**.
 
-The rightmost column, Pipeline Configuration, is for configuring the pipeline and its rules.
-
-<figure><img src="../../.gitbook/assets/image (1204).png" alt=""><figcaption></figcaption></figure>
-
-To add a rule, click on the `+` button on the tail end of the graph in the middle section, Pipelines Rules Flow.
-
-<figure><img src="../../.gitbook/assets/Screenshot from 2026-01-12 20-51-07.png" alt=""><figcaption></figcaption></figure>
-
-After choosing the name, a rule entry must be created in the rightmost section, Pipeline Configuration.
+Each rule opens in **Pipeline Configuration**. Complete its shared fields, condition, and rule-specific settings. See [rules](../rules/ "mention") for shared fields and conditions.
 
 <figure><img src="../../.gitbook/assets/image (1162) (1).png" alt=""><figcaption><p>A new drop rule was added</p></figcaption></figure>
 
-Configure the rule based on what needs to be achieved.
+The rule list shows **Rule Name**, **Rule Type**, **Savings**, **Enabled**, and **Actions**. Drag a rule to reorder execution. Use **Enabled** to switch a rule on or off.
+
+Use **Expand rule** to open one rule at a time. Select **Delete rule** to remove a rule. Confirm **Are you sure you want to remove the rule?**. The deletion takes effect when you save.
+
+Opening a pipeline from **Pipelines** uses a full page. Opening it from the topology graph uses **Configure Pipeline** as a modal. Both views have **Close** and **Save** buttons.
+
+Validation runs when you select **Save**. A banner lists all issues. For each missing required rule field, it displays: `&lt;Field(s)&gt; is a required field and cannot be empty in &lt;rule name&gt; rule.` A missing pipeline name displays: `Pipeline name is a required field and cannot be empty.`
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-02 215739.png" alt=""><figcaption><p>Created pipeline displayed in the pipeline list</p></figcaption></figure>
 
 ### Editing a Pipeline
 
-To edit a pipeline, navigate to the pipelines page and select the pipelines tab. Hover on the ellipses placed on the right side of the desired pipeline. A dropdown of options should apprear next to the ellipses on hover. Click on `Configure Pipeline` and the Configure Pipeline page should open.
+To edit a pipeline, open **Explore** → **Pipelines**. Select the ellipsis beside the pipeline, then select **Configure Pipeline**. It opens as a full page from **Pipelines**.
 
 <figure><img src="../../.gitbook/assets/image (1189).png" alt=""><figcaption></figcaption></figure>
 
 ## Pipeline Preview
 
-Previewing a pipeline allows you to test it before it is used. There are several ways to preview a pipeline; each option displays the selected set of logs, and the changes can be visualized in the diff view within the Pipeline Preview Section.
+Pipeline Preview updates automatically after every pipeline or rule change. It displays the selected logs and changes in the `Diff` view.
 
 #### Use Sample Logs:
 
@@ -79,7 +76,7 @@ With Live tail, use the raw logs that are getting ingested in real time to run t
 
 To view the preview changes, click on the `Diff` tab in the Pipeline Preview Section:
 
-<figure><img src="../../.gitbook/assets/image (1170).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-08-28 19-22-32.png" alt=""><figcaption></figcaption></figure>
 
 After configuring the pipeline and its rules and testing them, click on the Save button in the bottom right section of the page.
 

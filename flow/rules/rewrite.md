@@ -1,66 +1,64 @@
+---
+description: Use RE2 regular expressions to match, mask, or replace log content.
+---
+
 # REWRITE
 
-If your incoming log data contains Personally Identifiable Information (PII) or other sensitive data, you may need to redact or replace that data to comply with data security regulations or meet your business needs. With Apica Ascent, you can create custom Rewrite Rules using regular expressions to match patterns in your incoming data stream and mask or replace these patterns.
+If your incoming log data contains personally identifiable information (PII) or other sensitive data, you may need to redact or replace it. This helps meet security requirements and business needs. A rewrite rule uses regular expressions to match log content, then replaces or masks the matching content.
 
-Apica Ascent uses [re2 Regular expressions](https://github.com/google/re2/wiki/Syntax) for creating pattern expressions. A sample expression for extracting ingress logs is mentioned below.
+Apica Ascent supports [RE2 regular expressions](https://github.com/google/re2/wiki/Syntax) for these match patterns.
 
-Rewrite Rule also lets you give a piece of JavaScript code to access the log as an 'Event' object in its scope. Read Code Rule for more details.
+A rewrite rule can also use JavaScript to access the log as an `Event` object. For details, see the Code rule documentation.
 
-### Example: Removing names and phone numbers from log data
+### Example: Masking selected PII values in log data
 
-In this example, assume that the following lines of data are from an incoming log data stream.
-
-```
-2021-08-28 01:34:55.001Z Jane Smith phone number : (408) 555-1212
-2021-08-29 01:34:55.002Z Raj Singh local phone number => 206-555-1212
-2021-08-30 01:34:55.003Z Tim White office phone number is 408121324
-```
-
-You notice that the data you are ingesting includes names and respective US phone numbers that fall under PII. To mask these names and US phone numbers from incoming data, you can use Apica Ascent to create the following regular expression to sample and match incoming data.
+In this example, the following data comes from an incoming log stream.
 
 ```
-^(?P<name>\w+\s+\w+)\s+(?P<p1>.*)phone number(?P<p2>.*)\s(?P<phone>\D*\d{3}\D*\d{3}\D*\d{4})\s*$  
+[
+ { "message": "2021-08-28 01:34:55.001Z Jane Smith phone number : (408) 555-1212"},
+ { "message": "2021-08-29 01:34:55.002Z Raj Singh local phone number => 206-555-1212"},
+ { "message":  "2021-08-30 01:34:55.003Z Tim White office phone number is 4085551212"},
+ { "message":  "2021-08-31 01:34:55.004Z Alice Brown credit card: 4111-1111-1111-1111"},
+ { "message": "2021-09-01 01:34:55.005Z Bob Davis SSN: 123-45-6789"},
+ { "message":  "2021-09-02 01:34:55.006Z Carol Evans email: carol.evans@example.com"}
+]
 ```
 
-The regular expression above produces the following capture groups.
+The data includes names and US phone numbers that contain PII. The phone pattern supports `(408) 555-1212`, `206-555-1212`, and `4085551212`. Use the following regular expressions to match and mask this data.
 
-* \`$name\`
-* \`$p1\`
-* \`$p2\`
-* \`$phone\`
+The replacement text can change based on your requirements.
 
-The rewrite rule for replacing names and phone numbers in the above sample log data is as shown below.
+<table><thead><tr><th width="163.6796875">PII Type</th><th width="407.5164794921875">Match regex</th><th>Replacement text</th></tr></thead><tbody><tr><td>Phone number</td><td>(?:\(\d{3}\)\s*\d{3}-\d{4}|\d{3}-\d{3}-\d{4}|\b\d{10}\b)</td><td>[REDACTED-PHONE]</td></tr><tr><td>Credit card</td><td>\b\d{4}-\d{4}-\d{4}-\d{4}\b</td><td>[REDACTED-CC]</td></tr><tr><td>SSN</td><td>\b\d{3}-\d{2}-\d{4}\b</td><td>[REDACTED-SSN]</td></tr><tr><td>Email address</td><td>\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}\b</td><td>[REDACTED-EMAIL]</td></tr></tbody></table>
 
-```
-XXX-Name ${p1}phone number${p2} XXX-XXX-XXXX
-```
-
-The rewrite rule replaces `$name` and `$phone` among these groups while retaining `$p1` and `$p2`, providing the log data with redacted PII as the output, as shown below.
+The following log data shows the result after the rewrite rule runs.
 
 ```
-2021-08-28 01:34:55.001Z XXX-Name phone number : xxx-xxx-xxxx
-2021-08-29 01:34:55.002Z XXX-Name local phone number is xxx-xxx-xxxx
-2021-08-30 01:34:55.003Z XXX-Name office phone => xxx-xxx-xxxx
+[
+ { "message": "2021-08-28 01:34:55.001Z Jane Smith phone number : [REDACTED-PHONE]"},
+ { "message": "2021-08-29 01:34:55.002Z Raj Singh local phone number => [REDACTED-PHONE]"},
+ { "message":  "2021-08-30 01:34:55.003Z Tim White office phone number is [REDACTED-PHONE]"},
+ { "message":  "2021-08-31 01:34:55.004Z Alice Brown credit card: [REDACTED-CC]"},
+ { "message": "2021-09-01 01:34:55.005Z Bob Davis SSN: [REDACTED-SSN]"},
+ { "message":  "2021-09-02 01:34:55.006Z Carol Evans email: [REDACTED-EMAIL]"}
+]
 ```
 
-It is crucial to be mindful of the context of the regular expression you create for your incoming log data. In the example above, the incoming log data and the created regular expression contain the string "phone number". If you used a non-contextual regex that only matches and replaces numerical patterns, like the following example, you might end up substituting numbers in your log data that are not necessarily phone numbers.
+Use context-specific expressions when possible. A numerical-only expression can replace values that are not phone numbers.
 
 ```
 (?P<phone>\D*\d{3}\D*\d{3}\D*\d{4})
 ```
 
 {% hint style="info" %}
-**Note**: For more information on RE2 search and replace syntax and best practices, do read the [RE2 documentation](https://qinwenfeng.com/re2r_doc/#2_replace_a_substring).
+For RE2 search-and-replace syntax and best practices, see the [RE2 documentation](https://qinwenfeng.com/re2r_doc/#2_replace_a_substring).
 {% endhint %}
 
 ### Creating a PII masking rule via the UI
 
-* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](https://docs.apica.io/flow/pipeline-management/data-flow-pipelines-new).
-* Hover over the `+ Add Rule` button.
-* Select `REWRITE` from the rule type dropdown.
-* A form organized into tabs should be created in the `Pipeline Configuration` section of the page.
+Open **Configure Pipeline**, click **Add Rule** under **Rules**, then select **REWRITE**. Complete the shared fields and condition in [.](./ "mention").
 
-<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2Fd7bkLYrLURwOGNVkvQMf%2Fimage.png?alt=media&#x26;token=ecae15b7-3b09-4a8a-9d02-85a89a93c3d2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 15-00-05.png" alt=""><figcaption></figcaption></figure>
 
 To configure your rewrite rule, do the following.
 
@@ -68,14 +66,28 @@ To configure your rewrite rule, do the following.
 2. Select a **Group**.
 3. Provide a **Description** of the rule.
 4. Provide your **Match** and **Rewrite** expressions to rewrite on the message field.
-5. To rewrite field value, Enter/Select the field to be masked under the `Choose fields to mask their values`. Optional replacement value can also be mentioned, but the default value that will be applied is `*****`.
-6. Optionally, add more Parameters as a filter on which this rule must be applied to in the selected data-flow.
+5. To rewrite a field value, select the field under **Choose fields to mask their values**. Optionally, enter a replacement value. The default replacement value is `*****`.
+6. Optionally, click **+ Add more parameters** to add a condition for the selected data flow.
 7. Click **SAVE**.
 
-<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2F4AwlHs34yTYy0ypr0UxB%2Fimage.png?alt=media&#x26;token=fa53f8e8-5b5d-4592-a8ca-7b490a5b0a33" alt=""><figcaption></figcaption></figure>
+#### Pipeline Preview
 
-Your new rewrite rule has been created. Your new rule will apply to all incoming log data for the selected namespace, look for patterns within the log data that match the match expression, and rewrite log data as per the rewrite expression.
+_Phone number masking_
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-22 13-42-58.png" alt=""><figcaption></figcaption></figure>
+
+_Credit card masking_
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-22 13-43-08.png" alt=""><figcaption></figcaption></figure>
+
+_SSN masking_
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-22 13-43-17.png" alt=""><figcaption></figcaption></figure>
+
+_Email address masking_
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-22 13-43-36.png" alt=""><figcaption></figcaption></figure>
+
+Your rewrite rule is part of the pipeline. When the pipeline processes matching logs, the rule finds patterns that match the expression and rewrites the log data.
 
 Apica Ascent offers many built-in rules for obfuscating sensitive information like credit card numbers, SSN, phone numbers, and many more.
-
-<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FE3hkEMbciHtKFhbLQ54a%2Fimage.png?alt=media&#x26;token=0142b69c-8fc0-41c8-9f03-0e6f77be31ff" alt=""><figcaption></figcaption></figure>

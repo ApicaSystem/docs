@@ -6,24 +6,29 @@ Multiple forward rules can be configured for a log stream. The data gets forward
 
 ### To Add A Forward Rule:
 
-* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](../pipeline-management/data-flow-pipelines-new.md).&#x20;
-* Hover over the `+ Add Rule` button.
-* Select `Forward` from the rule type dropdown.
-* A form organized into tabs should be created in the `Pipeline Configuration` section of the page.
+Open **Configure Pipeline**, click **Add Rule** under **Rules**, then select **FORWARD**. Complete the shared fields and condition in [.](./ "mention").
 
-<figure><img src="../../.gitbook/assets/image (1171).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 15-00-05.png" alt=""><figcaption></figcaption></figure>
 
-* Enter the name and select a group for the Forward rule.
+{% hint style="warning" %}
+Forward rules cannot be mixed with other rule types.
+{% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (1198).png" alt=""><figcaption></figcaption></figure>
+Select preview data before choosing labels. Fields come from **Pipeline Preview**. You can also type a label manually.
+
+Enter the name and select a group for the Forward rule.
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-21 16-12-08.png" alt=""><figcaption></figcaption></figure>
 
 Navigate to the `Forward Labels` tab, click on the `Forward Labels` toggle and select the fields that need to be forwarded. In this case, only the selected fields get forwarded.
 
-<figure><img src="../../.gitbook/assets/image (1199).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-21 16-12-33.png" alt=""><figcaption></figcaption></figure>
 
 ### Rename Attributes:
 
-This feature allows the user to rename the log attributes before forwarding it to any destination.
+This feature allows the user to rename the log attributes before forwarding it to any destination.&#x20;
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-21 16-13-15.png" alt=""><figcaption></figcaption></figure>
 
 > Attribute is a piece of information which determines the properties of a field or tag.
 
@@ -39,8 +44,6 @@ You should use this feature if:
 * You want to rename the labels to **maintain a set standard across teams**
 * You want to rename the attributes to **enhance the readability**
 
-
-
 **To Rename Attributes:**
 
 * Click on the `Rename Labels` tab enable the `Rename Labels` option.
@@ -49,11 +52,11 @@ There are 2 ways to choose fields to rename:
 
 1. Using regex. Mention a regex to match with the field and the replacing text to the regex match phrase
 
-<figure><img src="../../.gitbook/assets/image (1200).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-21 16-23-48.png" alt=""><figcaption></figcaption></figure>
 
 2. Explicitly mention the field name and the replacement text.
 
-<figure><img src="../../.gitbook/assets/image (1201).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-21 16-21-54.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 **NOTE:**\

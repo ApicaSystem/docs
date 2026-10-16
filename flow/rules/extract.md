@@ -10,41 +10,28 @@ EXTRACT rule uses regular expressions to parse and extract certain labels from l
 
 #### To Add a New EXTRACT Rule
 
-* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](../pipeline-management/data-flow-pipelines-new.md).&#x20;
-* Hover over the `+ Add Rule` button.
-* Select `EXTRACT` from the rule type dropdown.
-* A form organized into tabs should be created in the `Pipeline Configuration` section of the page.
+Open **Configure Pipeline**, click **Add Rule** under **Rules**, then select **EXTRACT**. Complete the shared fields and condition in [.](./ "mention").
 
-<figure><img src="../../.gitbook/assets/image (1171).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 15-00-05.png" alt=""><figcaption></figcaption></figure>
 
 From here, you can define the fields that you want to extract and configure the rule to match your specific use case.
 
-When you select the **EXTRACT** rule, a new form will appear on the left side of the modal. The form is organized into tabs based on logical groupings.
+When you select **EXTRACT**, its form opens in **Pipeline Configuration**. The form is organized into logical tabs.
 
 #### 3. Fill in Rule Details
 
 In the **Details** tab:
 
-* Specify the **rule name**, **description**, and other required fields.
-* Click `+ Add More Parameters` to define matching conditions.&#x20;
-
-Example:
-
-```
-Message =~ my-app
-```
-
-This ensures the rule is applied only to logs containing specific patterns.
-
-<figure><img src="../../.gitbook/assets/image (1175).png" alt=""><figcaption></figcaption></figure>
+* Specify the **Name**, **Group**, **Description**, and other required fields.
+* Click **+ Add more parameters** to define matching conditions.
 
 #### 4. Define the Extraction Pattern
 
 * Enter a **regular expression** in **RE2** syntax in the Pattern field that the rule will use to match and extract the desired fields from your log data. After filling in all required details, click **Save** to create the **EXTRACT** rule.
-* This expression should match the log structure and include named capture groups to extract values. We recommend testing your regex in `regex101.com`. Additionaly you can validate the pattern by selecting the `Validate` button.
+* This expression should match the log structure and include named capture groups to extract values. We recommend testing your regex in `regex101.com`. Additionally you can validate the pattern by selecting the `Validate` button.
 
 {% hint style="info" %}
-Apica Ascent uses [re2 Regular expressions](https://github.com/google/re2/wiki/Syntax) for creating pattern expression, A sample expression for extracting ingress logs are mentioned below.&#x20;
+Apica Ascent uses [re2 Regular expressions](https://github.com/google/re2/wiki/Syntax) for creating pattern expression, A sample expression for extracting ingress logs are mentioned below.
 {% endhint %}
 
 **Example RE2 Pattern (Ingress Logs):**
@@ -63,13 +50,10 @@ This pattern extracts the following fields:
 * `environment`
 * `message`
 
-<figure><img src="../../.gitbook/assets/image (1176).png" alt=""><figcaption></figcaption></figure>
-
 #### 5. Validate the Pattern
 
-* In the modal, navigate to the right panel.
 * Click **Use Sample Logs** → **Custom Logs**.
-* Paste the following sample log data into the editor window and click `Preview`
+* Paste the following sample log data into the editor window. The preview updates automatically after every change.
 
 Sample Raw logs:
 
@@ -85,31 +69,15 @@ Sample Raw logs:
 
 ```
 
-<figure><img src="../../.gitbook/assets/image (1177).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 19-10-40.png" alt=""><figcaption></figcaption></figure>
 
-* Switch to the `Diff` Tab in the Pipeline Preview section to view the changes applied by the rule on the sample logs.
+* Switch to the `Diff` tab in **Pipeline Preview** to view changes applied by the rule.
 
-<figure><img src="../../.gitbook/assets/image (1178).png" alt=""><figcaption></figcaption></figure>
-
-Change the expression not to match the logs, save the pipeline, and click preview
-
-```
-Message !~ my-app
-```
-
-<figure><img src="../../.gitbook/assets/image (1179).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 19-10-56.png" alt=""><figcaption></figcaption></figure>
 
 #### 6. Use JavaScript for Advanced Transformations
 
-EXTRACT rules support inline JavaScript. Use the `Event` object to manipulate fields or define custom fields. [Read Code Rule](code.md) for more details. For example:
-
-```javascript
-if (Event.AppName == "appERP") {
-  Event.copyOfAppName = "appERPData";
-}
-```
-
-<figure><img src="../../.gitbook/assets/image (1180).png" alt=""><figcaption></figcaption></figure>
+EXTRACT rules support inline JavaScript. Use the `Event` object to manipulate fields or define custom fields. [Read Code Rule](code.md) for more details.
 
 #### 8. Save and Apply the Rule
 

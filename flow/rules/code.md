@@ -50,20 +50,26 @@ While the CODE rule is a special rule type, you can also use JavaScript code as 
 
 ### To Add A Code Rule:
 
-* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](https://docs.apica.io/flow/pipeline-management/data-flow-pipelines-new).
-* Hover over the `+ Add Rule` button.
-* Select `CODE` from the rule type dropdown.
-* A form organized into tabs should be created in the `Pipeline Configuration` section of the page.
+Open **Configure Pipeline**, click **Add Rule** under **Rules**, then select **CODE**. Complete the shared fields and condition in [.](./ "mention").
 
-<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2Fd7bkLYrLURwOGNVkvQMf%2Fimage.png?alt=media&#x26;token=ecae15b7-3b09-4a8a-9d02-85a89a93c3d2" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 15-00-05.png" alt=""><figcaption></figcaption></figure>
 
-* Enter the name and select a group for the Code rule
+Enter the name and select a group for the Code rule.
 
-<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FbhmTtTbvvjBu0ILznoOB%2Fimage.png?alt=media&#x26;token=7a45a955-9ec6-428a-ae5f-81cccb21ec51" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 16-32-52.png" alt=""><figcaption></figcaption></figure>
 
 * Click on the `CODE` to switch to the code block
 
-<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FoY9CyP25QOf5dx4oXogs%2Fimage.png?alt=media&#x26;token=30f938d5-5db2-4a57-996e-e1acfdd8162a" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 16-32-20.png" alt=""><figcaption></figcaption></figure>
+
+```
+//code sample
+var match = Event.message && Event.message.match(/Receive AskProductAIAssistant for product id:([^,]+),\s*question:\s*(.+)/);
+if (match) {
+  Event.product_id = match[1].trim();
+  Event.question = match[2].trim();
+}
+```
 
 ### Code block support for REWRITE and EXTRACT rules.
 
@@ -75,7 +81,43 @@ For example, it can replace credit card numbers, Social Security numbers, or oth
 
 Rewrite rule has an optional code field. Clicking on the toggle Code field, you can add or remove your code from your rule. Clicking on the import button, you can import the code file whose contents are immediately hydrated in the Code Block.
 
-<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FyGPkN5SX8wrLdMaSPQsh%2Fimage.png?alt=media&#x26;token=eb365fa6-9715-494e-a858-7d8d21ae6cef" alt=""><figcaption><p>Rewrite Rule with a Code Block</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 17-17-39.png" alt=""><figcaption></figcaption></figure>
+
+```
+//PII masking
+if (typeof Event.message === 'string') {
+  var msg = Event.message;
+
+  // 1. Email addresses  →  [REDACTED-EMAIL]
+  msg = msg.replace(/[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g, '[REDACTED-EMAIL]');
+
+  // 2. Credit card numbers (13-19 digits, optional separators: space or hyphen)
+  //    Matches common formats: 4111-1111-1111-1111, 4111 1111 1111 1111, 4111111111111111
+  msg = msg.replace(/\b(?:\d[ \-]?){13,18}\d\b/g, '[REDACTED-CC]');
+
+  // 3. SSN  →  [REDACTED-SSN]  (NNN-NN-NNNN)
+  msg = msg.replace(/\b\d{3}-\d{2}-\d{4}\b/g, '[REDACTED-SSN]');
+
+  // 4. Phone numbers  →  [REDACTED-PHONE]
+  //    Covers: +1-800-555-1234, (800) 555-1234, 800.555.1234, 8005551234, etc.
+  msg = msg.replace(/(?:\+?\d{1,3}[\s.\-]?)?(?:\(?\d{3}\)?[\s.\-]?)\d{3}[\s.\-]?\d{4}\b/g, '[REDACTED-PHONE]');
+
+  // 5. IPv4 addresses  →  [REDACTED-IP]
+  msg = msg.replace(/\b(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\b/g, '[REDACTED-IP]');
+
+  // 6. API keys / bearer tokens  →  [REDACTED-TOKEN]
+  //    a) key=value patterns: api_key=..., apikey=..., token=..., secret=..., access_token=...
+  msg = msg.replace(/(?:api[_\-]?key|apikey|token|secret|access[_\-]?token|auth[_\-]?token)\s*=\s*[^\s,;&"']+/gi, '[REDACTED-TOKEN]');
+  //    b) Bearer <token> in headers / log lines
+  msg = msg.replace(/Bearer\s+[A-Za-z0-9\-._~+/]+=*/gi, '[REDACTED-TOKEN]');
+  //    c) JWT-shaped strings (three base64url segments separated by dots)
+  msg = msg.replace(/\b[A-Za-z0-9\-_]{10,}\.[A-Za-z0-9\-_]{10,}\.[A-Za-z0-9\-_]{10,}\b/g, '[REDACTED-TOKEN]');
+
+  Event.message = msg;
+}
+```
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 17-13-53.png" alt=""><figcaption></figcaption></figure>
 
 **EXTRACT RULE:**
 
@@ -85,7 +127,7 @@ For instance, it can extract timestamps, IP addresses, user agents, or any other
 
 Like REWRITE RULE, you can add an optional code field to your rule by clicking the toggle code button in the `CODE` tab in the EXTRACT rule form.
 
-<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2F5fjluMfkinZCRiqWk2AH%2Fimage.png?alt=media&#x26;token=7a7372f9-c3f5-4b21-8ea0-c5f9fc925c03" alt=""><figcaption><p>Extract Rule</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 16-32-20.png" alt=""><figcaption></figcaption></figure>
 
 **View CODE:**
 
@@ -113,28 +155,24 @@ Event.monitoringApp = ascent.persist.get("monitorying-app")
 
 ### Testing code rule output
 
-The built-in Preview functionality allows a user to test a code rule before making it permanent. Click on the Preview button to launch the code transformation preview window.
+Pipeline Preview updates automatically after every code change. Use the `Diff` view to inspect changes before saving.
 
-You can test code updates directly within the app with the `Diff` view in the `Pipeline Preview` section of the `Configure Pipeline` page. Simply provide a code snippet to update the log object, and instantly visualize the differences with our intuitive JSON compare view. Highlighted lines indicate changes, making it easy to review modifications at a glance. This feature not only streamlines the testing process but also empowers you to confidently manage updates to your log object.
-
-<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2FoY9CyP25QOf5dx4oXogs%2Fimage.png?alt=media&#x26;token=30f938d5-5db2-4a57-996e-e1acfdd8162a" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 16-32-20.png" alt=""><figcaption></figcaption></figure>
 
 ### Additional examples
 
 This is an example of how you can grab epoch date values and convert it into normal date time:
 
-<figure><img src="https://2948796384-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LmzGprckLqwd5v6bs6m%2Fuploads%2F21aqAoFPEoMpu4Kk5B0c%2Fimage.png?alt=media&#x26;token=c33e8f9c-f546-48af-888f-f738d400d4fc" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 17-33-54.png" alt=""><figcaption></figcaption></figure>
 
 ```
-if (Event.date) {
-    var epoch = parseFloat(Event.date);
-
-    if (!isNaN(epoch)) {
-        var normalDate = new Date(epoch * 1000).toISOString();
-
-        Event.date = normalDate;
-    }
-}
+var epochNum = Number(Event.epoch);
+  if (!isNaN(epochNum)) {
+    // Multiply by 1000 to convert seconds -> milliseconds for the Date constructor
+    var dt = new Date(epochNum * 1000);
+    // toISOString() produces a UTC ISO 8601 string, e.g. "2024-05-15T13:45:00.000Z"
+    Event.datetime_iso = dt.toISOString();
+  }
 ```
 
 This is an example of how you can extract parts of your log message:

@@ -62,7 +62,7 @@ Enter the labels you want to drop on the left hand side as shown below:
 
 <figure><img src="../../.gitbook/assets/image (1062).png" alt=""><figcaption></figcaption></figure>
 
-To preview the changes, go to the right-hand side and click "Pipeline Preview" -> "Run Pipeline"
+Pipeline Preview updates automatically when you change the rule. Use the `Diff` tab to inspect the changes.
 
 <figure><img src="../../.gitbook/assets/image (1063).png" alt=""><figcaption></figcaption></figure>
 
@@ -141,4 +141,3 @@ As you can see, data ingestion has decreased after the FILTER rule was applied:<
 ### Conclusion:
 
 By following this guide, you have learned how to successfully use Flow to manage and optimize your telemetry data. You now know how to build a data pipeline that filters unneeded fields, drops irrelevant log messages entirely, and forwards the clean, cost-effective data to a downstream platform like Datadog. Applying these techniques allows you to significantly reduce observability costs while maintaining cleaner and more efficient data pipelines.
-

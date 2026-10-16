@@ -1,61 +1,44 @@
+---
+description: >-
+  SIEM rules identify and analyze security events, helping you create metrics,
+  dashboards, and alerts for effective security monitoring and threat detection.
+---
+
 # SIEM
 
-SIEM rule is Log2Metric rule that can be used to tag data for any interesting events. Apica Ascent Log2Metrics is a powerful feature that helps you convert your log data into a real-time metric. Using Log2Metrics, you can visualize your log data, plot distributions, create a custom index, and create alerts for events.
+SIEM rules are Log2Metrics rules that help identify and monitor interesting security events in real time. They allow you to convert matching log events into real-time metrics, which can then be used to visualize data, analyze event distributions, create custom indexes, and configure alerts.
 
-This is useful for identifying the interesting events that may occur in logs in real-time. For example track, user login failures, track load balancer or ingress status codes, etc... See the section about [Log2Metrics](../../observe/log-management-overview/metrics-and-custom-indices.md) for additional information.
+SIEM rules are useful for detecting and tracking important events in your logs, such as user login failures, load balancer or ingress status codes, and other security-related activities.
 
-Apica Ascent has hundreds of inbuilt SIEM rules which can be accessed on the "Explore -> Pipeline -> Rules" tab .
+Apica Ascent provides hundreds of built-in SIEM rules that can be accessed from **Explore → Pipeline → Rules**.
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-05-22 13-42-30.png" alt=""><figcaption><p>Rules List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/siem_rules.png" alt=""><figcaption></figcaption></figure>
 
-### Creating a SIEM Rule in Apica Ascent
+### Create a SIEM Rule
 
 Follow these steps to create a SIEM or TAG rule in your pipeline:
 
-#### 2. Add a New SIEM Rule
+#### 2. Add a New SIEM or TAG Rule
 
-* Open the `Configure Pipeline` page of the desired pipeline. To know more about creating and editing pipelines, [click here](../pipeline-management/data-flow-pipelines-new.md).
-* Hover over the `+ Add Rule` button.
-* Select `SIEM` from the rule type dropdown.
+Open **Configure Pipeline**, click **Add Rule** under **Rules**, then select **SIEM** or **TAG**. Complete the shared fields and condition in [.](./ "mention").
 
-<figure><img src="../../.gitbook/assets/image (1184).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-18 15-00-05.png" alt=""><figcaption></figcaption></figure>
 
-* A form organized into tabs will be generated on the Pipeline Configuration Section.
+The rule form will appears in **Pipeline Configuration**.
 
-<figure><img src="../../.gitbook/assets/image (1183).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-09-22 14-41-19.png" alt=""><figcaption></figcaption></figure>
 
 #### Step-by-Step Rule Configuration
 
 #### 3. Fill in Rule Details
 
-**A. Details Tab**
-
-Configure the basic rule properties:
-
-*   **Name:**
-
-    Enter a unique and descriptive name for the SIEM rule (e.g., `404 Login Attempt - User Not Found`).
-*   **Level:**
-
-    Choose the severity (Low, Medium, High, Critical).
-*   **Group:**
-
-    Assign the rule to an existing group or create a new one (e.g., _Login Access_).
-*   **Description:**
-
-    Explain the rule’s purpose (e.g., “Detects login attempts with 404 errors when the username doesn’t exist”).
-*   **Add Conditions (`+ Add More Parameters`):**
-
-    Set filters to define what this rule should detect.\
-    Example condition: `event_type == login_attempt && status_code == 404`
+Complete the shared **Details** fields and condition in [.](./ "mention"). SIEM and TAG rules require **Level**.
 
 Sample SIEM rule dashboard
 
 **B. Metric Labels Tab**
 
 This tab allows you to tag logs with structured labels for visualisation, analysis, and metric generation.
-
-> **Note:** Please choose the data flow, namespace and application to auto-populate the available field labels.
 
 *   **Labels:**
 
@@ -91,52 +74,110 @@ You can also fine-tune alert behaviour by configuring parameters such as:
 
 ***
 
-**Example: Detect Login Attempts with 404 Errors**
+**Example:** Login Failure Detection
 
 ***
 
 #### Enter the following details:
 
-* **Name:** login attempt with 404 user not found
-* **Level:** Low
-* **Group:** _Login Access_
-* **Description:** Detects login attempts with HTTP 404 status (user not found)
-* **Add Condition:** `event_type == login_attempt` && `status_code == 404`
+This rule detects failed login events with specified authentication error messages.
 
-<figure><img src="../../.gitbook/assets/image (1185).png" alt=""><figcaption></figcaption></figure>
+* **Pipeline Name:** Detect Login Failures
+* **Description:** Detects authentication login failures where the outcome is `failure` and the error\_message indicates bad\_password, invalid\_credentials, account\_locked, or user\_not\_found. Covers credential stuffing, brute-force, and account enumeration attempts.
+* **Name:** siem\_login\_failure\_bad\_credentials\_or\_locked\_unknown\_account
+* **Level (severity):** Select `High` for the alert severity.
+* **Group:** _Create a new group, or choose the existing group._
+* **Add Condition:** `(event_type == 'login' && outcome == 'failure') && (error_message == 'bad_password' || error_message == 'invalid_credentials' || error_message == 'account_locked' || error_message == 'user_not_found')`
+
+<br>
+
+<figure><img src="../../.gitbook/assets/Apica Pipeline Configuration Dashboard.png" alt=""><figcaption></figcaption></figure>
 
 **Metric Labels:**
 
-* **Labels:** username
+* **Labels:** error\_message, auth\_method, username
 * **Default Label for Visualisation:** username
 
-<figure><img src="../../.gitbook/assets/image (1186).png" alt="Select Metric Label"><figcaption><p>Select Metric Labels</p></figcaption></figure>
+The rule emits a real-time Prometheus counter metric for matching events.
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-10-13 14-07-21.png" alt=""><figcaption></figcaption></figure>
 
 **Dashboard Settings:**
 
-* Create or select: _login attempt 404_ dashboard
-* Plot Values: `status_code`
-* Plot Metrics: Choose the plot type based on the requirements.
-  * Plot occurrences: **status\_code**, this will plot a time series graph of the occurrence of the variable average over time during ingestion. It will not be an exact per-event graph, but will be an overview of what is happening.
-  * Plot distribution: **status\_code**, this will plot the following graphs:
-    * Average duration of each observation over the last 5 mins
-    * Observation mapped into 50th, 90th and 99th percentile bucket
+* Create or select: new name \<Detect Login Failures>
+* Plot Values: risk\_score
+* Plot Metrics: **Occurrences**
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 21-36-47.png" alt=""><figcaption><p>Dashboard and Plot Metrics</p></figcaption></figure>
+The dashboard widget tracks login failure events — including bad credentials, locked accounts, and unknown account attempts — and provides instant visibility into attack patterns, targeted usernames, authentication methods, and risk scores..
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-10-13 14-13-05.png" alt=""><figcaption></figcaption></figure>
 
 **Alerts:**
 
-* Enable alerts
-* Change the desired value and operator for the alert evaluation.
-* Send to: Slack/email/webhook
-* Rearm & Refresh Interval: Configure based on alerting needs
+Alerts are disabled by default. Enable the alert when you are ready, then set the threshold, comparison operator, and destination channel.
 
-<figure><img src="../../.gitbook/assets/image (1187).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-10-13 14-13-51.png" alt=""><figcaption></figcaption></figure>
 
 After saving and applying the pipeline to the data flow, wait a few minutes and then verify that the rule-based dashboards and alerts are functioning correctly.
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 21-49-04.png" alt=""><figcaption><p>Configured Dashboard</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-10-13 14-15-42.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-12 10-06-34.png" alt=""><figcaption></figcaption></figure>
+Click on the dashboard name to view rule widgets.
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 21-54-24.png" alt=""><figcaption><p>Configured alerts</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-10-13 14-14-55.png" alt=""><figcaption></figcaption></figure>
+
+Here's a breakdown of every widget on the **Detect\_Login\_Failures** dashboard (tab: _login failure metrics_):
+
+***
+
+_**Widget 0 — Events (last 1h)**_
+
+**Chart type:** Stat (single-value tile) **What it shows:** The **total count of login failure events** in the last 1 hour, summed across all label combinations. Uses `increase()` over the SIEM rule's counter metric. A quick at-a-glance number — "how many bad login attempts happened recently?"
+
+***
+
+_**Widget 1 — Groups over threshold / 5m**_
+
+**Chart type:** Stat (single-value tile) **What it shows:** The **number of distinct label groups** (combinations of `error_message`, `auth_method`, `username`) where the event count in the last 5 minutes **reached or exceeded the alert threshold of 5**. This tells you _how many unique attack patterns_ are currently hot.
+
+***
+
+_**Widget 2 — Events / 5m**_
+
+**Chart type:** Area chart **What it shows:** A **time-series of total login failure events**, bucketed in 5-minute windows. Lets you see the **trend and spikes** in failure activity over the last hour — useful for spotting bursts or sustained attack patterns.
+
+***
+
+_**Widget 3 — Events by username**_
+
+**Chart type:** Stacked Bar chart **What it shows:** Login failure events **broken down by `username`**, stacked per 5-minute window. Helps you immediately identify **which usernames are being targeted most** — a brute-force target or a compromised credential attempt stands out here.
+
+***
+
+_**Widget 4 — Match count vs alert threshold / 5m**_
+
+**Chart type:** Line chart (with threshold marker) **What it shows:** Event counts **per group** (`error_message` + `auth_method` + `username`) over 5-minute windows, with a **red reference line at 5** (the alert threshold). Lets you see which specific combinations are breaching or approaching the threshold in real time.
+
+***
+
+_**Widget 5 — Risk score (latest, max across labels)**_
+
+**Chart type:** Stat (single-value tile) **What it shows:** The **maximum risk score** across all label combinations at the latest instant, read from the SIEM rule's gauge metric. A single number representing the **worst-case current risk level** detected by the rule.
+
+***
+
+_**Widget 6 — Risk score by username**_
+
+**Chart type:** Line chart **What it shows:** The **average risk score per username** over time. Lets you track which specific users are accumulating risk and whether that risk is rising or falling — useful for prioritising investigation.
+
+***
+
+#### 🗂️ Summary
+
+<table data-search="false"><thead><tr><th>#</th><th>Widget</th><th>Purpose</th></tr></thead><tbody><tr><td>0</td><td>Events (last 1h)</td><td>Total failure count</td></tr><tr><td>1</td><td>Groups over threshold</td><td>How many attack patterns are hot</td></tr><tr><td>2</td><td>Events / 5m</td><td>Failure trend over time</td></tr><tr><td>3</td><td>Events by username</td><td>Which users are targeted</td></tr><tr><td>4</td><td>Match count vs threshold</td><td>Per-group breakdown with alert line</td></tr><tr><td>5</td><td>Risk score (max)</td><td>Worst-case current risk</td></tr><tr><td>6</td><td>Risk score by username</td><td>Per-user risk trend</td></tr></tbody></table>
+
+_**Alert Configuration**_
+
+This dashboard is paired with a SIEM alert that fires when **any group** (`error_message` + `auth_method` + `username`) accumulates **≥ 5 login failures within a 5-minute window**.
+
+<figure><img src="../../.gitbook/assets/Screenshot from 2026-10-13 14-23-27.png" alt=""><figcaption></figcaption></figure>

@@ -10,6 +10,10 @@ The **Aggregate Rule** is a component of Ascent’s Telemetry Pipelines that ena
 
 As with other rule types, an optional filter can be applied to restrict the dataset on which the rule operates. The filter requires selecting a field and providing a regular expression (regex) to match against that field’s value.
 
+### Create an AGGREGATE rule
+
+Open **Configure Pipeline**, click **Add Rule** under **Rules**, then select **AGGREGATE**. Complete the shared fields and condition in [.](./ "mention").
+
 #### Aggregate Functions
 
 * **Count:** Returns the number of occurrences of the selected field in the ingested data.
@@ -26,7 +30,7 @@ As with other rule types, an optional filter can be applied to restrict the data
 
 There are two ways to emit the results of an aggregation operation:
 
-* **input-log:** Appends the aggregation result to the  `structured_data` of the event that is received after the interval expires.
+* **input-log:** Appends the aggregation result to the `structured_data` of the event that is received after the interval expires.
 * **metric:** Updates a metric corresponding to the rule and function (viewable through the Ascent Metric data source). Metric names follow these formats:
   * **Summary:** `pipeline_summary_aggregation_<rule_name>`
   * **Mode:** `pipeline_mode_aggregation_<rule_name>`
