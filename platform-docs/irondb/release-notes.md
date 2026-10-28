@@ -13,11 +13,11 @@
 * The `/list_nntbs_shards` endpoint no longer returns the flatbuffer format and
   now always responds with `application/json`. The flatbuffer schema and its
   generated code have been removed. **Reconstitute is affected, so upgrade
-  order matters: a node running this release can reconstitute from a node
+  order matters:** a node running this release can reconstitute from a node
   running an older release, because older nodes honour an `Accept:
   application/json` request. The reverse does not work — a node running an
   older release cannot reconstitute from a node running this release, because
-  it will receive JSON where it expects a flatbuffer and will fail. Plan
+  it will receive JSON where it expects a flatbuffer and will fail. **Plan
   upgrades so that no node on an older release needs to reconstitute from an
   upgraded node, and avoid leaving a cluster in a mixed-version state across
   this release any longer than necessary.**
