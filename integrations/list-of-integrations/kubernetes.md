@@ -103,7 +103,6 @@ kubectl create -f fluent-bit-daemonset-apica-output.yml
 
 #### Verify Logs in Ascent
 
-In Ascent, navigate to the Explore Tab -> Logs & Insights. You'll see your logs in the list of Sources and Applications named after your Cluster\_ID and Application:\
-<br>
+In Ascent, navigate to the Explore Tab -> Logs & Insights. You'll see your logs in the list of Sources and Applications named after your Cluster\_ID and Application:
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
