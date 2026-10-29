@@ -40,7 +40,8 @@ Helpful links:
 
 2\. Navigate to Explore → Logs & Insights
 
-3\. Look for the namespace and application name specified in the config file\
+3\. Look for the namespace and application name specified in the config file
+
 Example:
 
 <figure><img src="../../../.gitbook/assets/image (1137).png" alt=""><figcaption></figcaption></figure>

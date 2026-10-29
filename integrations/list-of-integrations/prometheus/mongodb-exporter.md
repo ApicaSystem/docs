@@ -4,8 +4,8 @@ description: Setup MongoDB Exporter and send metrics to Apica Ascent endpoint
 
 # MongoDB Exporter
 
-We will be using [percona/mongodb\_exporter](https://github.com/percona/mongodb_exporter) to export the MongoDB metrics to Apica Ascent endpoint.\
-\
+We will be using [percona/mongodb\_exporter](https://github.com/percona/mongodb_exporter) to export the MongoDB metrics to Apica Ascent endpoint.
+
 You can also use other MongoDB exporters as well. ([Exporters List](https://prometheus.io/docs/instrumenting/exporters/))
 
 > If you are using other third party exporters then please make changes in the `promethus.yml` file accordingly.
@@ -34,7 +34,7 @@ The steps mentioned below will help you setup mongodb\_exporter in a linux machi
     * **-log\_dir** - The directory to write the log file (_default: /tmp_)
 
     _For more options see the help page with '-h' or '--help'_
-3. Run the below script. This script will:
+3. Download and run the script listed below. This script will:
    1. Install wget
    2. Download the amd64 compatible tar file of mongodb\_exporter
    3. Extract the files of tarball and move it to `/usr/local/bin/`
@@ -42,7 +42,10 @@ The steps mentioned below will help you setup mongodb\_exporter in a linux machi
    5. `Reload systemd`
    6. `Start and enable mongodb_exporter as a service`
 
-{% file src="/broken/files/h4Hfdsb6d1eIRGPGinAF" %}
+```
+curl -o mongodb_exporter_install.sh https://raw.githubusercontent.com/ApicaSystem/ApicaHub/refs/heads/master/scripts/mongodb_exporter_install.sh
+chmod +x mongodb_exporter_install.sh
+```
 
 This script will ask you for 4 details:
 

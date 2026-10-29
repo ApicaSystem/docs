@@ -1,7 +1,7 @@
 # Prometheus CloudWatch Exporter
 
-How to Integrate Prometheus CloudWatch Exporter with Apica Ascent\
-\
+How to Integrate Prometheus CloudWatch Exporter with Apica Ascent
+
 1\. Introduction
 ----------------
 
