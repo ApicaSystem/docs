@@ -15,9 +15,3 @@ Access to log data for users is managed by namespace controls. To learn more abo
 When a user has restricted access to select namespaces, the UI will show only the namespaces the user can access for Logs, Search, and Events. In the example below, the user has restricted access to only 2 namespaces; `flash:advertise` and `prod-k8s:kube-system`
 
 ![](<../../.gitbook/assets/Screenshot from 2022-07-04 16-16-00.png>)
-
-## apicactl Controls
-
-Apica Ascent's CLI provides a similar restriction when a user tries to access resources under Role-based access controls. In the example below, the same user can be seen to only access the same namespaces;`flash:advertise` and `prod-k8s:kube-system`
-
-![](<../../.gitbook/assets/Screenshot from 2022-07-04 16-18-31.png>)

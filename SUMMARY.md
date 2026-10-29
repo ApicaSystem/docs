@@ -489,10 +489,6 @@
   * [OpenTelemetry Kubernetes](fleet-management/list-of-agents/opentelemetry-kubernetes.md)
   * [Prometheus Agent](fleet-management/list-of-agents/opentelemetry-collector-2.md)
 
-## COMMAND LINE INTERFACE
-
-* [apicactl Documentation](https://github.com/ApicaSystem/apicactl)
-
 ## AUTONOMOUS INSIGHTS
 
 * [Time Series AI-ML](autonomous-insights/time-series-ai-ml/README.md)

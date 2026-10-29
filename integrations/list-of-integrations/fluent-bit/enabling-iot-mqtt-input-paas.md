@@ -1,4 +1,4 @@
-# Enabling IoT(MQTT) Input (PAAS)
+# Fluent-bit IoT (MQTT) Input (PAAS)
 
 MQTT is an OASIS standard messaging protocol for the Internet of Things (IoT). It is designed as an extremely lightweight publish/subscribe messaging transport that is ideal for connecting remote devices with a small code footprint and minimal network bandwidth. MQTT today is used in a wide variety of industries, such as automotive, manufacturing, telecommunications, oil and gas, etc.
 
@@ -30,7 +30,7 @@ The below steps outline on how to create a ConfigMap that will be used by the Fl
 kubectl create -f fluent-bit-config-apica-forward.yml
 ```
 
-Fluent Bit deployment is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deployment `fluent-bit-ddeployment.yml`. If you do not have your ingest token, you can generate them using [`apicactl`](../../overview/generating-a-secure-ingest-token.md)
+Fluent Bit deployment is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deployment `fluent-bit-ddeployment.yml`. If you do not have your ingest token, you can find one in your profile through the Ascent UI.
 
 *   name: CLUSTER\_ID
 
