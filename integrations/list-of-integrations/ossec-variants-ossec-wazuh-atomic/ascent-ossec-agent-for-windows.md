@@ -21,7 +21,7 @@ You can find these 2 values in `Explore > App Extensions > ossec-hids`.
 
 <figure><img src="../../../.gitbook/assets/ossec-display.jpg" alt=""><figcaption><p>LoadBalancer-IP and authtoken fields in App Extensions page</p></figcaption></figure>
 
-{% file src="/broken/files/djGGvv2xUSDuttdSFcBD" %}
+[logiq-ossec-installer.ps1](https://raw.githubusercontent.com/ApicaSystem/ApicaHub/refs/heads/master/scripts/logiq-ossec-installer.ps1)
 
 You can run this powershell script like this.
 
