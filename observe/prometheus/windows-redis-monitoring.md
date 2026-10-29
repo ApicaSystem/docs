@@ -11,7 +11,7 @@ Before running the PowerShell script, make sure you have `NSSM` and `Prometheus`
 
 To run the PowerShell script, open an administrator PowerShell and run the following command:
 
-{% file src="../../.gitbook/assets/redis-exporter-installer (1).ps1" %}
+{% file src="/broken/files/Gb45CheCjqdcfq5vNJLW" %}
 Powershell Script to install Redis Exporter
 {% endfile %}
 
