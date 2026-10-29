@@ -115,7 +115,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Add back-pressure to raw puts, allows the database to shed load by returning HTTP 503.
 * [libmtev 2.5.2](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#252)
 
-### Changes in 0.23.7
+## Changes in 0.23.7
 
 2023-06-15
 
@@ -140,7 +140,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Optimize surrogate lookup for presence of tombstones.
 * [libmtev 2.4.4](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#244)
 
-### Changes in 0.23.6
+## Changes in 0.23.6
 
 2023-03-08
 
@@ -168,7 +168,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Add support for Rocksdb 7.8.3.
 * [libmtev 2.4.1](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#241)
 
-### Changes in 0.23.5
+## Changes in 0.23.5
 
 2023-01-16
 
@@ -176,7 +176,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Add functions `stats:clamp`, `math:sqrt`, `math:log2`
 * [libmtev 2.4.0](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#240)
 
-### Changes in 0.23.4
+## Changes in 0.23.4
 
 2023-01-03
 
@@ -192,7 +192,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix ingestion of multiple opentsdb records.
 * [libmtev 2.3.9](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#239)
 
-### Changes in 0.23.3
+## Changes in 0.23.3
 
 2022-10-17
 
@@ -211,7 +211,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Add hook for find jobq assignment suggestion to allow smarter jobq assignment.
 * [libmtev 2.3.7](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#237)
 
-### Changes in 0.23.2
+## Changes in 0.23.2
 
 2022-08-18
 
@@ -253,7 +253,7 @@ For current releases, see [Release Notes](release-notes.md).
 * More user-errors in CAQL are reported as 4xx HTTP status codes.
 * [libmtev 2.3.4](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#234)
 
-### Changes in 0.23.1
+## Changes in 0.23.1
 
 2022-07-12
 
@@ -275,7 +275,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix possible denial of service in reconstitute where the reconstituting node's requests could overwhelm the other nodes in the cluster.
 * [libmtev 2.3.2](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#232)
 
-### Changes in 0.23.0
+## Changes in 0.23.0
 
 2022-06-08
 
@@ -289,7 +289,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Fixes for `DivideSeries` and `DivideSeriesLists` graphite-to-caql translation.
 * Fix shard reporting issues in stats.json.
 
-### Changes in 0.22.0
+## Changes in 0.22.0
 
 2022-05-18
 
@@ -312,7 +312,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Add `/suggest/<accountid>/tags` auto-completion assistance endpoint.
 * [libmtev 2.2.7](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#227)
 
-### Changes in 0.21.3
+## Changes in 0.21.3
 
 2022-04-22
 
@@ -348,7 +348,7 @@ For current releases, see [Release Notes](release-notes.md).
   * Fix `hitcount()` translation
 * [libmtev 2.2.5](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#225)
 
-### Changes in 0.21.2
+## Changes in 0.21.2
 
 2022-03-22
 
@@ -390,7 +390,7 @@ For current releases, see [Release Notes](release-notes.md).
 * DELETE on `/full/tags` now accepts the `X-Snowth-Advisory-Limit` header properly to limit the number of deletes that will occur in one operation. There is also a config-based maximum that may be set in `<snowth><rest><delete max_advisory_limit="" /></rest></snowth>` beyond which the limit set by `X-Snowth-Advisory-Limit` will not be respected. Additionally, this endpoint now returns the header `X-Snowth-Incomplete-Results: "true"` if the requested delete operation requires more deletes than allowed by `X-Snowth-Advisory-Limit` or the server-configured maximum. This helps ensure that very large deletes will not consume memory ad infinitum.
 * [libmtev 2.2.2](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#222)
 
-### Changes in 0.21.1
+## Changes in 0.21.1
 
 2022-02-07
 
@@ -422,7 +422,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Add a backlog table heading to the job queues admin interface.
 * [libmtev 2.1.7](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#217)
 
-### Changes in 0.21.0
+## Changes in 0.21.0
 
 2022-01-07
 
@@ -461,7 +461,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Expand CAQL durations to support all mtev duration units.
 * [libmtev 2.1.5](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#215)
 
-### Changes in 0.20.1
+## Changes in 0.20.1
 
 2021-09-23
 
@@ -494,7 +494,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Fixed CAQL `histogram:percentile(x,y,z)` to maintain the user-specified ordering.
 * [libmtev 2.1.1](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#211)
 
-### Changes in 0.20.0
+## Changes in 0.20.0
 
 2021-08-26
 
@@ -503,7 +503,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Transform 'none' in `/fetch` will now show an error on numeric streams.
 * [libmtev 2.1.0](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#210)
 
-### Changes in 0.19.28
+## Changes in 0.19.28
 
 2021-08-11
 
@@ -514,7 +514,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Remove NNT cache size license checks, as we no longer use the NNT file cache. Remove the display of the cache size from the GUI.
 * Fix crash that can occur when closing raw databases at the end of a reconstitute
 
-### Changes in 0.19.27
+## Changes in 0.19.27
 
 2021-07-27
 
@@ -532,20 +532,20 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix races that could lead to data corruption in rare cases.
 * Allow databases to close down properly when a node is restarted.
 
-### Changes in 0.19.26
+## Changes in 0.19.26
 
 2021-07-16
 
 * Fix race condition in reconstitute that could potentially cause crashes.
 
-### Changes in 0.19.25
+## Changes in 0.19.25
 
 2021-07-15
 
 * Fixed memory leaks when performing `/find` calls.
 * Add capability for the `/rollup` endpoint to accept types `derivative`, `derivative_stddev`, `derivative2`, and `derivative2_stddev`
 
-### Changes in 0.19.24
+## Changes in 0.19.24
 
 2021-07-14
 
@@ -558,7 +558,7 @@ For current releases, see [Release Notes](release-notes.md).
 * During a rebalance, sending data for an NNTBS shard the destination node is not configured to handle no longer crashes the destination node
 * [libmtev 2.0.4](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#204)
 
-### Changes in 0.19.23
+## Changes in 0.19.23
 
 2021-07-08
 
@@ -588,7 +588,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix crash on requests with a NULL topology.
 * [libmtev 2.0.3](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#203)
 
-### Changes in 0.19.22
+## Changes in 0.19.22
 
 2021-05-14
 
@@ -596,7 +596,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Allow for whitespace before `(...)` and `{...}` in CAQL function invocations.
 * [libmtev 2.0.1](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#201)
 
-### Changes in 0.19.21
+## Changes in 0.19.21
 
 2021-05-06
 
@@ -618,7 +618,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Web UI: Replication Latency tab bugfix: Each node's latency is still calculated even if its sub-list isn't expanded.
 * [libmtev 2.0.0](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#200)
 
-### Changes in 0.19.20
+## Changes in 0.19.20
 
 2021-03-24
 
@@ -631,21 +631,21 @@ For current releases, see [Release Notes](release-notes.md).
 * Fixes to recovering after an incomplete NNTBS live reconstitute and added automatic backup that can be overridden using the optional (`backup=0`) parameter.
 * [libmtev 1.12.18](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#11218)
 
-### Changes in 0.19.19
+## Changes in 0.19.19
 
 2021-03-10
 
 * The [topo-helper](https://docs.circonus.com/irondb/getting-started/manual-installation/#create-topology-layout) utility has been updated to support sided configuration, as well as auto-generated node UUIDs and using hostnames instead of IP addresses.
 * Improved error checking and logging for jlog read/write errors.
 
-### Changes in 0.19.18
+## Changes in 0.19.18
 
 2021-03-04
 
 * Improve logging on data journaling errors and fix logic hole that could lead to infinite loops.
 * Add requirement to single-shard NNTBS live reconstitute to specify if the shard should be replaced with data from other nodes (`merge=0`) or if data from other nodes should be merged into the preexisting shard data (`merge=1`).
 
-### Changes in 0.19.17
+## Changes in 0.19.17
 
 2021-02-24
 
@@ -674,7 +674,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Implement `histogram:random()` to synthesize histograms for common density functions.
 * Implement `randomwalk(max,min,change,seed=)` CAQL function for generating random data.
 
-### Changes in 0.19.16
+## Changes in 0.19.16
 
 2021-01-29
 
@@ -693,7 +693,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Further improvements to activity tracking accucracy.
 * [libmtev 1.12.17](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#11217)
 
-### Changes in 0.19.15
+## Changes in 0.19.15
 
 2021-01-15
 
@@ -709,7 +709,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Reconstitute process now pulls activity data from the surrogate db rather than relying on raw data to fill it in. This will prevent the possible loss of activity data.
 * [libmtev 1.12.16](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#11216)
 
-### Changes in 0.19.14 (unreleased)
+## Changes in 0.19.14 (unreleased)
 
 2020-12-16
 
@@ -723,7 +723,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Make sure to do index manipulation on metric deletion.
 * Fix crash on ingestion of malformed or missing histogram in H1/H2 records.
 
-### Changes in 0.19.13
+## Changes in 0.19.13
 
 2020-11-03
 
@@ -734,7 +734,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Add `tag:synth` CAQL function.
 * Fix several file desciptor leaks related to improper handling of proxy buffers.
 
-### Changes in 0.19.12
+## Changes in 0.19.12
 
 2020-10-22
 
@@ -744,7 +744,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Add support for cumulative histogram ingestion.
 * [libmtev 1.12.13](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#11213)
 
-### Changes in 0.19.11
+## Changes in 0.19.11
 
 2020-09-29
 
@@ -753,20 +753,20 @@ For current releases, see [Release Notes](release-notes.md).
 * Restore eventer site config file.
 * [libmtev 1.12.12](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#11212)
 
-### Changes in 0.19.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01910) <a href="#changes-in-01910" id="changes-in-01910"></a>
+## Changes in 0.19.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01910) <a href="#changes-in-01910" id="changes-in-01910"></a>
 
 2020-09-03
 
 * Fix potential crash in graphite find.
 * [libmtev 1.12.10](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#11210)
 
-### Changes in 0.19.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0199) <a href="#changes-in-0199" id="changes-in-0199"></a>
+## Changes in 0.19.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0199) <a href="#changes-in-0199" id="changes-in-0199"></a>
 
 2020-09-01
 
 * Allow raw numeric reconstitute to go by shard instead of by metric. This will significantly increase the speed of the raw reconstitute process.
 
-### Changes in 0.19.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0198) <a href="#changes-in-0198" id="changes-in-0198"></a>
+## Changes in 0.19.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0198) <a href="#changes-in-0198" id="changes-in-0198"></a>
 
 2020-08-27
 
@@ -776,7 +776,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Add a ranked system for determing which egress function to use when selecting results via graphite queries. This will use the value we determine to be the "best" using an internal algorithm rather than using the first result we saw, which was the previous behavior.
 * Allow retrying on failures to write to NNTBS shards during reconstitute. Improve error messages related to the NNTBS reconstitute process.
 
-### Changes in 0.19.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0197) <a href="#changes-in-0197" id="changes-in-0197"></a>
+## Changes in 0.19.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0197) <a href="#changes-in-0197" id="changes-in-0197"></a>
 
 2020-08-03
 
@@ -791,7 +791,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Implement vector:pack() and vector:unpack() in CAQL. These are experimental.
 * [libmtev 1.12.8](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1128)
 
-### Changes in 0.19.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0196) <a href="#changes-in-0196" id="changes-in-0196"></a>
+## Changes in 0.19.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0196) <a href="#changes-in-0196" id="changes-in-0196"></a>
 
 2020-07-10
 
@@ -799,7 +799,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Several memory leak and stability fixes.
 * [libmtev 1.12.4](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1124)
 
-### Changes in 0.19.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0195) <a href="#changes-in-0195" id="changes-in-0195"></a>
+## Changes in 0.19.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0195) <a href="#changes-in-0195" id="changes-in-0195"></a>
 
 2020-06-12
 
@@ -817,7 +817,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix bug where we would attempt to abort LMDB transaction after failed commits, which can cause double frees.
 * [libmtev 1.12.0](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1120)
 
-### Changes in 0.19.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0194) <a href="#changes-in-0194" id="changes-in-0194"></a>
+## Changes in 0.19.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0194) <a href="#changes-in-0194" id="changes-in-0194"></a>
 
 2020-04-27
 
@@ -830,7 +830,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Validate uuid passed to `metric:*` functions.
 * [libmtev 1.10.3](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1103)
 
-### Changes in 0.19.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0193) <a href="#changes-in-0193" id="changes-in-0193"></a>
+## Changes in 0.19.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0193) <a href="#changes-in-0193" id="changes-in-0193"></a>
 
 2020-03-16
 
@@ -848,7 +848,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Add broadcasting support to `forecasting:slope()`/`forecasting:regression()`
 * [libmtev 1.10.0](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1100)
 
-### Changes in 0.19.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0192) <a href="#changes-in-0192" id="changes-in-0192"></a>
+## Changes in 0.19.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0192) <a href="#changes-in-0192" id="changes-in-0192"></a>
 
 2020-01-28
 
@@ -862,13 +862,13 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Fix an issue where failed proxy attempts could cause `find` errors even when N-W+1 were successfully interrogated.
 * [libmtev 1.9.10](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1910)
 
-### Changes in 0.19.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0191) <a href="#changes-in-0191" id="changes-in-0191"></a>
+## Changes in 0.19.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0191) <a href="#changes-in-0191" id="changes-in-0191"></a>
 
 2019-12-17
 
 * Fix memory leaks in NNTBS and raw reconstitute paths.
 
-### Changes in 0.19.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0190) <a href="#changes-in-0190" id="changes-in-0190"></a>
+## Changes in 0.19.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0190) <a href="#changes-in-0190" id="changes-in-0190"></a>
 
 2019-12-10
 
@@ -878,7 +878,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Add histogram:subtract() function
 * [libmtev 1.9.8](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#198)
 
-### Changes in 0.18.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0188) <a href="#changes-in-0188" id="changes-in-0188"></a>
+## Changes in 0.18.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0188) <a href="#changes-in-0188" id="changes-in-0188"></a>
 
 2019-11-21
 
@@ -889,7 +889,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Align and validate all surrogate flatbuffer data before attempting to use it. This will prevent using incorrect values and/or crashing on bad data.
 * Fix bug with metric type changes using surrogate put REST API.
 
-### Changes in 0.18.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0187) <a href="#changes-in-0187" id="changes-in-0187"></a>
+## Changes in 0.18.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0187) <a href="#changes-in-0187" id="changes-in-0187"></a>
 
 2019-11-18
 
@@ -903,7 +903,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Performance improvements to `diff()`/`integrate()`/`delay()`/`is_missing()`
 * [libmtev 1.9.5](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#195)
 
-### Changes in 0.18.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0186) <a href="#changes-in-0186" id="changes-in-0186"></a>
+## Changes in 0.18.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0186) <a href="#changes-in-0186" id="changes-in-0186"></a>
 
 2019-11-08
 
@@ -925,7 +925,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Add #strict directive that forces serial data processing with period=1M
 * CAQL: Improve speed and accuracy of the `integrate()` function.
 
-### Changes in 0.18.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0185) <a href="#changes-in-0185" id="changes-in-0185"></a>
+## Changes in 0.18.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0185) <a href="#changes-in-0185" id="changes-in-0185"></a>
 
 2019-10-29
 
@@ -952,7 +952,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Fix count() function to not count NaN values
 * [libmtev 1.9.2](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#192)
 
-### Changes in 0.18.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0184) <a href="#changes-in-0184" id="changes-in-0184"></a>
+## Changes in 0.18.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0184) <a href="#changes-in-0184" id="changes-in-0184"></a>
 
 2019-10-16
 
@@ -967,7 +967,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Performance improvements to integrate() function.
 * CAQL: Leverage /fetch endpoint for find() operations. This is a significant performance improvement that should make CAQL find() operations much faster.
 
-### Changes in 0.18.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0183) <a href="#changes-in-0183" id="changes-in-0183"></a>
+## Changes in 0.18.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0183) <a href="#changes-in-0183" id="changes-in-0183"></a>
 
 2019-10-07
 
@@ -977,7 +977,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Bug: Fix potential stack smash when writing items to the surrogate cache.
 * [libmtev 1.8.5](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#185)
 
-### Changes in 0.18.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0182) <a href="#changes-in-0182" id="changes-in-0182"></a>
+## Changes in 0.18.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0182) <a href="#changes-in-0182" id="changes-in-0182"></a>
 
 2019-10-01
 
@@ -1000,7 +1000,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Bug: Replace confusing graphite fetch error messages with more coherent ones.
 * [libmtev 1.8.2](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#182)
 
-### Changes in 0.18.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0181) <a href="#changes-in-0181" id="changes-in-0181"></a>
+## Changes in 0.18.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0181) <a href="#changes-in-0181" id="changes-in-0181"></a>
 
 2019-09-24
 
@@ -1015,7 +1015,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Support for labeling multiple output streams with label() function.
 * [libmtev 1.8.0](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#180)
 
-### Changes in 0.18.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0180) <a href="#changes-in-0180" id="changes-in-0180"></a>
+## Changes in 0.18.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0180) <a href="#changes-in-0180" id="changes-in-0180"></a>
 
 2019-08-27
 
@@ -1028,7 +1028,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Make use of activity period tracking to avoid fetching empty metrics.
 * [libmtev 1.7.0](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#170)
 
-### Changes in 0.17.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0173) <a href="#changes-in-0173" id="changes-in-0173"></a>
+## Changes in 0.17.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0173) <a href="#changes-in-0173" id="changes-in-0173"></a>
 
 2019-08-15
 
@@ -1038,7 +1038,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Bug: Fix crash when fetching raw numeric data using metric names that cannot be canonicalized.
 * [libmtev 1.6.26](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1626)
 
-### Changes in 0.17.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0172) <a href="#changes-in-0172" id="changes-in-0172"></a>
+## Changes in 0.17.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0172) <a href="#changes-in-0172" id="changes-in-0172"></a>
 
 2019-07-29
 
@@ -1049,7 +1049,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Don't truncate find() queries that have been running for less than 4 seconds.
 * [libmtev 1.6.24](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1624)
 
-### Changes in 0.17.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0171) <a href="#changes-in-0171" id="changes-in-0171"></a>
+## Changes in 0.17.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0171) <a href="#changes-in-0171" id="changes-in-0171"></a>
 
 2019-07-18
 
@@ -1058,7 +1058,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Bug: Fix external metadata replication getting stuck in a loop due to improper checkpoint parsing.
 * [libmtev 1.6.21](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1621)
 
-### Changes in 0.17.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0170) <a href="#changes-in-0170" id="changes-in-0170"></a>
+## Changes in 0.17.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0170) <a href="#changes-in-0170" id="changes-in-0170"></a>
 
 2019-07-16
 
@@ -1076,7 +1076,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Return an error on find calls if no account information is found.
 * [libmtev 1.6.20](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1620)
 
-### Changes in 0.16.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0163) <a href="#changes-in-0163" id="changes-in-0163"></a>
+## Changes in 0.16.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0163) <a href="#changes-in-0163" id="changes-in-0163"></a>
 
 2019-06-26
 
@@ -1087,7 +1087,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Bug: Fix memory leaks that occur in the metrics database when using `find` to search for metrics.
 * [libmtev 1.6.16](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1616)
 
-### Changes in 0.16.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0162) <a href="#changes-in-0162" id="changes-in-0162"></a>
+## Changes in 0.16.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0162) <a href="#changes-in-0162" id="changes-in-0162"></a>
 
 2019-06-19
 
@@ -1099,14 +1099,14 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Update docs.
 * [libmtev 1.6.14](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1614)
 
-### Changes in 0.16.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0161) <a href="#changes-in-0161" id="changes-in-0161"></a>
+## Changes in 0.16.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0161) <a href="#changes-in-0161" id="changes-in-0161"></a>
 
 2019-06-04
 
 * Bug: Prevent null pointer exception in the data replication path when the check name is undefined.
 * CAQL: Assert that start times are before or equal to end times in queries.
 
-### Changes in 0.16.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0160) <a href="#changes-in-0160" id="changes-in-0160"></a>
+## Changes in 0.16.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0160) <a href="#changes-in-0160" id="changes-in-0160"></a>
 
 2019-05-28
 
@@ -1125,7 +1125,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Bug/CAQL: histogram:stddev() will now return nan ("not a number") for histograms with a single value instead of `0`.
 * [libmtev 1.6.12](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1612)
 
-### Changes in 0.15.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0158) <a href="#changes-in-0158" id="changes-in-0158"></a>
+## Changes in 0.15.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0158) <a href="#changes-in-0158" id="changes-in-0158"></a>
 
 2019-05-09
 
@@ -1137,13 +1137,13 @@ For current releases, see [Release Notes](release-notes.md).
 * Added an optional header, "x-snowth-metadata-flush", to delete requests. If set to `0`, this will disable metadata flushing.
 * [libmtev 1.6.10](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1610)
 
-### Changes in 0.15.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0157) <a href="#changes-in-0157" id="changes-in-0157"></a>
+## Changes in 0.15.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0157) <a href="#changes-in-0157" id="changes-in-0157"></a>
 
 2019-05-01
 
 * CAQL: Fix regression introduced in version 0.15.6 that would cause some CAQL fetches to fail.
 
-### Changes in 0.15.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0156) <a href="#changes-in-0156" id="changes-in-0156"></a>
+## Changes in 0.15.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0156) <a href="#changes-in-0156" id="changes-in-0156"></a>
 
 2019-04-30
 
@@ -1155,7 +1155,7 @@ For current releases, see [Release Notes](release-notes.md).
 * CAQL: Expand label() functionality.
 * CAQL: Add tag() function.
 
-### Changes in 0.15.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0155) <a href="#changes-in-0155" id="changes-in-0155"></a>
+## Changes in 0.15.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0155) <a href="#changes-in-0155" id="changes-in-0155"></a>
 
 2019-04-23
 
@@ -1166,7 +1166,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Documentation: Add docs on the [UI Internals tab](https://docs.circonus.com/irondb/administration/operations/#internals-tab), which contains a rich set of statistics for troubleshooting performance problems.
 * [libmtev 1.6.9](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#169)
 
-### Changes in 0.15.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0154) <a href="#changes-in-0154" id="changes-in-0154"></a>
+## Changes in 0.15.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0154) <a href="#changes-in-0154" id="changes-in-0154"></a>
 
 2019-04-12
 
@@ -1183,7 +1183,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Documentation: put `gpgcheck=0` back into crash-reporting repo stanza for EL7. These packages are not produced by Circonus, we simply mirror them.
 * [libmtev 1.6.8](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#168)
 
-### Changes in 0.15.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0153) <a href="#changes-in-0153" id="changes-in-0153"></a>
+## Changes in 0.15.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0153) <a href="#changes-in-0153" id="changes-in-0153"></a>
 
 2019-04-02
 
@@ -1194,7 +1194,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Add flag to allow nodes to rebalance in parallel rather than forcing nodes to rebalance one at a time.
 * Various performance improvements.
 
-### Changes in 0.15.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0152) <a href="#changes-in-0152" id="changes-in-0152"></a>
+## Changes in 0.15.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0152) <a href="#changes-in-0152" id="changes-in-0152"></a>
 
 2019-03-27
 
@@ -1207,14 +1207,14 @@ For current releases, see [Release Notes](release-notes.md).
 * Add native prometheus read/write endpoints
 * Fix crash under repetitive license violations
 
-### Changes in 0.15.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0151) <a href="#changes-in-0151" id="changes-in-0151"></a>
+## Changes in 0.15.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0151) <a href="#changes-in-0151" id="changes-in-0151"></a>
 
 2019-03-19
 
 * Add module to monitor IRONdb statistics internally and feed them back into the DB.
 * [libmtev 1.6.5](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#165)
 
-### Changes in 0.15.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0150) <a href="#changes-in-0150" id="changes-in-0150"></a>
+## Changes in 0.15.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0150) <a href="#changes-in-0150" id="changes-in-0150"></a>
 
 2019-03-18
 
@@ -1225,7 +1225,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Move error log "file already found" from snowthimport binary to the debug log.
 * Fix typo in statistics: "hits\_meta" is now "hit\_meta".
 
-### Changes in 0.14.18[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01418) <a href="#changes-in-01418" id="changes-in-01418"></a>
+## Changes in 0.14.18[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01418) <a href="#changes-in-01418" id="changes-in-01418"></a>
 
 2019-03-12
 
@@ -1241,7 +1241,7 @@ For current releases, see [Release Notes](release-notes.md).
         <include file="irondb-eventer.conf" snippet="true"/>
         ```
 
-### Changes in 0.14.17[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01417) <a href="#changes-in-01417" id="changes-in-01417"></a>
+## Changes in 0.14.17[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01417) <a href="#changes-in-01417" id="changes-in-01417"></a>
 
 2019-03-11
 
@@ -1251,7 +1251,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Installer: Create "metadata" directory and configuration setting. This directory is not currently used in standalone IRONdb installations.
 * [libmtev 1.6.4](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#164)
 
-### Changes in 0.14.16[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01416) <a href="#changes-in-01416" id="changes-in-01416"></a>
+## Changes in 0.14.16[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01416) <a href="#changes-in-01416" id="changes-in-01416"></a>
 
 2019-02-25
 
@@ -1259,14 +1259,14 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix various issues regarding using timeouts incorrectly during graphite data fetches.
 * Fix memory leaks that could occur during graphite error cases.
 
-### Changes in 0.14.15[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01415) <a href="#changes-in-01415" id="changes-in-01415"></a>
+## Changes in 0.14.15[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01415) <a href="#changes-in-01415" id="changes-in-01415"></a>
 
 2019-02-20
 
 * Add optional metric prefix parameter to /tag\_cats and /tag\_vals APIs.
 * [libmtev 1.6.3](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#163)
 
-### Changes in 0.14.14[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01414) <a href="#changes-in-01414" id="changes-in-01414"></a>
+## Changes in 0.14.14[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01414) <a href="#changes-in-01414" id="changes-in-01414"></a>
 
 2019-02-15
 
@@ -1276,7 +1276,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix license expiration date display bug on GUI.
 * [libmtev 1.6.2](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#162)
 
-### Changes in 0.14.13[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01413) <a href="#changes-in-01413" id="changes-in-01413"></a>
+## Changes in 0.14.13[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01413) <a href="#changes-in-01413" id="changes-in-01413"></a>
 
 2019-02-07
 
@@ -1287,7 +1287,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Improvements to Graphite tag search - respect Graphite name hierarchy in search results.
 * [libmtev 1.6.1](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#161)
 
-### Changes in 0.14.12[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01412) <a href="#changes-in-01412" id="changes-in-01412"></a>
+## Changes in 0.14.12[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01412) <a href="#changes-in-01412" id="changes-in-01412"></a>
 
 2019-01-17
 
@@ -1296,21 +1296,21 @@ For current releases, see [Release Notes](release-notes.md).
 * Performance improvements to full metric delete.
 * Deduplicate surrogate IDs from the database on startup.
 
-### Changes in 0.14.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01411) <a href="#changes-in-01411" id="changes-in-01411"></a>
+## Changes in 0.14.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01411) <a href="#changes-in-01411" id="changes-in-01411"></a>
 
 2019-01-08
 
 * Fix bug where tagged metrics were not being loaded into the surrogate cache at startup correctly.
 * Tune the surrogate asynch update journal settings to improve performance.
 
-### Changes in 0.14.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01410) <a href="#changes-in-01410" id="changes-in-01410"></a>
+## Changes in 0.14.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01410) <a href="#changes-in-01410" id="changes-in-01410"></a>
 
 2018-12-24
 
 * Eliminate raw delete timeout.
 * Fix bugs in surrogate DB serialization and add additional key validation on deserialization.
 
-### Changes in 0.14.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0149) <a href="#changes-in-0149" id="changes-in-0149"></a>
+## Changes in 0.14.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0149) <a href="#changes-in-0149" id="changes-in-0149"></a>
 
 2018-12-17
 
@@ -1318,7 +1318,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Performance improvements to full delete.
 * Fix a bug that could cause crashes during reconstitute.
 
-### Changes in 0.14.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0148) <a href="#changes-in-0148" id="changes-in-0148"></a>
+## Changes in 0.14.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0148) <a href="#changes-in-0148" id="changes-in-0148"></a>
 
 2018-12-13
 
@@ -1326,7 +1326,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix bug that causes hanging when trying to delete certain metrics.
 * Fix occasional crash related to reading NNTBS data.
 
-### Changes in 0.14.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0147) <a href="#changes-in-0147" id="changes-in-0147"></a>
+## Changes in 0.14.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0147) <a href="#changes-in-0147" id="changes-in-0147"></a>
 
 2018-12-05
 
@@ -1334,26 +1334,26 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix a potential crash that could occur when reconstituting surrogate data.
 * Fix a bug where deleting a metric on a system would not remove the surrogate entry if the metric was not local to the node.
 
-### Changes in 0.14.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0146) <a href="#changes-in-0146" id="changes-in-0146"></a>
+## Changes in 0.14.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0146) <a href="#changes-in-0146" id="changes-in-0146"></a>
 
 2018-12-03
 
 * Fix bug where text and histogram data transfer could get hung during reconstitute.
 * [libmtev 1.5.28](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1528)
 
-### Changes in 0.14.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0145) <a href="#changes-in-0145" id="changes-in-0145"></a>
+## Changes in 0.14.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0145) <a href="#changes-in-0145" id="changes-in-0145"></a>
 
 2018-11-30
 
 * Reclassify an error message as a debug message - message occurs in a situation that is not a malfunction and can fill the logs.
 
-### Changes in 0.14.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0144) <a href="#changes-in-0144" id="changes-in-0144"></a>
+## Changes in 0.14.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0144) <a href="#changes-in-0144" id="changes-in-0144"></a>
 
 2018-11-29
 
 * Fix crash in metric serialization.
 
-### Changes in 0.14.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0143) <a href="#changes-in-0143" id="changes-in-0143"></a>
+## Changes in 0.14.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0143) <a href="#changes-in-0143" id="changes-in-0143"></a>
 
 2018-11-29
 
@@ -1365,7 +1365,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Documentation: Mark `/read` numeric API as deprecated. The [rollup API](https://docs.circonus.com/irondb/api/data-retrieval/) should be used instead.
 * [libmtev 1.5.26](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1526)
 
-### Changes in 0.14.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0142) <a href="#changes-in-0142" id="changes-in-0142"></a>
+## Changes in 0.14.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0142) <a href="#changes-in-0142" id="changes-in-0142"></a>
 
 2018-11-19
 
@@ -1375,7 +1375,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Increased speed of surrogate cache loading at startup.
 * Add `snowthsurrogatecontrol` tool, which allows offline review and modification of the surrogate database.
 
-### Changes in 0.14.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0141) <a href="#changes-in-0141" id="changes-in-0141"></a>
+## Changes in 0.14.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0141) <a href="#changes-in-0141" id="changes-in-0141"></a>
 
 2018-11-09
 
@@ -1386,7 +1386,7 @@ For current releases, see [Release Notes](release-notes.md).
 * More aggressive memory reclamation.
 * [libmtev 1.5.23](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1523)
 
-### Changes in 0.14.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0140) <a href="#changes-in-0140" id="changes-in-0140"></a>
+## Changes in 0.14.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0140) <a href="#changes-in-0140" id="changes-in-0140"></a>
 
 2018-11-01
 
@@ -1404,7 +1404,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix crash bug in histogram fetching API.
 * [libmtev 1.5.19](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1519)
 
-### Changes in 0.13.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0139) <a href="#changes-in-0139" id="changes-in-0139"></a>
+## Changes in 0.13.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0139) <a href="#changes-in-0139" id="changes-in-0139"></a>
 
 2018-10-16
 
@@ -1413,7 +1413,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Fix some potential crashes.
 * Disable saving ptrace stdout output files in the default circonus-watchdog.conf file.
 
-### Changes in 0.13.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0138) <a href="#changes-in-0138" id="changes-in-0138"></a>
+## Changes in 0.13.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0138) <a href="#changes-in-0138" id="changes-in-0138"></a>
 
 2018-10-12
 
@@ -1424,7 +1424,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Add category param to tag\_vals.
 * [libmtev 1.5.12](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1512)
 
-### Changes in 0.13.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0137) <a href="#changes-in-0137" id="changes-in-0137"></a>
+## Changes in 0.13.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0137) <a href="#changes-in-0137" id="changes-in-0137"></a>
 
 2018-10-11
 
@@ -1437,7 +1437,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Performance/stability improvements for activity list operations.
 * [libmtev 1.5.11](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#1511)
 
-### Changes in 0.13.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0136) <a href="#changes-in-0136" id="changes-in-0136"></a>
+## Changes in 0.13.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0136) <a href="#changes-in-0136" id="changes-in-0136"></a>
 
 2018-10-01
 
@@ -1446,7 +1446,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Turn off sync writes in tagged surrogate writer.
 * Fix potential crashes when check\_name is NULL.
 
-### Changes in 0.13.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0135) <a href="#changes-in-0135" id="changes-in-0135"></a>
+## Changes in 0.13.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0135) <a href="#changes-in-0135" id="changes-in-0135"></a>
 
 2018-09-25
 
@@ -1457,7 +1457,7 @@ For current releases, see [Release Notes](release-notes.md).
 * Performance and correctness fixes to internal locking mechanism.
 * Fix some instances where we would potentially attempt to access a null metric name.
 
-### Changes in 0.13.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0134) <a href="#changes-in-0134" id="changes-in-0134"></a>
+## Changes in 0.13.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0134) <a href="#changes-in-0134" id="changes-in-0134"></a>
 
 2018-09-21
 
@@ -1478,7 +1478,7 @@ zfs inherit -r logbias <poolname>/irondb/text
 * Fix memory leaks and invalid access errors that could potentially lead to crashes.
 * [libmtev 1.5.7](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#157)
 
-### Changes in 0.13.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0133) <a href="#changes-in-0133" id="changes-in-0133"></a>
+## Changes in 0.13.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0133) <a href="#changes-in-0133" id="changes-in-0133"></a>
 
 2018-09-18
 
@@ -1491,14 +1491,14 @@ zfs inherit -r logbias <poolname>/irondb/text
 * Fix some potential crashes on unexpected data.
 * Allow using tag search to define retention period for metrics.
 
-### Changes in 0.13.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0132) <a href="#changes-in-0132" id="changes-in-0132"></a>
+## Changes in 0.13.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0132) <a href="#changes-in-0132" id="changes-in-0132"></a>
 
 2018-09-13
 
 * Fixes for journal surrogate puts and activity rebuilds.
 * Fix bug where software would loop forever if journal writes were in the future.
 
-### Changes in 0.13.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0131) <a href="#changes-in-0131" id="changes-in-0131"></a>
+## Changes in 0.13.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0131) <a href="#changes-in-0131" id="changes-in-0131"></a>
 
 2018-09-11
 
@@ -1513,7 +1513,7 @@ zfs inherit -r logbias <poolname>/irondb/text
   * `group_by:*` package provides functions to aggregate metrics by tags
 * [libmtev 1.5.5](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#155)
 
-### Changes in 0.13[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-013) <a href="#changes-in-013" id="changes-in-013"></a>
+## Changes in 0.13[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-013) <a href="#changes-in-013" id="changes-in-013"></a>
 
 2018-08-15
 
@@ -1528,14 +1528,14 @@ zfs inherit -r logbias <poolname>/irondb/text
   * `TopK` global function returns the top `k` streams over the current `VIEW_RANGE` using either a `mean` or `max` comparator. [CAQL Reference: global functions](https://docs.circonus.com/caql/reference/#global-functions)
 * [libmtev 1.4.5](https://github.com/circonus-labs/libmtev/blob/master/ChangeLog.md#145)
 
-### Changes in 0.12.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0125) <a href="#changes-in-0125" id="changes-in-0125"></a>
+## Changes in 0.12.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0125) <a href="#changes-in-0125" id="changes-in-0125"></a>
 
 2018-08-07
 
 * Crash fix on unparseable metric names
 * Journal fix in pre\_commit mmap space
 
-### Changes in 0.12.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0124) <a href="#changes-in-0124" id="changes-in-0124"></a>
+## Changes in 0.12.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0124) <a href="#changes-in-0124" id="changes-in-0124"></a>
 
 2018-08-02
 
@@ -1548,7 +1548,7 @@ zfs inherit -r logbias <poolname>/irondb/text
 * Support for building/rebuilding higher level rollups from lower level rollups
 * Rebalance adds a new completion state to fix races when finishing rebalance ops
 
-### Changes in 0.12.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0123) <a href="#changes-in-0123" id="changes-in-0123"></a>
+## Changes in 0.12.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0123) <a href="#changes-in-0123" id="changes-in-0123"></a>
 
 2018-07-12
 
@@ -1561,19 +1561,19 @@ Documentation changes:
 
 * Add raw delete API
 
-### Changes in 0.12.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0122) <a href="#changes-in-0122" id="changes-in-0122"></a>
+## Changes in 0.12.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0122) <a href="#changes-in-0122" id="changes-in-0122"></a>
 
 2018-07-09
 
 * Fix memory leak in name searches
 
-### Changes in 0.12.1 (unreleased)[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0121-unreleased) <a href="#changes-in-0121-unreleased" id="changes-in-0121-unreleased"></a>
+## Changes in 0.12.1 (unreleased)[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0121-unreleased) <a href="#changes-in-0121-unreleased" id="changes-in-0121-unreleased"></a>
 
 2018-07-09
 
 * Enable heap profiling
 
-### Changes in 0.12[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-012) <a href="#changes-in-012" id="changes-in-012"></a>
+## Changes in 0.12[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-012) <a href="#changes-in-012" id="changes-in-012"></a>
 
 2018-07-05
 
@@ -1610,19 +1610,19 @@ where `<pool>` is the zpool name. Users of versions < [0.11.1](https://docs.circ
   * Converted UUID handling from libuuid to libmtev's [faster implementation](http://circonus-labs.github.io/libmtev/apireference/c.html#u).
   * Optimized replication speed.
 
-### Changes in 0.11.18[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01118) <a href="#changes-in-01118" id="changes-in-01118"></a>
+## Changes in 0.11.18[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01118) <a href="#changes-in-01118" id="changes-in-01118"></a>
 
 2018-04-12
 
 * Fix a bug causing unnecessary duplicated work during sweep deletes
 
-### Changes in 0.11.17[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01117) <a href="#changes-in-01117" id="changes-in-01117"></a>
+## Changes in 0.11.17[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01117) <a href="#changes-in-01117" id="changes-in-01117"></a>
 
 2018-04-10
 
 * Fix for http header parsing edge case
 
-### Changes in 0.11.16[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01116) <a href="#changes-in-01116" id="changes-in-01116"></a>
+## Changes in 0.11.16[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01116) <a href="#changes-in-01116" id="changes-in-01116"></a>
 
 2018-04-09
 
@@ -1638,7 +1638,7 @@ Documentation changes:
 * Correct color rules for latency summaries
 * Various small doc fixes
 
-### Changes in 0.11.15[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01115) <a href="#changes-in-01115" id="changes-in-01115"></a>
+## Changes in 0.11.15[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01115) <a href="#changes-in-01115" id="changes-in-01115"></a>
 
 2018-03-23
 
@@ -1656,20 +1656,20 @@ Documentation changes:
 * Include files and Lua modules.
 * New UI replication tab display.
 
-### Changes in 0.11.14[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01114) <a href="#changes-in-01114" id="changes-in-01114"></a>
+## Changes in 0.11.14[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01114) <a href="#changes-in-01114" id="changes-in-01114"></a>
 
 2018-03-13
 
 * Fix bug in NNT reconstitution
 
-### Changes in 0.11.13 (unreleased)[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01113-unreleased) <a href="#changes-in-01113-unreleased" id="changes-in-01113-unreleased"></a>
+## Changes in 0.11.13 (unreleased)[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01113-unreleased) <a href="#changes-in-01113-unreleased" id="changes-in-01113-unreleased"></a>
 
 2018-03-12
 
 * Fix for throttling during reconstitute operations
 * Several small fixes and cleanups
 
-### Changes in 0.11.12[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01112) <a href="#changes-in-01112" id="changes-in-01112"></a>
+## Changes in 0.11.12[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01112) <a href="#changes-in-01112" id="changes-in-01112"></a>
 
 2018-03-08
 
@@ -1688,14 +1688,14 @@ Documentation changes:
 * Clarify that in sided clusters, write copies are distributed as evenly as possible across both sides.
 * Show the gossip age values that lead to green/yellow/red display in the Replication Latency UI tab.
 
-### Changes in 0.11.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01111) <a href="#changes-in-01111" id="changes-in-01111"></a>
+## Changes in 0.11.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01111) <a href="#changes-in-01111" id="changes-in-01111"></a>
 
 2018-02-23
 
 * Final deadlock fixes for timeshard management
 * Protect against unparseable json coming back from proxy calls
 
-### Changes in 0.11.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01110) <a href="#changes-in-01110" id="changes-in-01110"></a>
+## Changes in 0.11.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01110) <a href="#changes-in-01110" id="changes-in-01110"></a>
 
 2018-02-22
 
@@ -1705,7 +1705,7 @@ Documentation changes:
 
 * Note the lazy migration strategy for NNT to NNTBS conversion.
 
-### Changes in 0.11.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0119) <a href="#changes-in-0119" id="changes-in-0119"></a>
+## Changes in 0.11.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0119) <a href="#changes-in-0119" id="changes-in-0119"></a>
 
 2018-02-20
 
@@ -1731,13 +1731,13 @@ Documentation changes:
 * Appendix with cluster sizing recommendations.
 * GET method for `sweep_delete` status.
 
-### Changes in 0.11.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0118) <a href="#changes-in-0118" id="changes-in-0118"></a>
+## Changes in 0.11.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0118) <a href="#changes-in-0118" id="changes-in-0118"></a>
 
 2018-02-09
 
 * Minor fix to reduce error logging
 
-### Changes in 0.11.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0117) <a href="#changes-in-0117" id="changes-in-0117"></a>
+## Changes in 0.11.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0117) <a href="#changes-in-0117" id="changes-in-0117"></a>
 
 2018-02-08
 
@@ -1747,7 +1747,7 @@ Documentation changes:
 
 * Add new section on `nntbs` configuration
 
-### Changes in 0.11.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0116) <a href="#changes-in-0116" id="changes-in-0116"></a>
+## Changes in 0.11.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0116) <a href="#changes-in-0116" id="changes-in-0116"></a>
 
 2018-02-08
 
@@ -1761,26 +1761,26 @@ Documentation changes:
 * Add new section on migrating to a new cluster from an existing one.
 * Add page documenting `snowthd` command-line options.
 
-### Changes in 0.11.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0115) <a href="#changes-in-0115" id="changes-in-0115"></a>
+## Changes in 0.11.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0115) <a href="#changes-in-0115" id="changes-in-0115"></a>
 
 2018-01-23
 
 * Yield during reconstitute/rebalance inside NNTBS to prevent starvation of other ops
 
-### Changes in 0.11.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0114) <a href="#changes-in-0114" id="changes-in-0114"></a>
+## Changes in 0.11.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0114) <a href="#changes-in-0114" id="changes-in-0114"></a>
 
 2018-01-22
 
 * Fix for iterator re-use in error edge case
 
-### Changes in 0.11.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0113) <a href="#changes-in-0113" id="changes-in-0113"></a>
+## Changes in 0.11.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0113) <a href="#changes-in-0113" id="changes-in-0113"></a>
 
 2018-01-22
 
 * Safety fix for rollup code
 * Corruption fix on hard shutdown or power loss
 
-### Changes in 0.11.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0112) <a href="#changes-in-0112" id="changes-in-0112"></a>
+## Changes in 0.11.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0112) <a href="#changes-in-0112" id="changes-in-0112"></a>
 
 2018-01-18
 
@@ -1796,7 +1796,7 @@ Documentation changes:
 
 * Describe `rollup_strategy` in the `<raw_database>` config
 
-### Changes in 0.11.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0111) <a href="#changes-in-0111" id="changes-in-0111"></a>
+## Changes in 0.11.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0111) <a href="#changes-in-0111" id="changes-in-0111"></a>
 
 2018-01-18
 
@@ -1804,7 +1804,7 @@ Documentation changes:
 * Add NNTBS stats to admin UI
 * Various smaller fixes
 
-### Changes in 0.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-011) <a href="#changes-in-011" id="changes-in-011"></a>
+## Changes in 0.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-011) <a href="#changes-in-011" id="changes-in-011"></a>
 
 2018-01-12
 
@@ -1814,7 +1814,7 @@ Documentation changes:
 * Many smaller fixes and improvements
 * Dropped support for OmniOS (RIP)
 
-### Changes in 0.10.19[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01019) <a href="#changes-in-01019" id="changes-in-01019"></a>
+## Changes in 0.10.19[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01019) <a href="#changes-in-01019" id="changes-in-01019"></a>
 
 2017-12-18
 
@@ -1826,14 +1826,14 @@ Documentation changes:
 
 * Note that all supplied UUIDs during initial setup and cluster configuration should be lowercase. If uppercase UUIDs are supplied, they will be lowercased and a warning logged by setup.
 
-### Changes in 0.10.18[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01018) <a href="#changes-in-01018" id="changes-in-01018"></a>
+## Changes in 0.10.18[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01018) <a href="#changes-in-01018" id="changes-in-01018"></a>
 
 2017-12-06
 
 * Fix crash in fair queueing
 * Finish moving rollups to their own jobq
 
-### Changes in 0.10.17[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01017) <a href="#changes-in-01017" id="changes-in-01017"></a>
+## Changes in 0.10.17[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01017) <a href="#changes-in-01017" id="changes-in-01017"></a>
 
 2017-12-05
 
@@ -1841,19 +1841,19 @@ Documentation changes:
 * Move rollups to their own jobq so as to not interfere with normal reads
 * Implement fair job queueing for reads so large read jobs cannot starve out other smaller reads
 
-### Changes in 0.10.16[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01016) <a href="#changes-in-01016" id="changes-in-01016"></a>
+## Changes in 0.10.16[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01016) <a href="#changes-in-01016" id="changes-in-01016"></a>
 
 2017-11-27
 
 * New rocksdb library version 5.8.6
 
-### Changes in 0.10.15[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01015) <a href="#changes-in-01015" id="changes-in-01015"></a>
+## Changes in 0.10.15[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01015) <a href="#changes-in-01015" id="changes-in-01015"></a>
 
 2017-11-21
 
 * More aggressively load shed by forcing local data fetch jobs to obey timeouts
 
-### Changes in 0.10.14[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01014) <a href="#changes-in-01014" id="changes-in-01014"></a>
+## Changes in 0.10.14[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01014) <a href="#changes-in-01014" id="changes-in-01014"></a>
 
 2017-11-20
 
@@ -1861,39 +1861,39 @@ Documentation changes:
 * Short circuit local data read jobs if the timeout has elapsed
 * Add all hidden stats to internal UI tab
 
-### Changes in 0.10.13[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01013) <a href="#changes-in-01013" id="changes-in-01013"></a>
+## Changes in 0.10.13[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01013) <a href="#changes-in-01013" id="changes-in-01013"></a>
 
 2017-11-17
 
 * Fix potential double free crash upon query cache expiry
 
-### Changes in 0.10.12[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01012) <a href="#changes-in-01012" id="changes-in-01012"></a>
+## Changes in 0.10.12[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01012) <a href="#changes-in-01012" id="changes-in-01012"></a>
 
 2017-11-15
 
 * Lock free cache for topology hashes
 * Fix graphite response when we have no data for a known metric name
 
-### Changes in 0.10.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01011) <a href="#changes-in-01011" id="changes-in-01011"></a>
+## Changes in 0.10.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01011) <a href="#changes-in-01011" id="changes-in-01011"></a>
 
 2017-11-13
 
 * Disable cache for topology hashes due to live lock
 
-### Changes in 0.10.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01010) <a href="#changes-in-01010" id="changes-in-01010"></a>
+## Changes in 0.10.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01010) <a href="#changes-in-01010" id="changes-in-01010"></a>
 
 2017-11-13
 
 * Validate incoming /metrics/find queries are well formed
 * Move query cache to an LFU
 
-### Changes in 0.10.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0109) <a href="#changes-in-0109" id="changes-in-0109"></a>
+## Changes in 0.10.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0109) <a href="#changes-in-0109" id="changes-in-0109"></a>
 
 2017-11-10
 
 * Fix for crash on extremely long /metrics/find queries
 
-### Changes in 0.10.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0108) <a href="#changes-in-0108" id="changes-in-0108"></a>
+## Changes in 0.10.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0108) <a href="#changes-in-0108" id="changes-in-0108"></a>
 
 2017-11-09
 
@@ -1906,7 +1906,7 @@ Multiple `whisper2nnt` changes:
 * Disable HTTP keepalive
 * Add `--find_closest_name` parameter. This is needed for sites that do name manipulation via modules in the metric\_name\_db and submit metrics with one name but search on them with another name. For example, a metric would get submitted that resembles `foo.bar_avg` and returned from the metric\_name\_db as `foo.bar`. Ingestion of whisper data has to use the `foo.bar_avg` name but whisper files on disk do not follow this format. To combat this a new switch which uses the `/graphite/metrics/find` url to lookup an already ingested name based on the whisper name as a prefix and uses that name for metric submission under NNT.
 
-### Changes in 0.10.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0107) <a href="#changes-in-0107" id="changes-in-0107"></a>
+## Changes in 0.10.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0107) <a href="#changes-in-0107" id="changes-in-0107"></a>
 
 2017-11-03
 
@@ -1915,7 +1915,7 @@ Multiple `whisper2nnt` changes:
 * Replace usage of fnmatch with PCRE, fixing some cases where fnmatch fails
 * Allow proxied metrics/find queries to utilize the cache
 
-### Changes in 0.10.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0106) <a href="#changes-in-0106" id="changes-in-0106"></a>
+## Changes in 0.10.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0106) <a href="#changes-in-0106" id="changes-in-0106"></a>
 
 2017-10-31
 
@@ -1930,7 +1930,7 @@ Documentation changes:
 * The IRONdb Relay installer no longer insists on ZFS, and creates directories instead.
 * Explicitly document that cluster resize/rebalance does not support changes to "sidedness". A new cluster and full reconstitute is required for changing to/from a sided cluster.
 
-### Changes in 0.10.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0105) <a href="#changes-in-0105" id="changes-in-0105"></a>
+## Changes in 0.10.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0105) <a href="#changes-in-0105" id="changes-in-0105"></a>
 
 2017-10-24
 
@@ -1945,7 +1945,7 @@ Documentation changes:
   * New arguments to help with debugging: `--debug`, `--noop`
 * Includes [libmtev fix](https://github.com/circonus-labs/libmtev/pull/328) for a startup issue with file permissions.
 
-### Changes in 0.10.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0104) <a href="#changes-in-0104" id="changes-in-0104"></a>
+## Changes in 0.10.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0104) <a href="#changes-in-0104" id="changes-in-0104"></a>
 
 2017-10-12
 
@@ -1957,25 +1957,25 @@ Documentation changes:
 * Add documentation for [irondb-relay](https://docs.circonus.com/irondb/tools/irondb-relay/), a cluster-aware carbon-relay/carbon-c-relay replacement.
 * Merge content for deleting numeric metrics and entire checks.
 
-### Changes in 0.10.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0103) <a href="#changes-in-0103" id="changes-in-0103"></a>
+## Changes in 0.10.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0103) <a href="#changes-in-0103" id="changes-in-0103"></a>
 
 2017-10-06
 
 * Ensure metrics injected via whisper2nnt tool are visible.
 
-### Changes in 0.10.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0102) <a href="#changes-in-0102" id="changes-in-0102"></a>
+## Changes in 0.10.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0102) <a href="#changes-in-0102" id="changes-in-0102"></a>
 
 2017-10-05
 
 * Another late-breaking fix to speed up writes to the metric\_name\_db.
 
-### Changes in 0.10.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0101) <a href="#changes-in-0101" id="changes-in-0101"></a>
+## Changes in 0.10.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0101) <a href="#changes-in-0101" id="changes-in-0101"></a>
 
 2017-10-05
 
 * Late-breaking optimization to avoid sending /metrics/find requests to down nodes.
 
-### Changes in 0.10.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0100) <a href="#changes-in-0100" id="changes-in-0100"></a>
+## Changes in 0.10.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0100) <a href="#changes-in-0100" id="changes-in-0100"></a>
 
 2017-10-04
 
@@ -1987,14 +1987,14 @@ Documentation changes:
 * New page documenting [cluster resizing](https://docs.circonus.com/irondb/administration/resizing-clusters/) procedures.
 * Add system tuning suggestions to the [Installation page](https://docs.circonus.com/irondb/getting-started/manual-installation/#system-tuning).
 
-### Changes in 0.9.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0911) <a href="#changes-in-0911" id="changes-in-0911"></a>
+## Changes in 0.9.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0911) <a href="#changes-in-0911" id="changes-in-0911"></a>
 
 2017-09-22
 
 * Reconstitute fixes.
 * Fix a bug that prevents a graphite listener from running properly with SSL/TLS on.
 
-### Changes in 0.9.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0910) <a href="#changes-in-0910" id="changes-in-0910"></a>
+## Changes in 0.9.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0910) <a href="#changes-in-0910" id="changes-in-0910"></a>
 
 2017-09-15
 
@@ -2008,7 +2008,7 @@ Documentation changes:
 
 * New page documenting the [configuration files](https://docs.circonus.com/irondb/getting-started/configuration/).
 
-### Changes in 0.9.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-099) <a href="#changes-in-099" id="changes-in-099"></a>
+## Changes in 0.9.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-099) <a href="#changes-in-099" id="changes-in-099"></a>
 
 2017-09-13
 
@@ -2020,40 +2020,40 @@ Documentation changes:
 
 * Added instructions for [rebuilding failed or damaged nodes](https://docs.circonus.com/irondb/administration/rebuilding-nodes/)
 
-### Changes in 0.9.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-098) <a href="#changes-in-098" id="changes-in-098"></a>
+## Changes in 0.9.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-098) <a href="#changes-in-098" id="changes-in-098"></a>
 
 2017-09-11
 
 * Optimize JSON processing on metrics\_find responses.
 * Additional fixes to timeouts to prevent cascading congestion on metrics\_find queries.
 
-### Changes in 0.9.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-097) <a href="#changes-in-097" id="changes-in-097"></a>
+## Changes in 0.9.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-097) <a href="#changes-in-097" id="changes-in-097"></a>
 
 2017-09-08
 
 * Fix for potential thundering herd on metrics\_find queries
 
-### Changes in 0.9.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-096) <a href="#changes-in-096" id="changes-in-096"></a>
+## Changes in 0.9.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-096) <a href="#changes-in-096" id="changes-in-096"></a>
 
 2017-09-07
 
 * Fix a performance regression from 0.9.5 in topology placement calculations
 * Various minor fixes
 
-### Changes in 0.9.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-095) <a href="#changes-in-095" id="changes-in-095"></a>
+## Changes in 0.9.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-095) <a href="#changes-in-095" id="changes-in-095"></a>
 
 2017-09-05
 
 * Fix lookup key for topology in flatbuffer-based ingestion. Flatbuffer ingestion format is currently only used by the experimental irondb-relay.
 * Update to new libmtev config API
 
-### Changes in 0.9.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-094) <a href="#changes-in-094" id="changes-in-094"></a>
+## Changes in 0.9.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-094) <a href="#changes-in-094" id="changes-in-094"></a>
 
 2017-08-18
 
 * Various fixes
 
-### Changes in 0.9.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-093) <a href="#changes-in-093" id="changes-in-093"></a>
+## Changes in 0.9.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-093) <a href="#changes-in-093" id="changes-in-093"></a>
 
 2017-08-16
 
@@ -2062,14 +2062,14 @@ Documentation changes:
 * Return the first level of metrics\_db properly on certain wildcard queries
 * More efficient Graphite metric parsing
 
-### Changes in 0.9.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-092) <a href="#changes-in-092" id="changes-in-092"></a>
+## Changes in 0.9.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-092) <a href="#changes-in-092" id="changes-in-092"></a>
 
 2017-08-04
 
 * Improve query read speed when synthesizing rollups from raw data
 * Fix double-free crash in handling of series\_multi requests
 
-### Changes in 0.9.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-091) <a href="#changes-in-091" id="changes-in-091"></a>
+## Changes in 0.9.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-091) <a href="#changes-in-091" id="changes-in-091"></a>
 
 2017-08-01
 
@@ -2078,7 +2078,7 @@ Documentation changes:
 * Various stability fixes
 * Document network ports and protocols required for operation
 
-### Changes in 0.9.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-090) <a href="#changes-in-090" id="changes-in-090"></a>
+## Changes in 0.9.0[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-090) <a href="#changes-in-090" id="changes-in-090"></a>
 
 2017-07-13
 
@@ -2098,35 +2098,35 @@ Documentation changes:
 * Optimization for graphite fetches through the storage finder plugin.
 * Changes to support data ingestion from new irondb-relay.
 
-### Changes in 0.8.35[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0835) <a href="#changes-in-0835" id="changes-in-0835"></a>
+## Changes in 0.8.35[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0835) <a href="#changes-in-0835" id="changes-in-0835"></a>
 
 2017-06-27
 
 * Add an option to not use database rollup logic when responding to graphite queries
 
-### Changes in 0.8.34[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0834) <a href="#changes-in-0834" id="changes-in-0834"></a>
+## Changes in 0.8.34[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0834) <a href="#changes-in-0834" id="changes-in-0834"></a>
 
 2017-06-26
 
 * Throughput optimizations
 
-### Changes in 0.8.33[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0833) <a href="#changes-in-0833" id="changes-in-0833"></a>
+## Changes in 0.8.33[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0833) <a href="#changes-in-0833" id="changes-in-0833"></a>
 
 2017-06-26
 
 * Fix a bug in database comparator introduced in 0.8.30
 
-### Changes in 0.8.32[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0832) <a href="#changes-in-0832" id="changes-in-0832"></a>
+## Changes in 0.8.32[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0832) <a href="#changes-in-0832" id="changes-in-0832"></a>
 
 2017-06-22
 
 * Fix a bug with ZFS on Linux integration in the admin UI that caused a segfault on startup.
 
-### Changes in 0.8.31[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0831) <a href="#changes-in-0831" id="changes-in-0831"></a>
+## Changes in 0.8.31[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0831) <a href="#changes-in-0831" id="changes-in-0831"></a>
 
 unreleased
 
-### Changes in 0.8.30[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0830) <a href="#changes-in-0830" id="changes-in-0830"></a>
+## Changes in 0.8.30[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0830) <a href="#changes-in-0830" id="changes-in-0830"></a>
 
 2017-06-21
 
@@ -2137,28 +2137,28 @@ unreleased
 * Fix memory leaks relating to replication journals.
 * Fix for failed deletes due to filename-too-long errors.
 
-### Changes in 0.8.29[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0829) <a href="#changes-in-0829" id="changes-in-0829"></a>
+## Changes in 0.8.29[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0829) <a href="#changes-in-0829" id="changes-in-0829"></a>
 
 unreleased
 
-### Changes in 0.8.28[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0828) <a href="#changes-in-0828" id="changes-in-0828"></a>
+## Changes in 0.8.28[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0828) <a href="#changes-in-0828" id="changes-in-0828"></a>
 
 unreleased
 
-### Changes in 0.8.27[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0827) <a href="#changes-in-0827" id="changes-in-0827"></a>
+## Changes in 0.8.27[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0827) <a href="#changes-in-0827" id="changes-in-0827"></a>
 
 2017-06-12
 
 * Fix a bug that caused contention between reads and writes during rollup.
 * Reduce contention in the raw database write path.
 
-### Changes in 0.8.26[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0826) <a href="#changes-in-0826" id="changes-in-0826"></a>
+## Changes in 0.8.26[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0826) <a href="#changes-in-0826" id="changes-in-0826"></a>
 
 2017-06-02
 
 * Fix LRU-cache bug for metric queries.
 
-### Changes in 0.8.25[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0825) <a href="#changes-in-0825" id="changes-in-0825"></a>
+## Changes in 0.8.25[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0825) <a href="#changes-in-0825" id="changes-in-0825"></a>
 
 2017-05-31
 
@@ -2168,7 +2168,7 @@ unreleased
 * Fix several memory leaks.
 * Note: 0.8.24 was an unreleased internal version. Its changes are included here.
 
-### Changes in 0.8.23[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0823) <a href="#changes-in-0823" id="changes-in-0823"></a>
+## Changes in 0.8.23[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0823) <a href="#changes-in-0823" id="changes-in-0823"></a>
 
 2017-05-18
 
@@ -2176,7 +2176,7 @@ unreleased
 * Improved journaling performance.
 * Additional bug fixes.
 
-### Changes in 0.8.22[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0822) <a href="#changes-in-0822" id="changes-in-0822"></a>
+## Changes in 0.8.22[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0822) <a href="#changes-in-0822" id="changes-in-0822"></a>
 
 2017-05-16
 
@@ -2185,7 +2185,7 @@ unreleased
 * Fix a bug that caused us to request millisecond resolution when zoomed out too far, and 1-day would be better.
 * First draft of a progress UI for reconstitute.
 
-### Changes in 0.8.21[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0821) <a href="#changes-in-0821" id="changes-in-0821"></a>
+## Changes in 0.8.21[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0821) <a href="#changes-in-0821" id="changes-in-0821"></a>
 
 2017-05-15
 
@@ -2193,7 +2193,7 @@ unreleased
 * Add a statistic for `total_put_tuples`, covering all metric types.
 * (libmtev) Use locks to protect against cross-thread releases.
 
-### Changes in 0.8.20[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0820) <a href="#changes-in-0820" id="changes-in-0820"></a>
+## Changes in 0.8.20[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0820) <a href="#changes-in-0820" id="changes-in-0820"></a>
 
 2017-05-10
 
@@ -2203,21 +2203,21 @@ unreleased
 * Minor UI fix for displaying sub-minute rollups.
 * Crash and memory leak fixes.
 
-### Changes in 0.8.19[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0819) <a href="#changes-in-0819" id="changes-in-0819"></a>
+## Changes in 0.8.19[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0819) <a href="#changes-in-0819" id="changes-in-0819"></a>
 
 2017-05-03
 
 * Lower default batch size for replication log processing from 500K to 50K messages. Can still be tuned higher if necessary.
 * Improve ingestion performance in the Graphite listener.
 
-### Changes in 0.8.18[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0818) <a href="#changes-in-0818" id="changes-in-0818"></a>
+## Changes in 0.8.18[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0818) <a href="#changes-in-0818" id="changes-in-0818"></a>
 
 2017-04-28
 
 * Fix potential races in replication.
 * Speed up metric querying.
 
-### Changes in 0.8.17[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0817) <a href="#changes-in-0817" id="changes-in-0817"></a>
+## Changes in 0.8.17[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0817) <a href="#changes-in-0817" id="changes-in-0817"></a>
 
 2017-04-27
 
@@ -2226,7 +2226,7 @@ unreleased
 * Limit writing metrics forward into new time shards.
 * Add multi-threaded replication.
 
-### Changes in 0.8.16[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0816) <a href="#changes-in-0816" id="changes-in-0816"></a>
+## Changes in 0.8.16[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0816) <a href="#changes-in-0816" id="changes-in-0816"></a>
 
 2017-04-24
 
@@ -2234,13 +2234,13 @@ unreleased
 * Faster reconstituting of raw data.
 * Fix metric name handling during reconstitute.
 
-### Changes in 0.8.15[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0815) <a href="#changes-in-0815" id="changes-in-0815"></a>
+## Changes in 0.8.15[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0815) <a href="#changes-in-0815" id="changes-in-0815"></a>
 
 2017-04-20
 
 * Move Graphite listener connection processing off the main thread to avoid blocking.
 
-### Changes in 0.8.14[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0814) <a href="#changes-in-0814" id="changes-in-0814"></a>
+## Changes in 0.8.14[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0814) <a href="#changes-in-0814" id="changes-in-0814"></a>
 
 2017-04-19
 
@@ -2248,7 +2248,7 @@ unreleased
 * Speed up journal processing.
 * Increase write buffer and block size in raw database to reduce write stalls.
 
-### Changes in 0.8.13[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0813) <a href="#changes-in-0813" id="changes-in-0813"></a>
+## Changes in 0.8.13[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0813) <a href="#changes-in-0813" id="changes-in-0813"></a>
 
 2017-04-14
 
@@ -2257,33 +2257,33 @@ unreleased
 * Increase default read buffer size for Graphite listener.
 * Use proper libcurl error defines in replication code.
 
-### Changes in 0.8.12[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0812) <a href="#changes-in-0812" id="changes-in-0812"></a>
+## Changes in 0.8.12[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0812) <a href="#changes-in-0812" id="changes-in-0812"></a>
 
 2017-04-12
 
 * Remove problematic usage of alloca().
 * Add lz4f support to reconstitute.
 
-### Changes in 0.8.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0811) <a href="#changes-in-0811" id="changes-in-0811"></a>
+## Changes in 0.8.11[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0811) <a href="#changes-in-0811" id="changes-in-0811"></a>
 
 2017-04-05
 
 * Speed up reconstitute through parallel processing.
 
-### Changes in 0.8.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0810) <a href="#changes-in-0810" id="changes-in-0810"></a>
+## Changes in 0.8.10[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-0810) <a href="#changes-in-0810" id="changes-in-0810"></a>
 
 2017-04-04
 
 * Improve throughput via socket and send-buffer tuning fixes.
 * Fix watchdog timeouts when reloading large metric databases.
 
-### Changes in 0.8.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-089) <a href="#changes-in-089" id="changes-in-089"></a>
+## Changes in 0.8.9[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-089) <a href="#changes-in-089" id="changes-in-089"></a>
 
 2017-04-03
 
 * Preserve null termination in metric names for proper duplicate detection.
 
-### Changes in 0.8.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-088) <a href="#changes-in-088" id="changes-in-088"></a>
+## Changes in 0.8.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-088) <a href="#changes-in-088" id="changes-in-088"></a>
 
 2017-03-31
 
@@ -2291,58 +2291,58 @@ unreleased
 * Avoid performing rollups or deletions on a reconstituting node.
 * Memory leak fixes.
 
-### Changes in 0.8.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-087) <a href="#changes-in-087" id="changes-in-087"></a>
+## Changes in 0.8.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-087) <a href="#changes-in-087" id="changes-in-087"></a>
 
 2017-03-24
 
 * Performance fixes for reconstitute.
 * Memory leak fixes.
 
-### Changes in 0.8.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-086) <a href="#changes-in-086" id="changes-in-086"></a>
+## Changes in 0.8.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-086) <a href="#changes-in-086" id="changes-in-086"></a>
 
 2017-03-21
 
 * Fix internal wildcard queries, and limit Graphite metric names to 256 levels.
 
-### Changes in 0.8.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-085) <a href="#changes-in-085" id="changes-in-085"></a>
+## Changes in 0.8.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-085) <a href="#changes-in-085" id="changes-in-085"></a>
 
 2017-03-17
 
 * Build Graphite responses using `mtev_json` instead of custom strings.
 
-### Changes in 0.8.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-084) <a href="#changes-in-084" id="changes-in-084"></a>
+## Changes in 0.8.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-084) <a href="#changes-in-084" id="changes-in-084"></a>
 
 2017-03-14
 
 * Set a maximum metric name length on ingestion.
 
-### Changes in 0.8.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-083) <a href="#changes-in-083" id="changes-in-083"></a>
+## Changes in 0.8.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-083) <a href="#changes-in-083" id="changes-in-083"></a>
 
 2017-03-10
 
 * Various replication fixes.
 * Fixes for parsing errors and startup crashes.
 
-### Changes in 0.8.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-082) <a href="#changes-in-082" id="changes-in-082"></a>
+## Changes in 0.8.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-082) <a href="#changes-in-082" id="changes-in-082"></a>
 
 2017-03-01
 
 * Reject Graphite metrics with an encoded length greater than 255.
 
-### Changes in 0.8.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-081) <a href="#changes-in-081" id="changes-in-081"></a>
+## Changes in 0.8.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-081) <a href="#changes-in-081" id="changes-in-081"></a>
 
 2017-02-27
 
 * Internal testing fixes.
 
-### Changes in 0.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-08) <a href="#changes-in-08" id="changes-in-08"></a>
+## Changes in 0.8[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-08) <a href="#changes-in-08" id="changes-in-08"></a>
 
 2017-02-27
 
 * De-duplicate proxied requests.
 * Deal with unparseably large number strings.
 
-### Changes in 0.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-07) <a href="#changes-in-07" id="changes-in-07"></a>
+## Changes in 0.7[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-07) <a href="#changes-in-07" id="changes-in-07"></a>
 
 2017-02-23
 
@@ -2350,7 +2350,7 @@ unreleased
 * Stricter Graphite record parsing.
 * Memory leak and header-parsing fixes.
 
-### Changes in 0.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-06) <a href="#changes-in-06" id="changes-in-06"></a>
+## Changes in 0.6[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-06) <a href="#changes-in-06" id="changes-in-06"></a>
 
 2017-02-15
 
@@ -2358,21 +2358,21 @@ unreleased
 * Enable `Accept-Encoding: gzip`, compress outgoing replication POSTs with lz4f.
 * Optimize UUID comparison to speed up reconstitute.
 
-### Changes in 0.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-05) <a href="#changes-in-05" id="changes-in-05"></a>
+## Changes in 0.5[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-05) <a href="#changes-in-05" id="changes-in-05"></a>
 
 2017-01-31
 
 * Fix crash from Graphite listener connection handling.
 * Refactor text metric processing in preparation for raw database.
 
-### Changes in 0.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-04) <a href="#changes-in-04" id="changes-in-04"></a>
+## Changes in 0.4[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-04) <a href="#changes-in-04" id="changes-in-04"></a>
 
 2017-01-16
 
 * Fix rollup span calculation for Graphite fetches.
 * Support getting the topology configuration from an included config file.
 
-### Changes in 0.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-03) <a href="#changes-in-03" id="changes-in-03"></a>
+## Changes in 0.3[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-03) <a href="#changes-in-03" id="changes-in-03"></a>
 
 2016-12-29
 
@@ -2380,25 +2380,25 @@ unreleased
 * UI fixes for displaying licenses.
 * Memory leak, crash and hang fixes.
 
-### Changes in 0.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-02) <a href="#changes-in-02" id="changes-in-02"></a>
+## Changes in 0.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-02) <a href="#changes-in-02" id="changes-in-02"></a>
 
 2016-11-29
 
 * Don't recaclulate `counter_stddev` when counter in `NaN`.
 
-### Changes in 0.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01) <a href="#changes-in-01" id="changes-in-01"></a>
+## Changes in 0.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-01) <a href="#changes-in-01" id="changes-in-01"></a>
 
 2016-11-29
 
 * Add Graphite support.
 
-### Changes in 0.0.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-002) <a href="#changes-in-002" id="changes-in-002"></a>
+## Changes in 0.0.2[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-002) <a href="#changes-in-002" id="changes-in-002"></a>
 
 2016-11-21
 
 * Fix issues with various inputs being `NaN`.
 
-### Changes in 0.0.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-001) <a href="#changes-in-001" id="changes-in-001"></a>
+## Changes in 0.0.1[​](https://docs.circonus.com/irondb/release-notes-archive#changes-in-001) <a href="#changes-in-001" id="changes-in-001"></a>
 
 2016-11-17
 
