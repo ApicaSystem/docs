@@ -76,14 +76,14 @@ output-ascent.conf: |
 
 Be sure to also configure the following:
 
-* name: ASCENT\_HOST value: "YOUR\_ASCENT\_ENV\_URL"&#x20;
+* name: ASCENT\_HOST value: "YOUR\_ASCENT\_ENV\_URL"
   * (NOTE: Only include the base URL. Example: presales.apica.io)
 * name: ASCENT\_PORT value: "443"
 * name: CLUSTER\_ID value: "YOUR\_CLUSTER\_ID"
-* name: ASCENT\_TOKEN value: "YOUR\_INGEST\_TOKEN"&#x20;
+* name: ASCENT\_TOKEN value: "YOUR\_INGEST\_TOKEN"
   * (NOTE: You can find your ingest token [here](https://docs.apica.io/integrations/overview/generating-a-secure-ingest-token#obtaining-an-ingest-token-using-ui))
 
-Fluent Bit DaemonSet is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deamonset `fluent-bit-daemonset-apica-output.yml`.  If you do not have your ingest token, you can find yours using this [guide](https://docs.apica.io/integrations/overview/generating-a-secure-ingest-token#obtaining-an-ingest-token-using-ui)
+Fluent Bit DaemonSet is ready to be used with Apica Ascent on a regular Kubernetes Cluster, configure the following in deamonset `fluent-bit-daemonset-apica-output.yml`. If you do not have your ingest token, you can find yours using this [guide](https://docs.apica.io/integrations/overview/generating-a-secure-ingest-token#obtaining-an-ingest-token-using-ui)
 
 *   name: ASCENT\_HOST
 
@@ -103,6 +103,7 @@ kubectl create -f fluent-bit-daemonset-apica-output.yml
 
 #### Verify Logs in Ascent
 
-In Ascent, navigate to the Explore Tab -> Logs & Insights. You'll see your logs in the list of Sources and Applications named after your Cluster\_ID and Application:
+In Ascent, navigate to the Explore Tab -> Logs & Insights. You'll see your logs in the list of Sources and Applications named after your Cluster\_ID and Application:\
+<br>
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>

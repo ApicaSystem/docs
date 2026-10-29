@@ -26,6 +26,6 @@ And that is all you need. Your data from the Object store bucket will show up as
 
 By default, the s3 compat ingest plugin will pull all your files under the prefix you mentioned, push it to Apica Ascent, and it will remove the files which are processed. This section will help you to take a backup of your files.
 
-S3 Compat will push all your files to a separate bucket before deleting them from the source bucket. To configure a bucket for taking a backup, you should provide the name of the bucket in the **destination bucket** form field in the input plugin modal. The files will be stored with the structure used in the source bucket.
+S3 Compat will push all your files to a separate bucket before deleting them from the source bucket. To configure a bucket for taking a backup, you should provide the name of the bucket in the **destination bucket** form field in the input plugin modal. The files will be stored with the structure used in the source bucket.\\
 
 <figure><img src="../../.gitbook/assets/image (308).png" alt=""><figcaption><p>Taking backup logs in a separate bucket</p></figcaption></figure>

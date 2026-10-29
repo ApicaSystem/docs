@@ -36,12 +36,11 @@ Helpful links:
 
 #### 3. Verify Logs in Apica Ascent
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to Explore → Logs & Insights
+2\. Navigate to Explore → Logs & Insights
 
-3\.     Look for the namespace and application name specified in the config file
-
+3\. Look for the namespace and application name specified in the config file\
 Example:
 
 <figure><img src="../../../.gitbook/assets/image (1137).png" alt=""><figcaption></figcaption></figure>
@@ -70,8 +69,6 @@ running value: 0
 
 #### 5. Troubleshooting
 
-&#x20;[**Fluent-bit Troubleshooting**](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting)
+[**Fluent-bit Troubleshooting**](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting)
 
 Make sure the TypesDB file path is set correctly, wrong path can cause initialization error in fluent-bit.
-
-&#x20;

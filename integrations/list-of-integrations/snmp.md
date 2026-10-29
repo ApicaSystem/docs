@@ -23,8 +23,8 @@ Apica Ascent platform provides a source extension plugin for SNMP that will help
 * Add the agents by providing the Hostname/IP and port
 * Provide the credentials for accessing the SNMP agents
 * Provide a custom MIB filename and load the MIB file, if you want to use a custom OID
-* Add OID and the corresponding name for the OID which will be used as the attribute name of the data when we ingest it to the Apica ascent platform.
-
-![](<../../.gitbook/assets/image (419).png>)
+* Add OID and the corresponding name for the OID which will be used as the attribute name of the data when we ingest it to the Apica ascent platform.\
+  \
+  ![](<../../.gitbook/assets/image (419).png>)
 
 After creation, you will see the SNMP data which will have all the OIDs as attributes with the corresponding name in the incoming data.

@@ -120,7 +120,7 @@ Adds two headers to each call that forces appdynamics to trigger a snapshot of t
 
 **AppdynamicsIntegrationV2**
 
-Works in the same way as the V1 but it adds one input field that is set to false by default. False will give the trigger snapshot header the value false and will not trigger a snapshot wile true will force a snapshot. To use this plugin in WPM you need to add the following line to the Additional Options field in the check setup: -vTriggerSnapshot true. if -vTriggerSnapshot true or false is not added to the check setup the check will not run.&#x20;
+Works in the same way as the V1 but it adds one input field that is set to false by default. False will give the trigger snapshot header the value false and will not trigger a snapshot wile true will force a snapshot. To use this plugin in WPM you need to add the following line to the Additional Options field in the check setup: -vTriggerSnapshot true. if -vTriggerSnapshot true or false is not added to the check setup the check will not run.
 
 * **Sample - contact support**
 
@@ -153,8 +153,6 @@ Argument\[1] = (username)\
 Argument\[2] = (password)\
 Argument\[3] = (environment - possible value:\[dev,uat,prod])
 
-&#x20;
-
 TO UPDATE EXISTING RECORD\
 \-------------------------\
 Argument\[0] = "update"\
@@ -162,16 +160,12 @@ Argument\[1] = (username)\
 Argument\[2] = (password)\
 Argument\[3] = (environment - possible value:\[dev,uat,prod])
 
-&#x20;
-
 TO TEST IF THE RECORD HAS BEEN WRITTEN AND CONTAINS THE PROPER DATA\
 \-------------------------------------------------------------------\
 Argument\[0] = "decrypt"\
 Argument\[1] = (username)\
 Argument\[2] = "\<passkey-string>" (pass the same value as SYMMETRIC\_KEY)\
 Argument\[3] = (environment - possible value:\[dev,uat,prod])
-
-&#x20;
 
 TO PROCESS MULTIPLE ID/PASSWORD BY EITHER ADDING OR UPDATING\
 \------------------------------------------------------------\
@@ -198,19 +192,19 @@ Plugin to extract certain number of characters from front of input string.
 
 * **Sample - contact support**
 
-### **Extract Substring In Between**  <a href="#zebratesterpluginrepository-extractsubstringinbetween" id="zebratesterpluginrepository-extractsubstringinbetween"></a>
+### **Extract Substring In Between** <a href="#zebratesterpluginrepository-extractsubstringinbetween" id="zebratesterpluginrepository-extractsubstringinbetween"></a>
 
 Extracts a substring in between two given strings
 
 * **Sample - contact support**
 
-### **Extract Values From JSON**  <a href="#zebratesterpluginrepository-extractvaluesfromjson" id="zebratesterpluginrepository-extractvaluesfromjson"></a>
+### **Extract Values From JSON** <a href="#zebratesterpluginrepository-extractvaluesfromjson" id="zebratesterpluginrepository-extractvaluesfromjson"></a>
 
 Plugin to extract specific values from a JSON string input. Pass the array name and node name to extract.
 
 * **Sample - contact support**
 
-### **Generate GUID**  <a href="#zebratesterpluginrepository-generateguid" id="zebratesterpluginrepository-generateguid"></a>
+### **Generate GUID** <a href="#zebratesterpluginrepository-generateguid" id="zebratesterpluginrepository-generateguid"></a>
 
 Plugin to generate globally unique ID. Replaces x with random hex digit so you can set a static value instead of x.
 
@@ -265,7 +259,7 @@ Used to mask password from output logs and error snapshots. Pass in username as 
 
 * **Sample - contact support**
 
-### **String Joiner**  <a href="#zebratesterpluginrepository-stringjoiner" id="zebratesterpluginrepository-stringjoiner"></a>
+### **String Joiner** <a href="#zebratesterpluginrepository-stringjoiner" id="zebratesterpluginrepository-stringjoiner"></a>
 
 Combines two or more strings together (concatenate) into one.
 
@@ -337,7 +331,7 @@ Adds support for IBM\_WebsphereMQ within ZT. Requires a base64 encoded string co
 
 ### **Convert Timestamp to Unix** <a href="#zebratesterpluginrepository-converttimestamptounix" id="zebratesterpluginrepository-converttimestamptounix"></a>
 
-Using the format "yyyy-mm-dd hh:mm:ss" does also support "yyyy-mm-ddThh:mm:ss:MMM"\
+Using the format "yyyy-mm-dd hh<span data-gb-custom-inline data-tag="emoji" data-code="1f1f2-1f1f2">:flag_mm:</span>ss" does also support "yyyy-mm-ddThh<span data-gb-custom-inline data-tag="emoji" data-code="1f1f2-1f1f2">:flag_mm:</span>ss:MMM"\
 Converts into Unix seconds
 
 * **Sample - contact support**
@@ -350,7 +344,7 @@ Allows for upload of a custom integer value which is calculated in ZebraTester t
 
 ### **Update Kerberos Username & PasswordB64 with input parameters/stand alone variables.** <a href="#zebratesterpluginrepository-updatekerberosusername-and-passwordb64withinputparameters-standalonevari" id="zebratesterpluginrepository-updatekerberosusername-and-passwordb64withinputparameters-standalonevari"></a>
 
-Allows for changing Kerberos credentials using raw strings (Password will be encoded in the plugin).&#x20;
+Allows for changing Kerberos credentials using raw strings (Password will be encoded in the plugin).
 
 * **Sample - contact support**
 

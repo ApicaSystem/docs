@@ -2,10 +2,10 @@
 
 We have [discussed earlier](./) how to make a ossec`-hids` App Extension.
 
-After creating a App Extension you can copy the **LoadBalancer-IP** and **authtoken** from the `Explore > App Extension` page.
+After creating a App Extension you can copy the **LoadBalancer-IP** and **authtoken** from the `Explore > App Extension` page.\\
 
-After this, you are ready to connect the Apica-OSSEC Agent to the Apica-OSSEC Manager.
-
+After this, you are ready to connect the Apica-OSSEC Agent to the Apica-OSSEC Manager.\
+\
 Please download this powershell script file and run it from the source machine with 2 parameters.
 
 Required Parameters:

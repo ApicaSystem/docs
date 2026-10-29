@@ -143,8 +143,7 @@ To forward Windows logs to Apica Ascent using Fluent Bit, do the following.
 
 You'll now see a Fluent Bit service running on your Windows machine.
 
-OR
-
+OR\
 You can also run the `.\status.ps1` helper scripts present at [https://github.com/ApicaSystem/apica-installation/tree/main/fluent-bit/windows/helper-scripts](https://github.com/ApicaSystem/apica-installation/tree/main/fluent-bit/windows/helper-scripts)
 
 We have scripts to:
