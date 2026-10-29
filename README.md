@@ -2,7 +2,7 @@
 description: All the details to fully configure, enable and optimize your Apica product(s).
 ---
 
-# WELCOME TO APICA DOCS!
+# Welcome to Apica Docs!
 
 ### Getting Started
 
