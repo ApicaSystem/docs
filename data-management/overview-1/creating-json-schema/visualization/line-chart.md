@@ -1,6 +1,6 @@
 # Line chart
 
-To configure a line chart that  use the following JSON object. This configuration includes setting the chart type to `line`, specifying necessary plot parameters, and providing a monitoring query .
+To configure a line chart that use the following JSON object. This configuration includes setting the chart type to `line`, specifying necessary plot parameters, and providing a monitoring query .
 
 ```json
 {
@@ -23,8 +23,4 @@ To configure a line chart that  use the following JSON object. This configuratio
 }
 ```
 
-
-
-
-
-<figure><img src="../../../../.gitbook/assets/image (548).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (685).png" alt=""><figcaption></figcaption></figure>

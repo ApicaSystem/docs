@@ -1,12 +1,10 @@
 # ECS prometheus metrics to Apica Ascent
 
-**AWS ECS** is an orchestration service for Docker containers, allowing simple manage and scaling of applications with easy access to other AWS services.  The below instructions outline how we can forward ECS container metrics to Ascent with the help of Prometheus service discovery using the following steps.
+**AWS ECS** is an orchestration service for Docker containers, allowing simple manage and scaling of applications with easy access to other AWS services. The below instructions outline how we can forward ECS container metrics to Ascent with the help of Prometheus service discovery using the following steps.
 
 * Create IAM policy to enable Prometheus container to scan the cluster with container having Dockerlabels.
 * Deploy a Prometheus service that would auto-discover any ECS tasks it finds in the same VPC using AWS API (_prometheus-ecs-discovery_ [GitHub repository](https://github.com/teralytics/prometheus-ecs-discovery.git).)
 * Tag ECS tasks with DockerLabels.
-
-
 
 ### **IAM policy for the ECS task**
 
@@ -53,11 +51,9 @@ Create the below policy and attach it to the IAM role that the Prometheus ECS ta
 }
 ```
 
-
-
 ### **Prometheus containers**
 
-ECS task definition will have one task with 2 containers and common volume. Primary container will scan the ECS-cluster and find containers with labels  **PROMETHEUS\_EXPORTER\_PORT** docker label and write to /output/ecsfilesd.yml which will be accessed by second container, second prometheus container will load its configuration data from an S3 bucket upon startup and it also  scrapes any ECS containers container within the _/output/ecs\_file\_sd.yml_ and will use remote write feature to forward metrics to the Ascent remote-write endpoint.
+ECS task definition will have one task with 2 containers and common volume. Primary container will scan the ECS-cluster and find containers with labels **PROMETHEUS\_EXPORTER\_PORT** docker label and write to /output/ecsfilesd.yml which will be accessed by second container, second prometheus container will load its configuration data from an S3 bucket upon startup and it also scrapes any ECS containers container within the _/output/ecs\_file\_sd.yml_ and will use remote write feature to forward metrics to the Ascent remote-write endpoint.
 
 {% hint style="info" %}
 The configuration also includes firelens integration(Log\_router container) to forward logs to Ascent.
@@ -175,8 +171,6 @@ The configuration also includes firelens integration(Log\_router container) to f
 }
 ```
 
-
-
 Upload the below configuration file below named as prometheus.yml to S3 bucket and provide the `ascent-remote-write-endpoint` below.
 
 ```
@@ -193,7 +187,6 @@ scrape_configs:
           - '/output/ecs_file_sd.yml'
 ```
 
-For any container to be scraped, add Dockerlabels below on  ECS task with the metrics path and endpoint.
+For any container to be scraped, add Dockerlabels below on ECS task with the metrics path and endpoint.
 
-![](<../../../../.gitbook/assets/image (237).png>)
-
+![](<../../../../.gitbook/assets/image (406).png>)

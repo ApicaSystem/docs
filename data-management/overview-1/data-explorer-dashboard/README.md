@@ -6,7 +6,4 @@ Additionally, the tool empowers users with the capability to customize the dashb
 
 Moreover, users have the option to add alerts directly into the widgets. This functionality is enhanced by the ability to include an alert tab within the dashboard. The alert tab serves as a central location displaying all configured alerts, allowing for seamless monitoring and prompt action on issues relevant to the specific dashboard. This enhanced alert system ensures that users can stay informed about critical events and thresholds, maintaining operational oversight at all times.
 
-
-
-<figure><img src="../../../.gitbook/assets/image (544).png" alt=""><figcaption></figcaption></figure>
-
+<figure><img src="../../../.gitbook/assets/image (681).png" alt=""><figcaption></figcaption></figure>

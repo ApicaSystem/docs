@@ -4,7 +4,7 @@
 2. Set the Webhook URL where the payload will be sent.
 3. Username and password are automatically filled in.
 
-<figure><img src="../../../.gitbook/assets/image (568).png" alt="" width="388"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (704).png" alt="" width="388"><figcaption></figcaption></figure>
 
 1.  Configure the Field Mapper to extract and rename fields in the payload for better useability. (Optional)
 
@@ -15,7 +15,7 @@
       "severity": "alert.severity"
     }
     ```
-2.  Configure the Payload Mapper to define the structure and content of the outgoing payload sent to the Webhook. (Optional)&#x20;
+2.  Configure the Payload Mapper to define the structure and content of the outgoing payload sent to the Webhook. (Optional)
 
     ```
     {

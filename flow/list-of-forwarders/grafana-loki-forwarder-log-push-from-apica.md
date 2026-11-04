@@ -41,7 +41,7 @@ Before configuring the **Grafana Cloud Loki Forwarder** in Apica, you must creat
     > ⚠️ The token will not be shown again
 
 {% hint style="info" %}
-#### Required Permissions&#x20;
+#### Required Permissions
 {% endhint %}
 
 Ensure the selected Access Policy includes the following scopes:
@@ -81,7 +81,7 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer <inst
 
 1. Login to **Apica Ascent**
 2. Click on **integrations** menu item
-3. Click on **Forwarders** tab&#x20;
+3. Click on **Forwarders** tab
 4. Click on **Add Forwarders** button
 5. From the modal select **Grafana Forwarder**
 6. Enter the required details click **Create** to create the forwarder
@@ -90,14 +90,14 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer <inst
 
 <figure><img src="../../.gitbook/assets/Screenshot from 2026-02-09 16-51-19.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1163).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1097).png" alt=""><figcaption></figcaption></figure>
 
 #### Step 8: Map the Forwarder
 
 After creating the Grafana Forwarder, associate it with a data flow to forward logs to Grafana Loki.
 
 1. Navigate to **Logs & Insights**
-2. Select the tab called  **Data**
+2. Select the tab called **Data**
 3. **Select the data flow using the check box**
 4. **Click on 3 dots, and select Map Forwarder**
 5. **From the** Create forwarder mapping modal, select the Grafana Forwarder **and click OK**
@@ -128,6 +128,4 @@ After sending logs successfully to Grafana Cloud Loki, verify that the logs are 
 6. Adjust the time range to **Last 5 minutes** or **Last 15 minutes**
 7. Confirm that the log entries forwarded via ascent is visible
 
-
-
-<figure><img src="../../.gitbook/assets/image (1164).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1098).png" alt=""><figcaption></figcaption></figure>

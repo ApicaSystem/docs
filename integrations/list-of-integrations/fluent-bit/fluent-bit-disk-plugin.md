@@ -29,22 +29,22 @@ Update your Fluent-bit.conf with an input and filter for the Disk Plugin:
 
 Restart Fluent-bit with `systemctl restart fluent-bit` and check the status with `systemctl status fluent-bit` to verify that it’s running correctly.
 
-Helpful Links:&#x20;
+Helpful Links:
 
 * [Official Plugin documentation.](https://docs.fluentbit.io/manual/data-pipeline/inputs/disk-io-metrics)
 * [Set up Fluent-bit for Apica Ascent.](https://docs.apica.io/integrations/list-of-integrations/fluent-bit#fluent-bit-configuration)
 
 #### 3. Verify Logs in Apica Ascent
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to Explore → Logs & Insights
+2\. Navigate to Explore → Logs & Insights
 
-3\.     Look for the namespace and application name specified in the config file<br>
+3\. Look for the namespace and application name specified in the config file<br>
 
 Example:
 
-<figure><img src="../../../.gitbook/assets/unknown (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/unknown (1).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Example logs
 
@@ -67,6 +67,6 @@ write_size: 40468480
 
 #### 5. Troubleshooting
 
-&#x20;[**Fluent-bit Troubleshooting**](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting)
+[**Fluent-bit Troubleshooting**](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting)
 
 If you match the logs on disk and they don’t show up in Apica Ascent, you may have to match on **disk.\*** instead as the disk plugin will tag the logs with something like disk.

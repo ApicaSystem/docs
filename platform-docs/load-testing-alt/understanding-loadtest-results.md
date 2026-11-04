@@ -2,9 +2,9 @@
 
 The **Results** view is accessible for completed jobs and provides access to all information collected during a test run. It also allows you to compare different instances with each other:
 
-<figure><img src="../../.gitbook/assets/image (618).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (745).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (619).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (746).png" alt=""><figcaption></figcaption></figure>
 
 ## Result Details <a href="#result-details" id="result-details"></a>
 
@@ -12,15 +12,15 @@ The **Result Details** tab contains a number of charts which provide metrics rel
 
 The following screenshot shows metrics for a Test Result which ran a .class file with 2 users (the .class file name has been obfuscated). Response times can be compared to the number of Active Users - virtual users who have started but not yet finished the Test.
 
-<figure><img src="../../.gitbook/assets/image (620).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (747).png" alt=""><figcaption></figcaption></figure>
 
 ## Pages & URLs <a href="#pages-and-urls" id="pages-and-urls"></a>
 
 The **Pages & URLs** tab shows detailed data about URL and page response times, and provides access to response time breakdowns.
 
-<figure><img src="../../.gitbook/assets/image (621).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (748).png" alt=""><figcaption></figcaption></figure>
 
-This page contains detailed results for each individual URL call in the test.&#x20;
+This page contains detailed results for each individual URL call in the test.
 
 ### Instance <a href="#instance" id="instance"></a>
 
@@ -28,8 +28,8 @@ The **Instance** section shows basic information about the test.
 
 | Item                    | Description                                                                                                                                |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-|  Concurrent Users       | Number of [Users](https://apica-kb.atlassian.net/wiki/spaces/ASMDOCS/pages/4632035/Virtual+User).                                          |
-|  Test Sequence Times    | Start and end for the test sequence run.                                                                                                   |
+| Concurrent Users        | Number of [Users](https://apica-kb.atlassian.net/wiki/spaces/ASMDOCS/pages/4632035/Virtual+User).                                          |
+| Test Sequence Times     | Start and end for the test sequence run.                                                                                                   |
 | Create Quick PDF Report | Button to [Quick Report](https://apica-kb.atlassian.net/wiki/pages/createpage.action?spaceKey=DMT\&title=Quick%20Report) form the results. |
 
 ### Results <a href="#results" id="results"></a>
@@ -46,7 +46,7 @@ The table corresponding to the run is shown in the Pages & Urls section.
 
 Errors show detailed information about any possible errors if any have occurred.
 
-<figure><img src="../../.gitbook/assets/image (622).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (749).png" alt=""><figcaption></figcaption></figure>
 
 ## Instance <a href="#instance.1" id="instance.1"></a>
 
@@ -54,8 +54,8 @@ The **Instance** section shows basic information about the test.
 
 | Item                    | Description                                                                                                                        |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-|  Concurrent Users       | Number of [users](https://apica-kb.atlassian.net/wiki/spaces/ALTDOCS/pages/5672993/Virtual+User).                                  |
-|  Test Sequence Times    | Start and end for the test sequence run.                                                                                           |
+| Concurrent Users        | Number of [users](https://apica-kb.atlassian.net/wiki/spaces/ALTDOCS/pages/5672993/Virtual+User).                                  |
+| Test Sequence Times     | Start and end for the test sequence run.                                                                                           |
 | Create Quick PDF Report | Button to [create a PDF report](https://apica-kb.atlassian.net/wiki/spaces/ALTDOCS/pages/5674012/QRQuick+Report) form the results. |
 
 ## Error Overview <a href="#error-overview" id="error-overview"></a>
@@ -70,7 +70,7 @@ This view allows you to see which tests contain errors and select them for displ
 
 The **Errors Over Time** chart shows error occurrences during the test for the selected location.
 
-<figure><img src="../../.gitbook/assets/image (623).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (750).png" alt=""><figcaption></figcaption></figure>
 
 The chart shows the number of errors during the test for the selected test.
 
@@ -101,15 +101,13 @@ The **Live Errors Feed** table shows information about the last recorded errors 
 
 The **Error Details** dialog provides access to a number of tabs containing detailed information relating to the error.
 
-<figure><img src="../../.gitbook/assets/image (624).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (751).png" alt=""><figcaption></figcaption></figure>
 
 ### Summary <a href="#summary" id="summary"></a>
 
 The **Summary** section shows the received content of the response.
 
-<figure><img src="../../.gitbook/assets/image (625).png" alt=""><figcaption></figcaption></figure>
-
-&#x20;
+<figure><img src="../../.gitbook/assets/image (752).png" alt=""><figcaption></figcaption></figure>
 
 | Row                           | Description                                                                                                                     |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -162,31 +160,31 @@ Depending on which integrations you have enabled, various integration tabs may b
 
 The Transactions tab presents information about [User Defined Transactions](https://apica-kb.atlassian.net/wiki/spaces/ALTDOCS/pages/5673126/User-Defined+Transactions).
 
-<figure><img src="../../.gitbook/assets/image (626).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (753).png" alt=""><figcaption></figcaption></figure>
 
 ## Summary <a href="#summary.1" id="summary.1"></a>
 
 The **Transactions Summary** table shows an overview of the transactions for a selected result.
 
-<figure><img src="../../.gitbook/assets/image (627).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (754).png" alt=""><figcaption></figcaption></figure>
 
 With the **All Transaction Times Percentile** chart, you get a _statistical_ view of how the transaction times are distributed.
 
-<figure><img src="../../.gitbook/assets/image (628).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (755).png" alt=""><figcaption></figcaption></figure>
 
 The **All Transaction Times** chart shows the transaction _times_ for the selected transaction.
 
-<figure><img src="../../.gitbook/assets/image (629).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (756).png" alt=""><figcaption></figcaption></figure>
 
 In the **Full Passed Transaction Times Percentile** chart, you get a statistical view of how the transaction times are distributed for the passed transactions.
 
-<figure><img src="../../.gitbook/assets/image (630).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (757).png" alt=""><figcaption></figcaption></figure>
 
-## Settings Used  <a href="#settings-used" id="settings-used"></a>
+## Settings Used <a href="#settings-used" id="settings-used"></a>
 
 The **Settings Used** tab shows a summary of all settings used for a load test.
 
-<figure><img src="../../.gitbook/assets/image (631).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (758).png" alt=""><figcaption></figcaption></figure>
 
 ### Instance <a href="#instance.2" id="instance.2"></a>
 
@@ -253,8 +251,6 @@ To select a specific result set:
 | Job Comment                                  | Comments added to the job settings.                                                                                                                                                                            |
 | Tags                                         | Scenario Tags applied to the scenario.                                                                                                                                                                         |
 
-&#x20;
-
 ## Client Side Monitoring <a href="#client-side-monitoring" id="client-side-monitoring"></a>
 
 If the job uses **Client Side Monitoring**, this tab shows real browser rendering times corresponding to the behavior of a real user accessing the application during the load test.
@@ -267,8 +263,8 @@ The **Instance** section shows basic information about the test:
 
 | **Item**                | **Description**                                                                                                                            |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-|  Concurrent Users       | Number of [Users](https://apica-kb.atlassian.net/wiki/spaces/ALTDOCS/pages/5672993/Virtual+User).                                          |
-|  Test Sequence Times    | Start and end for the test sequence run.                                                                                                   |
+| Concurrent Users        | Number of [Users](https://apica-kb.atlassian.net/wiki/spaces/ALTDOCS/pages/5672993/Virtual+User).                                          |
+| Test Sequence Times     | Start and end for the test sequence run.                                                                                                   |
 | Create Quick PDF Report | Button to the [Quick Report](https://apica-kb.atlassian.net/wiki/pages/createpage.action?spaceKey=DMT\&title=Quick%20Report) form results. |
 
 ## Results <a href="#results.2" id="results.2"></a>
@@ -279,7 +275,7 @@ To select a specific result set:
 
 * Click the tab with the desired number of users
 
-## Location Overview Chart  <a href="#location-overview-chart" id="location-overview-chart"></a>
+## Location Overview Chart <a href="#location-overview-chart" id="location-overview-chart"></a>
 
 For each location, a **Location Overview** chart displays a graph containing the page response times and the number of URL errors for all runs.
 
@@ -339,7 +335,7 @@ Each page is displayed in a table, with URLs displayed in rows:
 | Time             | Time until received response.                   |                                                                                                                                          |
 | Size             | Response size.                                  |                                                                                                                                          |
 | More Information | Show more information about the URL.            | Click to see [more information](https://apica-kb.atlassian.net/wiki/spaces/ALTDOCS/pages/5672502/V+More+Information) about the response. |
-|  0s, 1s, 2s….    | Graphical representation of the response times. |  Click to see [timing details](https://apica-kb.atlassian.net/wiki/spaces/ALTDOCS/pages/5672499/V+URL+Details).                          |
+| 0s, 1s, 2s….     | Graphical representation of the response times. | Click to see [timing details](https://apica-kb.atlassian.net/wiki/spaces/ALTDOCS/pages/5672499/V+URL+Details).                           |
 
 ## The “More Information” Column <a href="#the-more-information-column" id="the-more-information-column"></a>
 

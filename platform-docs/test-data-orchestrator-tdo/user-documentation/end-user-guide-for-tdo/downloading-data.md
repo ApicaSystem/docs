@@ -10,11 +10,11 @@ Data is downloaded via a Rest API call.
 
 The API call is found on the Assembled Data screen in the URL column. Copy this and paste it to a new browser tab. Hit enter to download the file.
 
-<figure><img src="../../../../.gitbook/assets/image (385).png" alt=""><figcaption><p>Data dowload URL copied to new browser tab</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (544).png" alt=""><figcaption><p>Data dowload URL copied to new browser tab</p></figcaption></figure>
 
 Once Chrome notifies you that the file is downloaded, you can open it to view the data.
 
-<figure><img src="../../../../.gitbook/assets/image (386).png" alt=""><figcaption><p>Downloaded data available</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (545).png" alt=""><figcaption><p>Downloaded data available</p></figcaption></figure>
 
 Files can be downloaded in multiple formats:
 

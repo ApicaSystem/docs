@@ -2,16 +2,12 @@
 
 Filters play a crucial role in data visualization by allowing you to interactively refine the scope of data displayed based on specific selections or criteria. When you apply a filter, it acts like a spotlight, highlighting only the relevant data points and excluding the rest. This capability ensures that your visualizations are not cluttered and remain focused on the most relevant aspects to your current analysis or reporting needs.
 
-This targeted approach enhances your ability to uncover meaningful patterns and trends and facilitates more effective communication of insights, as the visualizations are tailored to your  requirements.
-
-
+This targeted approach enhances your ability to uncover meaningful patterns and trends and facilitates more effective communication of insights, as the visualizations are tailored to your requirements.
 
 How **to** Add a Filter
 
 1. **Toggle to Edit Mode:** Ensure you are in the edit mode of your visualization tool to access filter settings.
 2. **Locate the Plus Icon:** In the header section of your interface, find and click the plus icon to add a new filter.
-
-
 
 **Configuring Filter**
 
@@ -28,5 +24,4 @@ How **to** Add a Filter
   * **Text-Based Filter:** Use this for filters that require text input for criteria.
   * **Dropdown-Based Filter:** Use this to present filter options in a dropdown list.
 
-<figure><img src="../../../../.gitbook/assets/image (547).png" alt=""><figcaption><p>Configuring filter</p></figcaption></figure>
-
+<figure><img src="../../../../.gitbook/assets/image (684).png" alt=""><figcaption><p>Configuring filter</p></figcaption></figure>

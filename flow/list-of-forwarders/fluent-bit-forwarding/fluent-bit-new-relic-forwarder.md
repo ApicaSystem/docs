@@ -81,7 +81,7 @@ let ret = fetchSync("http://<serverIP>:4318/", cfg);
 console.log("Response from the endpoint:", ret);
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1147).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1065).png" alt=""><figcaption></figcaption></figure>
 
 #### 5. Set up pipelines in Apica Ascent to your needs
 
@@ -115,7 +115,7 @@ Select your forwarder (deselect the default forwarder if you only want your new 
 
 3\. You should see your logs if everything is set up correctly and the agent is able to connect
 
-<figure><img src="../../../.gitbook/assets/image (1215).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1094).png" alt=""><figcaption></figcaption></figure>
 
 #### 8. Troubleshooting
 

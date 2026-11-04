@@ -10,7 +10,7 @@ description: Instructions for installing Datadog agent using Fleet.
   * type key name as "api\_key" for API Key.
   * type key name as "dd\_site" for Datadog Site.
 
-<figure><img src="../../.gitbook/assets/image (492).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (634).png" alt=""><figcaption></figcaption></figure>
 
 * click on proceed, and then follow the instructions provided in the Readme File.
 

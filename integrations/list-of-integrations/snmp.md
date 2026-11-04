@@ -12,11 +12,11 @@ Apica Ascent platform provides a source extension plugin for SNMP that will help
 
 * Navigate to the Integrations page and click on the new Plugin button
 
-![](<../../.gitbook/assets/image (415).png>)
+![](<../../.gitbook/assets/image (571).png>)
 
 * Provide the Plugin Name and click next
 
-![](<../../.gitbook/assets/image (418).png>)
+![](<../../.gitbook/assets/image (572).png>)
 
 * Configure your resource requirements and click next
 * Provide the interval duration in seconds to pull data at every interval
@@ -25,6 +25,6 @@ Apica Ascent platform provides a source extension plugin for SNMP that will help
 * Provide a custom MIB filename and load the MIB file, if you want to use a custom OID
 * Add OID and the corresponding name for the OID which will be used as the attribute name of the data when we ingest it to the Apica ascent platform.
 
-![](<../../.gitbook/assets/image (419).png>)
+![](<../../.gitbook/assets/image (573).png>)
 
 After creation, you will see the SNMP data which will have all the OIDs as attributes with the corresponding name in the incoming data.

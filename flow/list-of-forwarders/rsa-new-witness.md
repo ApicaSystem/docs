@@ -11,7 +11,7 @@ Apica enables users to quickly and easily forward logs in various formats to sec
 * Syslog
 * Syslog CEF
 
-<figure><img src="../../.gitbook/assets/image (521).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (662).png" alt=""><figcaption></figcaption></figure>
 
 ### Steps to Create Arc Sight Forwarding <a href="#steps-to-create-arc-sight-forwarding" id="steps-to-create-arc-sight-forwarding"></a>
 
@@ -23,4 +23,4 @@ Apica enables users to quickly and easily forward logs in various formats to sec
 
 Once the forwarder is associated with a specific namespace/application or with various log attributes, the logs that match these criteria will be sent to RSA New Witness for further analysis.
 
-<figure><img src="../../.gitbook/assets/image (522).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (663).png" alt=""><figcaption></figcaption></figure>

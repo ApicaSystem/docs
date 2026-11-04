@@ -16,7 +16,7 @@
 * Add required columns for the table
 * Provide `name` for the forwarder and click `create`
 
-<figure><img src="../../.gitbook/assets/image (508).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (650).png" alt=""><figcaption></figcaption></figure>
 
 ### Create Bigquery Forwarder with existing table <a href="#create-bigquery-forwarder-with-existing-table" id="create-bigquery-forwarder-with-existing-table"></a>
 
@@ -33,16 +33,14 @@
 * Click `edit` icon in the big query forwarder for which you need to add columns in the schema
 * Click on `add column` to update the schema
 
-<figure><img src="../../.gitbook/assets/image (509).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (651).png" alt=""><figcaption></figcaption></figure>
 
 ### Mapping logs to Bigquery table <a href="#mapping-logs-to-bigquery-table" id="mapping-logs-to-bigquery-table"></a>
 
 When you forward your logs to BigQuery, the fields in the log will be mapped to the column in the table. By default, Apica maps the schema from the forwarder to the facet in the logs. It will insert the value for the facet as a value to the column in the table.
 
-<figure><img src="../../.gitbook/assets/image (510).png" alt=""><figcaption><p>Facets List</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (652).png" alt=""><figcaption><p>Facets List</p></figcaption></figure>
 
-
-
-<figure><img src="../../.gitbook/assets/image (511).png" alt=""><figcaption><p>Columns in bigquery table</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (653).png" alt=""><figcaption><p>Columns in bigquery table</p></figcaption></figure>
 
 To change the default mapping behavior, [create a forward rule](../rules/forward.md) for the namespace and application by renaming the facet with the column name. This will help you to manage the mappings between your log and the BigQuery table schema.

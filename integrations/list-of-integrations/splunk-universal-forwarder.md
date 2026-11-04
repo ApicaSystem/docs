@@ -34,7 +34,7 @@ Logs/Events/Metrics can be ingested into Apica Ascent using cooked mode
 
 Go to "Explore" -> "App Extensions" and create your S2S Ingest app extension
 
-<figure><img src="../../.gitbook/assets/image (234).png" alt=""><figcaption><p>Splunk S2S </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1205).png" alt=""><figcaption><p>Splunk S2S</p></figcaption></figure>
 
 {% hint style="success" %}
 Multiple S2s Ingest extensions can be running simultaneously

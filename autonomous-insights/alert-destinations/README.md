@@ -21,4 +21,4 @@ Currently supported destinations are:
 
 To add new alert destinations, navigate **Explore > Integrations > Alert Destinations**
 
-<figure><img src="../../.gitbook/assets/image (1098).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1023).png" alt=""><figcaption></figcaption></figure>

@@ -24,9 +24,9 @@ Go to -> Explore -> Pipeline
 
 Click -> Actions -> Create Pipeline
 
-<figure><img src="../../.gitbook/assets/image (1055).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (983).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1056).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (984).png" alt=""><figcaption></figcaption></figure>
 
 Enter a name for the new Pipeline and press "Create"
 
@@ -36,51 +36,51 @@ Click on the 3 dotted lines menu for the Pipeline you created
 
 * Click on "Configure Pipeline"
 
-<figure><img src="../../.gitbook/assets/image (1057).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (985).png" alt=""><figcaption></figcaption></figure>
 
 Click on "Add Rule" -> FILTER
 
-<figure><img src="../../.gitbook/assets/image (1058).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (986).png" alt=""><figcaption></figcaption></figure>
 
 Enter mandatory fields:
 
 * Name / Group
 
-<figure><img src="../../.gitbook/assets/image (1059).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (987).png" alt=""><figcaption></figcaption></figure>
 
 Click on "Drop Labels"
 
 Then, click on "Data Flows"
 
-<figure><img src="../../.gitbook/assets/image (1060).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (988).png" alt=""><figcaption></figcaption></figure>
 
 Next, you will select what labels you want to drop.
 
-<figure><img src="../../.gitbook/assets/image (1061).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (989).png" alt=""><figcaption></figcaption></figure>
 
 Enter the labels you want to drop on the left hand side as shown below:
 
-<figure><img src="../../.gitbook/assets/image (1062).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (990).png" alt=""><figcaption></figcaption></figure>
 
 Pipeline Preview updates automatically when you change the rule. Use the `Diff` tab to inspect the changes.
 
-<figure><img src="../../.gitbook/assets/image (1063).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (991).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1064).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (992).png" alt=""><figcaption></figcaption></figure>
 
 Click "Save Pipeline"
 
 Next, "Apply Pipeline" by clicking on the 3 dot menuand clicking "Apply Pipeline"
 
-<figure><img src="../../.gitbook/assets/image (1065).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (993).png" alt=""><figcaption></figcaption></figure>
 
 Then, select the namespace and logs you want to apply the new FILTER RULE ( in this case, we are applying it to our "OtelDemo" logs
 
-<figure><img src="../../.gitbook/assets/image (1066).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (994).png" alt=""><figcaption></figcaption></figure>
 
 Click "Apply"
 
-<figure><img src="../../.gitbook/assets/image (1067).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (995).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Create A Filter Rule:
 
@@ -88,13 +88,13 @@ Create a Forwarder (Datadog in this example), to push our FILTERED OTEL logs dow
 
 Click on "Integrations" -> "Forwarders"
 
-<figure><img src="../../.gitbook/assets/image (1069).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (997).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: Create A Forwarder (DataDog in this example):
 
 Click on "Add Forwarder" and select your destination (Datadog in our example)
 
-<figure><img src="../../.gitbook/assets/image (1070).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (998).png" alt=""><figcaption></figcaption></figure>
 
 Then, copy over the "DataDog (JSON) configs as shown below:
 
@@ -108,7 +108,7 @@ Type: JSON
 
 Name: Datadog Forwarder
 
-<figure><img src="../../.gitbook/assets/image (1071).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (999).png" alt=""><figcaption></figcaption></figure>
 
 Click "Create"
 
@@ -116,27 +116,27 @@ Click "Create"
 
 Next, go back to "Pipelines" and
 
-<figure><img src="../../.gitbook/assets/image (1072).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1000).png" alt=""><figcaption></figcaption></figure>
 
 Click on "Map Forwarder" from the 3 dot menu:
 
-<figure><img src="../../.gitbook/assets/image (1073).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1001).png" alt=""><figcaption></figcaption></figure>
 
 Select the "DataDog Forwarder" that you created and click OK:
 
-<figure><img src="../../.gitbook/assets/image (1074).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1002).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 5: Verify Data in Destination (Datadog in this example):
 
 Go to your Datadog dashboard and verify data coming in as expected:
 
-<figure><img src="../../.gitbook/assets/image (1075).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1003).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1076).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1004).png" alt=""><figcaption></figcaption></figure>
 
 As you can see, data ingestion has decreased after the FILTER rule was applied:<br>
 
-<figure><img src="../../.gitbook/assets/image (1078).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1006).png" alt=""><figcaption></figcaption></figure>
 
 ### Conclusion:
 

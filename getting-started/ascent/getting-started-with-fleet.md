@@ -27,7 +27,7 @@ Go to -> Explore -> Fleet
 
 Click -> Install Manager
 
-<figure><img src="../../.gitbook/assets/image (1006).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (935).png" alt=""><figcaption></figcaption></figure>
 
 Select Platform: Linux
 
@@ -35,13 +35,13 @@ Select Agent Type: OpenTelemetry Collector
 
 Click 'Proceed'
 
-<figure><img src="../../.gitbook/assets/image (1007).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (936).png" alt=""><figcaption></figcaption></figure>
 
 Click on "Download All"
 
 * Open 'README' file for detailed instructions.
 
-<figure><img src="../../.gitbook/assets/image (1008).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (937).png" alt=""><figcaption></figcaption></figure>
 
 ### Go to Your Linux Terminal:
 
@@ -51,11 +51,11 @@ NOTE: Transfer 'Fleet Installation File' to the Linux host that you will collect
 * Execute the following command to install the Agent Manager:
 * `$ sudo ./fleet-install.sh`
 
-<figure><img src="../../.gitbook/assets/image (1009).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (938).png" alt=""><figcaption></figcaption></figure>
 
 Verify that the hostname is in the Fleet "Agents" UI tab:
 
-<figure><img src="../../.gitbook/assets/image (1010).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (939).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Update Your Configuration File:
 
@@ -63,11 +63,11 @@ Go to "Configurations" tab and search for:
 
 * 'otelcol linux default config'
 
-<figure><img src="../../.gitbook/assets/image (1012).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (940).png" alt=""><figcaption></figcaption></figure>
 
 Then, click into the file to open the configuration file:
 
-<figure><img src="../../.gitbook/assets/image (1014).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (942).png" alt=""><figcaption></figcaption></figure>
 
 Copy the below code block of the Configuration file:
 
@@ -75,7 +75,7 @@ NOTE: You will have to insert your \[ENV\_URL\_HERE]
 
 * Your \[ENV\_URL\_HERE] is your domain name:
 
-<figure><img src="../../.gitbook/assets/image (1015).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (943).png" alt=""><figcaption></figcaption></figure>
 
 Copy the below code block into the "Update Configuration" section in the UI:
 
@@ -189,23 +189,23 @@ NOTE: Currently, this configuration file is set up to collect syslogs. If you wo
 
 Copy the below code block into the "Update Configuration" section in the UI:
 
-<figure><img src="../../.gitbook/assets/image (1016).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (944).png" alt=""><figcaption></figcaption></figure>
 
 Click "Update".
 
 Then, go back to the "Agent" tab and click into the Linux hostname (where you'll be ingesting data from):
 
-<figure><img src="../../.gitbook/assets/image (740).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 4: Verify Metrics/Logs Are Being Ingested into Ascent:
 
 Verify that logs/metrics are coming in and that it shows as "active":
 
-<figure><img src="../../.gitbook/assets/image (741).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 To verify Metrics are being ingested, go to Queries -> New Query and search for the host to verify data is there:
 
-<figure><img src="../../.gitbook/assets/image (743).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 ## Part 2: Installing and Deploying a Fluent Bit Agent.
 
@@ -217,7 +217,7 @@ Go to -> Explore -> Fleet
 
 Click -> Install Manager
 
-<figure><img src="../../.gitbook/assets/image (1006).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (935).png" alt=""><figcaption></figcaption></figure>
 
 Select Platform: Linux
 
@@ -225,13 +225,13 @@ Select Agent Type: Fluent-bit
 
 Click 'Proceed'
 
-<figure><img src="../../.gitbook/assets/image (745).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 Click on "Download All"
 
 * Open 'README' file for detailed instructions.
 
-<figure><img src="../../.gitbook/assets/image (1008).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (937).png" alt=""><figcaption></figcaption></figure>
 
 ### Go to Your Linux Terminal:
 
@@ -241,13 +241,13 @@ NOTE: Transfer 'Fleet Installation File' to the Linux host that you will collect
 * Execute the following command to install the Agent Manager:
 * `$ sudo ./fleet-install.sh`
 
-<figure><img src="../../.gitbook/assets/image (1009).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (938).png" alt=""><figcaption></figcaption></figure>
 
 Verify that the hostname is in the Fleet "Agents" UI tab:
 
-<figure><img src="../../.gitbook/assets/image (748).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (749).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Update Your Configuration File:
 
@@ -256,27 +256,27 @@ Verify that the hostname is in the Fleet "Agents" UI tab:
    * The hostname attribute.
    * Your ingest token.
 
-<figure><img src="../../.gitbook/assets/image (750).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 From the Fleet UI, select the Fluent Bit agent and apply this new configuration.
 
 You can verify that the token and hostname have been applied correctly within the agent's detail view.
 
-<figure><img src="../../.gitbook/assets/image (751).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 4: Verify Logs Are Being Ingested into Ascent:
 
 Verify that logs/metrics are coming in and that it shows as "active":
 
-<figure><img src="../../.gitbook/assets/image (752).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 Finally, go to Explore -> 'Logs & Insights' to verify the datasource is there:
 
-<figure><img src="../../.gitbook/assets/image (753).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 Click into the "Source Application" and you can then drill down into a log entry:
 
-<figure><img src="../../.gitbook/assets/image (754).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 ### Conclusion:
 

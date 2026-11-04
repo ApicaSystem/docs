@@ -2,7 +2,7 @@
 
 Users can set up alerts on their queries to receive notifications when specific thresholds or conditions are met. Alerts serve as proactive mechanisms to inform users of critical events or deviations in the data, enabling them to promptly address any issues or take necessary actions.
 
-<figure><img src="../../.gitbook/assets/image (471).png" alt=""><figcaption><p>Add alert on a widget, set thresholds and more</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (616).png" alt=""><figcaption><p>Add alert on a widget, set thresholds and more</p></figcaption></figure>
 
 ### **Steps to Set Up an Alert**
 
@@ -20,5 +20,4 @@ Once alerts are created, navigate to the "Alerts" tab to view and manage existin
 
 _Note:_ The alerts listed under the "Alerts" tab are specific to the current dashboard you are viewing. This means they are tailored to the metrics and data associated with that particular dashboard.
 
-<figure><img src="../../.gitbook/assets/image (545).png" alt=""><figcaption></figcaption></figure>
-
+<figure><img src="../../.gitbook/assets/image (682).png" alt=""><figcaption></figcaption></figure>

@@ -6,7 +6,7 @@ icon: cloud
 
 The Ascent product suite enables you to converge all of your IT data from disparate sources, manage your telemetry data, and monitor and troubleshoot your operational data in real-time. The following guide assumes that you have signed up for Apica Ascent in the cloud. **If you are not yet a registered user, please** [**follow this link and the defined steps**](register-and-gain-access.md). Once registered, use this guide to get started.
 
-<figure><img src="../../.gitbook/assets/image (927).png" alt=""><figcaption><p>Ascent Quick Start Process</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (189).png" alt=""><figcaption><p>Ascent Quick Start Process</p></figcaption></figure>
 
 ## Quick Start Process for Using Ascent
 
@@ -39,22 +39,22 @@ The goal is to ingest telemetry data (logs, metrics, traces) from relevant syste
 
 **LOG INTO ASCENT**
 
-<figure><img src="../../.gitbook/assets/image (965).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (894).png" alt=""><figcaption></figcaption></figure>
 
 From the menu bar, go to: Explore -> Fleet:
 
 With Fleet you can automate your data ingestion configuration:
 
-<figure><img src="../../.gitbook/assets/image (968).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (897).png" alt=""><figcaption></figcaption></figure>
 
 You'll be directed to the Fleet landing page:
 
-<figure><img src="../../.gitbook/assets/image (969).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (898).png" alt=""><figcaption></figcaption></figure>
 
 From here, you'll click "Install Agent Manager."\
 \- The Agent Manager will allow you to control and configure the OpenTelemetry Collector.
 
-<figure><img src="../../.gitbook/assets/image (970).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (899).png" alt=""><figcaption></figcaption></figure>
 
 Inside the "Install Agent Manager" pop-up screen, select:
 
@@ -63,20 +63,20 @@ Inside the "Install Agent Manager" pop-up screen, select:
 
 Then, click 'Proceed'.
 
-<figure><img src="../../.gitbook/assets/image (971).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (900).png" alt=""><figcaption></figcaption></figure>
 
 You'll be redirected to the 'Fleet README' pop-up page:
 
 * You'll download and configure this configuration file to start ingesting data.
 
-<figure><img src="../../.gitbook/assets/image (972).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (901).png" alt=""><figcaption></figcaption></figure>
 
 You'll download 2 files:
 
 * The README.txt contains instructions for how to install the Agent Manager and OpenTelemetry Collector.
 * The fleet-install.sh is a preconfigured script that you'll run on your Linux host to start ingesting data into Ascent automatically:
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (973).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (902).png" alt=""><figcaption></figcaption></figure></div>
 
 On your Linux host, start by creating a file by running this command:
 
@@ -96,7 +96,7 @@ Run the Fleet-install.sh with the command below:
 
 Once the script completes, you'll see the agent in the Fleet screen as 'Active':
 
-<figure><img src="../../.gitbook/assets/image (974).png" alt=""><figcaption><p>Confirmation of Active Fleet Agent</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (903).png" alt=""><figcaption><p>Confirmation of Active Fleet Agent</p></figcaption></figure>
 
 You can then confirm that data is flowing into the system (Go to 'Explore -> Logs & Insights):
 

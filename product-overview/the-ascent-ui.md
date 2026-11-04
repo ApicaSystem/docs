@@ -27,7 +27,7 @@ A dashboard is a collection of visualizations and queries that you've created ag
 
 The **Dashboards** page on the Apica Ascent UI lists all the dashboards you've created within Apica Ascent. Dashboards that you've favorited are marked with a yellow star icon and are also listed under the **Dashboards** dropdown menu for quick access in the navigation bar. The following images depict dashboards that you can create using Apica Ascent.
 
-<figure><img src="../.gitbook/assets/image (1052).png" alt=""><figcaption><p>Dashboards list page shows all the dashboards. Create new dashboards or Import pre created dashboards.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (980).png" alt=""><figcaption><p>Dashboards list page shows all the dashboards. Create new dashboards or Import pre created dashboards.</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/screencapture-datafabric-demo-apica-io-dashboard-ascent-monitoring-2025-07-26-12_02_24.png" alt=""><figcaption><p>A typical monitoring dashboard on Apica Ascent</p></figcaption></figure>
 
@@ -37,7 +37,7 @@ The **Dashboards** page on the Apica Ascent UI lists all the dashboards you've c
 
 Apica Ascent enables you to write custom queries to analyze log data, display metrics and events, view and customize events and alerts, and create custom dashboards. The **Queries** page lists all of the queries you've created on Apica Ascent. You can mark some of them as favorites or archive the ones, not in use. Your favorite queries also appear in the drop-down menu of the **Queries** tab for quick access.
 
-<figure><img src="../.gitbook/assets/image (1054).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (982).png" alt=""><figcaption></figcaption></figure>
 
 ## **Alerts**
 
@@ -65,6 +65,6 @@ The **Journals** page lists all the important events that have occurred in the A
 
 The **Create** dropdown menu enables you to create new alerts, dashboards, queries, reports, and checks as shown in the following image.
 
-<figure><img src="../.gitbook/assets/image (637).png" alt=""><figcaption><p>Create menu</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (764).png" alt=""><figcaption><p>Create menu</p></figcaption></figure>
 
 A function-specific modal appears based on what you select from this dropdown menu.

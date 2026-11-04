@@ -20,4 +20,4 @@ To switch to edit mode, follow these steps:
 2. Click on the button to open a dropdown menu.
 3. Select the "Edit Mode" option to toggle the dashboard into edit mode, enabling the editing features described above.
 
-<figure><img src="../../../../.gitbook/assets/image (546).png" alt=""><figcaption><p>Dashboard Edit mode view</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (683).png" alt=""><figcaption><p>Dashboard Edit mode view</p></figcaption></figure>

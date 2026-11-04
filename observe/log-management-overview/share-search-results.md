@@ -13,9 +13,9 @@ To share a search result, do the following:
 3. Toggle the **Share** button to generate a shareable URL.
 4. Copy and store the generated URL for future use.
 
-![](<../../.gitbook/assets/image (298).png>)
+![](<../../.gitbook/assets/image (463).png>)
 
-![](<../../.gitbook/assets/image (339).png>)
+![](<../../.gitbook/assets/image (499).png>)
 
 You can now share this URL in any way you please. Those who access this URL will be able to view and sort through the search results you shared.
 
@@ -27,4 +27,4 @@ You can now share this URL in any way you please. Those who access this URL will
 
 Apica Ascent saves shared searches for quick access in the search bar under **Favorites**. You can access **Favorites** by clicking the **Show Favorites** button in the search bar.
 
-![](<../../.gitbook/assets/image (200).png>)
+![](<../../.gitbook/assets/image (374).png>)

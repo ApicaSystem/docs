@@ -7,15 +7,15 @@ Determining attributes can be created in three ways: when validting a file, by m
 Determining attributes can have priorities assigned to them, and they can be filtered to only allow valid data combinations to be presented during business rule creation.
 
 {% hint style="info" %}
-Determining Attribute filtering will only be available for values in the same source data block.  You cannot filter a value in one data block by a value in a different data block.
+Determining Attribute filtering will only be available for values in the same source data block. You cannot filter a value in one data block by a value in a different data block.
 {% endhint %}
 
 #### File Verification
 
-How to create a determining attribute during the file validation process is explained in the ‘Working with Source Files -> Data Blocks -> Create a Determining Sttribute’ section of this manual.&#x20;
+How to create a determining attribute during the file validation process is explained in the ‘Working with Source Files -> Data Blocks -> Create a Determining Sttribute’ section of this manual.
 
-From the menu, select ‘Determining Attributes’ from the ‘Coverage Engine’ section of the menu.  You will see all of the determining attributes that you created during the file validation process.
+From the menu, select ‘Determining Attributes’ from the ‘Coverage Engine’ section of the menu. You will see all of the determining attributes that you created during the file validation process.
 
-<figure><img src="../../../../../.gitbook/assets/image (886).png" alt=""><figcaption><p>List of determining attributes created during file validation process</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (148).png" alt=""><figcaption><p>List of determining attributes created during file validation process</p></figcaption></figure>
 
 Any determining attributes not created during the validation process will need to be manually created.

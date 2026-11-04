@@ -1,6 +1,6 @@
 # Metric Indexes
 
-Apica supports forwarding to splunk metrics indexes.&#x20;
+Apica supports forwarding to splunk metrics indexes.
 
 Use this option to forward structured **metric data** into Splunk's **metrics index**.
 
@@ -21,4 +21,4 @@ Use this option to forward structured **metric data** into Splunk's **metrics in
 
 > 📌 Ensure the Splunk index receiving these events is a **metrics** index.
 
-<figure><img src="../../../../.gitbook/assets/image (1120).png" alt=""><figcaption><p>Configuration example for an Metric Index Forwarder</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (856).png" alt=""><figcaption><p>Configuration example for an Metric Index Forwarder</p></figcaption></figure>

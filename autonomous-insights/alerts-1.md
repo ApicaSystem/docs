@@ -2,13 +2,13 @@
 
 Alerts can be configured from log data from the Search Page. if we want to get alerted on a line of log that is of interest, the user can directly create an **alertable** **event** from the log line.
 
-![](<../.gitbook/assets/image (251).png>)
+![](<../.gitbook/assets/image (419).png>)
 
 On clicking the <img src="../.gitbook/assets/Screen Shot 2020-08-11 at 5.34.40 PM.png" alt="" data-size="original">on the log line, user can open the log2Metric event rule editor. Refer to [Metrics And Custom Indices](../observe/log-management-overview/metrics-and-custom-indices.md) section on how to configure log2Metrics. Alert Configuration is available on the third section of log2Metrics modal.
 
 ### Creating an alertable event
 
-![](<../.gitbook/assets/image (291).png>)
+![](<../.gitbook/assets/image (456).png>)
 
 #### Fields
 
@@ -23,17 +23,17 @@ On clicking the <img src="../.gitbook/assets/Screen Shot 2020-08-11 at 5.34.40 P
 
 All the alert rules created can be accessed on the Active Rules page.
 
-![](<../.gitbook/assets/image (333).png>)
+![](<../.gitbook/assets/image (493).png>)
 
 ### Viewing Alerts
 
 All the configured alerts are viewable when navigating to the alerts tab. An Individual alerts' configuration can be edited on this page
 
-![](<../.gitbook/assets/image (209).png>)
+![](<../.gitbook/assets/image (382).png>)
 
 Clicking on the configured alert will open up the respective alert page where it can be modified further for e.g. change the alert rearm duration, add additional alert destinations etc.
 
-![](<../.gitbook/assets/image (273).png>)
+![](<../.gitbook/assets/image (441).png>)
 
 {% hint style="warning" %}
 Apica Ascent includes alerts from its Prometheus alert manager instance that is included with the Apica Ascent install. NOTE that the editing of the Prometheus alert rules cannot be done via the UI and must use alert manager CRD's to change those alert rules.

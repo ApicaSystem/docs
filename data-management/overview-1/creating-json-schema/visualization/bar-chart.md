@@ -1,6 +1,6 @@
 # Bar chart
 
-To configure a Bar chart that  use the following JSON object. This configuration includes setting the chart type to bar, specifying necessary plot parameters, and providing a monitoring query.
+To configure a Bar chart that use the following JSON object. This configuration includes setting the chart type to bar, specifying necessary plot parameters, and providing a monitoring query.
 
 ```json
 {
@@ -23,8 +23,4 @@ To configure a Bar chart that  use the following JSON object. This configuration
 }
 ```
 
-
-
-
-
-<figure><img src="../../../../.gitbook/assets/image (549).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (686).png" alt=""><figcaption></figcaption></figure>

@@ -1,8 +1,6 @@
 # Status chart
 
-
-
-### Json configuration&#x20;
+### Json configuration
 
 ```json
                 {
@@ -21,9 +19,4 @@
             
 ```
 
-
-
-<figure><img src="../../../../.gitbook/assets/image (552).png" alt=""><figcaption></figcaption></figure>
-
-
-
+<figure><img src="../../../../.gitbook/assets/image (689).png" alt=""><figcaption></figcaption></figure>

@@ -1,8 +1,8 @@
 # Counter chart
 
-To configure a Counter chart that  use the following JSON object.&#x20;
+To configure a Counter chart that use the following JSON object.
 
-### Json configuration&#x20;
+### Json configuration
 
 ```json
                 {
@@ -19,8 +19,4 @@ To configure a Counter chart that  use the following JSON object.&#x20;
                 },
 ```
 
-
-
-
-
-<figure><img src="../../../../.gitbook/assets/image (553).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (690).png" alt=""><figcaption></figcaption></figure>

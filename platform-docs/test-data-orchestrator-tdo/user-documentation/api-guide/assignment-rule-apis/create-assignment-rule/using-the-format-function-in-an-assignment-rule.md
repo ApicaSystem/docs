@@ -2,8 +2,6 @@
 
 When you want to assign a value using the FORMAT function (e.g., assign the current date to a date field in a specific format) you need to add the ‘function’ parameter to the ‘operand’ section of the message, and then the actual formatting string in the ‘value’ section.
 
-&#x20;
-
 ```
 {
     "context": {
@@ -35,12 +33,10 @@ When you want to assign a value using the FORMAT function (e.g., assign the curr
 }
 ```
 
-&#x20;
-
 The return message will include the information on the rule that you created.
 
-<figure><img src="../../../../../../.gitbook/assets/image (803).png" alt=""><figcaption><p>Return message using FORMAT function</p></figcaption></figure>
+<figure><img src="../../../../../../.gitbook/assets/image (65).png" alt=""><figcaption><p>Return message using FORMAT function</p></figcaption></figure>
 
 In TDO, you can now see the rule that you created.
 
-<figure><img src="../../../../../../.gitbook/assets/image (804).png" alt=""><figcaption><p>Assignment Rule using FORMAT function</p></figcaption></figure>
+<figure><img src="../../../../../../.gitbook/assets/image (66).png" alt=""><figcaption><p>Assignment Rule using FORMAT function</p></figcaption></figure>

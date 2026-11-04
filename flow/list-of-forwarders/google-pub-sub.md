@@ -38,12 +38,12 @@ $ gcloud pubsub subscriptions pull my-gcp-topic-1-sub --auto-ack
 
 #### Creating the forwarder <a href="#creating-the-forwarder" id="creating-the-forwarder"></a>
 
-<figure><img src="../../.gitbook/assets/image (525).png" alt=""><figcaption><p>Create Google PubSub forwarder</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (666).png" alt=""><figcaption><p>Create Google PubSub forwarder</p></figcaption></figure>
 
 #### Enter forwarder configuration <a href="#enter-forwarder-configuration" id="enter-forwarder-configuration"></a>
 
 \
-![](<../../.gitbook/assets/image (526).png>)Forwarder configuration
+![](<../../.gitbook/assets/image (667).png>)Forwarder configuration
 
 #### Testing the Google PubSub forwarding <a href="#testing-the-google-pubsub-forwarding" id="testing-the-google-pubsub-forwarding"></a>
 

@@ -1,6 +1,6 @@
 # Archived Release Notes
 
-For current releases, see [Release Notes](release-notes.md).
+For current releases, see [Release Notes](../../product-overview/release-notes/release-notes-1.md).
 
 ## Changes in 1.3.0
 

@@ -12,15 +12,15 @@ Intro to ASM Video
 
 Below is an overview of the ASM platform navigation. It allows users to easily find all of the features offered within ASM. This article provides an overview of the different pages which can be accessed from the top navigation bar.
 
-<figure><img src="../../../.gitbook/assets/image (610).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (737).png" alt=""><figcaption></figcaption></figure>
 
 Clicking on the ASM image to the left of the Overview menu item will always bring you back to the main Dashboard.
 
 ### Overview
 
-<figure><img src="../../../.gitbook/assets/image (607).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (734).png" alt=""><figcaption></figcaption></figure>
 
-<div align="left"><figure><img src="../../../.gitbook/assets/image (608).png" alt="" width="144"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../../.gitbook/assets/image (735).png" alt="" width="144"><figcaption></figcaption></figure></div>
 
 ### Dashboard
 
@@ -30,7 +30,7 @@ See [Dashboards](../explore-the-platform/dashboards.md) for more information.
 
 The “Apica Panels” menu item allows users to view their configured Apica Panels instances. Apica Panels is a feature which allows users to integrate Apica data into Grafana dashboards for easier viewing. The “Apica Panels” menu item contains two sub-items: “Panels” and “About”.
 
-<div align="left"><figure><img src="../../../.gitbook/assets/image (609).png" alt="" width="287"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../../.gitbook/assets/image (736).png" alt="" width="287"><figcaption></figcaption></figure></div>
 
 #### Panels
 
@@ -38,7 +38,7 @@ Clicking the “Panels” link will bring you to the Panels page, on which you c
 
 The default Panels version available in the ASM SaaS portal is called “Apica Panels (v2)”. There are two major versions of Apica Panels; one version is based on Grafana version 4, and the other (Panels v2) is based on Grafana version 8. Apica Panels (v1) is only available to customers who had ASM Panels enabled before the major version change and have a need to maintain their older dashboards.
 
-<div align="left"><figure><img src="../../../.gitbook/assets/image (611).png" alt="" width="563"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../../.gitbook/assets/image (738).png" alt="" width="563"><figcaption></figcaption></figure></div>
 
 #### About (Apica Panels)
 
@@ -48,13 +48,13 @@ Clicking on the “About” sub-menu item will bring you to the “About” page
 
 The **Tools** section provides access to a number of different system features, such as Impersonate, API settings, Maintenance, Journal, Trace Route, and Messages.
 
-<figure><img src="../../../.gitbook/assets/image (612).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (739).png" alt=""><figcaption></figcaption></figure>
 
 ### Impersonate
 
 With the **Impersonate** tool you can view Synthetic Monitoring from a different user's perspective. This feature can be very useful for troubleshooting or assisting your users with any problem they may encounter.
 
-<figure><img src="../../../.gitbook/assets/image (613).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (740).png" alt=""><figcaption></figcaption></figure>
 
 | **Item**      | **Description**                            |
 | ------------- | ------------------------------------------ |
@@ -96,7 +96,7 @@ The user context is switched back to the original one.
 
 The **Maintenance** view lets you modify or delete result records for individual checks and recalculate any associated consolidation records. The table shows a list of previous maintenance tasks and information about them:
 
-<figure><img src="../../../.gitbook/assets/image (614).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (741).png" alt=""><figcaption></figcaption></figure>
 
 | **Button**      | **Description**                      |
 | --------------- | ------------------------------------ |
@@ -114,7 +114,7 @@ The **Maintenance** view lets you modify or delete result records for individual
 
 Maintenance tasks can be created by selecting relevant checks and applying the appropriate action.
 
-<figure><img src="../../../.gitbook/assets/image (615).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (742).png" alt=""><figcaption></figcaption></figure>
 
 ### Apply Action
 
@@ -190,30 +190,30 @@ The journal can be filtered by a number of parameters.
 | Severity     | Event Severity to include.                                 |
 | From         | Start date and time for the period.                        |
 | To           | End date and time for the period.                          |
-|  Message     | Event description.                                         |
-|  Customer    | Customer account.                                          |
-|  User        | Involved user, if any.                                     |
-|  IP-Address  | The associated IP address for the event, if any.           |
-|  Source      | Originating location.                                      |
-|  Category    | Event categories.                                          |
-|  Check       | Involved check, if any.                                    |
+| Message      | Event description.                                         |
+| Customer     | Customer account.                                          |
+| User         | Involved user, if any.                                     |
+| IP-Address   | The associated IP address for the event, if any.           |
+| Source       | Originating location.                                      |
+| Category     | Event categories.                                          |
+| Check        | Involved check, if any.                                    |
 | Apply Filter | Reload and update the table display according to settings. |
 
 ### Entries
 
 The **Entries** table shows the result of applying the selectors.
 
-| **Column**  | **Description**                                  |
-| ----------- | ------------------------------------------------ |
-| Severity    | Event Severity.                                  |
-|  Timestamp  | Date and time when the event occurred.           |
-|  Message    | Event description.                               |
-|  Customer   | Customer account.                                |
-|  User       | Involved user, if any.                           |
-|  IP-Address | The associated IP address for the event, if any. |
-|  Source     | Originating location.                            |
-|  Category   | Event categories.                                |
-|  Check      | Involved check, if any.                          |
+| **Column** | **Description**                                  |
+| ---------- | ------------------------------------------------ |
+| Severity   | Event Severity.                                  |
+| Timestamp  | Date and time when the event occurred.           |
+| Message    | Event description.                               |
+| Customer   | Customer account.                                |
+| User       | Involved user, if any.                           |
+| IP-Address | The associated IP address for the event, if any. |
+| Source     | Originating location.                            |
+| Category   | Event categories.                                |
+| Check      | Involved check, if any.                          |
 
 ### Traceroute
 
@@ -235,11 +235,11 @@ The Traceroute tool configuration is fairly simple.
 
 These <mark style="color:blue;">**Traceroute**</mark> settings are used by default and are not configurable:
 
-| **Option**              | **Value**  |   |
-| ----------------------- | ---------- | - |
-|  Maximum number of hops |  30        |   |
-| Wait timeout per hop    | 5 seconds  |   |
-| Job execution timeout   | 60 seconds |   |
+| **Option**             | **Value**  |   |
+| ---------------------- | ---------- | - |
+| Maximum number of hops | 30         |   |
+| Wait timeout per hop   | 5 seconds  |   |
+| Job execution timeout  | 60 seconds |   |
 
 ### Traceroute Results
 
@@ -366,7 +366,7 @@ The first time you log in (before creating checks), this view may be mostly empt
 
 ### Remember Me
 
-You can have the browser remember your credentials, so you won't have to type them each time you log in.&#x20;
+You can have the browser remember your credentials, so you won't have to type them each time you log in.
 
 \##
 
@@ -481,12 +481,12 @@ The numbers in the colored boxes indicate the number of checks with that status.
 
 Check Status is represented by four colors:
 
-| **Color**                                | **Description** |
-| ---------------------------------------- | --------------- |
-|  Green                                   | Information     |
-| Yellow                                   | Warning         |
-| Orange                                   | Error           |
-| Red                                      | Fatal           |
+| **Color** | **Description** |
+| --------- | --------------- |
+| Green     | Information     |
+| Yellow    | Warning         |
+| Orange    | Error           |
+| Red       | Fatal           |
 
 The colors are used in any context where the check status is displayed.
 

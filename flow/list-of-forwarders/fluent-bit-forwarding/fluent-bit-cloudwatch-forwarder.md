@@ -209,7 +209,7 @@ let ret = fetchSync("http://<serverIP>:4318/", cfg);
 console.log("Response from the endpoint:", ret);
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1147).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1065).png" alt=""><figcaption></figcaption></figure>
 
 #### 8. Set up pipelines in Apica Ascent to meet your needs
 

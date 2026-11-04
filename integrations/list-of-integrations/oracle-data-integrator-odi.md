@@ -24,21 +24,21 @@ Before you dive in, here are a few key terms:
 
 $ODI\_HOME/odi/studio/odi.sh
 
-<figure><img src="../../.gitbook/assets/image (660).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (783).png" alt=""><figcaption></figcaption></figure>
 
 The initial configuration it to create a Master Repository (stores global settings) and Optional Work Repository (stores project-level data like mappings and interfaces):
 
 2. Under ODI UI, go to File -> New -> Create a New ODI Repository LogIn
 
-<figure><img src="../../.gitbook/assets/image (661).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (784).png" alt=""><figcaption></figcaption></figure>
 
 3. Enter all the details
 
-<figure><img src="../../.gitbook/assets/image (662).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (785).png" alt=""><figcaption></figcaption></figure>
 
 4. Click Test to validate the connection and hit OK on the dialog box
 
-<figure><img src="../../.gitbook/assets/image (663).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (786).png" alt=""><figcaption></figcaption></figure>
 
 5. Click OK to Save the connection
 6. Once connected to Repository you can switch to Topology and view source and target Data Servers under the Physical Architecture
@@ -48,30 +48,30 @@ The initial configuration it to create a Master Repository (stores global settin
 1. Navigate to Topology -> Repositories -> Work Repository
 2. Right click and select New Work Repository
 
-<figure><img src="../../.gitbook/assets/image (664).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (787).png" alt=""><figcaption></figcaption></figure>
 
 3. Fill in the required details at Step 1
 
-<figure><img src="../../.gitbook/assets/image (665).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (788).png" alt=""><figcaption></figcaption></figure>
 
 4. At Step 2 enter all the details and click Finish
 
-&#x20;    a. Name: e.g., WORKREP1
+a. Name: e.g., WORKREP1
 
-&#x20;    b. Password: set one for this Work Repo
+b. Password: set one for this Work Repo
 
-&#x20;    c. Type: Development
+c. Type: Development
 
-<figure><img src="../../.gitbook/assets/image (666).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (789).png" alt=""><figcaption></figcaption></figure>
 
 At this point, ODI will create the necessary tables in the same database schema (or another one if specified).
 
-## &#x20;Reconnect with the Work Repository
+## Reconnect with the Work Repository
 
 1. Click on Disconnect from Repository icon
 2. Reconnect to Repository after selecting Work repository WORKREP1
 
-<figure><img src="../../.gitbook/assets/image (667).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (790).png" alt=""><figcaption></figcaption></figure>
 
 ## Groovy Script Automation for data ingestion from Oracle DB to Apica Ascent
 
@@ -90,14 +90,14 @@ At this point, ODI will create the necessary tables in the same database schema 
 
 3. Execute the script
 
-<figure><img src="../../.gitbook/assets/image (668).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (791).png" alt=""><figcaption></figcaption></figure>
 
 ## Validate that the data is now ingested to Apica Ascent
 
 1. Navigate to Ascent Explore page and verify the data ingested
 
-<figure><img src="../../.gitbook/assets/image (669).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (792).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (670).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (793).png" alt=""><figcaption></figcaption></figure>
 
 **Tip:** To start polling for new rows from Oracle DB and ingest into Apica Ascent using Oracle Data Integrator (ODI) at regular intervals, you could use Change Data Capture (CDC) or Incremental Load techniques (Using a Timestamp Column). Use ODI Agent to schedule the scenario/package to run at regular intervals.

@@ -12,7 +12,7 @@ Here are the steps for accessing the topology view of your namespaces,
 * You will find the topology in the second tab. Select the `topology` tab
 * You will be displayed with your namespaces and applications as a top-down tree structure with errors and warnings count, for the default time range, below every node
 
-<figure><img src="../../.gitbook/assets/image (214).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (387).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### RCA with topology
 
@@ -22,13 +22,13 @@ It also runs a search query in Apica Ascent, which will help you fetch errors an
 
 In the above screenshot, we have errors in the alerts namespace. To find the errors for the application under the namespace, click on the `+` icon. It will display all the applications under that node.
 
-<figure><img src="../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (372).png" alt=""><figcaption></figcaption></figure>
 
 To run a search query for the errors, click on errors under the node with errors.
 
-<figure><img src="../../.gitbook/assets/image (203).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (377).png" alt="" width="563"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (222).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (394).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Organizing apps with Virtual Nodes
 
@@ -40,12 +40,12 @@ Here are the steps to create a virtual node,
 * Under the virtual groups tab, click on add virtual group at the footer
 * Enter the virtual group name and press enter
 
-<figure><img src="../../.gitbook/assets/image (220).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (392).png" alt=""><figcaption></figcaption></figure>
 
 * To add namespaces under your group, expand the groups in which you want to add namespaces and all other namespaces which are not grouped will be under the namespaces group
 * Drag the namespace to the respective group and click update
 
-<figure><img src="../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (378).png" alt=""><figcaption></figcaption></figure>
 
 ### Tagging Nodes
 
@@ -57,12 +57,12 @@ Here are the steps to create tags in the topology
 * All the nodes will be listed with expand/collapse view
 * Expand the node to view all the tags under the node
 
-<figure><img src="../../.gitbook/assets/image (211).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (384).png" alt=""><figcaption></figcaption></figure>
 
 * Click on `add tag` to create tag
 * Provide key and value and press enter
 
-<figure><img src="../../.gitbook/assets/image (224).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (395).png" alt=""><figcaption></figcaption></figure>
 
 ### Filtering Nodes
 
@@ -73,7 +73,7 @@ Here are the steps to filter nodes,
 * Select the `key` one with which you want to filter nodes
 * Select the `value`. After selecting it, the filter will be applied and the nodes which have that key and value will be displayed in the view and others will be filtered
 
-<figure><img src="../../.gitbook/assets/image (207).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (381).png" alt=""><figcaption></figcaption></figure>
 
 Note:\
 When we add multiple tags for filtering, then `OR` condition will be applied for combining those filters.

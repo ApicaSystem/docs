@@ -16,10 +16,6 @@ Anomaly Detection determines the anomalous data points from the selected value c
 1. Go to plot section .
 2. Select the chart type as a line for better visualization.
 3. Select the X-Axis as timestamp and for Y-Axis select value and anomaly.
-4. Click on Apply  button
+4. Click on Apply button
 
-
-
-
-
-<figure><img src="../../../.gitbook/assets/image (535).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (674).png" alt=""><figcaption></figcaption></figure>

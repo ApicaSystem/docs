@@ -4,25 +4,23 @@ ZebraTester is developed based on HTTP/HTTPS protocol and Web Standards with the
 
 1. Synthetic Monitoring for Advanced and Complex user journeys
 2. Performance Testing
-3. Mega tests -  Very High Load test with millions of virtual users with low ramp up time
+3. Mega tests - Very High Load test with millions of virtual users with low ramp up time
 
 Apica LoadTest and Synthetic Monitoring can use ZebraTester generated scripts for load testing and monitoring. The Engine for Load Testing and Monitoring is also part of the ZebraTester Tool.
 
-&#x20;Its powerful GUI lets you create sophisticated, custom, load test/monitoring scripts easily and intuitively.
+Its powerful GUI lets you create sophisticated, custom, load test/monitoring scripts easily and intuitively.
 
-&#x20;All components are platform-agnostic across Windows, macOS, and Linux.
+All components are platform-agnostic across Windows, macOS, and Linux.
 
-&#x20;You can use Apica ZebraTester standalone running in your infrastructure or with the Apica LoadTest Portal for the advanced team with continuous testing features.
+You can use Apica ZebraTester standalone running in your infrastructure or with the Apica LoadTest Portal for the advanced team with continuous testing features.
 
-<figure><img src="../../.gitbook/assets/image (632).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (759).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
-
-<figure><img src="../../.gitbook/assets/image (633).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (760).png" alt=""><figcaption></figcaption></figure>
 
 ## Graphical User Interface <a href="#graphical-user-interface" id="graphical-user-interface"></a>
 
-<figure><img src="../../.gitbook/assets/image (634).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (761).png" alt=""><figcaption></figcaption></figure>
 
 Apica ZebraTester contains a unique, powerful GUI which does not require you to learn any scripting language. In addition, no implementation of complicated regular expressions is required, even if you need to extract and assign user-specific dynamic session parameters or consider any other user-specific data such as authentication credentials.
 
@@ -172,23 +170,11 @@ All views provide context-specific help text, available using the **Help** butto
 
 ### Open Context Help <a href="#open-context-help" id="open-context-help"></a>
 
-<figure><img src="../../.gitbook/assets/image (635).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (762).png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
-
-&#x20;
-
-<figure><img src="../../.gitbook/assets/image (636).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (763).png" alt=""><figcaption></figcaption></figure>
 
 Click the **help** button for contextual help from any page and a related page (in this example, a Generate Load Test Help Page) will pop-up.
 
-
-
-&#x20;
-
-&#x20;
-
 \
 <br>
-
-&#x20;

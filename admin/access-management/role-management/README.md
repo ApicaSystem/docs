@@ -11,6 +11,6 @@ Roles define user access levels using policies. They control what actions users 
 3. Assigned users: The users assigned to the role, determining who inherits the associated permissions.
 4. Assigned Groups: A group of users assigned to a role. All the members of the group will inherit the group policies.
 
-<figure><img src="../../../.gitbook/assets/image (1093).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1019).png" alt=""><figcaption></figcaption></figure>
 
 <br>

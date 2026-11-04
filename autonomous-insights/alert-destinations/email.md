@@ -4,9 +4,7 @@ description: Configure email destination
 
 # Email
 
-
-
-<figure><img src="../../.gitbook/assets/image (739).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 To add a new email destination for alerts, follow these steps:
 
@@ -18,4 +16,4 @@ To add a new email destination for alerts, follow these steps:
 
 The new email destination will now be available as an option when creating or editing alerts.
 
-<figure><img src="../../.gitbook/assets/image (1113).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1038).png" alt=""><figcaption></figcaption></figure>

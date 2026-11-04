@@ -44,7 +44,7 @@ Helpful links:
 
 Example:
 
-<figure><img src="../../../.gitbook/assets/image (1137).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1057).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Example logs
 

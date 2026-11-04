@@ -21,7 +21,7 @@ description: >-
 
 * On the left sidebar, click on **Ascent Checks**. This will display a list of all available checks that you can query.
 
-<figure><img src="../../.gitbook/assets/image (589).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (721).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.Write the query
 
@@ -34,4 +34,4 @@ keyword: ''
 duration: '1h'
 ```
 
-<figure><img src="../../.gitbook/assets/image (591).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (722).png" alt=""><figcaption></figcaption></figure>

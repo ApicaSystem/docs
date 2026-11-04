@@ -1,8 +1,6 @@
 # Disk chart
 
-
-
-### Json configuration&#x20;
+### Json configuration
 
 ```json
                 {
@@ -19,6 +17,4 @@
                 },
 ```
 
-
-
-<figure><img src="../../../../.gitbook/assets/image (559).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (696).png" alt=""><figcaption></figcaption></figure>

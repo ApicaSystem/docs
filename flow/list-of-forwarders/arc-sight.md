@@ -21,4 +21,4 @@ Apica enables users to quickly and easily forward logs in various formats to sec
 
 Once the forwarder is associated with a specific namespace/application or with various log attributes, the logs that match these criteria will be sent to ArcSight for further analysis.
 
-<figure><img src="../../.gitbook/assets/image (520).png" alt=""><figcaption><p>creating arc sight forwarder</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (661).png" alt=""><figcaption><p>creating arc sight forwarder</p></figcaption></figure>

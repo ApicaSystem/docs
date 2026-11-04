@@ -32,4 +32,4 @@ Teams spend enormous time cleaning data to get a sense of it; readily available 
 
 Apica Ascent detects IP addresses in the log lines and extracts them as a separate field. Logs are enriched with geo-location information if public IP addresses are available, making it easier for users to visualize traffic patterns.
 
-![](<../.gitbook/assets/image (255).png>)
+![](<../.gitbook/assets/image (423).png>)

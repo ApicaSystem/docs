@@ -11,7 +11,7 @@ Creating a Pipeline
 
 Click on the `Explore` Select from the top menu and click on `Pipelines`
 
-<figure><img src="../../.gitbook/assets/image (691).png" alt=""><figcaption><p>Navigating to Pipeline Page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (812).png" alt=""><figcaption><p>Navigating to Pipeline Page</p></figcaption></figure>
 
 Hover on the `Actions` and click on `Visualize Pipeline`
 
@@ -60,13 +60,13 @@ Select the Choose Existing Pipeline to choose an existing Pipeline for the Dataf
 
 Select the Pipelines that will be applied to the Dataflow and click on the Blue arrow button to add them to dataflow
 
-<figure><img src="../../.gitbook/assets/image (698).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (818).png" alt=""><figcaption></figcaption></figure>
 
 Click on the Delete Icon on the right side to disassociate it from the Dataflow. Once done, click on the Close button on the dialog to apply the changes.
 
-Select the Create New Pipeline button to create a new Pipeline for the namespace and application. Once the  Configure Pipeline Modal opens, follow the same steps as [#creating-a-pipeline](data-flow-pipelines-new.md#creating-a-pipeline "mention").
+Select the Create New Pipeline button to create a new Pipeline for the namespace and application. Once the Configure Pipeline Modal opens, follow the same steps as [#creating-a-pipeline](data-flow-pipelines-new.md#creating-a-pipeline "mention").
 
-<figure><img src="../../.gitbook/assets/image (1160) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1092).png" alt=""><figcaption></figcaption></figure>
 
 After creating the pipeline, click on the reload button to visualise.
 
@@ -81,4 +81,3 @@ Before adding the forwarder rule, create a forwarder and map the forwarder in th
 After adding the forwarder the new node will be added as below
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-05-02 224136.png" alt=""><figcaption><p>Pipeline with the forwarder</p></figcaption></figure>
-

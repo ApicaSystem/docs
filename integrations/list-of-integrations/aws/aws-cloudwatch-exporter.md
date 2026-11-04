@@ -73,11 +73,11 @@ This CloudFormation stack creates a Lambda function and its necessary permission
 
 Once the CloudFormation stack is created, navigate to the AWS Lambda function (`logiq-cloudwatch-exporter`) and add a trigger.
 
-![](<../../../.gitbook/assets/image (304).png>)
+![](<../../../.gitbook/assets/image (469).png>)
 
 On the **Add trigger** page, select **CloudWatch**, and then select a CloudWatch Logs **Log Group**.
 
-![](<../../../.gitbook/assets/image (279).png>)
+![](<../../../.gitbook/assets/image (446).png>)
 
 Once this configuration is complete, any new logs coming to the configured CloudWatch Log group will be streamed to the Apica Ascent cluster.
 

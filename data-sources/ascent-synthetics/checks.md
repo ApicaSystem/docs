@@ -26,7 +26,7 @@ icon: shield-check
 
 * From the list, expand the check you want to query by clicking on it. This will show more details about the check.
 
-<div align="left"><figure><picture><source srcset="../../.gitbook/assets/Screenshot 2025-01-29 at 2.40.21 PM.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/image (569).png" alt="" width="325"></picture><figcaption></figcaption></figure></div>
+<div align="left"><figure><picture><source srcset="../../.gitbook/assets/Screenshot 2025-01-29 at 2.40.21 PM.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/image (705).png" alt="" width="325"></picture><figcaption></figcaption></figure></div>
 
 ### 4. Append the CheckID to the Query Editor to consume this check.
 
@@ -49,13 +49,9 @@ icon: shield-check
 
 * Once your query is complete, click on **Execute** to run the query and see the results.
 
-<figure><picture><source srcset="../../.gitbook/assets/Screenshot 2025-01-29 at 2.50.51 PM.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/image (570).png" alt=""></picture><figcaption></figcaption></figure>
-
-
+<figure><picture><source srcset="../../.gitbook/assets/Screenshot 2025-01-29 at 2.50.51 PM.png" media="(prefers-color-scheme: dark)"><img src="../../.gitbook/assets/image (706).png" alt=""></picture><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-
-
 ### Check Data Source Query Options
 
 The query for the **Ascent Checks Data Source** is written in **YAML** format. The following options are supported:
@@ -82,22 +78,3 @@ The query for the **Ascent Checks Data Source** is written in **YAML** format. T
 
 * By default, results are sorted by time in **descending** chronological order.
 {% endhint %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

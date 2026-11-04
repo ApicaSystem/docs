@@ -9,11 +9,11 @@ A policy outlines access control to specific resources by specifying the actions
 * Policy Name: A unique identifier for the policy that clearly describes its purpose or scope. It helps administrators quickly recognize and manage policies within the system.
 * Permissions: The specific actions allowed or denied by the policy. Permissions define what resources the policy applies to and what operations users can perform on those resources (e.g., read, write, delete).
 
-<figure><img src="../../../.gitbook/assets/image (1090).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1016).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
-### &#x20;Create a Policy
+### Create a Policy
 
 To create a policy:
 
@@ -61,4 +61,4 @@ To view the details of a policy:
 1. Navigate to IAM > Policy Management.
 2. Click on the policy name to open and review its configuration, including permissions, resources, and assigned roles.
 
-<figure><img src="../../../.gitbook/assets/image (1091).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1017).png" alt=""><figcaption></figcaption></figure>

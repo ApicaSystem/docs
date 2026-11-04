@@ -8,7 +8,7 @@ In this API, the ‘entity’ values are passed to create a new determining attr
 
 The API is still defined the same way as for a range-based determining attribute:
 
-<figure><img src="../../../../../.gitbook/assets/image (61).png" alt=""><figcaption><p>Determining attribute API</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (248).png" alt=""><figcaption><p>Determining attribute API</p></figcaption></figure>
 
 ```
 {
@@ -33,11 +33,11 @@ The API is still defined the same way as for a range-based determining attribute
 
 The results screen from Postman shows the API was created.
 
-<figure><img src="../../../../../.gitbook/assets/image (65).png" alt=""><figcaption><p>Return message with details</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (251).png" alt=""><figcaption><p>Return message with details</p></figcaption></figure>
 
 An ID for the determining attribute is provided in the results section. If you are going to update or delete this determining attribute, you will need this ID. (Note that the ID can also be found in the ‘Get all DAs’ API.) This is the attribute in TDO after it has been created by API.
 
-<figure><img src="../../../../../.gitbook/assets/image (66).png" alt=""><figcaption><p>New determining atttribute, no data block source</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (252).png" alt=""><figcaption><p>New determining atttribute, no data block source</p></figcaption></figure>
 
 **Data Block Used as Source**
 
@@ -93,10 +93,10 @@ The url is the same as for the no data block source API call. The body contains 
 
 When this API is run, the results screen in Postman shows the following.
 
-<figure><img src="../../../../../.gitbook/assets/image (67).png" alt=""><figcaption><p>Return message with details</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (253).png" alt=""><figcaption><p>Return message with details</p></figcaption></figure>
 
 As with other successful calls, the ID for the new determining attribute is returned with the message.
 
 In the TDO UI, the new determining attribute displays the linked data block and field (top portion of screen) in addition to the attribute values.
 
-<figure><img src="../../../../../.gitbook/assets/image (68).png" alt=""><figcaption><p>Determining attribute with data block source</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (254).png" alt=""><figcaption><p>Determining attribute with data block source</p></figcaption></figure>

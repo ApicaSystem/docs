@@ -2,7 +2,7 @@
 
 Copying and reusing code is an essential part of creating database queries, especially for common operations like JOIN statements or complex CASE expressions. Query Snippets streamline this process by enabling your team to create reusable query segments that can be shared and triggered directly from the query editor.
 
-<figure><img src="../../../.gitbook/assets/image (561).png" alt=""><figcaption><p>Query Snippets page in Settings</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (698).png" alt=""><figcaption><p>Query Snippets page in Settings</p></figcaption></figure>
 
 ### What Are Query Snippets?
 

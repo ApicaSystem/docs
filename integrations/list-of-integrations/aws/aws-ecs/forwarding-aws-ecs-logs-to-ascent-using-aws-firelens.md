@@ -4,7 +4,7 @@ Amazon Web Services (AWS) Fargate is a serverless compute engine for containers 
 
 ### Configuring AWS FireLens to forward logs <a href="#id-1-configuring-aws-firelens-to-forward-logs" id="id-1-configuring-aws-firelens-to-forward-logs"></a>
 
-Possibly the most significant advantage of AWS FireLens is that you can connect it to almost any service endpoint as long as data sinks can process general-purpose JSON over HTTP, FluentForward, or TCP protocols. FireLens transforms log outputs of ECS containers and generates the routing configuration needed for sending logs to the logging service.&#x20;
+Possibly the most significant advantage of AWS FireLens is that you can connect it to almost any service endpoint as long as data sinks can process general-purpose JSON over HTTP, FluentForward, or TCP protocols. FireLens transforms log outputs of ECS containers and generates the routing configuration needed for sending logs to the logging service.
 
 The **`awsfirelens`** log driver allows you to specify Fluentd or Fluent Bit output plugin configurations. Your application container logs are routed to a sidecar or independent FireLens container inside your cluster, which further routes your container logs to their destination as defined in your task **`logConfiguration`**. Additionally, you can use the **`options`** field of the **`FireLensConfiguration`** object in the task definition to serve any advanced use case.
 
@@ -14,13 +14,13 @@ To set up log forwarding on AWS ECS, do the following.
 * Click on **Edit container**
 * Navigate to the **STORAGE AND LOGGING** section
 
-![](<../../../../.gitbook/assets/image (261).png>)
+![](<../../../../.gitbook/assets/image (429).png>)
 
 * By default, the container will be sending logs to AWS CloudWatch. Uncheck **Auto configure to CloudWatch Logs**
-* Next, choose the Log driver as **awsfirelens**&#x20;
+* Next, choose the Log driver as **awsfirelens**
 * Add the following variables in the **Log options** section.
 
-![](<../../../../.gitbook/assets/image (264).png>)
+![](<../../../../.gitbook/assets/image (432).png>)
 
 * The following are the mandatory fields that need to be passed in order to forward logs to Ascent.
 
@@ -40,7 +40,7 @@ To set up log forwarding on AWS ECS, do the following.
 
 * After saving the container definition, in the **Log router integration** section, you will see that **Enable FireLens integration Type** checkbox is checked along with the image which will be used (might differ as per region).
 
-![](<../../../../.gitbook/assets/image (318).png>)
+![](<../../../../.gitbook/assets/image (482).png>)
 
 * If you are using the **Configure via JSON** option, in the container definition section, add the following.
 
@@ -75,7 +75,7 @@ To set up log forwarding on AWS ECS, do the following.
             
 ```
 
-* &#x20;You can add/remove records in extra conf file . Your extra conf file looks similar to below file .
+* You can add/remove records in extra conf file . Your extra conf file looks similar to below file .
 
 ```
 [FILTER]
@@ -96,15 +96,15 @@ To set up log forwarding on AWS ECS, do the following.
 
 * Once you are done with the setup, you should see a logrouter container along with your container (for example, the **`wordpress`** the container below).
 
-![](<../../../../.gitbook/assets/image (305).png>)
+![](<../../../../.gitbook/assets/image (470).png>)
 
-Your ECS container logs will now be forwarded to your Ascent instance and will be visible on the **Logs** page on the Ascent UI. The **Namespace** will be mapped to your ECS cluster name and the **Application** is mapped to the task definition name.&#x20;
+Your ECS container logs will now be forwarded to your Ascent instance and will be visible on the **Logs** page on the Ascent UI. The **Namespace** will be mapped to your ECS cluster name and the **Application** is mapped to the task definition name.
 
-![](<../../../../.gitbook/assets/image (1) (2).png>)
+![](<../../../../.gitbook/assets/image (1) (1).png>)
 
 ### Creating a custom Fluent Bit image to include custom parsers
 
-If you have custom parsers that need to be included in your Fluent Bit configuration, you will need to set up a custom Fluent Bit image by doing the following.&#x20;
+If you have custom parsers that need to be included in your Fluent Bit configuration, you will need to set up a custom Fluent Bit image by doing the following.
 
 * Clone the following repository and navigate to the **`custom-fluent-bit-image`** folder: [https://github.com/logiqai/logiq-firelens-fluentbit](https://github.com/logiqai/logiq-firelens-fluentbit)
 * Run the following command to build a new docker image with the **`fluent-logiq`** configuration
@@ -144,4 +144,4 @@ docker push Username.dkr.region.amazon.com/logiqconfiguration
 }
 ```
 
-This completes the setting up of a custom Fluent Bit image that includes custom parsers in the Fluent Bit configuration.&#x20;
+This completes the setting up of a custom Fluent Bit image that includes custom parsers in the Fluent Bit configuration.

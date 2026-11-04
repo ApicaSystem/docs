@@ -1,14 +1,12 @@
-# Traces
+# OpenTelemetry Traces
 
 The **OTLP Trace Forwarder** lets you send traces in OTLP format (OpenTelemetry Protocol) to any external HTTP-compatible backend. This is useful for integrating Ascent with Jaeger, custom observability platforms, or third-party tracing services that support OTLP.
 
 You can find it in the **Forwarders** section:
 
-<figure><img src="../../.gitbook/assets/image (733).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (850).png" alt=""><figcaption></figcaption></figure>
 
 ***
-
-
 
 ## Configuration
 
@@ -17,7 +15,5 @@ You can find it in the **Forwarders** section:
 #### How it Works
 
 Once you create a forwarder, it can be mapped to any of your namespaces/apps that are currently receiving OTEL-formatted traces.
-
-
 
 All trace events that conform to the OTEL protocol will be automatically forwarded to the specified endpoint via OTLP over HTTP.

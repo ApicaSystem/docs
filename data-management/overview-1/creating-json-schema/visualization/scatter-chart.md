@@ -1,6 +1,6 @@
 # Scatter chart
 
-To configure a Scatter chart that  use the following JSON object. This configuration includes setting the chart type to `scatter`, specifying necessary plot parameters, and providing a monitoring query .
+To configure a Scatter chart that use the following JSON object. This configuration includes setting the chart type to `scatter`, specifying necessary plot parameters, and providing a monitoring query .
 
 ```json
 {
@@ -23,6 +23,4 @@ To configure a Scatter chart that  use the following JSON object. This configura
 }
 ```
 
-
-
-<figure><img src="../../../../.gitbook/assets/image (551).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (688).png" alt=""><figcaption></figcaption></figure>

@@ -10,4 +10,4 @@ Apica Ascent automatically logs all the alerts notifications that are happening 
 
 <figure><img src="../../.gitbook/assets/view alerts.png" alt=""><figcaption><p>view history</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (239).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (408).png" alt=""><figcaption></figcaption></figure>

@@ -1,6 +1,6 @@
 # Manage Roles
 
-<figure><img src="../../../.gitbook/assets/image (1094).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1020).png" alt=""><figcaption></figcaption></figure>
 
 **Create Role**
 

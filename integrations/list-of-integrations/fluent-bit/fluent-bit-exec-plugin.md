@@ -34,14 +34,14 @@ Helpful links:
 
 #### 3. Verify Logs in Apica Ascent
 
-1\.     Log in to Apica Ascent
+1\. Log in to Apica Ascent
 
-2\.     Navigate to Explore → Logs & Insights
+2\. Navigate to Explore → Logs & Insights
 
-3\.     Look for the namespace and application name specified in the config file\
+3\. Look for the namespace and application name specified in the config file\
 Example:
 
-<figure><img src="../../../.gitbook/assets/image (1130).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1051).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Example logs
 
@@ -63,4 +63,4 @@ exec: syslog
 
 #### 5. Troubleshooting
 
-&#x20; [**Fluent-bit Troubleshooting**](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting)
+[**Fluent-bit Troubleshooting**](https://docs.apica.io/integrations/list-of-integrations/fluent-bit/fluent-bit-troubleshooting)

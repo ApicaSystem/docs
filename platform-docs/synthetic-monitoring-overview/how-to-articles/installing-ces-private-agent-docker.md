@@ -77,17 +77,17 @@ sudo yum install -y docker-ce docker-ce-cli containerd.io
 
 1. Navigate to **Manage → Private Locations** (Available only for customer admins).
 
-<figure><img src="../../../.gitbook/assets/image (977).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (906).png" alt=""><figcaption></figcaption></figure>
 
 2. Click on **Add Private Location** and fill out the form. The locations will appear in **Private Locations**.
 
-<figure><img src="../../../.gitbook/assets/image (978).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (907).png" alt=""><figcaption></figcaption></figure>
 
 3. Click on **Add Private Agent** and fill out the form. Download and save the certificates. When an agent is just created it doesn’t have any geolocation. Therefore the agent will appear in **Ungrouped Agents**.
 
-<figure><img src="../../../.gitbook/assets/image (979).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (908).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (980).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (909).png" alt=""><figcaption></figcaption></figure>
 
 4. Install the required software on the server where the private agent is supposed to be installed.
 5. Download the packages from Apica S3 bucket:
@@ -112,7 +112,7 @@ rpm package:
 ```
 {% endcode %}
 
-The agent will be installed to: [`/opt/apica-private-agent`](#user-content-fn-1)[^1]&#x20;
+The agent will be installed to: `/opt/apica-private-agent`
 
 6.  Log out of the agent machine and unzip the certificates archive and upload the certificates to `/opt/apica-private-agent/certificates`. The certificates directory should have the following files: `client.pem` `issuer.pem` `key.pem`
 
@@ -131,7 +131,7 @@ The agent will be installed to: [`/opt/apica-private-agent`](#user-content-fn-1)
    6. **asm\_geoloc**: Copy the Gelocation string from the Private location you want to use (or created previously in ASM)
    7. **asm\_agent\_access\_group**: It can be found on the top right side on the private locations page
 
-<figure><img src="../../../.gitbook/assets/image (981).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (910).png" alt=""><figcaption></figcaption></figure>
 
 8. Start **apica-sidecar** with the following command:
 
@@ -231,16 +231,16 @@ By default, nomad uses default Apica’s docker hub repository. It might not be 
 1. Upload docker images provided by Apica to your docker repository.
 2. After the repository is created click on **Repository Settings → Configure Repository** for the location where the repository needs to be used and configure it:
 
-<figure><img src="../../../.gitbook/assets/image (982).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (911).png" alt=""><figcaption></figcaption></figure>
 
 3. Set the repository URL that is available for the private agent, repository name, username, and password.
 4. Set tags of the uploaded images that are to be used for running checks.
 5. Click **Save Repository**
 6. Add the repository to other locations if needed by selecting it in the dropdown and click **Save Repository**:
 
-<figure><img src="../../../.gitbook/assets/image (983).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (912).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (984).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (913).png" alt=""><figcaption></figcaption></figure>
 
 ## Enabling/Disabling Private Locations <a href="#enabling-disabling-private-locations" id="enabling-disabling-private-locations"></a>
 
@@ -318,8 +318,8 @@ com.apicasystems.checkrunner.proxy.krb.realm=
 </strong><strong>com.apicasystems.checkrunner.proxy.krb.config.storeKey=true 
 </strong><strong>com.apicasystems.checkrunner.proxy.krb.config.use-canonical-hostname=false 
 </strong><strong>com.apicasystems.checkrunner.proxy.krb.debug=false 
-</strong><strong>
-</strong><strong># Custom TLS Settings 
+</strong>
+<strong># Custom TLS Settings 
 </strong><strong>com.apicasystems.checkrunner.tls.enabled=true 
 </strong><strong># Possible cert types: ARCHIVE, FILE 
 </strong><strong>com.apicasystems.checkrunner.tls.cert-type=FILE 
@@ -415,5 +415,3 @@ rm apica-private-agent-1.0.0-1.x86_64.rpm
 {% endcode %}
 
 Please note that the last command, in the section above, will remove the package from the VM. Hence, to start again we will have to copy the package again to the VM or skip running the command.
-
-[^1]: 

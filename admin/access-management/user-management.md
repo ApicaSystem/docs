@@ -4,13 +4,13 @@
 
 All users within the Apica Ascent platform are categorized into the following three types:
 
-<figure><img src="../../.gitbook/assets/image (1088).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1014).png" alt=""><figcaption></figcaption></figure>
 
 **1. Active Users**
 
 These users have full access to the platform and can perform all permitted operations.
 
-To view Active Users:&#x20;
+To view Active Users:
 
 * Navigate to Settings > IAM > Active Users.
 
@@ -18,7 +18,7 @@ To view Active Users:&#x20;
 
 These users have been deactivated and cannot access or perform any actions on the platform.
 
-To view Disabled Users:&#x20;
+To view Disabled Users:
 
 * Navigate to Settings > IAM > Disabled Users.
 
@@ -71,4 +71,4 @@ To assign or modify user roles:
 2. In the Roles dropdown, select one or more roles to assign.
 3. Click Save to apply the changes
 
-<figure><img src="../../.gitbook/assets/image (1089).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1015).png" alt=""><figcaption></figcaption></figure>

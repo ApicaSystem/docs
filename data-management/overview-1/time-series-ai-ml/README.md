@@ -13,15 +13,13 @@ This feature can be mainly divided into four categories namely
 
 **Basic Baselining Configuration Guide:**
 
-The baselining configuration dialog box appears on the builder Panel  under Algorithms section. This configuration mainly needs a time column to indicate the time series data column in the dataset, and a value column to indicate the target value column dependent on the time series. The feature studies the dependent value column from the perspective of the time column and produces the required results which can be visualized using the Plot section to create a  meaningful charts.
+The baselining configuration dialog box appears on the builder Panel under Algorithms section. This configuration mainly needs a time column to indicate the time series data column in the dataset, and a value column to indicate the target value column dependent on the time series. The feature studies the dependent value column from the perspective of the time column and produces the required results which can be visualized using the Plot section to create a meaningful charts.
 
-<figure><img src="../../../.gitbook/assets/image (531).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (671).png" alt=""><figcaption></figcaption></figure>
 
 You can visualize the results by navigating to the Plot section and adding the necessary columns to the Y-axis selector to generate meaningful charts. These visualizations help in analyzing trends and identifying patterns in your time series data.
 
-<figure><img src="../../../.gitbook/assets/image (532).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../../.gitbook/assets/image (672).png" alt=""><figcaption></figcaption></figure>
 
 \
 <br>

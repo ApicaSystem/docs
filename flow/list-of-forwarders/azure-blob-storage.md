@@ -14,6 +14,6 @@
 * Provde Account name, account key, container name (bucket name) and endpoint for azure blob store
 * Click `Create` button
 
-<figure><img src="../../.gitbook/assets/image (513).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (655).png" alt=""><figcaption></figcaption></figure>
 
 The Azure Blob store Forwarder can now be mapped to any data flow. The Azure blob store forwarder breaks the data into smaller objects based on the object size configuration. The default object size is set to 4MB and can be changed while creating the forwarder.

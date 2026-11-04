@@ -14,6 +14,6 @@ In summary, Apica Ascent offers various ways to gather and utilize application a
 * Amazon Managed Service for Prometheus (AMP) Datasource
 * External databases such as InfluxDB or time-series data in databases like Postgres, MySQL, Elastic, etc.
 
-![A sample Prometheus dashboard with anomaly detection](<../../.gitbook/assets/image (198).png>)
+![A sample Prometheus dashboard with anomaly detection](<../../.gitbook/assets/image (373).png>)
 
 The next few sections describe how to connect and query your metrics data in Apica Ascent. For using Apica Ascent's Prometheus Remote Write capabilities to push your metrics into Apica Ascent see [here](../../integrations/list-of-integrations/prometheus/prometheus-remote-write.md).

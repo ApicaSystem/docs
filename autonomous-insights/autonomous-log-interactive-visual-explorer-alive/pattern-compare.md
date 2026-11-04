@@ -42,7 +42,7 @@ The interface consists of three primary sections:
 2. **Donut Chart Statistics** – Summaries loaded log counts and difference exceeding the threshold.
 3. **Log Table** – Displays log messages and their respective counts for **Group A** and **Group B**.
 
-<figure><img src="../../.gitbook/assets/image (658).png" alt=""><figcaption><p>Example showing 3 sections.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (781).png" alt=""><figcaption><p>Example showing 3 sections.</p></figcaption></figure>
 
 Additionally, a **Full-Screen Mode** is available for the bar chart, enabling a detailed investigation of log patterns and anomalies.
 
@@ -52,35 +52,35 @@ Additionally, a **Full-Screen Mode** is available for the bar chart, enabling a 
 
 1. Select a Namespace and an Application from the list.
 
-<figure><img src="../../.gitbook/assets/image (646).png" alt=""><figcaption><p>Select Namespace and Application</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (773).png" alt=""><figcaption><p>Select Namespace and Application</p></figcaption></figure>
 
 2. Select timerange and click on Apply.
 
-<figure><img src="../../.gitbook/assets/image (651).png" alt=""><figcaption><p>Select timerange and click Apply</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (775).png" alt=""><figcaption><p>Select timerange and click Apply</p></figcaption></figure>
 
 3. Click **Fetch more logs** to fetch all logs for the selected configuration. you can increase the logs load count.
 
-<figure><img src="../../.gitbook/assets/image (652).png" alt=""><figcaption><p>Fetch all logs</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (776).png" alt=""><figcaption><p>Fetch all logs</p></figcaption></figure>
 
 4. Move to the Alive tab and select Compare from left pane.
 
-<figure><img src="../../.gitbook/assets/image (653).png" alt=""><figcaption><p>Select Compare from Alive Tab</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (777).png" alt=""><figcaption><p>Select Compare from Alive Tab</p></figcaption></figure>
 
 5. Select a second Time Range (B) for comparison. You can choose a the same duration in a different time frame and click Apply to load logs for Time Range B.
 
-<figure><img src="../../.gitbook/assets/image (654).png" alt=""><figcaption><p>fetching logs for time range B</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (778).png" alt=""><figcaption><p>fetching logs for time range B</p></figcaption></figure>
 
 6. Choose between **Percentage** or **Absolute** count comparison and adjust the Threshold Filter.
 
-<figure><img src="../../.gitbook/assets/image (656).png" alt=""><figcaption><p>Selection for absolute, percentage and threshold%</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (779).png" alt=""><figcaption><p>Selection for absolute, percentage and threshold%</p></figcaption></figure>
 
 7. Now you can analyze the data between the two time ranges to gain deeper insights and identify patterns or anomalies.<br>
 
-<figure><img src="../../.gitbook/assets/image (658).png" alt=""><figcaption><p>Insights for the Comparing two different time range.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (781).png" alt=""><figcaption><p>Insights for the Comparing two different time range.</p></figcaption></figure>
 
 8. Click the **Full Screen** button to enlarge the **Bar Graph** for clearer analysis.
 
-<figure><img src="../../.gitbook/assets/image (657).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (780).png" alt=""><figcaption></figcaption></figure>
 
 ### Key Benefits
 

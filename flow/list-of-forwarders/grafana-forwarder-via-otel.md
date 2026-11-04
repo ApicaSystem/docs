@@ -15,7 +15,7 @@ Before configuring Apica, you must obtain your OTLP connection details from your
 
 ### 2. Apica Configuration Strategy: The OTLP Forwarder
 
-In the Apica UI (Ascent/Flow), you will create a Forwarder (or Target Destination) that uses the OpenTelemetry (OTLP) exporter.&#x20;
+In the Apica UI (Ascent/Flow), you will create a Forwarder (or Target Destination) that uses the OpenTelemetry (OTLP) exporter.
 
 #### Step A: Define the Target
 
@@ -42,7 +42,7 @@ In the Apica "Flow" or "Pipeline" section, you will create a rule to route speci
 
 #### Otel Forwarder:
 
-<figure><img src="../../.gitbook/assets/image (1160).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1091).png" alt=""><figcaption></figcaption></figure>
 
 #### Advanced: Mapping Labels and Jobs
 

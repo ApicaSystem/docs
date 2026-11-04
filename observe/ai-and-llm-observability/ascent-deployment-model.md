@@ -10,7 +10,7 @@ The guide will enable monitoring, analyzing, and optimizing the performance, cos
 * Security & Compliance – Detecting data leakage, unauthorized access, and enforcing privacy policies.
 * Response Quality – Evaluating model accuracy, bias, hallucinations, and user engagement.
 
-<figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 With AI models becoming core to modern applications, observability ensures reliability, efficiency, and trust in AI-driven decision-making.
 
@@ -18,15 +18,15 @@ With AI models becoming core to modern applications, observability ensures relia
 
 The primary Ascent use cases for AI and LLM observability include the following:
 
-1\.    **Service Health & Performance Monitoring** – Similar to traditional APM solutions but tailored for AI workloads, ensuring model inference times and API performance are stable.
+1\. **Service Health & Performance Monitoring** – Similar to traditional APM solutions but tailored for AI workloads, ensuring model inference times and API performance are stable.
 
-2\.    **Full Application Workflow Tracing** – Distributed tracing helps identify bottlenecks across AI pipelines, which is crucial for debugging complex LLM applications.
+2\. **Full Application Workflow Tracing** – Distributed tracing helps identify bottlenecks across AI pipelines, which is crucial for debugging complex LLM applications.
 
-3\.    **LLM Stack Cost Analysis** – A key differentiator, focusing on managing compute, API, and infrastructure costs related to AI workloads.
+3\. **LLM Stack Cost Analysis** – A key differentiator, focusing on managing compute, API, and infrastructure costs related to AI workloads.
 
-4\.    **Safeguarding LLM and User Data** – Likely involves monitoring data leakage, security policies, and compliance.
+4\. **Safeguarding LLM and User Data** – Likely involves monitoring data leakage, security policies, and compliance.
 
-5\.    **AI Response Quality** – A major area of concern in AI observability, ensuring that model responses are accurate, relevant, and unbiased.
+5\. **AI Response Quality** – A major area of concern in AI observability, ensuring that model responses are accurate, relevant, and unbiased.
 
 ### Key metrics
 

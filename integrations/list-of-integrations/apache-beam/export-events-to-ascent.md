@@ -115,4 +115,4 @@ Specify the ingest endpoint and your ingest token. You can find the ingest token
 
 Hooray, you should now be able to see logs flowing into Apica Ascent from your Pipeline with `namespace="ns", host="test-env", appName="test-app" and clusterId as "test-cluster"`.
 
-<figure><img src="../../../.gitbook/assets/image (233).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (403).png" alt=""><figcaption></figcaption></figure>

@@ -1,6 +1,6 @@
 # Dense Status chart
 
-### Json configuration&#x20;
+### Json configuration
 
 ```json
                 {
@@ -17,6 +17,4 @@
                 },
 ```
 
-
-
-<figure><img src="../../../../.gitbook/assets/image (557).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (694).png" alt=""><figcaption></figcaption></figure>

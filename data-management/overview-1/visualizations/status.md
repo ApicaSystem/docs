@@ -29,7 +29,7 @@ This produces a single tile like:
 
 `UP` _(green)_
 
-<figure><img src="../../../.gitbook/assets/image (552).png" alt="Example Status chart tile showing a state label and color"><figcaption><p>Example Status chart</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (689).png" alt="Example Status chart tile showing a state label and color"><figcaption><p>Example Status chart</p></figcaption></figure>
 
 ### Configure a Status chart
 

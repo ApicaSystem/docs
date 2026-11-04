@@ -4,7 +4,7 @@ New _Agent Types_ can be added to the Apica Fleet through a Git Repository. For 
 
 The _Agent Type_ configurations are placed within the _agent\_types_ director&#x79;_. A_ YAML file is used for each agent type to specify its configuration.<br>
 
-<figure><img src="../../.gitbook/assets/image (1032).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (960).png" alt=""><figcaption></figcaption></figure>
 
 The following is an example YAML file for the Prometheus agent.
 
@@ -46,8 +46,6 @@ manager_defaults:
     auto_update: true
     package_dir: C:\apica\packages
 ```
-
-
 
 | Field              | Type                         | Description                                              |
 | ------------------ | ---------------------------- | -------------------------------------------------------- |

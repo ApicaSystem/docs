@@ -74,17 +74,17 @@ Delegate=memory pids cpu cpuset
 
 ### Installing a private location and a private agent
 
-1.  Navigate to **Manage → Private Locations** (Available only for customer admins).&#x20;
+1.  Navigate to **Manage → Private Locations** (Available only for customer admins).
 
-    <figure><img src="../../../.gitbook/assets/image (1122).png" alt=""><figcaption></figcaption></figure>
-2.  Click on **Add Private Location** and fill out the form. The locations will appear in **Private Locations**.&#x20;
+    <figure><img src="../../../.gitbook/assets/image (1042).png" alt=""><figcaption></figcaption></figure>
+2.  Click on **Add Private Location** and fill out the form. The locations will appear in **Private Locations**.
 
-    <figure><img src="../../../.gitbook/assets/image (1123).png" alt=""><figcaption></figcaption></figure>
-3.  Click on **Add Private Agent** and fill out the form. Download and save the certificates. When an agent is just created it doesn’t have any geolocation. Therefore the agent will appear in **Ungrouped Agents**.&#x20;
+    <figure><img src="../../../.gitbook/assets/image (1043).png" alt=""><figcaption></figcaption></figure>
+3.  Click on **Add Private Agent** and fill out the form. Download and save the certificates. When an agent is just created it doesn’t have any geolocation. Therefore the agent will appear in **Ungrouped Agents**.
 
-    <figure><img src="../../../.gitbook/assets/image (1124).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1044).png" alt=""><figcaption></figcaption></figure>
 
-    <figure><img src="../../../.gitbook/assets/image (1125).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1045).png" alt=""><figcaption></figcaption></figure>
 4. Download the packages from Apica S3 bucket:
 
 Find actual version [here (Docs - Download Links)](https://docs.apica.io/platform-docs/synthetic-monitoring-overview/how-to-articles/ces-private-agent-download-links)
@@ -121,9 +121,9 @@ The agent will be installed to /opt/apica-private-agent
    4. **Password**: Enter whatever you want (but remember this password, we’ll need it for later)
    5. **Agent ID**: Click **Edit** near the private agent (In ASM) and copy **Agent ID**
    6. **asm\_geoloc**: Copy the Gelocation string from the Private location you want to use (or created previously in ASM)
-   7.  **asm\_agent\_access\_group**: It can be found on the top right side on the private locations page&#x20;
+   7.  **asm\_agent\_access\_group**: It can be found on the top right side on the private locations page
 
-       <figure><img src="../../../.gitbook/assets/image (1126).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../../.gitbook/assets/image (1046).png" alt=""><figcaption></figcaption></figure>
 8. Log in as the user you created or specified during the configuring.
    1. ```
       su <username>
@@ -246,19 +246,17 @@ A nomad node is a nomad client node responsible for running checks. It uses the 
 By default, nomad uses default Apica’s docker hub repository. It might not be available from the location where a private agent is installed. If this is the case you would need to configure your own private repository and upload Apica’s docker images to it.
 
 1. Upload docker images provided by Apica to your docker repository.
-2.  After the repository is created click on **Repository Settings → Configure Repository** for the location where the repository needs to be used and configure it:&#x20;
+2.  After the repository is created click on **Repository Settings → Configure Repository** for the location where the repository needs to be used and configure it:
 
-    <figure><img src="../../../.gitbook/assets/image (1127).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1047).png" alt=""><figcaption></figcaption></figure>
 3. Set the repository URL that is available for the private agent, repository name, username, and password.
 4. Set tags of the uploaded images that are to be used for running checks.
 5. Click **Save Repository**
-6.  Add the repository to other locations if needed by selecting it in the dropdown and click **Save Repository**:&#x20;
+6.  Add the repository to other locations if needed by selecting it in the dropdown and click **Save Repository**:
 
-    <figure><img src="../../../.gitbook/assets/image (1128).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1048).png" alt=""><figcaption></figcaption></figure>
 
-
-
-    <figure><img src="../../../.gitbook/assets/image (1129).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (1049).png" alt=""><figcaption></figcaption></figure>
 
 ### Enabling/Disabling Private Locations
 

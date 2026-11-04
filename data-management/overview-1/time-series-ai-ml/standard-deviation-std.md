@@ -12,13 +12,9 @@ Standard Deviation adds two columns UCL(Upper Control Limit), and LCL(Lower Cont
 
 **Steps to visualize the LCL and UCL:**
 
-
-
 1. Go to plot section .
 2. Select the chart type as a line for better visualization.
 3. Select the time column as the X column and the value column as the Y column. Add the standard deviation columns i.e; LCL and UCL, into the Y column multi-selection box.
-4. Cick on Apply  button, A graph similar to the following picture must be rendered.
+4. Cick on Apply button, A graph similar to the following picture must be rendered.
 
-
-
-<figure><img src="../../../.gitbook/assets/image (537).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (676).png" alt=""><figcaption></figcaption></figure>

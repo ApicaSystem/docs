@@ -7,4 +7,4 @@ icon: file-lines
 
 # Ascent Logs
 
-<figure><img src="../../.gitbook/assets/image (588).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (720).png" alt=""><figcaption></figcaption></figure>

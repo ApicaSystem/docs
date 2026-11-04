@@ -1,6 +1,6 @@
 # Size chart
 
-### Json configuration&#x20;
+### Json configuration
 
 ```json
                 {
@@ -17,6 +17,4 @@
                 },
 ```
 
-
-
-<figure><img src="../../../../.gitbook/assets/image (555).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (692).png" alt=""><figcaption></figcaption></figure>

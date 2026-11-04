@@ -22,7 +22,7 @@ Persistence queues can be configured while **creating or updating** a forwarder.
 * Navigate to the **Forwarders** tab.
 *   Click **Add Forwarder** (top-right) to open the _Create Forwarder_ modal.
 
-    <figure><img src="../.gitbook/assets/image (1243).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (1175).png" alt=""><figcaption></figcaption></figure>
 
 ### Persistence Queue Settings
 
@@ -62,18 +62,18 @@ You will find the following three settings related to the persistence queue:
 
 *   Fill in the other details and click on create. On successful creating, forwarder will be shown on list.
 
-    <figure><img src="../.gitbook/assets/image (1245).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (1176).png" alt=""><figcaption></figcaption></figure>
 
 #### Map forwarder to data-flows
 
 *   Go to Explore -> Logs & Insights page via navbar.
 
-    <figure><img src="../.gitbook/assets/image (1246).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (1177).png" alt=""><figcaption></figcaption></figure>
 * Click on a dataflow and click on the 3 dots on the top right of the table, and select Map Forwarder
 
-<figure><img src="../.gitbook/assets/image (1247).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1178).png" alt=""><figcaption></figcaption></figure>
 
 * From the list Select your Forwarder and click on OK.
 * Your Forwarder should show up in the list, and mapped to the flow you selected.
 
-<figure><img src="../.gitbook/assets/image (1248).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1179).png" alt=""><figcaption></figcaption></figure>

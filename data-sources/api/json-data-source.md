@@ -15,7 +15,7 @@ description: >-
    1. Enter a name for your data source (required)
    2. Enter Basic Authentication credentials (optional)
 
-<figure><img src="../../.gitbook/assets/image (643).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (770).png" alt=""><figcaption></figcaption></figure>
 
 ## Writing queries
 
@@ -40,7 +40,7 @@ The URL parameter is the only required parameter
 * `path` - accessing attributes within the response
   * `field` - rows of objects within selected attribute
 
-#### Example query:&#x20;
+#### Example query:
 
 ```
 url: https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699
@@ -48,7 +48,7 @@ path: items
 fields: ["volumeInfo.authors","volumeInfo.title","volumeInfo.publisher","accessInfo.webReaderLink"]
 ```
 
-<figure><img src="../../.gitbook/assets/image (644).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (771).png" alt=""><figcaption></figcaption></figure>
 
 #### Example query including all HTTP options:
 
@@ -77,4 +77,4 @@ fields: ["volumeInfo.authors","volumeInfo.title","volumeInfo.publisher","accessI
 
 The resulting data from the above query is a nicely formatted table that can be searched in Apica Ascent or made available as a widget in a dashboard
 
-<figure><img src="../../.gitbook/assets/image (645).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (772).png" alt=""><figcaption></figcaption></figure>

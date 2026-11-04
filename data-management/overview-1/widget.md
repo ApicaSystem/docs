@@ -5,7 +5,7 @@ This document will go over the things that the user can do inside a Widget.
 
 ## Edit Query
 
-<figure><img src="../../.gitbook/assets/image (459).png" alt=""><figcaption><p>Edit Query let's the user edit the underlying query</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (606).png" alt=""><figcaption><p>Edit Query let's the user edit the underlying query</p></figcaption></figure>
 
 ## Load more data
 
@@ -15,18 +15,18 @@ On clicking the left button -> Previous 30 minutes of the data is loaded.
 
 On clicking the right button -> Next 30 minutes of the data is loaded (if any fresh data is available)
 
-<figure><img src="../../.gitbook/assets/image (461).png" alt=""><figcaption><p>Load Previous 30 min Data</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (608).png" alt=""><figcaption><p>Load Previous 30 min Data</p></figcaption></figure>
 
 ## Query Builder
 
 The below icon will open up the Query Editor for that specific widget.\
 Using the query builder user can make changes to the underlying query.
 
-<figure><img src="../../.gitbook/assets/image (463).png" alt=""><figcaption><p>Build Query</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (609).png" alt=""><figcaption><p>Build Query</p></figcaption></figure>
 
 ## Zoom into the data
 
-<figure><img src="../../.gitbook/assets/image (469).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (614).png" alt=""><figcaption></figcaption></figure>
 
 You can zoom into a certain section of the data in the graph by dragging the slider on the bottom of the widget. This can help in the case if large datasets are loaded in the widget for visualization.
 
@@ -43,7 +43,7 @@ You can configure the widgets based on your needs:
 * **Standard Calculations**: Use standard metrics like min, max, avg, count, sum, p50, p90, p95, p99.
 * **Custom Colors**: Define unique colors for each y-axis element.
 
-<figure><img src="../../.gitbook/assets/image (530).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (670).png" alt=""><figcaption></figcaption></figure>
 
 ## More Options
 
@@ -57,4 +57,4 @@ User also has other options in the widget:
 * `View Query` -> Opens underlying query in the query editor, for advanced visualisation and data analysis.
 *   View raw data -> Pops up a Modal where user can see the data in the table view.
 
-    <figure><img src="../../.gitbook/assets/image (538).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (677).png" alt=""><figcaption></figcaption></figure>

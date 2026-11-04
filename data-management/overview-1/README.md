@@ -12,6 +12,6 @@ In the widget level:
 
 By utilising these features, users can create a tailored monitoring experience that fits their specific needs and enhances overall system oversight.
 
-<figure><img src="../../.gitbook/assets/image (451).png" alt=""><figcaption><p>Preview of data explorer with a few widgets and tabs</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (600).png" alt=""><figcaption><p>Preview of data explorer with a few widgets and tabs</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (452).png" alt=""><figcaption><p>Metric Selection panel in data explorer</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (601).png" alt=""><figcaption><p>Metric Selection panel in data explorer</p></figcaption></figure>

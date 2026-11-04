@@ -4,9 +4,7 @@ In order to interact with the shadow-root on your application you will need to m
 
 The elements JS path is required for the target in your browser check, longer targets will affect performance so optimization to the target is recommended if possible but not required.
 
-<figure><img src="../../../../.gitbook/assets/image (1099).png" alt=""><figcaption></figcaption></figure>
-
-&#x20;
+<figure><img src="../../../../.gitbook/assets/image (1024).png" alt=""><figcaption></figcaption></figure>
 
 ### Supported Commands: <a href="#supported-commands" id="supported-commands"></a>
 

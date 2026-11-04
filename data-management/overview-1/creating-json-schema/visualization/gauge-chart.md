@@ -1,6 +1,6 @@
 # Gauge chart
 
-### Json configuration&#x20;
+### Json configuration
 
 ```json
                 {
@@ -17,6 +17,4 @@
                 },
 ```
 
-
-
-<figure><img src="../../../../.gitbook/assets/image (554).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (691).png" alt=""><figcaption></figcaption></figure>

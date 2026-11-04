@@ -287,8 +287,8 @@ Open **Integrations → Forwarders → Add Forwarder → DataDog (JSON)**. Enter
 
 > To help make the steps easier to understand, below are the screenshots illustrating each of the instructions given above.
 
-<figure><img src="../../.gitbook/assets/image (1116).png" alt=""><figcaption><p>Explore Page, Select Your Log Source</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Explore Page, Select Your Log Source</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1117).png" alt=""><figcaption><p>Map Forwarder</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Map Forwarder</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1119).png" alt=""><figcaption><p>Select Datadog Forwarder</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Select Datadog Forwarder</p></figcaption></figure>

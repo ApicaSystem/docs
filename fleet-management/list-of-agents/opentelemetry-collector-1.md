@@ -6,7 +6,7 @@ description: Instructions for installing OpenTelemetry Collector agents using Fl
 
 * Click on the Install Agent Manager Button
 
-<figure><img src="../../.gitbook/assets/image (494).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (636).png" alt="" width="375"><figcaption></figcaption></figure>
 
 * Select a Platform
 * And, select an Agent Type of OpenTelemetry Collector
@@ -17,7 +17,7 @@ description: Instructions for installing OpenTelemetry Collector agents using Fl
 
 * Click on the Proceed button to generate the README instructions and installation script
 
-<figure><img src="../../.gitbook/assets/image (497).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (639).png" alt=""><figcaption></figcaption></figure>
 
 * The Download All button can be used to download these files
 * Install the Fleet agent-manager as instructed in the README instructions

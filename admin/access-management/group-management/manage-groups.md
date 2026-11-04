@@ -1,6 +1,6 @@
 # Manage Groups
 
-<figure><img src="../../../.gitbook/assets/image (1097).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1022).png" alt=""><figcaption></figcaption></figure>
 
 #### Create a Group <a href="#docs-internal-guid-59f38a88-7fff-e21e-9d95-776553ce7a02" id="docs-internal-guid-59f38a88-7fff-e21e-9d95-776553ce7a02"></a>
 
@@ -8,8 +8,6 @@
 2. Click the Create Group button.
 3. Enter a Group Name
 4. Click Create to finalize and add the new group to the system.
-
-
 
 ***
 
@@ -33,8 +31,6 @@
 5. Click the Remove button next to the member’s name.
 6. Confirm the removal in the prompt to complete the action.
 
-
-
 ***
 
 **Assign Roles to Groups**
@@ -57,8 +53,6 @@
 5. Click the Remove button next to the role’s name.
 6. Confirm the removal in the prompt to complete the action.
 
-
-
 ***
 
 **Delete an existing group**
@@ -67,4 +61,3 @@
 * Navigate to Settings > IAM > Groups
 * Find the group that you want to delete from the groups list
 * Click remove next to the group to delete the group.
-

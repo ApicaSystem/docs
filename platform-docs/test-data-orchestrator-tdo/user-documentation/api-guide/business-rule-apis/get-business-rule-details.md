@@ -1,16 +1,10 @@
 # Get Business Rule Details
 
-This API gets details on a single business rule in a coverage set.  It is sent as a POST.  The ID of the rule you want details on is included in the call.
+This API gets details on a single business rule in a coverage set. It is sent as a POST. The ID of the rule you want details on is included in the call.
 
-&#x20;
+<figure><img src="../../../../../.gitbook/assets/image (300).png" alt=""><figcaption><p>Get business rule details call</p></figcaption></figure>
 
-<figure><img src="../../../../../.gitbook/assets/image (114).png" alt=""><figcaption><p>Get business rule details call</p></figcaption></figure>
-
-&#x20;
-
-The body of the call includes the context – user ID, password, and coverage set.  No other items are required.
-
-&#x20;
+The body of the call includes the context – user ID, password, and coverage set. No other items are required.
 
 ```
 {
@@ -29,10 +23,6 @@ The body of the call includes the context – user ID, password, and coverage se
 }
 ```
 
-&#x20;
-
 The return message on this API gives all details on the specified rule, including created by, updated by, and all of the conditions.
 
-&#x20;
-
-<figure><img src="../../../../../.gitbook/assets/image (115).png" alt=""><figcaption><p>Return message showing business rule details</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (301).png" alt=""><figcaption><p>Return message showing business rule details</p></figcaption></figure>

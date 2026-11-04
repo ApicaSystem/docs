@@ -2,7 +2,7 @@
 
 ## Overview
 
-Permissions are essential for regulating access to a resource, ensuring that only authorized users can perform specific actions. Different levels of permissions can be assigned, ranging from read-only access, where users can view the data without making alterations, to full control, allowing users to modify and manage the resource completely.&#x20;
+Permissions are essential for regulating access to a resource, ensuring that only authorized users can perform specific actions. Different levels of permissions can be assigned, ranging from read-only access, where users can view the data without making alterations, to full control, allowing users to modify and manage the resource completely.
 
 **Components of a Permission:**
 
@@ -10,11 +10,11 @@ Permissions are essential for regulating access to a resource, ensuring that onl
 * Resources: The specific assets or data (e.g., databases, files, services) that the permission controls access to.
 * Actions: The operations permitted on the resources, such as read, write, delete, or execute.
 
-<figure><img src="../../../.gitbook/assets/image (1092).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1018).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
-### &#x20;Add permissions to a policy
+### Add permissions to a policy
 
 To add permissions:
 
@@ -30,7 +30,7 @@ Example: If you choose only the Read action on a Postgres data source, users wit
 
 ***
 
-### &#x20;Remove permissions from a policy
+### Remove permissions from a policy
 
 To remove a permission:
 
@@ -41,7 +41,7 @@ To remove a permission:
 
 ***
 
-### &#x20;Permissions types and scopes
+### Permissions types and scopes
 
 All policies created by users are categorized as customer-managed policies. These policies provide full flexibility in defining:
 

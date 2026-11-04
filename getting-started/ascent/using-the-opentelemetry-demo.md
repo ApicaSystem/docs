@@ -2,11 +2,11 @@
 
 ## What is the OpenTelemetry (OTel) Demo?
 
-The OTel Demo is a microservices-based application created by OpenTelemetry's community to demonstrate its capabilities in a realistic, distributed system environment. This demo application, known as the OpenTelemetry Astronomy Shop, simulates an e-commerce website composed of over 10 interconnected microservices (written in multiple languages), and communicates via HTTP and gRPC. Each service is fully instrumented with OTel, generating comprehensive traces, metrics, and logs.&#x20;
+The OTel Demo is a microservices-based application created by OpenTelemetry's community to demonstrate its capabilities in a realistic, distributed system environment. This demo application, known as the OpenTelemetry Astronomy Shop, simulates an e-commerce website composed of over 10 interconnected microservices (written in multiple languages), and communicates via HTTP and gRPC. Each service is fully instrumented with OTel, generating comprehensive traces, metrics, and logs.
 
 The demo serves as an invaluable resource for understanding how to implement and use OpenTelemetry in real-world applications. Using the Ascent platform with the OTel Demo enables you to converge all of the IT data, manage the telemetry data, and monitor and troubleshoot the operational data in real-time. The following steps guide you through the process of using the OTel Demo application with Ascent.
 
-<figure><img src="../../.gitbook/assets/image (927).png" alt=""><figcaption><p>Ascent Quick Start Process</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (189).png" alt=""><figcaption><p>Ascent Quick Start Process</p></figcaption></figure>
 
 ## Quick Start Process for Using the OTel Demo with Ascent
 
@@ -25,7 +25,7 @@ In these steps, we cover the key goals and related activities to ensure a quick 
 
 The goal is to ingest telemetry data (logs, metrics, traces) from relevant systems.
 
-**Key actions include:**&#x20;
+**Key actions include:**
 
 * Accessing and deploying the public OpenTelemetry (OTel) Demo App
 * Configure data collection setup, frequency and granularity
@@ -118,7 +118,7 @@ Paste the following into the config file, overwriting it completely:
 3. Replace \<YOUR-INGEST-TOKEN>with your Ascent Ingest Token, e.g. eyXXXXXXXXXXX...
    1. See 'Step 7' to get your 'ingest-token'
 4. Optional if you want to change the namespace and or application (to help ID your data in Ascent):\
-   `logs_endpoint:  https://<YOUR-ASCENT-ENV>/v1/json_batch/otlplogs?namespace=<NAMESPACE_HERE>&application=<APPLICATION_NAME_HERE>`
+   `logs_endpoint: https://<YOUR-ASCENT-ENV>/v1/json_batch/otlplogs?namespace=<NAMESPACE_HERE>&application=<APPLICATION_NAME_HERE>`
    1. Update \<NAMESPACE\_HERE> and \<APPLICATION\_NAME\_HERE> for a custom namespace and application in Ascent.
 
 ### Step 7: Get Your Ingest Token from Ascent:
@@ -136,16 +136,12 @@ Restart the OpenTelemetry collector by running the following command:
 1. Log into Ascent
 2. Navigate to Explore -> Logs & Insights:
 
-<figure><img src="../../.gitbook/assets/image (975).png" alt=""><figcaption><p>Logs &#x26; Insights</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (904).png" alt=""><figcaption><p>Logs &#x26; Insights</p></figcaption></figure>
 
 3.  You should see namespace "OtelDemo" and Application "DemoLogs":<br>
 
-    <figure><img src="../../.gitbook/assets/image (976).png" alt=""><figcaption></figcaption></figure>
-
-
-4. This confirms that data is flowing from the Opentelemetry Demo Application. Feel free to click into application "DemoLogs" to view all the logs that are being sent from the Demo App.&#x20;
-
-
+    <figure><img src="../../.gitbook/assets/image (905).png" alt=""><figcaption></figcaption></figure>
+4. This confirms that data is flowing from the Opentelemetry Demo Application. Feel free to click into application "DemoLogs" to view all the logs that are being sent from the Demo App.
 
 **Now that data is flowing, please follow the steps below to learn how to interact, enhance, and visualize this data in Ascent.**
 
@@ -214,83 +210,75 @@ The goal is to detect anomalies and automate response actions.
 
 ### FLOW - Cost Savings Use Case
 
-FLOW allows you to filter unecessary data out of your logs before hitting the data lake which leads to significant cost savings. This guide will walk you through how to drop labels from our Otel Demo App logs. You can apply the same functionality to any other data source.&#x20;
-
-
+FLOW allows you to filter unecessary data out of your logs before hitting the data lake which leads to significant cost savings. This guide will walk you through how to drop labels from our Otel Demo App logs. You can apply the same functionality to any other data source.
 
 1. Navigate to the Logs & Insights page:
 
-<figure><img src="../../.gitbook/assets/image (997).png" alt=""><figcaption><p>Logs &#x26; Insights</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (926).png" alt=""><figcaption><p>Logs &#x26; Insights</p></figcaption></figure>
 
 2. This view lists all of the datasources pushing data to Ascent. To access the logs, click into "DemoLogs".
 
-<figure><img src="../../.gitbook/assets/image (996).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (925).png" alt=""><figcaption></figcaption></figure>
 
-3. To view one of the logs simply click one of them.&#x20;
+3. To view one of the logs simply click one of them.
 
-<figure><img src="../../.gitbook/assets/image (998).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (927).png" alt=""><figcaption></figcaption></figure>
 
 4. We have one of our otel logs here. In this example, we will be dropping "destination.address" and "event.name" from the logs.
 
-<figure><img src="../../.gitbook/assets/image (993).png" alt=""><figcaption><p>Otel Demo App Logs</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (922).png" alt=""><figcaption><p>Otel Demo App Logs</p></figcaption></figure>
 
 5. To drop these fields, navigate to the Pipeline tab and then click the + button shown below:
 
-<figure><img src="../../.gitbook/assets/image (1003).png" alt=""><figcaption><p>Pipeline View</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (932).png" alt=""><figcaption><p>Pipeline View</p></figcaption></figure>
 
 5. Create a new Pipeline:
 
-<figure><img src="../../.gitbook/assets/image (1000).png" alt="" width="563"><figcaption><p>New Pipeline</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (929).png" alt="" width="563"><figcaption><p>New Pipeline</p></figcaption></figure>
 
 7. Add a new Filter Rule. If you're interested in the other rules please use this documentation: [https://docs.apica.io/flow/rules](https://docs.apica.io/flow/rules) for a detailed guide.
 
-<figure><img src="../../.gitbook/assets/image (986).png" alt="" width="563"><figcaption><p>Filter Rule </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (915).png" alt="" width="563"><figcaption><p>Filter Rule</p></figcaption></figure>
 
 8. Enable Drop Labels by click the slider:
 
-<figure><img src="../../.gitbook/assets/image (987).png" alt="" width="563"><figcaption><p>Drop Labels</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (916).png" alt="" width="563"><figcaption><p>Drop Labels</p></figcaption></figure>
 
 9. On the right of the screen you'll want to preview the logs to know what labels to drop. Select the following and then hit Preview in the top right:
 
-<figure><img src="../../.gitbook/assets/image (988).png" alt=""><figcaption><p>Preview Logs</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (917).png" alt=""><figcaption><p>Preview Logs</p></figcaption></figure>
 
 10. Here are the two labels we want to drop:
 
-<figure><img src="../../.gitbook/assets/image (1002).png" alt=""><figcaption><p>Labels</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (931).png" alt=""><figcaption><p>Labels</p></figcaption></figure>
 
 11. Select the key in the dropdown by typing them out or clicking.
 
-<figure><img src="../../.gitbook/assets/image (990).png" alt=""><figcaption><p>Select Label</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (919).png" alt=""><figcaption><p>Select Label</p></figcaption></figure>
 
 12. Click "Save" in the bottom right:
 
-<figure><img src="../../.gitbook/assets/image (819).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
 12. Go back to the log view to verify the filter rule has been applied. Refresh the page and make sure it is a new log that you're verifying:
 
-<figure><img src="../../.gitbook/assets/image (995).png" alt=""><figcaption><p>Logs &#x26; Insights</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (924).png" alt=""><figcaption><p>Logs &#x26; Insights</p></figcaption></figure>
 
 13. As you can see, destination.address and event.name are no longer being ingested:
 
-<figure><img src="../../.gitbook/assets/image (991).png" alt=""><figcaption><p>Otel Log</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (920).png" alt=""><figcaption><p>Otel Log</p></figcaption></figure>
 
 Dropping a few labels might not seem like a big deal at first, but if you exrapolate that over 10,000 or 100,000's logs, the cost savings start to add up QUICK.
 
 \
 14\. To view savings and your configured pipelines navigate to "Pipelines":
 
-<figure><img src="../../.gitbook/assets/image (1004).png" alt=""><figcaption><p>Pipelines</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (933).png" alt=""><figcaption><p>Pipelines</p></figcaption></figure>
 
 15. View all your pipeline data along with savings:<br>
 
-    <figure><img src="../../.gitbook/assets/image (1005).png" alt=""><figcaption><p>Pipeline Dashboard</p></figcaption></figure>
-
-
+    <figure><img src="../../.gitbook/assets/image (934).png" alt=""><figcaption><p>Pipeline Dashboard</p></figcaption></figure>
 16. For more information on pipelines please see [setup and configure pipelines](using-the-opentelemetry-demo.md#step-10-setup-and-configure-pipeline)
-
-
 
 **Links to related docs include:**
 

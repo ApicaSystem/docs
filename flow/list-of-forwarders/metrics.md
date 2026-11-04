@@ -8,7 +8,7 @@ The **OTLP Metrics Forwarder** lets you send metrics in OTLP format (OpenTelemet
 
 You can find it in the Forwarders Section:
 
-<figure><img src="../../.gitbook/assets/image (730).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (848).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -18,6 +18,6 @@ You can find it in the Forwarders Section:
 
 Once you create a forwarder, the forwarder can then be mapped to any of your `namespaces/apps` that are currently receiving OTEL formatted metrics.
 
-<figure><img src="../../.gitbook/assets/image (732).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (849).png" alt=""><figcaption></figcaption></figure>
 
 All the events that match the OTEL protocol - would be forwarded to the relevant endpoint given in the forwarder.

@@ -59,7 +59,7 @@
   * [Data Fabric](product-overview/release-notes/release-notes.md)
   * [Synthetic Monitoring](product-overview/release-notes/synthetic-monitoring.md)
   * [Advanced Scripting Engine](product-overview/release-notes/advanced-scripting-engine.md)
-  * [IRONdb](platform-docs/irondb/release-notes.md)
+  * [IRONdb](product-overview/release-notes/release-notes-1.md)
 
 ## TECHNOLOGIES
 
@@ -104,7 +104,7 @@
 
 ## DATA SOURCES
 
-* [Data Source Overview](data-sources/overview.md)
+* [Data Source Overview](data-sources/overview/README.md)
   * [Creating Data Sources in Apica Ascent](data-sources/overview/creating-data-sources-in-apica-ascent.md)
 * [API Overview](data-sources/api/README.md)
   * [JSON Data source](data-sources/api/json-data-source.md)
@@ -155,7 +155,7 @@
     * [Azure Databricks](integrations/list-of-integrations/azure/azure-databricks.md)
     * [Azure Eventhub](integrations/list-of-integrations/azure/azure-eventhub.md)
     * [Azure Event Hubs](integrations/list-of-integrations/azure/azure-event-hubs.md)
-  * [Check Point Log Exporter](integrations/list-of-integrations/check-point-log-exporter/README.md)
+  * [Check Point Log Exporter](integrations/list-of-integrations/check-point-log-exporter.md)
   * [Docker Compose](integrations/list-of-integrations/docker-compose.md)
   * [Docker Swarm logging](integrations/list-of-integrations/docker-swarm-logging.md)
   * [Docker Syslog log driver](integrations/list-of-integrations/docker-syslog-log-driver.md)
@@ -392,7 +392,7 @@
   * [Ascent.lookups](flow/functions/ascent.lookups.md)
 * [Forwarding to Target Destinations](flow/forwarding-to-monitoring-tools.md)
 * [Persistence Queue for Forwarder Buffers](flow/persistence-queue-for-forwarder-buffers.md)
-* [List of Forwarders](flow/list-of-forwarders.md)
+* [List of Forwarders](flow/list-of-forwarders/README.md)
   * [Amazon Security Lake](flow/list-of-forwarders/amazon-security-lake.md)
   * [ArcSight](flow/list-of-forwarders/arc-sight.md)
   * [AWS Kinesis](flow/list-of-forwarders/aws-kinesis.md)

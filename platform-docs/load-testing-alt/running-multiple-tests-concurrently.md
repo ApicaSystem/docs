@@ -12,9 +12,9 @@ Scenarios can contain ZebraTester scripts, Selenium scripts, or URL scripts. Sce
 
 To create a Scenario, navigate to “Loadtest > Create & Run Scenario”:
 
-<figure><img src="../../.gitbook/assets/image (617).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (744).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (616).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (743).png" alt=""><figcaption></figcaption></figure>
 
 ## Creating a Scenario <a href="#creating-a-scenario" id="creating-a-scenario"></a>
 
@@ -47,7 +47,7 @@ To configure advanced options for each script, click the “gear” icon to the 
 
 The “Script Options” step will only appear if you click the “Script Config” button to the right of a script within the “Scripts” tab.
 
-The Advanced Options section defines flow control for users and load test engine options. The **Max Loops per User** section defines the number of times an individually defined user will loop through the script. The **Request Timeout (sec)** defines the time a request will wait for a server response. It is possible to define **Additional Options** on a Scenario level. These additional options will apply to all scripts in the scenario. Users can define additional options exactly as they would for an individual load test. The **User Input text files** allow the external input of files containing User-Defined Variables.&#x20;
+The Advanced Options section defines flow control for users and load test engine options. The **Max Loops per User** section defines the number of times an individually defined user will loop through the script. The **Request Timeout (sec)** defines the time a request will wait for a server response. It is possible to define **Additional Options** on a Scenario level. These additional options will apply to all scripts in the scenario. Users can define additional options exactly as they would for an individual load test. The **User Input text files** allow the external input of files containing User-Defined Variables.
 
 Users must define a cluster of locations from which their test will be run in the **Locations** section. Select the Load Generation location, or Cluster of Load Generation locations before running the test. Select from the map or use the dropdown box for a list of all locations/clusters. Note that users can select a set of locations and then save them as a Cluster for easier re-use.
 
@@ -64,7 +64,5 @@ If you have included a DNS Hosts or DNS Translation file as part of a script (in
 Define additional test options, such as reporting, as directed in this step.
 
 The schedule determines when the scenario will run. You must schedule at least one run.
-
-&#x20;
 
 When the schedule has been defined, the load test can be saved and initiated. When the test is initiated, the user will be brought to the Jobs page, where they will be able to observe the Scenario as it runs.

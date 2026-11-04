@@ -12,7 +12,7 @@ This checks can also be forwarded to further downstream destinations for further
 
 * Navigate to the Integrations page and click on the New Plugin button and select Apica option.
 
-<figure><img src="../../.gitbook/assets/image (194).png" alt=""><figcaption><p>Integrations page -> Create Apica Plugin</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (369).png" alt=""><figcaption><p>Integrations page -> Create Apica Plugin</p></figcaption></figure>
 
 * Provide the Plugin Name of choice and click Next.
 

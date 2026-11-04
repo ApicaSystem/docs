@@ -13,14 +13,14 @@ This integration enables Turbonomic to consume high-quality, filtered, and enric
 The integration follows this flow (see diagram):
 
 Telemetry Sources (ex; Splunk, Datadog, Dynatrace, Appdynamics, AWS Cloudwatch )\
-&#x20;  ↓\
+↓\
 Apica Flow\
-&#x20;  ↓  (OTel Metrics Forwarding)\
+↓ (OTel Metrics Forwarding)\
 Prometheus\
-&#x20;  ↓  (Prometurbo)\
+↓ (Prometurbo)\
 IBM Turbonomic
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 **Key components:**
 
@@ -79,19 +79,19 @@ Once Prometurbo is deployed, metrics collection from Prometheus must be enabled 
 
 **Result:** Turbonomic begins ingesting metrics from Prometheus that originated from Apica Flow.
 
-### &#x20;End-to-End Data Flow Summary
+### End-to-End Data Flow Summary
 
-1\.        Telemetry sources emit metrics
+1\. Telemetry sources emit metrics
 
-2\.        Apica Flow ingests, filters, enriches, and forwards metrics
+2\. Apica Flow ingests, filters, enriches, and forwards metrics
 
-3\.        Metrics are forwarded in OpenTelemetry format to Prometheus
+3\. Metrics are forwarded in OpenTelemetry format to Prometheus
 
-4\.        Prometurbo pulls metrics from Prometheus
+4\. Prometurbo pulls metrics from Prometheus
 
-5\.        IBM Turbonomic consumes metrics to drive optimization decisions
+5\. IBM Turbonomic consumes metrics to drive optimization decisions
 
-### &#x20;Benefits of This Integration
+### Benefits of This Integration
 
 * Vendor-neutral telemetry using OpenTelemetry standards
 * Centralized control over metric volume and quality via Apica Flow

@@ -12,7 +12,7 @@ You can find **Source Extensions** under the Integrations menu.
 
 Once inside the Source Extension menu, select **New Source Extension** and then **AWS S3/Compatible Object store**:
 
-<figure><img src="../../.gitbook/assets/Picture1 (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Picture1 (3).png" alt=""><figcaption></figcaption></figure>
 
 Create the extension and provide the settings for accessing your object store bucket. The settings menu provides options that allow customization that is specific to vendor object store implementations.
 
@@ -28,4 +28,4 @@ By default, the s3 compat ingest plugin will pull all your files under the prefi
 
 S3 Compat will push all your files to a separate bucket before deleting them from the source bucket. To configure a bucket for taking a backup, you should provide the name of the bucket in the **destination bucket** form field in the input plugin modal. The files will be stored with the structure used in the source bucket.
 
-<figure><img src="../../.gitbook/assets/image (308).png" alt=""><figcaption><p>Taking backup logs in a separate bucket</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (473).png" alt=""><figcaption><p>Taking backup logs in a separate bucket</p></figcaption></figure>

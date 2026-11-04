@@ -18,7 +18,7 @@ The process of creating and uploading a script within ALT includes the following
 5. Analyze the script results using a feature-rich GUI (**Analyze**)
 6. Run reports and distribute to necessary decision makers (**Report**)
 
-<figure><img src="../../.gitbook/assets/image (601).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (730).png" alt=""><figcaption></figcaption></figure>
 
 ## Reasons to Utilize ALT <a href="#reasons-to-utilize-alt" id="reasons-to-utilize-alt"></a>
 
@@ -34,7 +34,7 @@ The process of creating and uploading a script within ALT includes the following
 
 ALT is a solution consisting of two components, but even though both products are useful by themselves, they should be considered and used as an integrated whole in order to get the most out of load testing. With this integration, scripts and results can be uploaded and downloaded freely between ZebraTester and Apica Load Test:
 
-![](<../../.gitbook/assets/image (602).png>)
+![](<../../.gitbook/assets/image (731).png>)
 
 ### 1. Performance Management with the Apica Load Test Portal <a href="#id-1.-performance-management-with-the-apica-load-test-portal" id="id-1.-performance-management-with-the-apica-load-test-portal"></a>
 
@@ -67,7 +67,7 @@ Apica LoadTest can be used on its own, without ZebraTester scenarios, for many i
 * Manage all your scenarios within the portal for easier project management.
 * Integrate directly with the Apica LoadTest in ZebraTester for easy management of scenarios and results.
 
-<figure><img src="../../.gitbook/assets/image (604).png" alt="" width="480"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (732).png" alt="" width="480"><figcaption></figcaption></figure>
 
 ### ZebraTester Use Cases <a href="#zebratester-use-cases" id="zebratester-use-cases"></a>
 
@@ -79,4 +79,4 @@ Apica ZebraTester is an enterprise-grade load and stress-testing product trusted
 
 Apica ZebraTester executes web load tests up to nearly unlimited levels at a depth unparalleled by other testing tools. A powerful GUI allows you to create sophisticated, custom load test scripts easily and intuitively.
 
-<figure><img src="../../.gitbook/assets/image (605).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (733).png" alt="" width="563"><figcaption></figcaption></figure>

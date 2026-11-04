@@ -16,7 +16,7 @@ In the DB Tables section, click on the name(s) of the tables you want to work wi
 
 To remove a table from the selection list, click the ‘<’ button.
 
-<figure><img src="../../../../.gitbook/assets/image (395).png" alt=""><figcaption><p>Selecting database tables</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (551).png" alt=""><figcaption><p>Selecting database tables</p></figcaption></figure>
 
 You can also search for a table name, in the field above the list of tables, start to type the name of the table (or a word in the table name). This list of tables displayed will be reduced to only those that match what you have typed in.
 
@@ -28,7 +28,7 @@ Now you can select the list of fields you want to include in your extract. Note 
 
 This is how the list should look after fields are selected:
 
-<figure><img src="../../../../.gitbook/assets/image (397).png" alt=""><figcaption><p>Field selection block</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (553).png" alt=""><figcaption><p>Field selection block</p></figcaption></figure>
 
 Note that tables and fields will only show in one list – available (left) or selected (right).
 
@@ -42,11 +42,11 @@ To match a field to a determining attribute, select a field from the database fi
 
 Available operators are = (equal), <> (not equal), > (greater than), < (less than), >= (greater than or equal to), <= (less than or equal to), and ‘like’ (when the field contains the determining attribute string as part of it’s contents).
 
-<figure><img src="../../../../.gitbook/assets/image (398).png" alt=""><figcaption><p>Matching fields to criteria - selecting the field</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (554).png" alt=""><figcaption><p>Matching fields to criteria - selecting the field</p></figcaption></figure>
 
 You can add one or more rules. You must use at least one rule but are not required to use every determining attribute from your coverage matrix as part of the criteria. A completed list of selection criteria is shown below:
 
-<figure><img src="../../../../.gitbook/assets/image (399).png" alt=""><figcaption><p>Sample rules for data extract</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (555).png" alt=""><figcaption><p>Sample rules for data extract</p></figcaption></figure>
 
 The ‘Row count per condition’ field is used to manage the quantity of data you extract. If you select 1, then for each row in your coverage matrix TDX will retrieve exactly one matching item from your source database. In the screen print higher up, TDX has a row count of 10. In this case, if the coverage matrix has 24 rows, then TDX would retrieve 240 rows of data (10 matching data items for each row in the coverage matrix). This allows you to assemble data for more than one round of testing before performing a new extract.
 
@@ -54,19 +54,19 @@ The ‘Row count per condition’ field is used to manage the quantity of data y
 
 If you are extracting from two or more tables, TDX needs to know how those tables should be joined. This is done in the ‘Where clause’ line below the selection criteria. In the sample where statement below, the ‘customer\_id’ field in both the accounts and customers table is used as the common field between the two tables.
 
-<figure><img src="../../../../.gitbook/assets/image (400).png" alt=""><figcaption><p>Example of table join criteria</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (556).png" alt=""><figcaption><p>Example of table join criteria</p></figcaption></figure>
 
 Any SQL statement can be included in this line. More than two tables can be joined if all of the tables are logically joined. For example, let’s say we also had a ‘branches’ table used, and the ‘branch\_id’ was in both the accounts and branches table. Our where clause would then read _orson\_test.accounts.customer\_id = orson\_test.customers.customer\_id AND orson\_test.accounts.branch\_id = orson\_test.branches.branch\_id_.
 
 Also note that a one-to-one relationship is not required. In the example above, each customer appears once in the customers table but can appear multiple times in the accounts table. Each account will be matched only once, but a customer might have multiple accounts selected for testing.
 
-### Passing Values from TDO to Output&#x20;
+### Passing Values from TDO to Output
 
-You also have the option to pass values directly from the coverage matrix, and to add things (such as a row number) on the end of the file if desired.  Immediately below the Coverage Matrix Criteria section is a row titled 'Additional Fields'.
+You also have the option to pass values directly from the coverage matrix, and to add things (such as a row number) on the end of the file if desired. Immediately below the Coverage Matrix Criteria section is a row titled 'Additional Fields'.
 
-<figure><img src="../../../../.gitbook/assets/image (176).png" alt=""><figcaption><p>Passing additional fields</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1196).png" alt=""><figcaption><p>Passing additional fields</p></figcaption></figure>
 
-To pass one or more fields from the coverage matrix directly to the output file, type in a colon plus the field name to be passed (ex: ':channel' will pass the value from the "Channel" field in each row as part of the extract).  Multiple fields can be passed, and they should be separated by a comma. &#x20;
+To pass one or more fields from the coverage matrix directly to the output file, type in a colon plus the field name to be passed (ex: ':channel' will pass the value from the "Channel" field in each row as part of the extract). Multiple fields can be passed, and they should be separated by a comma.
 
 To create a row number in your output file, use the 'rownum as row\_num' - this specifies that a row number should be passed using the field name 'row\_num'.
 
@@ -82,11 +82,11 @@ Before extracting, it is recommended that you save this profile so that you can 
 
 When you are ready to extract, click the ‘Extract Data’ button. A progress window will pop up. Once the extract is completed, a message will inform you that the data block is ready. Click the ‘OK’ button to proceed.
 
-<figure><img src="../../../../.gitbook/assets/image (402).png" alt=""><figcaption><p>Extract complete message</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (558).png" alt=""><figcaption><p>Extract complete message</p></figcaption></figure>
 
 Before going to TDO to view use the extracted data, you can view the run data in the terminal window to see how the extract progressed. (You may have to scroll up to see the ‘Executing query’ portion of the log.)
 
-<figure><img src="../../../../.gitbook/assets/image (403).png" alt=""><figcaption><p>Generated SQL query in terminal window</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (559).png" alt=""><figcaption><p>Generated SQL query in terminal window</p></figcaption></figure>
 
 This shows the generated SQL query that was executed.
 

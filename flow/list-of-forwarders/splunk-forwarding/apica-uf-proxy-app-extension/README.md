@@ -21,15 +21,15 @@ Follow the steps below to create an S2F forwarder to a Splunk indexer:
 
 The Splunk plugin for output configurations can be launched from the `Source Extensions` section under `Integrations`.
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (192).png" alt=""><figcaption></figcaption></figure>
 
 Selecting the `Forwarding Proxy` source extension gives you the configured proxies as well as the ability to create a new one.<br>
 
-<figure><img src="../../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption><p>List of configured Splunk Forwarding Proxies</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (193).png" alt=""><figcaption><p>List of configured Splunk Forwarding Proxies</p></figcaption></figure>
 
 You can expand on the proxy to see its settings. The `hec_token` can be used to setup the `forwarder`.<br>
 
-<figure><img src="../../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Proxy Settings upon expanding</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (194).png" alt=""><figcaption><p>Proxy Settings upon expanding</p></figcaption></figure>
 
 Note that a HEC forwarder is automatically created alongside the source extension. This forwarder is set up to send logs to the source extension. To use this source extension for forwarding, users need to manually map this forwarder to the required data flow.
 
@@ -41,4 +41,4 @@ Please refer to the guides below on how to configure each of these options
 2. [List of Indexer Instances](list-of-indexer-instances.md)
 3. [Indexer Cluster Auto-discovery](indexer-discovery.md)
 
-Note: The Splunk Forwarder Proxy Source Extension also provides an option to upload the `outputs.conf` and the `server.conf`  with the [Upload Confs](upload-confs.md).
+Note: The Splunk Forwarder Proxy Source Extension also provides an option to upload the `outputs.conf` and the `server.conf` with the [Upload Confs](upload-confs.md).

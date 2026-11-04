@@ -1,6 +1,6 @@
 # Pie chart
 
-### Json configuration&#x20;
+### Json configuration
 
 ```json
                 {
@@ -17,6 +17,4 @@
                 },
 ```
 
-
-
-<figure><img src="../../../../.gitbook/assets/image (558).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (695).png" alt=""><figcaption></figcaption></figure>

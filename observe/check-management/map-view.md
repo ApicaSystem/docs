@@ -6,6 +6,6 @@ The map view of checks provides an overview of all the checks integrated with AS
 
 Hovering on an individual check will show you the count and status of all the checks on that location.
 
-<figure><img src="../../.gitbook/assets/image (171).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (351).png" alt=""><figcaption></figcaption></figure>
 
 clicking on the marker will take you to the list view showing the details of that location and highest state checks.

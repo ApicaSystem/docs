@@ -6,7 +6,7 @@ description: Instructions for installing fluent-bit agents using Fleet.
 
 * Click on the Install Agent Manager Button
 
-<figure><img src="../../.gitbook/assets/image (494).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (636).png" alt="" width="375"><figcaption></figcaption></figure>
 
 * Select a Platform
 * And, select an Agent Type of Prometheus

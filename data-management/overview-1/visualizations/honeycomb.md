@@ -26,7 +26,7 @@ Common states:
 * Yellow = Warning / Degraded
 * Red = Down / Critical
 
-<figure><img src="../../../.gitbook/assets/image (556).png" alt="Example Honeycomb chart showing many instances as hexagons with status colors"><figcaption><p>Example Honeycomb status chart</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (693).png" alt="Example Honeycomb chart showing many instances as hexagons with status colors"><figcaption><p>Example Honeycomb status chart</p></figcaption></figure>
 
 ### Configure a Honeycomb chart
 

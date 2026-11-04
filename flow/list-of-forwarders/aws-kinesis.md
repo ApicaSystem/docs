@@ -18,6 +18,6 @@ description: AWS Kinesis is the AWS managed service for doing real time stream p
 * Provide access key, secret key, and stream name
 * Click `Create` button
 
-<figure><img src="../../.gitbook/assets/image (523).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (664).png" alt=""><figcaption></figcaption></figure>
 
 Whenever the data is getting ingested and its attributes are mapped to AWS kinesis, then that data will be forwarded to the kinesis stream. All types of machine data are supported: logs, metrics, events, alerts, and traces.

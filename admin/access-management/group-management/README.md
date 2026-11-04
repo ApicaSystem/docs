@@ -10,4 +10,4 @@ Groups are a way to organize users with similar roles or responsibilities. Inste
 2. Assigned Roles: One or more roles linked to the group that define the specific permissions and access rights granted to users under this group.
 3. Assigned users: The users assigned to the group, determining who inherits the associated permissions of the roles.
 
-<figure><img src="../../../.gitbook/assets/image (1096).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1021).png" alt=""><figcaption></figcaption></figure>

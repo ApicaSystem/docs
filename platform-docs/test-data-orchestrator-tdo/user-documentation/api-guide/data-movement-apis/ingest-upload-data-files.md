@@ -20,7 +20,7 @@ The file contents are the body of the message for the POST request, and for the 
 
 The POST request format is http://\<server:port>/core/1.0/API/upload.
 
-<figure><img src="../../../../../.gitbook/assets/image (582).png" alt=""><figcaption><p>Header and body of POST message - data in body</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (716).png" alt=""><figcaption><p>Header and body of POST message - data in body</p></figcaption></figure>
 
 The return message contains the UUID for the object as well as the sample for the second API.
 
@@ -28,13 +28,13 @@ The return message contains the UUID for the object as well as the sample for th
 
 The format of the request remains the same (URL). In your automation tool (Postman is used here to demonstrate) select 'binary' as the format for the body of the request. A 'select file' box will be displayed. Click on the '+' sign next to 'New file from local machine' and a file explorer/file selection window will open. Navigate to the desired file, highlight it, and click 'Open' and the file name will populate in the window.
 
-<figure><img src="../../../../../.gitbook/assets/image (584).png" alt=""><figcaption><p>Selecting the path/file using 'binary'</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (717).png" alt=""><figcaption><p>Selecting the path/file using 'binary'</p></figcaption></figure>
 
 Note that any automation program that supports binary as an input option in the body (e.g., Insomnia, Postman, etc.) will support this process.
 
 Click 'Send' to run this call, and you will receive the same return message as shown above.
 
-<figure><img src="../../../../../.gitbook/assets/image (585).png" alt=""><figcaption><p>Return message - file and path identified in body of message</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (718).png" alt=""><figcaption><p>Return message - file and path identified in body of message</p></figcaption></figure>
 
 #### PUT Request to identify data in TDO
 
@@ -42,12 +42,12 @@ The second API URL is http://\<server:port>/core/1.0/API/project/\<project-name>
 
 In Postman, the header line, body, and response for a new file put will look like the below example. TDO will automatically version the upload - if this data block ('test3\_block') already exists as version 1.0, TDO will assign version 1.1 to your uploaded data. If this data block name is new in the project, TDO will assign version 1.0.
 
-<figure><img src="../../../../../.gitbook/assets/image (586).png" alt=""><figcaption><p>PUT command and response message in Postman</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (719).png" alt=""><figcaption><p>PUT command and response message in Postman</p></figcaption></figure>
 
 After this is run, you can see the resulting data block in TDO. You will not be able to see the data block in TDO until this call is completed; this is what associates the data to a specific project and data block name.
 
-<figure><img src="../../../../../.gitbook/assets/image (574).png" alt=""><figcaption><p>Newly created data block in TDO (bottom of list)</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (710).png" alt=""><figcaption><p>Newly created data block in TDO (bottom of list)</p></figcaption></figure>
 
 The contents of the data block can be viewed in TDO.
 
-<figure><img src="../../../../../.gitbook/assets/image (575).png" alt=""><figcaption><p>Contents of first row of data</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (711).png" alt=""><figcaption><p>Contents of first row of data</p></figcaption></figure>

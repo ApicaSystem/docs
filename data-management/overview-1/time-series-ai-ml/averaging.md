@@ -13,15 +13,11 @@ The averaging feature adds a moving average of the target value column to the da
 
 **Steps to visualize averaging for a query:**
 
-
-
 1. Go to plot section .
 2. Select the chart type as a line for better visualization.
-3. Select the time column as the X column and the value column as the Y column. Add the moving average columns i.e. columns with the prefix MA, into the Y column multi-selection box.&#x20;
-4. Click on Apply  button, A graph similar to the following picture must be rendered.
+3. Select the time column as the X column and the value column as the Y column. Add the moving average columns i.e. columns with the prefix MA, into the Y column multi-selection box.
+4. Click on Apply button, A graph similar to the following picture must be rendered.
 
-
-
-<figure><img src="../../../.gitbook/assets/image (536).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (675).png" alt=""><figcaption></figcaption></figure>
 
 <br>

@@ -1,6 +1,6 @@
 # Area chart
 
-To configure a Area chart that  use the following JSON object. This configuration includes setting the chart type to `area`, specifying necessary plot parameters, and providing a monitoring query .
+To configure a Area chart that use the following JSON object. This configuration includes setting the chart type to `area`, specifying necessary plot parameters, and providing a monitoring query .
 
 ```json
 {
@@ -23,6 +23,4 @@ To configure a Area chart that  use the following JSON object. This configuratio
 }
 ```
 
-
-
-<figure><img src="../../../../.gitbook/assets/image (550).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (687).png" alt=""><figcaption></figcaption></figure>
