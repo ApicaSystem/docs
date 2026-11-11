@@ -6,7 +6,7 @@ description: This page explains how to forward logs to Dynatrace from Apica.
 
 To Generate an API Key from Dynatrace, please follow the instructions in this [link](https://www.dynatrace.com/support/help/dynatrace-api/basics/dynatrace-api-authentication).
 
-NOTE: Make sure to add the "logs.ingest" scope during token creation.
+NOTE: Make sure to add the "openpipeline:logs:ingest" scope during token creation.
 
 ### Steps to Create Dynatrace Forwarding <a href="#steps-to-create-new-relic-forwarding" id="steps-to-create-new-relic-forwarding"></a>
 
