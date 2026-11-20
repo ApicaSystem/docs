@@ -169,3 +169,23 @@ _**More reliable agent status, cleaner agent pages, and ingest tokens that are n
 * Fixed agent tag rendering, Agent Types dropdown sizing and tag padding.
 * Fixed misaligned controls on the Agents and Agent Types pages.
 * Ingest tokens no longer expire after 60 minutes or depend on the browser session.
+
+***
+
+### Component Versions 4.0.1
+
+| Component                              | Version                                        |
+| -------------------------------------- | ---------------------------------------------- |
+| Flash                                  | v4.1.0                                         |
+| Coffee                                 | v4.1.0                                         |
+| ASM                                    | 14.0.5                                         |
+| NG Private Agent                       | 1.0.9                                          |
+| Check Execution Container: Browser     | fpr-c-149-10.3.4-772-r-2026.01.21-0-base-2.0.0 |
+| Check Execution Container: Zebratester | zt-7.5b-p1-r-2026.01.21-0-base-1.3.3           |
+| Check Execution Container: Runbin      | runbin-2026.01.21-0-base-2.3.0                 |
+| Check Execution Container: Postman     | postman-2026.01.21-0-base-1.4.1                |
+| Check Execution Container: Playwright  | playwright-2026.10.21-0-base-0.1.1             |
+| Bnet (Chrome Version)                  | 10.3.4 (Chrome 149)                            |
+| Zebratester                            | 7.5B                                           |
+| ALT                                    | 6.13.3.240                                     |
+| IronDB                                 | 1.5.1                                          |
