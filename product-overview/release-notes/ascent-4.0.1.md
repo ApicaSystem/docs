@@ -24,7 +24,7 @@ Every check now has its own Alerts tab, so you can create static and dynamic ale
 
 **Pipeline Rules at Every Stage**
 
-Choose where your rules run: In the common, the forwarder or the lake pipeline. Forwarder pipelines now support every rule type, so you can keep raw data intact in storage while sending transformed data downstream. The pipeline graph shows which rules run where. A
+Choose where your rules run: In the common, the forwarder or the lake pipeline. Forwarder pipelines now support every rule type, so you can keep raw data intact in storage while sending transformed data downstream. The pipeline graph shows which rules run where.
 
 **Traces Get Their Own Data Source**
 
@@ -36,11 +36,11 @@ _**Synthetic monitoring gets Playwright support, Venn-assisted check management,
 
 **New Features**
 
-* **Playwright browser checks:** Scriptand automate complex, multi-step user workflows with full Playwright support. Create, edit, clone and delete Playwright browser checks directly in the Ascent UI. Scripts written in TypeScript, JavaScript and Python are supported, along with the full set of Playwright command-line options. Keep your test scripts in your own Git repositories and Vanguard pulls them directly from source control at check execution. Playwright checks become part of your existing CI/CD workflows for easier adoption, better automation and simpler maintenance.
+* **Playwright browser checks:** Script and automate complex, multi-step user workflows with full Playwright support. Create, edit, clone and delete Playwright browser checks directly in the Ascent UI. Scripts written in TypeScript, JavaScript and Python are supported, along with the full set of Playwright command-line options. Keep your test scripts in your own Git repositories and Vanguard pulls them directly from source control at check execution. Playwright checks become part of your existing CI/CD workflows for easier adoption, better automation and simpler maintenance.
 * **AI-assisted check management with Venn:** Venn can now list checks, view check details, configuration, SLA and results, create and update checks, and enable or disable them. Every change Venn proposes requires review and approval before it is saved. An "Ask Venn" launcher is available across the Checks pages.
 * **Alerts for each check:** Check details now include an Alerts tab that lists the alerts configured for that check, and you can create static or dynamic alerts directly from it. You get a clear view of which alerts cover each check and managing them is easier.
 * **Maintenance tasks and historical result adjustments**: New self-service maintenance capabilities give administrators more control over planned outages and historical results for accurate SLA reporting. Schedule and track maintenance activities from a centralized Maintenance view, and make versioned corrections to false-positive severities or corrupted results while preserving full audit history.
-* **Messages (notification banner):** Administrators can now publish time-bound banners and messages across all Ascent screens with configurable priority levels (Low, High, Critical) to share organizational notices and operational advisories with every user. Messages can also be managed them from a searchable Messages overview page.
+* **Messages (notification banner):** Administrators can now publish time-bound banners and messages across all Ascent screens with configurable priority levels (Low, High, Critical) to share organizational notices and operational advisories with every user. Messages can also be managed from a searchable Messages overview page.
 * **Advanced Scripting Engine**: Zebratester 7.5B, the new version of our Advanced Scripting Engine is now available with support for monitoring HTTP/2 sites.
 * **Groups as resources in IAM policies:** Groups can now be selected as resources when creating an IAM policy. Local users get group access directly from their policy, while synthetic monitoring users need both a policy and a group assignment.
 
@@ -142,7 +142,7 @@ _**Traces become a first-class data source, and large log queries now show resul
 
 * Alert notification links for Slack, Chatwork, webhook and iLert are now complete, clickable URLs.
 * Invitation and password reset emails now contain complete, working links.
-* Administrators can now reset another user's password
+* Administrators can now reset another user's password.
 * Baseline anomaly detection no longer fails when a query returns a flat or constant series.
 * All applications now appear under their namespaces in Data Explorer.
 * Query search now returns the expected results.
