@@ -1,6 +1,6 @@
 # Ascent 4.0.1
 
-**Release Date:** \[Add release date]
+**Release Date:** 03 November 2026
 
 Ascent 4.0.1 brings Playwright to synthetic monitoring, puts Venn to work managing your checks, and lets you decide where pipeline rules run, at every stage. This release delivers Playwright browser checks, AI-assisted check management with Venn, check-level alerts and maintenance, pipeline rules at every stage, a dedicated Traces data source, and broad security hardening.
 
